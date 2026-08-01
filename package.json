@@ -18,10 +18,12 @@
     "start": "next start",
     "safe": "node safety/verify_publish_safe.cjs",
     "safe:prove": "node safety/verify_publish_safe.cjs --prove",
-    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node generators/verify_generated.cjs",
+    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node generators/verify_public_consistency.cjs --prove && node generators/verify_generated.cjs",
     "prepublish:check": "npm run gate && npm run build",
     "coverage": "node safety/verify_coverage.cjs",
-    "coverage:prove": "node safety/verify_coverage.cjs --prove"
+    "coverage:prove": "node safety/verify_coverage.cjs --prove",
+    "consistency": "node generators/verify_public_consistency.cjs",
+    "consistency:prove": "node generators/verify_public_consistency.cjs --prove"
   },
   "dependencies": {
     "marked": "^18.0.7",

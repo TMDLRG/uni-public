@@ -110,6 +110,28 @@ table prints a clean 100% with a zero gap. The mutation suite reports *which hal
 each mutation, because a mutation caught by an unrelated check proves nothing about the check it was
 written for, and a suite of those reads as thorough while proving nothing.
 
+### The half that runs everywhere
+
+```bash
+node generators/verify_public_consistency.cjs --prove
+```
+
+The coverage gate has one structural weakness: **it only runs where the private repositories are.**
+It needs a gitignored roots file that exists on one machine, and there is no CI here — the deploy runs
+`next build` and nothing else. A gate that only runs where somebody remembers to run it has an
+availability problem, and availability is the one that bites, because it fails on the day attention
+lapses.
+
+So this is the subset checkable from the public repository alone, and **it runs on every deploy**: the
+committed artifacts must agree with each other, every published page must be on a curated route, no
+two documents may claim the same URL, the ratchet floors must hold, and **the published coverage
+figure must still be true of the artifacts it summarises**. A figure that was true once and is
+rendered in the present tense is exactly the failure this estate built its generated-state machinery
+to end.
+
+It cannot discover entry points, so it cannot see a new server nobody documented, and it cannot hold
+the floors against the world. A pass here is not a pass there.
+
 ## The safety gate
 
 ```bash

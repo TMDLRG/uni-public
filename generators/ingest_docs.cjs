@@ -326,6 +326,40 @@ for (const c of CORPORA) {
 
 function meta(c) { return { id: c.id, title: c.title, blurb: c.blurb, exclude_reason: c.exclude_reason || null, off_main_nav: !!c.off_main_nav }; }
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// A SLUG IS A URL, AND TWO DOCUMENTS CANNOT HAVE ONE
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// Observed 2026-08-01: a bundle on disk carried 292 pages and 291 DISTINCT slugs. Two different
+// source documents claimed the same address, so the static build emitted 313 routes instead of 314
+// and one document became unreachable — while every gate reported green, because the coverage axis
+// counts ENTRIES and reachability was being measured against the entry list rather than against the
+// URLs the site actually publishes.
+//
+// I could not reproduce it. Five consecutive runs of this generator are byte-identical and produce
+// zero collisions, and the loop above derives the slug and the citation path from the same variable
+// in the same iteration, so the two cannot disagree by construction. THE CAUSE IS NOT ESTABLISHED
+// and is recorded as such rather than given a plausible story.
+//
+// The response does not depend on the cause. A collision is a silent page loss however it arises —
+// two files one directory apart with punctuation that slugifies away is enough — so the generator
+// now refuses to write a bundle containing one, and names both documents.
+{
+  const bySlug = new Map();
+  for (const p of pages) {
+    if (!bySlug.has(p.slug)) bySlug.set(p.slug, []);
+    bySlug.get(p.slug).push(p.citation.path);
+  }
+  const collisions = [...bySlug].filter(([, v]) => v.length > 1);
+  if (collisions.length) {
+    console.error(`\nREFUSING TO WRITE THE BUNDLE — ${collisions.length} slug collision(s). A slug is a URL:\n`);
+    for (const [slug, paths] of collisions) console.error(`  ${slug}\n      ${paths.join("\n      ")}`);
+    console.error("\nEach collision silently costs a page: the static build emits one route and the losing");
+    console.error("document becomes unreachable while every count still adds up. Rename a source file or");
+    console.error("give the slug rule more of the path to work with.");
+    process.exit(1);
+  }
+}
+
 fs.mkdirSync(OUT, { recursive: true });
 const bundle = {
   schema_version: 1,

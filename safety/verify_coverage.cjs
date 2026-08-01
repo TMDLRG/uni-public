@@ -555,6 +555,17 @@ function evaluate({ manifest, curation, articles, docs, discovered }) {
     const declaredUncategorised = new Map((curation.uncategorised || []).map((u) => [u.slug, u]));
     const live = new Set(docs.pages.map((p) => p.slug));
 
+    // A slug is a URL. This axis counts ENTRIES, and entries are not routes — two documents sharing a
+    // slug means the build publishes one of them and the other is gone, with every total still
+    // adding up. Measured once on a real bundle: 292 entries, 291 URLs, one page silently missing
+    // from the site and a green gate. The denominator has to be the thing a reader can actually open.
+    if (live.size !== docs.pages.length) {
+      const counts = new Map();
+      for (const p of docs.pages) counts.set(p.slug, (counts.get(p.slug) || 0) + 1);
+      const dup = [...counts].filter(([, n]) => n > 1).map(([s]) => s);
+      problems.push(`${docs.pages.length - live.size} page(s) share a slug with another and are therefore unpublishable: ${dup.join(", ")}. This axis counts entries; the site publishes URLs.`);
+    }
+
     let covered = 0, excluded = 0;
     const orphans = [];
     for (const p of docs.pages) {
