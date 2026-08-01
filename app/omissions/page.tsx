@@ -75,6 +75,40 @@ export default function Omissions() {
         </section>
       ))}
 
+      <h2>Withheld for want of provenance</h2>
+      <section className="card">
+        <p>
+          {docs.unprovenanced.count} document{docs.unprovenanced.count === 1 ? " is" : "s are"} not
+          published because {docs.unprovenanced.count === 1 ? "its" : "their"} own bytes are
+          uncommitted in the source repository. Every page here asserts <i>&ldquo;this is this file, at
+          this commit&rdquo;</i> — and a document that exists only as an uncommitted edit cannot make
+          that claim truthfully.
+        </p>
+        <p className="dim">
+          This fence was added on 2026-08-01 after a forensic pass held all 292 published pages against
+          the commit each citation named. One page failed: its published bytes were a working-tree edit
+          published under a commit sha that did not contain them. 291 of 292 were sound. The page count
+          on this site fell by one as a result — <b>a reduction in count and an increase in
+          correctness</b>, recorded as an amendment on the <a href="/coverage/">coverage page</a> rather
+          than quietly absorbed. The fence is per file: unrelated uncommitted work elsewhere in a source
+          repository does not withhold anything.
+        </p>
+        {docs.unprovenanced.count ? (
+          <table>
+            <thead><tr><th>Withheld</th><th>Corpus</th><th>Would have cited</th></tr></thead>
+            <tbody>
+              {docs.unprovenanced.items.map((u) => (
+                <tr key={`${u.corpus}/${u.path}`}>
+                  <td className="mono">{u.path}</td>
+                  <td>{u.corpus}</td>
+                  <td className="mono">{u.commit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : <p className="dim">Nothing is currently withheld on this ground.</p>}
+      </section>
+
       <h2>Deduplicated</h2>
       <section className="card">
         <p>

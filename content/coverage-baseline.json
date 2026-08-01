@@ -7,7 +7,7 @@
   "documents less than it did. Neither is visible to the gate's other checks.",
   "",
   "Growth needs nothing: exceed a floor and the gate is happy. LOWERING one is allowed and must be",
-  "declared — the gate compares this file against its own committed version in git and fails if a",
+  "declared \u2014 the gate compares this file against its own committed version in git and fails if a",
   "floor moved down with no new entry in `amendments`. A floor editable in the same commit that",
   "breaches it is not a floor.",
   "",
@@ -40,11 +40,11 @@
    "cookbook": 34,
    "control-plane": 32,
    "flagellum": 14,
-   "workbench": 2,
+   "workbench": 1,
    "minecraft": 84,
    "evidence": 87
   },
-  "pages_total": 292,
+  "pages_total": 291,
   "subsystems": 8,
   "document_types": 8,
   "articles": 13,
@@ -61,7 +61,7 @@
    "operator": 5,
    "architecture": 32,
    "flagellum": 9,
-   "workbench": 3,
+   "workbench": 2,
    "reports": 19,
    "lab-team": 7,
    "encyclopedia-method": 16,
@@ -96,5 +96,11 @@
   "entry_points_excluded": 24,
   "pages_uncategorised": 0
  },
- "amendments": []
+ "amendments": [
+  {
+   "date": "2026-08-01",
+   "what": "Lowered floors pages_total (292 -> 291) and corpora_pages.workbench (2 -> 1).",
+   "why": "A forensic pass held all 292 published pages against the commit each citation names and found ONE whose published bytes were an uncommitted working-tree edit published under a commit sha that does not contain them (workbench/living-science-walkthrough). The ingest now fences any document whose own bytes are uncommitted, per path, so it cannot assert a provenance it does not have. The page count falls by one because a page that was making a false claim stopped being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, which is why the floor is lowered deliberately rather than the fence being weakened to preserve a number. The remaining four fenced documents return the moment the workbench worktree is committed."
+  }
+ ]
 }

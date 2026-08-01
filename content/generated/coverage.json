@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 292,
-   "covered": 292,
+   "total": 291,
+   "covered": 291,
    "excluded": 0
   }
  ],
@@ -44,8 +44,17 @@
   "held": 59,
   "breached": 0,
   "at_the_line": 46,
-  "amendments": [],
-  "notes": [],
+  "amendments": [
+   {
+    "date": "2026-08-01",
+    "what": "Lowered floors pages_total (292 -> 291) and corpora_pages.workbench (2 -> 1).",
+    "why": "A forensic pass held all 292 published pages against the commit each citation names and found ONE whose published bytes were an uncommitted working-tree edit published under a commit sha that does not contain them (workbench/living-science-walkthrough). The ingest now fences any document whose own bytes are uncommitted, per path, so it cannot assert a provenance it does not have. The page count falls by one because a page that was making a false claim stopped being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, which is why the floor is lowered deliberately rather than the fence being weakened to preserve a number. The remaining four fenced documents return the moment the workbench worktree is committed."
+   }
+  ],
+  "notes": [
+   "3 loosening(s), each named by one of 1 new amendment(s): floor corpora_pages.workbench: 2 → 1; floor pages_total: 292 → 291; floor curation_routes.workbench: 3 → 2",
+   "AMENDMENT 2026-08-01 — Lowered floors pages_total (292 -> 291) and corpora_pages.workbench (2 -> 1).: A forensic pass held all 292 published pages against the commit each citation names and found ONE whose published bytes were an uncommitted working-tree edit published under a commit sha that does not contain them (workbench/living-science-walkthrough). The ingest now fences any document whose own bytes are uncommitted, per path, so it cannot assert a provenance it does not have. The page count falls by one because a page that was making a false claim stopped being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, which is why the floor is lowered deliberately rather than the fence being weakened to preserve a number. The remaining four fenced documents return the moment the workbench worktree is committed."
+  ],
   "rows": [
    {
     "label": "entry points discovered · mix-task",
@@ -119,8 +128,8 @@
    },
    {
     "label": "pages published · workbench",
-    "now": 2,
-    "bound": 2,
+    "now": 1,
+    "bound": 1,
     "kind": "min",
     "ok": true
    },
@@ -140,8 +149,8 @@
    },
    {
     "label": "pages published · total",
-    "now": 292,
-    "bound": 292,
+    "now": 291,
+    "bound": 291,
     "kind": "min",
     "ok": true
    },
@@ -210,8 +219,8 @@
    },
    {
     "label": "pages in route · workbench",
-    "now": 3,
-    "bound": 3,
+    "now": 2,
+    "bound": 2,
     "kind": "min",
     "ok": true
    },

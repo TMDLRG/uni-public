@@ -170,8 +170,7 @@
    "intent": "The browser instrument that runs the committed model libraries.",
    "pages": [
     "flagellum/math-workbench",
-    "workbench/claude-ultracode-independent-audit-prompt",
-    "workbench/living-science-walkthrough"
+    "workbench/claude-ultracode-independent-audit-prompt"
    ]
   },
   {

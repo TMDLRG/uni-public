@@ -119,6 +119,37 @@ const git = (root, args) => {
   try { return execFileSync("git", ["-C", root, ...args], { encoding: "utf8", maxBuffer: 1 << 26 }).trim(); } catch { return ""; }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// PROVENANCE — a page may not claim a commit it did not come from
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// Every published page carries a citation of the form {repo, branch, commit, path}. The assertion a
+// reader receives is: "this page is <path> in <repo> at <commit>." That is a provenance claim, and
+// until 2026-08-01 nothing tested it — because this generator reads the WORKING TREE and labels the
+// result with `git rev-parse HEAD`. Those are the same thing only when the tree is clean.
+//
+// MEASURED, not hypothesised. A forensic pass over all 292 published pages found ONE whose published
+// bytes were an uncommitted working-tree edit published under a commit sha that does not contain
+// them: workbench/living-science-walkthrough. 291 were sound. One page in 292 is a small defect and
+// an exact demonstration of an unguarded mechanism, which is the more important half.
+//
+// The fence is PER PATH, not per repository, deliberately. Refusing to publish from any repo with
+// any uncommitted work would block ordinary work — these trees are almost always dirty somewhere —
+// and a gate that blocks ordinary work gets switched off. What is refused is narrower and exactly
+// right: a document whose OWN bytes are uncommitted may not be published under a commit sha.
+function dirtyPaths(root) {
+  const out = new Set();
+  const porcelain = git(root, ["status", "--porcelain", "--untracked-files=all"]);
+  for (const line of porcelain.split(/\r?\n/)) {
+    if (!line.trim()) continue;
+    // "XY path" or "XY orig -> path" for renames; take the destination.
+    let p = line.slice(3).trim();
+    const arrow = p.indexOf(" -> ");
+    if (arrow >= 0) p = p.slice(arrow + 4);
+    out.add(p.replace(/^"|"$/g, ""));
+  }
+  return out;
+}
+
 function walkMd(dir, rel = "") {
   const out = [];
   let entries;
@@ -245,6 +276,7 @@ function redact(text) {
 // deduplicated and against what, and the sha256 proves the claim of identity rather than asserting it.
 const duplicates = [];
 const seenDigest = new Map();          // sha256 → the slug that got there first
+const unprovenanced = [];              // published bytes that are not in the commit they would cite
 
 // ─── run ─────────────────────────────────────────────────────────────────────────────────────────
 const pages = [];
@@ -260,6 +292,7 @@ for (const c of CORPORA) {
 
   const commit = git(root, ["rev-parse", "HEAD"]);
   const branch = git(root, ["rev-parse", "--abbrev-ref", "HEAD"]);
+  const dirty = dirtyPaths(root);
   let kept = 0, dropped = 0, deduped = 0;
 
   for (const rel of walkMd(base)) {
@@ -268,6 +301,13 @@ for (const c of CORPORA) {
     let text;
     try { text = fs.readFileSync(path.join(base, rel), "utf8"); } catch { continue; }
     const digest = sha256(text).slice(0, 16);
+
+    // The provenance fence. Publishing these bytes would attach a commit sha they are not in.
+    const repoRel = `${c.dir}/${rel}`;
+    if (dirty.has(repoRel)) {
+      unprovenanced.push({ corpus: c.id, path: repoRel, commit: commit.slice(0, 12) });
+      continue;
+    }
 
     // A denied value is fatal on sight — no redaction path, no threshold, no appeal.
     if (hasDenied(text)) {
@@ -376,6 +416,17 @@ const bundle = {
     count: refused.length,
     items: refused,
   },
+  unprovenanced: {
+    note: [
+      "NOT RENDERED because the document's own bytes are uncommitted in the source repository, so",
+      "publishing it would attach a commit sha it is not in. Every page here asserts 'this is <path>",
+      "at <commit>'; that assertion has to be true or the citation is worse than none, because it",
+      "looks checkable. The fence is per PATH, not per repository — unrelated uncommitted work",
+      "elsewhere in a source repo does not block publication.",
+    ],
+    count: unprovenanced.length,
+    items: unprovenanced,
+  },
   duplicates: {
     note: [
       "NOT RENDERED because an identical document was already ingested from another corpus, proved by",
@@ -389,7 +440,7 @@ const bundle = {
 fs.writeFileSync(path.join(OUT, "docs.json"), JSON.stringify(bundle, null, 1) + "\n", "utf8");
 
 const totalBytes = pages.reduce((n, p) => n + p.bytes, 0);
-console.log(`ingested ${pages.length} page(s), ${(totalBytes / 1024).toFixed(0)} KB; REFUSED ${refused.length}; DEDUPLICATED ${duplicates.length}`);
+console.log(`ingested ${pages.length} page(s), ${(totalBytes / 1024).toFixed(0)} KB; REFUSED ${refused.length}; DEDUPLICATED ${duplicates.length}; UNPROVENANCED ${unprovenanced.length}`);
 for (const c of corporaOut) {
   console.log(`  ${c.id.padEnd(16)} ${c.available ? String(c.pages).padStart(4) + " pages, " + String(c.refused).padStart(3) + " refused, " + String(c.deduped).padStart(3) + " duplicate" : "UNAVAILABLE: " + c.reason}`);
 }

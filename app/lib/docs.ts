@@ -46,6 +46,8 @@ export const docs = docsBundle as unknown as {
   pages: WikiPage[];
   refused: { note: string[]; count: number; items: Refusal[] };
   duplicates: { note: string[]; count: number; items: Duplicate[] };
+  /** Withheld because the document's own bytes are uncommitted, so it could not claim a commit. */
+  unprovenanced: { note: string[]; count: number; items: { corpus: string; path: string; commit: string }[] };
 };
 
 export type Duplicate = {
