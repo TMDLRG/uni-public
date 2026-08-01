@@ -280,7 +280,7 @@ function navPaths() {
 //
 // Growth is free and needs no ceremony, which matters because this estate adds servers and documents
 // constantly and a gate that fights ordinary work gets switched off.
-function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
+function ratchet({ manifest, curation, articles, docs, discovered, baseline }, opts = {}) {
   const problems = [];
   const notes = [];
   if (!baseline) {
@@ -323,6 +323,46 @@ function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
   }
   atLeast("pages published · total", docs.pages.length, F.pages_total || 0);
 
+  // ── A ROOT THAT IS NO LONGER ASKED FOR ────────────────────────────────────────────────────────
+  // discover() refuses a root that is DECLARED and does not resolve. Deleting the declaration is the
+  // quiet version of the same act: nothing fails to resolve, because nothing is asked for. One root
+  // here is named by no discovery class at all, so removing it does not even disturb the entry-point
+  // count — and it contributes 73 of the 292 pages.
+  {
+    const declared = fs.existsSync(ROOTS_FILE) ? new Set(Object.keys(readJson(ROOTS_FILE).roots || {})) : new Set();
+    const gone = (F.roots || []).filter((r) => !declared.has(r));
+    if (gone.length) {
+      problems.push(`COLLAPSED — ${gone.length} source repositor${gone.length === 1 ? "y" : "ies"} named in the committed floor ${gone.length === 1 ? "is" : "are"} no longer declared in generators/roots.local.json: ${gone.join(", ")}. Everything they contributed stops being discovered and the percentage does not move.`);
+    }
+  }
+
+  // ── PER-ROUTE FLOORS ──────────────────────────────────────────────────────────────────────────
+  // `curation_groups` counts HEADINGS, so 22 routes survive a route falling from 17 pages to 1 while
+  // its pages are absorbed into a catch-all — still routed, still covered, still 100%. That is the
+  // original 85-item-flat-list defect reproducing itself one level down, inside the very mechanism
+  // built to prevent it. An audit reproduced it with no edit to any rule.
+  //
+  // The floor is per route and only downward: a route growing is free, which matters because this
+  // estate emits dated receipts as routine output and a gate that reddens on ordinary work gets
+  // switched off. What it catches is a route HOLLOWING OUT.
+  {
+    const size = new Map((curation.groups || []).map((g) => [g.id, (g.pages || []).length]));
+    for (const [id, floor] of Object.entries(F.curation_routes || {})) {
+      if (!size.has(id)) { problems.push(`COLLAPSED — the curated route '${id}' no longer exists. Its ${floor} page(s) are absorbed elsewhere or unrouted, and coverage still reads 100%.`); continue; }
+      atLeast(`pages in route · ${id}`, size.get(id), floor);
+    }
+  }
+
+  // ── RUNNABLE MARKERS, COUNTED ─────────────────────────────────────────────────────────────────
+  // The per-subsystem check asks whether the marker appears ANYWHERE in the article. Seven subsystems
+  // share one article, and that article opens with a legend listing all three marker phrases — so
+  // deleting every per-section marker leaves the legend, and all seven checks still pass. Counting
+  // them is the difference between "the words exist" and "each section says which it is".
+  {
+    const count = articles.articles.reduce((n, a) => n + (a.body.match(/RUNNABLE BY YOU|NEEDS THE OPERATOR.S INFRASTRUCTURE|PARTLY RUNNABLE BY YOU/g) || []).length, 0);
+    if (F.runnable_markers !== undefined) atLeast("RUNNABLE markers", count, F.runnable_markers);
+  }
+
   // ── the covered side: the reduction surface ───────────────────────────────────────────────────
   const eps = manifest.entry_points || [];
   atLeast("entry points documented", eps.filter((e) => !e.excluded).length, F.entry_points_covered || 0);
@@ -361,13 +401,44 @@ function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
   // could be edited too — git history is the one record here that a working-tree edit cannot reach.
   let prev = null;
   try {
+    if (opts.simulateUnreadablePrev) throw new Error("simulated");
     // stdio 'pipe' on stderr: on the very first run the file is not in HEAD and git says so loudly,
     // which would read as an error in a passing run.
     prev = JSON.parse(execFileSync("git", ["-C", REPO, "show", "HEAD:content/coverage-baseline.json"], { encoding: "utf8", maxBuffer: 1 << 24, stdio: ["ignore", "pipe", "pipe"] }));
-  } catch { /* not yet committed — reported below, never treated as a pass */ }
+  } catch { /* every failure mode lands here — which is exactly the problem, handled below */ }
 
   if (!prev) {
-    notes.push("no committed baseline in git yet, so this run cannot tell whether a floor was lowered. The NEXT run can, once this baseline is committed.");
+    // ── THIS BRANCH USED TO BE A NOTE, AND THAT MADE THE WHOLE RATCHET DECORATIVE ────────────────
+    // An adversarial audit demonstrated it: with git simply absent from PATH, every floor set to 1,
+    // the tolerance to 0.01, the ceilings to 9999 and two floor groups deleted outright — the gate
+    // printed "COVERAGE 100%" and exited 0. The bound count fell from 36 to 11 and the very same
+    // line read "11 held, 0 breached". The only trace was a friendly note saying the baseline was
+    // not committed yet, which was untrue and misdiagnosed the cause.
+    //
+    // A bare catch swallows every failure identically: not-yet-committed, a fresh worktree whose
+    // HEAD predates the file, a shallow CI checkout, a rename, or no git at all. Four of those five
+    // are ordinary events and none of them means "the floors are fine".
+    //
+    // So it fails CLOSED, and it asks git a second, independent question to say WHICH case it is
+    // rather than guessing. A genuine first run stays possible, but only if somebody says so out
+    // loud with --first-baseline — consent stated, never inferred from a swallowed exception.
+    let tracked = false, gitPresent = true;
+    try {
+      execFileSync("git", ["-C", REPO, "ls-files", "--error-unmatch", "content/coverage-baseline.json"], { stdio: ["ignore", "ignore", "ignore"] });
+      tracked = true;
+    } catch (e) { if (e && e.code === "ENOENT") gitPresent = false; }
+
+    const why = !gitPresent ? "git is not available here" : tracked ? "the file IS tracked, so this is not a first run" : "the file is not tracked yet";
+    if (tracked || !gitPresent || !ARGV.includes("--first-baseline")) {
+      problems.push(
+        `THE RATCHET ON THE RATCHET DID NOT RUN — the committed baseline could not be read (${why}).\n` +
+        `    Every floor, ceiling and tolerance is UNENFORCED for this run. Any of them could have been\n` +
+        `    lowered or deleted in this same edit and the line above would still say "held, 0 breached".\n` +
+        `    Commit the baseline, or pass --first-baseline to declare this genuinely the first run.`
+      );
+    } else {
+      notes.push("FIRST RUN — the baseline is untracked and --first-baseline was passed, so no previous floor exists to compare against. Every bound below is being established, not enforced.");
+    }
   } else {
     const flat = (o, pre = "") => {
       const out = {};
@@ -387,8 +458,26 @@ function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
     const prevTol = (prev.tolerance && prev.tolerance.article_chars_fraction) ?? 0.75;
     if (frac < prevTol) loosened.push(`tolerance article_chars_fraction: ${prevTol} → ${frac}`);
 
-    const added = (baseline.amendments || []).length - (prev.amendments || []).length;
-    if (loosened.length && added <= 0) {
+    // `flat()` keeps only numbers and recurses only into non-array objects, so floors.roots — the
+    // declared set of SOURCE REPOSITORIES, and the largest collapse surface there is — was compared
+    // against nothing at all. An audit struck two of four roots from the committed floor and the gate
+    // passed silently. The one non-numeric floor was the one that mattered most.
+    const prevRoots = new Set((prev.floors && prev.floors.roots) || []);
+    const nowRoots = new Set(F.roots || []);
+    for (const r of prevRoots) if (!nowRoots.has(r)) loosened.push(`floor roots: source repository '${r}' was REMOVED from the declared floor`);
+
+    // An amendment must NAME what moved. Otherwise one entry saying "tidied the floors" licenses any
+    // number of unrelated loosenings, which turns the record into a receipt for a decision nobody
+    // made. Matching on the field key is crude and it is enough: it forces the person lowering a
+    // floor to write down which floor.
+    const newAmendments = (baseline.amendments || []).slice((prev.amendments || []).length);
+    const said = newAmendments.map((a) => `${a.what || ""} ${a.why || ""}`).join(" ").toLowerCase();
+    const unexplained = loosened.filter((l) => {
+      const key = (/(?:floor|ceiling|tolerance) ([A-Za-z0-9_.]+)/.exec(l) || [])[1];
+      return key && !said.includes(key.toLowerCase()) && !said.includes(key.split(".").pop().toLowerCase());
+    });
+
+    if (loosened.length && !newAmendments.length) {
       problems.push(
         `THE FLOOR ITSELF WAS LOWERED WITH NO RECORDED AMENDMENT — ${loosened.length} change(s):\n    ` +
         loosened.join("\n    ") +
@@ -396,8 +485,15 @@ function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
         "\n    Lowering one is allowed; doing it silently is not. Add an entry to `amendments` saying" +
         "\n    what was lowered and why, and this passes."
       );
+    } else if (unexplained.length) {
+      problems.push(
+        `${unexplained.length} loosening(s) are not NAMED by any new amendment:\n    ` +
+        unexplained.join("\n    ") +
+        "\n    An amendment that does not say which bound moved lets one sentence license every change" +
+        "\n    in the commit. Name the field in the amendment's `what`."
+      );
     } else if (loosened.length) {
-      notes.push(`${loosened.length} floor/ceiling loosening(s), accounted for by ${added} new amendment(s): ${loosened.join("; ")}`);
+      notes.push(`${loosened.length} loosening(s), each named by one of ${newAmendments.length} new amendment(s): ${loosened.join("; ")}`);
     }
   }
 
@@ -659,6 +755,8 @@ function writeBaseline(state, discovered) {
       citations: arts.reduce((n, a) => n + (a.cites || []).length, 0),
       quotes: arts.reduce((n, a) => n + (a.quotes || []).length, 0),
       curation_groups: (state.curation.groups || []).length,
+      curation_routes: Object.fromEntries((state.curation.groups || []).map((g) => [g.id, (g.pages || []).length])),
+      runnable_markers: arts.reduce((n, a) => n + (a.body.match(/RUNNABLE BY YOU|NEEDS THE OPERATOR.S INFRASTRUCTURE|PARTLY RUNNABLE BY YOU/g) || []).length, 0),
       article_chars: Object.fromEntries(arts.map((a) => [a.slug, a.body.replace(/\s+/g, "").length])),
     },
     ceilings: {
@@ -720,6 +818,7 @@ const table = {
     breached: ratchetResult.rows.filter((r) => !r.ok).length,
     at_the_line: ratchetResult.rows.filter((r) => r.ok && r.now === r.bound).length,
     amendments: (state.baseline && state.baseline.amendments) || [],
+    notes: ratchetResult.notes,
     rows: ratchetResult.rows,
   },
   ok: problems.length === 0,
@@ -790,9 +889,9 @@ if (MODE.prove) {
   // This is not hypothetical here. Three of the reduction mutations below leave the coverage axes
   // reporting a clean 100% with a zero gap — they are invisible to everything except the ratchet.
   // Had the ratchet been broken, a plain "caught" would still have printed for two of them.
-  const halves = (s, d) => ({
+  const halves = (s, d, o) => ({
     axes: evaluate({ ...s, discovered: d || discovered }).problems.length > 0,
-    ratchet: ratchet({ ...s, discovered: d || discovered }).problems.length > 0,
+    ratchet: ratchet({ ...s, discovered: d || discovered }, o).problems.length > 0,
   });
 
   const mutations = [
@@ -929,6 +1028,51 @@ if (MODE.prove) {
       s.baseline.amendments = [...(s.baseline.amendments || []), { date: "2026-08-01", what: "lowered the article floor" }];
       return s;
     }],
+    ["COLLAPSE: a source repository is no longer declared", "ratchet", () => {
+      const s = clone();
+      s.baseline.floors.roots = [...(s.baseline.floors.roots || []), "uni-a-repo-nobody-declares"];
+      return s;
+    }],
+    ["REDUCE: remove a source repository from the committed floor", "ratchet", () => {
+      const s = clone();
+      s.baseline.floors.roots = (s.baseline.floors.roots || []).slice(1);
+      return s;
+    }],
+    ["REDUCE: a curated route hollows out into a catch-all", "ratchet", () => {
+      const s = clone();
+      const from = s.curation.groups.find((g) => g.pages.length > 3 && g.id !== "evidence-receipts");
+      const to = s.curation.groups.find((g) => g.id !== from.id);
+      if (!from || !to) return null;
+      to.pages = [...to.pages, ...from.pages.slice(1)];
+      from.pages = from.pages.slice(0, 1);
+      return s;
+    }],
+    ["COLLAPSE: a curated route disappears, its pages absorbed", "ratchet", () => {
+      const s = clone();
+      const gone = s.curation.groups[s.curation.groups.length - 1];
+      s.curation.groups = s.curation.groups.filter((g) => g.id !== gone.id);
+      s.curation.groups[0].pages = [...s.curation.groups[0].pages, ...gone.pages];
+      return s;
+    }],
+    ["REDUCE: strip the per-section RUNNABLE markers, leaving the legend", "ratchet", () => {
+      const s = clone();
+      // The legend at the top of the run-it guide names all three markers, so the per-subsystem
+      // presence check still passes with every section marker deleted. Only counting sees it.
+      const a = s.articles.articles.find((x) => x.slug === "run-it");
+      if (!a) return null;
+      let first = true;
+      a.body = a.body.replace(/RUNNABLE BY YOU|NEEDS THE OPERATOR.S INFRASTRUCTURE|PARTLY RUNNABLE BY YOU/g, (m) => {
+        if (first) { first = false; return m; }
+        return "(see the legend above)";
+      });
+      return s;
+    }],
+    ["REDUCE: an amendment that does not name the bound it moved", "ratchet", () => {
+      const s = clone();
+      s.baseline.floors.articles = 1;
+      s.baseline.amendments = [...(s.baseline.amendments || []), { date: "2026-08-01", what: "tidied the baseline", why: "it was untidy and this sentence is comfortably over twenty characters" }];
+      return s;
+    }],
     ["COLLAPSE: remove the baseline entirely", "ratchet", () => {
       const s = clone();
       s.baseline = null;
@@ -971,6 +1115,14 @@ if (MODE.prove) {
     const h = halves(state, withNewEntryPoint());
     if (h.axes) { console.log("  caught " + "a new undocumented server appearing in the estate".padEnd(58) + " [axes]"); caught++; }
     else { console.error("  HOLE   a new undocumented server appearing in the estate — SURVIVED."); holes++; }
+  }
+  // THE ONE THAT MADE EVERY OTHER BOUND DECORATIVE. With the previous baseline unreadable — no git
+  // on PATH, a shallow checkout, a worktree whose HEAD predates the file — the ratchet used to
+  // report "held, 0 breached" while every floor in it could have been lowered in the same edit.
+  {
+    const h = halves(state, discovered, { simulateUnreadablePrev: true });
+    if (h.ratchet) { console.log("  caught " + "COLLAPSE: the committed baseline cannot be read at all".padEnd(58) + " [ratchet]"); caught++; }
+    else { console.error("  HOLE   COLLAPSE: the committed baseline cannot be read at all — SURVIVED. Every floor is unenforced and the gate says nothing."); holes++; }
   }
 
   console.log(`\n${caught} caught, ${holes} hole(s), ${skipped} skipped`);
