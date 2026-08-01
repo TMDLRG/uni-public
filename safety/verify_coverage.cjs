@@ -860,7 +860,15 @@ const rows = ratchetResult.rows;
 if (rows.length) {
   const breached = rows.filter((r) => !r.ok);
   const tight = rows.filter((r) => r.ok && (r.kind === "min" ? r.now === r.bound : r.now === r.bound));
-  console.log(`\nTHE RATCHET — ${rows.length} committed bound(s): ${rows.length - breached.length} held, ${breached.length} breached, ${tight.length} exactly at the line.`);
+  // If the previous baseline could not be read, none of these bounds is ENFORCED — they were merely
+  // compared against a floor that could have been lowered in the same edit. Saying "held" there is
+  // the precise sentence an audit flagged as misleading, so it is not said.
+  const unenforced = ratchetResult.problems.some((p) => /RATCHET ON THE RATCHET DID NOT RUN/.test(p));
+  console.log(
+    unenforced
+      ? `\nTHE RATCHET — ${rows.length} bound(s) evaluated but NONE ENFORCED: the committed floor could not be read, so a lowered floor is indistinguishable from a held one.`
+      : `\nTHE RATCHET — ${rows.length} committed bound(s): ${rows.length - breached.length} held, ${breached.length} breached, ${tight.length} exactly at the line.`
+  );
   console.log("  100% cannot COLLAPSE (a shrinking denominator) or REDUCE (work moved into exclusions),");
   console.log("  because both keep the percentage at 1.0 and neither is visible to the table above.");
   for (const r of breached) console.log(`  ✗ ${r.label}: ${r.now} vs ${r.kind === "min" ? "floor" : "ceiling"} ${r.bound}`);

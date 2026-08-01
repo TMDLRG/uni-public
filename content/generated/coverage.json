@@ -40,11 +40,12 @@
   }
  ],
  "ratchet": {
-  "bounds": 36,
-  "held": 36,
+  "bounds": 59,
+  "held": 59,
   "breached": 0,
-  "at_the_line": 23,
+  "at_the_line": 46,
   "amendments": [],
+  "notes": [],
   "rows": [
    {
     "label": "entry points discovered · mix-task",
@@ -141,6 +142,167 @@
     "label": "pages published · total",
     "now": 292,
     "bound": 292,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · start",
+    "now": 4,
+    "bound": 4,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · install-run",
+    "now": 5,
+    "bound": 5,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · method",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · colony",
+    "now": 4,
+    "bound": 4,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · specs",
+    "now": 17,
+    "bound": 17,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · broadcast",
+    "now": 7,
+    "bound": 7,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · operator",
+    "now": 5,
+    "bound": 5,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · architecture",
+    "now": 32,
+    "bound": 32,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · flagellum",
+    "now": 9,
+    "bound": 9,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · workbench",
+    "now": 3,
+    "bound": 3,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · reports",
+    "now": 19,
+    "bound": 19,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · lab-team",
+    "now": 7,
+    "bound": 7,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · encyclopedia-method",
+    "now": 16,
+    "bound": 16,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · encyclopedia-nature",
+    "now": 12,
+    "bound": 12,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · encyclopedia-stack",
+    "now": 11,
+    "bound": 11,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · cookbook-kitchen",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · cookbook-stack",
+    "now": 14,
+    "bound": 14,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · cookbook-nature",
+    "now": 12,
+    "bound": 12,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · plans",
+    "now": 12,
+    "bound": 12,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · evidence-receipts",
+    "now": 56,
+    "bound": 56,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · evidence-prereg",
+    "now": 19,
+    "bound": 19,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · evidence-handoffs",
+    "now": 12,
+    "bound": 12,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "RUNNABLE markers",
+    "now": 16,
+    "bound": 16,
     "kind": "min",
     "ok": true
    },
