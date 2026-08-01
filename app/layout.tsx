@@ -18,12 +18,15 @@ export const metadata: Metadata = {
   },
 };
 
+// Every entry here must resolve to a page that exists. The first draft of this list carried
+// /estate/, /evidence/ and /contribute/ — three links to pages that had never been written, which
+// would have shipped a navigation bar where three of five items 404. A nav is a promise about what
+// the site contains.
 const NAV = [
   { href: "/", label: "Overview" },
-  { href: "/estate/", label: "The estate" },
+  { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
-  { href: "/evidence/", label: "Evidence & truth classes" },
-  { href: "/contribute/", label: "Contribute" },
+  { href: "/omissions/", label: "What is not here" },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
