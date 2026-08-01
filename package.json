@@ -12,7 +12,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
+    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_gates.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
     "dev": "next dev",
     "build": "npm run generate && next build",
     "start": "next start",
@@ -24,7 +24,8 @@
     "coverage:prove": "node safety/verify_coverage.cjs --prove",
     "consistency": "node generators/verify_public_consistency.cjs",
     "consistency:prove": "node generators/verify_public_consistency.cjs --prove",
-    "provenance": "node safety/verify_provenance.cjs"
+    "provenance": "node safety/verify_provenance.cjs",
+    "gates": "node generators/build_gates.cjs"
   },
   "dependencies": {
     "marked": "^18.0.7",

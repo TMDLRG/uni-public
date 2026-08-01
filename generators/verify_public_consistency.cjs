@@ -48,7 +48,7 @@ if (process.argv.includes("--prove")) {
   const FILES = [
     "content/generated/articles.json", "content/generated/docs.json", "content/generated/coverage.json",
     "content/coverage-manifest.json", "content/coverage-baseline.json", "content/curation.json",
-    "app/layout.tsx", "package.json",
+    "app/layout.tsx", "package.json", "content/generated/gates.json",
   ];
   const MUT = [
     ["delete an article the manifest points at", (a) => {
@@ -113,6 +113,27 @@ if (process.argv.includes("--prove")) {
     }],
     ["unhook a document type from the navigation", (a) => {
       a["app/layout.tsx"] = a["app/layout.tsx"].replace(/href: "\/articles\/",/, 'href: "/gone/",');
+    }],
+    ["colour an unrun external gate as a pass", (a) => {
+      // The original defect, in its purest form: a gate that is listed and never run, presented as
+      // though it had passed. An unrun check and a passing check are different things.
+      const gj = JSON.parse(a["content/generated/gates.json"]);
+      const ext = gj.gates.find((x) => !x.ci);
+      if (!ext) throw new Error("no external gate to mutate");
+      ext.state = "PASS";
+      a["content/generated/gates.json"] = JSON.stringify(gj);
+    }],
+    ["publish a gate with no recorded verdict", (a) => {
+      const gj = JSON.parse(a["content/generated/gates.json"]);
+      delete gj.gates[0].state;
+      a["content/generated/gates.json"] = JSON.stringify(gj);
+    }],
+    ["strip the date from the gate measurement", (a) => {
+      // Without it the page cannot honestly render in the past tense, and a dated measurement read
+      // as a live status is how a tally becomes false 176 seconds after it is written.
+      const gj = JSON.parse(a["content/generated/gates.json"]);
+      delete gj.measured_at;
+      a["content/generated/gates.json"] = JSON.stringify(gj);
     }],
     ["emit the published record from a failing run", (a) => {
       const c = JSON.parse(a["content/generated/coverage.json"]);
@@ -360,6 +381,40 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
   problems.length
     ? bad("every script this project tells you to run exists", problems.join(" · "))
     : ok("every script this project tells you to run exists", `${checked} node invocation(s) across ${Object.keys(pkg.scripts || {}).length} script(s); a gate that dies on a missing module still prints PASS for everything before it`);
+}
+
+// ─── 4c · the gates page publishes a VERDICT for every registered gate ──────────────────────────
+// The failure this prevents is specific and it already happened: the page rendered one pill per gate
+// saying CI or external — WHERE it runs — and a reader took thirty-two green-ish pills for a clean
+// bill of health while five gates were failing and the pipeline had never once gone green.
+//
+// So: every registered gate must carry a state, that state must be a recognised one, and a FAIL may
+// never be rendered with a passing tone. The last clause is checked against the same table the page
+// uses, so the page and the check cannot drift into disagreeing about what red means.
+{
+  const problems = [];
+  if (!fs.existsSync(path.join(REPO, "content/generated/gates.json"))) {
+    problems.push("content/generated/gates.json is absent — the page would have no verdicts to publish");
+  } else {
+    const gj = read("content/generated/gates.json");
+    const KNOWN = new Set(["PASS", "FAIL", "PARTIAL", "PENDING", "WITHHELD", "INCONCLUSIVE", "KILLED", "NOT_RUN", "NOT_RUN_EXTERNAL"]);
+    const PASSING_TONE = new Set(["PASS"]);
+    for (const x of gj.gates || []) {
+      if (!x.state) { problems.push(`gate '${x.id}' has no recorded state`); continue; }
+      if (!KNOWN.has(x.state)) problems.push(`gate '${x.id}' has unrecognised state '${x.state}'`);
+      // An unrun gate must never be coloured as a passing one. "Listed and never run" is a third
+      // thing, and collapsing it into green is how an absent check becomes an implied pass.
+      if (!x.ci && PASSING_TONE.has(x.state)) problems.push(`gate '${x.id}' is external (never run) yet carries the passing state '${x.state}'`);
+      if (x.ci && x.state === "PASS" && x.exit !== 0) problems.push(`gate '${x.id}' is PASS with exit ${x.exit} — the runner's own law is exit 0 if and only if PASS`);
+    }
+    if (!gj.measured_at) problems.push("the gate measurement carries no timestamp, so the page cannot render it in the past tense");
+    if (!gj.source || !gj.source.commit_short) problems.push("the gate measurement names no commit");
+    const tallied = Object.values(gj.local?.tally || {}).reduce((a, b) => a + b, 0);
+    if (tallied !== (gj.gates || []).length) problems.push(`the published tally sums to ${tallied} but ${(gj.gates || []).length} gates are listed`);
+  }
+  problems.length
+    ? bad("the gates page publishes a verdict for every gate", problems.slice(0, 10).join(" · "))
+    : ok("the gates page publishes a verdict for every gate", `${read("content/generated/gates.json").gates.length} gate(s), each with a recorded state, a measurement timestamp and a source commit; venue is not rendered as verdict and an unrun gate is never coloured as a passing one`);
 }
 
 // ─── 5 · the navigation must lead to the pages the manifest promises ─────────────────────────────
