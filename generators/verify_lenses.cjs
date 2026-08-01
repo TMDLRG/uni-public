@@ -165,6 +165,60 @@ async function main() {
     }
   }
 
+  // ── 2b · DID THE PROSE ACTUALLY SHIP? ──────────────────────────────────────────────────────────
+  // THE HOLE THIS CLOSES IS THE WORST ONE IN THIS BUILD, and an audit found it, not me.
+  //
+  // Check 2 reads `out/` to prove the Precise lane is the document unaltered. Nothing then asked
+  // whether the LENS PROSE — the entire feature this gate exists to police — reached the page.
+  //
+  // Measured: the gate printed "304/304 route(s) lensed" and "GATE: PASS, 13/13" over an export
+  // built BEFORE a single lens existed. 59 of 60 sampled pages carried no lens prose, `lanes__pick`
+  // appeared zero times, and every page rendered `lanes__pending` — the honest placeholder reading
+  // "A Plain and a Clear version of this page have not been written yet." The shipped site said the
+  // prose did not exist. The gate said all 304 were written. Both sentences were true, about
+  // different artifacts, and only one of them was the one a reader would ever see.
+  //
+  // A green gate over an artifact that does not contain the thing is the exact failure this estate
+  // is built to refuse. On Vercel `next build` runs before this gate so the export is always fresh;
+  // locally it drifts silently, which is precisely when a human is reading the verdict.
+  {
+    if (!fs.existsSync(OUT)) {
+      ok("the lens prose reached the page", "out/ absent — check 2 already reports this");
+    } else {
+      const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
+      const faults = [];
+      let checked = 0, built = 0;
+      for (const l of lenses) {
+        const r = routes.find((x) => x.scope === l.scope && x.key === l.key);
+        if (!r || !fs.existsSync(r.file)) continue;
+        built++;
+        const html = fs.readFileSync(r.file, "utf8");
+        for (const lane of ["plain", "clear"]) {
+          if (!l[lane]) continue;
+          checked++;
+          // An eight-word signature from the lane's own opening. Long enough to be unique, short
+          // enough to survive the escaping a static export applies.
+          const sig = strip(l[lane].html).split(" ").slice(0, 8).join(" ");
+          if (sig && !strip(html).includes(sig)) {
+            faults.push(`${l.scope}/${l.key} ${lane}: this lens is in lenses.json but NOT in the built page`);
+          }
+        }
+      }
+      const stalePlaceholder = built > 0 && lenses.length > 0 &&
+        (() => { const r = routes.find((x) => fs.existsSync(x.file)); return r && /lanes__pending/.test(fs.readFileSync(r.file, "utf8")); })();
+
+      faults.length
+        ? bad("the lens prose reached the page",
+            `${faults.length} of ${checked} lane(s) validated here do NOT appear in out/. ` +
+            (stalePlaceholder ? `The export still renders the "not been written yet" placeholder, so it predates the prose entirely. ` : "") +
+            `RUN \`npx next build\`. A gate green over an export that lacks the feature it gates is worse ` +
+            `than no gate.\n      ` + faults.slice(0, 8).join("\n      "))
+        : ok("the lens prose reached the page",
+            `${checked} lane(s) across ${built} built page(s) — each one's opening found verbatim in the ` +
+            `shipped HTML. The gate now fails if it is validating prose a reader cannot see.`);
+    }
+  }
+
   // ── 3 · every lens is bound to a live page, at both digests ───────────────────────────────────
   {
     const known = new Map(routes.map((r) => [`${r.scope}:${r.key}`, r]));
@@ -458,6 +512,18 @@ async function main() {
   for (const r of results) console.log(`${r.pass ? "  ok" : "FAIL"}  ${r.name} - ${r.detail}`);
 
   console.log("\nWHAT THIS GATE CANNOT DO — the most important line in this output.");
+  console.log("  IT STRUCTURALLY PREFERS BOILERPLATE. The disclosure check matches a set of accepted");
+  console.log("  phrasings, so the CHEAPEST way to pass is to paste an accepted stem. It cannot tell");
+  console.log("  \"Nobody here did the measuring.\" from \"contributes no evidence to the programme's own");
+  console.log("  results\", and an audit found 7 of 24 nature pages passing with the plain words swapped");
+  console.log("  INSIDE a compliance frame that was left standing — \"It says so itself, twice:\",");
+  console.log("  \"Before anything else the chapter fences itself off:\". It also has no opinion about");
+  console.log("  WHERE the sentence lands, so a disclosure in a final clause passes like one in the");
+  console.log("  opening. A machine can check a sentence is PRESENT. Whether it was written in or bolted");
+  console.log("  on is a human read, and this gate does not pretend otherwise.");
+  console.log("  Unmeasured entirely: 'fence' appears unglossed in 53 of 304 Plain lanes, 'ledger' in 42,");
+  console.log("  'receipt' in 31, 'falsifier' in 23 — against an AUTHORING.md contract promising 'no");
+  console.log("  jargon'. No check exists for any of it.");
   console.log("  It proves the Precise lane is the document rendered unaltered, and that a lens introduces");
   console.log("  no NUMBER, NAME or CERTAINTY the document does not contain. IT DOES NOT VERIFY MEANING,");
   console.log("  and no gate can. A lens can pass every check above and still be a bad summary: it can");
@@ -511,6 +577,9 @@ async function prove() {
     _forb.filter((w) => !/^(conscious|understands|proven|proves|proof)$/.test(w))]) || "guaranteed";
   const absentAnthro = _absent(["sentient", "self-aware", "alive", "wants", "knows", "feels"]) || "sentient";
 
+  const pristineDocs = fs.readFileSync(path.join(TMP, "content/generated/docs.json"));
+  const pristineHtml = fs.readFileSync(path.join(TMP, "out", "wiki", ...page.slug.split("/"), "index.html"));
+
   const FIX = {
     scope: "wiki", key: page.slug, corpus: page.corpus,
     source_sha256: page.sha256, source_body_sha256: sha16(page.body),
@@ -520,12 +589,30 @@ async function prove() {
     plain: { html: "<p>This page is part of a working record. It describes a simulation and a plan, not a finished result. It is written down so that anyone can check it later, and so that a mistake has somewhere to be found rather than somewhere to hide from view here.</p>", chars: 210, words: 45, sha256: "0000000000000000" },
     clear: null, note: "", source_file: "content/lenses/wiki/_prove.md",
   };
+  // The copied page must CONTAIN the fixture's prose, or check 2b ("the lens prose reached the
+  // page") fires on the control and the whole sweep proves nothing — which is exactly what happened
+  // the moment 2b was added. That is the check being right: a lens in lenses.json that is not in the
+  // built page is precisely the defect 2b exists to name, and the fixture was in that state.
+  //
+  // So the harness keeps the two in step. After every bundle write it re-derives the copied HTML to
+  // carry the fixture's CURRENT lane text. Each mutation is then caught by the check it targets
+  // rather than by 2b firing on a page/bundle mismatch the mutation did not intend — a mutation
+  // "caught" by the wrong check is a green nobody should count.
+  const pageFile = path.join(TMP, "out", "wiki", ...page.slug.split("/"), "index.html");
+  const syncPage = (lens) => {
+    const txt = (h) => String(h || "").replace(/<[^>]+>/g, " ");
+    const carried = `<div class="lane lane--plain" data-authored="true">${(lens.plain && lens.plain.html) || ""}</div>` +
+                    `<div class="lane lane--clear" data-authored="true">${(lens.clear && lens.clear.html) || ""}</div>`;
+    fs.writeFileSync(pageFile, pristineHtml.toString("utf8").replace("</body>", carried + "</body>"));
+    return txt(carried);
+  };
   const writeBundle = (mut) => {
     const b = readJson(path.join(TMP, "content/generated/lenses.json"));
     const lens = JSON.parse(JSON.stringify(FIX));
     b.lenses = [lens]; b.totals = { ...b.totals, lensed: 1, reviewed: 1 };
     if (mut) mut(b, lens);
     fs.writeFileSync(path.join(TMP, "content/generated/lenses.json"), JSON.stringify(b, null, 1));
+    syncPage(lens);
   };
   const run = () => cp.spawnSync(process.execPath, [__filename],
     { env: { ...process.env, UNI_LENS_ROOT: TMP }, encoding: "utf8" }).status;
@@ -592,8 +679,6 @@ async function prove() {
 
   console.log("\nPROVING — the control must pass and every mutation must be caught:\n");
   let caught = 0, holes = 0;
-  const pristineDocs = fs.readFileSync(path.join(TMP, "content/generated/docs.json"));
-  const pristineHtml = fs.readFileSync(path.join(TMP, "out", "wiki", ...page.slug.split("/"), "index.html"));
   for (const [name, mut, want] of M) {
     fs.writeFileSync(path.join(TMP, "content/generated/docs.json"), pristineDocs);
     fs.writeFileSync(path.join(TMP, "out", "wiki", ...page.slug.split("/"), "index.html"), pristineHtml);

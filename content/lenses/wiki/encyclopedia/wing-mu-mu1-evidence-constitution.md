@@ -20,11 +20,11 @@ A rule, not a result, and the chapter says as much in its opening line. The prog
 
 <!--CLEAR-->
 
-The constitution is recorded as a governance pattern, and the chapter treats that class as a ceiling rather than a springboard: a governance pattern is reusable, and it can never be raised into a capability claim.
+The constitution is recorded as a governance pattern, and the chapter treats that class as a ceiling rather than a springboard: a governance pattern is reusable, and it can never be raised into a capability claim. What it governs is a simulation — a toy world, and not a person.
 
 The ledger rules are simple and unforgiving. A claim asserted ahead of its row is forbidden; the prose follows the ledger and never the reverse. Wording is calibrated down to the measured value, never up, including under urgency. Corrections are forward-only. A capability verdict is the interval bound that excludes the threshold, never the point estimate. And a claim with no stated condition that would show it false is not a claim at all but marketing.
 
-A second section covers negatives. The ledger features its losses rather than hiding them, because a partial or a negative is a measurement that a design is incomplete. It also fences its own favourite statistic: the recorded snapshot of rows and states is provenance-flagged, since a sceptic counting the printed rows cannot rebuild the count of negatives, so the bare figure may not be headlined as a credibility number until it is reconstructable.
+A second section covers negatives. The ledger features its losses rather than hiding them, because a partial or a negative is a measurement that a design is incomplete. It also fences its own favourite statistic. The recorded snapshot of rows and states is flagged with where it came from, because a sceptic counting the printed rows cannot rebuild the count of negatives. So the bare figure may not be headlined as a credibility number until it is reconstructable.
 
 The load-bearing section is the one about what done means, and it is where the chapter says most honest-seeming programs quietly cheat. Two distinctions are held hard. First, a passing test does not satisfy a criterion that demands a runtime observation, and the class taxonomy makes the ordering explicit rather than interchangeable. Second, class authority is ordered, so tool state beats a program's own narrative and a runtime observation beats a passing test; conflicts are marked unresolved and settled by a direct read, never by letting the more flattering source win.
 

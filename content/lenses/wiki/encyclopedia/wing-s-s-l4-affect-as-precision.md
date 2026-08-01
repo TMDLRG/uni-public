@@ -20,11 +20,11 @@ Affect appears in this simulation as a dial rather than a feeling. Where the dia
 
 <!--CLEAR-->
 
-The carded claim is that emotion modulates precision so that perception sharpens and the balance between goal-seeking and uncertainty-reduction flips, driven by a single global modulator carrying a short list of interoceptive dimensions.
+All of this happens inside a simulation — a toy world, and not a person. The recorded claim is that emotion modulates precision so that perception sharpens and the balance between goal-seeking and uncertainty-reduction flips, driven by a single global modulator carrying a short list of interoceptive dimensions.
 
 The mechanism is one vector that the developmental design carries globally and that feeds the same discrete engine used at every other rung. It does not act as a separate sub-network; it modulates the existing precision parameters, the preference terms, the habit priors, the learning rate on the count update, and the planning horizon. That is why it earns a place on the ladder rather than being a one-off lab: it is the lever by which an internal bodily state reaches into perception and policy on one shared loop.
 
-The class it is carded at is the empirical pass tier in this corpus, but the verdict is functional rather than phenomenal. It says the modelled dial does what the model says it does under the registered evaluation, and says nothing about inner experience.
+The class it is recorded at is the empirical pass tier in this corpus, but the verdict is functional rather than phenomenal. It says the modelled dial does what the model says it does under the registered evaluation, and says nothing about inner experience.
 
 The falsifier is the right kind, and it is an ablation. Cut the modulator out, or shuffle it into noise, and re-run the reader. If precision-weighting does not change and the balance does not flip, the claim is false. Equally, if the apparent effect collapses the moment a matched control is introduced, the claim is false.
 

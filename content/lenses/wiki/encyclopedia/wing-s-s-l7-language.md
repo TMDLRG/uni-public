@@ -20,9 +20,9 @@ Language is where the program earned one narrow pass and then ran into a wall. T
 
 <!--CLEAR-->
 
-In the framing this wing uses, reading is treated as inference about what a text most likely means, and writing is treated as action that changes future observations. That framing is an organising idea, not a claim that the program comprehends language.
+In the framing this wing uses, reading is treated as inference about what a text most likely means, and writing is treated as action that changes future observations. That framing is an organising idea, not a claim that the program comprehends language. The program is a simulation — a toy world, and not a person.
 
-The one citable pass is a specialist reader for out-of-vocabulary words and morphology. On sealed held-out text it beats the best tuned count baseline by a measured margin, replicated across a multi-split seal, with a structure margin and a control that resolves as expected, and it holds in both a web domain and a dictionary domain, which is notable because a simpler cache from the rung below collapsed on the dictionary domain. The verdict is the interval's lower bound, not the point estimate.
+The one citable pass is a specialist reader for out-of-vocabulary words and morphology. On text sealed away and scored once, it beats the best tuned count baseline by a measured margin, replicated across a multi-split seal, with a structure margin and a control that resolves as expected. It holds in both a web domain and a dictionary domain. That is notable, because a simpler cache from the rung below collapsed on the dictionary domain. The verdict is the interval's lower bound, not the point estimate.
 
 That pass is never published alone. The same ledger records an attribution caveat as a negative that must always be cited beside it, and the caveat is exact: the overall score worsens. The gain helps specifically on the rare-word and morphology slice, while across the whole distribution the model is worse. The honest sentence is that this is a specialist win, never a general language win.
 
@@ -30,4 +30,4 @@ The hardest thing asked of the reader is comprehension that cannot be solved by 
 
 Two supporting bounds reinforce the wall. Designs meant to track who is who across a discourse all tuned their own terms off, leaving a residue whose interval spans zero. And a bounded-peek design failed to match a full read, in a row that also records an honesty correction, since a cheaper cap was asserted and then disproved by measurement rather than by argument.
 
-The broad perplexity frontier is parked and carded as not claimed. Its formal sign-off is drafted and relayed but has not yet been captured, so under the no-exit discipline that park is not discharged.
+The broad perplexity frontier is parked and recorded as not claimed. Its formal sign-off is drafted and relayed but has not yet been captured, so under the no-exit discipline that park is not discharged.

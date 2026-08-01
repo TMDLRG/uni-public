@@ -17,8 +17,9 @@ note:
 <!--PLAIN-->
 
 This page explains what a single agent in this project actually is. The answer is that it is not one
-thing. It is a reasoning process, a separate program that plays the game, and a real player logged
-into a real game server. Nothing in the system is called the agent; the agent is the arrangement.
+thing. It is a reasoning process holding a model of its world, a separate program that plays the
+game, and a real player logged into a real game server. Nothing in the system is called the agent;
+the agent is the arrangement.
 
 The page's main point is the join between the first two parts. They talk through a deliberately
 narrow channel, and the narrowness is the whole idea. The reasoning part cannot ask the world
@@ -33,16 +34,16 @@ claim this system makes.
 <!--CLEAR-->
 
 This article describes the anatomy of one agent, end to end, and it is short because the design is.
-An agent is three processes that together behave as one organism: a reasoning process holding a
-generative model and doing perception, learning and action selection each step; a separate program
-running a game client library, attached to the first as a port; and a real player on an actual game
-server. The world is a real server, the article stresses, not a simulation of one and not a training
-environment wearing the game's textures.
+An agent is three processes that together behave as one organism. There is a reasoning process
+holding a generative model, doing perception, learning and action selection each step. There is a
+separate program running a game client library, attached to the first as a port. And there is a real
+player on an actual game server. The world is a real server, the article stresses, not a simulation
+of one and not a training environment wearing the game's textures.
 
 The join between the reasoning part and the playing part is the load-bearing idea. It is a
-deliberately narrow channel, and the article asks you to read what it forbids: the reasoning part
-cannot query the world, only receive a fixed vector of symbolic senses; the playing part cannot read
-beliefs, only receive one primitive action from a closed set. There is no side channel. The
+deliberately narrow channel, and the article asks you to read what it forbids. The reasoning part
+cannot query the world; it only receives a fixed vector of symbolic senses. The playing part cannot
+read beliefs; it only receives one primitive action from a closed set. There is no side channel. The
 narrowness is what makes the agent's ignorance real rather than merely stipulated.
 
 The decision surface of a live agent is a handful of lines. Senses arrive, the reasoning part steps,

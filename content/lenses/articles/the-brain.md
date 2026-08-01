@@ -22,9 +22,9 @@ score. Perception reduces one quantity, and choosing what to do next reduces a r
 ahead. The page argues this is an engineering property rather than a philosophical flourish: a reward
 signal is the thing a system accidentally optimises, and there is not one here to game.
 
-It then explains the rule that governs what may be added to the engine. A new term has to belong to a
-short closed list, and the worked example had to decay to nothing as evidence built up, stay
-independent of the agent's preferences, and leave behaviour unchanged when switched off.
+It then explains the rule that governs what may be added to the engine. Any proposed new term has to
+belong to a short closed list, and the worked example had to decay to nothing as evidence built up,
+stay independent of the agent's preferences, and leave behaviour unchanged when switched off.
 
 The page is deliberately more cautious than the others on the site. It says this is not a claim about
 experience, that passing tests are not biological parity, and that no diagram of this part exists
@@ -32,9 +32,9 @@ anywhere.
 
 <!--CLEAR-->
 
-This is the article about the inference engine every agent in the estate runs — the ones in the world
-and the one directing the broadcast — and it says up front that it is deliberately more cautious than
-its neighbours, because this is where overclaiming would be easiest.
+This is the article about the inference engine every agent in the estate runs, the ones in the world
+and the one directing the broadcast. It says up front that it is deliberately more cautious than its
+neighbours, because this is where overclaiming would be easiest.
 
 There is no reward anywhere. Perception minimises variational free energy; action minimises expected
 free energy. No scalar return is accumulated. The article treats this as an engineering property
@@ -55,11 +55,11 @@ state, and how far its predicted observations sit from preferred ones. Planning 
 beam search, which the article labels an approximation rather than describing as the real thing.
 
 The most transferable idea here is the rule about what may be added. A proposed new term must be one
-of a closed set, and nothing else enters the choice. The worked example is a novelty term, whose own
-documentation states the properties keeping it from being a reward in disguise, and whose tests
-assert them by name: it decays to zero as counts grow, it is independent of preference so it cannot
-smuggle one in, and it is bounded so it cannot swamp survival. The strongest is that with the term at
-zero, the agent's decisions are byte-identical to the same agent without it.
+of a closed set, and nothing else enters the choice. The worked example is a novelty term. Its own
+documentation states the properties that keep it from being a reward in disguise, and its tests
+assert them by name. It decays to zero as counts grow. It is independent of preference, so it cannot
+smuggle one in. And it is bounded, so it cannot swamp survival. The strongest is that with the term
+at zero, the agent's decisions are byte-identical to the same agent without it.
 
 Precision is treated as attention rather than as a spotlight. Internal states can go wrong, with
 wrong defined by the model rather than by a designer's penalty term, and both of those modules carry

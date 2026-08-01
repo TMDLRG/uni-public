@@ -22,7 +22,7 @@ The rest is extraction. Every numbered row from the wing's chapter tables is car
 
 <!--CLEAR-->
 
-Every numeric row from the nature wing's chapters is gathered into one place, so that wing has a ledger of its own the way the program does. It is extraction only: no row was added that no chapter contains, and no value was invented, improved, averaged or completed.
+Every numeric row from the nature wing's chapters is gathered into one place, so that wing has a ledger of its own the way the program does. This is borrowed science: other people measured it and published it, and it is quoted here. It contributes no evidence to the program's own build, which is a simulation — a toy world, not a person. The gathering is extraction only: no row was added that no chapter contains, and no value was invented, improved, averaged or completed.
 
 Its first section is about sovereignty, and it is the reason the file exists. One ledger describes nature's regularities as measured by other people in published work. The other describes the program's own build status. They use different vocabularies and are cross-referenced only by explicit link, never merged. The cardinal rule is that a citation about nature is never a gate for the program, and no row here raises, lowers or discharges a row there.
 

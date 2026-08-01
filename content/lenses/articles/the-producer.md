@@ -16,10 +16,9 @@ note:
 ---
 <!--PLAIN-->
 
-This page is about the part of the system that runs the live broadcast of the colony — the cameras,
-the narration, the cuts between scenes. The obvious way to build that would be a set of rules. This
-one is not built that way. It runs the same reasoning engine as the agents it films, with a different
-set of things it can do.
+Something has to point the cameras, choose the narration and cut between scenes during the live
+broadcast of the colony. The obvious design would be a set of rules. This one is not built that way.
+It runs the same reasoning engine as the agents it films, with a different set of things it can do.
 
 Every beat it turns live information about the world into a small set of discrete observations, and
 it picks from a list of actions: hold, cut to a camera, widen, narrate, check health, restart a

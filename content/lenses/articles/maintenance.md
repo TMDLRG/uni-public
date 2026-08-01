@@ -16,14 +16,14 @@ note:
 ---
 <!--PLAIN-->
 
-This page is about keeping the system running once it exists: restarting things that crash, making
-them come back after a reboot, checking health, backing up, repairing the record, and recovering from
+Keeping the system running once it exists is its own job: restarting things that crash, making them
+come back after a reboot, checking health, backing up, repairing the record, and recovering from
 disaster.
 
 It hangs on one distinction the project takes seriously. Surviving a crash and surviving a reboot are
 two different claims, and collapsing them is how a system comes to believe it is durable when it is
 not. So each startup entry has a separate prover that reports success only if the machine actually
-rebooted after the entry was installed.
+rebooted after the entry was installed. Installing one is not evidence that it ever fired.
 
 It also insists that questions about the current state are answered by asking the running system
 rather than by reading files, and it names three such questions no committed file can answer
@@ -47,16 +47,16 @@ whether the suite passes, whether the gates pass — because they are facts abou
 about the tree. A governing document upstream used to answer all three in prose, and one of those
 answers was measured at one moment and was false three minutes later, while reading as present tense.
 
-Watchdogs handle crash restart, one per surface. A conflict is recorded rather than resolved: two
+Watchdogs handle crash restart, one per surface. A conflict is recorded rather than resolved. Two
 supervisors disagree while the system is on air, one standing down during a stream and the other
-restarting unconditionally, and resolving it needs a decision about which behaviour is correct that
-nobody has made.
+restarting unconditionally. Resolving it needs a decision about which behaviour is correct, and
+nobody has made it.
 
 Boot persistence is installed separately and proved separately. Each installer pairs with a prover
-that reports success only if the machine actually rebooted after the install marker was written,
-because a prover that reported success because a file exists would be certifying its own installation
-rather than the behaviour it was installed for. Two drills exercise recovery paths deliberately, on
-the grounds that a recovery path never exercised is a hypothesis.
+that reports success only if the machine actually rebooted after the install marker was written. A
+prover that said yes merely because a file exists would be certifying its own installation rather
+than the behaviour it was installed for. Two drills exercise recovery paths deliberately, on the
+grounds that a recovery path never exercised is a hypothesis.
 
 Certificate renewal happens as a side effect of normal operation rather than as a task someone has to
 remember.
@@ -64,20 +64,20 @@ remember.
 The evidence record has its own maintenance: a set of one-shot recorders, all of which append nothing
 if run again. They exist because the record's own anti-silence guard fired — work had continued and
 the record had not. Two of them are corrections and one supersedes an earlier reference, and the page
-underlines why: a correction is appended, never edited, since an append-only record that permits a
-fix in place has no memory of having been wrong, which is the only thing it was built to remember.
+underlines why. A correction is appended, never edited. An append-only record that permits a fix in
+place has no memory of having been wrong, which is the only thing it was built to remember.
 
 Backups, archiving and a heartbeat are four scheduled units, all marked as design and not yet run on
 node hardware, so the section is the intended shape rather than a running system. Their ordering is
 deliberate: reverse two of them and every backup is a day stale.
 
-Upgrades come with warnings, chiefly that removing the colony container destroys the agents' memories
-and so capture comes first, that one deployment script refuses to run because it is stale against the
-current topology, and that the fan-out arm deliberately does not survive a reboot. Two housekeeping
-gaps are stated rather than left to be discovered: nothing rotates the logs, and one evidence store
-grows without bound by design.
+Upgrades come with warnings. Removing the colony container destroys the agents' memories, so capture
+comes first. One deployment script refuses to run because it is stale against the current topology.
+And the fan-out arm deliberately does not survive a reboot. Two housekeeping gaps are stated rather
+than left to be discovered: nothing rotates the logs, and one evidence store grows without bound by
+design.
 
 The closing section lists what is not underwritten — no soak test, a capture failure with detection
 but no automatic recovery, a long run that is not underwritten, and an emergency stop no human has
-fired. A fifth is named as the sharpest: every registered gate has no rows in the canonical record,
-and authoring them is the operator's task rather than an agent's.
+fired. A fifth is named as the sharpest. Every registered check has no rows in the one record that is
+meant to hold them, and writing those rows is the operator's task rather than an agent's.

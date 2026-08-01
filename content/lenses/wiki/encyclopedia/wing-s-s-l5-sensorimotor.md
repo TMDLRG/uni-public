@@ -20,9 +20,9 @@ Mind and body as one loop is the framing of this rung, and the chapter carries a
 
 <!--CLEAR-->
 
-Two structurally distinct embodiment designs were pre-registered and each held once. They differ on at least two of the four axes the method requires, so they count as genuinely distinct attempts rather than reruns of one idea.
+Two structurally distinct embodiment designs were written down in full, bar and all, before either was built, and each was then held once. Both ran inside a simulation — a toy world, not a person. They differ on at least two of the four axes the method requires, so they count as genuinely distinct attempts rather than reruns of one idea.
 
-The first design, on a fast immediate-reward axis, held a positive delta over a policy-shuffle control, and because the verdict is the interval bound rather than the point estimate, the load-bearing fact is that the lower bound stays above zero. The second design, a slow bottleneck with a compressed sensory channel and delayed reward, held negative, and its entire interval sits below zero, so on that axis the active channel did not merely fail to help but underperformed the random-action control. That is recorded as a first-class result rather than a buried partial.
+The first design, on a fast immediate-reward axis, held a positive delta over a policy-shuffle control, and because the verdict is the interval bound rather than the point estimate, the load-bearing fact is that the lower bound stays above zero. The second design was a slow bottleneck with a compressed sensory channel and delayed reward. It held negative, and its entire interval sits below zero, so on that axis the active channel did not merely fail to help: it underperformed the random-action control. That is recorded as a first-class result rather than a buried partial.
 
 A method note travels with the pair. One structurally distinct held negative has accrued, and the program's own discipline requires several before any published bound is owed, so no bound is owed here and none is claimed. A single clean negative is a result, not a bound.
 

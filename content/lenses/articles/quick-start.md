@@ -23,7 +23,8 @@ infrastructure and none of them is the interesting part first.
 
 What you have at the end is the reasoning engine running locally, a table of its real behaviour on
 your machine rather than a figure from someone else's, and a recorded run you can check
-independently.
+independently. The page is firm that the demonstration is a real exercise of what the engine
+promises, not a toy.
 
 The step the page puts most weight on is the awkward one. After verifying a recorded run, open the
 file, change one number in the middle, and verify it again. It has to fail. A verifier that has never
@@ -35,8 +36,8 @@ parity, general intelligence or human parity.
 <!--CLEAR-->
 
 This is the on-ramp page: from an empty machine to a running inference engine you can watch think. It
-states its requirements honestly at the top — an ordinary laptop, no graphics card, no accounts, no
-keys, no paid software — and notes that the core has no package dependencies at all, so once the
+states its requirements honestly at the top: an ordinary laptop, no graphics card, no accounts, no
+keys, no paid software. It also notes that the core has no package dependencies at all, so once the
 language is installed it does not even need the network.
 
 It deliberately skips the colony, the broadcast and the operator plane, on the grounds that all three
