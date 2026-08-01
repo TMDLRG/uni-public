@@ -1,4 +1,4 @@
-import { marked } from "marked";
+import { renderMarkdown } from '../../lib/md';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { docs, pageBySlug, pagesInCorpus } from "../../lib/docs";
@@ -37,7 +37,7 @@ export default async function WikiPage({ params }: { params: Promise<{ slug: str
   // The H1 is rendered by the page header below, so strip the leading one from the body to avoid
   // showing the title twice.
   const body = page.body.replace(/^#\s+.+\r?\n/, "");
-  const html = await marked.parse(body, { gfm: true, breaks: false });
+  const html = renderMarkdown(body);
 
   return (
     <article>

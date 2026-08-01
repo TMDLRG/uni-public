@@ -1,4 +1,4 @@
-import { marked } from "marked";
+import { renderMarkdown } from '../../lib/md';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import articlesBundle from "../../../content/generated/articles.json";
@@ -45,7 +45,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const a = articles.find((x) => x.slug === slug);
   if (!a) notFound();
 
-  let html = await marked.parse(a.body, { gfm: true, breaks: false });
+  let html = renderMarkdown(a.body);
   // The generator left ordered placeholders where each marker was; swap in the resolved blocks.
   html = html.replace(/<!--CITE:(\d+)-->/g, (_, i) => citeHtml(a.cites[Number(i)]));
   html = html.replace(/<!--QUOTE:(\d+)-->/g, (_, i) => quoteHtml(a.quotes[Number(i)]));

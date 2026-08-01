@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NavLink from "./components/NavLink";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,22 +38,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <a href="#main" className="skip">Skip to content</a>
         <header>
           <div className="wrap head">
             <Link href="/" className="brand">
               <b>UNI</b> <span>Universal Natural Intelligence</span>
             </Link>
-            <nav>
+            <nav aria-label="Primary">
               {NAV.map((n) => (
-                <Link key={n.href} href={n.href}>
-                  {n.label}
-                </Link>
+                <NavLink key={n.href} href={n.href} label={n.label} />
               ))}
             </nav>
           </div>
         </header>
 
-        <main className="wrap">{children}</main>
+        <main id="main" className="wrap">{children}</main>
 
         <footer>
           <div className="wrap">

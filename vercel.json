@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "node generators/verify_public_consistency.cjs && next build",
+  "buildCommand": "node generators/verify_public_consistency.cjs && next build && node generators/verify_a11y.cjs",
   "outputDirectory": "out",
   "headers": [
     {
