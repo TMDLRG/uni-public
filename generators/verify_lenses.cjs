@@ -274,6 +274,92 @@ async function main() {
           "and deleting them is truth laundering by accident");
   }
 
+  // ── 6b · ABRIDGEMENT — a lens is prose ABOUT a document, not a shortened copy of it ────────────
+  // FOUND BY ADVERSARIAL AUDIT, not by this gate, which is why it now exists. Thirteen lenses shared
+  // 30-56% of their six-word sequences with their source against a corpus mean of 5%. At that level
+  // the Plain lane is the document with the numbers stripped out — and stripping numbers out of a
+  // document is exactly how the standing caveat goes missing, because the caveat is a sentence too.
+  // AUTHORING.md rule 1 says you are writing ABOUT a document; this measures it.
+  {
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+    const grams = (s, k) => {
+      const w = norm(s).split(" "); const out = new Set();
+      for (let i = 0; i + k <= w.length; i++) out.add(w.slice(i, i + k).join(" "));
+      return out;
+    };
+    const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ");
+    const CEILING = 30;
+    const faults = [];
+    for (const l of lenses) {
+      const r = routes.find((x) => x.scope === l.scope && x.key === l.key);
+      if (!r) continue;
+      const src = grams(r.body, 6);
+      for (const k of ["plain", "clear"]) {
+        if (!l[k]) continue;
+        const lens = grams(strip(l[k].html), 6);
+        if (lens.size < 5) continue;
+        let hit = 0; for (const g of lens) if (src.has(g)) hit++;
+        const pct = Math.round((100 * hit) / lens.size);
+        if (pct > CEILING) faults.push(`${l.scope}/${l.key} ${k}: ${pct}% of its six-word sequences are lifted verbatim — that is an abridgement, not prose about the document`);
+      }
+    }
+    faults.length
+      ? bad("a lens is prose about the document, not a shortened copy", faults.slice(0, 10).join(" · "))
+      : ok("a lens is prose about the document, not a shortened copy",
+          `no lens shares more than ${CEILING}% of its six-word sequences with its source. An abridgement ` +
+          `drops sentences to fit, and the sentence it drops is the caveat.`);
+  }
+
+  // ── 6c · STANDING DISCLOSURES — the sentence a page exists to keep attached ────────────────────
+  // ALSO FOUND BY AUDIT. 21 of 25 NATURA pages carry, in their own words, "a nature citation is
+  // never a UNI gate ... this chapter contains zero UNI claims and raises no rung", and their lenses
+  // dropped it entirely. On a site whose organising promise is separating what the programme
+  // MEASURED from what it CITES, a lens that drops that reads exactly like a lens for a page of the
+  // programme's own evidence. That is not a stylistic miss; it is the site's central distinction
+  // going quiet on the pages that need it most.
+  //
+  // Declared as PATTERNS rather than inferred, because a machine cannot tell which sentence a page
+  // could not survive losing — a human names it once, here, and the gate holds every page to it.
+  {
+    const DISCLOSURES = [
+      { id: "natura-not-a-gate",
+        src: /never a uni gate|zero uni claims|raises no rung/i,
+        lens: /never a uni gate|not a uni gate|zero uni claims|raises no rung|no uni claim|contributes no evidence|cited(?: here)?,? not measured|not one of (?:the |our )?(?:programme|project)/i,
+        why: "this page is a CITATION of outside science, not one of the programme's own results" },
+      { id: "toy-world-not-a-person",
+        src: /never a person|toy world|bounded peek/i,
+        lens: /simulat|toy world|not a person|never a person|model of/i,
+        why: "the subject is a developmental active-inference SIMULATION, not a person" },
+      { id: "not-claimed-fence",
+        src: /not claimed:/i,
+        lens: /not claimed|does not claim|no claim is made|is not evidence|not established|nothing here is a finding|makes no claim/i,
+        why: "the document carries an explicit NOT-CLAIMED fence naming what it does not assert" },
+    ];
+    const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ");
+    const faults = [];
+    const tally = {};
+    for (const l of lenses) {
+      const r = routes.find((x) => x.scope === l.scope && x.key === l.key);
+      if (!r) continue;
+      const lensText = strip(l.plain && l.plain.html) + " " + strip(l.clear && l.clear.html);
+      for (const d of DISCLOSURES) {
+        if (!d.src.test(r.body)) continue;
+        tally[d.id] = tally[d.id] || { n: 0, missing: 0 };
+        tally[d.id].n++;
+        if (!d.lens.test(lensText)) {
+          tally[d.id].missing++;
+          faults.push(`${l.scope}/${l.key}: drops the standing disclosure '${d.id}' — ${d.why}`);
+        }
+      }
+    }
+    const summary = Object.entries(tally).map(([k, v]) => `${k} ${v.n - v.missing}/${v.n}`).join(" · ");
+    faults.length
+      ? bad("a lens keeps the disclosure its page cannot survive losing",
+          `${faults.length} page(s):\n      ` + faults.slice(0, 12).join("\n      ") +
+          (faults.length > 12 ? `\n      … and ${faults.length - 12} more` : ""))
+      : ok("a lens keeps the disclosure its page cannot survive losing", summary || "no declared disclosure appears in any source");
+  }
+
   // ── 7 · length bounds and review-record integrity ─────────────────────────────────────────────
   {
     const faults = [];

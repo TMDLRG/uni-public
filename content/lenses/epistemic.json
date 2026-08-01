@@ -4,23 +4,43 @@
     "",
     "STRENGTHENERS raise a claim. A lens may use one only if the source does.",
     "",
-    "LOAD_BEARING_HEDGES are the words that mark a thing as not-yet-established. If the source",
-    "carries ANY of them, the lens must carry at least one too. This is the single most valuable",
-    "check in the pipeline: it is what stops 'a SIMULATION of a flagellar motor' from becoming",
-    "'a flagellar motor' — the exact truth-laundering the estate's contract forbids, and the exact",
-    "thing a well-meaning plain-language rewrite does by accident, because hedges read as clutter."
+    "LOAD_BEARING_HEDGES are the words that mark a thing as NOT-YET-ESTABLISHED. If the source",
+    "carries any of them, the lens must carry one too. This is what stops 'a SIMULATION of a",
+    "flagellar motor' from becoming 'a flagellar motor'.",
+    "",
+    "CORRECTED 2026-08-01, AND THE CORRECTION IS THE POINT.",
+    "The first version of this list also contained `would`, `could`, `may`, `cannot`, `does not`,",
+    "`is not`, `appears`, `suggests` and `indicates`. Those are ORDINARY ENGLISH, not hedges. Almost",
+    "any paragraph contains one. So the check they were meant to power became satisfiable by accident:",
+    "an adversarial audit measured 75 of 281 hedged pages passing on a generic word alone, while the",
+    "sentence that actually carried the meaning -- 'a developmental active-inference SIMULATION, a",
+    "bounded peek at a toy world, never a person' -- had been deleted. The gate was green and the",
+    "laundering was real.",
+    "",
+    "A dictionary that admits common words does not make a check strict; it makes it VACUOUS. Every",
+    "entry below is now a word that means 'this is not established', and nothing else."
   ],
   "strengtheners": [
     "proves", "proven", "proof", "confirmed", "confirms", "established", "demonstrates",
     "demonstrated", "validated", "verified", "guaranteed", "certain", "certainly",
-    "always", "never fails", "conclusive", "conclusively", "definitive", "definitively"
+    "always", "never fails", "conclusive", "conclusively", "definitive", "definitively",
+    "measured", "observed directly", "we saw", "we watched"
   ],
   "load_bearing_hedges": [
-    "simulation", "simulated", "simulate", "model", "modelled", "modeled", "reconstruction",
-    "reconstructed", "derived", "inferred", "hypothesis", "hypothesised", "hypothesized",
-    "preliminary", "provisional", "proposed", "planned", "designed", "scaffold",
-    "not yet", "unverified", "untested", "unproven", "pending", "blocked", "withheld",
-    "would", "could", "may", "might", "appears", "suggests", "indicates",
-    "no verdict", "not established", "cannot", "does not", "is not"
+    "simulation", "simulated", "simulate", "simulating",
+    "model", "modelled", "modeled", "modelling", "modeling",
+    "reconstruction", "reconstructed", "derived", "inferred", "approximate", "approximation",
+    "hypothesis", "hypothesised", "hypothesized", "hypothetical", "conjecture",
+    "preliminary", "provisional", "proposed", "proposal", "planned", "plan", "design", "designed",
+    "scaffold", "stub", "draft", "toy", "sandbox", "fixture", "synthetic",
+    "not yet", "unverified", "untested", "unproven", "not established", "not claimed",
+    "pending", "blocked", "withheld", "refused", "unresolved", "open question",
+    "no verdict", "cannot be claimed", "does not establish", "is not evidence"
+  ],
+  "_why_two_lists_and_not_one": [
+    "A word can be a hedge in one direction only. `measured` is a STRENGTHENER here even though it",
+    "sounds neutral, because a lens calling a modelled quantity 'measured' has upgraded it -- which",
+    "the audit found on zero pages, and which stays a fence rather than a finding only while the word",
+    "is listed."
   ]
 }

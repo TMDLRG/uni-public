@@ -4,7 +4,13 @@ A **lens** is a short piece of prose *about* a document, written so that someone
 the document can meet it anyway. There are two, over the same page:
 
 - **Plain** — 40–220 words. Short sentences. No jargon. What is this page for, who would read it,
-  and what is the one thing it says.
+  and what it actually says.
+
+  **Do not copy that phrasing.** An earlier version of this line ended "what is the one thing it
+  says", and 32 of 34 cookbook lenses then opened their second paragraph with *"The one thing it
+  says is…"*, while 60 of 304 began *"This is a"*. Only 85 distinct three-word openings existed
+  across the whole corpus. An instruction read by many writers becomes a template unless it says
+  not to be one. **Start each lens where that page actually starts.**
 - **Clear** — 90–600 words. The same, plus the document's structure and its main claims.
 
 The document itself is the **Precise** lane. You never write that. It is the repository's bytes,
@@ -34,8 +40,24 @@ Checked mechanically (L6). If the document says a thing *appears* to hold, the l
 *does*. You may only use a strengthener (`proves`, `confirmed`, `established`, `always` …) if the
 document uses that exact word.
 
+**4b · Never write an abridgement.** A lens is prose *about* a document, not the document with the
+numbers taken out. Measured mechanically: no more than 30% of your six-word sequences may appear
+verbatim in the source. Thirteen lenses hit 31–56% on the first pass, and what an abridgement drops
+to fit is always a whole sentence — which is why the dropped sentence was so often the caveat.
+
+**4c · Keep the sentence the page cannot survive losing.** If a document carries a standing
+disclosure — *"a nature citation is never a UNI gate; this chapter contains zero UNI claims and
+raises no rung"*, or *"a developmental active-inference simulation, a bounded peek at a toy world,
+never a person"*, or an explicit **not claimed:** fence — **your lens must carry it too**, in your own
+words. This is not optional and it is checked. On the first pass, 21 of 25 nature pages dropped
+theirs, and the effect was that a lens for a cited biology chapter read exactly like a lens for the
+programme's own evidence. Separating those two things is the entire promise of this site.
+
 **5 · Never drop the hedge that carries the meaning.**
-Checked mechanically (L7), and it is the most important rule here. If the document describes a
+Checked mechanically (L7), and it is the most important rule here. The dictionary it uses was
+CORRECTED on 2026-08-01: it used to include `may`, `would`, `is not` and other ordinary English, so a
+lens could delete "this is a simulation" and still pass because it happened to contain the word
+"may". Seventy-five did. Every hedge word now means "not established", and nothing else. If the document describes a
 **simulation**, a **reconstruction**, a **plan**, a **hypothesis**, or something **not yet** done,
 your lens must say so too — ideally in the first two sentences. Plain language makes hedges feel like
 clutter, and deleting them is how "a simulation of a flagellar motor" quietly becomes "a flagellar
