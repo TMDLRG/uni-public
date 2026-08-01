@@ -1,0 +1,32 @@
+{
+  "note": [
+    "Words a lens may NOT introduce. Each is allowed only if the SOURCE DOCUMENT itself uses it —",
+    "quoting a document's own certainty is reporting; adding certainty is laundering.",
+    "Data, not code, so the list is diffable and reviewable by a human who does not read JavaScript."
+  ],
+  "words": [
+    { "word": "proven",       "why": "the estate's own film boasts it never once used this word; a summary may not smuggle it in" },
+    { "word": "proves",       "why": "same" },
+    { "word": "proof",        "why": "same" },
+    { "word": "guaranteed",   "why": "nothing here is guaranteed; the anchor is tamper-evident, not unforgeable" },
+    { "word": "unhackable",   "why": "marketing absolute" },
+    { "word": "bulletproof",  "why": "marketing absolute" },
+    { "word": "certainly",    "why": "certainty a document did not claim" },
+    { "word": "obviously",    "why": "tells the reader their confusion is a failing; also usually hides a gap" },
+    { "word": "solved",       "why": "P8 full parity is false; nothing here is solved" },
+    { "word": "world-first",  "why": "prestige claim, and prestige is explicitly not a gate" },
+    { "word": "breakthrough", "why": "prestige claim" },
+    { "word": "revolutionary","why": "prestige claim" },
+
+    { "word": "conscious",    "why": "ANTHROPOMORPHISM. For an active-inference estate this is a bigger risk than marketing language: a colony that minimises free energy is not thereby aware, and the architecture explicitly disclaims rendering awareness, experience or life." },
+    { "word": "sentient",     "why": "same" },
+    { "word": "self-aware",   "why": "same" },
+    { "word": "alive",        "why": "same — 'a live colony' is about a process running, not about life" },
+    { "word": "understands",  "why": "same — a model fitting is not understanding" },
+    { "word": "knows",        "why": "same" },
+    { "word": "wants",        "why": "same — a preference term in a generative model is not a want" },
+    { "word": "thinks",       "why": "same" },
+    { "word": "feels",        "why": "same" },
+    { "word": "decides for itself", "why": "same" }
+  ]
+}

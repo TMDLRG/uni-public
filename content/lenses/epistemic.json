@@ -1,0 +1,26 @@
+{
+  "note": [
+    "Two dictionaries that keep a lens's CERTAINTY at or below its source's.",
+    "",
+    "STRENGTHENERS raise a claim. A lens may use one only if the source does.",
+    "",
+    "LOAD_BEARING_HEDGES are the words that mark a thing as not-yet-established. If the source",
+    "carries ANY of them, the lens must carry at least one too. This is the single most valuable",
+    "check in the pipeline: it is what stops 'a SIMULATION of a flagellar motor' from becoming",
+    "'a flagellar motor' — the exact truth-laundering the estate's contract forbids, and the exact",
+    "thing a well-meaning plain-language rewrite does by accident, because hedges read as clutter."
+  ],
+  "strengtheners": [
+    "proves", "proven", "proof", "confirmed", "confirms", "established", "demonstrates",
+    "demonstrated", "validated", "verified", "guaranteed", "certain", "certainly",
+    "always", "never fails", "conclusive", "conclusively", "definitive", "definitively"
+  ],
+  "load_bearing_hedges": [
+    "simulation", "simulated", "simulate", "model", "modelled", "modeled", "reconstruction",
+    "reconstructed", "derived", "inferred", "hypothesis", "hypothesised", "hypothesized",
+    "preliminary", "provisional", "proposed", "planned", "designed", "scaffold",
+    "not yet", "unverified", "untested", "unproven", "pending", "blocked", "withheld",
+    "would", "could", "may", "might", "appears", "suggests", "indicates",
+    "no verdict", "not established", "cannot", "does not", "is not"
+  ]
+}

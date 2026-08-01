@@ -73,6 +73,14 @@ const PAIRS = [
   ["--warn", "--bg", 4.5, "warning verdict text"],
   ["--bad", "--bg", 4.5, "FAIL verdict text"],
   ["--acc", "--acc-soft", 3.0, "door heading on its soft tint (large)"],
+  // ADDED 2026-08-01, AND IT CAUGHT A LIVE FAILURE THE MOMENT IT WAS DECLARED. Text on the accent
+  // FILL — the skip link, and the selected reading-lane pill. Both were hard-coded `color: #fff`,
+  // which is 6.85:1 on the light accent and **2.72:1 on the dark one**: a real WCAG AA failure,
+  // shipped, on the first thing a keyboard user ever focuses. Nothing caught it for one reason
+  // only — this table is a DECLARED list, and nobody had declared this pair. The gate says so about
+  // itself two lines above ("weaker evidence than parsing every rule"); this row is that sentence
+  // being paid for. The same blind spot still covers every `color-mix()` ground on the page.
+  ["--on-acc", "--acc", 4.5, "text on the accent FILL (skip link, selected reading-lane pill)"],
 ];
 
 const css = fs.readFileSync(CSS, "utf8");
@@ -197,6 +205,11 @@ if (process.argv.includes("--prove")) {
     ["remove the reduced-motion block", (c) => c.replace(/@media \(prefers-reduced-motion: reduce\)\s*\{[^}]*\}/, "")],
     ["remove the focus-visible ring", (c) => c.replace(/:focus-visible\s*\{[^}]*\}/, "")],
     ["shrink prose below the floor", (c) => c.replace(/\.dim \{ color: var\(--dim\); font-size: 15px; \}/, ".dim { color: var(--dim); font-size: 11px; }")],
+    // THE REGRESSION TEST FOR A DEFECT THAT WAS ACTUALLY LIVE. Put the dark theme's on-accent text
+    // back to white — exactly what `.skip` shipped with — and the gate must go red at 2.72:1. If
+    // this ever survives, the pair has been un-declared again and the skip link can silently fail.
+    ["revert --on-acc to white in dark (the shipped defect)",
+      (c) => c.replace(/(@media \(prefers-color-scheme: dark\)[\s\S]*?)--on-acc: #0d1017;/, "$1--on-acc: #ffffff;")],
   ];
   const orig = css;
   for (const [name, fn] of mutate) {

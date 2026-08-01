@@ -1,8 +1,11 @@
-import { renderMarkdown } from '../../lib/md';
+import { createHash } from "crypto";
+import { renderMarkdown, stripLeadingH1 } from '../../lib/md';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { docs, pageBySlug, pagesInCorpus } from "../../lib/docs";
 import { Cite } from "../../components/Cite";
+import { ReadingLane } from "../../components/ReadingLane";
+import { lensFor, orientationFor } from "../../lib/lenses";
 
 /**
  * Every ingested document becomes a real page here — not a title in an index.
@@ -35,9 +38,15 @@ export default async function WikiPage({ params }: { params: Promise<{ slug: str
   const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
 
   // The H1 is rendered by the page header below, so strip the leading one from the body to avoid
-  // showing the title twice.
-  const body = page.body.replace(/^#\s+.+\r?\n/, "");
+  // showing the title twice. Both steps come from `lib/md` — NOT inlined here — because the
+  // Precise-identity gate re-runs this exact pair over `docs.json` and requires the result to match
+  // the shipped bytes. A transform that lives inline in a component cannot be imported by a gate,
+  // and an unverifiable transform is how "this page is the document" becomes an unchecked claim.
+  const body = stripLeadingH1(page.body);
   const html = renderMarkdown(body);
+  // The digest of the PUBLISHED bytes, distinct from page.sha256 (which ingest_docs computes before
+  // redaction). Both go into the lane's sentinel so a re-redaction cannot slip past unnoticed.
+  const bodySha = createHash("sha256").update(page.body, "utf8").digest("hex").slice(0, 16);
 
   return (
     <article>
@@ -66,18 +75,31 @@ export default async function WikiPage({ params }: { params: Promise<{ slug: str
         </div>
       ) : null}
 
-      <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
+      <ReadingLane
+        preciseHtml={html}
+        preciseSha256={page.sha256}
+        preciseBodySha256={bodySha}
+        lens={lensFor("wiki", page.slug)}
+        orientation={orientationFor(page.corpus)}
+        sourceStamp={
+          <p className="lane__stamp lane__stamp--source">
+            <b>This is the document.</b> Rendered from the repository at the commit above, with
+            nothing rewritten for the web. A gate re-renders it on every deploy and fails the build
+            if a single byte differs.
+          </p>
+        }
+        sourceNote={
+          <p className="dim" style={{ marginTop: 26 }}>
+            <code>sha256 {page.sha256}</code> — of the <i>original</i> file, so what was ingested
+            stays checkable.
+          </p>
+        }
+      />
 
       <nav className="pager">
         {prev ? <Link href={`/wiki/${prev.slug}/`}>← {prev.title}</Link> : <span />}
         {next ? <Link href={`/wiki/${next.slug}/`}>{next.title} →</Link> : <span />}
       </nav>
-
-      <p className="dim" style={{ marginTop: 26 }}>
-        This page is the document itself, rendered from the repository at the commit above —{" "}
-        <code>sha256 {page.sha256}</code>. It is not a summary of that document and nothing was
-        rewritten for the web.
-      </p>
     </article>
   );
 }

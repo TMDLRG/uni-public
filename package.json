@@ -1,7 +1,7 @@
 {
   "name": "uni-public",
   "version": "0.1.0",
-  "description": "Universal Natural Intelligence \u2014 the public technical documentation of the UNI estate. Generated from the working repositories; every volatile number and every source citation is produced by a generator, not typed.",
+  "description": "Universal Natural Intelligence — the public technical documentation of the UNI estate. Generated from the working repositories; every volatile number and every source citation is produced by a generator, not typed.",
   "license": "MIT",
   "homepage": "https://universalnaturalintelligence.com",
   "repository": {
@@ -12,13 +12,13 @@
     "node": ">=20"
   },
   "scripts": {
-    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_onramp.cjs && node generators/build_gates.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
+    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_onramp.cjs && node generators/build_lenses.cjs && node generators/build_gates.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
     "dev": "next dev",
     "build": "npm run generate && next build",
     "start": "next start",
     "safe": "node safety/verify_publish_safe.cjs",
     "safe:prove": "node safety/verify_publish_safe.cjs --prove",
-    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node safety/verify_provenance.cjs && node generators/verify_public_consistency.cjs --prove",
+    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node safety/verify_provenance.cjs && node generators/verify_public_consistency.cjs --prove && node generators/verify_lenses.cjs --prove",
     "prepublish:check": "npm run gate && npm run build && node generators/verify_a11y.cjs --prove",
     "coverage": "node safety/verify_coverage.cjs",
     "coverage:prove": "node safety/verify_coverage.cjs --prove",
@@ -27,7 +27,10 @@
     "provenance": "node safety/verify_provenance.cjs",
     "gates": "node generators/build_gates.cjs",
     "a11y": "node generators/verify_a11y.cjs",
-    "a11y:prove": "node generators/verify_a11y.cjs --prove"
+    "a11y:prove": "node generators/verify_a11y.cjs --prove",
+    "lenses": "node generators/build_lenses.cjs",
+    "lenses:scaffold": "node generators/build_lenses.cjs --scaffold --corpus",
+    "lenses:prove": "node generators/verify_lenses.cjs --prove"
   },
   "dependencies": {
     "marked": "^18.0.7",

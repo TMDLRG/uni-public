@@ -1,5 +1,11 @@
 import { renderMarkdown } from '../../lib/md';
+// Plain ESM sibling, shared verbatim with generators/verify_lenses.cjs so the page and the gate
+// cannot disagree about how an article's HTML is assembled.
+import { resolvePlaceholders } from '../../lib/article_html.mjs';
+import { createHash } from "crypto";
 import Link from "next/link";
+import { ReadingLane } from "../../components/ReadingLane";
+import { lensFor, orientationFor } from "../../lib/lenses";
 import { notFound } from "next/navigation";
 import articlesBundle from "../../../content/generated/articles.json";
 
@@ -19,36 +25,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: a?.title ?? "Not found", description: a?.summary };
 }
 
-const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c] as string));
-
-function citeHtml(c: Cite) {
-  const where = `${c.path}${c.range ? ":" + c.range : ""}`;
-  return (
-    `<div class="cite">${esc(c.repo)} · ${esc(where)} @ ${esc(c.commit_short)} (${esc(c.branch)})` +
-    ` <span class="unresolved">— source repo not public, so this citation cannot be opened</span></div>`
-  );
-}
-
-function quoteHtml(q: Quote) {
-  const where = `${q.cite.path}:${q.cite.range}`;
-  return (
-    `<figure class="quote">` +
-    `<pre><code>${esc(q.text)}</code></pre>` +
-    `<figcaption>${esc(q.cite.repo)} · ${esc(where)} @ ${esc(q.cite.commit_short)}` +
-    ` — <b>these are the file's own bytes</b>, read at build time. If the range moves, the build fails.` +
-    `</figcaption></figure>`
-  );
-}
-
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = articles.find((x) => x.slug === slug);
   if (!a) notFound();
 
-  let html = renderMarkdown(a.body);
-  // The generator left ordered placeholders where each marker was; swap in the resolved blocks.
-  html = html.replace(/<!--CITE:(\d+)-->/g, (_, i) => citeHtml(a.cites[Number(i)]));
-  html = html.replace(/<!--QUOTE:(\d+)-->/g, (_, i) => quoteHtml(a.quotes[Number(i)]));
+  // Render, then swap the generator's ordered placeholders for the resolved citation blocks.
+  // BOTH steps come from `lib/` rather than living here, because the Precise-identity gate re-runs
+  // this exact pair and compares against the shipped bytes. An article's HTML is not just rendered
+  // markdown — miss the placeholder pass and the gate reports a false mismatch on all 13 articles.
+  const html = resolvePlaceholders(renderMarkdown(a.body), a.cites, a.quotes);
+  const bodySha = createHash("sha256").update(a.body, "utf8").digest("hex").slice(0, 16);
 
   const others = articles.filter((x) => x.slug !== a.slug);
 
@@ -68,7 +55,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         than becoming a stale line number nobody notices.
       </div>
 
-      <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
+      <ReadingLane
+        preciseHtml={html}
+        preciseSha256={bodySha}
+        preciseBodySha256={bodySha}
+        lens={lensFor("article", a.slug)}
+        orientation={orientationFor("articles")}
+        sourceStamp={
+          <p className="lane__stamp lane__stamp--source">
+            <b>This is the article as written.</b> Every citation and quoted block in it is resolved
+            against the real file at the real commit when the site is built.
+          </p>
+        }
+      />
 
       {others.length ? (
         <nav className="pager" style={{ flexWrap: "wrap", gap: 12 }}>

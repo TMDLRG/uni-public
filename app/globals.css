@@ -31,6 +31,7 @@
   --bad: #b23b36;
   --acc: #2f5c92;        /* the family blue, a touch deeper for AA on paper */
   --acc-soft: #e9f0f8;
+  --on-acc: #ffffff;     /* text ON the accent fill. See the dark block: #fff there is 2.72:1. */
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   --r: 14px;
@@ -51,6 +52,10 @@
     --bad: #e0645f;
     --acc: #9a92ee;      /* lightened for AA on dark */
     --acc-soft: #1a2233;
+    /* THE DEFECT THIS TOKEN EXISTS TO FIX: `color:#fff` on this --acc measures 2.72:1 and FAILS
+       WCAG AA. It was live on the skip link and nothing caught it, because verify_a11y's PAIRS
+       table is a DECLARED list and nobody had declared this pair. Ink-on-lilac is 7.00:1. */
+    --on-acc: #0d1017;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
   }
 }
@@ -59,12 +64,14 @@
 :root[data-theme="dark"] {
   --bg: #0d1017; --pan: #141923; --pan2: #1a2029; --ln: #242c3a; --ln2: #2f3a4c;
   --tx: #dfe5ee; --dim: #9aa6b6; --ok: #3fae8c; --warn: #d9a441; --bad: #e0645f;
-  --acc: #9a92ee; --acc-soft: #1a2233; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
+  --acc: #9a92ee; --acc-soft: #1a2233; --on-acc: #0d1017;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
 }
 :root[data-theme="light"] {
   --bg: #f3efe7; --pan: #ffffff; --pan2: #faf8f2; --ln: #e2ddce; --ln2: #d3ccba;
   --tx: #2b2824; --dim: #5f5a4c; --ok: #2a7040; --warn: #9a5a2c; --bad: #b23b36;
-  --acc: #2f5c92; --acc-soft: #e9f0f8; --shadow: 0 1px 2px rgba(45,38,26,.05), 0 5px 18px rgba(45,38,26,.06);
+  --acc: #2f5c92; --acc-soft: #e9f0f8; --on-acc: #ffffff;
+  --shadow: 0 1px 2px rgba(45,38,26,.05), 0 5px 18px rgba(45,38,26,.06);
 }
 
 * { box-sizing: border-box; }
@@ -84,7 +91,7 @@ body {
 /* Skip link: first focusable thing, hidden until focused, then lands on #main. */
 .skip {
   position: absolute; left: 12px; top: -60px; z-index: 100;
-  background: var(--acc); color: #fff; padding: 8px 14px; border-radius: 8px;
+  background: var(--acc); color: var(--on-acc); padding: 8px 14px; border-radius: 8px;
   text-decoration: none; font-size: 15px; transition: top .12s ease;
 }
 .skip:focus { top: 12px; }
@@ -212,7 +219,14 @@ figure.quote figcaption b { color: var(--ok); }
 .lanes__pick { display: inline-flex; gap: 2px; background: var(--pan2); border: 1px solid var(--ln); border-radius: 999px; padding: 3px; }
 .lanes__pick label { font-size: 14px; padding: 5px 14px; border-radius: 999px; cursor: pointer; color: var(--dim); user-select: none; }
 .lanes input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.lanes input:focus-visible + .lanes__pick label[data-for-focus] { outline: 3px solid var(--acc); }
+/* FOCUS — rewritten 2026-08-01, because the shipped rule could not fire.
+ * It was `.lanes input:focus-visible + .lanes__pick label[data-for-focus]`, which needs an <input>
+ * to be the IMMEDIATE PREVIOUS SIBLING of `.lanes__pick`. With three inputs and one pill container
+ * only the third input could ever match, and it would decorate one fixed label — so a keyboard user
+ * tabbing to Plain or Clear got no visible indicator at all. Putting each input directly before its
+ * own label lets the adjacent-sibling combinator do the obvious, correct thing. An invisible focus
+ * ring on the one control that exists to help people is the last place to ship a silent defect. */
+.lanes input:focus-visible + label { outline: 3px solid var(--acc); outline-offset: 2px; }
 .lane { display: none; margin-top: 16px; }
 /* default: show Precise */
 .lanes[data-default="precise"] .lane--precise { display: block; }
@@ -225,9 +239,45 @@ figure.quote figcaption b { color: var(--ok); }
 /* the chosen pill lights up */
 .lanes:has(#lane-plain:checked) label[for="lane-plain"],
 .lanes:has(#lane-clear:checked) label[for="lane-clear"],
-.lanes:has(#lane-precise:checked) label[for="lane-precise"] { background: var(--acc); color: #fff; }
+.lanes:has(#lane-precise:checked) label[for="lane-precise"] { background: var(--acc); color: var(--on-acc); }
 .lane--plain { font-size: 19px; line-height: 1.75; }
 .lane--clear { font-size: 17px; line-height: 1.72; }
+
+/* NO-`:has()` FALLBACK. Every visibility rule above is a `:has()` selector. In a browser without it
+ * the pills do nothing, and `[data-default]` alone would still show Precise — which is the right
+ * failure. This says so out loud rather than leaving a dead control on the page. */
+@supports not (selector(:has(*))) {
+  .lanes__pick { display: none; }
+  .lanes__nohas { display: block; }
+}
+.lanes__nohas { display: none; color: var(--dim); font-size: 14px; margin: 10px 0 0; }
+
+/* THE STAMPS. Real text in the DOM, never CSS `::before` content — a stamp a screen reader cannot
+ * announce, that vanishes when the stylesheet fails, and that a copy-paste drops, is decoration
+ * pretending to be a label. These say which lane you are reading and who wrote it. */
+.lane__stamp { font-size: 14.5px; line-height: 1.6; margin: 0 0 14px; padding: 10px 13px; border-radius: 10px; border: 1px solid var(--ln); }
+.lane__stamp--source { background: color-mix(in srgb, var(--ok) 9%, var(--pan)); border-color: color-mix(in srgb, var(--ok) 34%, var(--ln)); }
+.lane__stamp--source b { color: var(--ok); }
+.lane__stamp--authored { background: color-mix(in srgb, var(--warn) 10%, var(--pan)); border-color: color-mix(in srgb, var(--warn) 36%, var(--ln)); }
+.lane__stamp--authored b { color: var(--warn); }
+.lane__jump { display: inline-block; margin-left: 4px; color: var(--acc); text-decoration: underline; cursor: pointer; }
+.lane__foot { font-size: 13px; margin-top: 18px; }
+
+/* The orientation panel — one authored paragraph per corpus, above the lane. */
+.lane-intro { margin: 20px 0 6px; }
+.orient { background: var(--pan2); border: 1px solid var(--ln); border-left: 3px solid var(--acc); border-radius: 10px; padding: 13px 16px; margin-top: 10px; font-size: 16px; }
+.orient p:first-child { margin-top: 0; }
+.orient p:last-child { margin-bottom: 0; }
+.lanes__pending { color: var(--dim); font-size: 14.5px; margin: 12px 0 0; }
+
+/* PRINT — a printed page must be the DOCUMENT, never a summary of it. `display:none` on the other
+ * lanes also means find-in-page cannot reach them; that is a real limitation of a no-JS control and
+ * it is stated in the stamp rather than hidden. */
+@media print {
+  .lanes__pick, .lanes__nohas, .lane__jump { display: none !important; }
+  .lane--plain, .lane--clear { display: none !important; }
+  .lane--precise { display: block !important; }
+}
 
 /* ── THE ON-RAMP (/start) — the gentle threshold ── */
 .threshold { max-width: 720px; margin: 8px auto 0; text-align: center; }
