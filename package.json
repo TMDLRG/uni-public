@@ -1,7 +1,7 @@
 {
   "name": "uni-public",
   "version": "0.1.0",
-  "description": "Universal Natural Intelligence — the public technical documentation of the UNI estate. Generated from the working repositories; every volatile number and every source citation is produced by a generator, not typed.",
+  "description": "Universal Natural Intelligence \u2014 the public technical documentation of the UNI estate. Generated from the working repositories; every volatile number and every source citation is produced by a generator, not typed.",
   "license": "MIT",
   "homepage": "https://universalnaturalintelligence.com",
   "repository": {
@@ -12,18 +12,20 @@
     "node": ">=20"
   },
   "scripts": {
-    "generate": "node generators/build_content.cjs",
+    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
     "dev": "next dev",
-    "build": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && next build",
+    "build": "npm run generate && next build",
     "start": "next start",
     "safe": "node safety/verify_publish_safe.cjs",
     "safe:prove": "node safety/verify_publish_safe.cjs --prove",
-    "gate": "node safety/verify_publish_safe.cjs --prove && node generators/verify_generated.cjs",
-    "prepublish:check": "npm run gate && npm run build"
+    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node generators/verify_generated.cjs",
+    "prepublish:check": "npm run gate && npm run build",
+    "coverage": "node safety/verify_coverage.cjs",
+    "coverage:prove": "node safety/verify_coverage.cjs --prove"
   },
   "dependencies": {
     "marked": "^18.0.7",
-    "next": "15.5.4",
+    "next": "^16.2.12",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },

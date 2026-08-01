@@ -30,6 +30,34 @@ export default function Home() {
         them was false 176 seconds after it was written.
       </div>
 
+      <h2>Where to start</h2>
+      <div className="card">
+        <p>
+          Four routes in, depending on what you came for. Every command in them is quoted from the
+          file that defines it, so a command that moves fails this site&rsquo;s build rather than
+          rotting on the page.
+        </p>
+        <ul className="toc">
+          <li>
+            <a href="/articles/quick-start/"><b>Quick start</b></a> — fifteen minutes from nothing to a
+            running active-inference engine. No GPU, no accounts, no network after the first fetch.
+          </li>
+          <li>
+            <a href="/articles/start-here/"><b>Start here</b></a> — what this is, in the order you have
+            to meet it. Six ideas, each needed for the next.
+          </li>
+          <li>
+            <a href="/articles/install/"><b>Install</b></a> and{" "}
+            <a href="/articles/run-it/"><b>Run it</b></a> — every prerequisite with the version the
+            estate really declares, then every runnable entry point with its real command.
+          </li>
+          <li>
+            <a href="/coverage/"><b>Coverage</b></a> — the proof that nothing here is unaccounted for,
+            computed and gated rather than claimed.
+          </li>
+        </ul>
+      </div>
+
       <h2>Measured right now</h2>
       <div className="grid">
         {gates && (

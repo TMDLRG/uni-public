@@ -22,11 +22,12 @@ response was to stop writing numbers and start generating them.
 
 | | |
 |---|---|
-| **Articles** | Six written explanations of the system. The only authored pages on the site. |
-| **Wiki** | 300+ documents from the estate's repositories, rendered as they are written. |
+| **Articles** | Thirteen written explanations and guides. The only authored pages on the site. |
+| **Wiki** | ~290 documents from the estate's repositories, rendered as they are written, grouped by intent. |
 | **Gates** | The registered executable checks, each with its own statement of the defect it exists for. |
 | **Evidence** | Receipts, pre-registrations and adversarial review verdicts — including one that came back FAIL. |
-| **What is not here** | Every document withheld, with the category of the reason and its sha256. |
+| **Coverage** | The computed proof that nothing is unaccounted for. |
+| **What is not here** | Every document withheld or deduplicated, with the reason and its sha256. |
 
 ## Three things worth knowing before you read
 
@@ -58,6 +59,28 @@ those read the estate's **private** repositories. They cannot run here and they 
 generated content in `content/generated/` is committed precisely so this site builds from this
 repository alone, with no access to anything private. That property is verified by cloning this repo
 into an empty directory and building it — which is how each release is rehearsed.
+
+## The coverage gate
+
+```bash
+node safety/verify_coverage.cjs --prove
+```
+
+**Coverage here is computed and gated, never claimed.** Every subsystem, every runnable command, every
+document type and every published page must be either **covered** or **explicitly excluded with a
+reason**; anything that is neither fails by name.
+
+Two of the four denominators are taken from the world rather than from a list somebody wrote: runnable
+entry points are **discovered** by walking the source repositories for shapes — servers that bind a
+port, CLI tasks, bring-up scripts, package scripts — and pages are **discovered** from the ingest. Add
+a server to the estate and this gate goes red naming it. The other two axes are editorial and the gate
+prints which is which on every run, because a declared denominator and a discovered one are not equally
+strong evidence.
+
+This exists because the previous version of this site published 304 correct documents and called
+itself a user guide. Every page was reachable; none of it was findable, and the largest section was 85
+documents in one alphabetical list. Those are different properties and only the first had ever been
+checked.
 
 ## The safety gate
 

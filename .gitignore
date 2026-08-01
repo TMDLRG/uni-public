@@ -42,3 +42,4 @@ dist/
 
 # Absolute paths map the operator's filesystem. Same rule as the denylist: local only.
 generators/roots.local.json
+.vercel

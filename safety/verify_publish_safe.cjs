@@ -77,6 +77,33 @@ const STRUCTURAL = [
   ["slack-token", /\bxox[abprs]-[A-Za-z0-9-]{10,}\b/g],
   ["stripe-key", /\b[sr]k_(?:live|test)_[A-Za-z0-9]{16,}\b/g],
   ["jwt", /\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b/g],
+
+  // ── CREDENTIAL ASSIGNMENTS ────────────────────────────────────────────────────────────────────
+  // ADDED 2026-08-01 BECAUSE THIS GATE HAD ALREADY PASSED A SITE THAT PUBLISHED ONE. Everything
+  // above this block matches a vendor's key FORMAT — AWS, GitHub, Anthropic, Slack, Stripe. Nothing
+  // matched the oldest credential shape in computing, `name=value`, so the live site shipped a
+  // Minecraft RCON password on six pages and an Erlang distribution cookie on nine, in clear, and
+  // this gate reported 8/8.
+  //
+  // An Erlang cookie is not a nuisance credential. It is the BEAM's shared secret; possession plus
+  // reachability of the distribution port is remote code execution on the node.
+  //
+  // The lesson is not "add more patterns". It is that a table of thirteen vendor formats LOOKED like
+  // credential coverage and was coverage of five companies. Shapes with names are easy to enumerate
+  // and easy to mistake for the set.
+  // The negative lookahead keeps the gate from convicting its own cure: after redaction the text
+  // reads `--cookie [redacted: credential]`, and a rule that fires on THAT would make a cleaned file
+  // indistinguishable from a dirty one — every fix would look like the defect it repaired.
+  ["credential-flag", /(?:--cookie|-setcookie|--password|--pass|--secret|--token)[ =]+(?!\[redacted)[^\s"'`]+/g],
+  // The second lookahead separates a credential from CODE. Minified JavaScript in the export assigns
+  // `s.password=r.password` inside a URL parser six times, and a rule that convicts that is a rule
+  // whose failures get skimmed — which is how a real hit goes unread. So a value that begins with an
+  // identifier followed by `.` or `(` is a reference or a call, not a literal, and is not a credential.
+  //
+  // The cost is stated rather than hidden: a credential whose value genuinely looks like `a.b` would
+  // slip this rule. That is a narrow gap, the vendor-format patterns above still apply to it, and the
+  // operator's denied-value list is the backstop. A gate nobody reads has a much wider gap than that.
+  ["credential-assignment", /[A-Za-z_][A-Za-z0-9_.]*(?:password|passwd|secret|cookie|api_?key)\s*=\s*(?!\[redacted)(?![A-Za-z_$][\w$]*[.(])[^\s"'`,;)\][]+/gi],
 ];
 
 // Paths that must never exist in this repo at all, by name.

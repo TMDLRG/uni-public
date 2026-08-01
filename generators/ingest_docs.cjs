@@ -170,11 +170,38 @@ function judge(text) {
 //      tells a reader that a name was there and roughly where to start looking.
 const MAX_REDACTIONS = 10;
 
+// A third element, when present, is the capture group holding the VALUE. Only that group is replaced,
+// so an RCON password assignment keeps its key, loses its value, and the sentence still reads.
+// Blanking the whole match would delete the fact that a password is configured there at all, which is
+// the thing a reader most needs to know.
+//
+// This comment used to demonstrate the rule with the real before-and-after text, which meant this
+// file — in the PUBLIC repository — carried the very value the rule was written to remove. The gate
+// caught it. Explaining a redaction is not a licence to reproduce what was redacted.
 const REDACTABLE = [
   ["private-address", /\b(?:10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|192\.168)\.\d{1,3}\.\d{1,3}\b/g],
   ["tailscale-address", /\b100\.(?:6[4-9]|[7-9]\d|1\d\d|2[0-4]\d|25[0-5])\.\d{1,3}\.\d{1,3}\b/g],
   ["internal-hostname", /\b[a-z0-9-]+\.(?:uni-lab|lab)\.local\b/gi],
   ["operator-path", /[A-Za-z]:[\\/]Users[\\/][A-Za-z0-9._-]+/g],
+
+  // ── CREDENTIAL VALUES ─────────────────────────────────────────────────────────────────────────
+  // ADDED 2026-08-01, AFTER THIS SITE HAD ALREADY PUBLISHED THEM. The live site was serving a
+  // Minecraft RCON password and, on nine pages, an Erlang distribution cookie — both in clear, each
+  // inline beside the flag that sets it. An Erlang cookie is not a nuisance credential: it is the
+  // BEAM's shared secret, and
+  // possession of it plus reachability of the distribution port is remote code execution on the node.
+  //
+  // The pattern table above had a `token-shape` rule that matched AWS, GitHub, Slack and Anthropic key
+  // FORMATS, and nothing at all matched the oldest credential shape there is — `name=value`. It looked
+  // like credential coverage and was coverage of four vendors.
+  //
+  // Note the anchors. The first draft of this rule began `\b(?:--cookie|...)` and matched ZERO of the
+  // nine pages, because a word boundary between a space and a hyphen does not exist. It scanned clean
+  // and proved nothing, which is the failure mode every rule here is written against.
+  ["credential", /(?:--cookie|-setcookie)[ =]+([^\s"'`]+)/gi, 1],
+  ["credential", /(?:--password|--pass|--secret|--token)[ =]+([^\s"'`]+)/gi, 1],
+  ["credential", /[A-Za-z_][A-Za-z0-9_.]*(?:password|passwd|secret|cookie|api_?key)\s*=\s*([^\s"'`,;)]+)/gi, 1],
+  ["credential", /passwords?\b[^\n]{0,24}?`([A-Za-z0-9_.-]{1,40})`/gi, 1],
 ];
 
 // A denied value present at all => refuse. Never redact these.
@@ -186,12 +213,38 @@ function hasDenied(text) {
 function redact(text) {
   let out = text;
   const counts = {};
-  for (const [label, re] of REDACTABLE) {
-    out = out.replace(re, () => { counts[label] = (counts[label] || 0) + 1; return `[redacted: ${label}]`; });
+  for (const [label, re, valueGroup] of REDACTABLE) {
+    out = out.replace(re, (match, ...groups) => {
+      counts[label] = (counts[label] || 0) + 1;
+      const marker = `[redacted: ${label}]`;
+      if (!valueGroup) return marker;
+      // Replace only the value, keeping the surrounding text: the reader must still be able to see
+      // that a credential is configured, where, and under what name.
+      const value = groups[valueGroup - 1];
+      const at = match.lastIndexOf(value);
+      return at < 0 ? marker : match.slice(0, at) + marker + match.slice(at + value.length);
+    });
   }
   const total = Object.values(counts).reduce((a, b) => a + b, 0);
   return { text: out, counts, total };
 }
+
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// DEDUPLICATION — the same document is not two documents
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// Measured 2026-08-01: the math workbench is a git WORKTREE of the flagellum repository on a
+// different branch, so its docs/ directory is largely the same docs/ directory. Of its 13 documents,
+// ELEVEN were byte-identical to a flagellum page already ingested — the wiki was publishing them
+// twice under two names. Two genuinely differ (the branch has moved on) and those stay.
+//
+// A duplicate page is not a neutral cost. This site's whole claim to being a guide rather than a
+// dump rests on a reader being able to find the one right page, and two identical pages is the
+// smallest possible version of the failure this rebuild exists to correct.
+//
+// The drop is RECORDED, not silent — same rule as a refusal. A reader can see which document was
+// deduplicated and against what, and the sha256 proves the claim of identity rather than asserting it.
+const duplicates = [];
+const seenDigest = new Map();          // sha256 → the slug that got there first
 
 // ─── run ─────────────────────────────────────────────────────────────────────────────────────────
 const pages = [];
@@ -201,13 +254,13 @@ let redactedCount = 0;
 
 for (const c of CORPORA) {
   const root = ROOTS[c.root_key];
-  if (!root || !fs.existsSync(root)) { corporaOut.push({ ...meta(c), available: false, reason: `no path mapped for root_key '${c.root_key}'`, pages: 0, refused: 0 }); continue; }
+  if (!root || !fs.existsSync(root)) { corporaOut.push({ ...meta(c), available: false, reason: `no path mapped for root_key '${c.root_key}'`, pages: 0, refused: 0, deduped: 0 }); continue; }
   const base = path.join(root, c.dir);
-  if (!fs.existsSync(base)) { corporaOut.push({ ...meta(c), available: false, reason: `directory '${c.dir}' not present`, pages: 0, refused: 0 }); continue; }
+  if (!fs.existsSync(base)) { corporaOut.push({ ...meta(c), available: false, reason: `directory '${c.dir}' not present`, pages: 0, refused: 0, deduped: 0 }); continue; }
 
   const commit = git(root, ["rev-parse", "HEAD"]);
   const branch = git(root, ["rev-parse", "--abbrev-ref", "HEAD"]);
-  let kept = 0, dropped = 0;
+  let kept = 0, dropped = 0, deduped = 0;
 
   for (const rel of walkMd(base)) {
     if ((c.exclude || []).some((re) => re.test(rel))) continue;
@@ -244,6 +297,16 @@ for (const c of CORPORA) {
       continue;
     }
 
+    // Identity is proved by digest, never by filename. Two files with the same name and different
+    // contents are two documents; two files with different names and the same bytes are one.
+    const full = sha256(text);
+    if (seenDigest.has(full)) {
+      deduped++;
+      duplicates.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, same_as: seenDigest.get(full) });
+      continue;
+    }
+    seenDigest.set(full, `${c.id}/${slugify(rel)}`);
+
     kept++;
     if (red.total) redactedCount++;
     pages.push({
@@ -258,7 +321,7 @@ for (const c of CORPORA) {
       citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: `${c.dir}/${rel}`, visibility: "private", resolvable: false },
     });
   }
-  corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped });
+  corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped, deduped });
 }
 
 function meta(c) { return { id: c.id, title: c.title, blurb: c.blurb, exclude_reason: c.exclude_reason || null, off_main_nav: !!c.off_main_nav }; }
@@ -279,13 +342,22 @@ const bundle = {
     count: refused.length,
     items: refused,
   },
+  duplicates: {
+    note: [
+      "NOT RENDERED because an identical document was already ingested from another corpus, proved by",
+      "sha256 rather than by filename. Listed rather than dropped in silence: a reader can see that the",
+      "document exists, which copy is published, and check the identity claim for themselves.",
+    ],
+    count: duplicates.length,
+    items: duplicates,
+  },
 };
 fs.writeFileSync(path.join(OUT, "docs.json"), JSON.stringify(bundle, null, 1) + "\n", "utf8");
 
 const totalBytes = pages.reduce((n, p) => n + p.bytes, 0);
-console.log(`ingested ${pages.length} page(s), ${(totalBytes / 1024).toFixed(0)} KB; REFUSED ${refused.length}`);
+console.log(`ingested ${pages.length} page(s), ${(totalBytes / 1024).toFixed(0)} KB; REFUSED ${refused.length}; DEDUPLICATED ${duplicates.length}`);
 for (const c of corporaOut) {
-  console.log(`  ${c.id.padEnd(16)} ${c.available ? String(c.pages).padStart(4) + " pages, " + String(c.refused).padStart(3) + " refused" : "UNAVAILABLE: " + c.reason}`);
+  console.log(`  ${c.id.padEnd(16)} ${c.available ? String(c.pages).padStart(4) + " pages, " + String(c.refused).padStart(3) + " refused, " + String(c.deduped).padStart(3) + " duplicate" : "UNAVAILABLE: " + c.reason}`);
 }
 const byReason = {};
 for (const r of refused) for (const x of r.reasons) byReason[x] = (byReason[x] || 0) + 1;

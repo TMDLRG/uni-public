@@ -75,6 +75,53 @@ export default function Omissions() {
         </section>
       ))}
 
+      <h2>Deduplicated</h2>
+      <section className="card">
+        <p>
+          {docs.duplicates.count} document{docs.duplicates.count === 1 ? " was" : "s were"} not
+          rendered because an <b>identical</b> document had already been ingested from another
+          repository — proved by sha256, never by filename. Two files with the same name and different
+          contents are two documents; two files with different names and the same bytes are one.
+        </p>
+        <p className="dim">
+          These arise because one repository is a git worktree of another on a different branch, so
+          its documentation directory is largely the same directory. Publishing both copies would put
+          the same page in the wiki twice under two names, which is the smallest possible version of
+          the findability problem this site is built to avoid.
+        </p>
+        {docs.duplicates.count ? (
+          <table>
+            <thead>
+              <tr><th>Not rendered</th><th>Identical to</th><th>Size</th><th>sha256</th></tr>
+            </thead>
+            <tbody>
+              {docs.duplicates.items.map((d) => (
+                <tr key={`${d.corpus}/${d.path}`}>
+                  <td className="mono">{d.path}</td>
+                  <td className="mono">{d.same_as}</td>
+                  <td className="mono">{(d.bytes / 1024).toFixed(1)} KB</td>
+                  <td className="mono">{d.sha256}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : null}
+      </section>
+
+      <h2>Everything that IS here, accounted for</h2>
+      <section className="card">
+        <p>
+          This page is one half of a pair. It names what was withheld; the{" "}
+          <a href="/coverage/">coverage page</a> names what was kept and proves that every subsystem,
+          every runnable command, every document type and every published page is either covered or
+          excluded on purpose.
+        </p>
+        <p className="dim">
+          A site that only publishes its omissions still leaves a reader unable to tell thorough from
+          selective. Both halves are needed and both are computed rather than asserted.
+        </p>
+      </section>
+
       <h2>The limit of this page</h2>
       <section className="card">
         <p>

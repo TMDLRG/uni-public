@@ -27,6 +27,8 @@ export type Corpus = {
   commit_short?: string;
   pages: number;
   refused: number;
+  /** Dropped because an identical document was already ingested elsewhere, proved by sha256. */
+  deduped?: number;
 };
 
 export type Refusal = {
@@ -43,6 +45,16 @@ export const docs = docsBundle as unknown as {
   corpora: Corpus[];
   pages: WikiPage[];
   refused: { note: string[]; count: number; items: Refusal[] };
+  duplicates: { note: string[]; count: number; items: Duplicate[] };
+};
+
+export type Duplicate = {
+  corpus: string;
+  path: string;
+  bytes: number;
+  sha256: string;
+  /** The slug of the copy that IS published. Identity is proved by digest, never by filename. */
+  same_as: string;
 };
 
 export const pageBySlug = (slug: string): WikiPage | undefined =>

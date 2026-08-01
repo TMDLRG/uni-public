@@ -1,0 +1,44 @@
+{
+ "generated_by": "safety/verify_coverage.cjs",
+ "note": [
+  "The coverage table the site renders. Written from the same evaluation that gates the build, so",
+  "the published figure and the enforced figure cannot differ — a page that recomputed its own",
+  "number would be a second measurement able to disagree with the one that actually holds."
+ ],
+ "axes": [
+  {
+   "id": "subsystems",
+   "label": "Subsystems",
+   "denominator": "declared",
+   "total": 8,
+   "covered": 8,
+   "excluded": 0
+  },
+  {
+   "id": "entry_points",
+   "label": "Entry points",
+   "denominator": "discovered",
+   "total": 104,
+   "covered": 80,
+   "excluded": 24
+  },
+  {
+   "id": "document_types",
+   "label": "Document types",
+   "denominator": "declared",
+   "total": 8,
+   "covered": 8,
+   "excluded": 0
+  },
+  {
+   "id": "pages",
+   "label": "Published pages",
+   "denominator": "discovered",
+   "total": 292,
+   "covered": 292,
+   "excluded": 0
+  }
+ ],
+ "ok": true,
+ "problems": []
+}

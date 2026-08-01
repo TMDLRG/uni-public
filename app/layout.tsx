@@ -29,6 +29,7 @@ const NAV = [
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
   { href: "/evidence/", label: "Evidence" },
+  { href: "/coverage/", label: "Coverage" },
   { href: "/omissions/", label: "What is not here" },
 ];
 
