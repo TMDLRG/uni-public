@@ -62,8 +62,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               rot — that failure is the reason the generator exists.
             </p>
             <p className="dim">
-              Released under the MIT Licence. Adverse results, failing gates and known limitations are
-              published alongside the work, not omitted from it.
+              Released under the MIT Licence. Adverse results and known limitations are published
+              alongside the work, not omitted from it. This footer used to promise <i>failing
+              gates</i> too — corrected 2026-08-01, because the gates page publishes each gate&rsquo;s
+              venue and not its verdict, so that promise was not being kept. It is stated on{" "}
+              <Link href="/gates/">that page</Link> instead of claimed here.
             </p>
           </div>
         </footer>

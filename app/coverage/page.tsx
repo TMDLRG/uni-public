@@ -36,8 +36,29 @@ export default function Coverage() {
         itself a user guide — every page reachable, none of it findable, the largest section 85
         documents in one alphabetical list. &ldquo;100% coverage&rdquo; means nothing without a
         denominator, so two of the four denominators below are taken from the world rather than from a
-        list somebody wrote: add a server to the estate, or a document, and this table goes red naming
-        it until somebody decides where a reader should meet it.
+        list somebody wrote.
+      </div>
+
+      <div className="note">
+        <b>The scope of &ldquo;discovered&rdquo;, stated exactly — because it was overstated here
+        until 2026-08-01.</b> This box used to say <i>&ldquo;add a server to the estate and this table
+        goes red naming it.&rdquo;</i> That is not true of the estate; it is true of four directories.
+        <p>
+          Discovery walks <code>lib/mix/tasks</code>, <code>viewer</code> and <code>scripts</code> in
+          the colony repository, plus the package manifests of two others. A forensic review found a
+          real server outside those roots — <code>production/guest/pubgate/server.cjs</code>, which
+          binds a port on all interfaces — that is in neither the covered list nor the excluded one,
+          and 52 runnable scripts under <code>runs/</code> against the 16 under <code>scripts/</code>
+          that form the denominator. The table below is honest about those four roots and says nothing
+          about the rest of the estate.
+        </p>
+        <p className="dim">
+          The mutation that was supposed to prove the claim could not have: it appended a fabricated
+          entry to the discovery <i>result</i> rather than putting a file on <i>disk</i>, so it proved
+          the axis reacts to a longer list and not that discovery finds a new file. It now writes a
+          real file into a real walk root. A proof-of-bite that cannot bite is the defect this whole
+          site is organised against, and it was sitting inside the check that says so.
+        </p>
       </div>
 
       <h2>The four axes</h2>

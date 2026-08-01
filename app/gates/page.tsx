@@ -34,6 +34,29 @@ export default function Gates() {
         passes. An unrun check is not a passing check.
       </p>
 
+      <div className="note">
+        <b>&ldquo;Run in CI&rdquo; on this page means INVOKED, not PASSING — and this table shows
+        venue, not verdict.</b> The pill beside each gate below says where it runs. It does not say
+        whether it passes, and it should not be read as though it did.
+        <p>
+          Stated plainly, because a forensic review on 2026-08-01 found this page could be read as a
+          clean bill of health and it is not one:{" "}
+          <b>the continuous-integration pipeline for the source estate has never reported success on
+          any commit</b> — measured that day as 77 runs, 77 failures, zero successes, across the
+          entire recorded history of the workflow. On the most recent run the gate runner reported
+          <b> 24 PASS and 5 FAIL</b>, and the Elixir job fails at compile, so the test suite does not
+          execute in CI at all.
+        </p>
+        <p className="dim">
+          That is disclosed here rather than left to be discovered because the alternative is a page
+          that shows thirty-two rows of green-looking pills over an estate whose pipeline has never
+          gone green. The registry is real, the mutation discipline is real, and the pass state is
+          not what a reader would assume from the pills. Until this page carries a per-gate verdict
+          generated from the runner rather than a venue label, treat it as an inventory of
+          instruments, not as evidence that they currently pass.
+        </p>
+      </div>
+
       <table>
         <thead>
           <tr>

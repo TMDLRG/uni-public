@@ -1090,10 +1090,31 @@ if (MODE.prove) {
 
   // The last two are different in kind: they change the WORLD, not the files. A new runnable thing
   // appears and nobody writes about it; a whole class of runnable thing stops being discovered.
-  const withNewEntryPoint = () => ({
-    available: true,
-    items: [...discovered.items, { id: "server:uni-minecraft:brand_new_server.cjs", klass: "server", root: "uni-minecraft", what: "x", command: "node viewer/brand_new_server.cjs", defined_in: "viewer/brand_new_server.cjs" }],
-  });
+  // THIS MUTATION USED TO PROVE THE WRONG THING. It appended a fabricated object to the discovery
+  // RESULT, which demonstrates only that the axis reacts to a longer list -- something no reasonable
+  // person doubted. The claim being tested is that DISCOVERY FINDS A NEW FILE, and the old version
+  // never touched a disk, so it could not fail for the reason its label gave. A forensic review
+  // caught it while falsifying the published sentence it was supposed to support.
+  //
+  // It now writes a real .cjs that really calls .listen( into a real walk root, runs the real
+  // discovery, and cleans up. If discovery stops finding new files, this goes red.
+  const withNewEntryPoint = () => {
+    const roots = readJson(ROOTS_FILE).roots || {};
+    const probe = path.join(roots["uni-minecraft"], "viewer", "__coverage_probe_delete_me.cjs");
+    try {
+      fs.writeFileSync(probe, [
+        "// Temporary probe written by verify_coverage.cjs --prove and deleted in the same run.",
+        "// It must genuinely CALL .listen( — the discovery rule strips comments before testing, so a",
+        "// file that merely mentions it would not be found, which is the property being proved.",
+        'require("http").createServer().listen(0);',
+        "",
+      ].join("\n"), "utf8");
+      const d = discover();
+      return { probe, discovered: d, found: d.items.some((i) => /__coverage_probe_delete_me/.test(i.id)) };
+    } finally {
+      try { fs.unlinkSync(probe); } catch { /* best effort; it is a temp file in a walk root */ }
+    }
+  };
   // THE COLLAPSE THAT LOOKS LIKE SUCCESS: every remaining entry point is still documented, so the
   // coverage axes report a clean 100% — of a world that just lost a repository.
   const withShrunkenWorld = () => ({
@@ -1120,9 +1141,17 @@ if (MODE.prove) {
     } else { console.error(`  HOLE   ${name.padEnd(58)} — SURVIVED. This check does not bite.`); holes++; }
   }
   {
-    const h = halves(state, withNewEntryPoint());
-    if (h.axes) { console.log("  caught " + "a new undocumented server appearing in the estate".padEnd(58) + " [axes]"); caught++; }
-    else { console.error("  HOLE   a new undocumented server appearing in the estate — SURVIVED."); holes++; }
+    const probe = withNewEntryPoint();
+    if (!probe.found) {
+      console.error("  HOLE   a real new server file written into a walk root was NOT DISCOVERED — the");
+      console.error("         'add a server and this goes red' claim is false. Discovery is the thing under");
+      console.error("         test here, not the axis arithmetic.");
+      holes++;
+    } else {
+      const h = halves(state, probe.discovered);
+      if (h.axes) { console.log("  caught " + "a REAL new server file appearing on disk in a walk root".padEnd(58) + " [axes]"); caught++; }
+      else { console.error("  HOLE   a real new server file on disk — SURVIVED."); holes++; }
+    }
   }
   // THE ONE THAT MADE EVERY OTHER BOUND DECORATIVE. With the previous baseline unreadable — no git
   // on PATH, a shallow checkout, a worktree whose HEAD predates the file — the ratchet used to
