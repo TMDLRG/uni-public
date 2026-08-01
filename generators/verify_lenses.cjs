@@ -284,6 +284,12 @@ async function main() {
       if (!l.authored_by || !l.authored_at) faults.push(`${l.key}: no authored_by/authored_at`);
       if (l.review_state === "reviewed" && (!l.reviewed_by || !l.reviewed_at)) faults.push(`${l.key}: claims reviewed with no reviewer or date`);
       if (!["absent", "draft", "reviewed"].includes(l.review_state)) faults.push(`${l.key}: review_state '${l.review_state}'`);
+      // "absent" MEANS THERE IS NO LENS. 183 records once carried prose and declared absent, so the
+      // published tally read "183 absent" when every one had been written. The reader-facing stamp
+      // was right; the COUNT was false. build_lenses.cjs now derives the floor, and this catches
+      // anyone hand-editing lenses.json past it.
+      if ((l.plain || l.clear) && l.review_state === "absent")
+        faults.push(`${l.key}: carries prose but declares review_state 'absent' — "absent" means no lens exists, so this makes the published count false`);
     }
     faults.length
       ? bad("length bounds hold and every review record names a person and a date", faults.slice(0, 10).join(" · "))

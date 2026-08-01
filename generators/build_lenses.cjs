@@ -81,10 +81,21 @@ function parseLensFile(src) {
     if (kv) meta[kv[1]] = kv[2].trim();
   }
   const rest = m[2];
+  // A panel runs from its marker to the next marker or end of file — AND THEN EVERY HTML COMMENT IS
+  // STRIPPED OUT OF IT.
+  //
+  // That second step is not tidiness, it is a defect fix. The scaffold ends with an instruction
+  // block ("READ THE PUBLISHED BODY FROM content/generated/docs.json ... read AUTHORING.md first"),
+  // and that block sits AFTER the <!--CLEAR--> marker. Without stripping, every unedited scaffold
+  // swallowed those instructions into the Clear panel, and the gate then correctly convicted the
+  // LENS for naming `docs.json` and `AUTHORING.md` — terms its source document has never heard of.
+  // The prose was innocent; the parser was wrong. Caught by the number/name fence on the first real
+  // corpus, which is the fence doing precisely its job on its author.
   const grab = (tag) => {
     const re = new RegExp(`<!--${tag}-->([\\s\\S]*?)(?=<!--(?:PLAIN|CLEAR)-->|$)`);
     const g = re.exec(rest);
-    return g ? g[1].trim() : "";
+    if (!g) return "";
+    return g[1].replace(/<!--[\s\S]*?-->/g, "").trim();
   };
   return { meta, plain: grab("PLAIN"), clear: grab("CLEAR") };
 }
@@ -180,7 +191,8 @@ if (fs.existsSync(oDir)) {
       chars: md.length,
       authored_by: parsed.meta.authored_by || "",
       authored_at: parsed.meta.authored_at || "",
-      review_state: parsed.meta.review_state || "absent",
+      // Same derived floor as a lens (see below): this panel HAS prose, so it cannot be "absent".
+      review_state: (parsed.meta.review_state || "absent") === "absent" ? "draft" : parsed.meta.review_state,
       reviewed_by: parsed.meta.reviewed_by || null,
       reviewed_at: parsed.meta.reviewed_at || null,
       source_file: `content/lenses/orientation/${f}`,
@@ -190,6 +202,7 @@ if (fs.existsSync(oDir)) {
 
 const lenses = [];
 const faults = [];
+const derivedDraft = [];
 for (const t of targets) {
   const p = lensPath(t);
   if (!fs.existsSync(p)) continue;
@@ -205,6 +218,22 @@ for (const t of targets) {
     faults.push(`${rel}: source_body_sha256 stale — the PUBLISHED bytes changed (re-redaction?), so this lens describes text no reader now sees`);
 
   const panel = (md) => md ? { html: lensHtml(md), chars: md.length, words: (md.match(/\S+/g) || []).length, sha256: sha16(md) } : null;
+
+  // `absent` MEANS THERE IS NO LENS. A record carrying prose cannot be absent, and 183 of them
+  // were: the tally then read "183 absent", which a reader would take as "183 pages have no lens"
+  // when in fact every one had been written. The reader-facing stamp was right (anything not
+  // `reviewed` prints "not yet checked by a person"), but the COUNT was false, and a count nobody
+  // can trust is worse than no count.
+  //
+  // So the floor is DERIVED rather than trusted to an author remembering a field: content present
+  // and no explicit state means `draft`, which is exactly true — written, not yet read by a human.
+  // Deriving it hides nothing. `reviewed` is still never derived; it needs a name and a date, and
+  // the gate refuses it without them.
+  const declared = parsed.meta.review_state || "absent";
+  const hasProse = Boolean(parsed.plain || parsed.clear);
+  const reviewState = hasProse && declared === "absent" ? "draft" : declared;
+  if (reviewState !== declared) derivedDraft.push(rel);
+
   const rec = {
     scope: t.scope,
     key: t.key,
@@ -214,7 +243,7 @@ for (const t of targets) {
     source_words: t.words,
     authored_by: parsed.meta.authored_by || "",
     authored_at: parsed.meta.authored_at || "",
-    review_state: parsed.meta.review_state || "absent",
+    review_state: reviewState,
     reviewed_by: parsed.meta.reviewed_by || null,
     reviewed_at: parsed.meta.reviewed_at || null,
     plain: panel(parsed.plain),
@@ -272,3 +301,9 @@ fs.writeFileSync(OUT, JSON.stringify({
 
 console.log(`lenses.json — ${lenses.length}/${targets.length} route(s) lensed · ` +
   `${tally.reviewed || 0} reviewed · ${tally.draft || 0} draft · ${orientations.length} orientation(s)`);
+if (derivedDraft.length) {
+  console.log(`  ${derivedDraft.length} lens file(s) carried prose but declared review_state: absent. ` +
+    `Recorded as DRAFT, because "absent" means no lens exists and a count that says otherwise is false.`);
+  console.log(`  (The reader already saw the right thing — anything but "reviewed" prints "not yet ` +
+    `checked by a person". It was the TALLY that lied.)`);
+}
