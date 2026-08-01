@@ -1,0 +1,75 @@
+{
+ "note": [
+  "THE FLOOR. Every number here was MEASURED, and from now on coverage may not fall below it.",
+  "",
+  "This file exists because 'covered + excluded = total' stays true while the total shrinks and",
+  "while work moves from covered to excluded. Both keep the figure at 100% and both mean the site",
+  "documents less than it did. Neither is visible to the gate's other checks.",
+  "",
+  "Growth needs nothing: exceed a floor and the gate is happy. LOWERING one is allowed and must be",
+  "declared — the gate compares this file against its own committed version in git and fails if a",
+  "floor moved down with no new entry in `amendments`. A floor editable in the same commit that",
+  "breaches it is not a floor.",
+  "",
+  "Regenerate deliberately with: node safety/verify_coverage.cjs --baseline"
+ ],
+ "schema_version": 1,
+ "generated_by": "safety/verify_coverage.cjs --baseline",
+ "tolerance": {
+  "article_chars_fraction": 0.75,
+  "why": "Prose is edited and legitimately gets shorter. A fraction of 1.0 would make every tightening a gate failure and would teach people to raise the floor reflexively, which is worse than a slightly loose bound. This is a judgement, recorded as one."
+ },
+ "floors": {
+  "roots": [
+   "uni-cookbook",
+   "uni-flagellum",
+   "uni-minecraft",
+   "uni-workbench"
+  ],
+  "entry_point_classes": {
+   "mix-task": 8,
+   "server": 8,
+   "powershell": 42,
+   "elixir-script": 16,
+   "npm-script": 30
+  },
+  "entry_points_total": 104,
+  "entry_points_covered": 80,
+  "corpora_pages": {
+   "encyclopedia": 39,
+   "cookbook": 34,
+   "control-plane": 32,
+   "flagellum": 14,
+   "workbench": 2,
+   "minecraft": 84,
+   "evidence": 87
+  },
+  "pages_total": 292,
+  "subsystems": 8,
+  "document_types": 8,
+  "articles": 13,
+  "citations": 59,
+  "quotes": 15,
+  "curation_groups": 22,
+  "article_chars": {
+   "start-here": 3806,
+   "the-colony": 2657,
+   "the-producer": 2836,
+   "the-control-plane": 3324,
+   "the-brain": 4011,
+   "the-operator-plane": 3582,
+   "the-flagellar-motor": 5492,
+   "the-broadcast-suite": 12659,
+   "quick-start": 3645,
+   "install": 7492,
+   "run-it": 8678,
+   "maintenance": 8190,
+   "how-to": 5170
+  }
+ },
+ "ceilings": {
+  "entry_points_excluded": 24,
+  "pages_uncategorised": 0
+ },
+ "amendments": []
+}

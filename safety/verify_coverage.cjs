@@ -56,10 +56,12 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const HERE = __dirname;
 const REPO = path.resolve(HERE, "..");
 const MANIFEST = path.join(REPO, "content", "coverage-manifest.json");
+const BASELINE = path.join(REPO, "content", "coverage-baseline.json");
 const CURATION = path.join(REPO, "content", "curation.json");
 const ARTICLES = path.join(REPO, "content", "generated", "articles.json");
 const DOCS = path.join(REPO, "content", "generated", "docs.json");
@@ -169,11 +171,34 @@ function walkFiles(base, rel = "") {
 function discover() {
   if (!fs.existsSync(ROOTS_FILE)) return { available: false, reason: "generators/roots.local.json is absent", items: [] };
   const roots = readJson(ROOTS_FILE).roots || {};
+
+  // ── THE COLLAPSE VECTOR THIS CLOSES ────────────────────────────────────────────────────────────
+  // The first version of this loop said `if (!root || !fs.existsSync(root)) continue;` — a missing
+  // repository was silently skipped. That is the single worst failure this gate could have, because
+  // it is INVISIBLE AND IT REPORTS SUCCESS: move a repo, rename a folder, work from a different
+  // machine, and fifteen entry points stop existing. Coverage stays at 100% of a world that just got
+  // smaller, and the number goes UP in confidence exactly as it goes DOWN in meaning.
+  //
+  // A denominator that can quietly shrink is worse than no denominator, because the reader is given a
+  // figure and no reason to doubt it. So an unresolvable root is now FATAL and named.
+  const missing = [];
+  for (const [key, p] of Object.entries(roots)) if (!p || !fs.existsSync(p)) missing.push(key);
+  if (missing.length) {
+    return {
+      available: false,
+      reason:
+        `${missing.length} declared source root(s) do not resolve: ${missing.join(", ")}. ` +
+        "Coverage is refused rather than measured against whatever happens to be present — a shrinking " +
+        "denominator reports 100% while covering less, which is the one failure this gate exists to " +
+        "make impossible.",
+      items: [],
+    };
+  }
+
   const items = [];
   const seen = new Set();
   for (const c of CLASSES) {
     const root = roots[c.root];
-    if (!root || !fs.existsSync(root)) continue;
 
     if (c.packageJson) {
       const pj = path.join(root, c.packageJson);
@@ -216,6 +241,157 @@ function navPaths() {
   const block = /const\s+NAV\s*=\s*\[([\s\S]*?)\];/.exec(src);
   if (!block) return new Set();
   return new Set([...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1]));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// THE RATCHET — 100% must not COLLAPSE and must not REDUCE
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// A percentage is the most collapsible statistic there is. Covered ÷ total stays at 1.0 under two
+// completely different disasters, and neither of them looks like a failure from the outside:
+//
+//   COLLAPSE   the denominator shrinks. Fewer entry points discovered, fewer pages ingested, a
+//              corpus that stopped resolving. 100% of a smaller world, reported identically.
+//   REDUCTION  work moves from COVERED to EXCLUDED. Every exclusion carries a reason and the sum
+//              still closes, so the gate is satisfied while the guides document less each time.
+//
+// Both are invisible to a check that only asks "does covered + excluded equal the total". So the
+// gate also asserts against a COMMITTED FLOOR: every measured quantity must be at least what it was,
+// and the excluded ceiling must be no higher.
+//
+// AND THE FLOOR ITSELF IS RATCHETED. A baseline file can be edited down as easily as anything else,
+// so the working copy is compared against the version in git. Lowering any floor — or raising the
+// excluded ceiling — requires a new entry in `amendments` saying what was lowered and why. That is
+// the difference between a decision and a drift: both change the number, only one leaves a record.
+//
+// Growth is free and needs no ceremony, which matters because this estate adds servers and documents
+// constantly and a gate that fights ordinary work gets switched off.
+function ratchet({ manifest, curation, articles, docs, discovered, baseline }) {
+  const problems = [];
+  const notes = [];
+  if (!baseline) {
+    problems.push("content/coverage-baseline.json is absent — there is no floor, so coverage could fall to any level and still report 100%. Write one with: node safety/verify_coverage.cjs --baseline");
+    return { problems, notes, rows: [] };
+  }
+
+  const F = baseline.floors || {};
+  const C = baseline.ceilings || {};
+  const rows = [];
+
+  // `at least` / `at most` record every comparison so the table can be printed whether or not it
+  // failed. A ratchet nobody can see the state of is a ratchet nobody maintains.
+  const atLeast = (label, now, floor) => {
+    rows.push({ label, now, bound: floor, kind: "min", ok: now >= floor });
+    if (now < floor) problems.push(`REDUCED — ${label}: ${now}, below the committed floor of ${floor}. Coverage would still read 100%, of less.`);
+  };
+  const atMost = (label, now, ceiling) => {
+    rows.push({ label, now, bound: ceiling, kind: "max", ok: now <= ceiling });
+    if (now > ceiling) problems.push(`REDUCED — ${label}: ${now}, above the committed ceiling of ${ceiling}. Excluding more is how 100% is preserved while covering less.`);
+  };
+
+  // ── the discovered denominators: the collapse surface ─────────────────────────────────────────
+  const byClass = {};
+  for (const d of discovered.items) byClass[d.klass] = (byClass[d.klass] || 0) + 1;
+  for (const [klass, floor] of Object.entries(F.entry_point_classes || {})) {
+    atLeast(`entry points discovered · ${klass}`, byClass[klass] || 0, floor);
+  }
+  // A whole CLASS disappearing is the loudest version of the same defect: delete a row from the
+  // discovery table and every entry point of that kind stops existing, silently.
+  for (const klass of Object.keys(F.entry_point_classes || {})) {
+    if (!(klass in byClass)) problems.push(`COLLAPSED — the '${klass}' discovery class now finds nothing at all. Either the shape it looks for is gone from the estate, or the rule that looks for it was removed.`);
+  }
+  atLeast("entry points discovered · total", discovered.items.length, F.entry_points_total || 0);
+
+  const byCorpus = {};
+  for (const p of docs.pages) byCorpus[p.corpus] = (byCorpus[p.corpus] || 0) + 1;
+  for (const [corpus, floor] of Object.entries(F.corpora_pages || {})) {
+    atLeast(`pages published · ${corpus}`, byCorpus[corpus] || 0, floor);
+  }
+  atLeast("pages published · total", docs.pages.length, F.pages_total || 0);
+
+  // ── the covered side: the reduction surface ───────────────────────────────────────────────────
+  const eps = manifest.entry_points || [];
+  atLeast("entry points documented", eps.filter((e) => !e.excluded).length, F.entry_points_covered || 0);
+  atMost("entry points excluded", eps.filter((e) => e.excluded).length, C.entry_points_excluded ?? Infinity);
+  atLeast("subsystems", (manifest.subsystems || []).filter((s) => !s.excluded).length, F.subsystems || 0);
+  atLeast("document types", (manifest.document_types || []).filter((t) => !t.excluded).length, F.document_types || 0);
+  atLeast("articles", articles.articles.length, F.articles || 0);
+  atLeast("resolved citations", articles.articles.reduce((n, a) => n + (a.cites || []).length, 0), F.citations || 0);
+  atLeast("quoted source blocks", articles.articles.reduce((n, a) => n + (a.quotes || []).length, 0), F.quotes || 0);
+  atLeast("curated routes", (curation.groups || []).length, F.curation_groups || 0);
+  atMost("pages in no route", (curation.uncategorised || []).length, C.pages_uncategorised ?? Infinity);
+
+  // ── content depth: reduction that leaves every structural check satisfied ─────────────────────
+  // Every anchor can still match in an article gutted to a list of headings. The document-type check
+  // catches an outright stub at 400 characters; nothing catches a guide losing most of its substance
+  // while staying above that. So each article carries its own floor.
+  //
+  // The tolerance is a JUDGEMENT and is written down as one. Prose gets edited and legitimately gets
+  // shorter; a fraction of 1.0 would make every tightening pass a gate failure and teach people to
+  // raise the floor reflexively, which is worse than a slightly loose bound. 0.75 says: tighten
+  // freely, lose a quarter of a guide and say so out loud.
+  const frac = (baseline.tolerance && baseline.tolerance.article_chars_fraction) || 0.75;
+  const bySlug = new Map(articles.articles.map((a) => [a.slug, a]));
+  for (const [slug, floor] of Object.entries(F.article_chars || {})) {
+    const a = bySlug.get(slug);
+    if (!a) { problems.push(`REDUCED — article '${slug}' is gone. It was in the committed baseline.`); continue; }
+    const now = a.body.replace(/\s+/g, "").length;
+    const bound = Math.floor(floor * frac);
+    rows.push({ label: `substance · ${slug}`, now, bound, kind: "min", ok: now >= bound });
+    if (now < bound) problems.push(`REDUCED — article '${slug}' has ${now} characters of substance, below ${bound} (${Math.round(frac * 100)}% of its committed ${floor}). Every anchor can still match in a guide that has been hollowed out.`);
+  }
+
+  // ── the ratchet on the ratchet ────────────────────────────────────────────────────────────────
+  // Without this, everything above is a floor that can be lowered in the same commit that breaches
+  // it. The previous baseline comes from git rather than from another file, because a second file
+  // could be edited too — git history is the one record here that a working-tree edit cannot reach.
+  let prev = null;
+  try {
+    // stdio 'pipe' on stderr: on the very first run the file is not in HEAD and git says so loudly,
+    // which would read as an error in a passing run.
+    prev = JSON.parse(execFileSync("git", ["-C", REPO, "show", "HEAD:content/coverage-baseline.json"], { encoding: "utf8", maxBuffer: 1 << 24, stdio: ["ignore", "pipe", "pipe"] }));
+  } catch { /* not yet committed — reported below, never treated as a pass */ }
+
+  if (!prev) {
+    notes.push("no committed baseline in git yet, so this run cannot tell whether a floor was lowered. The NEXT run can, once this baseline is committed.");
+  } else {
+    const flat = (o, pre = "") => {
+      const out = {};
+      for (const [k, v] of Object.entries(o || {})) {
+        if (v && typeof v === "object" && !Array.isArray(v)) Object.assign(out, flat(v, pre + k + "."));
+        else if (typeof v === "number") out[pre + k] = v;
+      }
+      return out;
+    };
+    const nowF = flat(F), prevF = flat(prev.floors);
+    const nowC = flat(C), prevC = flat(prev.ceilings);
+    const loosened = [];
+    for (const [k, v] of Object.entries(prevF)) if (k in nowF && nowF[k] < v) loosened.push(`floor ${k}: ${v} → ${nowF[k]}`);
+    for (const [k, v] of Object.entries(prevF)) if (!(k in nowF)) loosened.push(`floor ${k} was DELETED (was ${v})`);
+    for (const [k, v] of Object.entries(prevC)) if (k in nowC && nowC[k] > v) loosened.push(`ceiling ${k}: ${v} → ${nowC[k]}`);
+    for (const [k, v] of Object.entries(prevC)) if (!(k in nowC)) loosened.push(`ceiling ${k} was DELETED (was ${v})`);
+    const prevTol = (prev.tolerance && prev.tolerance.article_chars_fraction) ?? 0.75;
+    if (frac < prevTol) loosened.push(`tolerance article_chars_fraction: ${prevTol} → ${frac}`);
+
+    const added = (baseline.amendments || []).length - (prev.amendments || []).length;
+    if (loosened.length && added <= 0) {
+      problems.push(
+        `THE FLOOR ITSELF WAS LOWERED WITH NO RECORDED AMENDMENT — ${loosened.length} change(s):\n    ` +
+        loosened.join("\n    ") +
+        "\n    A floor that can be edited down in the same commit that breaches it is not a floor." +
+        "\n    Lowering one is allowed; doing it silently is not. Add an entry to `amendments` saying" +
+        "\n    what was lowered and why, and this passes."
+      );
+    } else if (loosened.length) {
+      notes.push(`${loosened.length} floor/ceiling loosening(s), accounted for by ${added} new amendment(s): ${loosened.join("; ")}`);
+    }
+  }
+
+  for (const a of baseline.amendments || []) {
+    notes.push(`AMENDMENT ${a.date || "(undated)"} — ${a.what || "(unstated)"}: ${a.why || "(no reason given)"}`);
+    if (!a.date || !a.what || !a.why) problems.push(`an amendment is missing its date, what, or why. An amendment without a reason is the silent edit it was supposed to replace.`);
+  }
+
+  return { problems, notes, rows };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -403,7 +579,70 @@ function load() {
       process.exit(1);
     }
   }
-  return { manifest: readJson(MANIFEST), curation: readJson(CURATION), articles: readJson(ARTICLES), docs: readJson(DOCS) };
+  return {
+    manifest: readJson(MANIFEST),
+    curation: readJson(CURATION),
+    articles: readJson(ARTICLES),
+    docs: readJson(DOCS),
+    baseline: fs.existsSync(BASELINE) ? readJson(BASELINE) : null,
+  };
+}
+
+/** Measure the present and write it down as the floor. Run on purpose, never as a build step. */
+function writeBaseline(state, discovered) {
+  const byClass = {};
+  for (const d of discovered.items) byClass[d.klass] = (byClass[d.klass] || 0) + 1;
+  const byCorpus = {};
+  for (const p of state.docs.pages) byCorpus[p.corpus] = (byCorpus[p.corpus] || 0) + 1;
+  const arts = state.articles.articles;
+
+  const out = {
+    note: [
+      "THE FLOOR. Every number here was MEASURED, and from now on coverage may not fall below it.",
+      "",
+      "This file exists because 'covered + excluded = total' stays true while the total shrinks and",
+      "while work moves from covered to excluded. Both keep the figure at 100% and both mean the site",
+      "documents less than it did. Neither is visible to the gate's other checks.",
+      "",
+      "Growth needs nothing: exceed a floor and the gate is happy. LOWERING one is allowed and must be",
+      "declared — the gate compares this file against its own committed version in git and fails if a",
+      "floor moved down with no new entry in `amendments`. A floor editable in the same commit that",
+      "breaches it is not a floor.",
+      "",
+      "Regenerate deliberately with: node safety/verify_coverage.cjs --baseline",
+    ],
+    schema_version: 1,
+    generated_by: "safety/verify_coverage.cjs --baseline",
+    tolerance: {
+      article_chars_fraction: 0.75,
+      why:
+        "Prose is edited and legitimately gets shorter. A fraction of 1.0 would make every tightening " +
+        "a gate failure and would teach people to raise the floor reflexively, which is worse than a " +
+        "slightly loose bound. This is a judgement, recorded as one.",
+    },
+    floors: {
+      roots: Object.keys(JSON.parse(fs.readFileSync(ROOTS_FILE, "utf8")).roots || {}).sort(),
+      entry_point_classes: byClass,
+      entry_points_total: discovered.items.length,
+      entry_points_covered: (state.manifest.entry_points || []).filter((e) => !e.excluded).length,
+      corpora_pages: byCorpus,
+      pages_total: state.docs.pages.length,
+      subsystems: (state.manifest.subsystems || []).filter((s) => !s.excluded).length,
+      document_types: (state.manifest.document_types || []).filter((t) => !t.excluded).length,
+      articles: arts.length,
+      citations: arts.reduce((n, a) => n + (a.cites || []).length, 0),
+      quotes: arts.reduce((n, a) => n + (a.quotes || []).length, 0),
+      curation_groups: (state.curation.groups || []).length,
+      article_chars: Object.fromEntries(arts.map((a) => [a.slug, a.body.replace(/\s+/g, "").length])),
+    },
+    ceilings: {
+      entry_points_excluded: (state.manifest.entry_points || []).filter((e) => e.excluded).length,
+      pages_uncategorised: (state.curation.uncategorised || []).length,
+    },
+    amendments: (state.baseline && state.baseline.amendments) || [],
+  };
+  fs.writeFileSync(BASELINE, JSON.stringify(out, null, 1) + "\n", "utf8");
+  return out;
 }
 
 // ─── discover mode ───────────────────────────────────────────────────────────────────────────────
@@ -428,7 +667,18 @@ if (!discovered.available) {
   process.exit(1);
 }
 
-const { problems, axes } = evaluate({ ...state, discovered });
+if (ARGV.includes("--baseline")) {
+  const b = writeBaseline(state, discovered);
+  console.log(`baseline written to content/coverage-baseline.json`);
+  console.log(`  ${Object.keys(b.floors).length} floor group(s), ${Object.keys(b.ceilings).length} ceiling(s), ${b.amendments.length} amendment(s)`);
+  console.log("  COMMIT IT. Until it is in git, the gate cannot tell whether a floor was lowered.");
+  process.exit(0);
+}
+
+const evaluation = evaluate({ ...state, discovered });
+const axes = evaluation.axes;
+const ratchetResult = ratchet({ ...state, discovered });
+const problems = [...evaluation.problems, ...ratchetResult.problems];
 
 const table = {
   generated_by: "safety/verify_coverage.cjs",
@@ -471,6 +721,19 @@ console.log("  DISCOVERED means the denominator is taken from the world — add 
 console.log("  this gate goes red naming it. DECLARED means the denominator is editorial and a smaller");
 console.log("  list would score the same. Both are printed because they are not equally strong evidence.");
 
+// The ratchet's state is printed on every run, passing or failing. A bound nobody can see the
+// distance to is a bound nobody notices approaching.
+const rows = ratchetResult.rows;
+if (rows.length) {
+  const breached = rows.filter((r) => !r.ok);
+  const tight = rows.filter((r) => r.ok && (r.kind === "min" ? r.now === r.bound : r.now === r.bound));
+  console.log(`\nTHE RATCHET — ${rows.length} committed bound(s): ${rows.length - breached.length} held, ${breached.length} breached, ${tight.length} exactly at the line.`);
+  console.log("  100% cannot COLLAPSE (a shrinking denominator) or REDUCE (work moved into exclusions),");
+  console.log("  because both keep the percentage at 1.0 and neither is visible to the table above.");
+  for (const r of breached) console.log(`  ✗ ${r.label}: ${r.now} vs ${r.kind === "min" ? "floor" : "ceiling"} ${r.bound}`);
+  for (const n of ratchetResult.notes) console.log(`  · ${n}`);
+}
+
 if (problems.length) {
   console.error(`\nCOVERAGE FAILED — ${problems.length} gap(s):\n`);
   for (const p of problems) console.error("  ✗ " + p);
@@ -484,7 +747,9 @@ if (problems.length) {
 // notice; a mutation that survives is printed as a HOLE, because it means that check does not bite.
 if (MODE.prove) {
   const clone = () => JSON.parse(JSON.stringify(state));
-  const run = (s, d) => evaluate({ ...s, discovered: d || discovered }).problems.length > 0;
+  const run = (s, d) =>
+    evaluate({ ...s, discovered: d || discovered }).problems.length > 0 ||
+    ratchet({ ...s, discovered: d || discovered }).problems.length > 0;
 
   const mutations = [
     ["delete a subsystem's run-it article", () => {
@@ -560,11 +825,84 @@ if (MODE.prove) {
     }],
   ];
 
-  // The tenth mutation is different in kind: it changes the WORLD, not the manifest. A new runnable
-  // thing appears in the estate and nobody writes about it.
+  // ── RATCHET MUTATIONS ───────────────────────────────────────────────────────────────────────
+  // Every one of these leaves covered + excluded = total, so the coverage table stays at 100% and
+  // the gap stays zero. If the ratchet does not catch them, it does not exist.
+  mutations.push(
+    ["REDUCE: move a documented entry point into the exclusions", () => {
+      const s = clone();
+      const e = (s.manifest.entry_points || []).find((x) => !x.excluded);
+      if (!e) return null;
+      delete e.article; delete e.anchor;
+      e.excluded = true;
+      e.reason = "A perfectly plausible sentence of at least twenty characters, which is all the reason check asks for.";
+      return s;
+    }],
+    ["REDUCE: hollow out a guide, leaving every anchor intact", () => {
+      const s = clone();
+      const a = s.articles.articles.find((x) => x.slug === "run-it");
+      if (!a) return null;
+      // Keep only the headings and the fenced commands — every anchor still matches, and the
+      // article is now a table of contents. This is the mutation the 400-character stub check
+      // cannot see, because the result is far longer than 400 characters.
+      a.body = a.body.split(/\r?\n/).filter((l) => /^#{1,3} |^```|^mix |^npm |^node |^powershell |^curl /.test(l)).join("\n");
+      return s;
+    }],
+    ["COLLAPSE: a source repository stops resolving", () => clone()],   // paired with a shrunken discovery below
+    ["REDUCE: delete an article that the baseline recorded", () => {
+      const s = clone();
+      s.articles.articles = s.articles.articles.filter((a) => a.slug !== "how-to");
+      // Keep the manifest consistent so ONLY the ratchet can catch this, never the coverage axes.
+      s.manifest.document_types = (s.manifest.document_types || []).filter((t) => t.id !== "how-to");
+      s.baseline.floors.document_types = Math.max(0, (s.baseline.floors.document_types || 1) - 1);
+      return s;
+    }],
+    ["REDUCE: lower a floor in the same edit that breaches it", () => {
+      const s = clone();
+      s.baseline.floors.articles = 1;
+      s.baseline.floors.citations = 1;
+      s.baseline.ceilings.entry_points_excluded = 999;
+      return s;
+    }],
+    ["REDUCE: raise the excluded ceiling with no amendment", () => {
+      const s = clone();
+      s.baseline.ceilings.entry_points_excluded = (s.baseline.ceilings.entry_points_excluded || 0) + 50;
+      return s;
+    }],
+    ["REDUCE: delete a floor outright", () => {
+      const s = clone();
+      delete s.baseline.floors.entry_points_covered;
+      return s;
+    }],
+    ["REDUCE: loosen the substance tolerance with no amendment", () => {
+      const s = clone();
+      s.baseline.tolerance.article_chars_fraction = 0.05;
+      return s;
+    }],
+    ["an amendment with no reason", () => {
+      const s = clone();
+      s.baseline.floors.articles = 1;
+      s.baseline.amendments = [...(s.baseline.amendments || []), { date: "2026-08-01", what: "lowered the article floor" }];
+      return s;
+    }],
+    ["COLLAPSE: remove the baseline entirely", () => {
+      const s = clone();
+      s.baseline = null;
+      return s;
+    }],
+  );
+
+  // The last two are different in kind: they change the WORLD, not the files. A new runnable thing
+  // appears and nobody writes about it; a whole class of runnable thing stops being discovered.
   const withNewEntryPoint = () => ({
     available: true,
     items: [...discovered.items, { id: "server:uni-minecraft:brand_new_server.cjs", klass: "server", root: "uni-minecraft", what: "x", command: "node viewer/brand_new_server.cjs", defined_in: "viewer/brand_new_server.cjs" }],
+  });
+  // THE COLLAPSE THAT LOOKS LIKE SUCCESS: every remaining entry point is still documented, so the
+  // coverage axes report a clean 100% — of a world that just lost a repository.
+  const withShrunkenWorld = () => ({
+    available: true,
+    items: discovered.items.filter((d) => d.root !== "uni-flagellum"),
   });
 
   console.log("\nPROVING — each mutation must be caught:\n");
@@ -572,7 +910,9 @@ if (MODE.prove) {
   for (const [name, mutate] of mutations) {
     const s = mutate();
     if (!s) { console.log(`  SKIP   ${name} (nothing in the manifest to mutate)`); skipped++; continue; }
-    if (run(s)) { console.log(`  caught ${name}`); caught++; }
+    // The collapse mutation is a world change, applied through the discovery instead of the files.
+    const d = /^COLLAPSE: a source repository/.test(name) ? withShrunkenWorld() : discovered;
+    if (run(s, d)) { console.log(`  caught ${name}`); caught++; }
     else { console.error(`  HOLE   ${name} — SURVIVED. This check does not bite.`); holes++; }
   }
   if (run(state, withNewEntryPoint())) { console.log("  caught a new undocumented server appearing in the estate"); caught++; }
