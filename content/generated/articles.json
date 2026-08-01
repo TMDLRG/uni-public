@@ -1,0 +1,148 @@
+{
+ "schema_version": 1,
+ "generated_by": "generators/build_articles.cjs",
+ "articles": [
+  {
+   "slug": "start-here",
+   "title": "Start here",
+   "summary": "What UNI is, in the order you have to meet it. Six ideas, each one needed to understand the next.",
+   "order": 1,
+   "body": "\nUNI is an active-inference research programme. It runs a colony of agents that live in a Minecraft\nworld, a producer that broadcasts them, a bacterial flagellar-motor laboratory, and a control plane\nwhose entire job is to stop any of it claiming more than it has measured.\n\nThat last part is the unusual one, and it is the right place to start.\n\n## 1. The system is built to be caught being wrong\n\nMost software documentation argues that a system works. This estate is built around the assumption\nthat it will eventually be wrong, and that the interesting engineering is in making the wrongness\nvisible fast.\n\nConcretely: there are 1 gate registry, and\n15 executable checks under `viewer/` alone. A check that has\nnever been shown to fail is not treated as proven — gates are mutation-tested by deliberately\nintroducing a defect and requiring the gate to go red. And the verdict vocabulary is five controlled\nwords, never a percentage.\n\n\n<!--CITE:0-->\n\n\nYou will find failing gates published on this site rather than omitted from it. That is deliberate.\n\n## 2. A UNI is three processes pretending to be one organism\n\nAn agent is not a script with a personality. It is:\n\n- an **Elixir GenServer** holding a generative model and doing inference,\n- a **Node process** running `mineflayer`, attached as an Erlang Port,\n- a **real player** logged into a Minecraft server.\n\nThe boundary between the first two is the load-bearing idea, and the body's own header states it\nbetter than a summary could:\n\n\n<!--QUOTE:0-->\n\n\nThat is a Markov blanket, implemented as a pipe. The brain cannot see the world; it sees senses. The\nbody cannot see beliefs; it receives one action. If you understand nothing else here, understand\nthat line — everything about what the agent can and cannot know follows from it.\n\n## 3. There is no reward anywhere\n\nThe agents do not maximise a score. They minimise expected free energy — a quantity with two parts:\nhow much a policy is expected to reduce uncertainty, and how far its predicted observations are from\npreferred ones.\n\nThis matters practically, not just philosophically. A reward signal is the thing you accidentally\noptimise; there isn't one to game. When a novelty term was added to the engine, the invariant it had\nto satisfy was that it **decays monotonically to zero as evidence accumulates** — information, not\nreward — and that switching it off leaves the agent's behaviour byte-for-byte identical.\n\n\n<!--CITE:1-->\n\n\n## 4. The Producer is an agent too\n\nThe broadcast is not run by a script. The Producer is the same categorical engine, with a different\naction space: camera cuts, narration beats, and the birth and death of UNIs.\n\nSo an expected-free-energy minimum, computed the same way a bot decides whether to mine a block,\nterminates in a living agent being spawned or culled. That is the whole idea in two lines of\ndispatch:\n\n\n<!--CITE:2-->\n\n\n## 5. Two different things are called \"the control plane\"\n\nThis will confuse you if nobody says it first.\n\n- **`SP.Producer`** calls itself the live show-running control plane. It runs the broadcast.\n- **`SP.ControlPlane`** is the *science's* control plane. It authors verdicts, holds the ledger, and\n  never touches the show.\n\nThey are different bodies with different laws and they cross-reference each other in their own\nmodule docs precisely because the collision is so easy to make.\n\n\n<!--CITE:3-->\n\n\n## 6. Reading, in order\n\n1. **[The colony](/articles/the-colony/)** — what an agent actually is, end to end.\n2. **[The control plane](/articles/the-control-plane/)** — the ledger, the single writer, and why a\n   verdict needs a receipt.\n3. **[The Encyclopedia](/wiki/#encyclopedia)** — the method as a book.\n4. **[The Cookbook](/wiki/#cookbook)** — how it is carried out in practice.\n5. **[Evidence &amp; Verdicts](/evidence/)** — the dated record that it was, including a FAIL.\n6. **[What is not here](/omissions/)** — everything withheld, and why.\n\n## What this site is not claiming\n\nPassing gates are not evidence of biological parity, general intelligence, or human parity. The\nestate's own contract says so explicitly, and separates observation from reconstruction from\nsimulation as a matter of rule rather than of taste. Where a claim is not established, this site says\nNOT ESTABLISHED rather than choosing a comfortable reading.\n\nThe source repositories are **not public yet**, so every citation on this site names a real file at a\nreal commit and tells you it cannot be opened. A citation you cannot follow is an appeal to\nauthority; marking it is the difference between documentation and a brochure.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/verdict.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/novelty.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/producer.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-flagellum",
+     "path": "docs/control-plane/decisions/ADR-0006-sp-controlplane-naming-and-placement.md",
+     "range": null,
+     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
+     "commit_short": "d713a2200f85",
+     "branch": "hierarchical-aif/motor-stack",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "// UNI's BODY — the external half of the Markov blanket.\n//\n// A real mineflayer player. It logs into Minecraft, and each decision step it\n// (1) computes a small set of SYMBOLIC senses (σ) and writes them to stdout, then\n// (2) reads ONE primitive action (α) from stdin and executes it. Nothing else\n// crosses the line: the body never sees the brain's beliefs; the brain never sees\n// raw world state — only these senses. Lockstep: one sense line → one action line.",
+     "lang": "js",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "viewer/body.js",
+      "range": "1-7",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
+  },
+  {
+   "slug": "the-colony",
+   "title": "The colony",
+   "summary": "A UNI is an Elixir brain, a Node body and a Minecraft player, joined by a pipe that is also a Markov blanket.",
+   "order": 2,
+   "body": "\nA UNI is three processes that together behave as one organism. Nothing in the system is called \"the\nagent\" — the agent is the arrangement.\n\n## The three parts\n\n**The brain** is an Elixir GenServer. It holds a generative model — the matrices `(A, B, C, D, E)`,\nDirichlet counts, and live beliefs — and each step it does perception, learning and action selection.\nIt never touches the network and never sees the world.\n\n\n<!--CITE:0-->\n\n\n**The body** is a Node process running `mineflayer`, attached to the brain as an Erlang Port. It logs\ninto a real Minecraft server as a real player.\n\n\n<!--CITE:1-->\n\n\n**The world** is an actual Minecraft server. Not a simulation of one, and not a gym environment\nwearing Minecraft's textures.\n\n## The pipe is the blanket\n\nThe interface between brain and body is a newline-delimited pipe, and it is deliberately narrow. The\nbody's own header states the contract:\n\n\n<!--QUOTE:0-->\n\n\nRead what that forbids. The brain cannot query the world; it receives a fixed vector of symbolic\nsenses. The body cannot read the brain's beliefs; it receives one primitive action from a closed set.\nThere is no side channel, and the narrowness is the point: it is what makes the agent's ignorance\n*real* rather than stipulated.\n\nThis is a Markov blanket implemented as a file descriptor. Everything the agent can be said to know\nis downstream of that line.\n\n## One step\n\nThe decision surface of a living UNI is nine lines long. Senses arrive as a signal; the pure brain\nsteps; exactly two directives come back — actuate, and emit a record of what happened.\n\n\n<!--QUOTE:1-->\n\n\nEverything else in that module — and it is a large module — is transport and interpretation around\nthose nine lines.\n\n## Birth, death and inheritance\n\nAgents die. When one does, a durable kin parent archives it, and a later life is recombined and\nmutated from what came before.\n\n\n<!--CITE:2-->\n\n\nWhat is inherited is **morphology, not knowledge** — which organs an agent has, not what it learned.\nThe genome describes the shape of the creature; the Dirichlet counts that constitute its experience\ndie with it.\n\n\n<!--CITE:3-->\n\n\n## The refusal that tells you the most\n\nThe runtime refuses to boot on a BEAM without the JIT.\n\n\n<!--CITE:4-->\n\n\nThe reason is not performance. The system makes a claim about running its mathematics on-chip, and on\nan interpreted BEAM that claim would be false. Rather than run anyway and quietly weaken the claim,\nit declines to start. Forty-three lines, and it is the estate's culture in miniature: **the system\nwould rather stop than say something it cannot support.**\n\n## Scale, measured\n\n- 7 modules in the runtime\n- 46 modules in the brain\n- 121 test files under `test/sp/`\n\n## What is not established\n\nWhether any of this constitutes experience is **not a claim this system makes**, and the estate's own\ndocuments are careful about it. The phenomenology document maps human phenomenological categories onto\nimplemented mechanisms and records where the mapping fails — the failures are the useful part.\n\nThe colony demonstrates agents that survive, forage, and inherit morphology under active inference in\na world they cannot see directly. That is the claim. It is smaller than it sounds and harder than it\nlooks.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/runtime/agent.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/body.js",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/runtime/lineage.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/genome.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/runtime/on_chip.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "// UNI's BODY — the external half of the Markov blanket.\n//\n// A real mineflayer player. It logs into Minecraft, and each decision step it\n// (1) computes a small set of SYMBOLIC senses (σ) and writes them to stdout, then\n// (2) reads ONE primitive action (α) from stdin and executes it. Nothing else\n// crosses the line: the body never sees the brain's beliefs; the brain never sees\n// raw world state — only these senses. Lockstep: one sense line → one action line.",
+     "lang": "js",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "viewer/body.js",
+      "range": "1-7",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    },
+    {
+     "text": "  def cmd(%MC{} = brain, %Signal{data: senses, time: t}) do\n    {action, brain} = MC.step(brain, senses)\n\n    directives = [\n      Directive.actuate(action, %{}),\n      Directive.emit(mind_signal(brain, action, t))\n    ]\n\n    {brain, directives}\n  end",
+     "lang": "ex",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "lib/sp/runtime/agent.ex",
+      "range": "50-59",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
+  }
+ ]
+}

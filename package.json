@@ -14,7 +14,7 @@
   "scripts": {
     "generate": "node generators/build_content.cjs",
     "dev": "next dev",
-    "build": "node generators/build_content.cjs && next build",
+    "build": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && next build",
     "start": "next start",
     "safe": "node safety/verify_publish_safe.cjs",
     "safe:prove": "node safety/verify_publish_safe.cjs --prove",

@@ -113,3 +113,9 @@ li { margin: 4px 0; }
 .prose ul, .prose ol { margin: 10px 0 14px; }
 
 .pager { display: flex; justify-content: space-between; gap: 16px; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--ln); font-size: 14px; }
+
+/* written articles: a quote is the file's own bytes, and is styled to look like source, not prose */
+figure.quote { margin: 18px 0; }
+figure.quote pre { background: var(--pan2); border: 1px solid var(--ln); border-left: 3px solid var(--acc); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font: 13px/1.55 var(--mono); }
+figure.quote figcaption { font: 11.5px var(--mono); color: var(--dim); margin-top: 6px; padding-left: 3px; }
+figure.quote figcaption b { color: var(--ok); }

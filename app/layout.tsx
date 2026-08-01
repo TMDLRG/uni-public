@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 // the site contains.
 const NAV = [
   { href: "/", label: "Overview" },
+  { href: "/articles/start-here/", label: "Start here" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
   { href: "/evidence/", label: "Evidence" },
