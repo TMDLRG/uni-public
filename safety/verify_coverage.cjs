@@ -47,9 +47,24 @@
 // ─────────────────────────────────────────────────────────────────────────────────────────────────
 // USAGE
 // ─────────────────────────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// AND THE PERCENTAGE ITSELF IS RATCHETED
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// Covered ÷ total stays at 1.0 under two different disasters — the denominator shrinking (COLLAPSE)
+// and work moving into the exclusions (REDUCTION) — and the four axes above are blind to both,
+// because in both cases the sum still closes and the gap is still zero. So every measured quantity is
+// also held against a committed floor in content/coverage-baseline.json, and that floor is itself
+// compared against its own version in git: lowering one requires a recorded amendment.
+//
+// Six of the mutations in --prove are caught by the ratchet ALONE. For all six the coverage table
+// above prints a clean 100% with a zero gap.
+//
 //   node safety/verify_coverage.cjs             check, print the table, exit non-zero on any gap
 //   node safety/verify_coverage.cjs --prove     the same, then MUTATE and require each mutation to
-//                                               be caught. A check never shown to fail is not proven.
+//                                               be caught BY THE HALF IT WAS WRITTEN FOR. A check
+//                                               never shown to fail is not proven, and a mutation
+//                                               caught by an unrelated check proves nothing at all.
+//   node safety/verify_coverage.cjs --baseline  measure the present and write it down as the floor
 //   node safety/verify_coverage.cjs --discover  print the discovered universe as a manifest skeleton
 //   node safety/verify_coverage.cjs --json      emit the coverage table for the site to render
 "use strict";
@@ -688,6 +703,14 @@ const table = {
     "number would be a second measurement able to disagree with the one that actually holds.",
   ],
   axes,
+  ratchet: {
+    bounds: ratchetResult.rows.length,
+    held: ratchetResult.rows.filter((r) => r.ok).length,
+    breached: ratchetResult.rows.filter((r) => !r.ok).length,
+    at_the_line: ratchetResult.rows.filter((r) => r.ok && r.now === r.bound).length,
+    amendments: (state.baseline && state.baseline.amendments) || [],
+    rows: ratchetResult.rows,
+  },
   ok: problems.length === 0,
   problems,
 };
@@ -747,9 +770,19 @@ if (problems.length) {
 // notice; a mutation that survives is printed as a HOLE, because it means that check does not bite.
 if (MODE.prove) {
   const clone = () => JSON.parse(JSON.stringify(state));
-  const run = (s, d) =>
-    evaluate({ ...s, discovered: d || discovered }).problems.length > 0 ||
-    ratchet({ ...s, discovered: d || discovered }).problems.length > 0;
+
+  // ATTRIBUTION, NOT JUST DETECTION. "Something went red" is a weaker result than it looks: a
+  // mutation caught by an unrelated check says nothing about the check it was written for, and a
+  // suite of those reads as thorough while proving nothing. So each mutation declares WHICH HALF of
+  // the gate is supposed to catch it, and being caught by the other half alone is reported as a HOLE.
+  //
+  // This is not hypothetical here. Three of the reduction mutations below leave the coverage axes
+  // reporting a clean 100% with a zero gap — they are invisible to everything except the ratchet.
+  // Had the ratchet been broken, a plain "caught" would still have printed for two of them.
+  const halves = (s, d) => ({
+    axes: evaluate({ ...s, discovered: d || discovered }).problems.length > 0,
+    ratchet: ratchet({ ...s, discovered: d || discovered }).problems.length > 0,
+  });
 
   const mutations = [
     ["delete a subsystem's run-it article", () => {
@@ -829,7 +862,7 @@ if (MODE.prove) {
   // Every one of these leaves covered + excluded = total, so the coverage table stays at 100% and
   // the gap stays zero. If the ratchet does not catch them, it does not exist.
   mutations.push(
-    ["REDUCE: move a documented entry point into the exclusions", () => {
+    ["REDUCE: move a documented entry point into the exclusions", "ratchet", () => {
       const s = clone();
       const e = (s.manifest.entry_points || []).find((x) => !x.excluded);
       if (!e) return null;
@@ -838,7 +871,7 @@ if (MODE.prove) {
       e.reason = "A perfectly plausible sentence of at least twenty characters, which is all the reason check asks for.";
       return s;
     }],
-    ["REDUCE: hollow out a guide, leaving every anchor intact", () => {
+    ["REDUCE: hollow out a guide, leaving every anchor intact", "ratchet", () => {
       const s = clone();
       const a = s.articles.articles.find((x) => x.slug === "run-it");
       if (!a) return null;
@@ -848,8 +881,8 @@ if (MODE.prove) {
       a.body = a.body.split(/\r?\n/).filter((l) => /^#{1,3} |^```|^mix |^npm |^node |^powershell |^curl /.test(l)).join("\n");
       return s;
     }],
-    ["COLLAPSE: a source repository stops resolving", () => clone()],   // paired with a shrunken discovery below
-    ["REDUCE: delete an article that the baseline recorded", () => {
+    ["COLLAPSE: a source repository stops resolving", "ratchet", () => clone()],   // paired with a shrunken discovery below
+    ["REDUCE: delete an article that the baseline recorded", "ratchet", () => {
       const s = clone();
       s.articles.articles = s.articles.articles.filter((a) => a.slug !== "how-to");
       // Keep the manifest consistent so ONLY the ratchet can catch this, never the coverage axes.
@@ -857,35 +890,35 @@ if (MODE.prove) {
       s.baseline.floors.document_types = Math.max(0, (s.baseline.floors.document_types || 1) - 1);
       return s;
     }],
-    ["REDUCE: lower a floor in the same edit that breaches it", () => {
+    ["REDUCE: lower a floor in the same edit that breaches it", "ratchet", () => {
       const s = clone();
       s.baseline.floors.articles = 1;
       s.baseline.floors.citations = 1;
       s.baseline.ceilings.entry_points_excluded = 999;
       return s;
     }],
-    ["REDUCE: raise the excluded ceiling with no amendment", () => {
+    ["REDUCE: raise the excluded ceiling with no amendment", "ratchet", () => {
       const s = clone();
       s.baseline.ceilings.entry_points_excluded = (s.baseline.ceilings.entry_points_excluded || 0) + 50;
       return s;
     }],
-    ["REDUCE: delete a floor outright", () => {
+    ["REDUCE: delete a floor outright", "ratchet", () => {
       const s = clone();
       delete s.baseline.floors.entry_points_covered;
       return s;
     }],
-    ["REDUCE: loosen the substance tolerance with no amendment", () => {
+    ["REDUCE: loosen the substance tolerance with no amendment", "ratchet", () => {
       const s = clone();
       s.baseline.tolerance.article_chars_fraction = 0.05;
       return s;
     }],
-    ["an amendment with no reason", () => {
+    ["an amendment with no reason", "ratchet", () => {
       const s = clone();
       s.baseline.floors.articles = 1;
       s.baseline.amendments = [...(s.baseline.amendments || []), { date: "2026-08-01", what: "lowered the article floor" }];
       return s;
     }],
-    ["COLLAPSE: remove the baseline entirely", () => {
+    ["COLLAPSE: remove the baseline entirely", "ratchet", () => {
       const s = clone();
       s.baseline = null;
       return s;
@@ -907,16 +940,27 @@ if (MODE.prove) {
 
   console.log("\nPROVING — each mutation must be caught:\n");
   let caught = 0, holes = 0, skipped = 0;
-  for (const [name, mutate] of mutations) {
+  for (const entry of mutations) {
+    const [name, expectOrFn, maybeFn] = entry;
+    const expect = typeof expectOrFn === "string" ? expectOrFn : "axes";
+    const mutate = typeof expectOrFn === "string" ? maybeFn : expectOrFn;
     const s = mutate();
     if (!s) { console.log(`  SKIP   ${name} (nothing in the manifest to mutate)`); skipped++; continue; }
     // The collapse mutation is a world change, applied through the discovery instead of the files.
     const d = /^COLLAPSE: a source repository/.test(name) ? withShrunkenWorld() : discovered;
-    if (run(s, d)) { console.log(`  caught ${name}`); caught++; }
-    else { console.error(`  HOLE   ${name} — SURVIVED. This check does not bite.`); holes++; }
+    const h = halves(s, d);
+    const by = [h.axes ? "axes" : null, h.ratchet ? "ratchet" : null].filter(Boolean).join("+") || "nothing";
+    if (h[expect]) { console.log(`  caught ${name.padEnd(58)} [${by}]`); caught++; }
+    else if (h.axes || h.ratchet) {
+      console.error(`  HOLE   ${name.padEnd(58)} [${by}] — caught, but NOT by the ${expect}, which is the check this mutation exists to test.`);
+      holes++;
+    } else { console.error(`  HOLE   ${name.padEnd(58)} — SURVIVED. This check does not bite.`); holes++; }
   }
-  if (run(state, withNewEntryPoint())) { console.log("  caught a new undocumented server appearing in the estate"); caught++; }
-  else { console.error("  HOLE   a new undocumented server appearing in the estate — SURVIVED."); holes++; }
+  {
+    const h = halves(state, withNewEntryPoint());
+    if (h.axes) { console.log("  caught " + "a new undocumented server appearing in the estate".padEnd(58) + " [axes]"); caught++; }
+    else { console.error("  HOLE   a new undocumented server appearing in the estate — SURVIVED."); holes++; }
+  }
 
   console.log(`\n${caught} caught, ${holes} hole(s), ${skipped} skipped`);
   if (holes) { console.error("A gate with holes reports green for reasons it cannot justify."); process.exit(1); }

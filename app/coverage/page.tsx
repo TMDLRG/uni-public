@@ -90,6 +90,102 @@ export default function Coverage() {
         would score the same, and saying so is the only defence against that.
       </p>
 
+      <h2>The ratchet: 100% cannot collapse and cannot reduce</h2>
+      <p>
+        A percentage is the most collapsible statistic there is. Covered ÷ total stays at exactly
+        1.0 under two completely different disasters, and the table above is blind to both because in
+        each case the sum still closes and the gap is still zero:
+      </p>
+      <div className="card">
+        <p>
+          <b>Collapse</b> — the denominator shrinks. A repository moves, a discovery rule is tidied
+          away, a corpus stops resolving. 100% of a smaller world, reported identically.
+        </p>
+        <p>
+          <b>Reduction</b> — work moves from covered into excluded. Every exclusion carries a reason
+          and the arithmetic still closes, so the gate is satisfied while the guides document less
+          with each change.
+        </p>
+      </div>
+      <p>
+        So every measured quantity is also held against a <b>committed floor</b>, and the floor is
+        compared against its own previous version in version control. Lowering one is allowed;
+        lowering one <i>silently</i> is not — it requires a recorded amendment saying what moved and
+        why. A floor that can be edited down in the same change that breaches it is not a floor.
+      </p>
+
+      <div className="grid">
+        <div className="stat">
+          <div className="n">{coverage.ratchet.bounds}</div>
+          <div className="l">committed bounds</div>
+        </div>
+        <div className="stat">
+          <div className="n">{coverage.ratchet.held}</div>
+          <div className="l">held</div>
+        </div>
+        <div className="stat">
+          <div className="n">{coverage.ratchet.breached}</div>
+          <div className="l">breached</div>
+        </div>
+        <div className="stat">
+          <div className="n">{coverage.ratchet.at_the_line}</div>
+          <div className="l">exactly at the line</div>
+        </div>
+      </div>
+
+      <p className="dim">
+        Growth is free and needs no ceremony — this estate adds servers and documents constantly, and
+        a gate that fights ordinary work gets switched off. Only going <i>backwards</i> costs
+        anything.
+      </p>
+
+      {coverage.ratchet.amendments.length ? (
+        <section className="card">
+          <h3>Amendments</h3>
+          <p>Every time a floor was deliberately lowered, with the reason given at the time.</p>
+          <table>
+            <thead><tr><th>Date</th><th>What</th><th>Why</th></tr></thead>
+            <tbody>
+              {coverage.ratchet.amendments.map((a, i) => (
+                <tr key={i}><td className="mono">{a.date}</td><td>{a.what}</td><td>{a.why}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ) : (
+        <p className="dim">
+          <b>No amendments.</b> No floor has been lowered since the baseline was established, so every
+          figure on this page is at or above where it started.
+        </p>
+      )}
+
+      <details className="card">
+        <summary>All {coverage.ratchet.bounds} bounds, and the distance to each</summary>
+        <table>
+          <thead>
+            <tr><th>Bound</th><th>Kind</th><th style={{ textAlign: "right" }}>Now</th><th style={{ textAlign: "right" }}>Limit</th><th style={{ textAlign: "right" }}>Margin</th></tr>
+          </thead>
+          <tbody>
+            {coverage.ratchet.rows.map((r) => (
+              <tr key={r.label}>
+                <td>{r.label}</td>
+                <td className="dim">{r.kind === "min" ? "floor" : "ceiling"}</td>
+                <td style={{ textAlign: "right" }} className="mono">{r.now}</td>
+                <td style={{ textAlign: "right" }} className="mono">{r.bound}</td>
+                <td style={{ textAlign: "right" }} className="mono">
+                  {r.kind === "min" ? r.now - r.bound : r.bound - r.now}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="dim">
+          A margin of zero is not a failure — it means the quantity is sitting exactly on its floor,
+          which is where a freshly-measured baseline puts most things. It does mean the next
+          reduction there fails the build.
+        </p>
+      </details>
+
       <h2>Subsystems, in two layers each</h2>
       <p>
         Understanding without the ability to run something does not transfer; the ability to run

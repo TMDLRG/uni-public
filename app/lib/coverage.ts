@@ -46,9 +46,28 @@ export type CurationGroup = {
   pages: string[];
 };
 
+export type RatchetRow = {
+  label: string;
+  now: number;
+  bound: number;
+  /** "min" = a floor that may not be gone below. "max" = a ceiling that may not be exceeded. */
+  kind: "min" | "max";
+  ok: boolean;
+};
+
+export type Amendment = { date: string; what: string; why: string };
+
 export const coverage = coverageBundle as unknown as {
   generated_by: string;
   axes: Axis[];
+  ratchet: {
+    bounds: number;
+    held: number;
+    breached: number;
+    at_the_line: number;
+    amendments: Amendment[];
+    rows: RatchetRow[];
+  };
   ok: boolean;
   problems: string[];
 };

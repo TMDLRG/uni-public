@@ -39,6 +39,267 @@
    "excluded": 0
   }
  ],
+ "ratchet": {
+  "bounds": 36,
+  "held": 36,
+  "breached": 0,
+  "at_the_line": 23,
+  "amendments": [],
+  "rows": [
+   {
+    "label": "entry points discovered · mix-task",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points discovered · server",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points discovered · powershell",
+    "now": 42,
+    "bound": 42,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points discovered · elixir-script",
+    "now": 16,
+    "bound": 16,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points discovered · npm-script",
+    "now": 30,
+    "bound": 30,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points discovered · total",
+    "now": 104,
+    "bound": 104,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · encyclopedia",
+    "now": 39,
+    "bound": 39,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · cookbook",
+    "now": 34,
+    "bound": 34,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · control-plane",
+    "now": 32,
+    "bound": 32,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · flagellum",
+    "now": 14,
+    "bound": 14,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · workbench",
+    "now": 2,
+    "bound": 2,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · minecraft",
+    "now": 84,
+    "bound": 84,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · evidence",
+    "now": 87,
+    "bound": 87,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · total",
+    "now": 292,
+    "bound": 292,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points documented",
+    "now": 80,
+    "bound": 80,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "entry points excluded",
+    "now": 24,
+    "bound": 24,
+    "kind": "max",
+    "ok": true
+   },
+   {
+    "label": "subsystems",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "document types",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "articles",
+    "now": 13,
+    "bound": 13,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "resolved citations",
+    "now": 59,
+    "bound": 59,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "quoted source blocks",
+    "now": 15,
+    "bound": 15,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "curated routes",
+    "now": 22,
+    "bound": 22,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in no route",
+    "now": 0,
+    "bound": 0,
+    "kind": "max",
+    "ok": true
+   },
+   {
+    "label": "substance · start-here",
+    "now": 3806,
+    "bound": 2854,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-colony",
+    "now": 2657,
+    "bound": 1992,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-producer",
+    "now": 2836,
+    "bound": 2127,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-control-plane",
+    "now": 3324,
+    "bound": 2493,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-brain",
+    "now": 4011,
+    "bound": 3008,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-operator-plane",
+    "now": 3582,
+    "bound": 2686,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-flagellar-motor",
+    "now": 5492,
+    "bound": 4119,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · the-broadcast-suite",
+    "now": 12659,
+    "bound": 9494,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · quick-start",
+    "now": 3645,
+    "bound": 2733,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · install",
+    "now": 7492,
+    "bound": 5619,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · run-it",
+    "now": 8678,
+    "bound": 6508,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · maintenance",
+    "now": 8190,
+    "bound": 6142,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "substance · how-to",
+    "now": 5170,
+    "bound": 3877,
+    "kind": "min",
+    "ok": true
+   }
+  ]
+ },
  "ok": true,
  "problems": []
 }

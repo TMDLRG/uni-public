@@ -82,6 +82,34 @@ itself a user guide. Every page was reachable; none of it was findable, and the 
 documents in one alphabetical list. Those are different properties and only the first had ever been
 checked.
 
+### The ratchet — 100% cannot collapse and cannot reduce
+
+A percentage is the most collapsible statistic there is. Covered ÷ total stays at exactly 1.0 under
+two completely different disasters, and the four axes are blind to both, because in each case the sum
+still closes and the gap is still zero:
+
+- **Collapse** — the denominator shrinks. A repository moves, a discovery rule is tidied away, a
+  corpus stops resolving. 100% of a smaller world, reported identically.
+- **Reduction** — work moves from covered into excluded. Every exclusion carries a reason and the
+  arithmetic still closes, so the gate is satisfied while the guides document less each time.
+
+So every measured quantity is also held against a committed floor in
+`content/coverage-baseline.json`, and **that floor is compared against its own previous version in
+git**. Lowering one is allowed; lowering one silently is not — it requires a recorded amendment
+saying what moved and why. A floor that can be edited down in the same commit that breaches it is not
+a floor.
+
+Growth is free and needs no ceremony. Only going backwards costs anything.
+
+```bash
+node safety/verify_coverage.cjs --baseline
+```
+
+**Six of the mutations in `--prove` are caught by the ratchet alone** — for all six, the coverage
+table prints a clean 100% with a zero gap. The mutation suite reports *which half* of the gate caught
+each mutation, because a mutation caught by an unrelated check proves nothing about the check it was
+written for, and a suite of those reads as thorough while proving nothing.
+
 ## The safety gate
 
 ```bash
