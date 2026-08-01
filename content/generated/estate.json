@@ -1,0 +1,1476 @@
+{
+  "schema_version": 1,
+  "generated_by": "generators/build_content.cjs",
+  "citation_policy": {
+    "rule": "Every citation records repo + branch + commit sha + path (+ line range where applicable).",
+    "public_source": false,
+    "consequence": [
+      "NO SOURCE REPO IS PUBLIC YET, so a citation cannot be a clickable permalink today. The site",
+      "therefore renders citations as UNRESOLVABLE and says so on the page, in the citation itself.",
+      "That is deliberate. A citation a reader cannot open is an appeal to authority; the honest",
+      "response is to mark it, not to hide it or to imply it can be checked. When a source repo is",
+      "published, set visibility to 'public' here and the same citations become permalinks with no",
+      "content change."
+    ]
+  },
+  "sources": [
+    {
+      "id": "uni-minecraft",
+      "title": "UNI.Minecraft",
+      "one_line": "The colony, the Producer, the scientific control plane, the operator plane and the broadcast suite.",
+      "inclusion": "spine",
+      "provenance": {
+        "repo": "uni-minecraft",
+        "title": "UNI.Minecraft",
+        "branch": "gen2-runtime",
+        "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+        "commit_short": "9116fb323e86",
+        "visibility": "private",
+        "resolvable": false
+      },
+      "source_last_commit": "2026-07-31T21:26:12-05:00",
+      "blocks": [
+        {
+          "kind": "gate-registry",
+          "citation": {
+            "repo": "uni-minecraft",
+            "title": "UNI.Minecraft",
+            "branch": "gen2-runtime",
+            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+            "commit_short": "9116fb323e86",
+            "visibility": "private",
+            "resolvable": false,
+            "path": "viewer/gate_registry.json"
+          },
+          "total": 32,
+          "ci_true": 29,
+          "ci_false": 3,
+          "gates": [
+            {
+              "id": "build-identity",
+              "file": "viewer/verify_build_identity.cjs",
+              "ci": true,
+              "gate_row": "boot-identity",
+              "why": null
+            },
+            {
+              "id": "gaia",
+              "file": "viewer/gaia/verify_gaia.cjs",
+              "ci": true,
+              "gate_row": "gaia-*",
+              "why": null
+            },
+            {
+              "id": "gaia-lint",
+              "file": "viewer/gaia/gaia_lint.cjs",
+              "ci": true,
+              "gate_row": "gaia-no-summarization",
+              "why": null
+            },
+            {
+              "id": "lint-bites",
+              "file": "viewer/gaia/verify_lint_bites.cjs",
+              "ci": true,
+              "gate_row": "gaia-lint-bites",
+              "why": null
+            },
+            {
+              "id": "golden-pins",
+              "file": "viewer/gaia/verify_golden_pins.cjs",
+              "ci": true,
+              "gate_row": "gaia-golden-pins",
+              "why": null
+            },
+            {
+              "id": "drift-wellformed",
+              "file": "viewer/gaia/verify_drift_wellformed.cjs",
+              "ci": true,
+              "gate_row": "gaia-drift-wellformed",
+              "why": null
+            },
+            {
+              "id": "schema-pointers",
+              "file": "viewer/verify_schema_pointers.cjs",
+              "ci": true,
+              "gate_row": "schema-pointers-resolve",
+              "why": null
+            },
+            {
+              "id": "host-tracking",
+              "file": "viewer/verify_host_tracking.cjs",
+              "ci": true,
+              "gate_row": "host-address-tracking",
+              "why": null
+            },
+            {
+              "id": "hud",
+              "file": "viewer/hud/verify_hud.cjs",
+              "ci": false,
+              "gate_row": "hud-*",
+              "why": null
+            },
+            {
+              "id": "overlays",
+              "file": "viewer/verify_overlays.cjs",
+              "ci": false,
+              "gate_row": "overlay-proof",
+              "why": null
+            },
+            {
+              "id": "colony",
+              "file": "viewer/verify_colony.cjs",
+              "ci": false,
+              "gate_row": "colony-count-consistency",
+              "why": null
+            },
+            {
+              "id": "deploy-lag",
+              "file": "viewer/gaia/verify_deploy_lag_tripwire.cjs",
+              "ci": true,
+              "gate_row": "gaia-deploy-lag-tripwire",
+              "why": null
+            },
+            {
+              "id": "capture-age",
+              "file": "viewer/gaia/verify_capture_age_fence.cjs",
+              "ci": true,
+              "gate_row": "gaia-capture-age-fence",
+              "why": null
+            },
+            {
+              "id": "witness-blocked",
+              "file": "viewer/gaia/verify_witness_blocked.cjs",
+              "ci": true,
+              "gate_row": "gaia-witness-blocked",
+              "why": null
+            },
+            {
+              "id": "control-plane-evidence",
+              "file": "viewer/verify_control_plane_evidence.cjs",
+              "ci": true,
+              "gate_row": "control-plane-evidence-retrievable",
+              "why": null
+            },
+            {
+              "id": "golive-refuses-agents",
+              "file": "viewer/verify_golive_refuses_agents.cjs",
+              "ci": true,
+              "gate_row": "f31-golive-refuses-agents",
+              "why": null
+            },
+            {
+              "id": "limitations-doc",
+              "file": "viewer/verify_limitations_doc.cjs",
+              "ci": true,
+              "gate_row": "limitations-doc-cannot-drift",
+              "why": null
+            },
+            {
+              "id": "gate-attempts",
+              "file": "viewer/verify_gate_attempts.cjs",
+              "ci": true,
+              "gate_row": "gate-attempts-sidecar",
+              "why": null
+            },
+            {
+              "id": "ip-fence",
+              "file": "viewer/verify_ip_fence.cjs",
+              "ci": true,
+              "gate_row": "repo-wide-ip-fence-landed-red",
+              "why": null
+            },
+            {
+              "id": "lab-l0",
+              "file": "viewer/lab/verify_lab_l0.cjs",
+              "ci": true,
+              "gate_row": "lab-l0-empty-room",
+              "why": null
+            },
+            {
+              "id": "lab-l1",
+              "file": "viewer/lab/verify_lab_l1.cjs",
+              "ci": true,
+              "gate_row": "lab-l1-five-materials",
+              "why": null
+            },
+            {
+              "id": "lab-l2-shot",
+              "file": "viewer/lab/verify_shot.cjs",
+              "ci": true,
+              "gate_row": "lab-l2-screenshot-bites",
+              "why": null
+            },
+            {
+              "id": "lab-l3",
+              "file": "viewer/lab/verify_lab_l3.cjs",
+              "ci": true,
+              "gate_row": "lab-l3-projection-tells-the-truth",
+              "why": null
+            },
+            {
+              "id": "lab-l4",
+              "file": "viewer/lab/verify_lab_l4.cjs",
+              "ci": true,
+              "gate_row": "lab-l4-three-kinds-of-closed",
+              "why": null
+            },
+            {
+              "id": "lab-l5",
+              "file": "viewer/lab/verify_lab_l5.cjs",
+              "ci": true,
+              "gate_row": "lab-l5-desk-shows-the-bytes",
+              "why": null
+            },
+            {
+              "id": "track",
+              "file": "viewer/track/verify_track.cjs",
+              "ci": true,
+              "gate_row": "track-write-route-is-fenced",
+              "why": null
+            },
+            {
+              "id": "plan-consistency",
+              "file": "viewer/verify_plan_consistency.cjs",
+              "ci": true,
+              "gate_row": "plan-does-not-contradict-itself",
+              "why": null
+            },
+            {
+              "id": "lab-l6",
+              "file": "viewer/lab/verify_lab_l6.cjs",
+              "ci": true,
+              "gate_row": "lab-l6-gauntlet-and-cosign",
+              "why": null
+            },
+            {
+              "id": "claims",
+              "file": "viewer/verify_claims.cjs",
+              "ci": true,
+              "gate_row": "claims-checked-against-disk",
+              "why": "The first instrument in this project pointed at PROSE. Three audits on 2026-07-29 found the commit log clean and the remediation record honest, and every single defect in hand-written documents: five files at six locations declaring a next act that had shipped six hours earlier, one banner stating 25 registered gates in one paragraph and 23 in another, and a review marking those counts CORRECTED while the documents still carried them wrong. Of the 28 gates registered at that moment, the three touching documents pinned a GENERATED file, resolved JSON pointers, or checked a JSON vocabulary. Noth"
+            },
+            {
+              "id": "decision",
+              "file": "viewer/verify_decision.cjs",
+              "ci": true,
+              "gate_row": "decision-records-only",
+              "why": "POST /api/decision is the FIRST MUTATING SURFACE BUILT FOR THE OPERATOR RATHER THAN FOR AN AGENT, and the only new one in the Phase 3 plan. Until 2026-07-31 nothing on the plane could record his answer: TRACK renders all ten stops and every not_mine item with no form, no input and no button; /lab/l6 asks Checkpoint E outright and deliberately has no control (correctly -- a page that could cross that threshold would be crossing it); all 85 rows of track_comments.ndjson are author:claude, and every co-sign in the 32-entry control-plane ledger is actor:claude, role:agent. His answers lived in a c"
+            },
+            {
+              "id": "decide-page",
+              "file": "viewer/verify_decide_page.cjs",
+              "ci": true,
+              "gate_row": "decide-page-records-never-acts",
+              "why": "THE SURFACE, not the endpoint -- verify_decision proves the route's fences, chain and refusals; this proves the properties that only matter because a HUMAN uses it, and that no amount of correct server code supplies. THE FIRST ONE IS MECHANICAL AND WOULD HAVE RUINED THE FEATURE: track.html rewrites app.innerHTML wholesale on a 10-second setInterval, so a textarea living on the main page would have a half-typed answer to 'the writer's key on node2' destroyed mid-sentence, repeatedly, with nothing recoverable. /decide is therefore a separate page and this gate fails if ANY timer appears in it --"
+            },
+            {
+              "id": "sight-blind",
+              "file": "viewer/hud/verify_sight_blind.cjs",
+              "ci": true,
+              "gate_row": "hud-sight-shows-blind",
+              "why": "THE HUD WAS GETTING GREENER AS ITS SENSOR ROTTED. viewer/hud/hud_user_sight.ps1 has pushed nothing since 2026-07-14 and the live snapshot still reports user_sight.fresh=false with last_push_at=null. Before this gate, hud.html's renderSight printed 'all fabric resonant -- no contradictions, no rot, no runaway' for that exact payload: a DEAD DETECTOR REPORTED AS HARMONY, on the one surface whose whole job is to tell the operator when something is wrong. The native widget already had the rule right (RenderDecisions.cs:53-65 prints 'user detectors NOT REPORTING') and its C# test asserts it -- but "
+            }
+          ]
+        },
+        {
+          "kind": "plan",
+          "citation": {
+            "repo": "uni-minecraft",
+            "title": "UNI.Minecraft",
+            "branch": "gen2-runtime",
+            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+            "commit_short": "9116fb323e86",
+            "visibility": "private",
+            "resolvable": false,
+            "path": "evidence/remediation/phase9_plan.json"
+          },
+          "phase": "PHASE-9 — RETURN TO RESONANCE",
+          "stages": 7,
+          "steps": 43,
+          "tally": {
+            "DONE": 31,
+            "BLOCKED": 1,
+            "IN_PROGRESS": 1,
+            "PLANNED": 8,
+            "OPERATOR": 2
+          }
+        },
+        {
+          "kind": "module-map",
+          "citation": {
+            "repo": "uni-minecraft",
+            "title": "UNI.Minecraft",
+            "branch": "gen2-runtime",
+            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+            "commit_short": "9116fb323e86",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "lib/sp/**/*.ex"
+          },
+          "count": 111,
+          "lines": 19094,
+          "modules": [
+            {
+              "path": "lib/sp/baselines/homeostatic.ex",
+              "module": "SP.Baselines.Homeostatic",
+              "summary": "Homeostasis-prioritised reactive baseline (Validation baseline #2)."
+            },
+            {
+              "path": "lib/sp/baselines/infrastructure.ex",
+              "module": "SP.Baselines.Infrastructure",
+              "summary": "Infrastructure-seeking late-stage scripted baseline (Validation baseline #5),"
+            },
+            {
+              "path": "lib/sp/baselines/leakage_probe.ex",
+              "module": "SP.Baselines.LeakageProbe",
+              "summary": "Leakage-probe baseline (Validation baseline #6) — a boundary/leakage audit."
+            },
+            {
+              "path": "lib/sp/baselines/lens.ex",
+              "module": "SP.Baselines.Lens",
+              "summary": "Engineering/debug-only semantic decoder for the scripted validation baselines."
+            },
+            {
+              "path": "lib/sp/baselines/morphology_seeking.ex",
+              "module": "SP.Baselines.MorphologySeeking",
+              "summary": "Morphology-seeking developmental baseline (Validation baseline #4)."
+            },
+            {
+              "path": "lib/sp/baselines/probe_first.ex",
+              "module": "SP.Baselines.ProbeFirst",
+              "summary": "Probe-first epistemic baseline (Validation baseline #3)."
+            },
+            {
+              "path": "lib/sp/baselines/random.ex",
+              "module": "SP.Baselines.Random",
+              "summary": "Blind random-actuator baseline (Validation baseline #1)."
+            },
+            {
+              "path": "lib/sp/body/development.ex",
+              "module": "SP.Body.Development",
+              "summary": "Developmental grammar: turns a `SP.Genome` growth plan into morphology over"
+            },
+            {
+              "path": "lib/sp/body/sensor.ex",
+              "module": "SP.Body.Sensor",
+              "summary": "Sensors: the bridges that transduce world/internal events into signals"
+            },
+            {
+              "path": "lib/sp/body/viability.ex",
+              "module": "SP.Body.Viability",
+              "summary": "Viability envelopes and preferred-state priors."
+            },
+            {
+              "path": "lib/sp/brain/action_heads.ex",
+              "module": "SP.Brain.ActionHeads",
+              "summary": "Factored (product) ACTION space — the dual of `SP.Brain.Factors`."
+            },
+            {
+              "path": "lib/sp/brain/agent.ex",
+              "module": "SP.Brain.Agent",
+              "summary": "An active-inference learner that satisfies the pure `SP.Agent` contract — the"
+            },
+            {
+              "path": "lib/sp/brain/anchor.ex",
+              "module": "SP.Brain.Anchor",
+              "summary": "The show's ANCHOR — the Producer UNI's question-answering voice. A human asks anything about"
+            },
+            {
+              "path": "lib/sp/brain/awareness.ex",
+              "module": "SP.Brain.Awareness",
+              "summary": "Access/report machinery — the FUNCTIONAL correlates of awareness (§ phenomenology"
+            },
+            {
+              "path": "lib/sp/brain/bridge.ex",
+              "module": "SP.Brain.Bridge",
+              "summary": "The live Markov blanket in code: a `Port`-owning `GenServer` that connects the"
+            },
+            {
+              "path": "lib/sp/brain/codec.ex",
+              "module": "SP.Brain.Codec",
+              "summary": "The discretiser between an OPAQUE observation/action interface and the discrete"
+            },
+            {
+              "path": "lib/sp/brain/colony.ex",
+              "module": "SP.Brain.Colony",
+              "summary": "The colony FACADE: spawn/stop/list/snapshot multiple active-inference UNIs, each with"
+            },
+            {
+              "path": "lib/sp/brain/curriculum.ex",
+              "module": "SP.Brain.Curriculum",
+              "summary": "Curriculum-as-preferences (§14) and blindfolds (§15)."
+            },
+            {
+              "path": "lib/sp/brain/designer.ex",
+              "module": "SP.Brain.Designer",
+              "summary": "The universal-builder front-end (§spec \"Function Designer Card\"). A **card** is a"
+            },
+            {
+              "path": "lib/sp/brain/diagnose.ex",
+              "module": "SP.Brain.Diagnose",
+              "summary": "Phase-0 plateau diagnosis (read-only) — the UNI-GPT-signed shadow counterfactual-EFE audit (consult Q1,"
+            },
+            {
+              "path": "lib/sp/brain/director.ex",
+              "module": "SP.Brain.Director",
+              "summary": "The show-runner for the live stream. Every beat it reads the colony snapshot"
+            },
+            {
+              "path": "lib/sp/brain/efe.ex",
+              "module": "SP.Brain.Efe",
+              "summary": "Action = minimisation of EXPECTED free energy (§7). For each policy π we roll the"
+            },
+            {
+              "path": "lib/sp/brain/emotion.ex",
+              "module": "SP.Brain.Emotion",
+              "summary": "Emotion as an inferred, embodied, action-READINESS read-out (§ phenomenology B-EMOTION)."
+            },
+            {
+              "path": "lib/sp/brain/factors.ex",
+              "module": "SP.Brain.Factors",
+              "summary": "Multi-factor, mean-field active inference (§2) — the form a real Minecraft body"
+            },
+            {
+              "path": "lib/sp/brain/fence.ex",
+              "module": "SP.Brain.Fence",
+              "summary": "The claim fence, in ONE place (WS3-A). On-air text describes BEHAVIOUR / viability-learning"
+            },
+            {
+              "path": "lib/sp/brain/genome.ex",
+              "module": "SP.Brain.Genome",
+              "summary": "The agent's heritable specification (§13): a `%DNA{}` that **expresses** into a"
+            },
+            {
+              "path": "lib/sp/brain/hierarchy2.ex",
+              "module": "SP.Brain.Hierarchy2",
+              "summary": "2-level hierarchical composition — purebody gate `gate.hierarchy2.composition`."
+            },
+            {
+              "path": "lib/sp/brain/homeostat.ex",
+              "module": "SP.Brain.Homeostat",
+              "summary": "Graded per-subsystem viability BODY for the `:homeostat` organ (Rung-1, `docs/specs/rung1_graded_viability.md`)."
+            },
+            {
+              "path": "lib/sp/brain/hormones.ex",
+              "module": "SP.Brain.Hormones",
+              "summary": "Hormones as slow CONTEXT variables that retune the generative model (§ phenomenology"
+            },
+            {
+              "path": "lib/sp/brain/infer.ex",
+              "module": "SP.Brain.Infer",
+              "summary": "Perception = minimisation of variational free energy (§5, §6)."
+            },
+            {
+              "path": "lib/sp/brain/language.ex",
+              "module": "SP.Brain.Language",
+              "summary": "UNI LANGUAGE — rung 5: a DEEPER generative model of speech than the flat n-gram. A meaning-"
+            },
+            {
+              "path": "lib/sp/brain/learn.ex",
+              "module": "SP.Brain.Learn",
+              "summary": "Model learning by Dirichlet accumulation (§8) — there is NO reward; the agent"
+            },
+            {
+              "path": "lib/sp/brain/math.ex",
+              "module": "SP.Brain.Math",
+              "summary": "Pure numerical kernels for discrete active inference — no Nx, no native deps."
+            },
+            {
+              "path": "lib/sp/brain/mc.ex",
+              "module": "SP.Brain.MC",
+              "summary": "The Minecraft active-inference brain: a genome-expressed `SP.Brain.Factors`"
+            },
+            {
+              "path": "lib/sp/brain/mc_codec.ex",
+              "module": "SP.Brain.MCCodec",
+              "summary": "The Minecraft sense/act discretiser — the brain-internal half of the live"
+            },
+            {
+              "path": "lib/sp/brain/metabolism.ex",
+              "module": "SP.Brain.Metabolism",
+              "summary": "Live interoceptive metabolic dynamics for the `:metabolism` organ (`docs/specs/metabolism.md` §2.1, owner"
+            },
+            {
+              "path": "lib/sp/brain/minecraft_corpus.ex",
+              "module": "SP.Brain.MinecraftCorpus",
+              "summary": "TRAINING DATA — the world of Minecraft, in words. A procedural generator of show-style sentences"
+            },
+            {
+              "path": "lib/sp/brain/model.ex",
+              "module": "SP.Brain.Model",
+              "summary": "The generative model `(A, B, C, D, E)` plus precisions, Dirichlet priors, and the"
+            },
+            {
+              "path": "lib/sp/brain/motor.ex",
+              "module": "SP.Brain.Motor",
+              "summary": "Continuous predictive coding for the body/motor layer (§ continuous PC, completes P7)."
+            },
+            {
+              "path": "lib/sp/brain/motor_control.ex",
+              "module": "SP.Brain.MotorControl",
+              "summary": "The MOTOR INNER LOOP (Gen-3) — \"action as proprioceptive inference\". Given the body's CONTINUOUS signed"
+            },
+            {
+              "path": "lib/sp/brain/narration.ex",
+              "module": "SP.Brain.Narration",
+              "summary": "The Producer's LINGUISTIC PRIORS — overlay narration rendered in the world's top-5"
+            },
+            {
+              "path": "lib/sp/brain/narrator.ex",
+              "module": "SP.Brain.Narrator",
+              "summary": "The Producer's grade-4 WRITER — language production as active inference. A small pure-FEP"
+            },
+            {
+              "path": "lib/sp/brain/novelty.ex",
+              "module": "SP.Brain.Novelty",
+              "summary": "The MISSING THIRD EFE TERM — parameter information gain (\"novelty\"/active learning) over the Dirichlet"
+            },
+            {
+              "path": "lib/sp/brain/plan.ex",
+              "module": "SP.Brain.Plan",
+              "summary": "Deeper planning toward **sophisticated inference** (§9) — reasoning, honestly scoped."
+            },
+            {
+              "path": "lib/sp/brain/precision.ex",
+              "module": "SP.Brain.Precision",
+              "summary": "Dynamic precision — **attention as the optimisation of confidence** (§7–8)."
+            },
+            {
+              "path": "lib/sp/brain/readability.ex",
+              "module": "SP.Brain.Readability",
+              "summary": "The OPENLY-FALSIFIABLE grade-level harness for the Producer's language faculty. Pure"
+            },
+            {
+              "path": "lib/sp/brain/reader.ex",
+              "module": "SP.Brain.Reader",
+              "summary": "UNI LANGUAGE — a LEARNED categorical generative model over words (reading rungs 1–3 + writing rung 4)."
+            },
+            {
+              "path": "lib/sp/brain/self_location.ex",
+              "module": "SP.Brain.SelfLocation",
+              "summary": "Self-location as precision-weighted multisensory inference — and the controlled"
+            },
+            {
+              "path": "lib/sp/brain/slow_context.ex",
+              "module": "SP.Brain.SlowContext",
+              "summary": "Slow temporal CONTEXT over the 2-level composition — purebody gate"
+            },
+            {
+              "path": "lib/sp/brain/speaker.ex",
+              "module": "SP.Brain.Speaker",
+              "summary": "The producer UNI's VOICE — one faculty for grounded, learned speech. It unifies what the producer"
+            },
+            {
+              "path": "lib/sp/brain/speech.ex",
+              "module": "SP.Brain.Speech",
+              "summary": "The producer's COMPLETE generative voice — template-free, grounded. Every line the producer says"
+            },
+            {
+              "path": "lib/sp/brain/strategist.ex",
+              "module": "SP.Brain.Strategist",
+              "summary": "The L2 strategic layer (§9 hierarchy) — the SAME discrete engine instanced a level"
+            },
+            {
+              "path": "lib/sp/brain/structure.ex",
+              "module": "SP.Brain.Structure",
+              "summary": "Structure learning (§16 growth) — UNIs are **born to LEARN worlds and GROW them"
+            },
+            {
+              "path": "lib/sp/brain/validation_engine.ex",
+              "module": "SP.Brain.ValidationEngine",
+              "summary": "The §16 acceptance checklist, enforced. One pure module that runs every numerical"
+            },
+            {
+              "path": "lib/sp/brain/viability.ex",
+              "module": "SP.Brain.Viability",
+              "summary": "Death as viability-exit and shutdown (§ phenomenology B-DEATH)."
+            },
+            {
+              "path": "lib/sp/brain/vision.ex",
+              "module": "SP.Brain.Vision",
+              "summary": "Reader for a visual-cortex PERCEPT — the discrete scene-state + visual surprise (free energy) that"
+            },
+            {
+              "path": "lib/sp/control_plane/anchor.ex",
+              "module": "SP.ControlPlane.Anchor",
+              "summary": "The value a hash chain cannot hold about itself: its expected head and length."
+            },
+            {
+              "path": "lib/sp/control_plane/build_identity.ex",
+              "module": "SP.ControlPlane.BuildIdentity",
+              "summary": "The boot-time build identity of the Control Plane body (Phase 9, step 1.1)."
+            },
+            {
+              "path": "lib/sp/control_plane/command.ex",
+              "module": "SP.ControlPlane.Command",
+              "summary": "The only writer."
+            },
+            {
+              "path": "lib/sp/control_plane/command/writ.ex",
+              "module": "SP.ControlPlane.Command.Writ",
+              "summary": "A writ of authority to append one entry to the ledger."
+            },
+            {
+              "path": "lib/sp/control_plane/drift.ex",
+              "module": "SP.ControlPlane.Drift",
+              "summary": "A comparison between two observations, refusing at construction any pairing of"
+            },
+            {
+              "path": "lib/sp/control_plane/gate_row.ex",
+              "module": "SP.ControlPlane.GateRow",
+              "summary": "Build, validate and canonically encode one row of the gate ledger."
+            },
+            {
+              "path": "lib/sp/control_plane/key.ex",
+              "module": "SP.ControlPlane.Key",
+              "summary": "One party's authority to cross a threshold."
+            },
+            {
+              "path": "lib/sp/control_plane/ledger.ex",
+              "module": "SP.ControlPlane.Ledger",
+              "summary": "The append-only, hash-chained record of every canonical mutation."
+            },
+            {
+              "path": "lib/sp/control_plane/pair.ex",
+              "module": "SP.ControlPlane.Pair",
+              "summary": "Decides whether two runs form a comparable pair, and nothing else."
+            },
+            {
+              "path": "lib/sp/control_plane/recorder.ex",
+              "module": "SP.ControlPlane.Recorder",
+              "summary": "Append ONE entry to the persisted ledger, without rebuilding the ones already there."
+            },
+            {
+              "path": "lib/sp/control_plane/registry.ex",
+              "module": "SP.ControlPlane.Registry",
+              "summary": "Registers a gate **before** anything about it is observed."
+            },
+            {
+              "path": "lib/sp/control_plane/room.ex",
+              "module": "SP.ControlPlane.Room",
+              "summary": "A gated space: `green → clean → sterile`, and back out again through the same"
+            },
+            {
+              "path": "lib/sp/control_plane/run.ex",
+              "module": "SP.ControlPlane.Run",
+              "summary": "An immutable run: what was run, on what, with what, when — and what it may"
+            },
+            {
+              "path": "lib/sp/control_plane/scene.ex",
+              "module": "SP.ControlPlane.Scene",
+              "summary": "What the operator will be shown — as a **pure function of state it is handed**."
+            },
+            {
+              "path": "lib/sp/control_plane/store.ex",
+              "module": "SP.ControlPlane.Store",
+              "summary": "Durable, append-only persistence for a ledger and its anchor."
+            },
+            {
+              "path": "lib/sp/control_plane/verdict.ex",
+              "module": "SP.ControlPlane.Verdict",
+              "summary": "Authors one of five controlled words about a **registered** gate, with a"
+            },
+            {
+              "path": "lib/sp/control_plane/witness.ex",
+              "module": "SP.ControlPlane.Witness",
+              "summary": "Corroborates the local anchor against custodians in other failure domains."
+            },
+            {
+              "path": "lib/sp/core/directive.ex",
+              "module": "SP.Core.Directive",
+              "summary": "A directive is a **pure description of an external effect** (Jido invariant #4)."
+            },
+            {
+              "path": "lib/sp/core/schema.ex",
+              "module": "SP.Core.Schema",
+              "summary": "Tiny dependency-free schema validator for configs, scenarios and genome maps."
+            },
+            {
+              "path": "lib/sp/core/signal.ex",
+              "module": "SP.Core.Signal",
+              "summary": "The primary communication unit (Jido invariant #1)."
+            },
+            {
+              "path": "lib/sp/interface/audit.ex",
+              "module": "SP.Interface.Audit",
+              "summary": "Leakage auditor for the learner-facing boundary (Validation Invariants"
+            },
+            {
+              "path": "lib/sp/lab/bioenergetics.ex",
+              "module": "SP.Lab.Bioenergetics",
+              "summary": "Chemiosmosis: the proton-motive force and an ATP free-energy proxy, plus a configurable"
+            },
+            {
+              "path": "lib/sp/lab/model_compare.ex",
+              "module": "SP.Lab.ModelCompare",
+              "summary": "A small, declared-weight model-comparison engine, and a concrete gravity-vs-pressure"
+            },
+            {
+              "path": "lib/sp/lab/physics.ex",
+              "module": "SP.Lab.Physics",
+              "summary": "Newtonian surface gravity, escape velocity, and the falsifiable pressure-weight model."
+            },
+            {
+              "path": "lib/sp/lab/planetary_data.ex",
+              "module": "SP.Lab.PlanetaryData",
+              "summary": "Verified planetary reference values for the seven bodies used to test the"
+            },
+            {
+              "path": "lib/sp/lab/radiation.ex",
+              "module": "SP.Lab.Radiation",
+              "summary": "Beer–Lambert UV attenuation through an absorbing column (the ozone-shield model)."
+            },
+            {
+              "path": "lib/sp/lab/solar_energy.ex",
+              "module": "SP.Lab.SolarEnergy",
+              "summary": "Steady-state solar collector heat balance — a *bounded* energy model. There is no"
+            },
+            {
+              "path": "lib/sp/lab/validate.ex",
+              "module": "SP.Lab.Validate",
+              "summary": "Science cross-check harness. Re-derives every load-bearing number that the lab's ledgers,"
+            },
+            {
+              "path": "lib/sp/minecraft/builder.ex",
+              "module": "SP.Minecraft.Builder",
+              "summary": "Translates the simulated world into Minecraft (1.16.5) console commands."
+            },
+            {
+              "path": "lib/sp/minecraft/rcon.ex",
+              "module": "SP.Minecraft.Rcon",
+              "summary": "Minimal Source RCON client over OTP `:gen_tcp` (no hex dependencies), used to"
+            },
+            {
+              "path": "lib/sp/minecraft/runner.ex",
+              "module": "SP.Minecraft.Runner",
+              "summary": "Drives a live simulation into a running Minecraft (Paper) server over RCON:"
+            },
+            {
+              "path": "lib/sp/producer/brain.ex",
+              "module": "SP.Producer.Brain",
+              "summary": "The Producer UNI's brain: a `SP.Brain.Factors` model (designed showrunning priors) plus a"
+            },
+            {
+              "path": "lib/sp/producer/codec.ex",
+              "module": "SP.Producer.Codec",
+              "summary": "The Producer's sense/act discretiser (the analogue of `SP.Brain.MCCodec`). Pure: it turns"
+            },
+            {
+              "path": "lib/sp/producer/genome.ex",
+              "module": "SP.Producer.Genome",
+              "summary": "The Producer UNI's heritable spec — a **master producer's wisdom, set firmly**. Unlike a"
+            },
+            {
+              "path": "lib/sp/producer/world_sensor.ex",
+              "module": "SP.Producer.WorldSensor",
+              "summary": "The Producer's WORLD sense (WS1-B) — day/night rhythm and colony size, read over RCON from the"
+            },
+            {
+              "path": "lib/sp/runtime/agent.ex",
+              "module": "SP.Runtime.Agent",
+              "summary": "The live runtime host for one UNI — a **pure-OTP** realisation of the Jido contract"
+            },
+            {
+              "path": "lib/sp/runtime/board.ex",
+              "module": "SP.Runtime.Board",
+              "summary": "The push-snapshot board: a public ETS table that every live agent writes its own row"
+            },
+            {
+              "path": "lib/sp/runtime/lineage.ex",
+              "module": "SP.Runtime.Lineage",
+              "summary": "A durable KIN LINEAGE — the parent that outlives individual lives (one per kin group"
+            },
+            {
+              "path": "lib/sp/runtime/log_sensor.ex",
+              "module": "SP.Runtime.LogSensor",
+              "summary": "A tiny `:logger` handler that COUNTS error/warning events on the node, so the Producer UNI"
+            },
+            {
+              "path": "lib/sp/runtime/mind.ex",
+              "module": "SP.Runtime.Mind",
+              "summary": "The agent's globally-available \"mind beat\" — what is in the spotlight right now,"
+            },
+            {
+              "path": "lib/sp/runtime/on_chip.ex",
+              "module": "SP.Runtime.OnChip",
+              "summary": "The \"math on chip\" assertion — the boot fence for the gen-2 runtime."
+            },
+            {
+              "path": "lib/sp/runtime/supervisor.ex",
+              "module": "SP.Runtime.Supervisor",
+              "summary": "The supervised, sharded runtime that replaces the old unlinked-Colony singleton. Started"
+            },
+            {
+              "path": "lib/sp/show/bootstrap.ex",
+              "module": "SP.Show.Bootstrap",
+              "summary": "A supervised, one-shot colony populator for the headless/prod auto-start path"
+            },
+            {
+              "path": "lib/sp/show/overlay_publisher.ex",
+              "module": "SP.Show.OverlayPublisher",
+              "summary": "Writes the Producer's live narration into the audience OVERLAY spool"
+            },
+            {
+              "path": "lib/sp/show/remote_rows.ex",
+              "module": "SP.Show.RemoteRows",
+              "summary": "The colony-rows transport seam (reviewed 2026-07-15:"
+            },
+            {
+              "path": "lib/sp/show/supervisor.ex",
+              "module": "SP.Show.Supervisor",
+              "summary": "The live-show supervision tree — the durability fix. Before this, `SP.Producer`,"
+            },
+            {
+              "path": "lib/sp/sim/observer.ex",
+              "module": "SP.Sim.Observer",
+              "summary": "Pure builder of a per-tick **observer frame**: a complete record of the world"
+            },
+            {
+              "path": "lib/sp/sim/recorder.ex",
+              "module": "SP.Sim.Recorder",
+              "summary": "Writes recorded observer frames to durable evidence artifacts."
+            },
+            {
+              "path": "lib/sp/sim/verifier.ex",
+              "module": "SP.Sim.Verifier",
+              "summary": "Independent re-derivation of the Markov-blanket no-leak verdict from recorded"
+            },
+            {
+              "path": "lib/sp/world/actions.ex",
+              "module": "SP.World.Actions",
+              "summary": "World-mutation primitives — the mechanical implementation of \"active states\"."
+            },
+            {
+              "path": "lib/sp/world/dynamics.ex",
+              "module": "SP.World.Dynamics",
+              "summary": "The microstep integration kernel for a single region (hybrid-time fastest"
+            },
+            {
+              "path": "lib/sp/world/field.ex",
+              "module": "SP.World.Field",
+              "summary": "A scalar field over a `w x h` cell grid, stored as `%{index => float}`."
+            },
+            {
+              "path": "lib/sp/world/law.ex",
+              "module": "SP.World.Law",
+              "summary": "A region's law-parameter vector: the local physics that governs dynamics."
+            },
+            {
+              "path": "lib/sp/world/material.ex",
+              "module": "SP.World.Material",
+              "summary": "Material classes of the L1 mesoscopic layer and their physical properties."
+            },
+            {
+              "path": "lib/sp/world/region.ex",
+              "module": "SP.World.Region",
+              "summary": "A region is one chunk of the world: a `w x h` cell substrate plus the five"
+            }
+          ]
+        },
+        {
+          "kind": "schema",
+          "citation": {
+            "repo": "uni-minecraft",
+            "title": "UNI.Minecraft",
+            "branch": "gen2-runtime",
+            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+            "commit_short": "9116fb323e86",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "production/schemas/*.json"
+          },
+          "count": 8,
+          "items": [
+            {
+              "path": "production/schemas/broadcast.schema.json",
+              "bytes": 6595
+            },
+            {
+              "path": "production/schemas/claim_fence.json",
+              "bytes": 1483
+            },
+            {
+              "path": "production/schemas/envelope.schema.json",
+              "bytes": 2213
+            },
+            {
+              "path": "production/schemas/evidence_bundle.schema.json",
+              "bytes": 4454
+            },
+            {
+              "path": "production/schemas/gate_row.schema.json",
+              "bytes": 2962
+            },
+            {
+              "path": "production/schemas/producer_uni_state.v1.json",
+              "bytes": 7884
+            },
+            {
+              "path": "production/schemas/public_manifest.schema.json",
+              "bytes": 3218
+            },
+            {
+              "path": "production/schemas/sensorium_envelope.schema.json",
+              "bytes": 2809
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni-flagellum",
+      "title": "UNI-FLAGELLUM",
+      "one_line": "The bacterial flagellar-motor laboratory: licensed microscopy beside a deterministic reconstruction and an active-inference agent.",
+      "inclusion": "spine",
+      "provenance": {
+        "repo": "uni-flagellum",
+        "title": "UNI-FLAGELLUM",
+        "branch": "hierarchical-aif/motor-stack",
+        "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
+        "commit_short": "d713a2200f85",
+        "visibility": "private",
+        "resolvable": false
+      },
+      "source_last_commit": "2026-07-31T06:03:59-05:00",
+      "blocks": [
+        {
+          "kind": "adr-index",
+          "citation": {
+            "repo": "uni-flagellum",
+            "title": "UNI-FLAGELLUM",
+            "branch": "hierarchical-aif/motor-stack",
+            "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
+            "commit_short": "d713a2200f85",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "docs/control-plane/decisions/*.md"
+          },
+          "count": 8,
+          "items": [
+            {
+              "path": "docs/control-plane/decisions/ADR-0001-four-bodies.md",
+              "title": "ADR-0001 — Four bodies, none collapsible into another",
+              "bytes": 3066,
+              "sha256": "a612f3e645d8b8e6"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0002-gaia-projects-never-computes.md",
+              "title": "ADR-0002 — Verdicts are authored by the Control Plane and projected by Gaia, never computed by Gaia",
+              "bytes": 10021,
+              "sha256": "fe04d527e2894991"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0003-control-plane-is-the-lab.md",
+              "title": "ADR-0003 — The Control Plane is the lab; the room and the machinery are one body",
+              "bytes": 2971,
+              "sha256": "10ef88e41447da5f"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0004-model-as-code-not-svg.md",
+              "title": "ADR-0004 — Architecture is model-as-code; hand-authored SVG is not an architecture format",
+              "bytes": 5733,
+              "sha256": "fc6e389f9b54e422"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0005-rendering-fence-scope.md",
+              "title": "ADR-0005 — The flagellum's CPU-only rendering fence does not bind the lab",
+              "bytes": 2525,
+              "sha256": "616a0907c9b49f00"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0006-sp-controlplane-naming-and-placement.md",
+              "title": "ADR-0006 — The body is `SP.ControlPlane`, and it lives in the zero-dep core",
+              "bytes": 4601,
+              "sha256": "36a8cfddf2326a31"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0007-ui-contract-amendment.md",
+              "title": "ADR-0007 — The `ui/` read-only contract is clarified, not widened",
+              "bytes": 3863,
+              "sha256": "5c77ba41e593557b"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0008-human-presence-for-go-live.md",
+              "title": "ADR-0008 — Human presence is required to go live",
+              "bytes": 5985,
+              "sha256": "acd0afaab24d14a0"
+            }
+          ]
+        },
+        {
+          "kind": "evidence-manifest",
+          "citation": {
+            "repo": "uni-flagellum",
+            "title": "UNI-FLAGELLUM",
+            "branch": "hierarchical-aif/motor-stack",
+            "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
+            "commit_short": "d713a2200f85",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "experiments/*manifest*.json"
+          },
+          "count": 1,
+          "items": [
+            {
+              "path": "experiments/walkthrough-evidence-manifest.v1.json",
+              "bytes": 2229
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni-cookbook",
+      "title": "UNI Encyclopedia & Cookbook",
+      "one_line": "Two book-length works on the UNI method, rendered by a stdlib-only Python generator.",
+      "inclusion": "spine",
+      "provenance": {
+        "repo": "uni-cookbook",
+        "title": "UNI Encyclopedia & Cookbook",
+        "branch": "main",
+        "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
+        "commit_short": "575fc93d9d31",
+        "visibility": "private",
+        "resolvable": false
+      },
+      "source_last_commit": "2026-07-16T11:32:06-05:00",
+      "blocks": [
+        {
+          "kind": "chapter-index",
+          "citation": {
+            "repo": "uni-cookbook",
+            "title": "UNI Encyclopedia & Cookbook",
+            "branch": "main",
+            "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
+            "commit_short": "575fc93d9d31",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "encyclopedia/**/*.md"
+          },
+          "count": 35,
+          "items": [
+            {
+              "path": "encyclopedia/wing-E/E0-how-to-read-this-work.md",
+              "title": "E0 - How to read this work (the Evidence Constitution)",
+              "bytes": 10980,
+              "sha256": "0adaee9f4a050900"
+            },
+            {
+              "path": "encyclopedia/wing-E/E1-calibration-ledger.md",
+              "title": "E1 - The calibration ledger and \"Falsify this\"",
+              "bytes": 10018,
+              "sha256": "54090eb5c3dc7642"
+            },
+            {
+              "path": "encyclopedia/wing-M/Mv1-honesty-fence-is-the-pitch.md",
+              "title": "Mv1 - The honesty fence is the pitch",
+              "bytes": 11989,
+              "sha256": "47f9448bd335ccad"
+            },
+            {
+              "path": "encyclopedia/wing-M/Mv2-open-falsification.md",
+              "title": "Mv2 - Open falsification (the public invitation)",
+              "bytes": 10126,
+              "sha256": "e571e102ed33bae3"
+            },
+            {
+              "path": "encyclopedia/wing-N/N1-fep-public-lens.md",
+              "title": "N1 - The Free Energy Principle as a public lens",
+              "bytes": 11619,
+              "sha256": "28cb3fb03f484424"
+            },
+            {
+              "path": "encyclopedia/wing-N/N2-same-math-many-scales.md",
+              "title": "N2 - Same math, many scales",
+              "bytes": 12423,
+              "sha256": "f3158b737ac41b7f"
+            },
+            {
+              "path": "encyclopedia/wing-N/N3-what-active-inference-is-not.md",
+              "title": "N3 - What active inference is NOT (the meaning of the fences)",
+              "bytes": 11966,
+              "sha256": "fa73060ac3984ba6"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/00-INDEX.md",
+              "title": "The NATURA wing — nature's regularities, kept sovereign from UNI's build status",
+              "bytes": 16836,
+              "sha256": "f0e001e2e10f642e"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-00-how-to-read-this-wing.md",
+              "title": "NA-00 — How to read the NATURA wing (the second sovereign vocabulary)",
+              "bytes": 55408,
+              "sha256": "86cb644930285606"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-01-nature-as-the-authority.md",
+              "title": "NA-01 — Nature as the authority, and the discipline that keeps it honest",
+              "bytes": 31484,
+              "sha256": "76570945eae1efae"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-02-the-one-loop.md",
+              "title": "NA-02 — The one loop: active inference as the method (VFE to understand, EFE to choose)",
+              "bytes": 24593,
+              "sha256": "23eab291fe414e55"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-03-how-to-make-new-science.md",
+              "title": "NA-03 — How to research, observe, and make new science with falsifiable evidence",
+              "bytes": 35860,
+              "sha256": "460b96f97fc972f6"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-04-mind-body-world.md",
+              "title": "NA-04 — MIND / BODY / MIND.BODY / WORLD — the Markov blanket, nested across scales",
+              "bytes": 29084,
+              "sha256": "9023ad2cb3f12cf2"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-05-ratios-and-scaling-laws.md",
+              "title": "NA-05 — The ratios: allometry and scaling laws across 20+ orders of magnitude",
+              "bytes": 57066,
+              "sha256": "449e730f5a375619"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-06-frequencies-rhythm-and-resonance.md",
+              "title": "NA-06 — The frequencies: rhythm, resonance, and the honest fence around them",
+              "bytes": 34824,
+              "sha256": "adb2cd084aad0441"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-07-dimensionless-numbers.md",
+              "title": "NA-07 — The dimensionless numbers: the cross-scale design toolkit",
+              "bytes": 32481,
+              "sha256": "83e1a650b81f3dec"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-08-cell-level-design.md",
+              "title": "NA-08 — Design down to the cell level: the cell as an engineered system",
+              "bytes": 34419,
+              "sha256": "6f12b8f4c32b66dd"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-09-morphogenesis-and-development.md",
+              "title": "NA-09 — Morphogenesis: how a pattern comes from no pattern",
+              "bytes": 30684,
+              "sha256": "58a614f4fbe79aa9"
+            },
+            {
+              "path": "encyclopedia/wing-NATURA/NA-10-the-scale-ladder-and-gradients.md",
+              "title": "NA-10 — The scale ladder: quark to galaxy, and the gradients between",
+              "bytes": 46149,
+              "sha256": "6e7a9fc0d6b24f26"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-C-continuity-substrate.md",
+              "title": "S-C - Continuity and the embodiment substrate (UNI.OS)",
+              "bytes": 19154,
+              "sha256": "b884ed404697a421"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L0-genome-zygote.md",
+              "title": "S-L0 - Molecular: genome to zygote (float32 tier)",
+              "bytes": 7495,
+              "sha256": "35393423f63de040"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L1-cellular.md",
+              "title": "S-L1 - Cellular: the Cell Lab (with its honest losses)",
+              "bytes": 9411,
+              "sha256": "e0ee5adbddd74f7a"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L2-metabolism.md",
+              "title": "S-L2 - Metabolism: uplift plus the plateau-break OPEN",
+              "bytes": 10243,
+              "sha256": "c929117335d6dacc"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L3-organ-heart-lab.md",
+              "title": "S-L3 - Organ: the Karaaslan Heart Lab",
+              "bytes": 10217,
+              "sha256": "d6d16d96c741a549"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L4-affect-as-precision.md",
+              "title": "S-L4 - Affect-as-precision and the Z modulator",
+              "bytes": 10139,
+              "sha256": "6094a5b604673391"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L5-sensorimotor.md",
+              "title": "S-L5 - Sensorimotor: the A3 symmetric result",
+              "bytes": 10950,
+              "sha256": "2dd78a60c966916f"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L6-perception-world-c.md",
+              "title": "S-L6 - Perception: World C, the one citable empirical PASS",
+              "bytes": 12038,
+              "sha256": "4888e7bdc4951ccd"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L7-language.md",
+              "title": "S-L7 - Language: Phase J specialist PASS and the central wall",
+              "bytes": 11967,
+              "sha256": "5124249d333ba6a8"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L8-self-model-metacognition.md",
+              "title": "S-L8 - Self-model and metacognition (15/15; sentience disclaimed)",
+              "bytes": 12631,
+              "sha256": "2048eb98b64bb254"
+            },
+            {
+              "path": "encyclopedia/wing-S/S-L9-to-L12-parked-frontier.md",
+              "title": "S-L9-L12 - The parked and not-yet-built rungs (L9 reasoning, L10 wisdom, L11 dreaming, L12 creativity to measurable awareness)",
+              "bytes": 16859,
+              "sha256": "b6e5a28b285dff9f"
+            },
+            {
+              "path": "encyclopedia/wing-mu/mu1-evidence-constitution.md",
+              "title": "mu1 - The Evidence Constitution and ledger discipline",
+              "bytes": 9923,
+              "sha256": "b5d7e75d235a5b7d"
+            },
+            {
+              "path": "encyclopedia/wing-mu/mu2-bars-before-build.md",
+              "title": "mu2 - Bars-before-build, held-once, CI-as-verdict",
+              "bytes": 10869,
+              "sha256": "81fd6e1a86b1cfce"
+            },
+            {
+              "path": "encyclopedia/wing-mu/mu3-negatives-bounds-two-tier.md",
+              "title": "mu3 - Negatives, bounds and the two-tier split",
+              "bytes": 11805,
+              "sha256": "11a132299b48b373"
+            },
+            {
+              "path": "encyclopedia/wing-mu/mu4-engine-framing-invariants.md",
+              "title": "mu4 - Engine and framing invariants (one engine, no backprop)",
+              "bytes": 13885,
+              "sha256": "57f213c688899263"
+            },
+            {
+              "path": "encyclopedia/wing-mu/mu5-lab-team-ship-gate.md",
+              "title": "mu5 - Lab-team, ship-gate and runner discipline",
+              "bytes": 13718,
+              "sha256": "49a56064b6254c39"
+            }
+          ]
+        },
+        {
+          "kind": "chapter-index",
+          "citation": {
+            "repo": "uni-cookbook",
+            "title": "UNI Encyclopedia & Cookbook",
+            "branch": "main",
+            "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
+            "commit_short": "575fc93d9d31",
+            "visibility": "private",
+            "resolvable": false,
+            "glob": "cookbook/**/*.md"
+          },
+          "count": 25,
+          "items": [
+            {
+              "path": "cookbook/recipes-natura/CN-01-rocks.md",
+              "title": "CN-01 — Rocks: the mineral substrate",
+              "bytes": 52166,
+              "sha256": "a5a4b0ed495ab300"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-02-water.md",
+              "title": "CN-02 — Water: the anomalous solvent everything else assumes",
+              "bytes": 39384,
+              "sha256": "1cfac2f80bbdb263"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-03-air.md",
+              "title": "CN-03 — Air: the atmosphere as a working fluid",
+              "bytes": 50211,
+              "sha256": "94690dcb1761bc6e"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-04-stars.md",
+              "title": "CN-04 — Stars: the factory that made every atom in the cell",
+              "bytes": 44913,
+              "sha256": "7b682c7e40cb3df7"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-05-dna.md",
+              "title": "CN-05 — DNA: the information substrate",
+              "bytes": 53341,
+              "sha256": "dcbec4a222de5f3c"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-06-sperm.md",
+              "title": "CN-06 — Sperm: the minimal motile delivery vehicle",
+              "bytes": 50452,
+              "sha256": "79b4993c8d5ff2b0"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-07-ants.md",
+              "title": "CN-07 — Ants: the colony as a Markov blanket",
+              "bytes": 50832,
+              "sha256": "ec1db645371ada43"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-08-dinosaurs.md",
+              "title": "CN-08 — Dinosaurs: the scaling limits of a land animal, and how to measure the dead",
+              "bytes": 60603,
+              "sha256": "e103507794da0121"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-09-whales.md",
+              "title": "CN-09 — Whales: the upper bound of animal life, and low-frequency information",
+              "bytes": 59645,
+              "sha256": "543140ebe03cec6d"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-10-bats.md",
+              "title": "CN-10 — Bats: active inference you can measure",
+              "bytes": 54913,
+              "sha256": "de808f0c38bf146c"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-11-humans.md",
+              "title": "CN-11 — Humans: the numbers, without the flattery",
+              "bytes": 50357,
+              "sha256": "c26b5d896a2c49c9"
+            },
+            {
+              "path": "cookbook/recipes-natura/CN-12-beyond-human-open-question.md",
+              "title": "CN-12 — Beyond human: the permanent open question (QUAESTIO APERTA)",
+              "bytes": 45232,
+              "sha256": "87e45f4cbb14a779"
+            },
+            {
+              "path": "cookbook/recipes/L0-genome-zygote.md",
+              "title": "L0 — Molecular / genome → zygote (the conception prior)",
+              "bytes": 6319,
+              "sha256": "f5363793d302e101"
+            },
+            {
+              "path": "cookbook/recipes/L1-cellular.md",
+              "title": "L1 — Cellular / autopoietic viability & homeostasis",
+              "bytes": 6749,
+              "sha256": "b76f33d20dc41624"
+            },
+            {
+              "path": "cookbook/recipes/L10-wisdom.md",
+              "title": "L10 — Wisdom / higher cognition",
+              "bytes": 6549,
+              "sha256": "e84da2186ad60829"
+            },
+            {
+              "path": "cookbook/recipes/L11-dreaming.md",
+              "title": "L11 — Dreaming (offline replay / generative simulation)",
+              "bytes": 10780,
+              "sha256": "18959a89b2ae76a1"
+            },
+            {
+              "path": "cookbook/recipes/L12-creativity-awareness.md",
+              "title": "L12 — Creativity to measurable awareness",
+              "bytes": 13756,
+              "sha256": "4e5639e8a4069a18"
+            },
+            {
+              "path": "cookbook/recipes/L2-metabolism.md",
+              "title": "L2 — Tissue / metabolism (interoception and energy)",
+              "bytes": 14547,
+              "sha256": "21346fa3663ec72b"
+            },
+            {
+              "path": "cookbook/recipes/L3-organ-heart-lab.md",
+              "title": "L3 — Organ / Physiological Control (the Cardio-Renal Heart Lab)",
+              "bytes": 8422,
+              "sha256": "5f264a4f8c23d2a8"
+            },
+            {
+              "path": "cookbook/recipes/L4-affect-as-precision.md",
+              "title": "L4 — Interoceptive / Autonomic + Affect-as-Precision",
+              "bytes": 6568,
+              "sha256": "423455401097fcda"
+            },
+            {
+              "path": "cookbook/recipes/L5-sensorimotor.md",
+              "title": "L5 — Sensorimotor / motor hierarchy (embodied action)",
+              "bytes": 11107,
+              "sha256": "a5eccba95bc70272"
+            },
+            {
+              "path": "cookbook/recipes/L6-perception.md",
+              "title": "L6 — Perception (precision-weighting / EFE planning)",
+              "bytes": 10418,
+              "sha256": "88508f9d4201aa7e"
+            },
+            {
+              "path": "cookbook/recipes/L7-language.md",
+              "title": "L7 — Language (reading = inference / speaking = action)",
+              "bytes": 12919,
+              "sha256": "0b8c755f9605616f"
+            },
+            {
+              "path": "cookbook/recipes/L8-self-model-metacognition.md",
+              "title": "L8 — Self-model / metacognition / metalinguistics",
+              "bytes": 7043,
+              "sha256": "5e84470e08c7335c"
+            },
+            {
+              "path": "cookbook/recipes/L9-reasoning-conscience.md",
+              "title": "L9 — Reasoning / conscience (narrative-self → conscience → reasoning)",
+              "bytes": 12498,
+              "sha256": "1621023eb82a7c7b"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": {
+    "note": "Listed rather than silently dropped. A reader can see the shape of what is not here.",
+    "sources_skipped": [],
+    "paths_excluded": [
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-A-no-api-content-model.md"
+      },
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-B-commercial-proof.md"
+      },
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-C-website-self-driving.md"
+      },
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-D-engagement-pricing-brand.md"
+      },
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-E-delivery-route-auth-triage.md"
+      },
+      {
+        "source": "uni-cookbook",
+        "path": "encyclopedia/appendix-TA/TA-N-negatives-parks-open-threads.md"
+      }
+    ],
+    "exclude_reasons": [
+      {
+        "id": "uni-cookbook",
+        "reason": [
+          "appendix-TA is Track-A: the commercial and delivery track (engagement, pricing, brand,",
+          "delivery-route ledger, commercial proof). It is the operator's own material and his own",
+          "published rate card, so it is not a leak — but it is BUSINESS content in a SCIENCE",
+          "encyclopedia, and this site documents the science. Excluded by scope, not by secrecy.",
+          "Recorded here rather than silently dropped, because the cookbook's own generator holds that",
+          "nothing may be omitted without saying so."
+        ]
+      }
+    ]
+  }
+}

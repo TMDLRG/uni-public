@@ -1,0 +1,78 @@
+{
+  "note": [
+    "THE SOURCE MANIFEST. Every repository this site documents, the branch it is documented FROM, and",
+    "what may be read out of it. The generator reads nothing that is not declared here.",
+    "",
+    "BRANCH SELECTION IS EXPLICIT AND PER-REPO, AND THAT IS NOT PEDANTRY. Measured 2026-08-01: the live",
+    "work in this estate is NOT on default branches. UNI-FLAGELLUM's main has 9 commits while the real",
+    "work on hierarchical-aif/motor-stack has 122. A pipeline that defaulted to 'main' would publish a",
+    "skeleton and call it the system. Every branch below was measured, not assumed."
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "uni-minecraft",
+      "title": "UNI.Minecraft",
+      "root_key": "uni-minecraft",
+      "branch": "gen2-runtime",
+      "visibility": "private",
+      "inclusion": "spine",
+      "one_line": "The colony, the Producer, the scientific control plane, the operator plane and the broadcast suite.",
+      "read": [
+        { "kind": "gate-registry", "path": "viewer/gate_registry.json" },
+        { "kind": "plan", "path": "evidence/remediation/phase9_plan.json" },
+        { "kind": "module-map", "glob": "lib/sp/**/*.ex" },
+        { "kind": "schema", "glob": "production/schemas/*.json" }
+      ]
+    },
+    {
+      "id": "uni-flagellum",
+      "title": "UNI-FLAGELLUM",
+      "root_key": "uni-flagellum",
+      "branch": "hierarchical-aif/motor-stack",
+      "visibility": "private",
+      "inclusion": "spine",
+      "one_line": "The bacterial flagellar-motor laboratory: licensed microscopy beside a deterministic reconstruction and an active-inference agent.",
+      "read": [
+        { "kind": "adr-index", "glob": "docs/control-plane/decisions/*.md" },
+        { "kind": "evidence-manifest", "glob": "experiments/*manifest*.json" }
+      ]
+    },
+    {
+      "id": "uni-cookbook",
+      "title": "UNI Encyclopedia & Cookbook",
+      "root_key": "uni-cookbook",
+      "branch": "main",
+      "visibility": "private",
+      "inclusion": "spine",
+      "one_line": "Two book-length works on the UNI method, rendered by a stdlib-only Python generator.",
+      "read": [
+        { "kind": "chapter-index", "glob": "encyclopedia/**/*.md" },
+        { "kind": "chapter-index", "glob": "cookbook/**/*.md" }
+      ],
+      "exclude": [
+        "encyclopedia/appendix-TA/**"
+      ],
+      "exclude_reason": [
+        "appendix-TA is Track-A: the commercial and delivery track (engagement, pricing, brand,",
+        "delivery-route ledger, commercial proof). It is the operator's own material and his own",
+        "published rate card, so it is not a leak — but it is BUSINESS content in a SCIENCE",
+        "encyclopedia, and this site documents the science. Excluded by scope, not by secrecy.",
+        "Recorded here rather than silently dropped, because the cookbook's own generator holds that",
+        "nothing may be omitted without saying so."
+      ]
+    }
+  ],
+  "citation_policy": {
+    "rule": "Every citation records repo + branch + commit sha + path (+ line range where applicable).",
+    "public_source": false,
+    "consequence": [
+      "NO SOURCE REPO IS PUBLIC YET, so a citation cannot be a clickable permalink today. The site",
+      "therefore renders citations as UNRESOLVABLE and says so on the page, in the citation itself.",
+      "That is deliberate. A citation a reader cannot open is an appeal to authority; the honest",
+      "response is to mark it, not to hide it or to imply it can be checked. When a source repo is",
+      "published, set visibility to 'public' here and the same citations become permalinks with no",
+      "content change."
+    ]
+  }
+}

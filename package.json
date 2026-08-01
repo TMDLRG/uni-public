@@ -1,0 +1,34 @@
+{
+  "name": "uni-public",
+  "version": "0.1.0",
+  "description": "Universal Natural Intelligence — the public technical documentation of the UNI estate. Generated from the working repositories; every volatile number and every source citation is produced by a generator, not typed.",
+  "license": "MIT",
+  "homepage": "https://universalnaturalintelligence.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TMDLRG/uni-public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node generators/build_content.cjs",
+    "dev": "next dev",
+    "build": "node generators/build_content.cjs && next build",
+    "start": "next start",
+    "safe": "node safety/verify_publish_safe.cjs",
+    "safe:prove": "node safety/verify_publish_safe.cjs --prove",
+    "gate": "node safety/verify_publish_safe.cjs --prove && node generators/verify_generated.cjs",
+    "prepublish:check": "npm run gate && npm run build"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.2",
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.8"
+  }
+}

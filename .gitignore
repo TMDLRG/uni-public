@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+# THE FIRST ENTRY IS THE IMPORTANT ONE.
+#
+# safety/patterns.local.json holds the operator's DENIED VALUES — the exact strings that must never
+# reach this public repository. If it were committed, this repo would publish a machine-readable
+# index of precisely what is being protected, which is the opposite of the point. It is generated
+# from the private control workspace and it never leaves it.
+#
+# safety/verify_publish_safe.cjs FAILS CLOSED when this file is missing. It does not fall back to
+# "structural checks only" — a gate that quietly drops its teeth produces a green tick that means
+# nothing.
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+safety/patterns.local.json
+
+# Anything that has ever been a leak vector in this estate, refused by name as well as by the gate.
+**/session-history/
+*.env
+.env*
+!.env.example
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+**/OPERATIONS_MANUAL*
+**/operator-decisions.y*ml
+**/REQUEST-TO-JULES*
+
+# Build + tooling
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+.turbo/
+*.tsbuildinfo
+.DS_Store
+.safety-mutation-fixture/
+
+# Generated content is committed deliberately (the site must build without the private repos),
+# but the generator's scratch space is not.
+.generator-cache/
+
+# Absolute paths map the operator's filesystem. Same rule as the denylist: local only.
+generators/roots.local.json
