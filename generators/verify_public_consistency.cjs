@@ -48,7 +48,7 @@ if (process.argv.includes("--prove")) {
   const FILES = [
     "content/generated/articles.json", "content/generated/docs.json", "content/generated/coverage.json",
     "content/coverage-manifest.json", "content/coverage-baseline.json", "content/curation.json",
-    "app/layout.tsx",
+    "app/layout.tsx", "package.json",
   ];
   const MUT = [
     ["delete an article the manifest points at", (a) => {
@@ -120,6 +120,37 @@ if (process.argv.includes("--prove")) {
       a["content/generated/coverage.json"] = JSON.stringify(c);
     }],
   ];
+
+  // ── THE CONTROL, AND WHY IT IS NOT OPTIONAL ──────────────────────────────────────────────────
+  // Run the harness on an UNMUTATED copy first. If that fails, every "caught" below is worthless:
+  // the script is dying for a reason unrelated to the mutation, and the suite reports a clean sweep
+  // while testing nothing at all.
+  //
+  // NOT HYPOTHETICAL — THIS EXACT THING HAPPENED WHILE THIS FILE WAS BEING EDITED. Adding the
+  // "every script this project tells you to run exists" check made the harness read package.json,
+  // which was not in FILES. The temp copy was therefore incomplete, the run died on a missing file,
+  // and --prove reported 10 caught / 0 holes having detected NOTHING. The check that broke it was a
+  // check about gates that cannot run.
+  //
+  // A mutation suite with no control is not evidence. This is the cheapest possible proof of that,
+  // and it costs one extra run.
+  {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "uni-pc-ctl-"));
+    for (const f of FILES) {
+      fs.mkdirSync(path.join(dir, path.dirname(f)), { recursive: true });
+      fs.copyFileSync(path.join(SRC, f), path.join(dir, f));
+    }
+    const r = cp.spawnSync(process.execPath, [__filename], { env: { ...process.env, UNI_PUBLIC_ROOT: dir }, encoding: "utf8" });
+    fs.rmSync(dir, { recursive: true, force: true });
+    if (r.status !== 0) {
+      console.error("CONTROL FAILED — an UNMUTATED copy of the artifacts does not pass.\n");
+      console.error("Every mutation below would report 'caught' for a reason having nothing to do with");
+      console.error("the mutation. Refusing to run a suite that cannot tell those apart.\n");
+      console.error((r.stdout || "") + (r.stderr || ""));
+      process.exit(1);
+    }
+    console.log("control: an unmutated copy PASSES, so any failure below is attributable to its mutation\n");
+  }
 
   console.log("PROVING public consistency — each mutation must be caught:\n");
   let caught = 0, holes = 0;
@@ -298,6 +329,37 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
   problems.length
     ? bad("the ratchet holds against the committed floor", problems.slice(0, 12).join(" · "))
     : ok("the ratchet holds against the committed floor", `${rows.length} published bound(s), and the ones checkable from this repository alone recomputed independently rather than trusted`);
+}
+
+// ─── 4b · every script this project tells you to run must exist ─────────────────────────────────
+// A GATE THAT CANNOT BE RUN IS NOT A GATE, AND THIS PROJECT SHIPPED ONE. package.json's composite
+// `gate` script referenced generators/verify_generated.cjs from the repository's FIRST COMMIT
+// (8c8c5e5). That file has never existed in any commit. So `npm run gate` ran all four real gates,
+// printed PASS for every one of them, and then died on a missing module — green-looking output and a
+// non-zero exit, which is the worst combination available: it rewards anyone who reads the output
+// and punishes only the person who checks the exit code.
+//
+// It survived a full session of active work on those very gates because they were always invoked
+// individually. This check is the cheap, permanent version of noticing.
+{
+  // Resolve against the REAL repository, never the overridable root. This check is about the
+  // project's own scripts, not about the artifact set under test — and --prove runs this file
+  // against a temp directory holding only artifacts. Using REPO here made the control fail with
+  // "safety/verify_publish_safe.cjs does not exist", which is true of the temp copy and false of
+  // the repository. The control caught it; without a control it would have shipped as 10/10.
+  const SELF_ROOT = path.resolve(__dirname, "..");
+  const pkg = JSON.parse(fs.readFileSync(path.join(SELF_ROOT, "package.json"), "utf8"));
+  const problems = [];
+  let checked = 0;
+  for (const [name, cmd] of Object.entries(pkg.scripts || {})) {
+    for (const m of String(cmd).matchAll(/node\s+([\w./-]+\.(?:cjs|mjs|js))/g)) {
+      checked++;
+      if (!fs.existsSync(path.join(SELF_ROOT, m[1]))) problems.push(`script '${name}' runs ${m[1]}, which does not exist`);
+    }
+  }
+  problems.length
+    ? bad("every script this project tells you to run exists", problems.join(" · "))
+    : ok("every script this project tells you to run exists", `${checked} node invocation(s) across ${Object.keys(pkg.scripts || {}).length} script(s); a gate that dies on a missing module still prints PASS for everything before it`);
 }
 
 // ─── 5 · the navigation must lead to the pages the manifest promises ─────────────────────────────
