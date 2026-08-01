@@ -88,6 +88,30 @@ const CORPORA = [
     id: "workbench", title: "The Math Workbench", root_key: "uni-workbench", dir: "docs",
     blurb: "The browser instrument that executes the committed model libraries.",
   },
+  // ── UNI.Minecraft, split in two ────────────────────────────────────────────────────────────────
+  // The docs audit measured this corpus at 187 files: 129 clean, 58 contaminated, and — the number
+  // that decided the split — 73 receipts and 12 handoffs, 45% of the whole. Receipts are evidence
+  // that a gate ran on a given date. They are the PROOF that the method is real rather than
+  // decorative, and one of them is a FAIL verdict, which is worth more to a sceptical reader than any
+  // amount of architecture prose. But 85 dated evidence stubs in the main navigation would bury the
+  // ~24 documents that actually explain the system. So they are published, and published SEPARATELY.
+  {
+    id: "minecraft", title: "The Colony &amp; the Method", root_key: "uni-minecraft", dir: "docs",
+    blurb: "How the system is built and how it is held to account: the falsification invitation, the evidence discipline, the typed organ specs, and the world model.",
+    exclude: [
+      /^receipts\//, /^handoffs\//, /^work_orders\//, /^validation\//,   // → the evidence corpus
+      /^prompts\//,                                                      // builder scaffolding, not corpus
+      /^control-plane\/LIMITATIONS\.md$/,                                // generated; the flagellum copy is authoritative
+      /^limitations\.md$/,                                               // self-declared dead: "referenced by nothing … no gate reads it"
+    ],
+    exclude_reason: "receipts, handoffs, work orders and validation move to the Evidence section; prompts are builder scaffolding (the same reason the cookbook's own generator excludes its prompts/); docs/limitations.md is excluded because its own first line declares it superseded and read by nothing.",
+  },
+  {
+    id: "evidence", title: "Evidence &amp; Verdicts", root_key: "uni-minecraft", dir: "docs",
+    blurb: "Receipts, pre-registrations and adversarial review verdicts — the dated record that the method above was actually carried out, including the times it failed.",
+    include_only: [/^receipts\//, /^handoffs\//, /^work_orders\//, /^validation\//],
+    off_main_nav: true,
+  },
 ];
 
 const sha256 = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -120,10 +144,60 @@ function judge(text) {
   return reasons;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// REDACTION — the third outcome, between "publish" and "refuse"
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// The docs audit measured the case for this precisely: of 187 UNI.Minecraft documents, 58 are
+// contaminated — but 26 of those are blocked by ONE OR TWO tokens. docs/PUBLIC_README.md, the file
+// explicitly written for the public, is blocked by a single private IP on line 27. specs/metabolism.md
+// is a 31 KB typed organ spec blocked by one SSH target. Refusing those wholesale throws away the
+// document to preserve a token nobody wants.
+//
+// THREE RULES MAKE THIS SAFE RATHER THAN CLEVER:
+//
+//   1. THE MARKER IS VISIBLE. Every removal leaves `[redacted: category]` in the text and the page
+//      banners the count. The reader sees exactly where and how much was taken out. A silent
+//      redaction would make the published text differ from the source without saying so, which
+//      breaks the one claim this whole site rests on — that a page IS the document.
+//
+//   2. THERE IS A CEILING. Past MAX_REDACTIONS the document is REFUSED instead. A document held
+//      together by redaction markers is swiss cheese: it reads as though it says something while the
+//      load-bearing parts are gone, which misleads more than an honest absence would.
+//
+//   3. OPERATOR-DENIED VALUES ARE NEVER REDACTED — ALWAYS REFUSED. A private address is
+//      infrastructure trivia and a marker in its place costs nothing. A person's name, a client
+//      identifier, or a resolvable hostname is not a formatting problem, and `[redacted: name]` still
+//      tells a reader that a name was there and roughly where to start looking.
+const MAX_REDACTIONS = 10;
+
+const REDACTABLE = [
+  ["private-address", /\b(?:10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|192\.168)\.\d{1,3}\.\d{1,3}\b/g],
+  ["tailscale-address", /\b100\.(?:6[4-9]|[7-9]\d|1\d\d|2[0-4]\d|25[0-5])\.\d{1,3}\.\d{1,3}\b/g],
+  ["internal-hostname", /\b[a-z0-9-]+\.(?:uni-lab|lab)\.local\b/gi],
+  ["operator-path", /[A-Za-z]:[\\/]Users[\\/][A-Za-z0-9._-]+/g],
+];
+
+// A denied value present at all => refuse. Never redact these.
+function hasDenied(text) {
+  const low = text.toLowerCase();
+  return DENIED.some((v) => v && low.includes(v));
+}
+
+function redact(text) {
+  let out = text;
+  const counts = {};
+  for (const [label, re] of REDACTABLE) {
+    out = out.replace(re, () => { counts[label] = (counts[label] || 0) + 1; return `[redacted: ${label}]`; });
+  }
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  return { text: out, counts, total };
+}
+
 // ─── run ─────────────────────────────────────────────────────────────────────────────────────────
 const pages = [];
 const refused = [];
 const corporaOut = [];
+let redactedCount = 0;
 
 for (const c of CORPORA) {
   const root = ROOTS[c.root_key];
@@ -137,35 +211,57 @@ for (const c of CORPORA) {
 
   for (const rel of walkMd(base)) {
     if ((c.exclude || []).some((re) => re.test(rel))) continue;
+    if (c.include_only && !c.include_only.some((re) => re.test(rel))) continue;
     let text;
     try { text = fs.readFileSync(path.join(base, rel), "utf8"); } catch { continue; }
-    const reasons = judge(text);
     const digest = sha256(text).slice(0, 16);
-    if (reasons.length) {
+
+    // A denied value is fatal on sight — no redaction path, no threshold, no appeal.
+    if (hasDenied(text)) {
+      dropped++;
+      refused.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, reasons: ["operator-denied-value"] });
+      continue;
+    }
+
+    const red = redact(text);
+    if (red.total > MAX_REDACTIONS) {
       dropped++;
       refused.push({
         corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest,
-        // Categories only. Never the matched value — a refusal list that quotes what it refused
-        // would republish exactly what it withheld.
-        reasons: [...new Set(reasons)],
+        // Categories and counts only. Never the matched value — a refusal list that quotes what it
+        // refused would republish exactly what it withheld.
+        reasons: [`over-redaction-threshold (${red.total} > ${MAX_REDACTIONS})`, ...Object.keys(red.counts)],
       });
       continue;
     }
+
+    // Anything still matching after redaction is a shape the redactor does not handle (a key blob, a
+    // tailnet name). Refuse it rather than shipping a partially-cleaned document.
+    const residual = judge(red.text);
+    if (residual.length) {
+      dropped++;
+      refused.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, reasons: [...new Set(residual)] });
+      continue;
+    }
+
     kept++;
+    if (red.total) redactedCount++;
     pages.push({
       corpus: c.id,
       slug: `${c.id}/${slugify(rel)}`,
       title: title(text, path.basename(rel, path.extname(rel))),
-      body: text,
-      bytes: Buffer.byteLength(text),
-      sha256: digest,
+      body: red.text,
+      bytes: Buffer.byteLength(red.text),
+      sha256: digest,                       // the digest of the ORIGINAL, so a reader can verify what was ingested
+      redactions: red.total,
+      redaction_counts: red.counts,
       citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: `${c.dir}/${rel}`, visibility: "private", resolvable: false },
     });
   }
   corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped });
 }
 
-function meta(c) { return { id: c.id, title: c.title, blurb: c.blurb, exclude_reason: c.exclude_reason || null }; }
+function meta(c) { return { id: c.id, title: c.title, blurb: c.blurb, exclude_reason: c.exclude_reason || null, off_main_nav: !!c.off_main_nav }; }
 
 fs.mkdirSync(OUT, { recursive: true });
 const bundle = {

@@ -250,6 +250,40 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
     }
   }
 
+  // ─── 5c. EVERY REDACTION MARKER IS A REAL, RECORDED REDACTION ───────────────────────────────
+  //
+  // Documents may be published with values removed and replaced by a visible `[redacted: category]`
+  // marker. That is only trustworthy if a marker cannot be FORGED — if someone could type
+  // "[redacted: private-address]" into prose by hand, a page could look scrupulously cleaned while
+  // never having been through the redactor at all, and the marker would be decoration.
+  //
+  // So the count of markers in each published page must equal the count the generator recorded for
+  // it. A mismatch in either direction is a fault: extra markers mean hand-typed text claiming a
+  // process that did not happen; missing markers mean the page was edited after generation.
+  {
+    const docsFile = path.join(REPO, "content", "generated", "docs.json");
+    if (!fs.existsSync(docsFile)) {
+      bad("every [redacted: …] marker corresponds to a recorded redaction", "content/generated/docs.json is absent — run the ingest first");
+    } else {
+      const bundle = JSON.parse(fs.readFileSync(docsFile, "utf8"));
+      const bad_ = [];
+      let markers = 0, pagesWith = 0;
+      for (const p of bundle.pages || []) {
+        const found = (String(p.body).match(/\[redacted: [a-z-]+\]/g) || []).length;
+        const claimed = p.redactions || 0;
+        markers += found;
+        if (claimed) pagesWith++;
+        if (found !== claimed) bad_.push(`${p.slug} (${found} marker(s), ${claimed} recorded)`);
+      }
+      bad_.length === 0
+        ? ok("every [redacted: …] marker corresponds to a recorded redaction",
+            `${markers} marker(s) across ${pagesWith} page(s), each matching the generator's own count. ` +
+            `A marker cannot be hand-typed into prose to make a page look cleaned when it never went ` +
+            `through the redactor — that would make the marker decoration rather than evidence.`)
+        : bad("every [redacted: …] marker corresponds to a recorded redaction", bad_.slice(0, 6).join(" · "));
+    }
+  }
+
   // ─── 6. LICENCE ─────────────────────────────────────────────────────────────────────────────
   {
     const lic = fs.existsSync(path.join(REPO, "LICENSE")) || fs.existsSync(path.join(REPO, "LICENSE.md"));

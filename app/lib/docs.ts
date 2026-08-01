@@ -8,6 +8,9 @@ export type WikiPage = {
   body: string;
   bytes: number;
   sha256: string;
+  /** How many values were removed and replaced with a visible [redacted: …] marker. 0 for most pages. */
+  redactions?: number;
+  redaction_counts?: Record<string, number>;
   citation: Citation;
 };
 
@@ -16,6 +19,8 @@ export type Corpus = {
   title: string;
   blurb: string;
   exclude_reason: string | null;
+  /** Rendered, but kept out of the main wiki index — see the Evidence section. */
+  off_main_nav?: boolean;
   available: boolean;
   reason?: string;
   branch?: string;

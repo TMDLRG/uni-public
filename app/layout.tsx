@@ -26,6 +26,7 @@ const NAV = [
   { href: "/", label: "Overview" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
+  { href: "/evidence/", label: "Evidence" },
   { href: "/omissions/", label: "What is not here" },
 ];
 

@@ -50,6 +50,22 @@ export default async function WikiPage({ params }: { params: Promise<{ slug: str
 
       <Cite c={page.citation} />
 
+      {page.redactions ? (
+        <div className="note">
+          <b>
+            {page.redactions} value{page.redactions === 1 ? " was" : "s were"} removed from this page.
+          </b>{" "}
+          Each one is marked in place as{" "}
+          <code>[redacted: category]</code> — {" "}
+          {Object.entries(page.redaction_counts ?? {})
+            .map(([k, n]) => `${n} ${k.replace(/-/g, " ")}`)
+            .join(", ")}
+          . Nothing else was altered. The document is otherwise exactly as it is written in the
+          repository, and the sha256 below is of the <i>original</i>, so what was ingested stays
+          checkable.
+        </div>
+      ) : null}
+
       <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
 
       <nav className="pager">

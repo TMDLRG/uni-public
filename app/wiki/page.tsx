@@ -4,8 +4,12 @@ import { docs, pagesInCorpus } from "../lib/docs";
 export const metadata = { title: "Wiki" };
 
 export default function WikiIndex() {
-  const total = docs.pages.length;
-  const kb = Math.round(docs.pages.reduce((n, p) => n + p.bytes, 0) / 1024);
+  const main = docs.corpora.filter((c) => !c.off_main_nav).map((c) => c.id);
+  const shown = docs.pages.filter((p) => main.includes(p.corpus));
+  const total = shown.length;
+  const kb = Math.round(shown.reduce((n, p) => n + p.bytes, 0) / 1024);
+  const evidence = docs.corpora.find((c) => c.off_main_nav);
+  const redacted = shown.filter((p) => p.redactions).length;
 
   return (
     <>
@@ -16,14 +20,25 @@ export default function WikiIndex() {
       </p>
 
       <div className="note">
-        <b>{docs.refused.count} documents were refused</b> and are not here. They are listed, with
-        the category of the reason and their sha256, on the{" "}
-        <Link href="/omissions/">omissions page</Link>. Most describe private infrastructure and
-        belong in the private repositories. Nothing is dropped in silence — a reader can see the
-        shape of what is withheld, which is the difference between curation and concealment.
+        <b>{docs.refused.count} documents were refused</b> and are not here, and{" "}
+        <b>{redacted} carry redactions</b>. Both are accounted for on the{" "}
+        <Link href="/omissions/">omissions page</Link> — refusals with the category of the reason and
+        their sha256, redactions with a count. Most refusals describe private infrastructure and
+        belong in the private repositories. Nothing is dropped in silence: a reader can see the shape
+        of what is withheld, which is the difference between curation and concealment.
       </div>
 
-      {docs.corpora.map((c) => {
+      {evidence && evidence.available ? (
+        <div className="note">
+          <b>The {evidence.pages} receipts and verdicts are in their own section.</b> They are the
+          dated record that this method was actually carried out — including a verdict that came back
+          FAIL. They are published, at <Link href="/evidence/">Evidence &amp; Verdicts</Link>, but
+          kept out of the list below: {evidence.pages} dated evidence stubs in the main index would
+          bury the documents that explain the system.
+        </div>
+      ) : null}
+
+      {docs.corpora.filter((c) => !c.off_main_nav).map((c) => {
         const pages = pagesInCorpus(c.id);
         return (
           <section className="card" key={c.id} id={c.id}>
