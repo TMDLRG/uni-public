@@ -335,29 +335,77 @@ async function main() {
         lens: /not claimed|does not claim|no claim is made|is not evidence|not established|nothing here is a finding|makes no claim/i,
         why: "the document carries an explicit NOT-CLAIMED fence naming what it does not assert" },
     ];
+    // PER LANE, NOT CONCATENATED — and the first version of this check got that wrong in the most
+    // damaging possible way.
+    //
+    // It tested `plain + clear` glued together. But `ReadingLane.tsx` shows a reader EXACTLY ONE
+    // LANE at a time: choosing Clear hides Plain entirely. So a disclosure present in Plain
+    // satisfied the check on behalf of a Clear lane that did not contain it.
+    //
+    // Measured on the repaired corpus: the NATURA caveat is carried by PLAIN on 24 of 25 pages and
+    // by CLEAR on 3 of 25. Concatenated, the check reported 25 of 25 — a perfect green over a
+    // 22-of-25 failure, WORSE than the 21-of-25 the audit originally condemned. The check was not
+    // merely permissive; it reported the exact opposite of the truth, and it did so because I built
+    // the test around the data structure instead of around what a reader sees.
     const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ");
     const faults = [];
     const tally = {};
     for (const l of lenses) {
       const r = routes.find((x) => x.scope === l.scope && x.key === l.key);
       if (!r) continue;
-      const lensText = strip(l.plain && l.plain.html) + " " + strip(l.clear && l.clear.html);
       for (const d of DISCLOSURES) {
         if (!d.src.test(r.body)) continue;
         tally[d.id] = tally[d.id] || { n: 0, missing: 0 };
         tally[d.id].n++;
-        if (!d.lens.test(lensText)) {
+        let missedIn = [];
+        for (const lane of ["plain", "clear"]) {
+          if (!l[lane]) continue;                       // a lane that does not exist cannot drop it
+          if (!d.lens.test(strip(l[lane].html))) missedIn.push(lane);
+        }
+        if (missedIn.length) {
           tally[d.id].missing++;
-          faults.push(`${l.scope}/${l.key}: drops the standing disclosure '${d.id}' — ${d.why}`);
+          faults.push(`${l.scope}/${l.key}: the ${missedIn.join(" and ")} lane${missedIn.length > 1 ? "s" : ""} drop${missedIn.length > 1 ? "" : "s"} '${d.id}' — ${d.why}`);
         }
       }
     }
     const summary = Object.entries(tally).map(([k, v]) => `${k} ${v.n - v.missing}/${v.n}`).join(" · ");
     faults.length
-      ? bad("a lens keeps the disclosure its page cannot survive losing",
-          `${faults.length} page(s):\n      ` + faults.slice(0, 12).join("\n      ") +
+      ? bad("EVERY LANE keeps the disclosure its page cannot survive losing",
+          `${faults.length} page(s), counted PER LANE because a reader sees one lane at a time:\n      ` +
+          faults.slice(0, 12).join("\n      ") +
           (faults.length > 12 ? `\n      … and ${faults.length - 12} more` : ""))
-      : ok("a lens keeps the disclosure its page cannot survive losing", summary || "no declared disclosure appears in any source");
+      : ok("EVERY LANE keeps the disclosure its page cannot survive losing",
+          (summary || "no declared disclosure appears in any source") +
+          " — checked in Plain and in Clear separately, never concatenated");
+  }
+
+  // ── 6d · THE ORIENTATION PANELS — authored prose that was subject to NO honesty check ──────────
+  // Found by audit: eight orientation blurbs render ABOVE THE LANE on all 304 pages, making them the
+  // most-read authored prose on the site, and nothing checked them at all. I built the feature and
+  // never gated it. They get the same fences the lenses get.
+  {
+    const forb = readJson(path.join(LENS_DIR, "forbidden.json"));
+    const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ");
+    const has = (s, w) => new RegExp(`(^|[^a-z])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z]|$)`, "i").test(s);
+    const STRUCT = [
+      [/\b(?:10|127|192\.168)\.\d{1,3}\.\d{1,3}\b/, "a private address"],
+      [/\b[\w-]+\.uni-lab\.(?:local|solwright\.com)\b/i, "an internal hostname"],
+      [/[A-Za-z]:\\Users\\[\w.-]+/, "an operator path"],
+    ];
+    const faults = [];
+    for (const o of bundle.orientations || []) {
+      const t = strip(o.html);
+      for (const f of forb.words) if (has(t, f.word)) faults.push(`orientation/${o.corpus}: forbidden word '${f.word}' — ${f.why}`);
+      for (const [re, why] of STRUCT) if (re.test(o.html)) faults.push(`orientation/${o.corpus}: contains ${why}`);
+      if (/<h[1-6][\s>]/i.test(o.html)) faults.push(`orientation/${o.corpus}: contains a heading`);
+      if (!o.authored_by || !o.authored_at) faults.push(`orientation/${o.corpus}: no authored_by/authored_at`);
+      if (o.review_state === "reviewed" && !o.reviewed_by) faults.push(`orientation/${o.corpus}: claims reviewed with no reviewer`);
+    }
+    faults.length
+      ? bad("the orientation panels are held to the same fences as the lenses", faults.slice(0, 10).join(" · "))
+      : ok("the orientation panels are held to the same fences as the lenses",
+          `${(bundle.orientations || []).length} panel(s) — the most-read authored prose on the site, ` +
+          `since one renders above the lane on every page. Until an audit asked, NOTHING checked them.`);
   }
 
   // ── 7 · length bounds and review-record integrity ─────────────────────────────────────────────
