@@ -143,6 +143,412 @@
      }
     }
    ]
+  },
+  {
+   "slug": "the-producer",
+   "title": "The Producer",
+   "summary": "The broadcast is not run by a script. It is run by an agent, using the same engine as the bots it films — and its action space includes their birth and death.",
+   "order": 3,
+   "body": "\nThere is a live broadcast of the colony: cameras, narration, scene cuts. The obvious way to build that\nis a rules engine — if drama is high, cut to the drama; every ninety seconds, do a recap.\n\nThat is not how it works. **The Producer is an active-inference agent.** It runs the same categorical\nengine as the UNIs it films, minimising the same quantity, with a different action space.\n\n\n<!--CITE:0-->\n\n\n## What it senses\n\nEvery beat — 1500 ms — the Producer assembles telemetry into a set of discrete outcomes: how much is\nhappening in the world, how the colony is doing, server health, what it has recently shown. A\ndiscretiser turns continuous board state into one outcome per modality.\n\n\n<!--CITE:1-->\n\n\nThis is where the design earns its keep. Because the Producer's senses are *the show*, \"drama\" is not\na metaphor — it is a five-bin outcome computed from live colony state, and it is an observation the\nagent has beliefs about, not a threshold somebody tuned.\n\n## What it can do\n\nFourteen actions, with designed preferences. Hold. Cut to drama. Cut to subject. B-roll. Widen. Beat\non crisis, on the social, on a mind, on a recap. Check health. Restart a camera.\n\nAnd two more:\n\n- **spawn an agent**\n- **cull an agent**\n\n\n<!--CITE:2-->\n\n\n## The line that makes the point\n\nRead the dispatch. An expected-free-energy minimum — computed by the same code path that decides\nwhether a bot mines a block — terminates here:\n\n\n<!--QUOTE:0-->\n\n\n`maybe_spawn/1` calls into the colony and a new UNI is born. `maybe_cull/2` stops one. The population\nis bounded, and the bounds are the only thing standing between an inference procedure and an\nunbounded one, but within them **the decision to create or end a living agent is an inference, not a\nrule.**\n\nThat is the sentence to sit with. It is also the sentence that ought to make you want to see the\nbounds, which is why they are constants in the source and not configuration.\n\n## The planning horizon is a measured trade\n\nThe Producer plans ahead with a depth-limited beam search. The depth is 5 and the beam is 4, and the\ncomment justifying it does not appeal to taste — it gives the measurement: depth 5 costs roughly\n1.1 s per beat and buys about 7.5 s of show planned ahead; depth 6 costs 2.3 s and makes the cuts\nfeel sluggish.\n\n\n<!--CITE:3-->\n\n\nA number chosen because someone timed it, with the timing left in the file.\n\n## It can sense itself\n\nThe Producer reads its own error rate. A lock-free counter-based log handler lets it observe how much\nis going wrong as an *observation*, not as an exception path.\n\n\n<!--CITE:4-->\n\n\nAn agent whose senses include its own failures is a different kind of thing from one that only sees\nthe world.\n\n## The narration has no language model\n\nThe voice that answers questions about the show answers from live belief state. There is no LLM\nanywhere in the released product — that is a contract, not an implementation detail.\n\n\n<!--CITE:5-->\n\n\n## What is not established\n\nThe Producer is the **thinnest-tested** of the subsystems described on this site:\n3 test files against a module of nearly 600 lines. The\nclaim that it is an agent rather than a rules engine is supported by the code path — the same\n`Plan.action_values` call, the same EFE — but the *quality* of its direction is not something any\ntest here establishes.\n\nThere is also **no architecture diagram for the Producer anywhere in the estate.** It is not in the\nStructurizr model. That is a real gap, recorded here rather than papered over.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/producer.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/producer/codec.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/producer/genome.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/producer/brain.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/runtime/log_sensor.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/anchor.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "  defp interpret(state, {:spawn}), do: maybe_spawn(state)\n  defp interpret(state, {:cull, u}), do: maybe_cull(state, u)",
+     "lang": "ex",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "lib/sp/producer.ex",
+      "range": "354-355",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
+  },
+  {
+   "slug": "the-control-plane",
+   "title": "The control plane",
+   "summary": "An append-only hash-chained ledger with exactly one writer, five verdict words, and a room whose override does not exist.",
+   "order": 4,
+   "body": "\nThe control plane is the body that runs the lab and authors every verdict. It is the part of this\nestate that exists to make the rest of it accountable, and it is the best-documented subsystem here by\na wide margin — 16 modules, roughly a third of them\nexplanatory prose, against 50 test files.\n\nTest lines outnumber source lines more than two to one.\n\n## First, the name collision\n\nTwo different things in this system are called \"the control plane\" and the module says so itself\nbefore it says anything else:\n\n\n<!--QUOTE:0-->\n\n\nThat file is 44 lines long, of which 40 are that docstring. It exists to explain a namespace and\nprevent a confusion. It is worth noticing that someone thought the confusion serious enough to spend\na file on.\n\n## One writer\n\nEvery mutation to the evidence record goes through a single module, and that is enforced by the type\nsystem rather than by convention: the writer requires a token that only the command path can mint.\n\n\n<!--CITE:0-->\n\n\nEvery entry records who acted, in what role, under what authority, and what the state was before and\nafter. Two distinct parties are required where two are required — the co-signer cannot be the\nproposer, and there is a test named exactly that.\n\n## The chain, and what it cannot do\n\nThe ledger is append-only and hash-chained. Each entry carries the hash of the one before it, so a\nrow cannot be quietly altered after the fact without breaking every hash downstream.\n\n\n<!--CITE:1-->\n\n\n**But a hash chain cannot detect truncation of its own tail.** Lop off the last N entries and what\nremains is a perfectly valid chain. The system's response to that is the part worth reading: it does\nnot hide the limitation, it holds the head and length *outside* the chain as an anchor, and it has a\ntest that performs the truncation attack and asserts it succeeds — so the limit stays visible rather\nthan being quietly assumed away.\n\n\n<!--CITE:2-->\n\n\nThere is a further honesty here that is easy to miss. Corroboration requires a custodian the writer\ncannot reach. Measured, the current witness **accepts the writer's own key** — so the anchor is\n`tamper_evident` and explicitly *not* unforgeable, and the code refuses to claim the stronger word.\n\n\n<!--CITE:3-->\n\n\n## Five words, never a percentage\n\nA verdict is one of `PASS`, `PARTIAL`, `FAIL`, `WITHHELD`, `PENDING`. There is no score.\n\n\n<!--CITE:4-->\n\n\nA percentage invites averaging, and averaging is how a broken root gets hidden under a healthy crown.\n`WITHHELD` and `PENDING` exist because \"we did not look\" and \"we looked and could not tell\" are\ndifferent states, and collapsing either into a pass is the failure this whole apparatus is built\nagainst.\n\nA gate must be registered *before* its run, so a check cannot be invented after seeing the result.\n\n\n<!--CITE:5-->\n\n\n## Comparing like with like\n\nA comparison between two runs is refused at construction unless exactly one variable differs. Not\nwarned about — refused.\n\n\n<!--CITE:6-->\n\n\nRelatedly: a run's identity hashes in its planned sample size and its stopping rule, so relabelling a\nrun changes *which run it is*. You cannot decide the stopping rule after seeing the width.\n\n\n<!--CITE:7-->\n\n\n## The door with no handle\n\nReleasing something to the world requires passing through a room: green, then clean, then sterile,\nwith two keys from distinct parties.\n\nThe interesting design decision is what happens when you want to skip it:\n\n\n<!--QUOTE:1-->\n\n\nThere is no override function. Not a refused one — an absent one. The reasoning is that a control\nwhich merely refuses still teaches the operator that the door exists, and a door that exists gets used\non the night it matters most.\n\n\n<!--CITE:8-->\n\n\n## What is not established\n\nThe ledger has recorded no verdict about a real scientific claim yet. The apparatus is built and\ntested; what it has mostly adjudicated so far is its own construction.\n\nAnd the honest state of the witness above is the one to carry away: **tamper-evident is a real\nproperty and unforgeable is a different one**, and this system is careful about which word it uses.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/command.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/ledger.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/anchor.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/witness.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/verdict.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/registry.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/pair.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/run.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/control_plane/room.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "  @moduledoc \"\"\"\n  The **science's** control plane — the body that runs the lab, authors every\n  verdict, and is the only writer of the evidence record.\n\n  Not to be confused with `SP.Producer`, which its own moduledoc calls \"the live\n  show-running control plane\". That is the **show's** control plane: cameras,\n  narration, broadcast. This one is gates, runs, receipts and verdicts. Both\n  names are correct in their own domain; the disambiguation is ADR-0006 in\n  `docs/control-plane/decisions/` (UNI-FLAGELLUM). `SP.Lab` is a third distinct\n  thing — the hard-science physical models — and is untouched by this namespace.",
+     "lang": "ex",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "lib/sp/control_plane.ex",
+      "range": "2-11",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    },
+    {
+     "text": "  Not \"an override is refused\" — there is nothing to call. A refused control still\n  teaches that the door exists, and a control that exists gets used on the night\n  it matters. The same reasoning as the render contract's *refusals are absent,",
+     "lang": "ex",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "lib/sp/control_plane/room.ex",
+      "range": "39-41",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
+  },
+  {
+   "slug": "the-brain",
+   "title": "The active-inference brain",
+   "summary": "Perception as free-energy minimisation, action as expected-free-energy minimisation, and a hard rule about what may enter the logits.",
+   "order": 5,
+   "body": "\nThis is the engine every agent in the system runs — the UNIs in the world and the Producer that films\nthem. 46 modules,\n52 test files.\n\nIt is also the part of this site where claims have to be handled most carefully, so this article is\ndeliberately more cautious than the others.\n\n## There is no reward\n\nThe agent does not maximise a score. Perception minimises variational free energy; action minimises\n*expected* free energy. Nowhere is there a scalar return to accumulate.\n\n\n<!--CITE:0-->\n\n\nThis is not a philosophical flourish, it is an engineering property. A reward signal is the thing a\nsystem accidentally optimises — the thing you later discover it was gaming. There isn't one to game.\n\n## The model\n\nA generative model here is `(A, B, C, D, E)` plus precisions plus Dirichlet counts: what observations\neach state produces, how states transition under each action, which observations are preferred, where\nthings start, and prior habits.\n\n\n<!--CITE:1-->\n\n\nLearning is Dirichlet accumulation — counting what actually happened — and nothing else.\n\n\n<!--CITE:2-->\n\n\n## Why the joint state is never built\n\nA realistic agent has many factors, and the joint state space is their product. Materialise it and you\nare finished before you start.\n\nThe engine is mean-field multi-factor: the posterior factorises, and — the result that makes it\nwork — **expected free energy is additive across factors**. So `G(π)` can be computed per factor and\nsummed, and the joint `N_x = Π N_f` is never constructed.\n\n\n<!--CITE:3-->\n\n\n## Expected free energy, in two parts\n\n`G` decomposes into an epistemic term — how much a policy is expected to reduce uncertainty about\nhidden state — and a pragmatic term — how far predicted observations sit from preferred ones.\n\n\n<!--CITE:4-->\n\n\nPlanning is a depth-limited beam search over policies, which is an approximation to sophisticated\ninference and is labelled as such rather than described as the real thing.\n\n\n<!--CITE:5-->\n\n\n## The invariant that governs what may be added\n\nThis is the most transferable idea in the subsystem. When a new term is proposed for the engine, it\nmust be one of a closed set: pragmatic, state-epistemic, parameter-novelty, or a precision. Nothing\nelse enters the logits.\n\nNovelty — the parameter-information-gain term — shows what that discipline costs and buys. Its own\ndocstring states the property that keeps it from being a reward in disguise:\n\n\n<!--QUOTE:0-->\n\n\nThen the test file asserts exactly those properties by name: that `W` decays monotonically to zero as\ncounts grow, that it is **independent of `C`** (so it cannot smuggle in a preference), and that it is\nbounded so it cannot swamp survival.\n\n\n<!--CITE:6-->\n\n\nAnd the strongest one: with the novelty gain at zero, the agent's decisions are **byte-identical** to\nthe agent without the term, over the full planning path. A new capability must leave the old\nbehaviour bit-for-bit unchanged when switched off.\n\n## Precision is attention\n\nTwo precisions are tracked and updated: confidence in policies, and confidence in each observation\nmodality. Attention, in this framing, is not a spotlight — it is the optimisation of confidence.\n\n\n<!--CITE:7-->\n\n\n## The viability edge is real\n\nHomeostasis and metabolism are not decoration. An agent has internal states that can go wrong, and\n\"wrong\" is defined by the model rather than by a designer's penalty term. Both modules carry an\nexplicit claim fence in their own docstrings — a paragraph stating what the module does *not*\ndemonstrate.\n\n\n<!--CITE:8-->\n\n\n## Continuous action\n\nDiscrete policy selection is not the whole story. Motor control is continuous predictive coding:\naction descends the free-energy gradient, `ȧ = −∂F/∂a`, proportional to precision times the difference\nbetween target and sense.\n\n\n<!--CITE:9-->\n\n\nThirty-nine lines, most of them the derivation.\n\n## What is NOT established\n\nStated plainly, because this is where overclaiming would be easiest:\n\n- **This is not a claim about consciousness or experience.** The estate's phenomenology document maps\n  human phenomenological categories onto implemented mechanisms and records where the mapping *fails*.\n  The failures are the point of the document.\n- **Passing tests are not biological parity.** The contract governing this work says so in as many\n  words, and separates observation from reconstruction from simulation as a rule.\n- **There is no rendered architecture diagram of the brain** — factors, EFE, action selection —\n  anywhere in the estate. Of the five subsystems documented on this site, this is the largest\n  diagramming gap, and it is recorded rather than glossed.\n\nWhat *is* established is narrower and more interesting: a working multi-factor active-inference engine\nwith no reward signal, whose additions are gated by an invariant that requires them to change nothing\nwhen switched off.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/infer.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/model.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/learn.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/factors.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/efe.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/plan.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/novelty.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/precision.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/homeostat.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "lib/sp/brain/motor.ex",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "  It is LARGE and positive in under-sampled (low-count) `(state,outcome)` cells, **decays monotonically to 0\n  as counts → ∞** (the no-smuggled-reward invariant — it is information, not reward), and is **independent of\n  C**. So it adds a standing drive to act where the model is still uncertain about its own likelihood — which",
+     "lang": "ex",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "lib/sp/brain/novelty.ex",
+      "range": "13-15",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
+  },
+  {
+   "slug": "the-operator-plane",
+   "title": "The operator plane",
+   "summary": "Five surfaces for the human in the chair, built on one law — a read never actuates — and one file that logs its own documentation defects.",
+   "order": 6,
+   "body": "\nA research system that only a machine can read is not finished. The operator plane is the set of\nsurfaces a person uses to see what is happening and decide what to do about it.\n\nIt is described here **without any address, port, hostname or endpoint**. Those are real and they are\nprivate, and a public article does not need them to explain the design.\n\n## The law\n\nEvery surface here inherits one rule: **a polled read never spawns anything.**\n\nIt sounds obvious until you notice how easily it breaks. A dashboard that refreshes and, in\nrefreshing, restarts a probe, is a dashboard that changes the thing it is measuring. Watching becomes\nacting, and the operator can no longer tell which.\n\n## The five surfaces\n\n**The Door** is mission control: admission, release, key custody, and the only place the stack starts\nor stops. It is the one-move entry to everything else.\n\n\n<!--CITE:0-->\n\n\n**Gaia** is a projection of live signals with full provenance on every value. Its law is that it may\nnever act — it does not summarise, score, rank, or author. There is a lint whose entire job is to\nenforce the no-summarisation rule, because a projection that starts summarising has started deciding.\n\n\n<!--CITE:1-->\n\n\n**The HUD** is a native always-on-top widget backed by a JSON service. It polls the other surfaces,\nkeeps bounded rings rather than a database, and — the property that matters — is built to say when it\ndoes not know. A detector that has stopped reporting must read as *not reporting*, never as calm.\n\n\n<!--CITE:2-->\n\n\n**TRACK** is where the work came from, where it is, and where it is going, read live from the real\nartifacts on every request. It owns nothing and stores nothing; every value carries the path it came\nfrom so the operator can go and check.\n\n\n<!--CITE:3-->\n\n\n**The lab** is a walkable room, built in graded levels so that the screenshot gate covering it could\nbe proven to bite before there was anything to look at. The first level is an empty room on purpose.\n\n\n<!--CITE:4-->\n\n\n## The decision surface\n\nUntil recently, every one of these could *show* the operator a decision and none could **record** one.\nThe operator's answers lived in a chat window, which is not an artifact: not greppable, not\nhash-chained, and gone when the session ends.\n\nThere is now an append-only, hash-chained ledger for exactly that, and it is careful about what it\nclaims. The fences prove a request came from the box, as a loopback name, with a header a cross-site\npage cannot forge. **None of that proves a human.** The claim level is therefore `presence_evident`\nand never `authenticated`, and that word is stamped into every row — because an agent on the same\nmachine satisfies every check.\n\n\n<!--CITE:5-->\n\n\nTamper-evident is a real property. Unforgeable is a different one. The record says which it has.\n\n## One chokepoint to air\n\nGoing live is guarded in exactly one place, required by every path that could reach it.\n\n\n<!--CITE:6-->\n\n\nMeasured, it refuses every path today, because nothing in the repository can mint the token it\nrequires — and there is a gate that scans for a minter and a test that plants one to prove the scan\nwould find it.\n\n## The file that logs its own defects\n\nThe best single argument for this subsystem is not a design decision, it is a habit. TRACK's own\nheader corrects itself, in place, with dates and reasons:\n\n\n<!--QUOTE:0-->\n\n\nA source file that records where its own documentation was wrong, rather than quietly fixing the\nsentence, is unusual. It is also the fastest way to understand what this estate is actually for.\n\n## The gates\n\nThese surfaces are not covered by unit tests in the usual sense. They are covered by executable gates\nregistered in a registry, run by a runner that asserts an exit-code-implies-verdict law *and its own\nregistry completeness* — so a gate file that exists but is unregistered fails the whole run.\n\n\n<!--CITE:7-->\n\n\n## What is not established\n\n**Two of these five surfaces have no canonical document anywhere in the estate.** The Door, Gaia and\nthe HUD each have one; TRACK and the lab have only their source headers. This article is the first\nwritten description of either, which means it is also the least cross-checked thing on this site.\n\nAnd the honest limit on the decision ledger: it makes a record tamper-evident. It does not make it\nauthentic, and no amount of fencing on a loopback interface will.\n",
+   "cites": [
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/launcher.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/gaia/gaia_server.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/hud/hud_server.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/track/track_server.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/lab/lab_server.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/track/decisions.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/golive_guard.cjs",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    },
+    {
+     "repo": "uni-minecraft",
+     "path": "viewer/gate_registry.json",
+     "range": null,
+     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+     "commit_short": "9116fb323e86",
+     "branch": "gen2-runtime",
+     "resolvable": false
+    }
+   ],
+   "quotes": [
+    {
+     "text": "// AND THE WRITE NOW HAS A LAW TOO, which it did not until 2026-07-28: loopback peer, `x-uni-cc: 1`,\n// and a JSON content-type. Stating the read law while the single write route had no fence at all is\n// exactly the shape of dishonesty this instrument exists to catch, and it survived here for months\n// because nothing ever probed it. See the route itself for the full account.",
+     "lang": "cjs",
+     "cite": {
+      "repo": "uni-minecraft",
+      "path": "viewer/track/track_server.cjs",
+      "range": "13-16",
+      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
+      "commit_short": "9116fb323e86",
+      "branch": "gen2-runtime",
+      "resolvable": false
+     }
+    }
+   ]
   }
  ]
 }
