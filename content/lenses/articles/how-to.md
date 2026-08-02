@@ -45,8 +45,7 @@ learned something more valuable than a green tick. Add a new check to the estate
 fail by introducing the defect it exists to catch. A check never shown to fail is not evidence of
 anything, so proving it is treated as part of writing it rather than as a later luxury. Run the same
 agent blind and seen with the same seed: if the behaviour does not change, that sense was not being
-used, whatever the architecture diagram says. That is described here as the cheapest falsifier in the
-estate, and the most frequently skipped.
+used, whatever the architecture diagram says. That is described here as the cheapest way to show a claim wrong in the estate, and the most frequently skipped.
 
 Others are operational. Regenerate the recorded reference and ask the version-control system whether
 anything moved, since an improvement and a regression produce the same difference and only a human

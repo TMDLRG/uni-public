@@ -15,10 +15,10 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-A short record of one fault being tracked down and fixed. A piece of software kept starting in a limited mode and complaining that a file was missing. The file was not missing. The record is careful to say what was not the cause, and to list the evidence for that, before giving the two things that were: leftover marker files from processes that had been killed rather than closed, and launching the program from the wrong folder, so it looked for its own files in the wrong place. That hand launch was itself a workaround for a sandbox path filter.
+A short record of one fault being tracked down and fixed. A piece of software kept starting in a limited mode and complaining that a file was missing. The file was not missing. The record is careful to say what was not the cause, and to list the evidence for that, before giving the two things that were. One was leftover marker files from processes that had been killed rather than closed. The other was launching the program from the wrong folder, so it looked for its own files in the wrong place. That hand launch was itself a workaround for a sandbox path filter.
 
 <!--CLEAR-->
-A receipt: one fault, its cause, and the fix, written down afterwards and marked resolved. It opens by clearing the innocent party. The installation was never broken, and the page lists what it checked in order to say so, which is the difference between a diagnosis and a theory.
+A receipt, meaning a file that records what was run: one fault, its cause, and the fix, written down afterwards and marked resolved. It opens by clearing the innocent party. The installation was never broken, and the page lists what it checked in order to say so, which is the difference between a diagnosis and a theory.
 
 The first real cause is a marker file the program leaves behind while it runs and removes only on a clean exit. Something had been starting many copies and then force-killing them, so the markers piled up, and each new start read them as evidence of a crash and dropped into a limited mode with a component switched off. That is why a port never opened.
 

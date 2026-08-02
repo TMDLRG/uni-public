@@ -19,7 +19,7 @@ This is a short deployment guide. It describes two ways to run the software, how
 
 The two shapes are simple. Either add the project as a dependency and call it directly from your own harness, or build a container, where one build target runs the test suite and another produces an operator image.
 
-The part worth reading twice is the section on serving a learner safely. It says to hand the learner only encoded observations, never to expose the functions that reveal what things mean, to keep the debugging mode off when serving, and to fix the channel mapping within a scenario while varying it between scenarios, so that channel identities cannot be memorised.
+The part worth reading twice is the section on serving a learner safely. It says to hand the learner only encoded observations, and never to expose the functions that reveal what things mean. Keep the debugging mode off when serving, and fix the channel mapping within a scenario while varying it between scenarios, so that channel identities cannot be memorised.
 
 A short section on scaling notes that episodes are pure functions, so they can be run side by side without shared state.
 
@@ -30,8 +30,8 @@ Two deployment shapes are described. In the first, the project is added as a dep
 
 A configuration section explains where scenarios and seed sets live, and asks that a provenance record be captured alongside any run. That record holds the seed, the cadence, the world dimensions and the version of the observation catalogue, which together are what make a run reproducible. The guide says to bump that version whenever the catalogue changes and to regenerate the stored artifacts.
 
-The most important section is about serving a future learner safely, and it is a numbered list of four rules: run the agent against encoded observations only; never expose the functions that reveal meanings, the debug lens, or the raw world and body structures to the learner's process; keep the debug mode off when serving and enable it only for validation; and fix the channel mapping within a scenario for reproducibility while varying it across scenarios so that channel identities cannot be memorised.
+The most important section is about serving a future learner safely, and it is a numbered list of four rules. Run the agent against encoded observations only. Never expose the functions that reveal meanings, the debug lens, or the raw world and body structures to the learner's process. Keep the debug mode off when serving, and enable it only for validation. And fix the channel mapping within a scenario for reproducibility, while varying it across scenarios so that channel identities cannot be memorised.
 
 A scaling note says episodes are pure functions with no shared mutable state, so many can run side by side across seeds and agents.
 
-A final section on upgrades says that any change to the dynamics or the interface means regenerating the stored artifacts and reviewing the difference, and that adding a sense or an action means updating the sensing, the gating and the catalogues together, bumping the version, and extending the catalogue documents and tests.
+A final section on upgrades says that any change to the dynamics or the interface means regenerating the stored artifacts and reviewing the difference. Adding a sense or an action means updating the sensing, the gating and the catalogues together, bumping the version, and extending the catalogue documents and tests.

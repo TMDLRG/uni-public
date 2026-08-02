@@ -6,7 +6,7 @@ review_state: draft
 ---
 <!--PLAIN-->
 
-Fourteen pages describing a laboratory built around the bacterial flagellar motor: a deterministic reduced model of the motor, analysis of recorded single-motor events, a cross-study parity programme, the scientific gates the work has to clear, and independent audits of both the model and the repository around it. The framing throughout is hierarchical active inference.
+A laboratory built around the bacterial flagellar motor. It holds a deterministic reduced model of the motor, analysis of recorded single-motor events, and a cross-study parity programme. Alongside those sit the scientific gates the work has to clear, and independent audits of both the model and the repository around it. The framing throughout is hierarchical active inference.
 
 It is for a reader with a scientific interest, and especially for one who has come to check whether a model fit has quietly become a claim about biology. The laboratory's central discipline is a labelling one: every visible layer carries exactly one class — recorded observation, structural reconstruction, reduced model, or physical teaching analogue — and those classes may not be blended. Behavioural observations of one species are held apart from structural work on another, so that nothing on the page can read as a single measured specimen.
 

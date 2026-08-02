@@ -30,6 +30,6 @@ The method is a batch of runs across a reference set of seeds for every simple s
 
 The results are given as a table of mean survival per strategy with the number of seeds each reached the horizon on. The reading offered is that no strategy reaches the horizon on all seeds, and the strategies that use their senses lead, so the benchmark is neither trivial nor collapsed. A separate ablation is cited for the advantage of using senses with the body held fixed.
 
-The anti-shortcut section states that no score, reward, return or fitness field exists anywhere on the learner's path or in the evaluation metrics, that the learner cannot read world state, coordinates, materials or hidden layers, and that no action bypasses the capability ladder. Conservation is reported as an exact zero change in transported mass, with field values remaining inside documented caps over long runs.
+The anti-shortcut section states that no score, reward, return or fitness field exists anywhere on the learner's path or in the evaluation metrics. The learner cannot read world state, coordinates, materials or hidden layers, and no action bypasses the capability ladder. Conservation is reported as an exact zero change in transported mass, with field values remaining inside documented caps over long runs.
 
 The verdict is a pass. The residual risks say plainly that difficulty depends on the seed, which is why batches were used, and that the pinned episode is a single reference rather than a band, which could be broadened if stricter coverage were wanted.

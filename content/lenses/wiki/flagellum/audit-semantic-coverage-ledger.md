@@ -42,14 +42,14 @@ That first entry is a blind mutation battery. Ten fresh corruptions of named bio
 statistical and boundary properties were applied in isolated copies by an independent author who
 could not see the test sources, and every one of them survived. The page records the counts as a
 table with zero detections, calls it adverse evidence about coverage, and then says precisely
-what it did not mean: the production code was not thereby wrong, because these were injected
+what it did not mean. The production code was not thereby wrong, because these were injected
 defects rather than discovered ones. It measured the instrument, not the science.
 
-The second entry is the remediation. Independent invariants for the same ten properties were
+The second entry is the remediation. Independent checks for the same ten properties were
 added, then measured by replaying the original corruptions, a set of structurally different
 alternate forms, and two attacks that tried to launder an adverse record. Most were detected.
-But the entry carries a warning telling the reader not to quote the raw detection count, because
-two detections could not be attributed to the test the protocol said would catch them, so the
+But the entry carries a warning telling the reader not to quote the raw detection count. Two
+detections could not be attributed to the test the protocol said would catch them, so the
 creditable figure is lower and one acceptance criterion fails. A negative control on an
 unmutated copy runs green, so every detection is mutation-caused.
 
@@ -68,9 +68,9 @@ than rewritten.
 
 The third entry is a correction package. An external reviewer rejected the handoff on five
 blocking defects, all confirmed against the artifacts, with no measurement re-run and no
-classification changed. Each is listed with its correction: a wrong protocol path, an addendum
-whose timing was only narrative, a headline quoting classified rather than credited detections,
-a gate pinning behaviour the same phase recorded as not established, and a blanket claim about
+classification changed. Each is listed with its correction. A wrong protocol path. An addendum
+whose timing was only narrative. A headline quoting classified rather than credited detections.
+A gate pinning behaviour the same phase recorded as not established. And a blanket claim about
 the suite that was false.
 
 Then the finding the reviewer did not ask for. Applying the corrections surfaced a sixth defect,
@@ -80,7 +80,7 @@ the protocol that actually governed the run entered history in the replay base i
 corrected instrument refuses the run that was performed. One detection keeps its result but
 loses its prospective standing, and one acceptance criterion is downgraded.
 
-The page closes with standing rules for future entries: record adverse counts verbatim, say
-whether a battery was blind or sighted, separate new coverage from migration, close a falsified
-prediction as falsified, never treat detecting known corruptions as general robustness, and
+The page closes with standing rules for future entries. Record adverse counts verbatim. Say
+whether a battery was blind or sighted. Separate new coverage from migration. Close a falsified
+prediction as falsified. Never treat detecting known corruptions as general robustness. And
 report credited rather than classified detections.

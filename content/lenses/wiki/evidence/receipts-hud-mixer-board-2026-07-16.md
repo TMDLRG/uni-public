@@ -18,7 +18,7 @@ note:
 A record of rebuilding a glance display after the operator listed, bluntly, several ways in which it was not honest. Every gate was registered before any code was written, and all the fixes serve one rule: never fabricate a measurement, and show what was not measured as unknown rather than as a confident zero. Measuring the running service, rather than reading the code, found four things the plan had wrong, including that one panel had never worked once since the day it was added, and could not have said so.
 
 <!--CLEAR-->
-A receipt that opens with the operator's own complaints, and a count: the third honesty failure in this surface in two days. The gates were pre-registered before any code was written, and each names a falsifier.
+A receipt — the file recording what was run — that opens with the operator's own complaints, and a count: the third honesty failure in this surface in two days. The gates were pre-registered before any code was written, and each names the result that would show it wrong.
 
 One rule is stated that every fix serves. Never fabricate a measurement. Anything not measured surfaces as unknown, never as a confident zero and never as off.
 
@@ -26,11 +26,11 @@ The most useful section separates what the plan, written from a code read, got r
 
 One lie's root cause was upstream of the display entirely. A component sent both a value and a flag saying not to trust it, and an intermediate hop forwarded the value and dropped the flag, so a fabricated reading became a confident one before the display ever saw it. The page notes that no change in the display could have fixed it.
 
-Two further planned steps would have shipped looking correct while showing nothing, or would have invented something that does not exist: a field path that yields nothing because the value is an encoded string, and a hardcoded list of seats one longer than the live data has.
+Two further planned steps would have shipped looking correct while showing nothing, or would have invented something that does not exist. One was a field path that yields nothing, because the value is an encoded string. The other was a hardcoded list of seats one longer than the live data has.
 
 What shipped is described layer by layer, with the theme of not discarding what was already fetched and not fabricating what was not. Values never measured are distinguished from measured zeros. Rate calculations return nothing on a first sample or after a counter reset. The expensive poll moves to its own slow loop that does not block the fast one, and that loop sleeps by the deficit so it honours the interval it advertises. One file outside the stated scope was changed deliberately, with the reason given: the gate could not be closed honestly without fixing the lie at its source.
 
-The live receipts include a falsifier run on purpose, killing a component and watching the display say unknown where the old build showed a confident reading, and a cadence trajectory ending at the advertised value. Counts are recomputed independently at the same instant and match exactly.
+The live receipts include a run made on purpose to try to show it wrong, killing a component and watching the display say unknown where the old build showed a confident reading. There is also a cadence trajectory ending at the advertised value. Counts are recomputed independently at the same instant and match exactly.
 
 One section is the author catching their own regression. Giving the expensive call its own interval while still awaiting it inline reproduced the very defect being fixed, and the honesty metric caught it within a single deploy cycle, which the page says a code review would not have done.
 

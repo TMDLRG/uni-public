@@ -17,7 +17,7 @@ note:
 <!--PLAIN-->
 Bringing a live colony and its stream back up is what this runbook is for, and it carries two banners saying parts of it are stale. One says a newer document overrides it on conflict. The other, set by the owner, corrects which machine the colony runs on, so any instruction here about running it locally is out of date.
 
-What survives is the practical core: a start sequence in three steps, the settings and addresses in a table, how to reset the world to a known good seed, how to populate the colony, how to check it is healthy, and how to shut down gracefully.
+What survives is the practical core. A start sequence in three steps, and the settings and addresses in a table. How to reset the world to a known good seed, how to populate the colony, how to check it is healthy, and how to shut down gracefully.
 
 Two gotchas are called critical and are the reason the page exists. Running a second copy of one component makes two cameras fight over the same port and the same login, which cascades into something that looks like an entirely different fault. And a machine with two graphics chips renders the view badly inside the broadcast application, and the software renderer cannot draw the terrain at all, so a real browser window is captured instead. The page closes with a short list of the commits from that session, the last of which adds nothing but a build-and-proof plan.
 
@@ -30,10 +30,10 @@ Two gotchas are marked critical, and they are the reason the page exists. The fi
 
 The second concerns a machine with two graphics chips. With hardware acceleration on, the browser source in the broadcast application crashes and the picture goes white. With it off there is no crash, but the software renderer draws the moving entities and cannot draw the terrain, so the broadcast shows empty ground while a real browser on the same address renders the full forest. The robust fix is to capture a real hardware-accelerated browser window instead of using the built-in browser source.
 
-A table of key facts follows, covering the node and its cookie, the game and console ports, a known-good world seed with a note about why it is good, the stream and camera addresses, where the saved minds live, and where world backups go.
+A table of key facts follows. It covers the node and its cookie, the game and console ports, and a known-good world seed with a note about why it is good. It covers the stream and camera addresses, where the saved minds live, and where world backups go.
 
 Further sections cover resetting the world to a fresh forest, including a verification step to confirm the new world is inland before trusting it, because a random seed can land in a coastal area that looks stripped. Then how the population is maintained automatically within a range and how to spawn manually.
 
 A health-check section gives the commands and, more usefully, what a good reading and a bad reading look like, with the bad one describing agents that have dug to the bottom and can no longer reach wood. It explains the build chain step by step and states that it only works on a forested surface with reachable trees, which was the whole of an earlier problem.
 
-The remaining sections list the helper scripts written during that session, a graceful shutdown sequence that saves the world and the minds before killing anything, a note about which unrelated processes to leave alone, and a short list of fixes applied with their commits, the last of them adding only a build-and-proof plan document.
+The remaining sections list the helper scripts written during that session, and a graceful shutdown sequence that saves the world and the minds before killing anything. Then a note about which unrelated processes to leave alone, and a short list of fixes applied with their commits, the last of them adding only a build-and-proof plan document.

@@ -16,7 +16,7 @@ note:
 ---
 <!--PLAIN-->
 
-Rung two hands the simulated colony an energy organ it can feel from the inside, and the chapter reports what that bought and what it did not. In the first paired live run the organ raised foraging and tool-crafting by an attributable margin. In the very same run it left building slightly worse, the allostasis gate never came apart, and the plateau the organ was built to break stayed exactly where it was. Both halves are load-bearing and neither may be quoted without the other. A read-only audit of the real colony brain files then went looking for the cause. It ruled out the two obvious mundane explanations and found instead that the drive toward information is orders of magnitude too weak for building to be worth planning for. A smallest cure has been designed and signed at the design level only. It has not been run.
+The second rung of the developmental ladder hands the simulated colony an energy organ it can feel from the inside, and the chapter reports what that bought and what it did not. In the first paired live run the organ raised foraging and tool-crafting by an attributable margin. In the very same run it left building slightly worse, the allostasis gate never came apart, and the plateau the organ was built to break stayed exactly where it was. Both halves are load-bearing and neither may be quoted without the other. A read-only audit of the real colony brain files then went looking for the cause. It ruled out the two obvious mundane explanations and found instead that the drive toward information is orders of magnitude too weak for building to be worth planning for. A smallest cure has been designed and signed at the design level only. It has not been run.
 
 <!--CLEAR-->
 

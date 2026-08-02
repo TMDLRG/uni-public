@@ -26,7 +26,7 @@ The second answer separates a claim about the code path from a claim about a run
 
 The third answer goes through the list of pending gates and says plainly that this agent is running none of them, and that by their own notes none of them is near a verdict.
 
-The fourth is a single paragraph written to be the claim fence. It states what one partial result does show and, at greater length, what it does not: not persistence without the scaffold, and not that the specific mechanism drives the behaviour, since the same receipt withdraws an earlier claimed effect after a repeat run reversed direction. It closes by saying every count and belief named is a model variable.
+The fourth is a single paragraph written to be the claim fence: the limit on what the work may say it has shown. It states what one partial result does show and, at greater length, what it does not. Not persistence without the scaffold, and not that the specific mechanism drives the behaviour. The same receipt, the file recording that run, withdraws an earlier claimed effect after a repeat run reversed direction. It closes by saying every count and belief named is a model variable.
 
 Then a finding about the checking tool itself, flagged rather than hidden. The automated scan is a blunt word-boundary check with no awareness of negation, so the project's own standing disclaimer would trip it despite being a disclaimer rather than a claim. The paragraph above was written to avoid every fenced word in either direction rather than rely on the scanner understanding negation, and the underlying gap is named as needing a decision.
 

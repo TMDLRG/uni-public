@@ -34,8 +34,7 @@ test exists and that the emergency stop has never been fired by a person.
 
 <!--CLEAR-->
 
-This is the operations page: watchdogs, boot persistence, health checks, certificates, ledger repair,
-backups and disaster recovery. Most of it turns on one distinction the estate takes more seriously
+This is the operations page: watchdogs, boot persistence, health checks, certificates, repair of the append-only record, backups and disaster recovery. Most of it turns on one distinction the estate takes more seriously
 than most — that crash-restart and reboot-survival are two different claims, and collapsing them is
 how a system comes to believe it is durable when it is not. Installing a startup entry is not
 evidence that it fired.

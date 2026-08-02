@@ -15,7 +15,7 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-A pre-registration written before any run, with the verdict recorded beside it afterwards, and the verdict is that the gate does not clear. The question is whether a preference shaped around a set point holds an internal store more tightly than a still-eating control with no peak. The bars, the effect size, the number of worlds and every constant were pinned in advance, including the conditions that would make a run void rather than either a pass or a failure. A binding fence sits alongside it: the measure is a model variable, never a felt state. Nothing here authorises deploying that shape.
+A pre-registration written before any run, with the verdict recorded beside it afterwards, and the verdict is that the gate does not clear. The question is whether a preference shaped around a set point holds an internal store more tightly than a still-eating control with no peak. The bars, the effect size, the number of worlds and every constant were pinned in advance, including the conditions that would make a run void rather than either a pass or a failure. A binding limit sits alongside it: the measure is a model variable, never a felt state. Nothing here authorises deploying that shape.
 
 <!--CLEAR-->
 A pre-registration written and hardened before anything ran, with the verdict added beside it rather than in place of it. The question is stated in one line and is narrower than it first looks: not whether the drive exists, which an earlier gate already settled, but whether the shape of it does regulatory work.
@@ -26,7 +26,7 @@ The scope is stated honestly. This swaps the whole shape rather than one term, a
 
 There is a single primary metric, defined on the raw store rather than on the belief about it, with the difference spelled out. Bodies sharing a world collapse to one datum, and the paired difference is taken by seed. Secondary measures are named as descriptive only and explicitly not part of the gate.
 
-The pass conditions are pinned with numbers: an effect size, an interval that must exclude zero, a resampling unit that is the world rather than the body, a floor on survival, and an attribution check that the control genuinely ate, so tightness cannot be achieved by never eating. The falsifier is the mirror of that. A separate void category then covers three ways a run could be invalid rather than negative, including a leak that would restore the preference behind the experiment's back.
+The pass conditions are pinned with numbers. There is an effect size, an interval that must exclude zero, and a resampling unit that is the world rather than the body. There is a floor on survival, and an attribution check that the control genuinely ate, so tightness cannot be achieved by never eating. What would show it wrong is the mirror of that. A separate void category then covers three ways a run could be invalid rather than negative, including a leak that would restore the preference behind the experiment's back.
 
 The replication unit gets its own section, rejecting many bodies in one world by name as pseudo-replication, citing the earlier phase where that lesson came from, and requiring that the two arms never share a world.
 

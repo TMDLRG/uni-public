@@ -20,7 +20,7 @@ A sweep over the panels an operator watches between tests, which had never recei
 <!--CLEAR-->
 A sweep covering the surfaces an operator looks at between tests. Its opening observation is the reason it exists: the periodic test had been hardened, and the always-on panels had not, so the same defect classes were still live exactly where somebody would be looking.
 
-Each item is written the same way. What it was, what the fix is, a pass condition and a falsifier, with the gate registered before the change.
+Each item is written the same way. What it was, what the fix is, a pass condition and the result that would show it wrong, with the gate registered before the change.
 
 The first is the discredited byte-count still live on the go or no-go route, hundreds of lines away from where the same thing had already been fixed. A picture of a black frame clears the threshold easily. The fix reuses the pixel classifier that already existed, along with the logic distinguishing an absent input from a black one, and a pass now also requires that at least one scene genuinely rendered, because everything being skipped proves nothing.
 
@@ -34,4 +34,4 @@ One item is especially memorable. A sensor had been dead for days and was launch
 
 Two smaller ones follow: a panel that pinned itself on a byte-identical recovery, and a count that counted records, including dead ones, rather than live processes. And a tile that claimed a public path was fine from a bare port check is reworded to say that a reachable port is not evidence of forwarding.
 
-The proofs are decision tables comparing old and new behaviour case by case, alongside live readings. One is held at partial rather than passed, because the render-failure rehearsal that would justify it does not exist yet, and the receipt cites its own standing rule that no green claim about that part is permitted until it does. A closing section covers persistence across a restart, a step that had been manual becoming a measured one, a retired ceremony removed from a diagram, and a hard-coded address replaced by a name.
+The proofs are decision tables comparing old and new behaviour case by case, alongside live readings. One is held at partial rather than passed, because the render-failure rehearsal that would justify it does not exist yet. The receipt, the file recording what was run, cites its own standing rule that no green claim about that part is permitted until it does. A closing section covers persistence across a restart, a step that had been manual becoming a measured one, a retired ceremony removed from a diagram, and a hard-coded address replaced by a name.

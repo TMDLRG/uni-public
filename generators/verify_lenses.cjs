@@ -378,7 +378,16 @@ async function main() {
     const DISCLOSURES = [
       { id: "natura-not-a-gate",
         src: /never a uni gate|zero uni claims|raises no rung/i,
-        lens: /never a uni gate|not a uni gate|zero uni claims|raises no rung|no uni claim|contributes no evidence|cited(?: here)?,? not measured|not one of (?:the |our )?(?:programme|project)/i,
+        // WIDENED 2026-08-02, and the reason is the finding that prompted it.
+        // An audit showed this check STRUCTURALLY PREFERS BOILERPLATE: it matched a short list of
+        // house phrasings, so pasting "contains zero UNI claims" was the cheapest way to pass, and
+        // five Plain lanes duly carried the project's compliance vocabulary into the lane whose
+        // contract promises no jargon. Rewriting them in plain English then FAILED this check —
+        // the gate rejecting the better prose and accepting the worse.
+        // A fence that only recognises its own dialect teaches everyone to speak it. So the plain
+        // forms are recognised too. This does not weaken the rule: the requirement is still that
+        // the idea be present in the lane a reader is looking at.
+        lens: /never a uni gate|not a uni gate|zero uni claims|raises no rung|no uni claim|contributes no evidence|cited(?: here)?,? not measured|not one of (?:the |our )?(?:programme|project)|nobody here did the measuring|did the measuring|measured (?:by )?(?:somebody|someone|a \w+) else|measured elsewhere|somebody else'?s? laborator|none of this project'?s own results|nothing here is one of this project'?s own results|quote[sd]? (?:them|from other people)|other people'?s work|borrowed science|we did not measure/i,
         why: "this page is a CITATION of outside science, not one of the programme's own results" },
       { id: "toy-world-not-a-person",
         src: /never a person|toy world|bounded peek/i,
@@ -452,6 +461,17 @@ async function main() {
       for (const f of forb.words) if (has(t, f.word)) faults.push(`orientation/${o.corpus}: forbidden word '${f.word}' — ${f.why}`);
       for (const [re, why] of STRUCT) if (re.test(o.html)) faults.push(`orientation/${o.corpus}: contains ${why}`);
       if (/<h[1-6][\s>]/i.test(o.html)) faults.push(`orientation/${o.corpus}: contains a heading`);
+      // LENGTH, HELD TO THE SAME CAP AS A LANE — and this was missing for the same reason the
+      // panels themselves went unchecked. An audit measured the lanes clean at zero sentences over
+      // 40 words in either lane, then found 8 such sentences in the orientation panels, the longest
+      // 51 words. Its own explanation is the finding: the panels "are not a 'lane', so they are
+      // excluded from the lane figures by construction. That exclusion is exactly how they went
+      // unmeasured." One panel renders ABOVE the lane on every one of the 304 pages, which makes
+      // them the most-read authored prose on the site and the least entitled to a long sentence.
+      for (const sen of t.split(/(?<=[.!?])\s+/)) {
+        const w = (sen.match(/\S+/g) || []).length;
+        if (w > 40) faults.push(`orientation/${o.corpus}: a ${w}-word sentence — the lanes cap at 40 and this renders above every one of them`);
+      }
       if (!o.authored_by || !o.authored_at) faults.push(`orientation/${o.corpus}: no authored_by/authored_at`);
       if (o.review_state === "reviewed" && !o.reviewed_by) faults.push(`orientation/${o.corpus}: claims reviewed with no reviewer`);
     }

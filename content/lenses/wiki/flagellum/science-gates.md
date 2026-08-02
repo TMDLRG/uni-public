@@ -34,8 +34,8 @@ full parity remains false.
 <!--CLEAR-->
 
 The page opens with a note that a later and broader programme exists elsewhere, and that
-evidence relevant to two of these gates now sits in other modules — but that transferring
-parameters safely between laboratories is still not established and must not be assumed by
+evidence relevant to two of these gates now sits in other modules. But transferring
+parameters safely between laboratories is still not established, and must not be assumed by
 merging unlike experiments.
 
 Then the verdict. The release has partial computational parity only. Four of seven executable
@@ -52,10 +52,10 @@ original authors, so the page states that the present likelihood cannot honestly
 unified one, and leaves that as its own gate.
 
 A table then lists every gate with its result and a one-line finding. The passing ones cover
-identity of the source files, separation between fitting data and held-out outcomes, the
-first-passage mathematics, and the censored likelihood. The failing ones cover a mismatch
+identity of the source files, separation between fitting data and the outcomes kept back from
+it, the first-passage mathematics, and the censored likelihood. The failing ones cover a mismatch
 against the article's own workbook, a parameter-recovery run that missed its frozen tolerance,
-and a held-out advantage whose interval crosses zero. The remaining rows are marked source-only,
+and an advantage on kept-back data whose interval crosses zero. The remaining rows are marked source-only,
 not established or blocked, each with the reason.
 
 The public-artifact section is the most delicate part. The article reports one set of fitted
@@ -71,14 +71,14 @@ likelihood. The page argues this is not a reason to remove the failed gate; it i
 more data, a stronger measurement model or a simpler parameterization is needed before those
 coefficients can be given stable biological meaning.
 
-The held-out comparison is reported with its interval printed beside the point estimate. The
+The comparison on kept-back data is reported with its interval printed beside the point estimate. The
 mechanistic model edges out a memoryless baseline on the point score, but the interval includes
 zero, so the frozen predictive gate fails. The page states that this is not reported as almost
 proved.
 
 Reproduction commands, machine-readable artifacts and an independently written checker are
-listed. Finally there is a numbered list of the work required for biological parity: obtaining a
-clarified source artifact, independently implementing a classifier, acquiring raw multi-load
-observations, committing predictions before a calibrated live run, obtaining an independent
-laboratory replication, and printing, instrumenting and safety-reviewing the physical model.
+listed. Finally there is a numbered list of the work required for biological parity. Obtaining a
+clarified source artifact. Independently implementing a classifier. Acquiring raw multi-load
+observations. Committing predictions before a calibrated live run. Obtaining an independent
+laboratory replication. And printing, instrumenting and safety-reviewing the physical model.
 Until those gates are actually executed, the page says, full parity remains false.

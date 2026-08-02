@@ -52,11 +52,11 @@ back. The screen computes the exact identity and displays the encoder error, the
 the calibration residual, so the gap between machine and mathematics is shown rather than
 absorbed.
 
-Then a numbered list of fabrication gates: print and measure a tolerance coupon, record the fit,
-regenerate with corrected clearance rather than sanding away the evidence, confirm each gear
-turns freely, check that no undeclared crossing exists, calibrate the sensors, compare physical
-and on-screen values across the safe travel, keep the calibration data with its uncertainty
-band, and supervise children around small parts.
+Then a numbered list of fabrication gates. Print and measure a tolerance coupon, record the fit,
+and regenerate with corrected clearance rather than sanding away the evidence. Confirm each gear
+turns freely, and check that no undeclared crossing exists. Calibrate the sensors, and compare
+physical and on-screen values across the safe travel. Keep the calibration data with its
+uncertainty band. And supervise children around small parts.
 
 The closing paragraph carries the page. The printed differential is an educational mechanism,
 and it requires physical validation before it can be called a mechanical calculator. The design

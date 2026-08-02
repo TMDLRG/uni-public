@@ -40,25 +40,15 @@ against those measurements and be told, repeatedly, where it is wrong. In a simu
 define your way out of a disagreement; here you cannot, and most of the machinery described exists to
 stop anyone trying.
 
-It sketches the motor briefly: a rotary machine embedded in the cell envelope, driven by a proton
-gradient rather than by the usual cellular fuel, whose stator units engage and disengage under load,
-and whose change of rotation direction turns smooth swimming into a tumble. So the motor is not a
+It sketches the motor briefly. It is a rotary machine embedded in the cell envelope, driven by a proton gradient rather than by the usual cellular fuel. Its stator units engage and disengage under load, and its change of rotation direction turns smooth swimming into a tumble. So the motor is not a
 component in a behaviour; it is the behaviour.
 
 The organising idea is a four-way separation — a source-pinned recorded measurement, a deterministic
 re-derivation from those measurements, the model running forward alone, and what an agent believes. A
 re-derivation may never be relabelled as a measurement, and that is a rule rather than a preference.
-A second separation of the same kind is flagged as the one most likely to be quietly broken:
-behavioural evidence from one organism and structural evidence from others are different organisms,
-and combining them into one narrative implies a measured specimen that never existed.
+A second separation of the same kind is flagged as the one most likely to be quietly broken. Behavioural evidence from one organism and structural evidence from others are different organisms, and combining them into one narrative implies a measured specimen that never existed.
 
-The checks are aimed less at whether the model works and more at the ways a scientific result gets
-accidentally faked — leakage between training and holdout, censoring and exclusion, sign errors,
-provenance, conditioning, the boundary between world and agent, and the preservation of adverse
-records. Several exist because a specific result was wrong in exactly that way. The one to understand
-first is prospectivity: a prediction counts as prospective only if it was committed before the
-observation it predicts, and anything else is a fit — a fit dressed as a prediction being the
-commonest way an honest person publishes a wrong result.
+The checks are aimed less at whether the model works and more at the ways a scientific result gets accidentally faked. Leakage between training and holdout, censoring and exclusion, sign errors, provenance, conditioning, the boundary between world and agent, and the preservation of adverse records. Several exist because a specific result was wrong in exactly that way. The one to understand first is prospectivity. A prediction counts as prospective only if it was committed before the observation it predicts, and anything else is a fit. A fit dressed as a prediction is the commonest way an honest person publishes a wrong result.
 
 Comparison across studies is described as the strongest available evidence and the easiest thing to
 fake, since a parameter quietly retuned per study produces agreement everywhere and means nothing.

@@ -24,11 +24,11 @@ The centre of the report is a table with one row per acceptance gate, each with 
 A short section on engineering quality is followed by residual risks, including one adapter that is specified rather than compiled in, and difficulty that varies with the seed.
 
 <!--CLEAR-->
-This is the sign-off report for a benchmark environment, and it states its verdict at the top: a release candidate, ready for use as a benchmark-class environment to be exposed to a future learning agent, with scope boundaries documented in a separate file. Naming the boundaries in the verdict itself is what keeps the claim bounded.
+This is the sign-off report for a benchmark environment, and it states its verdict at the top. It is a release candidate, ready for use as a benchmark-class environment to be exposed to a future learning agent, with scope boundaries documented in a separate file. Naming the boundaries in the verdict itself is what keeps the claim bounded.
 
 The purpose is to assess whether the repository is complete in implementation and in tests, hardened by quality assurance, reproducible, and safe to expose to a learner through an interface that reveals nothing.
 
-The method combines a full test suite covering unit, property, integration, leakage, invariant, soak and regression tests; a compile in which warnings are treated as errors together with a formatting check in continuous integration; a live capture of evidence by running a script; and a manual audit against the acceptance gates and validation invariants defined in the specification.
+The method combines several things. There is a full test suite covering unit, property, integration, leakage, invariant, soak and regression tests. There is a compile in which warnings are treated as errors, together with a formatting check in continuous integration. And there is a live capture of evidence by running a script, plus a manual audit against the acceptance gates and validation invariants defined in the specification.
 
 The artifacts are named with their counts, including a stored reference episode used as a regression guard, and the per-topic reports that sit in the same directory.
 

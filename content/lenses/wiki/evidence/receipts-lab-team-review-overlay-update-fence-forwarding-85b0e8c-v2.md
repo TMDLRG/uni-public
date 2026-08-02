@@ -26,7 +26,7 @@ Both are handled the same way, and the pattern is worth taking. A note saying pl
 
 One passage is the author catching themselves. A first draft of the new handler called a write helper unwrapped, which uses functions that raise, and would have crashed the process on exactly the class of race this whole effort exists to eliminate. It is fixed by reusing the module's existing safe helpers, and the mistake is recorded rather than quietly corrected.
 
-A precedence rule is then specified for the case where a manual write and a periodic tick disagree: a deadline per layer, limited to the only two keys the tick touches, with a guard replacing an unconditional overwrite, and self-healing, so there is no release step for an operator to forget.
+A precedence rule is then specified for the case where a manual write and a periodic tick disagree. There is a deadline per layer, limited to the only two keys the tick touches, with a guard replacing an unconditional overwrite. It is self-healing, so there is no release step for an operator to forget.
 
 The two-writer problem is resolved by ownership rather than by routing. One process owns everything except one kind of row, and the other owns only that. The choice is justified against the alternative, which would have required a new endpoint on a surface that is not deployed today, adding at least as much work plus a runtime dependency. And the condition that actually makes two processes appending to one file safe is named and justified, which the page notes was not asked for but is the fact that makes ownership more than a label.
 
@@ -34,4 +34,4 @@ Corrections to test locations are grounded in what the repository really contain
 
 One fix is honest about being a placeholder. Neither document said where an operator's name would come from, and nothing captures identity today, so a narrowly scoped environment value is named, with the reading side never inventing or inferring a value of its own. The text says outright that this is a minimal, single-operator placeholder rather than an identity design, which remains a separate and larger decision.
 
-A closing section flags two adjacent observations left untouched, because no reviewer raised them in this round, including one described as still open and still trivial, surfaced again so a later pass can pick it up rather than leaving work behind silently. The addendum is also explicit that it was a direct-apply pass rather than a fresh review, and that no independent panel ran over it.
+A closing section flags two adjacent observations left untouched, because no reviewer raised them in this round. One is described as still open and still trivial, surfaced again so a later pass can pick it up rather than leaving work behind silently. The addendum is also explicit that it was a direct-apply pass rather than a fresh review, and that no independent panel ran over it.

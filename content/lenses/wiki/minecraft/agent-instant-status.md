@@ -26,7 +26,7 @@ Much of the rest is a correction. The status call had itself been making three f
 <!--CLEAR-->
 An operating contract for machine assistants, written after one of them wasted effort. It says that the first thing a fresh session does is fetch the state, not search the repository for it.
 
-The page names a single call that answers everything in one response. It lists what comes back: a coarse up, partial or down for the whole stack; the exact step the operator is on, with a live check rather than an assumption, its description, and the steps the journey plan predicts next; the open or locked condition of every door in the lifecycle; a live probe of every surface; the liveness of the neighbouring visibility service; several fields about a widget; a curated map of every actionable endpoint with a one-line purpose; and the operating laws inlined so they cannot go missing.
+The page names a single call that answers everything in one response. It lists what comes back. First, a coarse up, partial or down for the whole stack. Then the exact step the operator is on, with a live check rather than an assumption, its description, and the steps the journey plan predicts next. Then the open or locked condition of every door in the lifecycle, a live probe of every surface, and the liveness of the neighbouring visibility service. Then several fields about a widget, a curated map of every actionable endpoint with a one-line purpose, and the operating laws inlined so they cannot go missing.
 
 One field is called out as deliberately not a verdict. The call never runs that service's own check, so it never reports its result. Instead it names the check a reader can run.
 

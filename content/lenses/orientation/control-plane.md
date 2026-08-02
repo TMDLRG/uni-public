@@ -6,7 +6,7 @@ review_state: draft
 ---
 <!--PLAIN-->
 
-This is the design record of the part of the estate whose job is to stop the rest of it claiming more than it has measured: 32 pages of architecture, numbered decision records, phase plans, and the results written after each phase ran.
+This is the design record of the part of the estate whose job is to stop the rest of it claiming more than it has measured. It runs to architecture notes, numbered decision records, phase plans, and the results written after each phase ran.
 
 It is for anyone curious how a decision was actually reached — what was considered, what was refused, and what the refusal cost. The decision records are the most durable part: each names one choice, the alternatives, and the consequence accepted in exchange. The failure-modes page is worth the detour, because it states each refusal as something you could go and test rather than as a promise.
 

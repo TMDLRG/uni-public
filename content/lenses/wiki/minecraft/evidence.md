@@ -21,12 +21,12 @@ The system it describes is an agent that plays a real block-building game throug
 
 The long middle is mathematics, written out with the derivations, along with a note about one place where a tempting shortcut would quietly break a guarantee, and a record of a real defect found in an audit and fixed.
 
-The fences matter as much as the claims. A whole section is given over to what is explicitly not claimed: nothing about felt experience, nothing about biological fidelity, nothing about the behaviour being optimal. A closing list of open questions is franker still, since several of them say the thing has not yet been seen.
+The limits matter as much as the claims. A whole section is given over to what is explicitly not claimed: nothing about felt experience, nothing about biological fidelity, nothing about the behaviour being optimal. A closing list of open questions is franker still, since several of them say the thing has not yet been seen.
 
 <!--CLEAR-->
 Written to be attacked, and framed that way from the first line. Its own framing says that if a claim survives your best attempt to break it, that survival is the result.
 
-It opens with a one-paragraph statement of the claim. The agent chooses actions by minimising an expected quantity made of two named parts, one for information gain and one for preference, over beliefs maintained by minimising a related quantity during perception. It states that no reward signal and no reinforcement learning appear anywhere. It states that the numerical core is written in one language with no foreign computation layers, that a two-level hierarchy communicates across a boundary carrying only primitive values, that every numerical kernel is checked against an independent implementation in another language to a stated tolerance, and that a set of acceptance gates runs automatically.
+It opens with a one-paragraph statement of the claim. The agent chooses actions by minimising an expected quantity made of two named parts, one for information gain and one for preference, over beliefs maintained by minimising a related quantity during perception. It states that no reward signal and no reinforcement learning appear anywhere. It states that the numerical core is written in one language with no foreign computation layers, and that a two-level hierarchy communicates across a boundary carrying only primitive values. Every numerical kernel is checked against an independent implementation in another language to a stated tolerance, and a set of acceptance gates runs automatically.
 
 An architecture section draws the flow from the world, through the body, into the agent, and back out as a single action. It stresses that only two messages ever cross the body-to-brain boundary and that no belief structure ever crosses. It also states the purity rule: the decision function performs no effects and returns instructions, which the runtime carries out.
 
@@ -34,8 +34,8 @@ The mathematics section is the longest. It derives the perception quantity and s
 
 An evidence section lists commands and their results in a table, then describes what embodied agents were observed doing in the live game, including recovering after in-game death and choosing options that suit the situation rather than choosing uniformly.
 
-The fences follow. No reward and no reinforcement learning is stated as a design invariant rather than a tuning choice. There is no claim of felt experience: the functions with suggestive names model access and report, and the document says explicitly that it makes no claim about the hard problem. There is no claim of biological fidelity for the emotion and hormone machinery, which is described as parameter modulation. And there is no claim that the behaviour is optimal.
+The limits follow. No reward and no reinforcement learning is stated as a design invariant rather than a tuning choice. There is no claim of felt experience: the functions with suggestive names model access and report, and the document says explicitly that it makes no claim about the hard problem. There is no claim of biological fidelity for the emotion and hormone machinery, which is described as parameter modulation. And there is no claim that the behaviour is optimal.
 
-The falsification protocol is a numbered list of concrete attacks, each with a claim and the exact observation that would refute it. The document says the fence around experience is the question it most invites readers to stress.
+The falsification protocol is a numbered list of concrete attacks, each with a claim and the exact observation that would refute it. The document says the limit drawn around experience is the question it most invites readers to stress.
 
 A short section of standing open questions follows, several of which say plainly that something has not yet been observed, and the page closes with what you need to reproduce the work.

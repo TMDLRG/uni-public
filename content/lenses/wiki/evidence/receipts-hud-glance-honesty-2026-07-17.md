@@ -15,10 +15,10 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-A record that begins by finding the operator's complaint right for a different reason than expected. The display had not been missing; it had been running all day. What was missing was anyone looking at it, and everything on this page was found in the first twenty minutes of actually looking. The main defect is that the headline badge counted human cameras, so the flagship shot, which has no camera by design, sat on permanent green whether the world was rendering or had gone black, because the badge does not look at pixels at all.
+A record that begins by finding the operator's complaint right for a different reason than expected. The display had not been missing; it had been running all day. What was missing was anyone looking at it, and everything on this page was found in the first twenty minutes of actually looking. The main defect is that the headline badge counted human cameras. So the flagship shot, which has no camera by design, sat on permanent green whether the world was rendering or had gone black. The badge does not look at pixels at all.
 
 <!--CLEAR-->
-A receipt that opens with the operator's question and says he was right, though not for the reason expected. The service had been running all day with a long uptime and thousands of clean polls, and the widget was visible on screen the whole time.
+A receipt, the file recording what was run, that opens with the operator's question and says he was right, though not for the reason expected. The service had been running all day with a long uptime and thousands of clean polls, and the widget was visible on screen the whole time.
 
 What was missing was the work looking at it. An entire honesty sweep had been proven through command-line probes and isolated harnesses, while the surface an operator would actually glance at was never opened once. The page names that as the same defect being fixed everywhere else in the repository: the truth existed somewhere nobody was looking. Everything that follows was found in the first twenty minutes of looking.
 
@@ -32,6 +32,6 @@ A table proves the new behaviour against the real scene list, showing which case
 
 Then a regression the author shipped and the live surface caught within a minute. Keying both branches off picture made an idle studio read caution forever, which drains the meaning from a state that has always meant people up and air down. The fix restricts the change to the streaming branch only, and states the principle: a caution that is always on is not a caution.
 
-A fence is then stated exactly, and it matters. This measures whether a picture-bearing source is enabled, not whether there are pixels. A source enabled but rendering black still reads true. A real pixel classifier exists elsewhere and is deliberately not wired in here, because sampling on every tick is a cost that needs measuring first, so having a picture stays not verified.
+A limit is then stated exactly, and it matters. This measures whether a picture-bearing source is enabled, not whether there are pixels. A source enabled but rendering black still reads true. A real pixel classifier exists elsewhere and is deliberately not wired in here, because sampling on every tick is a cost that needs measuring first, so having a picture stays not verified.
 
 The residuals list several things as not verified rather than green, including a renderer with no tests at all, where the page repeats its own rule that no green claim about it is permitted until that gate exists. The provenance section records that the sweep refuted more findings than it confirmed, and that several refutations survived because the proposed fixes would have broken the false-alarm case, which is the discipline holding in both directions.

@@ -19,7 +19,7 @@ This note states one boundary and how it is kept. The benchmark is only scientif
 
 The boundary is narrow. The learner couples to the world through encoded observations, which are numbers keyed by numbers, and through actions requested as opaque numbers. Everything else sits on the engineering side.
 
-A table then lists what must never cross and, next to each, the thing that stops it: true positions, object labels, hidden layers without the organ that senses them, region law, raw material identities, any success flag, and semantic action names.
+A table then lists what must never cross and, next to each, the thing that stops it. True positions, object labels, and hidden layers without the organ that senses them. Region law, raw material identities, any success flag, and semantic action names.
 
 Five layers of defence follow, from a structural check on every observation, through a scan for forbidden words, to per-seed shuffling that stops a learner hard-coding what a channel means.
 

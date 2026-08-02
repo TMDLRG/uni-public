@@ -15,12 +15,12 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-A correction, committed so that an overclaim and its refutation both stay in the record. Three documents, among them the programme's deepening plan, had quoted a dramatic ratio between a treated group and a control. The one committed log behind that claim shows a much smaller ratio, over a much shorter run than was stated. The headline had been built by taking the single worst control case and reporting the treatment as though its own remaining case did not exist. The overall verdict does not change; only the size of the effect does. The closing line is the rule: no headline outruns its committed receipt.
+A correction, committed so that an overclaim and its refutation both stay in the record. Three documents, among them the programme's deepening plan, had quoted a dramatic ratio between a treated group and a control. The one committed log behind that claim shows a much smaller ratio, over a much shorter run than was stated. The headline had been built by taking the single worst control case and reporting the treatment as though its own remaining case did not exist. The overall verdict does not change; only the size of the effect does. The closing line is the rule: no headline outruns the committed file that records what was run.
 
 <!--CLEAR-->
 A memo that withdraws a number. The verdict it belongs to does not move, and the page says so at the top: the earlier result stands as partial, with one gate suppressed and another failing. What is corrected is the magnitude, and it is committed precisely so that both the claim and its refutation live in the same chain.
 
-The withdrawn claim is quoted, along with the three documents that carried it, one of them the deepening plan, and the run length they stated. Then the receipt itself. The committed log covers a run of a couple of hours rather than the much longer stretch claimed, and it names which arm was treatment and which was control.
+The withdrawn claim is quoted, along with the three documents that carried it, one of them the deepening plan, and the run length they stated. Then the receipt itself: the file recording what was run and what came out. The committed log covers a run of a couple of hours rather than the much longer stretch claimed, and it names which arm was treatment and which was control.
 
 A table of the settled cycle gives the per-body counts for both arms. Read properly, the ratio is a few times over, not tens of times over. The trajectory is described rather than smoothed: the control grew two runaway cases, while the treatment held one remaining case with the others near nothing.
 

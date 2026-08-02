@@ -19,7 +19,7 @@ This page is an invitation to break the project's own claims. For each group of 
 
 One command recomputes every group and prints a pass or fail with the evidence beside it. It needs no live game running and works on an ordinary machine.
 
-The groups cover whether any borrowed language model is hiding inside; whether the mathematics really is what it says it is when checked against an independent implementation; whether the same seed gives the same run every time; whether the agents genuinely learn rather than follow a script; whether the narrating part reads and speaks by learning rather than by matching keywords; and whether the boundary around the deciding part holds, so that raw picture data never reaches it.
+The groups cover whether any borrowed language model is hiding inside, and whether the mathematics really is what it says it is when checked against an independent implementation. They cover whether the same seed gives the same run every time, and whether the agents genuinely learn rather than follow a script. They cover whether the narrating part reads and speaks by learning rather than by matching keywords, and whether the boundary around the deciding part holds, so that raw picture data never reaches it.
 
 It also names its own ceiling: the speaking is short and on-topic, not fluent writing.
 
@@ -34,7 +34,7 @@ The second is that the mathematics is what it claims to be, checked against an i
 
 The third is determinism: the same seed produces an identical sequence of actions and an identical model digest. To falsify it, find two runs at one seed that differ.
 
-The fourth is that the agents learn, because their counts grow with experience and their likelihoods sharpen from a flat starting point rather than following a script. The fifth and sixth concern the narrating part: that it can classify unfamiliar rephrasings it was never given, and say it is unsure rather than guess; and that its surprise at text falls as it learns, which is a measurement rather than a mechanism. Here the page states an honest ceiling in its own words, saying the result is short and on-topic rather than fluent, and that fluent composition remains open.
+The fourth is that the agents learn, because their counts grow with experience and their likelihoods sharpen from a flat starting point rather than following a script. The fifth and sixth concern the narrating part. It can classify unfamiliar rephrasings it was never given, and say it is unsure rather than guess. And its surprise at text falls as it learns, which is a measurement rather than a mechanism. Here the page states an honest ceiling in its own words, saying the result is short and on-topic rather than fluent, and that fluent composition remains open.
 
 A further group says that spoken lines stay grounded: every name and number in a line must be present in the state it came from, and the check rejects an injected fake name.
 

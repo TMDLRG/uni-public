@@ -18,11 +18,11 @@ note:
 A record of chasing a moving test failure and finding it was not what it looked like. A test failed under the full suite but passed on its own, and failed under a different name each run, which is the classic signature of tests interfering through shared state. It was not that. The two failing tests were simply the two slowest, sitting just under a default time limit with little headroom, and running everything at once took that headroom away. The fix raises the limit on those two tests and does not weaken a single assertion. The suite as a whole is not yet stably green, and two other intermittent failures found along the way are explicitly not claimed fixed.
 
 <!--CLEAR-->
-A receipt about test infrastructure, with a scope fence at the top: this concerns one module and nothing else, the suite as a whole is not yet stably green, and two other unrelated intermittent failures surfaced during the verification and are explicitly not claimed fixed.
+A receipt about test infrastructure — the file recording what was run — with a line at the top fixing its scope. This concerns one module and nothing else, and the suite as a whole is not yet stably green. Two other unrelated intermittent failures surfaced during the verification, and are explicitly not claimed fixed.
 
 The symptom is described precisely, and the trap is named. A failure that moves between test names is normally the signature of interference through shared state, and chasing the moving name was the wrong path.
 
-What it actually was is measured rather than argued. A tracing run, which disables the limit so that every test runs to completion and reports its true cost, shows the two flaky tests are the two slowest by a wide margin, with less than one and a half times headroom against the default, and the next slowest an order of magnitude away.
+What it actually was is measured rather than argued. A tracing run disables the limit, so that every test runs to completion and reports its true cost. It shows the two flaky tests are the two slowest by a wide margin, with less than one and a half times headroom against the default, and the next slowest an order of magnitude away.
 
 The reason the full suite tips them over is the concurrency setting, which oversubscribes the machine's cores by default. Processor-bound work therefore runs substantially slower when everything runs at once, and thin headroom does not survive that. Whichever of the two catches the worst contention on a given run is the one that crosses the line, which explains both the moving name and why it never happens in isolation.
 
@@ -32,6 +32,6 @@ A table then falsifies each plausible shared-state suspect one by one, with what
 
 The fix raises the limit on only the two heavy tests, and records the diagnosis in a comment so it is not relearned later. Its deliberate properties are listed, and the important one is that no assertion was weakened, removed or loosened; every threshold is left exactly as it was.
 
-The verification is five consecutive full runs, tabulated. The class this work claims is closed, with none of that error in any run, where previously every red run carried at least one. One run failed for a different reason, and the page insists on keeping it separate: it is not a starvation failure, it is a genuine intermittent around a shared store, in code another agent was actively changing, and it must not be folded into this story.
+The verification is five consecutive full runs, tabulated. The class this work claims is closed, with none of that error in any run, where previously every red run carried at least one. One run failed for a different reason, and the page insists on keeping it separate. It is not a starvation failure. It is a genuine intermittent around a shared store, in code another agent was actively changing, and it must not be folded into this story.
 
 A closing note explains that the suite's total time rose, and why that is not a regression. The earlier times were partly tests being killed at the limit, so the suite is slower now because it finishes the work it starts.

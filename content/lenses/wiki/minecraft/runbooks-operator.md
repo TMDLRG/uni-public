@@ -26,7 +26,7 @@ The most useful table is the failure one. It pairs each symptom with what it mea
 <!--CLEAR-->
 This is the operator's runbook: the page you keep open while running the benchmark. It is built from tables rather than prose.
 
-It opens with prerequisites, which are short because the core has no dependencies to fetch, and then gives a table of everyday commands: compiling, running the full quality suite, producing a table of reference results, dumping the validation evidence, regenerating the stored regression artifact, running a scenario, recording an evidence log for a run, independently verifying such a log with a command that exits non-zero on a violation, and starting a viewing interface.
+It opens with prerequisites, which are short because the core has no dependencies to fetch. Then comes a table of everyday commands: compiling, running the full quality suite, producing a table of reference results, and dumping the validation evidence. The rest regenerate the stored regression artifact, run a scenario, record an evidence log for a run, check such a log independently with a command that exits non-zero on a violation, and start a viewing interface.
 
 A short section describes two ways of observing from outside. One is a live interface showing the whole world each tick together with a per-tick verdict on whether the boundary held. The other is the headless counterpart: a recorded log plus the command that re-derives the verdict from it. Recording is opt-in and does not affect determinism.
 
@@ -36,6 +36,6 @@ A list of observability surfaces follows, covering the viability trajectory, the
 
 The distinction between two modes is stated plainly. In the mode a learner is served in, agents receive only numbers keyed by numbers, and this is the default path. In debug mode a trap in the loop raises immediately if any observation reaching the learner is ever unclean, and the runbook says to use it in development rather than when serving. The functions that reveal meaning, and the debug lens, are described as engineering-only and must never be wired into a learner.
 
-The most practically useful table pairs each failure symptom with its meaning and the action to take. Several rows do not treat the symptom as a defect at all: an early death is expected on harsh seeds, garbage actions are already ignored safely by the runtime, and attempts at actions a body cannot yet perform are informational during development. Others point at a real decision, such as reviewing a difference before regenerating a stored artifact.
+The most practically useful table pairs each failure symptom with its meaning and the action to take. Several rows do not treat the symptom as a defect at all. An early death is expected on harsh seeds, and garbage actions are already ignored safely by the runtime. Attempts at actions a body cannot yet perform are informational during development. Others point at a real decision, such as reviewing a difference before regenerating a stored artifact.
 
 It closes with two health checks: a green suite means the invariants hold, and the evidence dump should show reproducibility, leakage and conservation passing with difficulty inside its band.

@@ -17,13 +17,13 @@ note:
 <!--PLAIN-->
 A design, not a dish, and the opening line says so. Nothing on this rung has been built, run or gated. It names three levels — a narrative self, a conscience, and reasoning — that exist as design only, and the whole chapter is parked and not claimed. The subject stays a developmental active-inference simulation: a bounded peek at a toy world, never a person.
 
-What the absence means is spelled out. There is no engine, no run and no gate here, and that absence is the status rather than a gap in the writing. A falsifier cannot exist yet, because a falsifier only exists once a gate is defined.
+What the absence means is spelled out. There is no engine, no run and no gate here, and that absence is the status rather than a gap in the writing. Nothing could yet show it wrong, because that only exists once a gate is defined.
 
 What the page does contain is a proposed smallest first gate, signed off in a consultation. It does not test reasoning or conscience. It tests something much narrower: whether one slow piece of state carried across several stretches of an episode can improve a prediction when the immediate context points the wrong way. The design comes with the bar it would have to clear, the tuned baseline it would have to beat, and the removal test that would have to collapse its gain. Folding it in raises nothing, and the rung's status is unchanged.
 
 A published negative sits underneath, which is why the region is parked rather than merely empty.
 <!--CLEAR-->
-Here, for the first time in the cookbook, the honest answer is that nothing has been cooked. The subject stays what it has been all along: a simulation, a bounded peek at a toy world, never a person. The rung names three levels — a narrative self, a conscience, and reasoning — which exist as design in a ladder and as a signed but unbuilt roadmap. They are not separately gated and not passed, and the ledger row behind them is marked as parked with a falsifier field that literally reads not applicable. Design levels, the chapter says, are never inflated into capability.
+Here, for the first time in the cookbook, the honest answer is that nothing has been cooked. The subject stays what it has been all along: a simulation, a bounded peek at a toy world, never a person. The rung names three levels — a narrative self, a conscience, and reasoning — which exist as design in a ladder and as a signed but unbuilt roadmap. They are not separately gated and not passed. The row behind them in the ledger, the append-only record of claims, is marked as parked, and its field for what would sink the claim reads, literally, not applicable. Design levels, the chapter says, are never inflated into capability.
 
 The ingredients are listed anyway, so that a competent engineer would know what to reach for if a build were ever authorised. They are the ladder design, the unbuilt roadmap, a correctness rule for hierarchies, a candidate curiosity primitive, and the discrete engine any future version would have to run inside. The chapter then states that no engine, no run and no gate is supplied today, and that the absence is the status.
 

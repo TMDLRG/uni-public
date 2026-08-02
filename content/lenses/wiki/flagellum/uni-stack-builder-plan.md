@@ -35,7 +35,7 @@ place to start reading.
 <!--CLEAR-->
 
 The document opens with a scope statement it asks you to read first, and half of that statement
-is negative. The proposed instrument is a deterministic construction and falsification tool for
+is negative. The proposed instrument is a repeatable construction and falsification tool for
 layered models, where each level owns its own hidden state, outcomes, policies and parameters,
 and passes typed messages across each seam. The existing motor loop would become the first fully
 built level, migrated by wrapping rather than rewriting.
@@ -77,7 +77,7 @@ read.
 
 The plan then lists its tests and its mutation battery, the migration rule of wrap-never-edit,
 ten phases each independently shippable and reversible, and ten open questions that are the
-user's to answer rather than the author's. It closes with a page of things it is not claiming:
-that no usability evidence exists, that the mutation battery does not cover the space, that
-several competitors have no implementation in any language, that existing adverse results
-survive into the builder unchanged, and that the document itself is not verified by execution.
+user's to answer rather than the author's. It closes with a page of things it is not claiming.
+That no usability evidence exists. That the mutation battery does not cover the space. That
+several competitors have no implementation in any language. That existing adverse results
+survive unchanged into the builder. And that the document itself is not verified by execution.

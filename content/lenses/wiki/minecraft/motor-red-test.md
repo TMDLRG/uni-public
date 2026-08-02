@@ -17,7 +17,7 @@ note:
 <!--PLAIN-->
 This page registers a test before the run, so the result cannot be moved afterwards. It states exactly what is being claimed, what would count as passing, and what would count as failing.
 
-The claim is narrow. A layered motor system can learn a chain of movements in the live game: a higher level projects a desired body configuration downward, an inner loop works out which way to move by watching what comes back, and the results fold upward into something like muscle memory.
+The claim is narrow. A layered motor system can learn a chain of movements in the live game. A higher level projects a desired body configuration downward, and an inner loop works out which way to move by watching what comes back. The results fold upward into something like muscle memory.
 
 What is not claimed is written just as plainly, and includes any claim that the agent learned to harvest, or anything about human-like motor control. If a gate fails, the result is withheld rather than scored.
 
@@ -26,11 +26,11 @@ The results section keeps offline work, simulation and the live run separate. Tw
 <!--CLEAR-->
 This document registers an experiment before it runs, which is the point of it. Both the claim and the conditions that would refute it are fixed in advance so the outcome cannot be reinterpreted later.
 
-The claim under test is stated as a single sentence and is deliberately narrow: a layered motor arrangement can learn a harvesting movement chain under stated conditions, where the level above projects a desired body configuration downward, an inner loop reduces the difference between that target and the body's actual configuration while inferring which direction its controls push by watching what comes back, and that returning signal folds upward so the transitions are learned.
+The claim under test is stated as a single sentence and is deliberately narrow. A layered motor arrangement can learn a harvesting movement chain under stated conditions. The level above projects a desired body configuration downward. An inner loop reduces the difference between that target and the body's actual configuration, while inferring which direction its controls push by watching what comes back. That returning signal folds upward, so the transitions are learned.
 
-Immediately beneath it is a fence listing what is not claimed, including that the agent learned to harvest, human-like motor control, or full human motor inference. If any gate fails, the result is withheld and recorded as partial, never scored as a percentage.
+Immediately beneath it is a list of what is not claimed, including that the agent learned to harvest, human-like motor control, or full human motor inference. If any gate fails, the result is withheld and recorded as partial, never scored as a percentage.
 
-A section then lists what had already been shown away from the live world: that the new pipeline is additive and leaves the standard configuration behaving identically, that the motor parts do learn and that the learning survives being saved and reloaded, and that the inner loop converges against a simulated body while working out its own control direction. The page is explicit about what these cannot do, which is show the loop closing through a real body in a real world.
+A section then lists what had already been shown away from the live world. The new pipeline is additive and leaves the standard configuration behaving identically. The motor parts do learn, and the learning survives being saved and reloaded. And the inner loop converges against a simulated body while working out its own control direction. The page is explicit about what these cannot do, which is show the loop closing through a real body in a real world.
 
 The conditions are then fixed in detail: the size of the group, which configuration it runs, a separate memory location so a motor mind never loads into a standard one, and two deliberate removals. A helper script that used to do the approaching is switched off, and a coarse shortcut prior is not enabled, so that any success is attributable to the thing under test rather than to either crutch.
 

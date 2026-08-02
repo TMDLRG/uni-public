@@ -36,10 +36,10 @@ established from the copy it worked on, and names the gate that could not be run
 
 <!--CLEAR-->
 
-The audit was run against one working branch, on one date, by six parallel reviews — truth
+The audit was run against one working branch, on one date, by six parallel reviews: truth
 contract, numerical rederivation, adversarial testing, documentation drift, product behaviour
-and data provenance — each finding then put to an independent verifier told to refute it by
-default, plus a completeness critic asked what the six had missed. It reports the raw finding
+and where the data came from. Each finding was then put to an independent verifier told to
+refute it by default, plus a completeness critic asked what the six had missed. It reports the raw finding
 count, the count that survived verification and the count refuted, and grades the survivors by
 severity.
 
@@ -51,9 +51,9 @@ distributions normalising, identical runs identical, several mathematical identi
 tight tolerance.
 
 Then the two blocking findings. The first is a gate rendering a pass while none of its declared
-cached artifacts exist on disk, because its status is derived from frozen claims inside the
-evidence file rather than from current verification, and because a guard short-circuits exactly
-when the evidence is missing. The audit quotes the project's own rule that an absent archive
+cached artifacts exist on disk. Its status is derived from frozen claims inside the evidence
+file rather than from current verification, and a guard short-circuits exactly when the evidence
+is missing. The audit quotes the project's own rule that an absent archive
 must be marked blocked or not run and never reported as a pass. The second is a passing test
 that enforces a truth-contract violation: an unpinned live stream is classified as a recorded
 measurement, and written into every exported record. The audit records the mitigating fact that
@@ -75,11 +75,11 @@ The completeness critic's list is arguably the most valuable section. Two govern
 disagree on what may be labelled a recorded measurement, and the audit says that disagreement
 must be settled before anything downstream is frozen, because it decides whether several
 findings are defects at all. A closed vocabulary is undermined by many invented badge strings. A
-provenance artifact writes a fixed timestamp on every run, asserting a verification time that is
-not the verification time. Circular oracles exist in the science suite, not only in the screen's
+artifact recording where things came from writes a fixed timestamp on every run, asserting a
+verification time that is not the verification time. Circular oracles exist in the science suite, not only in the screen's
 tests. Several green gates have no independent rederivation. Some red tests are frozen behind
 the current tree and cannot measure it, and several mathematical claims have no test whatsoever.
 
-The audit then prints its refuted candidates, its coverage limitations — beginning with the
+The audit then prints its refuted candidates and its coverage limitations, beginning with the
 admission that no live browser testing was performed at all, so one predicted visual failure has
-never been seen — its adverse results unsoftened, and a verdict of not established.
+never been seen. Then its adverse results unsoftened, and a verdict of not established.

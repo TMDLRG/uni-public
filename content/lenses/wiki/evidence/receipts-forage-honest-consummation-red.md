@@ -15,14 +15,14 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-A pre-registration with two runs recorded underneath it, and the second run withdraws a claim the first one made. The question was whether one change makes hunger reliably drive hunting. In the first run the treated arm attacked far more often but never converted an attack into food, and the survival comparison was confounded by scavenging. In the second, with the motor fixed, the direction flipped, so the earlier claim is withdrawn. What the second run did show is that the feeding loop closed, with a scaffold still in place.
+A pre-registration — the conditions written down before the run — with two runs recorded underneath it, and the second run withdraws a claim the first one made. The question was whether one change makes hunger reliably drive hunting. In the first run the treated arm attacked far more often but never converted an attack into food, and the survival comparison was confounded by scavenging. In the second, with the motor fixed, the direction flipped, so the earlier claim is withdrawn. What the second run did show is that the feeding loop closed, with a scaffold still in place.
 
 <!--CLEAR-->
-One page holding a pre-registration and two runs, in that order, with the later run correcting the earlier one rather than replacing it.
+One page holding a pre-registration — the conditions written down first — and two runs, in that order, with the later run correcting the earlier one rather than replacing it.
 
 The design is a single variable. Both arms start fresh in the same prey-stocked peaceful world, with the same runway and the same preference, differing only in one setting. The isolation is described, the guard that raises an error if anything is given rather than earned is named, and there is a note that the runway is a drain rate rather than food.
 
-The gates are pre-registered as a table with channels, pass conditions and falsifiers, and there is a fence about the fence: an audit that any win did not come from inflating a preference, a void condition if a second variable differs between arms, and a food-hack guard that withdraws the claim if survival happened with no feeding cycles at all.
+The gates are written down before the run as a table with channels, pass conditions, and the results that would show them wrong. And there is a fence about the fence — a stated limit on what the result may be taken to mean. An audit checks that any win did not come from inflating a preference. A void condition applies if a second variable differs between arms, and a food-hack guard withdraws the claim if survival happened with no feeding cycles at all.
 
 The first run comes back partial. Selection passes, because the treated arm chose to attack many times more often, in less time, with only one variable differing, so it is attributed to the change. Acquisition falsifies, because all those attacks yielded no collected food, which locates a new and specific motor gap under repeated aggressive attacking. And survival is confounded, because the lone survivor in the other arm almost certainly picked up meat the treated bodies killed and left, since collection grabs anything nearby. The honest read is that the change wins on its own target while the loop stays open, and the fix-forward list is body-only work plus isolating the arms next time.
 

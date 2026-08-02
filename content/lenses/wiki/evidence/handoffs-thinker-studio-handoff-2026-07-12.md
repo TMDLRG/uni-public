@@ -15,7 +15,7 @@ reviewed_at:
 note: 
 ---
 <!--PLAIN-->
-Read the banner: this is a stale session record, kept for history, and the architecture it describes was changed later the same day. It is a status handoff from one agent to a consolidation pass, saying which large uncommitted change is real completed work, what was proven on the machine that day, what was explicitly not proven and why, and that a runaway happened and was cleaned up by somebody else. The blocked items are given as much room as the finished ones.
+Read the banner: this is a stale session record, kept for history, and the architecture it describes was changed later the same day. It is a status handoff from one agent to a consolidation pass. It says which large uncommitted change is real completed work, what was proven on the machine that day, and what was explicitly not proven and why. It also records that a runaway happened and was cleaned up by somebody else. The blocked items are given as much room as the finished ones.
 
 <!--CLEAR-->
 A handoff and status note carrying a stale banner. The table below it was accurate for that session's snapshot, and a default it describes was closed later the same day, so it should not be read as current.
@@ -26,10 +26,10 @@ The not-proven list gets as much room as the proven one, which is the useful hab
 
 An incident is acknowledged in the summary rather than buried at the end: a runaway occurred and was cleaned up by another agent, with the machine left clean and the world seed preserved.
 
-The architecture table gives each machine a role and what it runs, and the data flow is written as a single line from cameras through one encode out to the fan-out, which makes the overall shape easy to hold in mind.
+The architecture table gives each machine a role and what it runs. The data flow is written as a single line, from cameras through one encode out to the fan-out, which makes the overall shape easy to hold in mind.
 
-The changes are then listed by area. The documentation section is candid about its own incompleteness: several documents were corrected with banners, two of them still carry stale prose below the banner which the next pass should scrub, and three more have no banner at all and still assert the old architecture. Naming your own unfinished corrections is what makes the rest of the page credible.
+The changes are then listed by area. The documentation section is candid about its own incompleteness. Several documents were corrected with banners, and two of them still carry stale prose below the banner, which the next pass should scrub. Three more have no banner at all, and still assert the old architecture. Naming your own unfinished corrections is what makes the rest of the page credible.
 
-The lifecycle fixes are the most transferable part. Three changes together close a recurring class of orphaned processes: kill the supervisor before its children rather than after, clean up leftovers before starting anything, and launch without an interactive shell, because a shell that reads input dies when it is started from something headless and leaves its children behind.
+The lifecycle fixes are the most transferable part. Three changes together close a recurring class of orphaned processes. Kill the supervisor before its children rather than after, and clean up leftovers before starting anything. Launch without an interactive shell, because a shell that reads input dies when it is started from something headless and leaves its children behind.
 
 The closing sections are practical. Which files are critical and what each one is for. Which new directories should be ignored rather than committed. One ambiguity resolved by simply looking rather than by reasoning about it. And a short quickstart with the checks that count as gates, including one that reconciles a count from two independent sources.

@@ -20,7 +20,7 @@ Do not trust the program, try to break it. That is the invitation the chapter ma
 
 <!--CLEAR-->
 
-The chapter states one posture and backs it with two published ledger rows plus the disciplines that make the posture checkable. What it hands to a critic is a simulation — a toy world, and not a person.
+The chapter states one posture and backs it with two published rows in the ledger, a record added to and never edited, plus the disciplines that make the posture checkable. What it hands to a critic is a simulation — a toy world, and not a person.
 
 The benchmark at its centre is open, and its rules were registered before anything was built. A hidden toy service cell is perturbed by disturbance families it never announces, and observation-only controllers compete to keep it inside a viable set. Those controllers are an active-inference controller, a rule-based heuristic, a random baseline, a small neural network, and an outside entry uploaded through a channel that invites people to prove the program wrong. The program's controller tops the leaderboard on most modes.
 
@@ -28,6 +28,6 @@ That result is never published alone. In the same benchmark it loses on three na
 
 Three disciplines turn welcoming scrutiny into something a build can fail on. A framing guard test fails the build if the page's copy, its citation, its accessibility or its labelling regresses, so a claim that drifts upward breaks the suite. A statistics gate decides significance by a bootstrap interval on the median paired difference that must exclude zero, under a seeded generator with a committed cache, never on one seed and never off a point estimate. And a no-exit discipline says the only legitimate rest is a working solution or a published, exhausted, falsifiable bound.
 
-The chapter also carries the program's down-only calibration record, in which an audit pulled six headline claims back to their measured values, and it fences the recorded snapshot of negatives as a snapshot rather than a re-countable headline.
+The chapter also carries the program's down-only calibration record, in which an audit pulled six headline claims back to their measured values, and it marks the recorded snapshot of negatives as a snapshot rather than a re-countable headline.
 
-Its closing falsifier is one a reader can run: re-run the benchmark under its committed seeds and recompute the intervals for the three losing modes. If the program's score separates above the winning baseline on any of them, the recorded loss has not replicated and the row is overturned.
+The result that would overturn all of it is one a reader can run. Re-run the benchmark under its committed seeds and recompute the intervals for the three losing modes. If the program's score separates above the winning baseline on any of them, the recorded loss has not replicated and the row is overturned.

@@ -49,19 +49,13 @@ settled the biology, or human parity, or scientific significance. Those stay sep
 hypotheses.
 
 The work runs in stages. The first changes nothing: record the machine, the versions and the
-exact state of the copy. Next, list every claim the project makes anywhere, in documents, in
-the interface, in code, in captions, in reports, and for each one record where it came from,
-which species it concerns, what test covers it, what would falsify it, and whether it is
-supported, conditional, unsupported, contradicted, not tested or external.
+exact state of the copy. Next, list every claim the project makes anywhere: in documents, in the interface, in code, in captions, in reports. For each one, record where it came from, which species it concerns, what test covers it, what would show it wrong, and whether it is supported, conditional, unsupported, contradicted, not tested or external.
 
 Then a clean rebuild, with every command, its exit status, its outputs and its checksums
 written down. If something needed is missing, the honest entry is that it did not run.
 Absence may not be converted into a pass.
 
-Then the tests themselves go on trial. In a separate, disposable copy the reviewer breaks
-things on purpose: labels reconstruction output as observed, swaps the species, leaks motors
-between training and holdout, counts frames as independent replicates, removes an adverse
-result, computes a prediction after the observation has been revealed. Each time, the
+Then the tests themselves go on trial. In a separate, disposable copy the reviewer breaks things on purpose. Labels reconstruction output as observed, swaps the species, leaks motors between training and holdout. Counts frames as independent replicates, removes an adverse result, computes a prediction after the observation has been revealed. Each time, the
 question is whether the tests catch it. Anything that survives is a gap in the tests, and
 the damage is never committed back.
 

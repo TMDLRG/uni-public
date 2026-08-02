@@ -60,9 +60,7 @@ refused at construction unless exactly one variable differs — refused, not war
 identity includes its planned sample size and its stopping rule, so relabelling a run changes which
 run it is.
 
-Releasing anything to the world requires passing through a room with two keys from distinct parties,
-and there is no override function — not a refused one, an absent one, on the reasoning that a control
-which merely refuses still teaches the operator that the door exists.
+Releasing anything to the world requires passing through a room with two keys from distinct parties. There is no override function — not a refused one, an absent one. The reasoning is that a control which merely refuses still teaches the operator that the door exists.
 
 It ends honestly: nothing has yet been adjudicated about a real scientific claim. What the record has
 mostly judged so far is its own construction.

@@ -26,7 +26,7 @@ A whole section argues why hoarding can never satisfy it, and another sets the s
 <!--CLEAR-->
 A measurement rather than a change, and its status line says so outright by calling itself a design and measurement spec. It is careful about that boundary: it does not alter the agent's internal goal condition, its curriculum, its preferences or any source code, and nothing here is deployed. It is the instrument a separate collector reads, and it says explicitly that it must stay independent of the cure it measures or it would no longer be an independent yardstick.
 
-It opens with a binding claim fence stating that everything it measures is an operational behavioural quantity, necessary but not sufficient, with no evidential weight for awareness or life.
+It opens with a binding limit stating that everything it measures is an operational behavioural quantity, necessary but not sufficient, with no evidential weight for awareness or life.
 
 The reason it exists is a perverse measure. The previous condition, which the agent's own curriculum used to decide it had progressed, could be satisfied by a pure hoarder: chop wood, craft one tool, then stockpile, never placing a block and never diversifying. A live run reproduced exactly that failure, with the control arm accumulating many of one tool and reaching no stone and no building, and both arms tied on the phase counter. The page cites the owner ruling that replaced it.
 
@@ -38,6 +38,6 @@ A registered gate form follows, with the instruction to fill in the numbers befo
 
 One whole section is an argument rather than a procedure: why hoarding can never satisfy this metric. Since the primary measure counts placement and the secondary counts distinct kinds beyond a baseline, stockpiling more of the same thing moves neither. That section is what makes the metric worth trusting.
 
-The verdict discipline section turns two owner rulings into explicit scoring rules, so a result cannot be reinterpreted afterwards. A scope fence then restates what this file does not touch, drawing a clear line between the measuring instrument and the cure being measured, and noting that pointing the agent's own internal goal at placement would be a separate change reviewed and gated on its own.
+The verdict discipline section turns two owner rulings into explicit scoring rules, so a result cannot be reinterpreted afterwards. A scope limit then restates what this file does not touch, drawing a clear line between the measuring instrument and the cure being measured. Pointing the agent's own internal goal at placement would be a separate change, reviewed and gated on its own.
 
 The page ends with an index of where each piece of evidence lives, and a closing line repeating that no source was edited and nothing was deployed.

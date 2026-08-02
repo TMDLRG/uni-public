@@ -18,7 +18,7 @@ note:
 A finding that explains an earlier null at the level of mechanism: the organ everyone was comparing was never running in the live path at all. The code that maintains it lives in one process, and the live colony runs a different one, so the treated group carried an inert extra part and behaved like the control, which is exactly what an inactive organ predicts. The page then reports the fix, two further problems found when re-probing, and it keeps repeating that the organ was not merely unverified but inert, that no production-cleared gate exists, and that no live activation claim may be made.
 
 <!--CLEAR-->
-A finding rather than a receipt, marked load-bearing, and it blocks a claim rather than supporting one.
+A finding rather than a receipt — a record of something run — marked load-bearing, and it blocks a claim rather than supporting one.
 
 What was tested is a short live run with the energy read every twenty seconds. The bodies connected and did real things in the world, but the energy belief sat flat and the store read as empty for the whole run.
 
@@ -30,4 +30,4 @@ A short section says what is not affected. The maths is correct when driven, whi
 
 The fix touches a sensitive part of the system, so it carries a review and an owner's go-ahead and must leave the default byte-identical. Then the page keeps going, which is what makes it useful. After the fix landed the store was present live, but the step still was not observed running, for two newly surfaced reasons. The container auto-started a different colony and the intended bodies never joined the world, so the loop never fired. And the drain rate was tuned for an abstract tick rather than the live cadence, so bodies would have died within seconds. The second is then resolved by scaling the drain by elapsed real time, with the offline behaviour left byte-identical, and the improvement is quantified as how long an idle body now lasts.
 
-The last section refuses to round anything up. The deployment problem is still open, it is named as plumbing rather than science, and the page repeats that no production-cleared gate exists and that a live activation claim must not be made. A closing fence keeps all of it to mechanism and behaviour.
+The last section refuses to round anything up. The deployment problem is still open, it is named as plumbing rather than science, and the page repeats that no production-cleared gate exists and that a live activation claim must not be made. A closing limit keeps all of it to mechanism and behaviour.

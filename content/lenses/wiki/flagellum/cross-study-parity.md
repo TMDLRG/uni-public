@@ -38,15 +38,15 @@ The verdict comes first. The expanded model expresses substantially more observe
 full and complete parity is false. The frozen protocol has a fixed list of conjunctive gates,
 with a mixture of passes, failures, not-established rows and externally blocked rows. No score
 averaging can turn a missing required domain into parity. The strongest new positive result is
-described carefully: not a claim of one universal equation, but a traceable modular model
+described carefully. Not a claim of one universal equation, but a traceable modular model
 spanning dwell kinetics, rotation-gated assembly, an association between the stator and a
 signalling protein, torque-conditioned switching, a non-equilibrium switching generator,
-occupancy statistics and whole-cell propulsion. The strongest new falsifier is that an exact
-finite lattice gives incompatible interaction strengths depending on whether it is fitted to
-full occupancy distributions or to their moments.
+occupancy statistics and whole-cell propulsion. The strongest new finding that would show it
+wrong is that an exact finite lattice gives incompatible interaction strengths depending on
+whether it is fitted to full occupancy distributions or to their moments.
 
-The evidence section is about independence rather than volume. The corpus holds a set of
-explicitly attributed studies across several observation scales, and the page reports a
+The evidence section is about independence, not volume. The corpus holds a set of
+explicitly attributed studies across several observation scales, and reports a
 deliberately conservative lower bound of independent motors or cells. It then names the
 temptation it is avoiding: one source workbook contains hundreds of thousands of time samples,
 and those are not counted as independent organisms, because multiple measurements of one motor
@@ -54,19 +54,19 @@ remain one experimental unit.
 
 Evidence is graded in tiers, from a raw motor-level artifact down to a narrative constraint,
 each tier carrying the use it is eligible for. The protocol was frozen after inspecting
-published sources but before the gates were coded and run, so the page classifies itself as a
-post-publication reproduction and stress test rather than a blind preregistration or an
-independent confirmation.
+published sources but before the gates were coded and run. So the page classifies itself as a
+post-publication reproduction and stress test, not a study whose predictions were fixed before
+anyone looked, and not an independent confirmation.
 
-The modules are then set out one at a time, each with its equations, its fitted values and its
-own fence. The dwell module remains partially identified, and its hidden timescales are not
+The modules are set out one at a time, each with its equations, its fitted values and its
+own stated limit. The dwell module remains partially identified, and its hidden timescales are not
 molecular identities. The rotation module supports a signed relationship between speed and rate
 in the source aggregate, but does not make speed bins into independent motors and does not
 identify a molecular sensor. The lattice module enumerates every state exactly and reports the
-decisive internal disagreement between its two fits; the page says this does not erase the
+decisive internal disagreement between its two fits. The page says this does not erase the
 measured distributions, and that it shows a single interaction energy is not consistently
 identified by these aggregate statistics. The switching generator is checked against numerical
-invariants and against the original authors' output, which speaks for the port rather than for
+identities and against the original authors' output, which speaks for the port, not for
 experimental truth. The propulsion module beats a constant baseline while its measured slope has
 an interval including zero.
 

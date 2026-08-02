@@ -24,6 +24,6 @@ The first part is a table of settings: what each is called, what type it takes, 
 
 Then a table of the built-in examples, each written to exercise a different aspect, so a new scenario usually starts life as a copy of one of them. A short block of code shows how to load a scenario, turn it into a run, and get a report out of it.
 
-The authoring recipe is four steps: copy and edit; check that it loads cleanly and that a deliberate typo gives a readable error; sweep a batch of seeds if you want a stable difficulty band; and regenerate the stored reference artefact only if you meant to change the behaviour.
+The authoring recipe is four steps. Copy and edit. Check that it loads cleanly, and that a deliberate typo gives a readable error. Sweep a batch of seeds if you want a stable difficulty band. And regenerate the stored reference artefact only if you meant to change the behaviour.
 
 The closing section states the determinism contract. A fixed set of settings fully determines the trace, and re-running yields byte-identical output, while a different seed changes both the world and the hidden mapping between agent and world.

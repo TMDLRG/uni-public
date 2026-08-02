@@ -37,9 +37,10 @@ entry names one meaning a changing value may carry.
 
 The entries cover truth available only inside a synthetic world; a record that crossed a
 declared sensor boundary with a timestamp; belief before evidence and belief after it; the
-probability of evidence under each modeled hidden state; a committed forecast; observed minus
-predicted, with units; an outward command; a modeled equation or parameter choice; the primary
-evidence behind a biological statement; and a fence naming what that evidence does not settle.
+probability of evidence under each modeled hidden state. Then a committed forecast; observed
+minus predicted, with units; an outward command; a modeled equation or parameter choice; the
+primary evidence behind a biological statement; and a limit naming what that evidence does not
+settle.
 
 Then comes the rule that gives the list its force: the interface must never upgrade one class
 into another, and a missing measurement is shown as not observed rather than filled in from the

@@ -19,7 +19,7 @@ This runbook explains how to watch a running simulation inside a real block-buil
 
 It is careful to say what this is. The bridge is an observer only. It reads the state of the simulation to draw it, and it does not change what the agent perceives, so the boundary and the evidence trail are untouched.
 
-The rest is practical. Which version of the game to use and why, what you have to supply yourself, the one-time setup, the command that runs the bridge, how to connect and look around, a legend mapping terrain to block colours, and a short troubleshooting list.
+The rest is practical. Which version of the game to use and why, what you have to supply yourself, and the one-time setup. The command that runs the bridge, how to connect and look around, a legend mapping terrain to block colours, and a short troubleshooting list.
 
 When an agent dies, the next life is bred from the longest-lived genome so far, so the run continues without an end.
 

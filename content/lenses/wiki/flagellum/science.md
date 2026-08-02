@@ -27,9 +27,9 @@ labelled a teaching reduction, not a fit to any single paper. Two different quan
 get called free energy are kept apart, with different units, and are never substituted for one
 another.
 
-Near the end it reports an adverse result instead of hiding it. On held-out data a simple
-baseline scored slightly better than the project's own mixture, so that run does not establish
-the mixture as the best tested model, and full parity is not achieved.
+Near the end it reports an adverse result instead of hiding it. On data kept back from the
+fitting, a simple baseline scored slightly better than the project's own mixture, so that run
+does not establish the mixture as the best tested model, and full parity is not achieved.
 
 <!--CLEAR-->
 
@@ -57,16 +57,16 @@ They are not numerically substituted for each other, and the page keeps the appr
 conceptually distinct from the exact posterior even where the two are equal.
 
 Four primary papers are cited as evidence anchors, with links. A short list of release
-falsifiers follows: things which, if they happened, would mean the release had broken its own
+conditions follows: things which, if they happened, would mean the release had broken its own
 contract. A hidden world field reaching the agent, a synthetic frame labelled as a live
 measurement, a prediction overwritten instead of scored, and the physical model described as a
 replica of a bacterial motor are all on that list.
 
-The last two sections carry the adverse results. In a held-out analysis of one published
+The last two sections carry the adverse results. In an analysis on data kept back from the fitting, of one published
 single-motor dataset, the timing rejects a memoryless duration model and the frozen mixture
-predicts unseen durations better than that null, but a lognormal baseline scores slightly
+predicts unseen durations better than that null. But a lognormal baseline scores slightly
 better than the mixture. So the run does not establish the mixture as the best tested model and
 does not identify its hidden components with biological states. Full parity is not achieved: the
 public code bundle does not reproduce one source artifact, one parameter-recovery run misses its
-frozen tolerance, and one held-out advantage has an interval crossing zero. Several further
+frozen tolerance, and one advantage on kept-back data has an interval crossing zero. Several further
 questions require new external work, and no biological identity is established.
