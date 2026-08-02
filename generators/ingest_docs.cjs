@@ -50,6 +50,7 @@ for (const [f, what] of [[patternsFile, "safety/patterns.local.json"], [rootsFil
 }
 const DENIED = (JSON.parse(fs.readFileSync(patternsFile, "utf8")).values || []).map((v) => String(v).toLowerCase());
 const ROOTS = JSON.parse(fs.readFileSync(rootsFile, "utf8")).roots || {};
+const SOURCES = JSON.parse(fs.readFileSync(path.join(HERE, "sources.json"), "utf8"));
 
 // ─── structural refusal patterns. Shapes, not secrets — safe to read in a public file. ───────────
 const REFUSE = [
@@ -278,6 +279,27 @@ const duplicates = [];
 const seenDigest = new Map();          // sha256 → the slug that got there first
 const unprovenanced = [];              // published bytes that are not in the commit they would cite
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// IS THIS CITATION OPENABLE, AND AGAINST WHAT
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// A citation carries TWO commits and they are not interchangeable. `commit` is the private source
+// commit the bytes were read from — the provenance, and what the digest covers. `public_commit` is
+// the snapshot commit a reader's browser can actually open. Resolvability is derived from the
+// declared manifest, never assumed: a root_key with no published snapshot (the math workbench) stays
+// unresolvable and says so, rather than emitting a link that 404s.
+function publication(rootKey) {
+  const s = (SOURCES.sources || []).find((x) => x.id === rootKey || x.root_key === rootKey);
+  const ok = s && s.visibility === "public" && s.public_repo && s.public_snapshot_commit;
+  if (!ok) return { visibility: "private", resolvable: false };
+  return {
+    visibility: "public",
+    resolvable: true,
+    public_repo: s.public_repo,
+    public_commit: s.public_snapshot_commit,
+    public_commit_short: s.public_snapshot_commit.slice(0, 12),
+  };
+}
+
 // ─── run ─────────────────────────────────────────────────────────────────────────────────────────
 const pages = [];
 const refused = [];
@@ -358,7 +380,7 @@ for (const c of CORPORA) {
       sha256: digest,                       // the digest of the ORIGINAL, so a reader can verify what was ingested
       redactions: red.total,
       redaction_counts: red.counts,
-      citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: `${c.dir}/${rel}`, visibility: "private", resolvable: false },
+      citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: `${c.dir}/${rel}`, ...publication(c.root_key) },
     });
   }
   corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped, deduped });

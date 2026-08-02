@@ -13,6 +13,10 @@ export type Citation = {
   commit_short: string;
   visibility: "public" | "private";
   resolvable: boolean;
+  /** The published snapshot a permalink resolves against. Absent when the source is not public. */
+  public_repo?: string;
+  public_commit?: string;
+  public_commit_short?: string;
   path?: string;
   glob?: string;
 };

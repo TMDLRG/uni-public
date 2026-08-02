@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: control-plane/resume
 corpus: control-plane
-source_sha256: 46402298cef7fc93
-source_body_sha256: 4f6236646901c53f
+source_sha256: 49ff6517d40f07d1
+source_body_sha256: c5c55c6e4daa76bc
 source_title: PHASE 9 — RESUME POINT
-source_words: 1591
+source_words: 1827
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: Rebound 2026-08-01 after the source's generated state blocks were regenerated against a larger gate registry. The prose was re-read against the new bytes and left unchanged because it contains no numeral, so the counts that moved appear nowhere in it. A rebind is only honest when the delta is checked; this one was.
 ---
 <!--PLAIN-->
 

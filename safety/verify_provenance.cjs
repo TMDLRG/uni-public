@@ -142,15 +142,21 @@ let fatal = 0;
   console.log(`  ${String(cites.length).padStart(4)}  citations — of which ${resolvable} can be opened today`);
   console.log(`  ${String(docs.pages.length).padStart(4)}  pages carry a sha256 of the original, so a reader can verify a page against what was ingested`);
   if (resolvable === 0) {
-    console.log(`      The source repositories are PRIVATE. Every citation names a real file at a real commit`);
-    console.log(`      and NONE of them can be opened by a reader today. The site says so on its face. This`);
-    console.log(`      check runs in the operator's clone, so it is evidence produced by the proponent about`);
-    console.log(`      the proponent's own artifacts — corroborative, not independent.`);
+    console.log(`      NO source repository is published. Every citation names a real file at a real commit`);
+    console.log(`      and NONE of them can be opened by a reader today. The site says so on its face.`);
+  } else if (resolvable < cites.length) {
+    console.log(`      ${cites.length - resolvable} citation(s) point into a source with no published snapshot and`);
+    console.log(`      render as unresolvable rather than as a link that would 404.`);
   }
+  console.log(`      This check runs in the operator's clone, so it is evidence produced by the proponent`);
+  console.log(`      about the proponent's own artifacts — corroborative, not independent. A published`);
+  console.log(`      snapshot lets a reader FETCH the bytes; it does not make this gate independent.`);
 }
 
 console.log(`\nPROVENANCE: ${fatal ? "FAIL" : "PASS"} — ${fatal} claim(s) of origin do not hold`);
 console.log("  This proves published bytes match a named commit IN THIS CLONE. It cannot prove that");
-console.log("  commit is what a third party would receive, and no amount of code here can. Only");
-console.log("  publishing the source repositories, or an independent custodian, closes that gap.");
+console.log("  commit is what a third party would receive, and no amount of code here can. Since");
+console.log("  2026-08-01 a reader can fetch the published snapshots and diff them for themselves —");
+console.log("  which is the closest thing to closing that gap available without an independent");
+console.log("  custodian, and is still the proponent publishing his own artifacts.");
 process.exit(fatal ? 1 : 0);

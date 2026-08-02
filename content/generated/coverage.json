@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 291,
-   "covered": 291,
+   "total": 312,
+   "covered": 312,
    "excluded": 0
   }
  ],
@@ -43,7 +43,7 @@
   "bounds": 59,
   "held": 59,
   "breached": 0,
-  "at_the_line": 46,
+  "at_the_line": 39,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -113,7 +113,7 @@
    },
    {
     "label": "pages published · control-plane",
-    "now": 32,
+    "now": 34,
     "bound": 32,
     "kind": "min",
     "ok": true
@@ -134,21 +134,21 @@
    },
    {
     "label": "pages published · minecraft",
-    "now": 84,
+    "now": 85,
     "bound": 84,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · evidence",
-    "now": 87,
+    "now": 105,
     "bound": 87,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · total",
-    "now": 291,
+    "now": 312,
     "bound": 291,
     "kind": "min",
     "ok": true
@@ -162,7 +162,7 @@
    },
    {
     "label": "pages in route · install-run",
-    "now": 5,
+    "now": 6,
     "bound": 5,
     "kind": "min",
     "ok": true
@@ -204,7 +204,7 @@
    },
    {
     "label": "pages in route · architecture",
-    "now": 32,
+    "now": 34,
     "bound": 32,
     "kind": "min",
     "ok": true
@@ -295,7 +295,7 @@
    },
    {
     "label": "pages in route · evidence-prereg",
-    "now": 19,
+    "now": 37,
     "bound": 19,
     "kind": "min",
     "ok": true

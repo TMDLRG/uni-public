@@ -9,7 +9,7 @@ import { lensFor, orientationFor } from "../../lib/lenses";
 import { notFound } from "next/navigation";
 import articlesBundle from "../../../content/generated/articles.json";
 
-type Cite = { repo: string; path: string; range: string | null; commit_short: string; branch: string; resolvable: boolean };
+type Cite = { repo: string; path: string; range: string | null; commit_short: string; branch: string; resolvable: boolean; public_repo?: string; public_commit?: string; public_commit_short?: string };
 type Quote = { text: string; lang: string; cite: Cite };
 type Article = { slug: string; title: string; summary: string; order: number; body: string; cites: Cite[]; quotes: Quote[] };
 

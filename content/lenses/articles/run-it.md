@@ -3,8 +3,8 @@ lens_schema: 1
 scope: article
 key: run-it
 corpus: 
-source_sha256: ca2481ee41d706ea
-source_body_sha256: ca2481ee41d706ea
+source_sha256: f7040ce44c3f399a
+source_body_sha256: f7040ce44c3f399a
 source_title: Run it
 source_words: 1624
 authored_by: claude-opus-5
@@ -12,7 +12,7 @@ authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.
 ---
 <!--PLAIN-->
 

@@ -7,43 +7,55 @@
    "title": "Start here",
    "summary": "What UNI is, in the order you have to meet it. Six ideas, each one needed to understand the next.",
    "order": 1,
-   "body": "\nUNI is an active-inference research programme. It runs a colony of agents that live in a Minecraft\nworld, a producer that broadcasts them, a bacterial flagellar-motor laboratory, and a control plane\nwhose entire job is to stop any of it claiming more than it has measured.\n\nThat last part is the unusual one, and it is the right place to start.\n\n## 1. The system is built to be caught being wrong\n\nMost software documentation argues that a system works. This estate is built around the assumption\nthat it will eventually be wrong, and that the interesting engineering is in making the wrongness\nvisible fast.\n\nConcretely: there are 1 gate registry, and\n15 executable checks under `viewer/` alone. A check that has\nnever been shown to fail is not treated as proven — gates are mutation-tested by deliberately\nintroducing a defect and requiring the gate to go red. And the verdict vocabulary is five controlled\nwords, never a percentage.\n\n\n<!--CITE:0-->\n\n\nYou will find failing gates published on this site rather than omitted from it. That is deliberate.\n\n## 2. A UNI is three processes pretending to be one organism\n\nAn agent is not a script with a personality. It is:\n\n- an **Elixir GenServer** holding a generative model and doing inference,\n- a **Node process** running `mineflayer`, attached as an Erlang Port,\n- a **real player** logged into a Minecraft server.\n\nThe boundary between the first two is the load-bearing idea, and the body's own header states it\nbetter than a summary could:\n\n\n<!--QUOTE:0-->\n\n\nThat is a Markov blanket, implemented as a pipe. The brain cannot see the world; it sees senses. The\nbody cannot see beliefs; it receives one action. If you understand nothing else here, understand\nthat line — everything about what the agent can and cannot know follows from it.\n\n## 3. There is no reward anywhere\n\nThe agents do not maximise a score. They minimise expected free energy — a quantity with two parts:\nhow much a policy is expected to reduce uncertainty, and how far its predicted observations are from\npreferred ones.\n\nThis matters practically, not just philosophically. A reward signal is the thing you accidentally\noptimise; there isn't one to game. When a novelty term was added to the engine, the invariant it had\nto satisfy was that it **decays monotonically to zero as evidence accumulates** — information, not\nreward — and that switching it off leaves the agent's behaviour byte-for-byte identical.\n\n\n<!--CITE:1-->\n\n\n## 4. The Producer is an agent too\n\nThe broadcast is not run by a script. The Producer is the same categorical engine, with a different\naction space: camera cuts, narration beats, and the birth and death of UNIs.\n\nSo an expected-free-energy minimum, computed the same way a bot decides whether to mine a block,\nterminates in a living agent being spawned or culled. That is the whole idea in two lines of\ndispatch:\n\n\n<!--CITE:2-->\n\n\n## 5. Two different things are called \"the control plane\"\n\nThis will confuse you if nobody says it first.\n\n- **`SP.Producer`** calls itself the live show-running control plane. It runs the broadcast.\n- **`SP.ControlPlane`** is the *science's* control plane. It authors verdicts, holds the ledger, and\n  never touches the show.\n\nThey are different bodies with different laws and they cross-reference each other in their own\nmodule docs precisely because the collision is so easy to make.\n\n\n<!--CITE:3-->\n\n\n## 6. Reading, in order\n\n1. **[The colony](/articles/the-colony/)** — what an agent actually is, end to end.\n2. **[The control plane](/articles/the-control-plane/)** — the ledger, the single writer, and why a\n   verdict needs a receipt.\n3. **[The Encyclopedia](/wiki/#encyclopedia)** — the method as a book.\n4. **[The Cookbook](/wiki/#cookbook)** — how it is carried out in practice.\n5. **[Evidence &amp; Verdicts](/evidence/)** — the dated record that it was, including a FAIL.\n6. **[What is not here](/omissions/)** — everything withheld, and why.\n\n## What this site is not claiming\n\nPassing gates are not evidence of biological parity, general intelligence, or human parity. The\nestate's own contract says so explicitly, and separates observation from reconstruction from\nsimulation as a matter of rule rather than of taste. Where a claim is not established, this site says\nNOT ESTABLISHED rather than choosing a comfortable reading.\n\nThe source repositories are **not public yet**, so every citation on this site names a real file at a\nreal commit and tells you it cannot be opened. A citation you cannot follow is an appeal to\nauthority; marking it is the difference between documentation and a brochure.\n",
+   "body": "\nUNI is an active-inference research programme. It runs a colony of agents that live in a Minecraft\nworld, a producer that broadcasts them, a bacterial flagellar-motor laboratory, and a control plane\nwhose entire job is to stop any of it claiming more than it has measured.\n\nThat last part is the unusual one, and it is the right place to start.\n\n## 1. The system is built to be caught being wrong\n\nMost software documentation argues that a system works. This estate is built around the assumption\nthat it will eventually be wrong, and that the interesting engineering is in making the wrongness\nvisible fast.\n\nConcretely: there are 1 gate registry, and\n17 executable checks under `viewer/` alone. A check that has\nnever been shown to fail is not treated as proven — gates are mutation-tested by deliberately\nintroducing a defect and requiring the gate to go red. And the verdict vocabulary is five controlled\nwords, never a percentage.\n\n\n<!--CITE:0-->\n\n\nYou will find failing gates published on this site rather than omitted from it. That is deliberate.\n\n## 2. A UNI is three processes pretending to be one organism\n\nAn agent is not a script with a personality. It is:\n\n- an **Elixir GenServer** holding a generative model and doing inference,\n- a **Node process** running `mineflayer`, attached as an Erlang Port,\n- a **real player** logged into a Minecraft server.\n\nThe boundary between the first two is the load-bearing idea, and the body's own header states it\nbetter than a summary could:\n\n\n<!--QUOTE:0-->\n\n\nThat is a Markov blanket, implemented as a pipe. The brain cannot see the world; it sees senses. The\nbody cannot see beliefs; it receives one action. If you understand nothing else here, understand\nthat line — everything about what the agent can and cannot know follows from it.\n\n## 3. There is no reward anywhere\n\nThe agents do not maximise a score. They minimise expected free energy — a quantity with two parts:\nhow much a policy is expected to reduce uncertainty, and how far its predicted observations are from\npreferred ones.\n\nThis matters practically, not just philosophically. A reward signal is the thing you accidentally\noptimise; there isn't one to game. When a novelty term was added to the engine, the invariant it had\nto satisfy was that it **decays monotonically to zero as evidence accumulates** — information, not\nreward — and that switching it off leaves the agent's behaviour byte-for-byte identical.\n\n\n<!--CITE:1-->\n\n\n## 4. The Producer is an agent too\n\nThe broadcast is not run by a script. The Producer is the same categorical engine, with a different\naction space: camera cuts, narration beats, and the birth and death of UNIs.\n\nSo an expected-free-energy minimum, computed the same way a bot decides whether to mine a block,\nterminates in a living agent being spawned or culled. That is the whole idea in two lines of\ndispatch:\n\n\n<!--CITE:2-->\n\n\n## 5. Two different things are called \"the control plane\"\n\nThis will confuse you if nobody says it first.\n\n- **`SP.Producer`** calls itself the live show-running control plane. It runs the broadcast.\n- **`SP.ControlPlane`** is the *science's* control plane. It authors verdicts, holds the ledger, and\n  never touches the show.\n\nThey are different bodies with different laws and they cross-reference each other in their own\nmodule docs precisely because the collision is so easy to make.\n\n\n<!--CITE:3-->\n\n\n## 6. Reading, in order\n\n1. **[The colony](/articles/the-colony/)** — what an agent actually is, end to end.\n2. **[The control plane](/articles/the-control-plane/)** — the ledger, the single writer, and why a\n   verdict needs a receipt.\n3. **[The Encyclopedia](/wiki/#encyclopedia)** — the method as a book.\n4. **[The Cookbook](/wiki/#cookbook)** — how it is carried out in practice.\n5. **[Evidence &amp; Verdicts](/evidence/)** — the dated record that it was, including a FAIL.\n6. **[What is not here](/omissions/)** — everything withheld, and why.\n\n## What this site is not claiming\n\nPassing gates are not evidence of biological parity, general intelligence, or human parity. The\nestate's own contract says so explicitly, and separates observation from reconstruction from\nsimulation as a matter of rule rather than of taste. Where a claim is not established, this site says\nNOT ESTABLISHED rather than choosing a comfortable reading.\n\nThe source repositories are **not public yet**, so every citation on this site names a real file at a\nreal commit and tells you it cannot be opened. A citation you cannot follow is an appeal to\nauthority; marking it is the difference between documentation and a brochure.\n",
    "cites": [
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/verdict.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/novelty.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/producer.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-flagellum",
      "path": "docs/control-plane/decisions/ADR-0006-sp-controlplane-naming-and-placement.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     }
    ],
    "quotes": [
@@ -54,10 +66,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/body.js",
       "range": "1-7",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -67,52 +82,67 @@
    "title": "The colony",
    "summary": "A UNI is an Elixir brain, a Node body and a Minecraft player, joined by a pipe that is also a Markov blanket.",
    "order": 2,
-   "body": "\nA UNI is three processes that together behave as one organism. Nothing in the system is called \"the\nagent\" — the agent is the arrangement.\n\n## The three parts\n\n**The brain** is an Elixir GenServer. It holds a generative model — the matrices `(A, B, C, D, E)`,\nDirichlet counts, and live beliefs — and each step it does perception, learning and action selection.\nIt never touches the network and never sees the world.\n\n\n<!--CITE:0-->\n\n\n**The body** is a Node process running `mineflayer`, attached to the brain as an Erlang Port. It logs\ninto a real Minecraft server as a real player.\n\n\n<!--CITE:1-->\n\n\n**The world** is an actual Minecraft server. Not a simulation of one, and not a gym environment\nwearing Minecraft's textures.\n\n## The pipe is the blanket\n\nThe interface between brain and body is a newline-delimited pipe, and it is deliberately narrow. The\nbody's own header states the contract:\n\n\n<!--QUOTE:0-->\n\n\nRead what that forbids. The brain cannot query the world; it receives a fixed vector of symbolic\nsenses. The body cannot read the brain's beliefs; it receives one primitive action from a closed set.\nThere is no side channel, and the narrowness is the point: it is what makes the agent's ignorance\n*real* rather than stipulated.\n\nThis is a Markov blanket implemented as a file descriptor. Everything the agent can be said to know\nis downstream of that line.\n\n## One step\n\nThe decision surface of a living UNI is nine lines long. Senses arrive as a signal; the pure brain\nsteps; exactly two directives come back — actuate, and emit a record of what happened.\n\n\n<!--QUOTE:1-->\n\n\nEverything else in that module — and it is a large module — is transport and interpretation around\nthose nine lines.\n\n## Birth, death and inheritance\n\nAgents die. When one does, a durable kin parent archives it, and a later life is recombined and\nmutated from what came before.\n\n\n<!--CITE:2-->\n\n\nWhat is inherited is **morphology, not knowledge** — which organs an agent has, not what it learned.\nThe genome describes the shape of the creature; the Dirichlet counts that constitute its experience\ndie with it.\n\n\n<!--CITE:3-->\n\n\n## The refusal that tells you the most\n\nThe runtime refuses to boot on a BEAM without the JIT.\n\n\n<!--CITE:4-->\n\n\nThe reason is not performance. The system makes a claim about running its mathematics on-chip, and on\nan interpreted BEAM that claim would be false. Rather than run anyway and quietly weaken the claim,\nit declines to start. Forty-three lines, and it is the estate's culture in miniature: **the system\nwould rather stop than say something it cannot support.**\n\n## Scale, measured\n\n- 7 modules in the runtime\n- 46 modules in the brain\n- 121 test files under `test/sp/`\n\n## What is not established\n\nWhether any of this constitutes experience is **not a claim this system makes**, and the estate's own\ndocuments are careful about it. The phenomenology document maps human phenomenological categories onto\nimplemented mechanisms and records where the mapping fails — the failures are the useful part.\n\nThe colony demonstrates agents that survive, forage, and inherit morphology under active inference in\na world they cannot see directly. That is the claim. It is smaller than it sounds and harder than it\nlooks.\n",
+   "body": "\nA UNI is three processes that together behave as one organism. Nothing in the system is called \"the\nagent\" — the agent is the arrangement.\n\n## The three parts\n\n**The brain** is an Elixir GenServer. It holds a generative model — the matrices `(A, B, C, D, E)`,\nDirichlet counts, and live beliefs — and each step it does perception, learning and action selection.\nIt never touches the network and never sees the world.\n\n\n<!--CITE:0-->\n\n\n**The body** is a Node process running `mineflayer`, attached to the brain as an Erlang Port. It logs\ninto a real Minecraft server as a real player.\n\n\n<!--CITE:1-->\n\n\n**The world** is an actual Minecraft server. Not a simulation of one, and not a gym environment\nwearing Minecraft's textures.\n\n## The pipe is the blanket\n\nThe interface between brain and body is a newline-delimited pipe, and it is deliberately narrow. The\nbody's own header states the contract:\n\n\n<!--QUOTE:0-->\n\n\nRead what that forbids. The brain cannot query the world; it receives a fixed vector of symbolic\nsenses. The body cannot read the brain's beliefs; it receives one primitive action from a closed set.\nThere is no side channel, and the narrowness is the point: it is what makes the agent's ignorance\n*real* rather than stipulated.\n\nThis is a Markov blanket implemented as a file descriptor. Everything the agent can be said to know\nis downstream of that line.\n\n## One step\n\nThe decision surface of a living UNI is nine lines long. Senses arrive as a signal; the pure brain\nsteps; exactly two directives come back — actuate, and emit a record of what happened.\n\n\n<!--QUOTE:1-->\n\n\nEverything else in that module — and it is a large module — is transport and interpretation around\nthose nine lines.\n\n## Birth, death and inheritance\n\nAgents die. When one does, a durable kin parent archives it, and a later life is recombined and\nmutated from what came before.\n\n\n<!--CITE:2-->\n\n\nWhat is inherited is **morphology, not knowledge** — which organs an agent has, not what it learned.\nThe genome describes the shape of the creature; the Dirichlet counts that constitute its experience\ndie with it.\n\n\n<!--CITE:3-->\n\n\n## The refusal that tells you the most\n\nThe runtime refuses to boot on a BEAM without the JIT.\n\n\n<!--CITE:4-->\n\n\nThe reason is not performance. The system makes a claim about running its mathematics on-chip, and on\nan interpreted BEAM that claim would be false. Rather than run anyway and quietly weaken the claim,\nit declines to start. Forty-three lines, and it is the estate's culture in miniature: **the system\nwould rather stop than say something it cannot support.**\n\n## Scale, measured\n\n- 7 modules in the runtime\n- 46 modules in the brain\n- 122 test files under `test/sp/`\n\n## What is not established\n\nWhether any of this constitutes experience is **not a claim this system makes**, and the estate's own\ndocuments are careful about it. The phenomenology document maps human phenomenological categories onto\nimplemented mechanisms and records where the mapping fails — the failures are the useful part.\n\nThe colony demonstrates agents that survive, forage, and inherit morphology under active inference in\na world they cannot see directly. That is the claim. It is smaller than it sounds and harder than it\nlooks.\n",
    "cites": [
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/runtime/agent.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/body.js",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/runtime/lineage.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/genome.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/runtime/on_chip.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -123,10 +153,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/body.js",
       "range": "1-7",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     },
     {
@@ -136,10 +169,13 @@
       "repo": "uni-minecraft",
       "path": "lib/sp/runtime/agent.ex",
       "range": "50-59",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -155,55 +191,73 @@
      "repo": "uni-minecraft",
      "path": "lib/sp/producer.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/producer/codec.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/producer/genome.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/producer/brain.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/runtime/log_sensor.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/anchor.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -214,10 +268,13 @@
       "repo": "uni-minecraft",
       "path": "lib/sp/producer.ex",
       "range": "354-355",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -227,88 +284,115 @@
    "title": "The control plane",
    "summary": "An append-only hash-chained ledger with exactly one writer, five verdict words, and a room whose override does not exist.",
    "order": 4,
-   "body": "\nThe control plane is the body that runs the lab and authors every verdict. It is the part of this\nestate that exists to make the rest of it accountable, and it is the best-documented subsystem here by\na wide margin — 16 modules, roughly a third of them\nexplanatory prose, against 50 test files.\n\nTest lines outnumber source lines more than two to one.\n\n## First, the name collision\n\nTwo different things in this system are called \"the control plane\" and the module says so itself\nbefore it says anything else:\n\n\n<!--QUOTE:0-->\n\n\nThat file is 44 lines long, of which 40 are that docstring. It exists to explain a namespace and\nprevent a confusion. It is worth noticing that someone thought the confusion serious enough to spend\na file on.\n\n## One writer\n\nEvery mutation to the evidence record goes through a single module, and that is enforced by the type\nsystem rather than by convention: the writer requires a token that only the command path can mint.\n\n\n<!--CITE:0-->\n\n\nEvery entry records who acted, in what role, under what authority, and what the state was before and\nafter. Two distinct parties are required where two are required — the co-signer cannot be the\nproposer, and there is a test named exactly that.\n\n## The chain, and what it cannot do\n\nThe ledger is append-only and hash-chained. Each entry carries the hash of the one before it, so a\nrow cannot be quietly altered after the fact without breaking every hash downstream.\n\n\n<!--CITE:1-->\n\n\n**But a hash chain cannot detect truncation of its own tail.** Lop off the last N entries and what\nremains is a perfectly valid chain. The system's response to that is the part worth reading: it does\nnot hide the limitation, it holds the head and length *outside* the chain as an anchor, and it has a\ntest that performs the truncation attack and asserts it succeeds — so the limit stays visible rather\nthan being quietly assumed away.\n\n\n<!--CITE:2-->\n\n\nThere is a further honesty here that is easy to miss. Corroboration requires a custodian the writer\ncannot reach. Measured, the current witness **accepts the writer's own key** — so the anchor is\n`tamper_evident` and explicitly *not* unforgeable, and the code refuses to claim the stronger word.\n\n\n<!--CITE:3-->\n\n\n## Five words, never a percentage\n\nA verdict is one of `PASS`, `PARTIAL`, `FAIL`, `WITHHELD`, `PENDING`. There is no score.\n\n\n<!--CITE:4-->\n\n\nA percentage invites averaging, and averaging is how a broken root gets hidden under a healthy crown.\n`WITHHELD` and `PENDING` exist because \"we did not look\" and \"we looked and could not tell\" are\ndifferent states, and collapsing either into a pass is the failure this whole apparatus is built\nagainst.\n\nA gate must be registered *before* its run, so a check cannot be invented after seeing the result.\n\n\n<!--CITE:5-->\n\n\n## Comparing like with like\n\nA comparison between two runs is refused at construction unless exactly one variable differs. Not\nwarned about — refused.\n\n\n<!--CITE:6-->\n\n\nRelatedly: a run's identity hashes in its planned sample size and its stopping rule, so relabelling a\nrun changes *which run it is*. You cannot decide the stopping rule after seeing the width.\n\n\n<!--CITE:7-->\n\n\n## The door with no handle\n\nReleasing something to the world requires passing through a room: green, then clean, then sterile,\nwith two keys from distinct parties.\n\nThe interesting design decision is what happens when you want to skip it:\n\n\n<!--QUOTE:1-->\n\n\nThere is no override function. Not a refused one — an absent one. The reasoning is that a control\nwhich merely refuses still teaches the operator that the door exists, and a door that exists gets used\non the night it matters most.\n\n\n<!--CITE:8-->\n\n\n## What is not established\n\nThe ledger has recorded no verdict about a real scientific claim yet. The apparatus is built and\ntested; what it has mostly adjudicated so far is its own construction.\n\nAnd the honest state of the witness above is the one to carry away: **tamper-evident is a real\nproperty and unforgeable is a different one**, and this system is careful about which word it uses.\n",
+   "body": "\nThe control plane is the body that runs the lab and authors every verdict. It is the part of this\nestate that exists to make the rest of it accountable, and it is the best-documented subsystem here by\na wide margin — 16 modules, roughly a third of them\nexplanatory prose, against 51 test files.\n\nTest lines outnumber source lines more than two to one.\n\n## First, the name collision\n\nTwo different things in this system are called \"the control plane\" and the module says so itself\nbefore it says anything else:\n\n\n<!--QUOTE:0-->\n\n\nThat file is 44 lines long, of which 40 are that docstring. It exists to explain a namespace and\nprevent a confusion. It is worth noticing that someone thought the confusion serious enough to spend\na file on.\n\n## One writer\n\nEvery mutation to the evidence record goes through a single module, and that is enforced by the type\nsystem rather than by convention: the writer requires a token that only the command path can mint.\n\n\n<!--CITE:0-->\n\n\nEvery entry records who acted, in what role, under what authority, and what the state was before and\nafter. Two distinct parties are required where two are required — the co-signer cannot be the\nproposer, and there is a test named exactly that.\n\n## The chain, and what it cannot do\n\nThe ledger is append-only and hash-chained. Each entry carries the hash of the one before it, so a\nrow cannot be quietly altered after the fact without breaking every hash downstream.\n\n\n<!--CITE:1-->\n\n\n**But a hash chain cannot detect truncation of its own tail.** Lop off the last N entries and what\nremains is a perfectly valid chain. The system's response to that is the part worth reading: it does\nnot hide the limitation, it holds the head and length *outside* the chain as an anchor, and it has a\ntest that performs the truncation attack and asserts it succeeds — so the limit stays visible rather\nthan being quietly assumed away.\n\n\n<!--CITE:2-->\n\n\nThere is a further honesty here that is easy to miss. Corroboration requires a custodian the writer\ncannot reach. Measured, the current witness **accepts the writer's own key** — so the anchor is\n`tamper_evident` and explicitly *not* unforgeable, and the code refuses to claim the stronger word.\n\n\n<!--CITE:3-->\n\n\n## Five words, never a percentage\n\nA verdict is one of `PASS`, `PARTIAL`, `FAIL`, `WITHHELD`, `PENDING`. There is no score.\n\n\n<!--CITE:4-->\n\n\nA percentage invites averaging, and averaging is how a broken root gets hidden under a healthy crown.\n`WITHHELD` and `PENDING` exist because \"we did not look\" and \"we looked and could not tell\" are\ndifferent states, and collapsing either into a pass is the failure this whole apparatus is built\nagainst.\n\nA gate must be registered *before* its run, so a check cannot be invented after seeing the result.\n\n\n<!--CITE:5-->\n\n\n## Comparing like with like\n\nA comparison between two runs is refused at construction unless exactly one variable differs. Not\nwarned about — refused.\n\n\n<!--CITE:6-->\n\n\nRelatedly: a run's identity hashes in its planned sample size and its stopping rule, so relabelling a\nrun changes *which run it is*. You cannot decide the stopping rule after seeing the width.\n\n\n<!--CITE:7-->\n\n\n## The door with no handle\n\nReleasing something to the world requires passing through a room: green, then clean, then sterile,\nwith two keys from distinct parties.\n\nThe interesting design decision is what happens when you want to skip it:\n\n\n<!--QUOTE:1-->\n\n\nThere is no override function. Not a refused one — an absent one. The reasoning is that a control\nwhich merely refuses still teaches the operator that the door exists, and a door that exists gets used\non the night it matters most.\n\n\n<!--CITE:8-->\n\n\n## What is not established\n\nThe ledger has recorded no verdict about a real scientific claim yet. The apparatus is built and\ntested; what it has mostly adjudicated so far is its own construction.\n\nAnd the honest state of the witness above is the one to carry away: **tamper-evident is a real\nproperty and unforgeable is a different one**, and this system is careful about which word it uses.\n",
    "cites": [
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/command.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/ledger.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/anchor.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/witness.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/verdict.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/registry.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/pair.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/run.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/control_plane/room.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -319,10 +403,13 @@
       "repo": "uni-minecraft",
       "path": "lib/sp/control_plane.ex",
       "range": "2-11",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     },
     {
@@ -332,10 +419,13 @@
       "repo": "uni-minecraft",
       "path": "lib/sp/control_plane/room.ex",
       "range": "39-41",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -351,91 +441,121 @@
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/infer.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/model.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/learn.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/factors.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/efe.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/plan.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/novelty.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/precision.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/homeostat.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "lib/sp/brain/motor.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -446,10 +566,13 @@
       "repo": "uni-minecraft",
       "path": "lib/sp/brain/novelty.ex",
       "range": "13-15",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -465,73 +588,97 @@
      "repo": "uni-minecraft",
      "path": "viewer/launcher.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/gaia/gaia_server.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/hud/hud_server.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/track/track_server.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/lab/lab_server.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/track/decisions.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/golive_guard.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/gate_registry.json",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -542,10 +689,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/track/track_server.cjs",
       "range": "13-16",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -561,46 +711,61 @@
      "repo": "uni-flagellum",
      "path": "docs/SCIENCE.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-flagellum",
      "path": "docs/OBSERVED-EXPERIMENT.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-flagellum",
      "path": "docs/SCIENCE-GATES.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-flagellum",
      "path": "docs/CROSS-STUDY-PARITY.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-flagellum",
      "path": "docs/MATH-WORKBENCH.md",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     }
    ],
    "quotes": []
@@ -616,46 +781,61 @@
      "repo": "uni-minecraft",
      "path": "docs/STUDIO_SYSTEMS.md",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/mediamtx_local.yml",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/studio_stage.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "production/run-of-show/first-show.rundown.json",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "production/run-of-show/verify_rundown.cjs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -666,10 +846,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/golive_guard.cjs",
       "range": "30-36",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     },
     {
@@ -679,10 +862,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/golive_guard.cjs",
       "range": "38-43",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     },
     {
@@ -692,10 +878,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/studio_up.ps1",
       "range": "3-7",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     },
     {
@@ -705,10 +894,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/studio_up.ps1",
       "range": "9-12",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -728,10 +920,13 @@
       "repo": "uni-minecraft",
       "path": "mix.exs",
       "range": "34-41",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -747,46 +942,61 @@
      "repo": "uni-minecraft",
      "path": "mix.exs",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-flagellum",
      "path": "package.json",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-flagellum",
      "path": "requirements-experiments.txt",
      "range": null,
-     "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-     "commit_short": "d713a2200f85",
+     "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+     "commit_short": "b909801f3db4",
      "branch": "hierarchical-aif/motor-stack",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-flagellum-motor-stack",
+     "public_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
+     "public_commit_short": "8b4b5935bcba"
     },
     {
      "repo": "uni-minecraft",
      "path": "docs/runbooks/minecraft.md",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": ".github/workflows/ci.yml",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": [
@@ -797,10 +1007,13 @@
       "repo": "uni-minecraft",
       "path": "scripts/minecraft_setup.sh",
       "range": "7-9",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]
@@ -810,25 +1023,31 @@
    "title": "Run it",
    "summary": "Every runnable entry point in the estate, with the command that really starts it, grouped by subsystem, each marked with whether you can actually run it.",
    "order": 11,
-   "body": "\nThis is the reference page. Every entry point below is discovered from the source repositories by the\ncoverage gate, so if something new is added to the estate and nobody documents it, the gate goes red\nnaming it. See **[coverage](/coverage/)** for the current tally and for everything deliberately left\nout.\n\nEach section carries one of three markers, and they mean exactly what they say:\n\n- **RUNNABLE BY YOU** — an ordinary machine, free software, no accounts.\n- **PARTLY RUNNABLE BY YOU** — some of it runs; the rest needs something you may not have.\n- **NEEDS THE OPERATOR'S INFRASTRUCTURE** — a private network, paid accounts, specific hardware, or a\n  named human. Read it to understand the system; you will not be able to execute it.\n\nIf you have not installed anything yet, start with the **[quick start](/articles/quick-start/)**.\n\n---\n\n## Run the active-inference core\n\n> **RUNNABLE BY YOU.** Zero dependencies, fully offline, deterministic.\n\nThis is the engine everything else is built on: inference, expected free energy, planning, learning,\nprecision and novelty.\n\n```bash\nmix test\n```\n\n```bash\nmix run scripts/benchmark.exs\n```\n\nProof tasks over the brain itself:\n\n```bash\nmix sp.brain.verify\n```\n\n```bash\nmix sp.brain.readability\n```\n\nThe second is unusual and worth a moment. It checks that the brain's internal state is *legible* —\nthat what the agent believes can be read out and named, rather than existing only as a matrix nobody\ncan interpret. A system whose beliefs cannot be inspected cannot be falsified, and an unfalsifiable\nmodel is not a scientific object however well it performs.\n\nThe engine's own recorded behaviour, regenerated and diffed:\n\n```bash\nmix run scripts/gen_golden.exs\n```\n\n```bash\nmix run scripts/evidence.exs\n```\n\n---\n\n## Run the colony\n\n> **PARTLY RUNNABLE BY YOU.** The bridge and a single agent run locally if you own Minecraft Java\n> Edition 1.16.5 and have Java 11. The full supervised colony needs the web UI and a world server.\n\nA UNI is three processes pretending to be one organism: an Elixir process holding a generative model,\na Node process running a Minecraft client library attached as an Erlang port, and a real player logged\ninto a real server. [The colony](/articles/the-colony/) explains why that boundary is the load-bearing\nidea.\n\nStart the world first — see the **[install guide](/articles/install/)** — then:\n\n**One agent, playing:**\n\n```bash\nmix uni.play\n```\n\nIt takes options for host, port, game version, username, visibility, phase, seed and a memory file.\nThe `visibility` option is the interesting one: an agent can be run *blind* or *seen*, which is how\nsensory ablation is tested. An ablation that changes nothing tells you the sense was not being used.\n\n**The simulation-to-world bridge, without an agent:**\n\n```bash\nmix sp.minecraft\n```\n\nThis drives the world from the simulation directly over the game's remote console. It needs the\npassword you set during install — **not** the default that ships in the setup script.\n\n**Inspect the world model:**\n\n```bash\nmix run scripts/show_world.exs\n```\n\n**The supervised colony** runs under the web UI's application supervisor with autostart enabled, and\nthe show is kicked by requesting the stream route. In practice that comes up as part of the studio\nbring-up rather than by hand.\n\n---\n\n## Run the Producer\n\n> **PARTLY RUNNABLE BY YOU.** The Producer itself runs; the camera and overlays it drives need the\n> studio.\n\n```bash\nmix producer.run\n```\n\nIts own task documentation is direct about the dependency: it needs a world server and the web UI\nrunning for the camera and the overlay, and then the stream route.\n\n\n<!--CITE:0-->\n\n\nThe Producer is not a script. It is the same categorical engine as an agent, with a different action\nspace — camera cuts, narration beats, and the birth and death of UNIs. An expected-free-energy minimum\nterminates in a living agent being spawned or culled. [The Producer](/articles/the-producer/) is the\nlong version.\n\n---\n\n## Run the control plane\n\n> **RUNNABLE BY YOU** for the science laboratory and the gates. The ledger's canonical rows are the\n> operator's to author.\n\nThe science lab, as a test suite and as a validation run:\n\n```bash\nmix test test/sp/lab/\n```\n\n```bash\nmix sp.lab.validate\n```\n\nThe gates. This is the single most useful command in the estate for finding out what is actually true\nright now:\n\n```bash\nnode viewer/gate_runner.cjs\n```\n\nThere are 32 registered gates; 29 run in continuous integration and 3 are listed but never run,\nbecause they need hardware. **They are listed rather than dropped** — a gate that is quietly not run\nis indistinguishable from a gate that passes, and the difference is the entire value of having gates.\n\n```bash\nnode viewer/gate_runner.cjs --require-pass\n```\n\nThe runner also asserts its own registry is complete, so an unregistered check file fails it.\n\n\n<!--CITE:1-->\n\n\nMaterialise the lab's inputs from the engine:\n\n```bash\nmix run scripts/lab_l1_materials_from_elixir.exs\n```\n\n---\n\n## Run the operator plane\n\n> **NEEDS THE OPERATOR'S INFRASTRUCTURE** for the full experience — several surfaces probe hosts on a\n> private network and hard-code an absolute path. The servers themselves start anywhere.\n\nFive surfaces, deliberately independent of each other so that no single failure blinds the operator.\n[The operator plane](/articles/the-operator-plane/) explains why five.\n\n**The Door** — mission control and the one-key bring-up. Loopback only; every mutating route requires\na custom header.\n\n```bash\nnode viewer/launcher.cjs\n```\n\n```bash\npowershell -File viewer/door_open.ps1\n```\n\n```bash\npowershell -File viewer/door_boot_open.ps1\n```\n\n**Gaia** — the world-visibility organ. It **projects and never computes**, which is a decision with\nits own architecture record: a surface that derives its own numbers can disagree with the system it is\nshowing, and then you have two truths and one screen. It is GET-only; any other method is refused\noutright.\n\n```bash\nnode viewer/gaia/gaia_server.cjs\n```\n\n**TRACK** — the live project surface. It reads real artifacts and caches nothing.\n\n```bash\nnode viewer/track/track_server.cjs\n```\n\nBe warned about one thing here: TRACK draws the project plan from a second repository whose path is\nhard-coded. On any other machine **it renders an empty plan rather than an error**, which is the worse\nof the two failure modes.\n\n**The HUD** — the operator's glance surface. The real one is a native Windows widget, not a web page,\nso there is no URL that shows it; it is summoned by a keyboard shortcut. A legacy web version still\nexists.\n\n```bash\nnode viewer/hud/hud_server.cjs\n```\n\n```bash\npowershell -File viewer/hud/hud_open.ps1\n```\n\n```bash\npowershell -File viewer/hud/hud_boot_open.ps1\n```\n\n```bash\npowershell -File viewer/hud/hud_user_sight.ps1\n```\n\n**The lab** — the rooms L0 to L6, where the estate tests its own instruments. One write route.\n\n```bash\nnode viewer/lab/lab_server.cjs\n```\n\nThe last room is a checkpoint that no gate can pass on the operator's behalf: two images side by side,\nand a human says whether they differ **with no text read**. That is a falsifier a machine cannot\nstand in for, and the estate does not pretend otherwise.\n\n---\n\n## Run the flagellar-motor laboratory\n\n> **PARTLY RUNNABLE BY YOU.** Everything except the observed-experiment reproduction, which needs a\n> dataset that is not redistributed.\n\n```bash\nnpm run dev\n```\n\n```bash\nnpm run build\n```\n\n```bash\nnpm run start\n```\n\n```bash\nnpm run test\n```\n\n### The science gates\n\n```bash\nnpm run science:run\n```\n\n```bash\nnpm run science:verify\n```\n\nRun, then verify. Never only the second — a verifier pointed at a stale artifact will happily confirm\nlast week's result.\n\n### Cross-study parity\n\n```bash\nnpm run cross-study:ingest\n```\n\n```bash\nnpm run cross-study:run\n```\n\n```bash\nnpm run cross-study:verify\n```\n\nAnd the independent path, which re-derives from the original archives instead of the convenient cache:\n\n```bash\nnpm run cross-study:verify-raw\n```\n\nThat one needs a multi-gigabyte raw cache. Without it the honest result is a gate marked `BLOCKED`,\nnever a pass.\n\n### The observed experiment\n\n```bash\nnpm run experiment:ingest\n```\n\n```bash\nnpm run experiment:run\n```\n\n```bash\nnpm run experiment:verify\n```\n\n**The ingest step needs a `.mat` dataset from a published study, obtained separately.** Order is\nstrict: ingest, run, verify, then the suite.\n\n### The generated database schema\n\n```bash\nnpm run db:generate\n```\n\n---\n\n## Run the math workbench\n\n> **RUNNABLE BY YOU.** It is CPU-only by contract and contains no inference of any kind.\n\nThe workbench is a route inside the laboratory application rather than a separate program, so the\ncommands above start it. It lives on its own branch, which is a git worktree of the laboratory\nrepository, and it executes **the committed model libraries** — the same code the gates run.\n\nThat is the property worth protecting. A visualisation that reimplements the maths for display is a\nsecond model that can silently disagree with the first, and then a reader is looking at a picture of\nsomething that is not the system.\n\n[The flagellar motor laboratory](/articles/the-flagellar-motor-laboratory/) has the longer account.\n\n---\n\n## Run the broadcast\n\n> **NEEDS THE OPERATOR'S INFRASTRUCTURE.**\n\nEvery command is in **[the broadcast suite](/articles/the-broadcast-suite/)**, together with the\nreasons the order matters. Do not run the bring-up script from here without reading that page — in\nparticular, set an OBS WebSocket password first.\n\n---\n\n## The honest boundary\n\nCollected in one place, because it is the question a stranger actually has.\n\n**You can run:** the pure Elixir engine and every one of its scripts, the web UI, the flagellum\nlaboratory and the math workbench in development and test mode, most of the registered gates, and — if\nyou own Minecraft and have Java 11 — a single local colony.\n\n**You cannot run:** the studio, the broadcast, the Producer's camera, the operator plane as designed,\nthe observed-experiment reproduction, or any go-live path. Those need a private repository, a specific\nWindows machine with hard-coded paths, a private network estate, an unpublished dataset, paid platform\nkeys, and one named human's typed confirmation.\n\nThat list is not an apology. Being told precisely where the wall is beats discovering it at step nine,\nand the parts on the near side of it are the parts worth understanding first.\n",
+   "body": "\nThis is the reference page. Every entry point below is discovered from the source repositories by the\ncoverage gate, so if something new is added to the estate and nobody documents it, the gate goes red\nnaming it. See **[coverage](/coverage/)** for the current tally and for everything deliberately left\nout.\n\nEach section carries one of three markers, and they mean exactly what they say:\n\n- **RUNNABLE BY YOU** — an ordinary machine, free software, no accounts.\n- **PARTLY RUNNABLE BY YOU** — some of it runs; the rest needs something you may not have.\n- **NEEDS THE OPERATOR'S INFRASTRUCTURE** — a private network, paid accounts, specific hardware, or a\n  named human. Read it to understand the system; you will not be able to execute it.\n\nIf you have not installed anything yet, start with the **[quick start](/articles/quick-start/)**.\n\n---\n\n## Run the active-inference core\n\n> **RUNNABLE BY YOU.** Zero dependencies, fully offline, deterministic.\n\nThis is the engine everything else is built on: inference, expected free energy, planning, learning,\nprecision and novelty.\n\n```bash\nmix test\n```\n\n```bash\nmix run scripts/benchmark.exs\n```\n\nProof tasks over the brain itself:\n\n```bash\nmix sp.brain.verify\n```\n\n```bash\nmix sp.brain.readability\n```\n\nThe second is unusual and worth a moment. It checks that the brain's internal state is *legible* —\nthat what the agent believes can be read out and named, rather than existing only as a matrix nobody\ncan interpret. A system whose beliefs cannot be inspected cannot be falsified, and an unfalsifiable\nmodel is not a scientific object however well it performs.\n\nThe engine's own recorded behaviour, regenerated and diffed:\n\n```bash\nmix run scripts/gen_golden.exs\n```\n\n```bash\nmix run scripts/evidence.exs\n```\n\n---\n\n## Run the colony\n\n> **PARTLY RUNNABLE BY YOU.** The bridge and a single agent run locally if you own Minecraft Java\n> Edition 1.16.5 and have Java 11. The full supervised colony needs the web UI and a world server.\n\nA UNI is three processes pretending to be one organism: an Elixir process holding a generative model,\na Node process running a Minecraft client library attached as an Erlang port, and a real player logged\ninto a real server. [The colony](/articles/the-colony/) explains why that boundary is the load-bearing\nidea.\n\nStart the world first — see the **[install guide](/articles/install/)** — then:\n\n**One agent, playing:**\n\n```bash\nmix uni.play\n```\n\nIt takes options for host, port, game version, username, visibility, phase, seed and a memory file.\nThe `visibility` option is the interesting one: an agent can be run *blind* or *seen*, which is how\nsensory ablation is tested. An ablation that changes nothing tells you the sense was not being used.\n\n**The simulation-to-world bridge, without an agent:**\n\n```bash\nmix sp.minecraft\n```\n\nThis drives the world from the simulation directly over the game's remote console. It needs the\npassword you set during install — **not** the default that ships in the setup script.\n\n**Inspect the world model:**\n\n```bash\nmix run scripts/show_world.exs\n```\n\n**The supervised colony** runs under the web UI's application supervisor with autostart enabled, and\nthe show is kicked by requesting the stream route. In practice that comes up as part of the studio\nbring-up rather than by hand.\n\n---\n\n## Run the Producer\n\n> **PARTLY RUNNABLE BY YOU.** The Producer itself runs; the camera and overlays it drives need the\n> studio.\n\n```bash\nmix producer.run\n```\n\nIts own task documentation is direct about the dependency: it needs a world server and the web UI\nrunning for the camera and the overlay, and then the stream route.\n\n\n<!--CITE:0-->\n\n\nThe Producer is not a script. It is the same categorical engine as an agent, with a different action\nspace — camera cuts, narration beats, and the birth and death of UNIs. An expected-free-energy minimum\nterminates in a living agent being spawned or culled. [The Producer](/articles/the-producer/) is the\nlong version.\n\n---\n\n## Run the control plane\n\n> **RUNNABLE BY YOU** for the science laboratory and the gates. The ledger's canonical rows are the\n> operator's to author.\n\nThe science lab, as a test suite and as a validation run:\n\n```bash\nmix test test/sp/lab/\n```\n\n```bash\nmix sp.lab.validate\n```\n\nThe gates. This is the single most useful command in the estate for finding out what is actually true\nright now:\n\n```bash\nnode viewer/gate_runner.cjs\n```\n\nThere are 32 registered gates; 29 run in continuous integration and 3 are listed but never run,\nbecause they need hardware. **They are listed rather than dropped** — a gate that is quietly not run\nis indistinguishable from a gate that passes, and the difference is the entire value of having gates.\n\n```bash\nnode viewer/gate_runner.cjs --require-pass\n```\n\nThe runner also asserts its own registry is complete, so an unregistered check file fails it.\n\n\n<!--CITE:1-->\n\n\nMaterialise the lab's inputs from the engine:\n\n```bash\nmix run scripts/lab_l1_materials_from_elixir.exs\n```\n\n---\n\n## Run the operator plane\n\n> **NEEDS THE OPERATOR'S INFRASTRUCTURE** for the full experience — several surfaces probe hosts on a\n> private network and hard-code an absolute path. The servers themselves start anywhere.\n\nFive surfaces, deliberately independent of each other so that no single failure blinds the operator.\n[The operator plane](/articles/the-operator-plane/) explains why five.\n\n**The Door** — mission control and the one-key bring-up. Loopback only; every mutating route requires\na custom header.\n\n```bash\nnode viewer/launcher.cjs\n```\n\n```bash\npowershell -File viewer/door_open.ps1\n```\n\n```bash\npowershell -File viewer/door_boot_open.ps1\n```\n\n**Gaia** — the world-visibility organ. It **projects and never computes**, which is a decision with\nits own architecture record: a surface that derives its own numbers can disagree with the system it is\nshowing, and then you have two truths and one screen. It is GET-only; any other method is refused\noutright.\n\n```bash\nnode viewer/gaia/gaia_server.cjs\n```\n\n**TRACK** — the live project surface. It reads real artifacts and caches nothing.\n\n```bash\nnode viewer/track/track_server.cjs\n```\n\nBe warned about one thing here: TRACK draws the project plan from a second repository whose path is\nhard-coded. On any other machine **it renders an empty plan rather than an error**, which is the worse\nof the two failure modes.\n\n**The HUD** — the operator's glance surface. The real one is a native Windows widget, not a web page,\nso there is no URL that shows it; it is summoned by a keyboard shortcut. A legacy web version still\nexists.\n\n```bash\nnode viewer/hud/hud_server.cjs\n```\n\n```bash\npowershell -File viewer/hud/hud_open.ps1\n```\n\n```bash\npowershell -File viewer/hud/hud_boot_open.ps1\n```\n\n```bash\npowershell -File viewer/hud/hud_user_sight.ps1\n```\n\n**The lab** — the rooms L0 to L6, where the estate tests its own instruments. One write route.\n\n```bash\nnode viewer/lab/lab_server.cjs\n```\n\nThe last room is a checkpoint that no gate can pass on the operator's behalf: two images side by side,\nand a human says whether they differ **with no text read**. That is a falsifier a machine cannot\nstand in for, and the estate does not pretend otherwise.\n\n---\n\n## Run the flagellar-motor laboratory\n\n> **PARTLY RUNNABLE BY YOU.** Everything except the observed-experiment reproduction, which needs a\n> dataset that is not redistributed.\n\n```bash\nnpm run dev\n```\n\n```bash\nnpm run build\n```\n\n```bash\nnpm run start\n```\n\n```bash\nnpm run test\n```\n\n### The science gates\n\n```bash\nnpm run science:run\n```\n\n```bash\nnpm run science:verify\n```\n\nRun, then verify. Never only the second — a verifier pointed at a stale artifact will happily confirm\nlast week's result.\n\n### Cross-study parity\n\n```bash\nnpm run cross-study:ingest\n```\n\n```bash\nnpm run cross-study:run\n```\n\n```bash\nnpm run cross-study:verify\n```\n\nAnd the independent path, which re-derives from the original archives instead of the convenient cache:\n\n```bash\nnpm run cross-study:verify-raw\n```\n\nThat one needs a multi-gigabyte raw cache. Without it the honest result is a gate marked `BLOCKED`,\nnever a pass.\n\n### The observed experiment\n\n```bash\nnpm run experiment:ingest\n```\n\n```bash\nnpm run experiment:run\n```\n\n```bash\nnpm run experiment:verify\n```\n\n**The ingest step needs a `.mat` dataset from a published study, obtained separately.** Order is\nstrict: ingest, run, verify, then the suite.\n\n### The generated database schema\n\n```bash\nnpm run db:generate\n```\n\n---\n\n## Run the math workbench\n\n> **RUNNABLE BY YOU.** It is CPU-only by contract and contains no inference of any kind.\n\nThe workbench is a route inside the laboratory application rather than a separate program, so the\ncommands above start it. It lives on its own branch, which is a git worktree of the laboratory\nrepository, and it executes **the committed model libraries** — the same code the gates run.\n\nThat is the property worth protecting. A visualisation that reimplements the maths for display is a\nsecond model that can silently disagree with the first, and then a reader is looking at a picture of\nsomething that is not the system.\n\n[The flagellar motor laboratory](/articles/the-flagellar-motor/) has the longer account.\n\n---\n\n## Run the broadcast\n\n> **NEEDS THE OPERATOR'S INFRASTRUCTURE.**\n\nEvery command is in **[the broadcast suite](/articles/the-broadcast-suite/)**, together with the\nreasons the order matters. Do not run the bring-up script from here without reading that page — in\nparticular, set an OBS WebSocket password first.\n\n---\n\n## The honest boundary\n\nCollected in one place, because it is the question a stranger actually has.\n\n**You can run:** the pure Elixir engine and every one of its scripts, the web UI, the flagellum\nlaboratory and the math workbench in development and test mode, most of the registered gates, and — if\nyou own Minecraft and have Java 11 — a single local colony.\n\n**You cannot run:** the studio, the broadcast, the Producer's camera, the operator plane as designed,\nthe observed-experiment reproduction, or any go-live path. Those need a private repository, a specific\nWindows machine with hard-coded paths, a private network estate, an unpublished dataset, paid platform\nkeys, and one named human's typed confirmation.\n\nThat list is not an apology. Being told precisely where the wall is beats discovering it at step nine,\nand the parts on the near side of it are the parts worth understanding first.\n",
    "cites": [
     {
      "repo": "uni-minecraft",
      "path": "lib/mix/tasks/producer.run.ex",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     },
     {
      "repo": "uni-minecraft",
      "path": "viewer/gate_registry.json",
      "range": null,
-     "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-     "commit_short": "9116fb323e86",
+     "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+     "commit_short": "e0585c5d2268",
      "branch": "gen2-runtime",
-     "resolvable": false
+     "resolvable": true,
+     "public_repo": "uni-minecraft",
+     "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+     "public_commit_short": "ac338733bbba"
     }
    ],
    "quotes": []
@@ -848,10 +1067,13 @@
       "repo": "uni-minecraft",
       "path": "viewer/track/track_boot_install.ps1",
       "range": "4-10",
-      "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-      "commit_short": "9116fb323e86",
+      "commit": "e0585c5d226849597786a5ca737399dc26a888ab",
+      "commit_short": "e0585c5d2268",
       "branch": "gen2-runtime",
-      "resolvable": false
+      "resolvable": true,
+      "public_repo": "uni-minecraft",
+      "public_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
+      "public_commit_short": "ac338733bbba"
      }
     }
    ]

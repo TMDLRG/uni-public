@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: control-plane/readme
 corpus: control-plane
-source_sha256: 61c139a637f54e43
-source_body_sha256: 61c139a637f54e43
+source_sha256: b44709415f629f22
+source_body_sha256: b44709415f629f22
 source_title: Control Plane — architecture
-source_words: 899
+source_words: 929
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: Rebound 2026-08-01 after the source gained an ADR row. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no ADR identifier, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.
 ---
 <!--PLAIN-->
 

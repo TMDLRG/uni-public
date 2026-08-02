@@ -2223,9 +2223,9 @@
    "scope": "wiki",
    "key": "control-plane/readme",
    "corpus": "control-plane",
-   "source_sha256": "61c139a637f54e43",
-   "source_body_sha256": "61c139a637f54e43",
-   "source_words": 899,
+   "source_sha256": "b44709415f629f22",
+   "source_body_sha256": "b44709415f629f22",
+   "source_words": 929,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -2243,16 +2243,16 @@
     "words": 549,
     "sha256": "147f7c4705e6ded1"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01 after the source gained an ADR row. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no ADR identifier, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/wiki/control-plane/readme.md"
   },
   {
    "scope": "wiki",
    "key": "control-plane/resume",
    "corpus": "control-plane",
-   "source_sha256": "46402298cef7fc93",
-   "source_body_sha256": "4f6236646901c53f",
-   "source_words": 1591,
+   "source_sha256": "49ff6517d40f07d1",
+   "source_body_sha256": "c5c55c6e4daa76bc",
+   "source_words": 1827,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -2270,7 +2270,7 @@
     "words": 580,
     "sha256": "39a03ddb0d4ce6eb"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01 after the source's generated state blocks were regenerated against a larger gate registry. The prose was re-read against the new bytes and left unchanged because it contains no numeral, so the counts that moved appear nowhere in it. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/wiki/control-plane/resume.md"
   },
   {
@@ -7974,8 +7974,8 @@
    "scope": "article",
    "key": "start-here",
    "corpus": null,
-   "source_sha256": "c29c596c7d927922",
-   "source_body_sha256": "c29c596c7d927922",
+   "source_sha256": "55c0ff6744f2c3bf",
+   "source_body_sha256": "55c0ff6744f2c3bf",
    "source_words": 747,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -7994,15 +7994,15 @@
     "words": 407,
     "sha256": "568b75b61ef77ccb"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/articles/start-here.md"
   },
   {
    "scope": "article",
    "key": "the-colony",
    "corpus": null,
-   "source_sha256": "c43fb720449dcaef",
-   "source_body_sha256": "c43fb720449dcaef",
+   "source_sha256": "e64563db00b695bd",
+   "source_body_sha256": "e64563db00b695bd",
    "source_words": 540,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -8021,7 +8021,7 @@
     "words": 390,
     "sha256": "bc3f5a0857c52c79"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/articles/the-colony.md"
   },
   {
@@ -8055,8 +8055,8 @@
    "scope": "article",
    "key": "the-control-plane",
    "corpus": null,
-   "source_sha256": "224dd18de8c27e27",
-   "source_body_sha256": "224dd18de8c27e27",
+   "source_sha256": "c947e289bda23919",
+   "source_body_sha256": "c947e289bda23919",
    "source_words": 685,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -8075,7 +8075,7 @@
     "words": 431,
     "sha256": "491853e3ae8ead31"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/articles/the-control-plane.md"
   },
   {
@@ -8244,8 +8244,8 @@
    "scope": "article",
    "key": "run-it",
    "corpus": null,
-   "source_sha256": "ca2481ee41d706ea",
-   "source_body_sha256": "ca2481ee41d706ea",
+   "source_sha256": "f7040ce44c3f399a",
+   "source_body_sha256": "f7040ce44c3f399a",
    "source_words": 1624,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -8264,7 +8264,7 @@
     "words": 465,
     "sha256": "6fef6058bc446eb7"
    },
-   "note": "",
+   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
    "source_file": "content/lenses/articles/run-it.md"
   },
   {
@@ -8323,12 +8323,12 @@
   }
  ],
  "totals": {
-  "content_routes": 304,
+  "content_routes": 325,
   "lensed": 304,
   "reviewed": 0,
   "draft": 304,
   "absent_records": 0,
-  "unlensed": 0,
+  "unlensed": 21,
   "orientations": 8
  },
  "limits": [

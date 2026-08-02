@@ -15,7 +15,9 @@
       "title": "UNI.Minecraft",
       "root_key": "uni-minecraft",
       "branch": "gen2-runtime",
-      "visibility": "private",
+      "visibility": "public",
+      "public_repo": "uni-minecraft",
+      "public_snapshot_commit": "ac338733bbbab2fcd90f8625ea32978543c29b3b",
       "inclusion": "spine",
       "one_line": "The colony, the Producer, the scientific control plane, the operator plane and the broadcast suite.",
       "read": [
@@ -30,7 +32,9 @@
       "title": "UNI-FLAGELLUM",
       "root_key": "uni-flagellum",
       "branch": "hierarchical-aif/motor-stack",
-      "visibility": "private",
+      "visibility": "public",
+      "public_repo": "uni-flagellum-motor-stack",
+      "public_snapshot_commit": "8b4b5935bcba4b080558c8478596b2b3a67cbe68",
       "inclusion": "spine",
       "one_line": "The bacterial flagellar-motor laboratory: licensed microscopy beside a deterministic reconstruction and an active-inference agent.",
       "read": [
@@ -43,7 +47,9 @@
       "title": "UNI Encyclopedia & Cookbook",
       "root_key": "uni-cookbook",
       "branch": "main",
-      "visibility": "private",
+      "visibility": "public",
+      "public_repo": "uni-cookbook",
+      "public_snapshot_commit": "e850f872196d3fa3b037e39df0d05da8f2ffdf4d",
       "inclusion": "spine",
       "one_line": "Two book-length works on the UNI method, rendered by a stdlib-only Python generator.",
       "read": [
@@ -65,14 +71,26 @@
   ],
   "citation_policy": {
     "rule": "Every citation records repo + branch + commit sha + path (+ line range where applicable).",
-    "public_source": false,
+    "public_source": true,
     "consequence": [
-      "NO SOURCE REPO IS PUBLIC YET, so a citation cannot be a clickable permalink today. The site",
-      "therefore renders citations as UNRESOLVABLE and says so on the page, in the citation itself.",
-      "That is deliberate. A citation a reader cannot open is an appeal to authority; the honest",
-      "response is to mark it, not to hide it or to imply it can be checked. When a source repo is",
-      "published, set visibility to 'public' here and the same citations become permalinks with no",
-      "content change."
+      "PUBLISHED 2026-08-01. All three source repositories now have a public snapshot, so citations to",
+      "them resolve to real permalinks a reader can open. Citations into any source NOT listed above",
+      "(the math workbench) still render as UNRESOLVABLE and say so on their face, because a citation a",
+      "reader cannot open is an appeal to authority and the honest response is to mark it.",
+      "",
+      "TWO COMMITS, AND THE DIFFERENCE MATTERS. A citation records the PRIVATE source commit the bytes",
+      "were ingested from — that is the provenance, and it is what the digest was taken over. The",
+      "permalink resolves against the PUBLIC SNAPSHOT commit, which is a single fresh commit holding the",
+      "same tree. They are different sha values naming the same content, and both are recorded here",
+      "rather than collapsed into one, because pretending a snapshot is the original commit would be a",
+      "false claim about history.",
+      "",
+      "THE SNAPSHOTS ARE NOT BYTE-IDENTICAL TO THE PRIVATE TREE, IN 17 PLACES. Third-party client",
+      "identifiers were replaced with '[redacted: client-identifier]' before publication — 12",
+      "occurrences in uni-minecraft, 5 in uni-flagellum-motor-stack, 0 in uni-cookbook. Those strings",
+      "name a client's organisation, personnel and internal tickets; they are not the author's to",
+      "publish. A citation landing on one of those files opens the redacted line, not the original.",
+      "Nothing else was removed from any snapshot."
     ]
   }
 }

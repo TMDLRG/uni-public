@@ -52,6 +52,22 @@ for (const [f, what] of [[rootsFile, "generators/roots.local.json"], [patternsFi
 }
 const ROOTS = JSON.parse(fs.readFileSync(rootsFile, "utf8")).roots || {};
 const DENIED = (JSON.parse(fs.readFileSync(patternsFile, "utf8")).values || []).map((v) => String(v).toLowerCase());
+const SOURCES = JSON.parse(fs.readFileSync(path.join(HERE, "sources.json"), "utf8"));
+
+// Whether a citation into this repo can be opened, and against which published snapshot. Derived
+// from the declared manifest so a source with no snapshot (the math workbench) stays unresolvable
+// and says so, rather than emitting a link that 404s. `commit` remains the PRIVATE source commit —
+// the provenance the quoted bytes were fetched at — and is never overwritten by the snapshot sha.
+function publication(repoKey) {
+  const s = (SOURCES.sources || []).find((x) => x.id === repoKey || x.root_key === repoKey);
+  if (!s || s.visibility !== "public" || !s.public_repo || !s.public_snapshot_commit) return { resolvable: false };
+  return {
+    resolvable: true,
+    public_repo: s.public_repo,
+    public_commit: s.public_snapshot_commit,
+    public_commit_short: s.public_snapshot_commit.slice(0, 12),
+  };
+}
 
 const git = (root, args) => {
   try { return execFileSync("git", ["-C", root, ...args], { encoding: "utf8", maxBuffer: 1 << 26 }).trim(); } catch { return ""; }
@@ -103,7 +119,7 @@ function resolveCite(article, repoKey, rel, rangeSpec) {
     fail(article, `CITATION OUT OF BOUNDS — ${repoKey}:${rel}:${rangeSpec} but the file has ${r.lines.length} lines at ${r.head.commit.slice(0, 12)}. The code moved and the article did not.`);
     return null;
   }
-  return { repo: repoKey, path: rel, range: range ? `${range.start}${range.end !== range.start ? "-" + range.end : ""}` : null, commit: r.head.commit, commit_short: r.head.commit.slice(0, 12), branch: r.head.branch, resolvable: false };
+  return { repo: repoKey, path: rel, range: range ? `${range.start}${range.end !== range.start ? "-" + range.end : ""}` : null, commit: r.head.commit, commit_short: r.head.commit.slice(0, 12), branch: r.head.branch, ...publication(repoKey) };
 }
 
 /** {{quote:repo:path:lines}} → the file's OWN bytes, so the quote cannot drift from the source. */
@@ -125,7 +141,7 @@ function resolveQuote(article, repoKey, rel, rangeSpec) {
   }
   const low = text.toLowerCase();
   if (DENIED.some((v) => v && low.includes(v))) { fail(article, `QUOTE CONTAINS A DENIED VALUE — ${repoKey}:${rel}:${rangeSpec}.`); return null; }
-  return { text, lang: path.extname(rel).replace(".", ""), cite: { repo: repoKey, path: rel, range: `${range.start}-${range.end}`, commit: r.head.commit, commit_short: r.head.commit.slice(0, 12), branch: r.head.branch, resolvable: false } };
+  return { text, lang: path.extname(rel).replace(".", ""), cite: { repo: repoKey, path: rel, range: `${range.start}-${range.end}`, commit: r.head.commit, commit_short: r.head.commit.slice(0, 12), branch: r.head.branch, ...publication(repoKey) } };
 }
 
 /** {{count:repo:glob}} → a live count, so the article never carries a hand-typed number. */
