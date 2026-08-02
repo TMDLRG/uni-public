@@ -26,6 +26,9 @@ export const metadata: Metadata = {
 const NAV = [
   { href: "/", label: "Overview" },
   { href: "/start/", label: "Begin here" },
+  // Second, deliberately. A visitor who arrives mid-broadcast wants to know what is being worked on
+  // and what it is stuck on before they want the archive.
+  { href: "/live/", label: "Live" },
   { href: "/articles/", label: "Articles" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
