@@ -32,6 +32,21 @@ const NAV = [
   { href: "/articles/", label: "Articles" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },
+  // /mcp sits between /gates and /estate: it publishes the SWU-MCP surface as V1's inspection
+  // catalogued it — a dated, read-only projection of the 59 tools, 14 prompts and the lifecycle
+  // gates the server refuses on. It is a description of the ORCHESTRATION LAYER the agents run
+  // through, before /estate describes the CODE AND SERVICES that layer is orchestrating.
+  { href: "/mcp/", label: "MCP" },
+  // /estate sits between /gates and /evidence deliberately: it is a directory of the code and the
+  // services actually running, and it also carries the DRIFT register — places the declaration and
+  // the runtime disagree. A reader who has just seen "these gates passed" learns next what
+  // machinery those gates were run against, and where it disagrees with itself.
+  { href: "/estate/", label: "Estate" },
+  // /drift is the adverse-results register and it gets its own entry rather than living only as a
+  // section of /estate. The rule this site is built on is that adverse results are never buried —
+  // said first, to everyone, not appended where they read as a caveat. A reader must be able to
+  // reach "what is broken here" in ONE hop without first knowing what the word "estate" means.
+  { href: "/drift/", label: "Drift" },
   { href: "/evidence/", label: "Evidence" },
   { href: "/coverage/", label: "Coverage" },
   { href: "/omissions/", label: "What is not here" },

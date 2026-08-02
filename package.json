@@ -12,7 +12,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_onramp.cjs && node generators/build_lenses.cjs && node generators/build_gates.cjs && node generators/build_live_status.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
+    "generate": "node generators/build_content.cjs && node generators/ingest_docs.cjs && node generators/build_articles.cjs && node generators/build_onramp.cjs && node generators/build_lenses.cjs && node generators/build_gates.cjs && node generators/build_live_status.cjs && node generators/build_mcp.cjs && node generators/build_estate.cjs && node generators/build_drift.cjs && node generators/build_coverage_manifest.cjs && node generators/build_curation.cjs && node safety/verify_coverage.cjs --emit",
     "dev": "next dev",
     "build": "npm run generate && next build",
     "start": "next start",

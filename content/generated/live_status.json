@@ -14,12 +14,12 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_live_status.cjs",
- "plan_read_at": "2026-08-02T14:55:12.887Z",
+ "plan_read_at": "2026-08-02T15:09:01.871Z",
  "source": {
   "repo": "uni-minecraft",
   "path": "evidence/remediation/phase9_plan.json",
-  "commit": "3c788c42f734f6ad19fd42e75ccff6a21356d41f",
-  "commit_short": "3c788c42f734",
+  "commit": "58617846d636d380608b7bb158e638e5623b1821",
+  "commit_short": "58617846d636",
   "branch": "gen2-runtime",
   "plan_authored_at": "2026-07-26"
  },
@@ -981,8 +981,17 @@
   "note": "MEASURED AND ADVERSE: this ledger has ZERO rows. The surface that writes it exists and works, and it has never been used -- every ruling the operator has given was given in conversation, which is not an artifact. It is published in this state rather than omitted."
  },
  "distribution": {
-  "declared": false,
-  "note": "The operator has not declared a watch URL, so none is published. A guessed link would be a fabrication."
+  "declared": true,
+  "links": [
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/@ORCHESTRATEMaster"
+   },
+   {
+    "platform": "Twitch",
+    "url": "https://www.twitch.tv/mregenerativearchitect"
+   }
+  ]
  },
  "withheld": {
   "checked": true,
