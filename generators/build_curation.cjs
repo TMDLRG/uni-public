@@ -60,6 +60,14 @@ const GROUPS = [
   { id: "evidence-receipts", title: "Receipts — the dated record", intent: "Proof that a gate ran on a given day, including the days it failed." },
   { id: "evidence-prereg", title: "Pre-registrations and RED verdicts", intent: "Predictions committed BEFORE the observation, and what came back." },
   { id: "evidence-handoffs", title: "Handoffs and resume states", intent: "What one session told the next, written when the context was still fresh." },
+  // ── the 2026-08-02 expansion ──────────────────────────────────────────────────────────────────
+  { id: "pack-and-reader", title: "The GPT pack and the offline reader", intent: "How the corpus is distributed and read: the custom GPT, the offline reader, the note-taker, and the deploy bundle that is staged and not deployed." },
+  { id: "builder", title: "The builder briefs", intent: "The paste-ready briefs that instantiate the agents and the visual builder — how a reader reproduces the team rather than reading about it." },
+  { id: "haif-program", title: "Hierarchical active inference — the programme", intent: "The gap audit that says the active-inference machinery is essentially absent from the science pipeline, the gates, and the ledgers that keep the negatives." },
+  { id: "haif-prereg", title: "Hierarchical AIF — predictions committed first", intent: "Pre-registered predictions, each grading its own prospectivity, including the ones that grade themselves NOT_SATISFIED." },
+  { id: "haif-results", title: "Hierarchical AIF — results and adversarial verification", intent: "The corrected full-N cell reports, three independent verification tracks, and the incident record including a burned holdout channel." },
+  { id: "science-lab", title: "The science lab — proofs, limits and sources", intent: "LaTeX proofs with their equations preserved exactly, what the lab does NOT establish, and every number's live source." },
+  { id: "films", title: "The films", intent: "Scripts, narration and dossiers for the films — including a toolchain document stating that one film cannot be rebuilt from its own source today." },
 ];
 
 // ─── ordered rules, first match wins. No default bucket, deliberately. ───────────────────────────
@@ -74,6 +82,7 @@ const RULES = [
   [/^minecraft\/(runbook-studio|runbook-live-stream|studio-|broadcast-|uni-production-platform)/, "broadcast"],
   [/^minecraft\/(operator-run-sheet|hud|gaia|door-lifecycle|ui-overlooker)/, "operator"],
   [/^minecraft\/(language|producer-language-uplift|uni-sight-plan|harvest-fix-plan)/, "colony"],
+  [/^minecraft\/(limitations|control-plane-limitations)$/, "method"],   // the two limitations docs, newly published
   [/^minecraft\//, "plans"],   // resumes, deepening plans, migrations, agent prompts, status
 
   // ── the evidence corpus ───────────────────────────────────────────────────────────────────────
@@ -95,6 +104,29 @@ const RULES = [
   [/^flagellum\/(math-workbench)/, "workbench"],
   [/^flagellum\//, "flagellum"],
   [/^workbench\//, "workbench"],
+
+  // ── the 2026-08-02 expansion. Distinct corpus prefixes, so these append safely; the readme→start
+  //    and sub-prefix rules must precede their own catch-all (first match wins). ──────────────────
+  [/^workbench-repo\//, "workbench"],
+  [/^gpt-pack\//, "pack-and-reader"],
+  [/^cookbook-repo\/readme$/, "start"],
+  [/^cookbook-repo\//, "pack-and-reader"],
+  [/^builder\//, "builder"],
+  [/^colony-builder\//, "builder"],
+  [/^hierarchical-aif\/protocols-/, "haif-prereg"],
+  [/^hierarchical-aif\/reports-/, "haif-results"],
+  [/^hierarchical-aif\//, "haif-program"],
+  [/^audits\//, "reports"],
+  [/^flagellum-repo\/readme$/, "start"],
+  [/^flagellum-repo\/(claude|tests-red-readme)$/, "method"],
+  [/^flagellum-repo\//, "reports"],
+  [/^science-lab\//, "science-lab"],
+  [/^films\//, "films"],
+  [/^broadcast\/docs-receipts-/, "evidence-receipts"],   // dated deployment receipts, not platform docs
+  [/^broadcast\//, "broadcast"],
+  [/^estate\/(readme|assumptions|changelog)$/, "start"],
+  [/^estate\/ops-/, "plans"],
+  [/^estate\//, "operator"],
 ];
 
 // Pages that belong in no route, each with a published reason. Kept as a mechanism even when empty:

@@ -13,45 +13,45 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-01T14:56:32.581Z",
+ "measured_at": "2026-08-02T08:52:53.004Z",
  "source": {
   "repo": "uni-minecraft",
-  "commit": "5e3d20a56d30b7abdaab39f32584a95079a0fa09",
-  "commit_short": "5e3d20a56d30",
+  "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+  "commit_short": "44baf03d5041",
   "branch": "gen2-runtime",
-  "clean": false
+  "clean": true
  },
  "local": {
-  "ran": 29,
+  "ran": 32,
   "law_violations": 0,
   "registry_complete": true,
   "runner_ok": true,
   "tally": {
-   "PASS": 27,
-   "FAIL": 2,
-   "NOT_RUN_EXTERNAL": 3
+   "PASS": 31,
+   "NOT_RUN_EXTERNAL": 3,
+   "FAIL": 1
   }
  },
  "ci": {
   "available": true,
-  "runs_examined": 82,
+  "runs_examined": 94,
   "tally": {
-   "failure": 82
+   "failure": 94
   },
   "successes": 0,
   "latest": {
-   "id": 30704613528,
+   "id": 30739562843,
    "conclusion": "failure",
-   "at": "2026-08-01T14:50:15Z",
-   "commit": "5e3d20a56d30",
+   "at": "2026-08-02T08:19:47Z",
+   "commit": "44baf03d5041",
    "workflow": "CI"
   },
   "not_passing": [
-   "host-tracking=FAIL",
-   "ip-fence=FAIL"
+   "host-tracking=FAIL"
   ],
-  "verdict_tally": "27 PASS · 2 FAIL",
+  "verdict_tally": "31 PASS · 1 FAIL",
   "failing_jobs": [
+   "Test & QA (Elixir 1.18 / OTP 27)",
    "gates-node (viewer/*.cjs gate law + registry completeness)"
   ]
  },
@@ -70,7 +70,7 @@
    "id": "gaia",
    "file": "viewer/gaia/verify_gaia.cjs",
    "ci": true,
-   "gate_row": "gaia-*",
+   "gate_row": "gaia-suite",
    "why": null,
    "state": "PASS",
    "exit": 0,
@@ -132,15 +132,15 @@
    "ci": true,
    "gate_row": "host-address-tracking",
    "why": null,
-   "state": "FAIL",
-   "exit": 1,
+   "state": "PASS",
+   "exit": 0,
    "law_ok": true
   },
   {
    "id": "hud",
    "file": "viewer/hud/verify_hud.cjs",
    "ci": false,
-   "gate_row": "hud-*",
+   "gate_row": "hud-suite",
    "why": null,
    "state": "NOT_RUN_EXTERNAL",
    "exit": null,
@@ -217,6 +217,16 @@
    "law_ok": true
   },
   {
+   "id": "presence-mint",
+   "file": "viewer/verify_presence_mint.cjs",
+   "ci": true,
+   "gate_row": "f31-presence-mint",
+   "why": null,
+   "state": "PASS",
+   "exit": 0,
+   "law_ok": true
+  },
+  {
    "id": "limitations-doc",
    "file": "viewer/verify_limitations_doc.cjs",
    "ci": true,
@@ -242,8 +252,8 @@
    "ci": true,
    "gate_row": "repo-wide-ip-fence-landed-red",
    "why": null,
-   "state": "FAIL",
-   "exit": 1,
+   "state": "PASS",
+   "exit": 0,
    "law_ok": true
   },
   {
@@ -342,8 +352,8 @@
    "ci": true,
    "gate_row": "claims-checked-against-disk",
    "why": null,
-   "state": "PASS",
-   "exit": 0,
+   "state": "FAIL",
+   "exit": 1,
    "law_ok": true
   },
   {
@@ -371,6 +381,26 @@
    "file": "viewer/hud/verify_sight_blind.cjs",
    "ci": true,
    "gate_row": "hud-sight-shows-blind",
+   "why": null,
+   "state": "PASS",
+   "exit": 0,
+   "law_ok": true
+  },
+  {
+   "id": "bagit",
+   "file": "viewer/verify_bag.cjs",
+   "ci": true,
+   "gate_row": "bagit-round-trips",
+   "why": null,
+   "state": "PASS",
+   "exit": 0,
+   "law_ok": true
+  },
+  {
+   "id": "concepts",
+   "file": "viewer/verify_concepts.cjs",
+   "ci": true,
+   "gate_row": "concept-registry-locators-resolve",
    "why": null,
    "state": "PASS",
    "exit": 0,

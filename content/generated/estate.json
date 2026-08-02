@@ -3,14 +3,26 @@
   "generated_by": "generators/build_content.cjs",
   "citation_policy": {
     "rule": "Every citation records repo + branch + commit sha + path (+ line range where applicable).",
-    "public_source": false,
+    "public_source": true,
     "consequence": [
-      "NO SOURCE REPO IS PUBLIC YET, so a citation cannot be a clickable permalink today. The site",
-      "therefore renders citations as UNRESOLVABLE and says so on the page, in the citation itself.",
-      "That is deliberate. A citation a reader cannot open is an appeal to authority; the honest",
-      "response is to mark it, not to hide it or to imply it can be checked. When a source repo is",
-      "published, set visibility to 'public' here and the same citations become permalinks with no",
-      "content change."
+      "PUBLISHED 2026-08-01. All three source repositories now have a public snapshot, so citations to",
+      "them resolve to real permalinks a reader can open. Citations into any source NOT listed above",
+      "(the math workbench) still render as UNRESOLVABLE and say so on their face, because a citation a",
+      "reader cannot open is an appeal to authority and the honest response is to mark it.",
+      "",
+      "TWO COMMITS, AND THE DIFFERENCE MATTERS. A citation records the PRIVATE source commit the bytes",
+      "were ingested from — that is the provenance, and it is what the digest was taken over. The",
+      "permalink resolves against the PUBLIC SNAPSHOT commit, which is a single fresh commit holding the",
+      "same tree. They are different sha values naming the same content, and both are recorded here",
+      "rather than collapsed into one, because pretending a snapshot is the original commit would be a",
+      "false claim about history.",
+      "",
+      "THE SNAPSHOTS ARE NOT BYTE-IDENTICAL TO THE PRIVATE TREE, IN 17 PLACES. Third-party client",
+      "identifiers were replaced with '[redacted: client-identifier]' before publication — 12",
+      "occurrences in uni-minecraft, 5 in uni-flagellum-motor-stack, 0 in uni-cookbook. Those strings",
+      "name a client's organisation, personnel and internal tickets; they are not the author's to",
+      "publish. A citation landing on one of those files opens the redacted line, not the original.",
+      "Nothing else was removed from any snapshot."
     ]
   },
   "sources": [
@@ -23,12 +35,12 @@
         "repo": "uni-minecraft",
         "title": "UNI.Minecraft",
         "branch": "gen2-runtime",
-        "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-        "commit_short": "9116fb323e86",
-        "visibility": "private",
-        "resolvable": false
+        "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+        "commit_short": "44baf03d5041",
+        "visibility": "public",
+        "resolvable": true
       },
-      "source_last_commit": "2026-07-31T21:26:12-05:00",
+      "source_last_commit": "2026-08-02T03:19:43-05:00",
       "blocks": [
         {
           "kind": "gate-registry",
@@ -36,14 +48,14 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-            "commit_short": "9116fb323e86",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+            "commit_short": "44baf03d5041",
+            "visibility": "public",
+            "resolvable": true,
             "path": "viewer/gate_registry.json"
           },
-          "total": 32,
-          "ci_true": 29,
+          "total": 35,
+          "ci_true": 32,
           "ci_false": 3,
           "gates": [
             {
@@ -57,7 +69,7 @@
               "id": "gaia",
               "file": "viewer/gaia/verify_gaia.cjs",
               "ci": true,
-              "gate_row": "gaia-*",
+              "gate_row": "gaia-suite",
               "why": null
             },
             {
@@ -106,7 +118,7 @@
               "id": "hud",
               "file": "viewer/hud/verify_hud.cjs",
               "ci": false,
-              "gate_row": "hud-*",
+              "gate_row": "hud-suite",
               "why": null
             },
             {
@@ -156,6 +168,13 @@
               "file": "viewer/verify_golive_refuses_agents.cjs",
               "ci": true,
               "gate_row": "f31-golive-refuses-agents",
+              "why": null
+            },
+            {
+              "id": "presence-mint",
+              "file": "viewer/verify_presence_mint.cjs",
+              "ci": true,
+              "gate_row": "f31-presence-mint",
               "why": null
             },
             {
@@ -269,6 +288,20 @@
               "ci": true,
               "gate_row": "hud-sight-shows-blind",
               "why": "THE HUD WAS GETTING GREENER AS ITS SENSOR ROTTED. viewer/hud/hud_user_sight.ps1 has pushed nothing since 2026-07-14 and the live snapshot still reports user_sight.fresh=false with last_push_at=null. Before this gate, hud.html's renderSight printed 'all fabric resonant -- no contradictions, no rot, no runaway' for that exact payload: a DEAD DETECTOR REPORTED AS HARMONY, on the one surface whose whole job is to tell the operator when something is wrong. The native widget already had the rule right (RenderDecisions.cs:53-65 prints 'user detectors NOT REPORTING') and its C# test asserts it -- but "
+            },
+            {
+              "id": "bagit",
+              "file": "viewer/verify_bag.cjs",
+              "ci": true,
+              "gate_row": "bagit-round-trips",
+              "why": "EVIDENCE THAT CANNOT LEAVE THE BOX IT WAS MADE ON IS EVIDENCE ONLY TO THE BOX. Every receipt in docs/receipts/ and every object in evidence/control_plane/objects/ is retrievable ONLY through this repository's own conventions -- there is no portable container, no declared payload, no way to hand a stranger a directory and have them establish that it holds what it says it holds. viewer/bag.cjs builds RFC 8493 BagIt 1.0 packs, zero dependencies, and this gate refuses to believe them. THE DESIGN POINT IS THAT BAGS ARE HOLEY BY DEFAULT: fetch.txt points at the existing content-addressed store, so o"
+            },
+            {
+              "id": "concepts",
+              "file": "viewer/verify_concepts.cjs",
+              "ci": true,
+              "gate_row": "concept-registry-locators-resolve",
+              "why": "The specification asked for a Latin-anchored semantic layer and nothing of the kind existed. This gate holds the registry to the one property that makes it a MAP OF THE SYSTEM rather than a glossary invented beside it: NO ROW MAY EXIST WITHOUT A locator THAT RESOLVES. 18 rows point at a real line found by searching for the token rather than by guessing a number; 3 name a declared external namespace (uni-lab-mcp) and are REFUSED any confidence above provisional, because an unpinned locator cannot support more. Four further fences each guard a distinct way this becomes false precision: ipa may b"
             }
           ]
         },
@@ -278,10 +311,10 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-            "commit_short": "9116fb323e86",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+            "commit_short": "44baf03d5041",
+            "visibility": "public",
+            "resolvable": true,
             "path": "evidence/remediation/phase9_plan.json"
           },
           "phase": "PHASE-9 — RETURN TO RESONANCE",
@@ -301,14 +334,14 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-            "commit_short": "9116fb323e86",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+            "commit_short": "44baf03d5041",
+            "visibility": "public",
+            "resolvable": true,
             "glob": "lib/sp/**/*.ex"
           },
           "count": 111,
-          "lines": 19094,
+          "lines": 19134,
           "modules": [
             {
               "path": "lib/sp/baselines/homeostatic.ex",
@@ -873,13 +906,13 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "9116fb323e86c081d99a14e68e783a1642942263",
-            "commit_short": "9116fb323e86",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
+            "commit_short": "44baf03d5041",
+            "visibility": "public",
+            "resolvable": true,
             "glob": "production/schemas/*.json"
           },
-          "count": 8,
+          "count": 9,
           "items": [
             {
               "path": "production/schemas/broadcast.schema.json",
@@ -888,6 +921,10 @@
             {
               "path": "production/schemas/claim_fence.json",
               "bytes": 1483
+            },
+            {
+              "path": "production/schemas/concept.schema.json",
+              "bytes": 4280
             },
             {
               "path": "production/schemas/envelope.schema.json",
@@ -926,12 +963,12 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-        "commit_short": "d713a2200f85",
-        "visibility": "private",
-        "resolvable": false
+        "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+        "commit_short": "b909801f3db4",
+        "visibility": "public",
+        "resolvable": true
       },
-      "source_last_commit": "2026-07-31T06:03:59-05:00",
+      "source_last_commit": "2026-08-01T19:16:13-05:00",
       "blocks": [
         {
           "kind": "adr-index",
@@ -939,13 +976,13 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-            "commit_short": "d713a2200f85",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+            "commit_short": "b909801f3db4",
+            "visibility": "public",
+            "resolvable": true,
             "glob": "docs/control-plane/decisions/*.md"
           },
-          "count": 8,
+          "count": 10,
           "items": [
             {
               "path": "docs/control-plane/decisions/ADR-0001-four-bodies.md",
@@ -994,6 +1031,18 @@
               "title": "ADR-0008 — Human presence is required to go live",
               "bytes": 5985,
               "sha256": "acd0afaab24d14a0"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0009-gaia-is-the-authoritative-projection.md",
+              "title": "ADR-0009 — Gaia is the authoritative projection; the Control Plane is the author",
+              "bytes": 9505,
+              "sha256": "133a14778d097a21"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0010-room-state-is-contamination-room-purpose-is-function.md",
+              "title": "ADR-0010 — Room state is contamination; room purpose is function",
+              "bytes": 5672,
+              "sha256": "19b6fff27252e8e0"
             }
           ]
         },
@@ -1003,10 +1052,10 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "d713a2200f85f37fae352dcdb3091bd36be1827c",
-            "commit_short": "d713a2200f85",
-            "visibility": "private",
-            "resolvable": false,
+            "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
+            "commit_short": "b909801f3db4",
+            "visibility": "public",
+            "resolvable": true,
             "glob": "experiments/*manifest*.json"
           },
           "count": 1,
@@ -1030,8 +1079,8 @@
         "branch": "main",
         "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
         "commit_short": "575fc93d9d31",
-        "visibility": "private",
-        "resolvable": false
+        "visibility": "public",
+        "resolvable": true
       },
       "source_last_commit": "2026-07-16T11:32:06-05:00",
       "blocks": [
@@ -1043,8 +1092,8 @@
             "branch": "main",
             "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
             "commit_short": "575fc93d9d31",
-            "visibility": "private",
-            "resolvable": false,
+            "visibility": "public",
+            "resolvable": true,
             "glob": "encyclopedia/**/*.md"
           },
           "count": 35,
@@ -1269,8 +1318,8 @@
             "branch": "main",
             "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
             "commit_short": "575fc93d9d31",
-            "visibility": "private",
-            "resolvable": false,
+            "visibility": "public",
+            "resolvable": true,
             "glob": "cookbook/**/*.md"
           },
           "count": 25,

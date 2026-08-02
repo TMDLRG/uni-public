@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 312,
-   "covered": 312,
+   "total": 493,
+   "covered": 493,
    "excluded": 0
   }
  ],
@@ -43,7 +43,7 @@
   "bounds": 59,
   "held": 59,
   "breached": 0,
-  "at_the_line": 39,
+  "at_the_line": 31,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -113,7 +113,7 @@
    },
    {
     "label": "pages published · control-plane",
-    "now": 34,
+    "now": 33,
     "bound": 32,
     "kind": "min",
     "ok": true
@@ -134,7 +134,7 @@
    },
    {
     "label": "pages published · minecraft",
-    "now": 85,
+    "now": 87,
     "bound": 84,
     "kind": "min",
     "ok": true
@@ -148,14 +148,14 @@
    },
    {
     "label": "pages published · total",
-    "now": 312,
+    "now": 493,
     "bound": 291,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · start",
-    "now": 4,
+    "now": 9,
     "bound": 4,
     "kind": "min",
     "ok": true
@@ -169,7 +169,7 @@
    },
    {
     "label": "pages in route · method",
-    "now": 8,
+    "now": 11,
     "bound": 8,
     "kind": "min",
     "ok": true
@@ -190,21 +190,21 @@
    },
    {
     "label": "pages in route · broadcast",
-    "now": 7,
+    "now": 57,
     "bound": 7,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · operator",
-    "now": 5,
+    "now": 8,
     "bound": 5,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · architecture",
-    "now": 34,
+    "now": 33,
     "bound": 32,
     "kind": "min",
     "ok": true
@@ -225,7 +225,7 @@
    },
    {
     "label": "pages in route · reports",
-    "now": 19,
+    "now": 23,
     "bound": 19,
     "kind": "min",
     "ok": true
@@ -281,14 +281,14 @@
    },
    {
     "label": "pages in route · plans",
-    "now": 12,
+    "now": 15,
     "bound": 12,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · evidence-receipts",
-    "now": 56,
+    "now": 62,
     "bound": 56,
     "kind": "min",
     "ok": true
@@ -365,7 +365,7 @@
    },
    {
     "label": "curated routes",
-    "now": 22,
+    "now": 29,
     "bound": 22,
     "kind": "min",
     "ok": true
@@ -449,7 +449,7 @@
    },
    {
     "label": "substance · run-it",
-    "now": 8678,
+    "now": 8667,
     "bound": 6508,
     "kind": "min",
     "ok": true

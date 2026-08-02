@@ -101,17 +101,97 @@ const CORPORA = [
     blurb: "How the system is built and how it is held to account: the falsification invitation, the evidence discipline, the typed organ specs, and the world model.",
     exclude: [
       /^receipts\//, /^handoffs\//, /^work_orders\//, /^validation\//,   // → the evidence corpus
-      /^prompts\//,                                                      // builder scaffolding, not corpus
-      /^control-plane\/LIMITATIONS\.md$/,                                // generated; the flagellum copy is authoritative
-      /^limitations\.md$/,                                               // self-declared dead: "referenced by nothing … no gate reads it"
+      /^prompts\//,                                                      // → the colony-builder corpus
     ],
-    exclude_reason: "receipts, handoffs, work orders and validation move to the Evidence section; prompts are builder scaffolding (the same reason the cookbook's own generator excludes its prompts/); docs/limitations.md is excluded because its own first line declares it superseded and read by nothing.",
+    exclude_reason: "receipts, handoffs, work orders and validation move to the Evidence section; the cold-start prompts move to The Builder, where they are the product rather than scaffolding. The two limitations documents that were excluded here on 2026-08-01 are now published: docs/control-plane/LIMITATIONS.md was excluded on the ground that 'the flagellum copy is authoritative', and there is no flagellum copy, so the site was publishing no limitations page at all.",
   },
   {
     id: "evidence", title: "Evidence &amp; Verdicts", root_key: "uni-minecraft", dir: "docs",
     blurb: "Receipts, pre-registrations and adversarial review verdicts — the dated record that the method above was actually carried out, including the times it failed.",
     include_only: [/^receipts\//, /^handoffs\//, /^work_orders\//, /^validation\//],
     off_main_nav: true,
+  },
+
+  // ── THE EXPANSION, 2026-08-02 ─────────────────────────────────────────────────────────────────
+  // The site published docs/ from each repo and nothing else, so the education material, the whole
+  // hierarchical-AIF research programme, the science lab, the films and the broadcast platform were
+  // invisible — never refused, just never read. These corpora read the rest. Order matters: a corpus
+  // that would DEDUP against an earlier one must come after it, so the earlier name is the survivor.
+
+  // uni-cookbook siblings.
+  {
+    id: "gpt-pack", title: "The GPT Pack", root_key: "uni-cookbook", dir: "gpt",
+    blurb: "The custom-GPT distribution: its system prompt, its install guide, and the manifest that proves what is in it.",
+    exclude: [/^knowledge\//],
+    // NOT "byte-for-byte concatenations" — each K file wraps an already-published source with a fresh
+    // H1 and ~2 KB of generated prose. But its BODY text is a source already on this site, so
+    // republishing it duplicates that text 79 times over. The manifest is published instead, so the
+    // pack's contents and provenance are on the site even though its concatenated bodies are not.
+    exclude_reason: "gpt/knowledge/ (K01–K19) each wrap a source file already published under encyclopedia/ or cookbook/ with a generated header; the union of their merged_from lists is the 79 files already here, so republishing them duplicates existing body text. The pack's own MANIFEST is published (in the derived pages) so its contents and provenance are documented without the duplication.",
+  },
+  {
+    id: "builder", title: "The Builder", root_key: "uni-cookbook", dir: "prompts",
+    blurb: "The GAIA visual active-inference builder brief and the superseded drafts it was fused from — how a reader reproduces the build rather than reading about it.",
+  },
+  {
+    id: "cookbook-repo", title: "The Reader and its Deploy Bundle", root_key: "uni-cookbook", dir: ".",
+    blurb: "The offline reader, the note-taker that refuses a prediction without a falsifier, and the deploy bundle that is staged and not deployed.",
+    include_only: [/^README\.md$/, /^reader\/README\.md$/, /^reader\/scrivener\/README\.md$/, /^deploy\//],
+  },
+
+  // uni-flagellum siblings — the research programme the site rendered ZERO of.
+  {
+    id: "hierarchical-aif", title: "Hierarchical Active Inference", root_key: "uni-flagellum", dir: "hierarchical-aif",
+    blurb: "A complete research programme: the gap audit, the pre-registered predictions, the corrected full-N results, three independent adversarial verification tracks, and the incidents.",
+    exclude: [/^reports\/templates\//, /^\.pytest_cache\//],
+    exclude_reason: "reports/templates/ are unfilled skeletons whose own line 3 reads 'THIS IS A TEMPLATE, NOT A RESULT'; the landed reports supersede them. .pytest_cache/README.md is written by pytest, not by anyone.",
+  },
+  {
+    id: "audits", title: "The Independent Audits", root_key: "uni-flagellum", dir: "audits",
+    blurb: "The frozen Claude-builds / Codex-reviews parity programme, and the Phase-A package that retracts one of its own claims.",
+  },
+  {
+    id: "flagellum-repo", title: "The Motor Laboratory — repository documents", root_key: "uni-flagellum", dir: ".",
+    blurb: "The laboratory's front door, its binding operating contract, and the test suite that is EXPECTED to fail.",
+    include_only: [/^README\.md$/, /^CLAUDE\.md$/, /^tests\/red\/README\.md$/, /^artifacts\/browser\/README\.md$/],
+  },
+
+  // uni-workbench sibling — its own contract, which is NOT the flagellum's copy.
+  {
+    id: "workbench-repo", title: "The Math Workbench — repository documents", root_key: "uni-workbench", dir: ".",
+    blurb: "The workbench's own operating contract, which is NOT the flagellum's copy.",
+    include_only: [/^README\.md$/, /^CLAUDE\.md$/],
+  },
+
+  // uni-minecraft siblings — the lab, the films, the platform, the builder, the estate.
+  {
+    id: "science-lab", title: "The Science Lab", root_key: "uni-minecraft", dir: "lab",
+    blurb: "The LaTeX proof documents with evidence-class fences, the limits they do NOT establish, and a remediation log recording a fix tried and reverted.",
+    exclude: [/^film\//],
+    exclude_reason: "the films are a separate corpus — scripts and dossiers, not proofs.",
+  },
+  {
+    id: "films", title: "The Films", root_key: "uni-minecraft", dir: "lab/film",
+    blurb: "TRAVELERS, WELCOME TO UNI LABS, and the bilingual DGST narration — the scripts and dossiers, each with an English verification line beneath.",
+    // HELD, not refused: the DGST correspondence addressed to a named living third party. It is
+    // already public in the source repo, so this is courtesy rather than exposure — but publishing a
+    // person's name on the docs site beside unsent mail is the operator's call, not an agent's.
+    exclude: [/deshmukh/i],
+    exclude_reason: "the DGST email drafts addressed to a named living third party are held pending the operator's ruling; publishing a named person's correspondence is his call. Everything else in lab/film is published.",
+  },
+  {
+    id: "broadcast", title: "The Broadcast Platform", root_key: "uni-minecraft", dir: "production",
+    blurb: "The ADRs with live supersession chains, the runbooks including a panic sheet, the gaps register, and the MCP verb specs each carrying the review that rewrote it.",
+  },
+  {
+    id: "colony-builder", title: "The Builder — colony cold start", root_key: "uni-minecraft", dir: ".",
+    blurb: "The paste-ready prompts that instantiate the agent team, the clone-to-running launch guide, and the HONESTY LAW the colony bootstrap carries verbatim.",
+    include_only: [/^docs\/prompts\//, /^coordination\//, /^START_HERE\.md$/, /^CLAUDE\.md$/, /^NEW_CHAT_LAUNCH_PROMPT\.md$/],
+  },
+  {
+    id: "estate", title: "The Estate — root, plan and operator surfaces", root_key: "uni-minecraft", dir: ".",
+    blurb: "The benchmark-world README, the build assumptions, the master plan with its four-value honesty fence, and the co-pilot brief.",
+    include_only: [/^README\.md$/, /^ASSUMPTIONS\.md$/, /^CHANGELOG\.md$/, /^ops\//, /^viewer\/firstrun\.md$/, /^viewer\/hud\/tests\//, /^deploy\/uni-os\//],
   },
 ];
 
@@ -139,7 +219,17 @@ const git = (root, args) => {
 // right: a document whose OWN bytes are uncommitted may not be published under a commit sha.
 function dirtyPaths(root) {
   const out = new Set();
-  const porcelain = git(root, ["status", "--porcelain", "--untracked-files=all"]);
+  // MUST use the RAW, UNTRIMMED output. `git()` does a global .trim(), which strips the leading
+  // space off the FIRST porcelain line — so " M CLAUDE.md" became "M CLAUDE.md" and slice(3) parsed
+  // "LAUDE.md", silently dropping the first dirty file from the fence. That was invisible until a
+  // corpus rooted at the repo top read a root-level file (CLAUDE.md) that sorts first in porcelain;
+  // it published two genuinely-dirty CLAUDE.md files under a commit that did not contain their bytes,
+  // and verify_provenance caught it. Every porcelain line is "XY<space>path" with a 2-char status.
+  let porcelain = "";
+  try {
+    porcelain = execFileSync("git", ["-C", root, "status", "--porcelain", "--untracked-files=all"],
+      { encoding: "utf8", maxBuffer: 1 << 26 });
+  } catch { return out; }
   for (const line of porcelain.split(/\r?\n/)) {
     if (!line.trim()) continue;
     // "XY path" or "XY orig -> path" for renames; take the destination.
@@ -156,7 +246,9 @@ function walkMd(dir, rel = "") {
   let entries;
   try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return out; }
   for (const e of entries) {
-    if (/^(node_modules|\.git|_build|deps|dist|\.next|reader)$/.test(e.name)) continue;
+    // `reader` was in this skip list and silently hid the cookbook's reader/ docs. Removed
+    // 2026-08-02: no other declared root has a directory named `reader`, so nothing else regresses.
+    if (/^(node_modules|\.git|_build|deps|dist|\.next)$/.test(e.name)) continue;
     const abs = path.join(dir, e.name);
     const r = rel ? rel + "/" + e.name : e.name;
     if (e.isDirectory()) out.push(...walkMd(abs, r));
@@ -325,7 +417,9 @@ for (const c of CORPORA) {
     const digest = sha256(text).slice(0, 16);
 
     // The provenance fence. Publishing these bytes would attach a commit sha they are not in.
-    const repoRel = `${c.dir}/${rel}`;
+    // A corpus rooted at the repo top (dir ".") must NOT prefix "./", or the dirty-path check and
+    // the citation path both name a file git does not know by that name.
+    const repoRel = (c.dir === "." ? "" : c.dir + "/") + rel;
     if (dirty.has(repoRel)) {
       unprovenanced.push({ corpus: c.id, path: repoRel, commit: commit.slice(0, 12) });
       continue;
@@ -334,7 +428,7 @@ for (const c of CORPORA) {
     // A denied value is fatal on sight — no redaction path, no threshold, no appeal.
     if (hasDenied(text)) {
       dropped++;
-      refused.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, reasons: ["operator-denied-value"] });
+      refused.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, reasons: ["operator-denied-value"] });
       continue;
     }
 
@@ -342,7 +436,7 @@ for (const c of CORPORA) {
     if (red.total > MAX_REDACTIONS) {
       dropped++;
       refused.push({
-        corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest,
+        corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest,
         // Categories and counts only. Never the matched value — a refusal list that quotes what it
         // refused would republish exactly what it withheld.
         reasons: [`over-redaction-threshold (${red.total} > ${MAX_REDACTIONS})`, ...Object.keys(red.counts)],
@@ -355,7 +449,7 @@ for (const c of CORPORA) {
     const residual = judge(red.text);
     if (residual.length) {
       dropped++;
-      refused.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, reasons: [...new Set(residual)] });
+      refused.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, reasons: [...new Set(residual)] });
       continue;
     }
 
@@ -364,7 +458,7 @@ for (const c of CORPORA) {
     const full = sha256(text);
     if (seenDigest.has(full)) {
       deduped++;
-      duplicates.push({ corpus: c.id, path: `${c.dir}/${rel}`, bytes: Buffer.byteLength(text), sha256: digest, same_as: seenDigest.get(full) });
+      duplicates.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, same_as: seenDigest.get(full) });
       continue;
     }
     seenDigest.set(full, `${c.id}/${slugify(rel)}`);
@@ -380,7 +474,7 @@ for (const c of CORPORA) {
       sha256: digest,                       // the digest of the ORIGINAL, so a reader can verify what was ingested
       redactions: red.total,
       redaction_counts: red.counts,
-      citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: `${c.dir}/${rel}`, ...publication(c.root_key) },
+      citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: repoRel, ...publication(c.root_key) },
     });
   }
   corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped, deduped });

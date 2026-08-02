@@ -18,7 +18,12 @@
     "minecraft/agent-instant-status",
     "minecraft/evidence",
     "minecraft/public-readme",
-    "minecraft/architecture-overview"
+    "minecraft/architecture-overview",
+    "cookbook-repo/readme",
+    "flagellum-repo/readme",
+    "estate/assumptions",
+    "estate/changelog",
+    "estate/readme"
    ]
   },
   {
@@ -27,11 +32,11 @@
    "intent": "Getting the system onto a machine and making it go.",
    "pages": [
     "minecraft/reproducibility",
-    "minecraft/runbooks-deployment",
     "minecraft/runbooks-finalize-to-air",
+    "minecraft/runbooks-radio-and-telemetry-deploy-2026-07-18",
+    "minecraft/runbooks-deployment",
     "minecraft/runbooks-minecraft",
-    "minecraft/runbooks-operator",
-    "minecraft/runbooks-radio-and-telemetry-deploy-2026-07-18"
+    "minecraft/runbooks-operator"
    ]
   },
   {
@@ -46,7 +51,10 @@
     "minecraft/phenomenology",
     "minecraft/public-reproducibility-bundle",
     "minecraft/working-logic",
-    "minecraft/gates-public-gate-log"
+    "minecraft/control-plane-limitations",
+    "minecraft/gates-public-gate-log",
+    "minecraft/limitations",
+    "flagellum-repo/tests-red-readme"
    ]
   },
   {
@@ -95,7 +103,57 @@
     "minecraft/studio-agent-launch-prompt",
     "minecraft/studio-operator-manual",
     "minecraft/studio-systems",
-    "minecraft/uni-production-platform"
+    "minecraft/uni-production-platform",
+    "broadcast/readme",
+    "broadcast/catalog-bootstrap",
+    "broadcast/catalog-catalog-spec",
+    "broadcast/catalog-standby-policy",
+    "broadcast/control-design",
+    "broadcast/control-liveview-route",
+    "broadcast/control-voice-intents",
+    "broadcast/docs-deploy",
+    "broadcast/docs-deployed-state",
+    "broadcast/docs-gaps-register",
+    "broadcast/docs-os-spool-policy",
+    "broadcast/docs-p1-bringup",
+    "broadcast/docs-roadmap",
+    "broadcast/docs-runbook-dr",
+    "broadcast/docs-runbook-golive",
+    "broadcast/docs-runbook-panic",
+    "broadcast/docs-spec-livepatch-hot-files",
+    "broadcast/docs-spec-mc-codec-versioning",
+    "broadcast/docs-adr-adr-prod-001-vision-mixer-obs",
+    "broadcast/docs-adr-adr-prod-002-production-mcp-separate-server",
+    "broadcast/docs-adr-adr-prod-003-encoder-host-and-codec",
+    "broadcast/docs-adr-adr-prod-004-webrtc-livekit",
+    "broadcast/docs-adr-adr-prod-005-graphics-overlays-2dcanvas",
+    "broadcast/docs-adr-adr-prod-006-tts-and-captions",
+    "broadcast/docs-adr-adr-prod-007-scheduler-playout-catalog",
+    "broadcast/docs-adr-adr-prod-008-restreamer-mediamtx",
+    "broadcast/docs-adr-adr-prod-009-uni-expert-claude-persona",
+    "broadcast/docs-adr-adr-prod-010-gating-model-live-session",
+    "broadcast/docs-adr-adr-prod-011-native-windows-obs-on-render-host",
+    "broadcast/docs-adr-adr-prod-012-encoder-placement-policy",
+    "broadcast/docs-adr-adr-prod-013-colony-host-placement",
+    "broadcast/docs-adr-adr-prod-014-relay-may-run-on-thinker",
+    "broadcast/docs-adr-adr-prod-015-uni-hud-independent-surface",
+    "broadcast/docs-adr-adr-prod-016-uni-hud-native-dotnet-rewrite",
+    "broadcast/docs-adr-adr-prod-017-hud-widget-launch-via-service-and-task-scheduler",
+    "broadcast/guest-design",
+    "broadcast/guest-token-server",
+    "broadcast/mcp-production-mcp-spec",
+    "broadcast/mcp-spec-colony-transcript-replay",
+    "broadcast/mcp-spec-command-center-overlay-update",
+    "broadcast/mcp-spec-fence-override-forwarding",
+    "broadcast/mcp-spec-lineage-snapshot",
+    "broadcast/mcp-spec-log-sensor-organ",
+    "broadcast/mcp-spec-uni-housekeeping-status",
+    "broadcast/mcp-spec-uni-propose-change",
+    "broadcast/mcp-spec-uni-public-mcp",
+    "broadcast/mcp-spec-uni-self-audit",
+    "broadcast/overlays-readme",
+    "broadcast/overlays-vendor-readme",
+    "broadcast/run-of-show-guide"
    ]
   },
   {
@@ -107,7 +165,10 @@
     "minecraft/gaia",
     "minecraft/hud",
     "minecraft/operator-run-sheet",
-    "minecraft/ui-overlooker"
+    "minecraft/ui-overlooker",
+    "estate/deploy-uni-os-cpradio-readme",
+    "estate/viewer-firstrun",
+    "estate/viewer-hud-tests-chaos-scenarios"
    ]
   },
   {
@@ -115,9 +176,12 @@
    "title": "Architecture and decisions",
    "intent": "The architecture of record and every decision that shaped it, with its reasoning intact.",
    "pages": [
-    "control-plane/architecture",
     "control-plane/architecture-audit",
+    "control-plane/architecture",
     "control-plane/data-spec",
+    "control-plane/failure-modes",
+    "control-plane/next-session-brief",
+    "control-plane/readme",
     "control-plane/decisions-adr-0001-four-bodies",
     "control-plane/decisions-adr-0002-gaia-projects-never-computes",
     "control-plane/decisions-adr-0003-control-plane-is-the-lab",
@@ -128,26 +192,22 @@
     "control-plane/decisions-adr-0008-human-presence-for-go-live",
     "control-plane/decisions-adr-0009-gaia-is-the-authoritative-projection",
     "control-plane/decisions-adr-0010-room-state-is-contamination-room-purpose-is-function",
-    "control-plane/failure-modes",
-    "control-plane/next-session-brief",
-    "control-plane/phases-phase-1",
     "control-plane/phases-phase-1-results",
-    "control-plane/phases-phase-2",
+    "control-plane/phases-phase-1",
     "control-plane/phases-phase-2-results",
-    "control-plane/phases-phase-3",
+    "control-plane/phases-phase-2",
     "control-plane/phases-phase-3-results",
-    "control-plane/phases-phase-4",
+    "control-plane/phases-phase-3",
     "control-plane/phases-phase-4-results",
-    "control-plane/phases-phase-5",
+    "control-plane/phases-phase-4",
     "control-plane/phases-phase-5-results",
-    "control-plane/phases-phase-6",
+    "control-plane/phases-phase-5",
     "control-plane/phases-phase-6-results",
-    "control-plane/phases-phase-7",
+    "control-plane/phases-phase-6",
     "control-plane/phases-phase-7-results",
+    "control-plane/phases-phase-7",
     "control-plane/phases-phase-8",
     "control-plane/phases-phase-9-remediation",
-    "control-plane/readme",
-    "control-plane/resume",
     "control-plane/views"
    ]
   },
@@ -199,7 +259,11 @@
     "minecraft/reports-reproducibility-report",
     "minecraft/reports-runtime-boundary-validation",
     "minecraft/reports-sensory-ablation-report",
-    "minecraft/security-leakage-boundary"
+    "minecraft/security-leakage-boundary",
+    "audits/coordinator-claude-three-phase-parity-completion-plan-v1",
+    "audits/phase-a-readme",
+    "audits/phase-a-phase-a-findings",
+    "flagellum-repo/artifacts-browser-readme"
    ]
   },
   {
@@ -347,7 +411,10 @@
     "minecraft/uni-in-emergence-world",
     "minecraft/uni-mission-deepening",
     "minecraft/uni-os-colony-migration",
-    "minecraft/uni-production-next-agent-prompt"
+    "minecraft/uni-production-next-agent-prompt",
+    "estate/ops-master-plan-readme",
+    "estate/ops-master-plan-plan",
+    "estate/ops-phase2-collector-harness-task"
    ]
   },
   {
@@ -410,7 +477,13 @@
     "evidence/validation-eval-harness",
     "evidence/validation-qa-methodology",
     "evidence/validation-scenario-authoring",
-    "evidence/work-orders-producer-golive"
+    "evidence/work-orders-producer-golive",
+    "broadcast/docs-receipts-g-pa-red-team-2026-07-11",
+    "broadcast/docs-receipts-heartbeat-deploy-2026-07-12",
+    "broadcast/docs-receipts-nginx-prod-mcp-2026-07-12",
+    "broadcast/docs-receipts-panic-verb-deploy-2026-07-12",
+    "broadcast/docs-receipts-phase-ix-deploy-2026-07-12",
+    "broadcast/docs-receipts-soundcheck-2026-07-12"
    ]
   },
   {
@@ -474,6 +547,163 @@
     "evidence/handoffs-studio-agent-preview-thumbnail-honest-2026-07-15",
     "evidence/handoffs-thinker-studio-handoff-2026-07-12",
     "evidence/handoffs-uni-os-mind-deepening-handoff"
+   ]
+  },
+  {
+   "id": "pack-and-reader",
+   "title": "The GPT pack and the offline reader",
+   "intent": "How the corpus is distributed and read: the custom GPT, the offline reader, the note-taker, and the deploy bundle that is staged and not deployed.",
+   "pages": [
+    "gpt-pack/readme-start-here",
+    "gpt-pack/gpt-config-instructions",
+    "cookbook-repo/deploy-architecture",
+    "cookbook-repo/deploy-preflight",
+    "cookbook-repo/deploy-publish-decision",
+    "cookbook-repo/reader-readme",
+    "cookbook-repo/reader-scrivener-readme"
+   ]
+  },
+  {
+   "id": "builder",
+   "title": "The builder briefs",
+   "intent": "The paste-ready briefs that instantiate the agents and the visual builder — how a reader reproduces the team rather than reading about it.",
+   "pages": [
+    "builder/codex-5-6-handoff",
+    "builder/master-orchestrate-uni-builder-v2",
+    "builder/drafts-draft-a-formal",
+    "builder/drafts-draft-b-traceability",
+    "builder/drafts-draft-c-product",
+    "colony-builder/new-chat-launch-prompt",
+    "colony-builder/start-here",
+    "colony-builder/coordination-agent-colony-bootstrap",
+    "colony-builder/docs-prompts-custom-gpt-hydration",
+    "colony-builder/docs-prompts-legal-auditor-launch-prompt",
+    "colony-builder/docs-prompts-science-agent-launch-prompt",
+    "colony-builder/docs-prompts-uni-os-mind-engineer-prompt"
+   ]
+  },
+  {
+   "id": "haif-program",
+   "title": "Hierarchical active inference — the programme",
+   "intent": "The gap audit that says the active-inference machinery is essentially absent from the science pipeline, the gates, and the ledgers that keep the negatives.",
+   "pages": [
+    "hierarchical-aif/readme",
+    "hierarchical-aif/docs-biological-parity-receipt-map",
+    "hierarchical-aif/docs-current-state-and-next-act",
+    "hierarchical-aif/docs-data-channel-spend-ledger",
+    "hierarchical-aif/docs-gap-audit-full-hierarchical-motor-model",
+    "hierarchical-aif/docs-h-aif-gates",
+    "hierarchical-aif/docs-human-l0-l12-reference-architecture-design-only",
+    "hierarchical-aif/docs-motor-stack-aif-scope-ruling",
+    "hierarchical-aif/docs-motor-stack-markov-blanket-justification",
+    "hierarchical-aif/docs-motor-stack-regime-and-dimensionless-check",
+    "hierarchical-aif/docs-nature-inferred-motor-design-map",
+    "hierarchical-aif/docs-nature-inferred-motor-stack-design-rationale",
+    "hierarchical-aif/docs-next-cycle-execution-plan",
+    "hierarchical-aif/docs-orchestrate-rules",
+    "hierarchical-aif/docs-subagent-brief-template",
+    "hierarchical-aif/docs-three-timescale-mechanism-hypothesis",
+    "hierarchical-aif/docs-world-where-full-bio-parity-is-true-receipt-tree",
+    "hierarchical-aif/ledgers-hierarchical-aif-defect-closure-ledger",
+    "hierarchical-aif/ledgers-hierarchical-aif-defect-ledger",
+    "hierarchical-aif/ledgers-hierarchical-aif-gate-to-existing-p-ladder-map",
+    "hierarchical-aif/ledgers-hierarchical-aif-negatives-and-partials"
+   ]
+  },
+  {
+   "id": "haif-prereg",
+   "title": "Hierarchical AIF — predictions committed first",
+   "intent": "Pre-registered predictions, each grading its own prospectivity, including the ones that grade themselves NOT_SATISFIED.",
+   "pages": [
+    "hierarchical-aif/protocols-b4c01-corrected-full-prediction",
+    "hierarchical-aif/protocols-b4c02-corrected-full-prediction",
+    "hierarchical-aif/protocols-b4c10-corrected-full-prediction",
+    "hierarchical-aif/protocols-b4c11-corrected-full-prediction",
+    "hierarchical-aif/protocols-f-side-motor-stack-scoring-prediction",
+    "hierarchical-aif/protocols-g-side-intervention-discriminator",
+    "hierarchical-aif/protocols-mark-process-transfer-rescue-protocol",
+    "hierarchical-aif/protocols-next-gate-transfer-and-intervention-plan"
+   ]
+  },
+  {
+   "id": "haif-results",
+   "title": "Hierarchical AIF — results and adversarial verification",
+   "intent": "The corrected full-N cell reports, three independent verification tracks, and the incident record including a burned holdout channel.",
+   "pages": [
+    "hierarchical-aif/reports-b4c01-b4c11-integrated-closure",
+    "hierarchical-aif/reports-b4c01-corrected-full-report",
+    "hierarchical-aif/reports-b4c02-corrected-full-report",
+    "hierarchical-aif/reports-b4c10-corrected-full-report",
+    "hierarchical-aif/reports-b4c11-corrected-full-report",
+    "hierarchical-aif/reports-c11-paired-diagnostic-report",
+    "hierarchical-aif/reports-censoring-stress-discriminator",
+    "hierarchical-aif/reports-claim-guard-active-flow-report",
+    "hierarchical-aif/reports-claim-guard-report",
+    "hierarchical-aif/reports-corrected-cell-result-index",
+    "hierarchical-aif/reports-correction-notice-issued",
+    "hierarchical-aif/reports-correction-notice-to-reviewer",
+    "hierarchical-aif/reports-d12-guard-scan-receipt",
+    "hierarchical-aif/reports-d12-incident-containment-report",
+    "hierarchical-aif/reports-d12-successor-archive-receipt",
+    "hierarchical-aif/reports-d5-holdout-mark-channel-burned",
+    "hierarchical-aif/reports-d6-ingest-nextstate-range-check-defect",
+    "hierarchical-aif/reports-f-side-distinctiveness-map",
+    "hierarchical-aif/reports-f-side-motor-stack-scoring-report",
+    "hierarchical-aif/reports-h-aif-g1-repo-and-frozen-evidence-integrity",
+    "hierarchical-aif/reports-h-aif-g4-runner-fix-report",
+    "hierarchical-aif/reports-m4-m6-m7-per-motor-contrasts-report",
+    "hierarchical-aif/reports-materiality-map-all-contrasts",
+    "hierarchical-aif/reports-numeric-provenance-guard-report",
+    "hierarchical-aif/reports-orchestrate-active-flow-status",
+    "hierarchical-aif/reports-phase-hierarchical-aif-corrected-closure",
+    "hierarchical-aif/reports-post-closure-guard-report",
+    "hierarchical-aif/reports-power-atlas-motor-equal-scoring",
+    "hierarchical-aif/reports-pre-g5-contract-recheck",
+    "hierarchical-aif/reports-resource-bound-reclassification",
+    "hierarchical-aif/reports-run-landing-mode-status",
+    "hierarchical-aif/reports-tau-limit-and-hierarchy-necessity",
+    "hierarchical-aif/reports-ultracode-track-d-verification",
+    "hierarchical-aif/reports-ultracode-track-e-verification",
+    "hierarchical-aif/reports-ultracode-track-f-verification"
+   ]
+  },
+  {
+   "id": "science-lab",
+   "title": "The science lab — proofs, limits and sources",
+   "intent": "LaTeX proofs with their equations preserved exactly, what the lab does NOT establish, and every number's live source.",
+   "pages": [
+    "science-lab/lab-dossier",
+    "science-lab/readme",
+    "science-lab/docs-ethics-and-meaning",
+    "science-lab/docs-reproducibility",
+    "science-lab/docs-scientific-limits",
+    "science-lab/evidence-source-notes",
+    "science-lab/proofs-active-inference-bounds",
+    "science-lab/proofs-bioenergetics-proton-gradient",
+    "science-lab/proofs-dgst-d-value-audit",
+    "science-lab/proofs-dimensional-analysis",
+    "science-lab/proofs-limitations",
+    "science-lab/proofs-ozone-photochemistry",
+    "science-lab/proofs-uv-filtering",
+    "science-lab/proofs-water-escape",
+    "science-lab/purebody-readme",
+    "science-lab/remediation-log",
+    "science-lab/ui-readme"
+   ]
+  },
+  {
+   "id": "films",
+   "title": "The films",
+   "intent": "Scripts, narration and dossiers for the films — including a toolchain document stating that one film cannot be rebuilt from its own source today.",
+   "pages": [
+    "films/qc",
+    "films/dgst-narration-full-mr",
+    "films/dgst-posting-package",
+    "films/dgst-youtube-metadata",
+    "films/drafts-segment-01-post-drafts",
+    "films/script-master-script-en",
+    "films/welcome-toolchain",
+    "films/welcome-script-master-script-en"
    ]
   }
  ],

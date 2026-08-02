@@ -7,7 +7,7 @@
   "documents less than it did. Neither is visible to the gate's other checks.",
   "",
   "Growth needs nothing: exceed a floor and the gate is happy. LOWERING one is allowed and must be",
-  "declared \u2014 the gate compares this file against its own committed version in git and fails if a",
+  "declared — the gate compares this file against its own committed version in git and fails if a",
   "floor moved down with no new entry in `amendments`. A floor editable in the same commit that",
   "breaches it is not a floor.",
   "",
@@ -24,6 +24,7 @@
    "uni-cookbook",
    "uni-flagellum",
    "uni-minecraft",
+   "uni-precision",
    "uni-workbench"
   ],
   "entry_point_classes": {
@@ -38,31 +39,42 @@
   "corpora_pages": {
    "encyclopedia": 39,
    "cookbook": 34,
-   "control-plane": 32,
+   "control-plane": 33,
    "flagellum": 14,
    "workbench": 1,
-   "minecraft": 84,
-   "evidence": 87
+   "minecraft": 87,
+   "evidence": 105,
+   "gpt-pack": 2,
+   "builder": 5,
+   "cookbook-repo": 6,
+   "hierarchical-aif": 64,
+   "audits": 3,
+   "flagellum-repo": 3,
+   "science-lab": 17,
+   "films": 8,
+   "broadcast": 56,
+   "colony-builder": 7,
+   "estate": 9
   },
-  "pages_total": 291,
+  "pages_total": 493,
   "subsystems": 8,
   "document_types": 8,
   "articles": 13,
   "citations": 59,
   "quotes": 15,
-  "curation_groups": 22,
+  "curation_groups": 29,
   "curation_routes": {
-   "start": 4,
-   "install-run": 5,
-   "method": 8,
+   "start": 9,
+   "install-run": 6,
+   "method": 11,
    "colony": 4,
    "specs": 17,
-   "broadcast": 7,
-   "operator": 5,
-   "architecture": 32,
+   "broadcast": 57,
+   "operator": 8,
+   "architecture": 33,
    "flagellum": 9,
    "workbench": 2,
-   "reports": 19,
+   "reports": 23,
    "lab-team": 7,
    "encyclopedia-method": 16,
    "encyclopedia-nature": 12,
@@ -70,10 +82,17 @@
    "cookbook-kitchen": 8,
    "cookbook-stack": 14,
    "cookbook-nature": 12,
-   "plans": 12,
-   "evidence-receipts": 56,
-   "evidence-prereg": 19,
-   "evidence-handoffs": 12
+   "plans": 15,
+   "evidence-receipts": 62,
+   "evidence-prereg": 37,
+   "evidence-handoffs": 12,
+   "pack-and-reader": 7,
+   "builder": 12,
+   "haif-program": 21,
+   "haif-prereg": 8,
+   "haif-results": 35,
+   "science-lab": 17,
+   "films": 8
   },
   "runnable_markers": 16,
   "article_chars": {
@@ -87,7 +106,7 @@
    "the-broadcast-suite": 12659,
    "quick-start": 3645,
    "install": 7492,
-   "run-it": 8678,
+   "run-it": 8667,
    "maintenance": 8190,
    "how-to": 5170
   }
@@ -101,6 +120,11 @@
    "date": "2026-08-01",
    "what": "Lowered floors pages_total (292 -> 291) and corpora_pages.workbench (2 -> 1).",
    "why": "A forensic pass held all 292 published pages against the commit each citation names and found ONE whose published bytes were an uncommitted working-tree edit published under a commit sha that does not contain them (workbench/living-science-walkthrough). The ingest now fences any document whose own bytes are uncommitted, per path, so it cannot assert a provenance it does not have. The page count falls by one because a page that was making a false claim stopped being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, which is why the floor is lowered deliberately rather than the fence being weakened to preserve a number. The remaining four fenced documents return the moment the workbench worktree is committed."
+  },
+  {
+   "date": "2026-08-02",
+   "what": "Lowered floor article_chars.run-it (8678 -> 8667), a drop of 11 characters, as part of re-pinning the baseline for the 493-page expansion.",
+   "why": "No prose was removed. The run-it page body is byte-identical to its previous version. The 11-character drop is an earlier fix catching up: a dead internal link to a flagellar-motor route that does not exist was corrected to the live route, removing the 11 characters of the word laboratory. The floor was pinned before that fix and is only now re-emitted. This is a reduction in count and an increase in correctness -- a working link is shorter than a broken one -- so the floor article_chars.run-it is lowered deliberately and recorded here rather than the page being padded to preserve a number."
   }
  ]
 }
