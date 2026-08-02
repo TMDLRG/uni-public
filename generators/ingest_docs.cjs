@@ -480,6 +480,35 @@ for (const c of CORPORA) {
   corporaOut.push({ ...meta(c), available: true, branch, commit_short: commit.slice(0, 12), pages: kept, refused: dropped, deduped });
 }
 
+// ── pages rendered FROM STRUCTURED DATA (the lexicon and the nature ledger — the MATH, which lives
+//    as JSON, not markdown). Same bundle, same slug namespace, same gates. The renderer runs the
+//    identical hasDenied / redact / judge / dirty fences, over the RENDERED body, and binds each
+//    page's sha256 to the SOURCE JSON so verify_provenance resolves it. See generators/derive_docs.cjs.
+{
+  const { derivePages, DERIVED_CORPORA } = require("./derive_docs.cjs");
+  const cbRoot = ROOTS["uni-cookbook"];
+  const cbCommit = cbRoot ? git(cbRoot, ["rev-parse", "HEAD"]).slice(0, 12) : "";
+  const cbBranch = cbRoot ? git(cbRoot, ["rev-parse", "--abbrev-ref", "HEAD"]) : "";
+  const derivedCounts = {};
+  const bump = (id, field) => { (derivedCounts[id] ||= { pages: 0, refused: 0, deduped: 0 })[field]++; };
+  for (const r of derivePages({ ROOTS, SOURCES, git, sha256, judge, redact, hasDenied, dirtyPaths, publication, MAX_REDACTIONS })) {
+    if (r.refused) { refused.push(r.refused); bump(r.refused.corpus, "refused"); continue; }
+    if (r.unprovenanced) { unprovenanced.push(r.unprovenanced); continue; }
+    // Identity by digest, same rule as a markdown page — a derived page that reproduced an existing
+    // one exactly is one document, not two.
+    const full = sha256(r.page.body);
+    if (seenDigest.has(full)) { duplicates.push({ corpus: r.page.corpus, path: r.page.citation.path, bytes: r.page.bytes, sha256: r.page.sha256, same_as: seenDigest.get(full) }); bump(r.page.corpus, "deduped"); continue; }
+    seenDigest.set(full, r.page.slug);
+    if (r.page.redactions) redactedCount++;
+    pages.push(r.page);
+    bump(r.page.corpus, "pages");
+  }
+  for (const c of DERIVED_CORPORA) {
+    const n = derivedCounts[c.id] || { pages: 0, refused: 0, deduped: 0 };
+    corporaOut.push({ id: c.id, title: c.title, blurb: c.blurb, exclude_reason: null, off_main_nav: !!c.off_main_nav, available: true, branch: cbBranch, commit_short: cbCommit, pages: n.pages, refused: n.refused, deduped: n.deduped, derived: true });
+  }
+}
+
 function meta(c) { return { id: c.id, title: c.title, blurb: c.blurb, exclude_reason: c.exclude_reason || null, off_main_nav: !!c.off_main_nav }; }
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────

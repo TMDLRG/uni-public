@@ -68,6 +68,8 @@ const GROUPS = [
   { id: "haif-results", title: "Hierarchical AIF — results and adversarial verification", intent: "The corrected full-N cell reports, three independent verification tracks, and the incident record including a burned holdout channel." },
   { id: "science-lab", title: "The science lab — proofs, limits and sources", intent: "LaTeX proofs with their equations preserved exactly, what the lab does NOT establish, and every number's live source." },
   { id: "films", title: "The films", intent: "Scripts, narration and dossiers for the films — including a toolchain document stating that one film cannot be rebuilt from its own source today." },
+  { id: "lexicon", title: "The lexicon — one concept, five registers", intent: "What each term means in Sanskrit, Latin, English, Hindi and Spanish, what it must never be translated as, and which back-translation tests have not been run." },
+  { id: "constants", title: "Constants, ratios and the nature ledger", intent: "Every load-bearing number with its units, scope, evidence class, source and falsifier — including the claims ruled INADMISSIBLE." },
 ];
 
 // ─── ordered rules, first match wins. No default bucket, deliberately. ───────────────────────────
@@ -127,6 +129,8 @@ const RULES = [
   [/^estate\/(readme|assumptions|changelog)$/, "start"],
   [/^estate\/ops-/, "plans"],
   [/^estate\//, "operator"],
+  [/^lexicon\//, "lexicon"],
+  [/^constants\//, "constants"],
 ];
 
 // Pages that belong in no route, each with a published reason. Kept as a mechanism even when empty:

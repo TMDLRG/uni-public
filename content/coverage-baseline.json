@@ -54,15 +54,17 @@
    "films": 8,
    "broadcast": 56,
    "colony-builder": 7,
-   "estate": 9
+   "estate": 9,
+   "lexicon": 8,
+   "constants": 7
   },
-  "pages_total": 493,
+  "pages_total": 508,
   "subsystems": 8,
   "document_types": 8,
   "articles": 13,
   "citations": 59,
   "quotes": 15,
-  "curation_groups": 29,
+  "curation_groups": 31,
   "curation_routes": {
    "start": 9,
    "install-run": 6,
@@ -92,7 +94,9 @@
    "haif-prereg": 8,
    "haif-results": 35,
    "science-lab": 17,
-   "films": 8
+   "films": 8,
+   "lexicon": 8,
+   "constants": 7
   },
   "runnable_markers": 16,
   "article_chars": {

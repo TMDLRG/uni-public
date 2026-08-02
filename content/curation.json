@@ -705,6 +705,35 @@
     "films/welcome-toolchain",
     "films/welcome-script-master-script-en"
    ]
+  },
+  {
+   "id": "lexicon",
+   "title": "The lexicon — one concept, five registers",
+   "intent": "What each term means in Sanskrit, Latin, English, Hindi and Spanish, what it must never be translated as, and which back-translation tests have not been run.",
+   "pages": [
+    "lexicon/math-core",
+    "lexicon/method-evidence",
+    "lexicon/natura-physics",
+    "lexicon/blanket-mind-body-world",
+    "lexicon/gaia-world-build",
+    "lexicon/pomdp-tensors",
+    "lexicon/natura-biology",
+    "lexicon/concepts"
+   ]
+  },
+  {
+   "id": "constants",
+   "title": "Constants, ratios and the nature ledger",
+   "intent": "Every load-bearing number with its units, scope, evidence class, source and falsifier — including the claims ruled INADMISSIBLE.",
+   "pages": [
+    "constants/index",
+    "constants/values",
+    "constants/dimensionless-numbers",
+    "constants/scaling-laws",
+    "constants/frequencies",
+    "constants/inadmissible",
+    "constants/open-questions"
+   ]
   }
  ],
  "uncategorised": []
