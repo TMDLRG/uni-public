@@ -34,16 +34,16 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 508,
-   "covered": 508,
+   "total": 524,
+   "covered": 524,
    "excluded": 0
   }
  ],
  "ratchet": {
-  "bounds": 77,
-  "held": 77,
+  "bounds": 81,
+  "held": 81,
   "breached": 0,
-  "at_the_line": 62,
+  "at_the_line": 65,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -105,7 +105,7 @@
    },
    {
     "label": "pages published · encyclopedia",
-    "now": 39,
+    "now": 45,
     "bound": 39,
     "kind": "min",
     "ok": true
@@ -230,9 +230,23 @@
     "ok": true
    },
    {
+    "label": "pages published · lexicon",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages published · constants",
+    "now": 7,
+    "bound": 7,
+    "kind": "min",
+    "ok": true
+   },
+   {
     "label": "pages published · total",
-    "now": 508,
-    "bound": 493,
+    "now": 524,
+    "bound": 508,
     "kind": "min",
     "ok": true
    },
@@ -440,6 +454,20 @@
     "ok": true
    },
    {
+    "label": "pages in route · lexicon",
+    "now": 8,
+    "bound": 8,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · constants",
+    "now": 7,
+    "bound": 7,
+    "kind": "min",
+    "ok": true
+   },
+   {
     "label": "RUNNABLE markers",
     "now": 16,
     "bound": 16,
@@ -497,8 +525,8 @@
    },
    {
     "label": "curated routes",
-    "now": 31,
-    "bound": 29,
+    "now": 33,
+    "bound": 31,
     "kind": "min",
     "ok": true
    },

@@ -1,0 +1,507 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     class="pl01"
+     viewBox="0 0 1400 2200"
+     preserveAspectRatio="xMidYMid meet"
+     role="img"
+     aria-labelledby="pl01-title pl01-desc">
+
+  <title id="pl01-title">Plate PL-01 — The Markov blanket: MIND / BODY / MIND.BODY / WORLD</title>
+  <desc id="pl01-desc">An engraved reference plate of the four-way Markov-blanket partition. Internal states mu (MIND), sensory states s, active states a, and external states eta (WORLD); the blanket b equals the set of s and a, which is BODY. The defining conditional independence is p(mu, eta given b) equals p(mu given b) times p(eta given b), equivalently mu is conditionally independent of eta given b, equivalently the conditional mutual information I(mu; eta given b) equals zero nats. Two routes are drawn: the world reaches the mind only through sensory states, and the mind reaches the world only through active states; the direct route is crossed out. A nesting figure shows blankets within blankets, fenced NOT-MEASURED. A quantified figure shows the human visual funnel with retinal and optic-nerve counts. A marginal note carries the Pearl-blanket versus Friston-blanket caveat. The plate anchors to kitchen rule M12 and claims no UNI rung.</desc>
+
+  <style>
+    .pl01 {
+      --pl-ink:    var(--plate-ink,    #1c1a16);
+      --pl-paper:  var(--plate-paper,  #f6f2e8);
+      --pl-rule:   var(--plate-rule,   #3d3830);
+      --pl-faint:  var(--plate-faint,  #8a8375);
+      --pl-accent: var(--plate-accent, #8a3324);
+      --pl-wash:   var(--plate-wash,   #e6e0d1);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Cambria, Georgia, "DejaVu Serif", "Times New Roman", Times, serif;
+      color: var(--pl-ink);
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    @media (prefers-color-scheme: dark) {
+      .pl01 {
+        --pl-ink:    var(--plate-ink,    #ece6d9);
+        --pl-paper:  var(--plate-paper,  #15181d);
+        --pl-rule:   var(--plate-rule,   #b5ad9d);
+        --pl-faint:  var(--plate-faint,  #8f8879);
+        --pl-accent: var(--plate-accent, #e0906d);
+        --pl-wash:   var(--plate-wash,   #232830);
+      }
+    }
+    :root[data-theme="dark"] .pl01, .pl01[data-theme="dark"] {
+      --pl-ink:    var(--plate-ink,    #ece6d9);
+      --pl-paper:  var(--plate-paper,  #15181d);
+      --pl-rule:   var(--plate-rule,   #b5ad9d);
+      --pl-faint:  var(--plate-faint,  #8f8879);
+      --pl-accent: var(--plate-accent, #e0906d);
+      --pl-wash:   var(--plate-wash,   #232830);
+    }
+    :root[data-theme="light"] .pl01, .pl01[data-theme="light"] {
+      --pl-ink:    var(--plate-ink,    #1c1a16);
+      --pl-paper:  var(--plate-paper,  #f6f2e8);
+      --pl-rule:   var(--plate-rule,   #3d3830);
+      --pl-faint:  var(--plate-faint,  #8a8375);
+      --pl-accent: var(--plate-accent, #8a3324);
+      --pl-wash:   var(--plate-wash,   #e6e0d1);
+    }
+
+    .pl01 text { fill: var(--pl-ink); }
+
+    .pl01 .bd-out  { fill: none; stroke: var(--pl-ink);  stroke-width: 2.4; }
+    .pl01 .bd-in   { fill: none; stroke: var(--pl-rule); stroke-width: 0.8; }
+    .pl01 .rule    { stroke: var(--pl-rule); stroke-width: 1.1; }
+    .pl01 .rule-f  { stroke: var(--pl-faint); stroke-width: 0.6; }
+    .pl01 .rule-h  { stroke: var(--pl-ink); stroke-width: 1.8; }
+
+    .pl01 .sc      { font-size: 11px;   letter-spacing: 2px; fill: var(--pl-rule); }
+    .pl01 .ttl     { font-size: 36px;   letter-spacing: 6px; }
+    .pl01 .sub     { font-size: 16px;   letter-spacing: 3.4px; }
+    .pl01 .subsub  { font-size: 12.5px; font-style: italic; fill: var(--pl-rule); }
+    .pl01 .figlab  { font-size: 11.5px; letter-spacing: 1.6px; fill: var(--pl-rule); }
+    .pl01 .setg    { font-size: 44px; }
+    .pl01 .setn    { font-size: 13.5px; letter-spacing: 2.6px; }
+    .pl01 .nodeg   { font-size: 32px; }
+    .pl01 .gloss   { font-size: 10.5px; font-style: italic; fill: var(--pl-rule); }
+    .pl01 .note    { font-size: 10.5px; }
+    .pl01 .micro   { font-size: 9px; letter-spacing: 1px; fill: var(--pl-rule); }
+    .pl01 .cap     { font-size: 10.8px; }
+    .pl01 .form    { font-size: 24px; }
+    .pl01 .formg   { font-size: 12px; font-style: italic; fill: var(--pl-rule); }
+    .pl01 .bandlab { font-size: 13.5px; letter-spacing: 1.2px; }
+
+    .pl01 .em      { font-style: italic; }
+    .pl01 .lead    { letter-spacing: 1.1px; }
+    .pl01 .dim     { fill: var(--pl-rule); }
+    .pl01 .acc     { fill: var(--pl-accent); }
+
+    .pl01 .paper   { fill: var(--pl-paper); stroke: none; }
+    .pl01 .region  { fill: none; stroke: var(--pl-ink); stroke-width: 1.6; }
+    .pl01 .band    { fill: url(#pl01-hatch); stroke: var(--pl-ink); stroke-width: 1.4; stroke-dasharray: 7 4; }
+    .pl01 .door    { fill: var(--pl-wash); stroke: var(--pl-ink); stroke-width: 2.6; }
+    .pl01 .stip    { fill: url(#pl01-stipple); stroke: var(--pl-ink); stroke-width: 1.6; }
+
+    .pl01 .route-s { fill: none; stroke: var(--pl-accent); stroke-width: 2.6; marker-end: url(#pl01-tip-solid); }
+    .pl01 .route-a { fill: none; stroke: var(--pl-accent); stroke-width: 2.6; stroke-dasharray: 9 5; marker-end: url(#pl01-tip-open); }
+    .pl01 .route-x { fill: none; stroke: var(--pl-rule); stroke-width: 1.6; stroke-dasharray: 2 4; }
+    .pl01 .xmark   { stroke: var(--pl-ink); stroke-width: 3.2; stroke-linecap: round; }
+    .pl01 .leader  { stroke: var(--pl-rule); stroke-width: 0.8; stroke-dasharray: 1.5 2.5; }
+
+    .pl01 .co      { fill: var(--pl-paper); stroke: var(--pl-ink); stroke-width: 1.2; }
+    .pl01 .cot     { font-size: 11px; fill: var(--pl-ink); }
+
+    .pl01 .tip     { fill: var(--pl-accent); stroke: none; }
+    .pl01 .tipo    { fill: none; stroke: var(--pl-accent); stroke-width: 1.6; }
+    .pl01 .hl      { stroke: var(--pl-faint); stroke-width: 0.55; }
+    .pl01 .dot     { fill: var(--pl-faint); stroke: none; }
+
+    .pl01 .stamp   { fill: none; stroke: var(--pl-rule); stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .pl01 .cart    { fill: none; stroke: var(--pl-ink); stroke-width: 1.6; }
+    .pl01 .cart-i  { fill: none; stroke: var(--pl-rule); stroke-width: 0.6; }
+  </style>
+
+  <defs>
+    <marker id="pl01-tip-solid" viewBox="0 0 12 12" refX="10.5" refY="6"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0.5 L 11 6 L 0 11.5 z" class="tip"/>
+    </marker>
+    <marker id="pl01-tip-open" viewBox="0 0 12 12" refX="10" refY="6"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 10.5 6 L 1 11" class="tipo"/>
+    </marker>
+    <marker id="pl01-tip-fine" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 z" class="tip"/>
+    </marker>
+
+    <pattern id="pl01-stipple" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.85" class="dot"/>
+      <circle cx="6" cy="6" r="0.85" class="dot"/>
+    </pattern>
+
+    <pattern id="pl01-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" class="hl"/>
+    </pattern>
+
+    <pattern id="pl01-hatch2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="7" class="hl"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="2200" fill="var(--pl-paper)"/>
+
+  <rect class="bd-out" x="16" y="16" width="1368" height="2168"/>
+  <rect class="bd-in"  x="26" y="26" width="1348" height="2148"/>
+
+  <!-- ============================ HEADER ============================ -->
+  <text class="sc" x="54" y="72">UNI ENCYCLOPEDIA · WING NATURA</text>
+  <text class="sc" x="1346" y="72" text-anchor="end">PLATE PL-01</text>
+  <line class="rule-f" x1="54" y1="84" x2="1346" y2="84"/>
+
+  <text class="ttl" x="700" y="130" text-anchor="middle">THE MARKOV BLANKET</text>
+  <text class="sub" x="700" y="160" text-anchor="middle">MIND / BODY / MIND.BODY / WORLD</text>
+  <text class="subsub" x="700" y="181" text-anchor="middle">μ (internal) · s (sensory) · a (active) · η (external) · b = {s, a} — the four-way partition and its one conditional independence</text>
+
+  <line class="rule-h" x1="54" y1="190" x2="1346" y2="190"/>
+  <line class="rule-f" x1="54" y1="194.5" x2="1346" y2="194.5"/>
+
+  <!-- ============================ FIG 1 ============================ -->
+  <text class="figlab" x="54" y="216">FIG. 1 — THE PARTITION AND ITS TWO ROUTES</text>
+
+  <!-- forbidden route: an arc from WORLD to MIND that bypasses the BODY -->
+  <text class="formg" x="525" y="209" text-anchor="middle">∂μ̇/∂η = 0<tspan dx="22">∂η̇/∂μ = 0</tspan><tspan dx="20">[NA04-03 · MODELED]</tspan></text>
+  <path class="route-x" d="M 200 356 C 240 252 380 240 525 240 C 670 240 810 252 850 356"/>
+  <circle class="paper" cx="525" cy="240" r="18"/>
+  <line class="xmark" x1="513" y1="228" x2="537" y2="252"/>
+  <line class="xmark" x1="537" y1="228" x2="513" y2="252"/>
+  <circle class="co" cx="566" cy="277" r="11"/>
+  <text class="cot" x="566" y="281" text-anchor="middle">4</text>
+
+  <!-- WORLD -->
+  <rect class="stip" x="110" y="356" width="180" height="290" rx="14"/>
+  <rect class="paper" x="126" y="462" width="148" height="100" rx="5"/>
+  <text class="setg" x="200" y="500" text-anchor="middle">η</text>
+  <text class="setn" x="200" y="532" text-anchor="middle">WORLD</text>
+  <text class="gloss" x="200" y="552" text-anchor="middle">external states</text>
+
+  <!-- BODY: the blanket band -->
+  <rect class="band" x="420" y="310" width="210" height="390" rx="18"/>
+  <rect class="paper" x="432" y="299" width="186" height="24"/>
+  <text class="bandlab" x="525" y="317" text-anchor="middle">b = {s, a} · BODY</text>
+
+  <circle class="door" cx="525" cy="396" r="48"/>
+  <text class="nodeg" x="525" y="408" text-anchor="middle">s</text>
+  <rect class="paper" x="463" y="452" width="124" height="16"/>
+  <text class="gloss" x="525" y="464" text-anchor="middle">sensory states</text>
+
+  <circle class="door" cx="525" cy="620" r="48"/>
+  <text class="nodeg" x="525" y="632" text-anchor="middle">a</text>
+  <rect class="paper" x="467" y="676" width="116" height="16"/>
+  <text class="gloss" x="525" y="688" text-anchor="middle">active states</text>
+
+  <!-- MIND -->
+  <rect class="region" x="760" y="356" width="180" height="290" rx="14"/>
+  <text class="setg" x="850" y="500" text-anchor="middle">μ</text>
+  <text class="setn" x="850" y="532" text-anchor="middle">MIND</text>
+  <text class="gloss" x="850" y="552" text-anchor="middle">internal states</text>
+
+  <!-- the two routes -->
+  <path class="route-s" d="M 292 424 C 350 402 410 392 471 392"/>
+  <path class="route-s" d="M 575 404 C 640 414 700 424 754 430"/>
+  <path class="route-a" d="M 756 572 C 700 592 640 606 579 612"/>
+  <path class="route-a" d="M 473 624 C 410 620 350 602 294 584"/>
+
+  <circle class="co" cx="382" cy="372" r="11"/>
+  <text class="cot" x="382" y="376" text-anchor="middle">1</text>
+  <circle class="co" cx="382" cy="642" r="11"/>
+  <text class="cot" x="382" y="646" text-anchor="middle">2</text>
+
+  <line class="leader" x1="694" y1="490" x2="694" y2="440"/>
+  <line class="leader" x1="694" y1="512" x2="694" y2="564"/>
+  <circle class="co" cx="694" cy="501" r="11"/>
+  <text class="cot" x="694" y="505" text-anchor="middle">3</text>
+
+  <text class="gloss" x="200" y="672" text-anchor="middle">reached exactly never</text>
+  <text class="gloss" x="850" y="672" text-anchor="middle">touches only its own blanket</text>
+
+  <!-- ==================== MARGINAL NOTE ==================== -->
+  <line class="rule-f" x1="1016" y1="200" x2="1016" y2="790"/>
+
+  <text class="sc" x="1032" y="216">MARGINAL NOTE</text>
+  <text class="subsub" x="1032" y="236">Pearl blankets vs Friston blankets</text>
+
+  <text class="note" x="1032" y="258">
+    <tspan x="1032" dy="0">A PEARL BLANKET is a formal statistical construct —</tspan>
+    <tspan x="1032" dy="13.2">variables in a graph you drew, relative to a model,</tspan>
+    <tspan x="1032" dy="13.2">doing conditional-independence bookkeeping. Cheap,</tspan>
+    <tspan x="1032" dy="13.2">well-defined, unobjectionable. Pearl (1988).</tspan>
+    <tspan x="1032" dy="19.8">A FRISTON BLANKET is a metaphysical boundary of a</tspan>
+    <tspan x="1032" dy="13.2">thing — a claim that some real system out there</tspan>
+    <tspan x="1032" dy="13.2">genuinely has an inside, a surface, and an outside.</tspan>
+    <tspan x="1032" dy="19.8">The field's main error is sliding from the first to</tspan>
+    <tspan x="1032" dy="13.2">the second without paying for it: you define a</tspan>
+    <tspan x="1032" dy="13.2">blanket (free — a modelling choice), then quietly</tspan>
+    <tspan x="1032" dy="13.2">conclude you have discovered where the organism</tspan>
+    <tspan x="1032" dy="13.2">ends (expensive — an empirical claim requiring</tspan>
+    <tspan x="1032" dy="13.2">I(μ;η|b) ≈ 0 in the actual system, which nobody</tspan>
+    <tspan x="1032" dy="13.2">estimated). Bruineberg, Dołęga, Dewhurst &amp;</tspan>
+    <tspan x="1032" dy="13.2">Baltieri (2022), The Emperor's New Markov Blankets,</tspan>
+    <tspan x="1032" dy="13.2">Behav Brain Sci 45:e183, DOI</tspan>
+    <tspan x="1032" dy="13.2">10.1017/S0140525X21002351. The dispute is live.</tspan>
+    <tspan x="1032" dy="19.8">And the formal conditions are worse than assumed.</tspan>
+    <tspan x="1032" dy="13.2">Aguilera, Millidge, Tschantz &amp; Buckley (2022), Phys</tspan>
+    <tspan x="1032" dy="13.2">Life Rev (arXiv:2105.11203) analytically solved a</tspan>
+    <tspan x="1032" dy="13.2">family of linear Langevin / Ornstein–Uhlenbeck</tspan>
+    <tspan x="1032" dy="13.2">systems and found the three requirements — a</tspan>
+    <tspan x="1032" dy="13.2">perception–action partition, a Markov blanket, and</tspan>
+    <tspan x="1032" dy="13.2">decoupled solenoidal flows — are in principle</tspan>
+    <tspan x="1032" dy="13.2">independent conditions, co-occurring only in a</tspan>
+    <tspan x="1032" dy="13.2">“very narrow space of parameters”. The systems this</tspan>
+    <tspan x="1032" dy="13.2">framework most wants to describe — living things:</tspan>
+    <tspan x="1032" dy="13.2">asymmetric, non-equilibrium, solenoidal — sit</tspan>
+    <tspan x="1032" dy="13.2">largely outside it.   [NA04-03 · MODELED]</tspan>
+    <tspan x="1032" dy="19.8">THEREFORE, PLAINLY: a Markov blanket is a</tspan>
+    <tspan x="1032" dy="13.2">MODELLING CHOICE you must justify per system, not</tspan>
+    <tspan x="1032" dy="13.2">a fact you may assume. Any use of the partition in</tspan>
+    <tspan x="1032" dy="13.2">this corpus — including M12 — is a typed</tspan>
+    <tspan x="1032" dy="13.2">engineering choice, warranted by being useful and</tspan>
+    <tspan x="1032" dy="13.2">explicit, never by having been discovered in</tspan>
+    <tspan x="1032" dy="13.2">nature.</tspan>
+    <tspan x="1032" dy="19.8">This plate takes no side beyond insisting the slide</tspan>
+    <tspan x="1032" dy="13.2">be named.</tspan>
+  </text>
+
+  <line class="rule" x1="54" y1="804" x2="1346" y2="804"/>
+
+  <!-- ============================ FIG 2 ============================ -->
+  <text class="figlab" x="54" y="832">FIG. 2 — THE DEFINING CONDITION: ONE CONDITIONAL INDEPENDENCE</text>
+
+  <rect class="cart"   x="150" y="846" width="1100" height="72" rx="8"/>
+  <rect class="cart-i" x="155" y="851" width="1090" height="62" rx="5"/>
+  <text class="form" x="700" y="892" text-anchor="middle">p(μ, η | b) = p(μ | b) · p(η | b)<tspan dx="34">⇔</tspan><tspan dx="34">μ ⊥ η | b</tspan><tspan dx="34">⇔</tspan><tspan dx="34">I(μ ; η | b) = 0</tspan></text>
+
+  <text class="formg" x="700" y="938" text-anchor="middle">Given the blanket, internal and external states carry no further information about each other. Every dependency between mind and world is routed through the body.</text>
+  <text class="note" x="700" y="956" text-anchor="middle">Not mostly. Not usually. By definition — or the partition is not a blanket. I is conditional mutual information, in NATS; the required value is 0 nats [NA04-02]. The partition is MODELED and definitional [NA04-01]; the term is Pearl's (1988).</text>
+
+  <line class="rule" x1="54" y1="982" x2="1346" y2="982"/>
+
+  <!-- ============================ FIG 3 ============================ -->
+  <line class="rule-f" x1="700" y1="994" x2="700" y2="1450"/>
+
+  <text class="figlab" x="54" y="1012">FIG. 3 — NESTING: BLANKETS WITHIN BLANKETS (THE GRADIENT)</text>
+
+  <circle cx="120" cy="1090" r="30" fill="none" stroke="var(--pl-accent)" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <circle cx="120" cy="1090" r="12" fill="none" stroke="var(--pl-ink)" stroke-width="1.4"/>
+  <text class="micro" x="176" y="1096" text-anchor="middle" style="font-size:15px; letter-spacing:0;">→</text>
+
+  <circle cx="256" cy="1090" r="42" fill="none" stroke="var(--pl-accent)" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <circle cx="256" cy="1090" r="19" fill="none" stroke="var(--pl-accent)" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="256" cy="1090" r="8" fill="none" stroke="var(--pl-ink)" stroke-width="1.2"/>
+  <text class="micro" x="326" y="1096" text-anchor="middle" style="font-size:15px; letter-spacing:0;">→</text>
+
+  <circle cx="410" cy="1090" r="56" fill="none" stroke="var(--pl-accent)" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <circle cx="410" cy="1090" r="30" fill="none" stroke="var(--pl-accent)" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="410" cy="1090" r="14" fill="none" stroke="var(--pl-accent)" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <circle cx="410" cy="1090" r="6" fill="none" stroke="var(--pl-ink)" stroke-width="1"/>
+  <text class="micro" x="492" y="1096" text-anchor="middle" style="font-size:15px; letter-spacing:0;">→</text>
+
+  <rect class="stamp" x="520" y="1068" width="160" height="46" rx="4"/>
+  <text class="gloss" x="600" y="1087" text-anchor="middle">n_levels</text>
+  <text class="note" x="600" y="1103" text-anchor="middle" style="letter-spacing:1.2px;">NOT-MEASURED</text>
+
+  <text class="note" x="54" y="1172">
+    <tspan x="54" dy="0">Nothing in the definition fixes a scale. A blanket's internal states can themselves be a set of blanketed</tspan>
+    <tspan x="54" dy="14">things, and the construction recurses — each level's blanket becomes part of the next level's internal states:</tspan>
+    <tspan x="54" dy="16" class="em">          organelle → cell → tissue → organ → organism → colony → ecosystem</tspan>
+    <tspan x="54" dy="16">Palacios, Razi, Parr, Kirchhoff &amp; Friston (2020), J Theor Biol 486:110089, DOI 10.1016/j.jtbi.2019.110089;</tspan>
+    <tspan x="54" dy="14">Kirchhoff, Parr, Palacios, Friston &amp; Kiverstein (2018), J R Soc Interface 15(138):20170792.</tspan>
+    <tspan x="54" dy="20">A CONSTRUCTION, NOT AN OBSERVATION. That blankets can compose this way is a mathematical fact.</tspan>
+    <tspan x="54" dy="14">That any particular biological hierarchy IS so composed is a separate empirical claim.</tspan>
+    <tspan x="54" dy="20">n_levels — NOT-MEASURED [NA04-13].  Units: nested blankets.  Scope: any named organism, established</tspan>
+    <tspan x="54" dy="14">by measurement rather than by choosing a diagram.  Source: none found.  Falsifier: estimate I(μ;η|b) at</tspan>
+    <tspan x="54" dy="14">each candidate level of one real organism and count the levels that pass.</tspan>
+    <tspan x="54" dy="20">INTEROCEPTION — a blanket inside the blanket. Cardiac, gastric, respiratory, inflammatory and osmotic</tspan>
+    <tspan x="54" dy="14">channels are sensory states whose external states are other parts of the same organism: from the brain's</tspan>
+    <tspan x="54" dy="14">position, the viscera are η.  f_aff (human cervical vagus) = sensory 73.9 ± 7.5 % (R) / 72.4 ± 5.6 % (L) of</tspan>
+    <tspan x="54" dy="14">fibres, with 13 ± 5.9 % / 14.3 ± 4.0 % sympathetic riding along.  Scope: 8 cadavers, immunofluorescence.</tspan>
+    <tspan x="54" dy="14">OBSERVED-CONTESTED [NA04-10] — Kronsteiner et al. (2024), Brain Stimulation 17(3):510–524,</tspan>
+    <tspan x="54" dy="14">DOI 10.1016/j.brs.2024.04.016.  Falsifier: independent replication in a larger cohort; a sensory fraction</tspan>
+    <tspan x="54" dy="14">outside ~65–82 % refutes.  The circulated “~80 % afferent” is a RAT ABDOMINAL measurement</tspan>
+    <tspan x="54" dy="14">[NA04-09] — a number quoted outside its scope is a defect even when the number is right.</tspan>
+  </text>
+
+  <!-- ============================ FIG 4 ============================ -->
+  <text class="figlab" x="716" y="1012">FIG. 4 — THE BLANKET, QUANTIFIED: THE HUMAN VISUAL FUNNEL</text>
+
+  <text class="formg" x="716" y="1032">
+    <tspan x="716" dy="0">Not a window: a lossy, unevenly weighted, individually variable compression</tspan>
+    <tspan x="716" dy="14">stage — and it is the entire visual world's only door.</tspan>
+  </text>
+
+  <polygon points="760,1072 1000,1112 1000,1128 760,1168" fill="url(#pl01-stipple)" stroke="var(--pl-ink)" stroke-width="1.4"/>
+  <text class="micro" x="748" y="1120" text-anchor="middle" transform="rotate(-90 748 1120)">TRANSDUCING FACE</text>
+  <rect class="paper" x="770" y="1112" width="168" height="16"/>
+  <text class="note" x="776" y="1124">92 × 10⁶ rods · 4.6 × 10⁶ cones</text>
+
+  <line x1="1006" y1="1120" x2="1046" y2="1120" stroke="var(--pl-accent)" stroke-width="2.2" marker-end="url(#pl01-tip-fine)"/>
+  <text class="gloss" x="1058" y="1112">N_optic</text>
+  <text class="note" x="1058" y="1126">1,159,000 ± 196,000 axons</text>
+
+  <text class="gloss" x="1268" y="1094" text-anchor="middle">r_retina (dimensionless)</text>
+  <text x="1268" y="1130" text-anchor="middle" style="font-size:24px;">≈ 83 : 1</text>
+  <text class="micro" x="1268" y="1152" text-anchor="middle">MODELED [NA04-08]</text>
+
+  <line class="rule-f" x1="716" y1="1180" x2="1346" y2="1180"/>
+  <text class="micro" x="716" y="1196">SYMBOL</text>
+  <text class="micro" x="830" y="1196">VALUE + UNITS (range)</text>
+  <text class="micro" x="1160" y="1196">CLASS</text>
+  <text class="micro" x="1292" y="1196">ROW</text>
+  <line class="rule-f" x1="716" y1="1204" x2="1346" y2="1204"/>
+
+  <text class="note" x="716" y="1222">N_rod</text>
+  <text class="note" x="830" y="1222">92 × 10⁶ cells (77.9–107.3 × 10⁶)</text>
+  <text class="micro" x="1160" y="1222">OBSERVED-REPLICATED</text>
+  <text class="micro" x="1292" y="1222">NA04-04</text>
+
+  <text class="note" x="716" y="1241">N_cone</text>
+  <text class="note" x="830" y="1241">4.6 × 10⁶ cells (4.08–5.29 × 10⁶)</text>
+  <text class="micro" x="1160" y="1241">OBSERVED-REPLICATED</text>
+  <text class="micro" x="1292" y="1241">NA04-05</text>
+
+  <text class="note" x="716" y="1260">D_cone,fovea</text>
+  <text class="note" x="830" y="1260">199,000 cones/mm² (100,000–324,000)</text>
+  <text class="micro" x="1160" y="1260">OBSERVED-REPLICATED</text>
+  <text class="micro" x="1292" y="1260">NA04-06</text>
+
+  <text class="note" x="716" y="1279">N_optic</text>
+  <text class="note" x="830" y="1279">1,159,000 ± 196,000 axons (816,000–1,502,000)</text>
+  <text class="micro" x="1160" y="1279">OBSERVED-REPLICATED</text>
+  <text class="micro" x="1292" y="1279">NA04-07</text>
+
+  <text class="note" x="716" y="1298">r_retina</text>
+  <text class="note" x="830" y="1298">≈ 83 : 1 dimensionless</text>
+  <text class="micro" x="1160" y="1298">MODELED</text>
+  <text class="micro" x="1292" y="1298">NA04-08</text>
+  <line class="rule-f" x1="716" y1="1308" x2="1346" y2="1308"/>
+
+  <text class="note" x="716" y="1322">
+    <tspan x="716" dy="0">Scope — N_rod, N_cone, D_cone,fovea: human retina; 8 wholemounts, 7 donors, ages 27–44. Curcio, Sloan,</tspan>
+    <tspan x="716" dy="14">Kalina &amp; Hendrickson (1990), J Comp Neurol 292:497–523, DOI 10.1002/cne.902920402.  N_optic: human</tspan>
+    <tspan x="716" dy="14">optic nerve; 22 nerves, 19 subjects, ages 20–75. Jonas, Müller-Bergh, Schlötzer-Schrehardt &amp; Naumann</tspan>
+    <tspan x="716" dy="14">(1990), Invest Ophthalmol Vis Sci 31(4):736–744.  Falsifier for all four: recount in a comparable cohort;</tspan>
+    <tspan x="716" dy="14">a mean outside the stated range refutes.</tspan>
+    <tspan x="716" dy="20">r_retina IS MODELED, NOT MEASURED [NA04-08]. The assumptions are the fence: (N_rod + N_cone)/N_optic,</tspan>
+    <tspan x="716" dy="14">computed across DIFFERENT COHORTS, UNPAIRED, with no per-eye matching, and ignoring non-uniform</tspan>
+    <tspan x="716" dy="14">convergence (foveal ≈ 1 : 1 vs peripheral ≫ 100 : 1). Falsifier: measure both counts in the same eyes;</tspan>
+    <tspan x="716" dy="14">a paired ratio outside ~50–150 : 1 refutes this estimate.</tspan>
+  </text>
+
+  <line class="rule" x1="54" y1="1464" x2="1346" y2="1464"/>
+
+  <!-- ============================ KEY ============================ -->
+  <text class="figlab" x="54" y="1492">KEY</text>
+
+  <text class="micro" x="54" y="1516">THE FOUR SETS AND THE BLANKET</text>
+  <text class="micro" x="500" y="1516">MARKS</text>
+  <text class="micro" x="920" y="1516">EVIDENCE CLASSES USED HERE — NATURA, NOT THE UNI FENCE</text>
+
+  <text class="note" x="54" y="1540">
+    <tspan x="54" dy="0"><tspan class="em">μ</tspan>     internal states — MIND. Never touches η; only ever its own blanket.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">s</tspan>     sensory states — the world's only route in.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">a</tspan>     active states — the mind's only route out.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">η</tspan>     external states — WORLD. Reached exactly never; only inferred.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">b</tspan>     the blanket, b = {s, a} — BODY. The only route between μ and η.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">μ ↔ b</tspan>  MIND.BODY — not a fifth set: the coupling; a pair of one-way doors.</tspan>
+    <tspan x="54" dy="15.5"><tspan class="em">z</tspan>     the system's states, partitioned into the four disjoint subsets above;</tspan>
+    <tspan x="54" dy="14">     μ̇ and η̇ are their rates of change.</tspan>
+  </text>
+
+  <line x1="500" y1="1542" x2="566" y2="1542" stroke="var(--pl-accent)" stroke-width="2.6" marker-end="url(#pl01-tip-fine)"/>
+  <text class="note" x="578" y="1546">sensory route ①: η → s → μ (solid, filled tip).</text>
+
+  <line x1="500" y1="1568" x2="564" y2="1568" stroke="var(--pl-accent)" stroke-width="2.6" stroke-dasharray="9 5" marker-end="url(#pl01-tip-open)"/>
+  <text class="note" x="578" y="1572">active route ②: μ → a → η (dashed, open tip).</text>
+
+  <path class="route-x" d="M 500 1600 C 516 1588 550 1588 566 1600"/>
+  <line class="xmark" x1="526" y1="1585" x2="540" y2="1599" stroke-width="2.4"/>
+  <line class="xmark" x1="540" y1="1585" x2="526" y2="1599" stroke-width="2.4"/>
+  <text class="note" x="578" y="1592">the forbidden route ④: ∂μ̇/∂η = 0, ∂η̇/∂μ = 0.</text>
+  <text class="note" x="578" y="1606">An actual route here means I(μ;η|b) &gt; 0 — the</text>
+  <text class="note" x="578" y="1620">partition is drawn in the wrong place.</text>
+
+  <rect x="500" y="1636" width="15" height="15" fill="url(#pl01-stipple)" stroke="var(--pl-ink)" stroke-width="0.9"/>
+  <rect x="519" y="1636" width="15" height="15" fill="url(#pl01-hatch)" stroke="var(--pl-ink)" stroke-width="0.9"/>
+  <rect x="538" y="1636" width="15" height="15" fill="var(--pl-wash)" stroke="var(--pl-ink)" stroke-width="2.2"/>
+  <rect x="557" y="1636" width="15" height="15" fill="none" stroke="var(--pl-ink)" stroke-width="0.9"/>
+  <text class="note" x="578" y="1648">stipple = η · hatch = b · wash + heavy ring = s, a · blank = μ.</text>
+
+  <text class="note" x="920" y="1540">
+    <tspan x="920" dy="0">OBSERVED-REPLICATED — measured, and independently replicated</tspan>
+    <tspan x="920" dy="14">     across labs, datasets or taxa.</tspan>
+    <tspan x="920" dy="16">OBSERVED-CONTESTED — measured, but the community genuinely</tspan>
+    <tspan x="920" dy="14">     disputes the value or the mechanism. Both positions carried.</tspan>
+    <tspan x="920" dy="16">MODELED — derived from a model that fits data. The model's</tspan>
+    <tspan x="920" dy="14">     assumptions ARE the fence.</tspan>
+    <tspan x="920" dy="16">HYPOTHESIZED — mechanism proposed, not settled. Not claimed.</tspan>
+    <tspan x="920" dy="16">NOT-MEASURED — the honest empty face: nobody has measured it.</tspan>
+    <tspan x="920" dy="14">     Printed rather than filled.</tspan>
+  </text>
+
+  <line class="rule" x1="54" y1="1682" x2="1346" y2="1682"/>
+
+  <!-- ============================ CAPTION ============================ -->
+  <text class="figlab" x="54" y="1710">PLATE PL-01 — CAPTION</text>
+
+  <text class="cap" x="54" y="1732">
+    <tspan x="54" dy="0"><tspan class="lead">1.  THE PARTITION — FIG. 1.</tspan> A system's states z partition into four disjoint subsets: internal μ (MIND),</tspan>
+    <tspan x="54" dy="14">     sensory s, active a, external η (WORLD). The blanket is b = {s, a} — BODY. MIND.BODY ③ is not a fifth</tspan>
+    <tspan x="54" dy="14">     set: it is the coupling μ ↔ b, a pair of one-way doors. Nothing in the definition fixes a scale.</tspan>
+
+    <tspan x="54" dy="17"><tspan class="lead">2.  THE DEFINING CONDITION — FIG. 2.</tspan> Given the blanket, internal and external states carry no further</tspan>
+    <tspan x="54" dy="14">     information about each other; every dependency between mind and world is routed through the body.</tspan>
+    <tspan x="54" dy="14">     Not mostly, not usually — by definition, or the partition is not a blanket. The term is Pearl's (1988),</tspan>
+    <tspan x="54" dy="14">     coined for efficient inference over a graph already drawn. The free-energy literature adds a directional</tspan>
+    <tspan x="54" dy="14">     sparsity requirement on top ④: ∂μ̇/∂η = 0 and ∂η̇/∂μ = 0, which for linear Gaussian systems reduces to</tspan>
+    <tspan x="54" dy="14">     the vanishing of the internal–external blocks of the precision matrix, H_μη = H_ημ = 0, in precision</tspan>
+    <tspan x="54" dy="14">     units [NA04-03, MODELED]. Friston (2013), J R Soc Interface 10(86):20130475, DOI</tspan>
+    <tspan x="54" dy="14">     10.1098/rsif.2013.0475; Friston (2019), arXiv:1906.10184.</tspan>
+
+    <tspan x="54" dy="17"><tspan class="lead">3.  THE TWO ROUTES ① ②.</tspan> A mind can never touch the world; it can only ever touch its own blanket.</tspan>
+    <tspan x="54" dy="14">     Every inference is an inference from sensory states; every act is a perturbation of active states. The</tspan>
+    <tspan x="54" dy="14">     generative model is not a model of η — it is a model of how η is expected to show up in b. The world</tspan>
+    <tspan x="54" dy="14">     enters as a hypothesis that explains the blanket. Embodiment is therefore not decoration: the blanket</tspan>
+    <tspan x="54" dy="14">     determines what is inferable at all.</tspan>
+
+    <tspan x="54" dy="17"><tspan class="lead">4.  ACTION AS INFERENCE ②.</tspan> Prediction error is resolvable two ways: change μ (update the model to fit</tspan>
+    <tspan x="54" dy="14">     the world) or change a (change the world until it fits the model). Both minimize the same quantity —</tspan>
+    <tspan x="54" dy="14">     action is inference run through the other half of the blanket. A cold mammal can revise its prediction of</tspan>
+    <tspan x="54" dy="14">     its own temperature, or it can shiver; only one is survivable, and the preference C over sensory states</tspan>
+    <tspan x="54" dy="14">     breaks the tie — which is why the free-energy story needs preferences and cannot be pure inference.</tspan>
+    <tspan x="54" dy="14">     That descending motor signals are proprioceptive predictions rather than commands is HYPOTHESIZED</tspan>
+    <tspan x="54" dy="14">     [NA04-14] — mechanism proposed, not settled. Adams, Shipp &amp; Friston (2013), Brain Struct Funct</tspan>
+    <tspan x="54" dy="14">     218:611–643, DOI 10.1007/s00429-012-0475-5.</tspan>
+
+    <tspan x="54" dy="17"><tspan class="lead">5.  THE OPERABLE TEST.</tspan> A candidate boundary b around a candidate interior μ is a real blanket exactly</tspan>
+    <tspan x="54" dy="14">     when I(μ;η|b) = 0 nats, estimated over the system's actual trajectories. I &gt; 0 beyond estimator noise</tspan>
+    <tspan x="54" dy="14">     means a route runs from world to mind bypassing the body ④, and the partition is drawn in the wrong</tspan>
+    <tspan x="54" dy="14">     place. THE CRITERION IS CLEAN AND OVERWHELMINGLY UNEXERCISED: NOT-MEASURED for essentially</tspan>
+    <tspan x="54" dy="14">     all real biological systems [NA04-02]. When a paper — or this corpus — says “system X has a Markov</tspan>
+    <tspan x="54" dy="14">     blanket,” the default assumption should be that I(μ;η|b) was never estimated.</tspan>
+  </text>
+
+  <text class="cap" x="710" y="1732">
+    <tspan x="710" dy="0"><tspan class="lead">6.  ANCHOR — M12.</tspan> This plate extends kitchen rule M12, WORLD ⊥ BODY ⊥ MIND — “Two typed Markov</tspan>
+    <tspan x="710" dy="14">     blankets; interoception = hardware signals” (cookbook/01-kitchen-rules.md). M12 is status: method — a</tspan>
+    <tspan x="710" dy="14">     governance pattern, not a capability claim and not an observation about nature. This plate supplies the</tspan>
+    <tspan x="710" dy="14">     natural-science reading of the same partition and RAISES NOTHING: M12's status is unchanged by every</tspan>
+    <tspan x="710" dy="14">     citation on it. The operator's fourth term, MIND.BODY, is the one M12 leaves implicit ③.</tspan>
+
+    <tspan x="710" dy="17"><tspan class="lead">7.  WHAT THIS PLATE DOES NOT CLAIM.</tspan></tspan>
+    <tspan x="710" dy="15">     (a) Not claimed: that a Markov blanket implies a self, an experiencer, awareness, sentience, consciousness,</tspan>
+    <tspan x="710" dy="14">          or a point of view. EXPLICITLY DISCLAIMED — nothing in the partition names one, and no falsifier is offered</tspan>
+    <tspan x="710" dy="14">          because none exists. Receipt: the same formalism admits partitions for Newton's cradle, a burning fuse and</tspan>
+    <tspan x="710" dy="14">          the Lorenz attractor — Beck &amp; Ramstead (2025), arXiv:2502.21217, ran blanket detection on exactly those.</tspan>
+    <tspan x="710" dy="14">          If a blanket implied a self, it would imply one for the burning fuse. Recorded INADMISSIBLE; never mocked.</tspan>
+    <tspan x="710" dy="15">     (b) Not claimed: that the free-energy principle is true, that blankets are universal, or that living systems</tspan>
+    <tspan x="710" dy="14">          generally satisfy the blanket conditions — the exact analysis says those conditions are narrow (margin).</tspan>
+    <tspan x="710" dy="15">     (c) Not claimed: that UNI has a Markov blanket in the Friston sense. M12 is a typed engineering partition,</tspan>
+    <tspan x="710" dy="14">          status: method — warranted by explicitness, never by discovery. No I(μ;η|b) estimated for any UNI boundary.</tspan>
+    <tspan x="710" dy="15">     (d) Not claimed: that the nesting ladder has a known depth [NA04-13], that r_retina is a measured quantity</tspan>
+    <tspan x="710" dy="14">          [NA04-08], or that the vagal afferent fraction is settled [NA04-09, NA04-10].</tspan>
+    <tspan x="710" dy="15">     (e) Not claimed: that anything on this plate raises any UNI rung. A NATURE CITATION IS NEVER A UNI GATE.</tspan>
+    <tspan x="710" dy="14">          Every source is published science; the honest position stands at ~2 of 11+ developmental rungs earned.</tspan>
+    <tspan x="710" dy="15">     (f) Not a target: “full human” and “the next evolution beyond human” are QUAESTIO APERTA — permanent open</tspan>
+    <tspan x="710" dy="14">          questions, never a milestone, never a deliverable. Nothing in the blanket formalism moves them closer.</tspan>
+    <tspan x="710" dy="15">     (g) This plate is DESIGN-ONLY: it carries no script, no event handler, and no external reference.</tspan>
+
+    <tspan x="710" dy="17"><tspan class="lead">8.  SOURCE.</tspan> encyclopedia/wing-NATURA/NA-04-mind-body-world.md; rows NA04-01 … NA04-14 of encyclopedia/</tspan>
+    <tspan x="710" dy="14">     NATURE-LEDGER.md. Classes per NA-00 (twelve classes in three groups, amended 2026-07-15). Every number</tspan>
+    <tspan x="710" dy="14">     carries value + units + scope + class + source + falsifier, or is printed NOT-MEASURED. Where this plate and</tspan>
+    <tspan x="710" dy="14">     the ledger disagree, THE LEDGER WINS.</tspan>
+  </text>
+
+</svg>

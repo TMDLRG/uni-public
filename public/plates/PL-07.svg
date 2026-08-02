@@ -1,0 +1,820 @@
+<svg class="pl07" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3320" width="100%" role="img" aria-labelledby="pl07-title pl07-desc" preserveAspectRatio="xMidYMid meet">
+<title id="pl07-title">Plate PL-07 &#8212; The bat: active inference you can measure</title>
+<desc id="pl07-desc">An engraved-style encyclopedia plate on bat echolocation, drawn from chapter CN-10. Panel I draws the sonar loop as one turn of a cycle: emit, echo returned after 2R over c, belief update, call adaptation. The arrow from echo to belief update is marked with a double arrow and annotated as the epistemic term, with the type distinction printed: the arrow carries the realized Kullback-Leibler update in nats after the echo arrives, while the epistemic term of expected free energy is that update's expectation under q of o given pi, taken at the emit node before emitting. Panel II draws range as delay, 2R equals ct, at 5.83 milliseconds per metre on a logarithmic range ruler. Panel III draws the call-duration collapse across search, approach and terminal buzz, 15 to 20 milliseconds down to 0.5 to 1 millisecond, with the overlap-free floor R at least c tau over 2 collapsing with it. Panel IV draws the terminal buzz rate rise to beyond 160 calls per second and records as a refuted negative the tidy pulse-echo-overlap explanation that predicts 1.07 metres; laryngeal motor performance binds first. Panel V draws Doppler-shift compensation to scale on a frequency axis: an 83.0 kilohertz emission returns at 85.4 kilohertz when closing at 5 metres per second, roughly 1 kilohertz clear of the auditory fovea's 84.5 kilohertz upper edge, and the bat lowers its emission by about 2.4 kilohertz to 80.6 kilohertz to land the echo back on the reference frequency; this is annotated as an ambiguity-minimising action, not the epistemic term and not policy precision gamma. Panel VI draws the price of the epistemic term as a knee at about 130 decibels sound pressure level at 0.1 metre, with no y axis, because the corpus carries no cost value. Panel VII carries the figure key, a numbered caption, and what the plate does not claim. Every number carries units, a ledger row and an evidence class. Zero UNI claims.</desc>
+<style>
+.pl07{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+@media (prefers-color-scheme:dark){
+  .pl07{
+    --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+    --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+  }
+}
+:root[data-theme="dark"] .pl07{
+  --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+  --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+}
+:root[data-theme="light"] .pl07{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+.pl07 text{font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",Times,serif;
+  fill:var(--ink,#1b1a17);}
+.pl07 .t{fill:var(--ink,#1b1a17);}
+.pl07 .tf{fill:var(--faint,#a49b8f);}
+.pl07 .tr{fill:var(--rule,#5a544b);}
+.pl07 .hd{fill:var(--ink,#1b1a17);font-weight:700;}
+.pl07 .hd2{fill:var(--rule,#5a544b);font-style:italic;}
+.pl07 .ct{fill:var(--contest,#8c2f1d);}
+.pl07 .fn{fill:var(--fence,#3c5670);}
+.pl07 .mono{font-family:"Courier New",Courier,monospace;}
+.pl07 .frame{fill:none;stroke:var(--rule,#5a544b);stroke-width:1;}
+.pl07 .rule{stroke:var(--rule,#5a544b);stroke-width:.7;fill:none;}
+.pl07 .ink{stroke:var(--ink,#1b1a17);stroke-width:1;fill:none;}
+.pl07 .thin{stroke:var(--ink,#1b1a17);stroke-width:.55;fill:none;}
+.pl07 .faint{stroke:var(--faint,#a49b8f);stroke-width:.55;fill:none;}
+.pl07 .dim{stroke:var(--rule,#5a544b);stroke-width:.8;fill:none;}
+.pl07 .dash{stroke:var(--faint,#a49b8f);stroke-width:.7;fill:none;stroke-dasharray:5 4;}
+.pl07 .ctline{stroke:var(--contest,#8c2f1d);stroke-width:1.1;fill:none;stroke-dasharray:7 4;}
+.pl07 .fnline{stroke:var(--fence,#3c5670);stroke-width:1;fill:none;stroke-dasharray:1.6 3.2;}
+.pl07 .epi{stroke:var(--ink,#1b1a17);stroke-width:2.6;fill:none;stroke-linecap:butt;}
+.pl07 .dot{fill:var(--ink,#1b1a17);stroke:none;}
+.pl07 .dotf{fill:var(--faint,#a49b8f);stroke:none;}
+.pl07 .dotc{fill:var(--contest,#8c2f1d);stroke:none;}
+.pl07 .case{stroke:var(--bg,#f6f2e9);stroke-width:5.5;fill:none;stroke-linecap:round;}
+.pl07 .onband{paint-order:stroke;stroke:var(--bg,#f6f2e9);stroke-width:3.2;stroke-linejoin:round;}
+.pl07 .bgfill{fill:var(--bg,#f6f2e9);stroke:none;}
+.pl07 .panelfill{fill:var(--panel,#efe9dc);stroke:none;}
+</style>
+<defs>
+<marker id="pl07-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--ink,#1b1a17)"/></marker>
+<marker id="pl07-arwE" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="6.2" markerHeight="6.2" orient="auto-start-reverse"><path d="M0 0.4 L9 5 L0 9.6 z" fill="var(--ink,#1b1a17)"/></marker>
+<marker id="pl07-arwf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--faint,#a49b8f)"/></marker>
+<marker id="pl07-arwc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--contest,#8c2f1d)"/></marker>
+<marker id="pl07-arwn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--rule,#5a544b)"/></marker>
+<pattern id="pl07-h-a" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl07-h-b" width="5.5" height="5.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5.5" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl07-h-c" width="3.2" height="3.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.2" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl07-blind" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--hatch,#8a8278)" stroke-width="0.5" opacity=".8"/></pattern>
+<pattern id="pl07-stip" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.75" fill="var(--hatch,#8a8278)"/><circle cx="4.5" cy="4.5" r="0.75" fill="var(--hatch,#8a8278)"/></pattern>
+<pattern id="pl07-void" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--fence,#3c5670)" stroke-width=".45" opacity=".5"/></pattern>
+<pattern id="pl07-ghost" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--contest,#8c2f1d)" stroke-width=".5" opacity=".55"/></pattern>
+</defs>
+<rect class="bgfill" x="0" y="0" width="1440" height="3320" />
+<rect class="frame" x="24" y="24" width="1392" height="3272" stroke-width="1.6"/>
+<rect class="frame" x="31" y="31" width="1378" height="3258" stroke-width="0.6"/>
+<text class="tr" x="60" y="66" font-size="11" letter-spacing="2.6">UNI ENCYCLOPEDIA &amp; COOKBOOK · NATURA WING</text>
+<text class="hd" x="60" y="108" font-size="30" letter-spacing="3">PLATE PL-07</text>
+<text class="t" x="322" y="108" font-size="21" letter-spacing="1.2">THE BAT — ACTIVE INFERENCE YOU CAN MEASURE</text>
+<text class="tf" x="60" y="134" font-size="11">Source chapter: CN-10 (cookbook/recipes-natura/CN-10-bats.md) · rows CN10-01…CN10-53 of encyclopedia/NATURE-LEDGER.md · G(π) decomposition from NA-02 · corpus tip f1be794</text>
+<text class="tr" x="1380" y="66" font-size="11" text-anchor="end" letter-spacing="1.1">~2 of 11+ developmental rungs earned</text>
+<text class="hd" x="1380" y="84" font-size="11" text-anchor="end" letter-spacing="1.6">ZERO UNI CLAIMS ON THIS PLATE</text>
+<text class="tf" x="1380" y="101" font-size="10.5" text-anchor="end">A nature citation is never a UNI gate.</text>
+<line class="rule" x1="60" y1="150" x2="1380" y2="150" stroke-width="1.2" />
+<rect class="frame" x="60" y="175" width="850" height="905" />
+<line class="rule" x1="60" y1="209" x2="910" y2="209" stroke-width="1.1" />
+<text class="hd" x="74" y="199" font-size="15" letter-spacing="1.4">I</text>
+<text class="hd2" x="99" y="199" font-size="13" letter-spacing="1.1">THE SONAR LOOP — one turn, four arrows, and the one that is the epistemic term</text>
+<rect class="frame" x="92" y="250" width="246" height="162" stroke-width="1.2"/>
+<text class="hd" x="104" y="272" font-size="12.5" letter-spacing="0.8">①  EMIT</text>
+<text class="hd2" x="104" y="288" font-size="9.5">the action that costs</text>
+<line class="faint" x1="104" y1="296" x2="326" y2="296" />
+<text class="t" x="104" y="312" font-size="9.5">SL_open = ~130 dB SPL, up to and beyond</text>
+<text class="t" x="104" y="325.5" font-size="9.5">140 — re 20 µPa @ 0.1 m, on-axis</text>
+<text class="tf" x="326" y="325.5" font-size="8.5" text-anchor="end">— CN10-33</text>
+<text class="t" x="104" y="339" font-size="9.5">p @ 140 dB = 200 Pa ≈ 0.2% of 1 atm</text>
+<text class="tf" x="326" y="339" font-size="8.5" text-anchor="end">△ CN10-35</text>
+<text class="t" x="104" y="366" font-size="9.5">The echo does not feed, warm or move</text>
+<text class="t" x="104" y="379.5" font-size="9.5">the bat. The call buys INFORMATION</text>
+<text class="t" x="104" y="393" font-size="9.5">AND NOTHING ELSE. Its price: Panel VI.</text>
+<rect class="frame" x="632" y="250" width="246" height="162" stroke-width="1.2"/>
+<text class="hd" x="644" y="272" font-size="12.5" letter-spacing="0.8">②  ECHO RETURNS</text>
+<text class="hd2" x="644" y="288" font-size="9.5">the observation, delayed</text>
+<line class="faint" x1="644" y1="296" x2="866" y2="296" />
+<text class="t" x="644" y="312" font-size="9.5">2R = ct     ⇒     t = 2R/c</text>
+<text class="t" x="644" y="325.5" font-size="9.5">t(R) = 5.83 ms per metre of range</text>
+<text class="tf" x="866" y="325.5" font-size="8.5" text-anchor="end">△ CN10-14</text>
+<text class="t" x="644" y="339" font-size="9.5">c ≈ 343 m/s — air, 20 °C, 1 atm</text>
+<text class="tf" x="866" y="339" font-size="8.5" text-anchor="end">— CN10-01</text>
+<text class="t" x="644" y="366" font-size="9.5">Range is never sensed. It is INFERRED</text>
+<text class="t" x="644" y="379.5" font-size="9.5">FROM A DELAY — the echo is the only</text>
+<text class="t" x="644" y="393" font-size="9.5">evidence there is. Panel II.</text>
+<rect class="frame" x="632" y="700" width="246" height="162" stroke-width="1.2"/>
+<text class="hd" x="644" y="722" font-size="12.5" letter-spacing="0.8">③  BELIEF UPDATE</text>
+<text class="hd2" x="644" y="738" font-size="9.5">q(s) moves</text>
+<line class="faint" x1="644" y1="746" x2="866" y2="746" />
+<text class="t" x="644" y="762" font-size="9.5">D_KL[ q(s|o,π) ‖ q(s|π) ]   nats</text>
+<text class="t" x="644" y="775.5" font-size="9.5">= the SIZE of the update, once the</text>
+<text class="t" x="644" y="789" font-size="9.5">echo has actually arrived.</text>
+<text class="t" x="644" y="816" font-size="9.5">○ NOT-MEASURED — biological systems</text>
+<text class="t" x="644" y="829.5" font-size="9.5">observed to explicitly compute G(π):</text>
+<text class="t" x="644" y="843" font-size="9.5">none, any taxon. NA-02.</text>
+<rect class="frame" x="92" y="700" width="246" height="162" stroke-width="1.2"/>
+<text class="hd" x="104" y="722" font-size="12.5" letter-spacing="0.8">④  CALL ADAPTATION</text>
+<text class="hd2" x="104" y="738" font-size="9.5">the next policy π</text>
+<line class="faint" x1="104" y1="746" x2="326" y2="746" />
+<text class="t" x="104" y="762" font-size="9.5">τ    15–20 → 2–5 → 0.5–1 ms</text>
+<text class="tf" x="326" y="762" font-size="8.5" text-anchor="end">— CN10-15/16/17</text>
+<text class="t" x="104" y="775.5" font-size="9.5">rate         → &gt;160 calls/s</text>
+<text class="tf" x="326" y="775.5" font-size="8.5" text-anchor="end">— CN10-19</text>
+<text class="t" x="104" y="789" font-size="9.5">f_e            lowered ~2.4 kHz</text>
+<text class="tf" x="326" y="789" font-size="8.5" text-anchor="end">△ CN10-28</text>
+<text class="t" x="104" y="802.5" font-size="9.5">gain    −6 dB per halving of range</text>
+<text class="tf" x="326" y="802.5" font-size="8.5" text-anchor="end">— CN10-40</text>
+<text class="t" x="104" y="829.5" font-size="9.5">Not fixed traits. STATE-DEPENDENT</text>
+<text class="t" x="104" y="843" font-size="9.5">ACTIONS. Panels III, IV, V.</text>
+<line class="ink" x1="338" y1="331" x2="632" y2="331" stroke-width="1.4" marker-end="url(#pl07-arw)"/>
+<text class="tf" x="485" y="322" font-size="9" text-anchor="middle">the call, into air — c ≈ 343 m/s</text>
+<text class="tr" x="485" y="349" font-size="9" text-anchor="middle" letter-spacing="2">ACTION</text>
+<line class="epi" x1="755" y1="412" x2="755" y2="700" marker-end="url(#pl07-arwE)"/>
+<text class="hd" x="738" y="556" font-size="12" text-anchor="middle" letter-spacing="0.6" transform="rotate(90 738 556)">⟹   THE EPISTEMIC ARROW</text>
+<text class="tf" x="774" y="556" font-size="9" text-anchor="middle" transform="rotate(90 774 556)">realized:  D_KL[ q(s|o,π) ‖ q(s|π) ]</text>
+<line class="ink" x1="632" y1="781" x2="338" y2="781" stroke-width="1.4" marker-end="url(#pl07-arw)"/>
+<text class="tf" x="485" y="772" font-size="9" text-anchor="middle">the update selects the next policy π</text>
+<text class="tr" x="485" y="799" font-size="9" text-anchor="middle" letter-spacing="2">INFERENCE</text>
+<line class="ink" x1="215" y1="700" x2="215" y2="412" stroke-width="1.4" marker-end="url(#pl07-arw)"/>
+<text class="tf" x="199" y="556" font-size="9" text-anchor="middle" transform="rotate(-90 199 556)">the emission itself changes</text>
+<text class="tr" x="232" y="556" font-size="9" text-anchor="middle" letter-spacing="2" transform="rotate(-90 232 556)">ACTION</text>
+<rect class="panelfill" x="338" y="412" width="294" height="288" />
+<rect class="frame" x="338" y="412" width="294" height="288" stroke-width="1.2"/>
+<text class="hd" x="485" y="436" font-size="13" text-anchor="middle" letter-spacing="0.8">⟹   WHICH ARROW</text>
+<text class="hd" x="485" y="452" font-size="13" text-anchor="middle" letter-spacing="0.8">IS THE EPISTEMIC TERM</text>
+<line class="rule" x1="354" y1="464" x2="616" y2="464" />
+<text class="hd2" x="354" y="483" font-size="9.5">TYPE IT EXACTLY — the obvious</text>
+<text class="hd2" x="354" y="496" font-size="9.5">phrasing is a category error.</text>
+<text class="t" x="354" y="514" font-size="9.5">The ⟹ arrow carries the REALIZED</text>
+<text class="t" x="354" y="527" font-size="9.5">update, in nats, AFTER the echo has</text>
+<text class="t" x="354" y="540" font-size="9.5">arrived. It reports an outcome.</text>
+<text class="t" x="354" y="567" font-size="9.5">The EPISTEMIC TERM is that update's</text>
+<text class="t" x="354" y="580" font-size="9.5">EXPECTATION under q(o|π), taken at</text>
+<text class="t" x="354" y="593" font-size="9.5">① — BEFORE emitting. It scores a</text>
+<text class="t" x="354" y="606" font-size="9.5">policy, over echoes not yet heard.</text>
+<text class="hd2" x="354" y="633" font-size="9.5">Both are the same KL. One is drawn;</text>
+<text class="hd2" x="354" y="646" font-size="9.5">the other is the reason to emit.</text>
+<text class="fn" x="354" y="672" font-size="9">SIGNUM SIGNUM MANET — the signal and</text>
+<text class="fn" x="354" y="685" font-size="9">the commentary travel separately.</text>
+<rect class="frame" x="92" y="878" width="786" height="196" stroke-width="0.6"/>
+<text class="hd2" x="104" y="898" font-size="11">THE DECOMPOSITION — NA-02 · △ MODELED; the assumption is the convention q(o,s|π) = p(o|s) q(s|π)</text>
+<line class="faint" x1="104" y1="906" x2="866" y2="906" />
+<text class="t mono" x="110" y="930" font-size="11.5">G(π) =</text>
+<text class="t mono" x="190" y="930" font-size="11.5" textLength="158.2" lengthAdjust="spacing">D_KL[ q(o|π) ‖ p(o|C) ]</text>
+<text class="t mono" x="368" y="930" font-size="11.5">+</text>
+<text class="t mono" x="392" y="930" font-size="11.5" textLength="158.7" lengthAdjust="spacing">E_q(s|π)[ H[ p(o|s) ] ]</text>
+<path class="rule" d="M 190 938 L 190 942 L 264.1 942 L 269.1 946 L 274.1 942 L 348.2 942" stroke-width="0.8" />
+<path class="rule" d="M 348.2 942 L 348.2 938" stroke-width="0.8" />
+<text class="tr" x="269.1" y="958" font-size="9" text-anchor="middle" letter-spacing="0.4">risk</text>
+<path class="rule" d="M 392 938 L 392 942 L 466.35 942 L 471.35 946 L 476.35 942 L 550.7 942" stroke-width="0.8" />
+<path class="rule" d="M 550.7 942 L 550.7 938" stroke-width="0.8" />
+<text class="tr" x="471.35" y="958" font-size="9" text-anchor="middle" letter-spacing="0.4">ambiguity</text>
+<text class="t mono" x="110" y="986" font-size="11.5">G(π) =</text>
+<text class="t mono" x="190" y="986" font-size="11.5" textLength="261.7" lengthAdjust="spacing">−E_q(o|π)[ D_KL[ q(s|o,π) ‖ q(s|π) ] ]</text>
+<text class="t mono" x="472" y="986" font-size="11.5">−</text>
+<text class="t mono" x="496" y="986" font-size="11.5" textLength="144.9" lengthAdjust="spacing">E_q(o|π)[ ln p(o|C) ]</text>
+<path class="ink" d="M 190 994 L 190 998 L 315.85 998 L 320.85 1002 L 325.85 998 L 451.7 998" stroke-width="1.5" />
+<path class="ink" d="M 451.7 998 L 451.7 994" stroke-width="1.5" />
+<text class="hd" x="320.85" y="1014" font-size="9.5" text-anchor="middle" letter-spacing="0.4">EPISTEMIC VALUE ⟹ (info gain)</text>
+<path class="rule" d="M 496 994 L 496 998 L 563.45 998 L 568.45 1002 L 573.45 998 L 640.9 998" stroke-width="0.8" />
+<path class="rule" d="M 640.9 998 L 640.9 994" stroke-width="0.8" />
+<text class="tr" x="568.45" y="1014" font-size="9" text-anchor="middle" letter-spacing="0.4">pragmatic value</text>
+<line class="faint" x1="668" y1="918" x2="668" y2="1016" />
+<text class="hd2" x="684" y="930" font-size="9">Both lines are the SAME G(π),</text>
+<text class="hd2" x="684" y="942" font-size="9">rearranged — not two quantities.</text>
+<text class="t" x="684" y="962" font-size="9">The risk/ambiguity form is exact</text>
+<text class="t" x="684" y="974" font-size="9">under the convention above. The</text>
+<text class="t" x="684" y="986" font-size="9">epistemic/pragmatic form FURTHER</text>
+<text class="t" x="684" y="998" font-size="9">assumes q(s|o,π) ≈ p(s|o).</text>
+<text class="t" x="684" y="1010" font-size="9">△ NA-02 — both assumptions named.</text>
+<line class="faint" x1="104" y1="1026" x2="866" y2="1026" />
+<text class="t" x="104" y="1040" font-size="9">TWO DECOMPOSITIONS OF ONE NUMBER — and the terms DO NOT map one-to-one:  ambiguity ≠ −epistemic,  risk ≠ −pragmatic.</text>
+<text class="t" x="104" y="1052" font-size="9">The ⟹ arrow is the EPISTEMIC term. Panel V's Doppler-shift compensation lowers the AMBIGUITY term — a different term of the</text>
+<text class="t" x="104" y="1064" font-size="9">same G(π). Reading either as the other, or either as precision γ, is the error CN-10 was written to refuse. See Panel VII.  ·  π = a policy, not the circle constant.</text>
+<rect class="frame" x="940" y="175" width="440" height="905" />
+<line class="rule" x1="940" y1="209" x2="1380" y2="209" stroke-width="1.1" />
+<text class="hd" x="954" y="199" font-size="15" letter-spacing="1.4">II</text>
+<text class="hd2" x="980" y="199" font-size="13" letter-spacing="1.1">RANGE IS TIME — 2R = ct</text>
+<text class="hd2" x="954" y="232" font-size="9.5">The echo carries range as DELAY. Drawn on a LOG ruler, so the</text>
+<text class="hd2" x="954" y="245" font-size="9.5">~40-fold span from the buzz floor (R_min = 0.086 m) to the search</text>
+<text class="hd2" x="954" y="258" font-size="9.5">ceiling (R_min = 3.4 m) fits one axis.  △ computed here from CN10-18.</text>
+<line class="ink" x1="1040" y1="265" x2="1040" y2="1010" stroke-width="1.2" />
+<line class="faint" x1="1036.5" y1="1000" x2="1043.5" y2="1000" />
+<line class="faint" x1="1036.5" y1="975.22" x2="1043.5" y2="975.22" />
+<line class="faint" x1="1036.5" y1="954.28" x2="1043.5" y2="954.28" />
+<line class="faint" x1="1036.5" y1="936.13" x2="1043.5" y2="936.13" />
+<line class="faint" x1="1036.5" y1="920.13" x2="1043.5" y2="920.13" />
+<line class="faint" x1="1036.5" y1="905.81" x2="1043.5" y2="905.81" />
+<line class="faint" x1="1036.5" y1="811.62" x2="1043.5" y2="811.62" />
+<line class="faint" x1="1036.5" y1="756.52" x2="1043.5" y2="756.52" />
+<line class="faint" x1="1036.5" y1="717.42" x2="1043.5" y2="717.42" />
+<line class="faint" x1="1036.5" y1="687.1" x2="1043.5" y2="687.1" />
+<line class="faint" x1="1036.5" y1="662.32" x2="1043.5" y2="662.32" />
+<line class="faint" x1="1036.5" y1="641.38" x2="1043.5" y2="641.38" />
+<line class="faint" x1="1036.5" y1="623.23" x2="1043.5" y2="623.23" />
+<line class="faint" x1="1036.5" y1="607.23" x2="1043.5" y2="607.23" />
+<line class="faint" x1="1036.5" y1="592.91" x2="1043.5" y2="592.91" />
+<line class="faint" x1="1036.5" y1="498.72" x2="1043.5" y2="498.72" />
+<line class="faint" x1="1036.5" y1="443.62" x2="1043.5" y2="443.62" />
+<line class="faint" x1="1036.5" y1="404.52" x2="1043.5" y2="404.52" />
+<line class="faint" x1="1036.5" y1="374.2" x2="1043.5" y2="374.2" />
+<line class="faint" x1="1036.5" y1="349.42" x2="1043.5" y2="349.42" />
+<line class="faint" x1="1036.5" y1="328.48" x2="1043.5" y2="328.48" />
+<line class="faint" x1="1036.5" y1="310.33" x2="1043.5" y2="310.33" />
+<line class="faint" x1="1036.5" y1="294.33" x2="1043.5" y2="294.33" />
+<line class="faint" x1="1036.5" y1="280.01" x2="1043.5" y2="280.01" />
+<line class="ink" x1="1031" y1="905.81" x2="1049" y2="905.81" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="905.81" x2="1090" y2="905.81" />
+<text class="t" x="1025" y="909.41" font-size="11.5" text-anchor="end">0.1 m</text>
+<text class="t" x="1096" y="909.41" font-size="11.5">0.58 ms</text>
+<line class="ink" x1="1031" y1="687.1" x2="1049" y2="687.1" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="687.1" x2="1090" y2="687.1" />
+<text class="t" x="1025" y="690.7" font-size="11.5" text-anchor="end">0.5 m</text>
+<text class="t" x="1096" y="690.7" font-size="11.5">2.9 ms</text>
+<line class="ink" x1="1031" y1="592.91" x2="1049" y2="592.91" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="592.91" x2="1090" y2="592.91" />
+<text class="t" x="1025" y="596.51" font-size="11.5" text-anchor="end" font-weight="700">1 m</text>
+<text class="t" x="1096" y="596.51" font-size="11.5" font-weight="700">5.8 ms</text>
+<line class="ink" x1="1031" y1="498.72" x2="1049" y2="498.72" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="498.72" x2="1090" y2="498.72" />
+<text class="t" x="1025" y="502.32" font-size="11.5" text-anchor="end">2 m</text>
+<text class="t" x="1096" y="502.32" font-size="11.5">11.7 ms</text>
+<line class="ink" x1="1031" y1="374.2" x2="1049" y2="374.2" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="374.2" x2="1090" y2="374.2" />
+<text class="t" x="1025" y="377.8" font-size="11.5" text-anchor="end" font-weight="700">5 m</text>
+<text class="t" x="1096" y="377.8" font-size="11.5" font-weight="700">29 ms</text>
+<line class="ink" x1="1031" y1="280.01" x2="1049" y2="280.01" stroke-width="1.4" />
+<line class="dash" x1="1049" y1="280.01" x2="1090" y2="280.01" />
+<text class="t" x="1025" y="283.61" font-size="11.5" text-anchor="end">10 m</text>
+<text class="t" x="1096" y="283.61" font-size="11.5">58 ms</text>
+<text class="tr" x="1025" y="1030" font-size="9.5" text-anchor="end" font-style="italic">R — target range</text>
+<text class="tr" x="1096" y="1030" font-size="9.5" font-style="italic">t — echo delay</text>
+<text class="hd" x="1180" y="300" font-size="10" letter-spacing="1.2">THE CONVERSION CONSTANT</text>
+<line class="faint" x1="1180" y1="308" x2="1366" y2="308" />
+<text class="hd" x="1180" y="336" font-size="26">5.83</text>
+<text class="t" x="1238" y="336" font-size="11">ms per metre</text>
+<text class="t" x="1238" y="350" font-size="11">of range</text>
+<text class="tf" x="1180" y="372" font-size="9">△ CN10-14 — computed from c.</text>
+<text class="t" x="1180" y="398" font-size="9.5">Everything downstream on this</text>
+<text class="t" x="1180" y="411" font-size="9.5">plate is bookkeeping against</text>
+<text class="t" x="1180" y="424" font-size="9.5">that number.</text>
+<line class="faint" x1="1180" y1="448" x2="1366" y2="448" />
+<text class="hd" x="1180" y="470" font-size="10" letter-spacing="1.2">WHY A LOG RULER</text>
+<text class="t" x="1180" y="492" font-size="9.5">t = 5.83·R exactly, so</text>
+<text class="t" x="1180" y="505" font-size="9.5">log t = log R + log 5.83.</text>
+<text class="t" x="1180" y="518" font-size="9.5">On a log ruler the DELAY scale</text>
+<text class="t" x="1180" y="531" font-size="9.5">IS the RANGE scale, rigidly</text>
+<text class="t" x="1180" y="544" font-size="9.5">shifted by 0.766 of a decade.</text>
+<text class="t" x="1180" y="557" font-size="9.5">One ruler, two readings — which</text>
+<text class="t" x="1180" y="570" font-size="9.5">is why the ticks above need no</text>
+<text class="t" x="1180" y="583" font-size="9.5">second axis.</text>
+<text class="tf" x="1180" y="610" font-size="9">△ computed on this plate.</text>
+<text class="tf" x="1180" y="623" font-size="9">Falsifier: arithmetic error.</text>
+<line class="faint" x1="1180" y1="648" x2="1366" y2="648" />
+<text class="hd" x="1180" y="670" font-size="10" letter-spacing="1.2">THE FENCE</text>
+<text class="t" x="1180" y="692" font-size="9.5">c ≈ 343 m/s — air, 20 °C, 1 atm.</text>
+<text class="t" x="1180" y="705" font-size="9.5">— CN10-01. Echolocation also</text>
+<text class="t" x="1180" y="718" font-size="9.5">happens at other temperatures</text>
+<text class="t" x="1180" y="731" font-size="9.5">and humidities.</text>
+<text class="hd2" x="1180" y="752" font-size="9.5">Change c by 5% and EVERY metre</text>
+<text class="hd2" x="1180" y="765" font-size="9.5">on this plate moves by 5%. The</text>
+<text class="hd2" x="1180" y="778" font-size="9.5">conclusions survive because</text>
+<text class="hd2" x="1180" y="791" font-size="9.5">they turn on the STRUCTURE —</text>
+<text class="hd2" x="1180" y="804" font-size="9.5">resolution trades against range,</text>
+<text class="hd2" x="1180" y="817" font-size="9.5">duration against overlap — not</text>
+<text class="hd2" x="1180" y="830" font-size="9.5">on the prefactors.</text>
+<text class="fn" x="1180" y="858" font-size="9.5" font-weight="700">THE ASSUMPTIONS ARE THE FENCE.</text>
+<line class="faint" x1="1180" y1="884" x2="1366" y2="884" />
+<text class="fn" x="1180" y="906" font-size="9">○ NOT-SOURCED: a primary</text>
+<text class="fn" x="1180" y="918.5" font-size="9">reference for c in air. CN10-01</text>
+<text class="fn" x="1180" y="931" font-size="9">carries it as standard acoustics,</text>
+<text class="fn" x="1180" y="943.5" font-size="9">and says so.</text>
+<text class="fn" x="1180" y="968" font-size="9">○ NOT-SOURCED: any bat</text>
+<text class="fn" x="1180" y="980.5" font-size="9">range-discrimination threshold.</text>
+<text class="fn" x="1180" y="993" font-size="9">The “jitter” psychophysics is</text>
+<text class="fn" x="1180" y="1005.5" font-size="9">contested and untraced here.</text>
+<text class="fn" x="1180" y="1018" font-size="9">CN10-32. No threshold is drawn</text>
+<text class="fn" x="1180" y="1030.5" font-size="9">on this ruler, and none is implied</text>
+<text class="fn" x="1180" y="1043" font-size="9">by its tick spacing.</text>
+<rect class="frame" x="60" y="1110" width="1320" height="490" />
+<line class="rule" x1="60" y1="1144" x2="1380" y2="1144" stroke-width="1.1" />
+<text class="hd" x="74" y="1134" font-size="15" letter-spacing="1.4">III</text>
+<text class="hd2" x="103" y="1134" font-size="13" letter-spacing="1.1">THE COLLAPSE — call duration is an action, and it falls ~30× across one attack</text>
+<text class="t" x="74" y="1170" font-size="10.5">A call of duration τ is not a point in time — it is c·τ METRES OF AIR. The echo from range R starts arriving 2R/c after the call STARTS; the call is still sounding until τ.</text>
+<text class="t" x="74" y="1186" font-size="10.5">Overlap-free ranging therefore requires  2R/c ≥ τ,  i.e.  R ≥ c·τ/2.   △ CN10-18 — derived in-chapter from τ (CN10-15/16/17) and c (CN10-01).  Read the floor against the phase:</text>
+<text class="tr" x="74" y="1250" font-size="9" letter-spacing="1.6">PHASE</text>
+<text class="tr" x="192" y="1250" font-size="9" letter-spacing="0.6">τ  (call duration)</text>
+<text class="tr" x="300" y="1250" font-size="9" letter-spacing="0.6">■ R_min = c·τ/2 — the overlap-free FLOOR</text>
+<text class="tr" x="760" y="1250" font-size="9" letter-spacing="0.6">□ c·τ — the call's own length in air</text>
+<text class="tr" x="1366" y="1250" font-size="9" text-anchor="end" letter-spacing="0.6">▤ = ranging NOT overlap-free here</text>
+<line class="rule" x1="74" y1="1256" x2="1366" y2="1256" />
+<text class="hd" x="74" y="1284" font-size="10.5" letter-spacing="0.5">SEARCH</text>
+<text class="tf" x="74" y="1297" font-size="8.5">— CN10-15</text>
+<text class="t" x="192" y="1284" font-size="11">15–20 ms</text>
+<rect class="" x="300" y="1268" width="775.63" height="24" fill="url(#pl07-blind)" stroke="none"/>
+<rect class="" x="300" y="1268" width="775.63" height="24" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="0.5"/>
+<rect class="" x="1075.63" y="1268" width="52.66" height="24" fill="url(#pl07-h-b)" stroke="var(--ink,#1b1a17)" stroke-width="1.3"/>
+<rect class="" x="1207.89" y="1296" width="59.34" height="11" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="1" stroke-dasharray="3 2.5"/>
+<text class="hd" x="1136.29" y="1284" font-size="9.5">R_min = 2.6–3.4 m</text>
+<text class="tf" x="1275.23" y="1305.5" font-size="8.5">c·τ = 5.1–6.9 m</text>
+<text class="hd" x="74" y="1346" font-size="10.5" letter-spacing="0.5">APPROACH</text>
+<text class="tf" x="74" y="1359" font-size="8.5">— CN10-16</text>
+<text class="t" x="192" y="1346" font-size="11">2–5 ms</text>
+<rect class="" x="300" y="1330" width="376.29" height="24" fill="url(#pl07-blind)" stroke="none"/>
+<rect class="" x="300" y="1330" width="376.29" height="24" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="0.5"/>
+<rect class="" x="676.29" y="1330" width="182.16" height="24" fill="url(#pl07-h-b)" stroke="var(--ink,#1b1a17)" stroke-width="1.3"/>
+<rect class="" x="815.23" y="1358" width="177" height="11" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="1" stroke-dasharray="3 2.5"/>
+<text class="hd" x="767.38" y="1346" font-size="9.5" text-anchor="middle">R_min = 0.34–0.86 m</text>
+<text class="tf" x="1000.23" y="1367.5" font-size="8.5">c·τ = 0.69–1.7 m</text>
+<text class="hd" x="74" y="1408" font-size="10.5" letter-spacing="0.5">TERMINAL BUZZ</text>
+<text class="tf" x="74" y="1421" font-size="8.5">— CN10-17</text>
+<text class="t" x="192" y="1408" font-size="11">0.5–1 ms</text>
+<rect class="" x="300" y="1392" width="106.46" height="24" fill="url(#pl07-blind)" stroke="none"/>
+<rect class="" x="300" y="1392" width="106.46" height="24" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="0.5"/>
+<rect class="" x="406.46" y="1392" width="133.77" height="24" fill="url(#pl07-h-b)" stroke="var(--ink,#1b1a17)" stroke-width="1.3"/>
+<rect class="" x="540.23" y="1420" width="136.07" height="11" fill="none" stroke="var(--faint,#a49b8f)" stroke-width="1" stroke-dasharray="3 2.5"/>
+<text class="hd" x="473.34" y="1408" font-size="9.5" text-anchor="middle">R_min = 0.086–0.17 m</text>
+<text class="tf" x="684.29" y="1429.5" font-size="8.5">c·τ = 0.17–0.34 m</text>
+<path class="dash" d="M 1069.63 1292 L 864.46 1326" marker-end="url(#pl07-arwf)"/>
+<path class="dash" d="M 670.29 1354 L 546.23 1388" marker-end="url(#pl07-arwf)"/>
+<line class="ink" x1="300" y1="1460" x2="1345" y2="1460" stroke-width="1.2" />
+<line class="faint" x1="300" y1="1460" x2="300" y2="1465" />
+<line class="faint" x1="335.79" y1="1460" x2="335.79" y2="1465" />
+<line class="faint" x1="366.05" y1="1460" x2="366.05" y2="1465" />
+<line class="faint" x1="392.26" y1="1460" x2="392.26" y2="1465" />
+<line class="faint" x1="415.38" y1="1460" x2="415.38" y2="1465" />
+<line class="faint" x1="436.07" y1="1460" x2="436.07" y2="1465" />
+<line class="faint" x1="572.13" y1="1460" x2="572.13" y2="1465" />
+<line class="faint" x1="651.72" y1="1460" x2="651.72" y2="1465" />
+<line class="faint" x1="708.2" y1="1460" x2="708.2" y2="1465" />
+<line class="faint" x1="752" y1="1460" x2="752" y2="1465" />
+<line class="faint" x1="787.79" y1="1460" x2="787.79" y2="1465" />
+<line class="faint" x1="818.05" y1="1460" x2="818.05" y2="1465" />
+<line class="faint" x1="844.26" y1="1460" x2="844.26" y2="1465" />
+<line class="faint" x1="867.38" y1="1460" x2="867.38" y2="1465" />
+<line class="faint" x1="888.07" y1="1460" x2="888.07" y2="1465" />
+<line class="faint" x1="1024.13" y1="1460" x2="1024.13" y2="1465" />
+<line class="faint" x1="1103.72" y1="1460" x2="1103.72" y2="1465" />
+<line class="faint" x1="1160.2" y1="1460" x2="1160.2" y2="1465" />
+<line class="faint" x1="1204" y1="1460" x2="1204" y2="1465" />
+<line class="faint" x1="1239.79" y1="1460" x2="1239.79" y2="1465" />
+<line class="faint" x1="1270.05" y1="1460" x2="1270.05" y2="1465" />
+<line class="faint" x1="1296.26" y1="1460" x2="1296.26" y2="1465" />
+<line class="faint" x1="1319.38" y1="1460" x2="1319.38" y2="1465" />
+<line class="faint" x1="1340.07" y1="1460" x2="1340.07" y2="1465" />
+<line class="ink" x1="436.07" y1="1460" x2="436.07" y2="1469" stroke-width="1.2" />
+<text class="t" x="436.07" y="1484" font-size="10" text-anchor="middle">0.1</text>
+<line class="ink" x1="572.13" y1="1460" x2="572.13" y2="1469" stroke-width="1.2" />
+<text class="t" x="572.13" y="1484" font-size="10" text-anchor="middle">0.2</text>
+<line class="ink" x1="752" y1="1460" x2="752" y2="1469" stroke-width="1.2" />
+<text class="t" x="752" y="1484" font-size="10" text-anchor="middle">0.5</text>
+<line class="ink" x1="888.07" y1="1460" x2="888.07" y2="1469" stroke-width="1.2" />
+<text class="t" x="888.07" y="1484" font-size="10" text-anchor="middle">1</text>
+<line class="ink" x1="1024.13" y1="1460" x2="1024.13" y2="1469" stroke-width="1.2" />
+<text class="t" x="1024.13" y="1484" font-size="10" text-anchor="middle">2</text>
+<line class="ink" x1="1204" y1="1460" x2="1204" y2="1469" stroke-width="1.2" />
+<text class="t" x="1204" y="1484" font-size="10" text-anchor="middle">5</text>
+<line class="ink" x1="1340.07" y1="1460" x2="1340.07" y2="1469" stroke-width="1.2" />
+<text class="t" x="1340.07" y="1484" font-size="10" text-anchor="middle">10</text>
+<text class="tr" x="1366" y="1443" font-size="9" text-anchor="end" font-style="italic">metres — LOG SCALE</text>
+<text class="tr" x="300" y="1443" font-size="9" font-style="italic">target range R</text>
+<line class="ctline" x1="901.35" y1="1264" x2="901.35" y2="1460" />
+<text class="ct" x="907.35" y="1444" font-size="9">1.07 m — the REFUTED buzz ceiling, Panel IV ✗</text>
+<line class="faint" x1="74" y1="1505" x2="1366" y2="1505" />
+<text class="t" x="74" y="1526" font-size="10">READ THE FLOOR AGAINST THE PHASE. The bat's call duration collapses by a factor of ~30 across the attack, and the overlap-free floor collapses with it — staying just under the</text>
+<text class="t" x="74" y="1541" font-size="10">closing target. A search call could not cleanly range anything nearer than 2.6–3.4 m, and would be blind at the moment of capture. The bat does not solve this with better</text>
+<text class="t" x="74" y="1556" font-size="10">processing. IT CHANGES ITS OWN EMISSION SO THE QUESTION STAYS ANSWERABLE. That is action taken to keep an inference well-posed, and it is measured in milliseconds.</text>
+<text class="tf" x="1366" y="1571" font-size="8.5" text-anchor="end">On a log ruler R_min = c·τ/2 is the c·τ bar shifted left by log₁₀ 2 — the same shift for every phase. △ computed on this plate.</text>
+<rect class="frame" x="60" y="1630" width="600" height="620" />
+<line class="rule" x1="60" y1="1664" x2="660" y2="1664" stroke-width="1.1" />
+<text class="hd" x="74" y="1654" font-size="15" letter-spacing="1.4">IV</text>
+<text class="hd2" x="104" y="1654" font-size="13" letter-spacing="1.1">THE TERMINAL BUZZ — and the refutation of its obvious explanation</text>
+<text class="t" x="74" y="1688" font-size="9.5">Closing on prey, a bat drives its call rate to the ceiling: the measurable signature of an</text>
+<text class="t" x="74" y="1701.5" font-size="9.5">agent throwing its information rate to the maximum at exactly the moment uncertainty is</text>
+<text class="t" x="74" y="1715" font-size="9.5">most expensive. The epistemic term is being maximised where the pragmatic term is about</text>
+<text class="t" x="74" y="1728.5" font-size="9.5">to be settled. Then: what sets the ceiling?</text>
+<line class="ink" x1="220" y1="2030" x2="220" y2="1750" stroke-width="1.2" />
+<line class="ink" x1="215" y1="2030" x2="220" y2="2030" stroke-width="1" />
+<text class="t" x="210" y="2033.4" font-size="9.5" text-anchor="end">0</text>
+<line class="ink" x1="215" y1="1968.64" x2="220" y2="1968.64" stroke-width="1" />
+<text class="t" x="210" y="1972.04" font-size="9.5" text-anchor="end">50</text>
+<line class="ink" x1="215" y1="1907.27" x2="220" y2="1907.27" stroke-width="1" />
+<text class="t" x="210" y="1910.67" font-size="9.5" text-anchor="end">100</text>
+<line class="ink" x1="215" y1="1845.91" x2="220" y2="1845.91" stroke-width="1" />
+<text class="t" x="210" y="1849.31" font-size="9.5" text-anchor="end">150</text>
+<line class="ink" x1="215" y1="1784.55" x2="220" y2="1784.55" stroke-width="1" />
+<text class="t" x="210" y="1787.95" font-size="9.5" text-anchor="end">200</text>
+<line class="faint" x1="217.5" y1="2030" x2="220" y2="2030" />
+<line class="faint" x1="217.5" y1="2017.73" x2="220" y2="2017.73" />
+<line class="faint" x1="217.5" y1="2005.45" x2="220" y2="2005.45" />
+<line class="faint" x1="217.5" y1="1993.18" x2="220" y2="1993.18" />
+<line class="faint" x1="217.5" y1="1980.91" x2="220" y2="1980.91" />
+<line class="faint" x1="217.5" y1="1968.64" x2="220" y2="1968.64" />
+<line class="faint" x1="217.5" y1="1956.36" x2="220" y2="1956.36" />
+<line class="faint" x1="217.5" y1="1944.09" x2="220" y2="1944.09" />
+<line class="faint" x1="217.5" y1="1931.82" x2="220" y2="1931.82" />
+<line class="faint" x1="217.5" y1="1919.55" x2="220" y2="1919.55" />
+<line class="faint" x1="217.5" y1="1907.27" x2="220" y2="1907.27" />
+<line class="faint" x1="217.5" y1="1895" x2="220" y2="1895" />
+<line class="faint" x1="217.5" y1="1882.73" x2="220" y2="1882.73" />
+<line class="faint" x1="217.5" y1="1870.45" x2="220" y2="1870.45" />
+<line class="faint" x1="217.5" y1="1858.18" x2="220" y2="1858.18" />
+<line class="faint" x1="217.5" y1="1845.91" x2="220" y2="1845.91" />
+<line class="faint" x1="217.5" y1="1833.64" x2="220" y2="1833.64" />
+<line class="faint" x1="217.5" y1="1821.36" x2="220" y2="1821.36" />
+<line class="faint" x1="217.5" y1="1809.09" x2="220" y2="1809.09" />
+<line class="faint" x1="217.5" y1="1796.82" x2="220" y2="1796.82" />
+<line class="faint" x1="217.5" y1="1784.55" x2="220" y2="1784.55" />
+<line class="faint" x1="217.5" y1="1772.27" x2="220" y2="1772.27" />
+<line class="faint" x1="217.5" y1="1760" x2="220" y2="1760" />
+<text class="tr" x="210" y="1737" font-size="9" text-anchor="end" font-style="italic">calls/s</text>
+<line class="ink" x1="220" y1="2030" x2="640" y2="2030" stroke-width="1.2" />
+<rect class="" x="280" y="1998.34" width="100" height="12.89" fill="url(#pl07-h-a)" stroke="var(--ink,#1b1a17)" stroke-width="1.2"/>
+<line class="ink" x1="280" y1="2005.82" x2="380" y2="2005.82" stroke-width="1.6" />
+<text class="hd" x="330" y="2046" font-size="9" text-anchor="middle">NON-BUZZ, IN FLIGHT</text>
+<text class="tf" x="330" y="2057" font-size="8.5" text-anchor="middle" font-style="italic">Rhogeessa io (5 g)</text>
+<text class="hd" x="330" y="1966" font-size="9.5" text-anchor="middle">19.7 ± 2.7 pulses/s</text>
+<text class="tf" x="330" y="1976" font-size="8.5" text-anchor="middle">range 15.3–25.8 · — CN10-42</text>
+<rect class="" x="460" y="1833.64" width="100" height="196.36" fill="url(#pl07-h-c)" stroke="var(--ink,#1b1a17)" stroke-width="1.2"/>
+<rect class="" x="460" y="1821.36" width="100" height="12.27" fill="url(#pl07-h-a)" stroke="var(--faint,#a49b8f)" stroke-width="0.8" stroke-dasharray="3 2"/>
+<text class="hd" x="510" y="2046" font-size="9" text-anchor="middle">TERMINAL BUZZ</text>
+<text class="tf" x="510" y="2057" font-size="8.5" text-anchor="middle">— CN10-19</text>
+<text class="hd" x="568" y="1830.9" font-size="10">&gt;160 calls/s</text>
+<text class="tf" x="568" y="1842.5" font-size="8.5">up to ~170</text>
+<line class="ink" x1="260" y1="1833.64" x2="640" y2="1833.64" stroke-width="1.6" />
+<text class="hd" x="262" y="1817.64" font-size="9">THE MEASURED ACTUATOR LIMIT</text>
+<text class="t" x="262" y="1827.64" font-size="8.5">f_muscle = up to 160 Hz — CN10-20</text>
+<line class="dash" x1="260" y1="1784.55" x2="640" y2="1784.55" />
+<text class="tf" x="262" y="1779.55" font-size="8.5">200 Hz in one case — CN10-20</text>
+<text class="tf" x="638" y="1772" font-size="8" text-anchor="end" font-style="italic">anterior cricothyroid, Myotis daubentonii</text>
+<text class="tf" x="638" y="1782" font-size="8" text-anchor="end" font-style="italic">positive work in cyclic contraction</text>
+<rect class="" x="74" y="2072" width="572" height="30" fill="url(#pl07-void)" stroke="var(--fence,#3c5670)" stroke-width="0.8"/>
+<text class="fn" x="82" y="2085" font-size="8.5">‡ FENCE THE SPLICE. The two bars are DIFFERENT SPECIES and different studies. The corpus carries</text>
+<text class="fn" x="82" y="2095" font-size="8.5">exactly TWO rates — no per-phase ladder exists here. Two levels are drawn, NOT a curve through them.</text>
+<line class="faint" x1="74" y1="2114" x2="646" y2="2114" />
+<text class="ct" x="74" y="2132" font-size="10.5" font-weight="700">✗  RECORDED NEGATIVE — “pulse–echo overlap sets the buzz ceiling.”</text>
+<text class="t" x="74" y="2148" font-size="9">At PI = 1/160 s = 6.25 ms the unambiguous range is c·PI/2 = 343 × 0.00625 / 2 = 1.07 m  △ CN10-22 — a tidy story in</text>
+<text class="t" x="74" y="2160.5" font-size="9">which the bat stops speeding up because it would start confusing echoes. Arithmetically correct, widely repeatable,</text>
+<text class="t" x="74" y="2173" font-size="9">and REFUTED: Elemans et al. 2011 measured the actuator and found a previously unknown class of superfast muscle.</text>
+<text class="t" x="74" y="2185.5" font-size="9">LARYNGEAL MOTOR PERFORMANCE BINDS FIRST — CN10-21. The constraint is the meat, not the mathematics.</text>
+<text class="t" x="74" y="2198" font-size="9">A clean, plausible, arithmetically correct hypothesis lost to a direct measurement. Record which one won.</text>
+<text class="tf" x="74" y="2218" font-size="8.5">✗ is CN-10's own inline defect log, NOT a NATURA evidence class — see the KEY, Panel VII.</text>
+<rect class="frame" x="690" y="1630" width="690" height="620" />
+<line class="rule" x1="690" y1="1664" x2="1380" y2="1664" stroke-width="1.1" />
+<text class="hd" x="704" y="1654" font-size="15" letter-spacing="1.4">V</text>
+<text class="hd2" x="727" y="1654" font-size="13" letter-spacing="1.1">DOPPLER-SHIFT COMPENSATION — action taken to hold the echo in the fovea</text>
+<text class="t" x="704" y="1684" font-size="9.5">A horseshoe bat's cochlea has an AUDITORY FOVEA: a grossly expanded frequency representation centred on a narrow</text>
+<text class="t" x="704" y="1697" font-size="9.5">REFERENCE FREQUENCY. The bat's model of the world is sharp inside a ~1.5 kHz slot and blunt outside it. Flying at the</text>
+<text class="t" x="704" y="1710" font-size="9.5">target ruins this — the bat flies its own signal out of the only band where its likelihood p(o|s) is precise. Drawn to scale:</text>
+<rect class="" x="1040" y="1746" width="150" height="184" fill="url(#pl07-stip)" stroke="none"/>
+<rect class="" x="1040" y="1746" width="150" height="184" fill="none" stroke="var(--ink,#1b1a17)" stroke-width="1.1"/>
+<rect class="" x="704" y="1726" width="20" height="14" fill="url(#pl07-stip)" stroke="var(--ink,#1b1a17)" stroke-width="0.8"/>
+<text class="hd" x="730" y="1736" font-size="9.5">THE AUDITORY FOVEA</text>
+<text class="tf" x="730" y="1747" font-size="8.5">83.0–84.5 kHz · 1.5 kHz wide · — CN10-23</text>
+<text class="tf" x="730" y="1757" font-size="8" font-style="italic">R. ferrumequinum, inferior colliculus</text>
+<line class="dim" x1="1040" y1="1766" x2="1280" y2="1766" />
+<line class="dim" x1="1040" y1="1762" x2="1040" y2="1770" />
+<line class="dim" x1="1280" y1="1762" x2="1280" y2="1770" />
+<text class="tr onband" x="1160" y="1760" font-size="8.5" text-anchor="middle">2.4 kHz above F_ref</text>
+<line class="ink" x1="1190" y1="1784" x2="1280" y2="1784" stroke-width="1.4" />
+<line class="ink" x1="1190" y1="1780" x2="1190" y2="1788" stroke-width="1.4" />
+<line class="ink" x1="1280" y1="1780" x2="1280" y2="1788" stroke-width="1.4" />
+<text class="hd onband" x="1366" y="1776" font-size="8.5" text-anchor="end">≈ 1 kHz clear of the 84.5 kHz UPPER EDGE</text>
+<text class="hd" x="704" y="1802" font-size="10">A · UNCOMPENSATED — the counterfactual</text>
+<line class="ink" x1="1040" y1="1810" x2="1040" y2="1834" stroke-width="1.4" />
+<line class="ink" x1="1040" y1="1822" x2="1280" y2="1822" stroke-width="1.4" marker-end="url(#pl07-arw)"/>
+<line class="ink" x1="1280" y1="1810" x2="1280" y2="1834" stroke-width="1.4" />
+<text class="t" x="1034" y="1806" font-size="9.5" text-anchor="end">f_e = 83.0 kHz</text>
+<text class="hd" x="1286" y="1806" font-size="9.5">f_r = 85.4 kHz</text>
+<text class="t onband" x="1160" y="1843" font-size="8.5" text-anchor="middle">× (c+v)/(c−v) = 348/338 = 1.0296</text>
+<text class="tr onband" x="1160" y="1853" font-size="8" text-anchor="middle">v = 5 m/s, stationary reflector · △ CN10-28</text>
+<text class="hd" x="704" y="1856" font-size="10">B · COMPENSATED — what the bat does</text>
+<line class="ink" x1="800" y1="1890" x2="800" y2="1914" stroke-width="1.4" />
+<line class="ink" x1="800" y1="1902" x2="1040" y2="1902" stroke-width="1.4" marker-end="url(#pl07-arw)"/>
+<text class="hd" x="794" y="1887" font-size="9.5" text-anchor="end">f_e = 80.6 kHz</text>
+<text class="hd onband" x="1046" y="1887" font-size="9.5">f_r = 83.0 kHz — back ON F_ref</text>
+<line class="ctline" x1="1040" y1="1876" x2="800" y2="1876" marker-end="url(#pl07-arwc)"/>
+<text class="ct" x="920" y="1870" font-size="8.5" text-anchor="middle">Δf_emit = ~2.4 kHz, LOWERED · △ CN10-28</text>
+<line class="ink" x1="740" y1="1930" x2="1340" y2="1930" stroke-width="1.2" />
+<line class="faint" x1="740" y1="1930" x2="740" y2="1934" />
+<line class="faint" x1="760" y1="1930" x2="760" y2="1934" />
+<line class="faint" x1="780" y1="1930" x2="780" y2="1934" />
+<line class="faint" x1="800" y1="1930" x2="800" y2="1934" />
+<line class="faint" x1="820" y1="1930" x2="820" y2="1934" />
+<line class="faint" x1="840" y1="1930" x2="840" y2="1934" />
+<line class="faint" x1="860" y1="1930" x2="860" y2="1934" />
+<line class="faint" x1="880" y1="1930" x2="880" y2="1934" />
+<line class="faint" x1="900" y1="1930" x2="900" y2="1934" />
+<line class="faint" x1="920" y1="1930" x2="920" y2="1934" />
+<line class="faint" x1="940" y1="1930" x2="940" y2="1934" />
+<line class="faint" x1="960" y1="1930" x2="960" y2="1934" />
+<line class="faint" x1="980" y1="1930" x2="980" y2="1934" />
+<line class="faint" x1="1000" y1="1930" x2="1000" y2="1934" />
+<line class="faint" x1="1020" y1="1930" x2="1020" y2="1934" />
+<line class="faint" x1="1040" y1="1930" x2="1040" y2="1934" />
+<line class="faint" x1="1060" y1="1930" x2="1060" y2="1934" />
+<line class="faint" x1="1080" y1="1930" x2="1080" y2="1934" />
+<line class="faint" x1="1100" y1="1930" x2="1100" y2="1934" />
+<line class="faint" x1="1120" y1="1930" x2="1120" y2="1934" />
+<line class="faint" x1="1140" y1="1930" x2="1140" y2="1934" />
+<line class="faint" x1="1160" y1="1930" x2="1160" y2="1934" />
+<line class="faint" x1="1180" y1="1930" x2="1180" y2="1934" />
+<line class="faint" x1="1200" y1="1930" x2="1200" y2="1934" />
+<line class="faint" x1="1220" y1="1930" x2="1220" y2="1934" />
+<line class="faint" x1="1240" y1="1930" x2="1240" y2="1934" />
+<line class="faint" x1="1260" y1="1930" x2="1260" y2="1934" />
+<line class="faint" x1="1280" y1="1930" x2="1280" y2="1934" />
+<line class="faint" x1="1300" y1="1930" x2="1300" y2="1934" />
+<line class="faint" x1="1320" y1="1930" x2="1320" y2="1934" />
+<line class="faint" x1="1340" y1="1930" x2="1340" y2="1934" />
+<line class="ink" x1="740" y1="1930" x2="740" y2="1938" stroke-width="1.2" />
+<text class="t" x="740" y="1952" font-size="9.5" text-anchor="middle">80</text>
+<line class="ink" x1="840" y1="1930" x2="840" y2="1938" stroke-width="1.2" />
+<text class="t" x="840" y="1952" font-size="9.5" text-anchor="middle">81</text>
+<line class="ink" x1="940" y1="1930" x2="940" y2="1938" stroke-width="1.2" />
+<text class="t" x="940" y="1952" font-size="9.5" text-anchor="middle">82</text>
+<line class="ink" x1="1040" y1="1930" x2="1040" y2="1938" stroke-width="1.2" />
+<text class="t" x="1040" y="1952" font-size="9.5" text-anchor="middle">83</text>
+<line class="ink" x1="1140" y1="1930" x2="1140" y2="1938" stroke-width="1.2" />
+<text class="t" x="1140" y="1952" font-size="9.5" text-anchor="middle">84</text>
+<line class="ink" x1="1240" y1="1930" x2="1240" y2="1938" stroke-width="1.2" />
+<text class="t" x="1240" y="1952" font-size="9.5" text-anchor="middle">85</text>
+<line class="ink" x1="1340" y1="1930" x2="1340" y2="1938" stroke-width="1.2" />
+<text class="t" x="1340" y="1952" font-size="9.5" text-anchor="middle">86</text>
+<text class="tr" x="1348" y="1936" font-size="9" font-style="italic">kHz</text>
+<text class="tr" x="1366" y="1970" font-size="9" text-anchor="end" font-style="italic">100 px per kHz — DRAWN TO SCALE</text>
+<text class="hd2" x="704" y="1992" font-size="9.5">THE CONTROL PRECISION, ON THE SAME 100 px/kHz SCALE — this is why the brackets are hairlines and the fovea is a slab:</text>
+<line class="ink" x1="1035.85" y1="2012" x2="1044.15" y2="2012" stroke-width="1.3" />
+<line class="ink" x1="1035.85" y1="2008" x2="1035.85" y2="2016" stroke-width="1.3" />
+<line class="ink" x1="1044.15" y1="2008" x2="1044.15" y2="2016" stroke-width="1.3" />
+<line class="faint" x1="1031.7" y1="2026" x2="1048.3" y2="2026" stroke-width="1" />
+<line class="faint" x1="1031.7" y1="2022" x2="1031.7" y2="2030" stroke-width="1" />
+<line class="faint" x1="1048.3" y1="2022" x2="1048.3" y2="2030" stroke-width="1" />
+<text class="t" x="1058" y="2015.4" font-size="9">band_DSC = 0.1–0.2% of F_ref ≈ 83–166 Hz at F_ref = 83 kHz — CN10-26</text>
+<text class="tf" x="1058" y="2027" font-size="8" font-style="italic">rhinolophids and P. parnellii · the precision F_echo is held WITHIN</text>
+<text class="tf" x="704" y="2015.4" font-size="8.5">■  8.3–16.6 px</text>
+<text class="tf" x="704" y="2027" font-size="8.5">the band</text>
+<line class="dim" x1="1020" y1="2046" x2="1040" y2="2046" stroke-width="1" />
+<line class="dim" x1="1020" y1="2042" x2="1020" y2="2050" stroke-width="1" />
+<line class="dash" x1="1025" y1="2043" x2="1025" y2="2049" />
+<line class="ink" x1="1040" y1="2041" x2="1040" y2="2051" stroke-width="1.4" />
+<text class="tf" x="1016" y="2048.6" font-size="7.5" text-anchor="end">F_rest</text>
+<text class="t" x="1058" y="2048.6" font-size="9">offset_DSC = ~150–200 Hz — F_ref held ABOVE F_rest — CN10-27</text>
+<text class="tf" x="1058" y="2060" font-size="8" font-style="italic">R. ferrumequinum, R. euryale, P. parnellii, in flight · the OFFSET, not the band</text>
+<text class="tf" x="704" y="2048.6" font-size="8.5">□  15–20 px</text>
+<text class="tf" x="704" y="2060" font-size="8.5">the offset</text>
+<line class="faint" x1="704" y1="2076" x2="1366" y2="2076" />
+<rect class="" x="704" y="2084" width="662" height="76" fill="url(#pl07-void)" stroke="var(--fence,#3c5670)" stroke-width="0.9"/>
+<text class="fn" x="712" y="2098" font-size="9" font-weight="700">‡ THE SPLICE THIS AXIS EXPOSES — and why SD_echo is NOT drawn on it.</text>
+<text class="fn" x="712" y="2111" font-size="8">CN10-24 carries SD_echo = 110 Hz = 0.17% of F_ref — H. armiger, a HIPPOSIDERID, not a rhinolophid. But 110 Hz is 0.13% of 83 kHz</text>
+<text class="fn" x="712" y="2121.5" font-size="8">(△ computed on this plate). 0.17% ≠ 0.13%, so H. armiger's F_ref is NOT the 83 kHz drawn here, and the two must not be multiplied</text>
+<text class="fn" x="712" y="2132" font-size="8">together. ◇ NOT-SOURCED: F_ref for H. armiger. ○ NOT-MEASURED: fovea width and DSC precision in ONE animal — CN10-30. The</text>
+<text class="fn" x="712" y="2142.5" font-size="8">chapter's “~14× finer than the fovea is wide” is ILLUSTRATIVE ACROSS TWO SPECIES. Any ratio read off this axis inherits that fence.</text>
+<line class="faint" x1="704" y1="2176" x2="1366" y2="2176" />
+<text class="hd" x="704" y="2194" font-size="11" letter-spacing="0.3">IT IS NOT ADAPTING ITS MODEL TO ITS SENSATIONS. IT IS ADAPTING ITS SENSATIONS TO ITS MODEL.</text>
+<text class="t" x="704" y="2210" font-size="8.5">The bat cannot move its fovea, so it moves the world's input into it, by changing its own motor output, in closed loop. TYPE IT: this is NOT γ. NA-02's γ is POLICY</text>
+<text class="t" x="704" y="2221.5" font-size="8.5">precision (nats⁻¹, the softmax inverse temperature over policies). The fovea is SENSORY precision — the sharpness of p(o|s). An action moving the echo into the band</text>
+<text class="t" x="704" y="2233" font-size="8.5">where p(o|s) is sharpest lowers the AMBIGUITY term  E_q(s|π)[ H[ p(o|s) ] ]  of G(π) directly. DSC is an AMBIGUITY-minimising action — not the ⟹ epistemic arrow.</text>
+<rect class="frame" x="60" y="2280" width="1320" height="400" />
+<line class="rule" x1="60" y1="2314" x2="1380" y2="2314" stroke-width="1.1" />
+<text class="hd" x="74" y="2304" font-size="15" letter-spacing="1.4">VI</text>
+<text class="hd2" x="101" y="2304" font-size="13" letter-spacing="1.1">WHAT THE EPISTEMIC TERM COSTS — a function with a knee, and the knee has been measured</text>
+<text class="t" x="74" y="2338" font-size="10.5">For a method claiming agents trade energy for uncertainty reduction, the price of the call is the whole question. It was a live dispute, and it resolved ALONG AN AXIS — which is the best kind.</text>
+<rect class="" x="340" y="2392" width="600" height="60" fill="url(#pl07-h-a)" stroke="none"/>
+<rect class="" x="940" y="2392" width="300" height="60" fill="url(#pl07-h-c)" stroke="none"/>
+<rect class="" x="340" y="2392" width="900" height="60" fill="none" stroke="var(--rule,#5a544b)" stroke-width="0.8"/>
+<text class="hd" x="640" y="2378" font-size="9.5" text-anchor="middle">NEGLIGIBLE — the call rides an exhalation the flight muscles are producing anyway</text>
+<text class="hd" x="1090" y="2378" font-size="9.5" text-anchor="middle">“EXORBITANT” for small bats</text>
+<text class="tf" x="1090" y="2368" font-size="8" text-anchor="middle" font-style="italic">Currie et al. 2020, their word</text>
+<line class="ink" x1="940" y1="2360" x2="940" y2="2472" stroke-width="2.2" />
+<text class="hd" x="940" y="2352" font-size="10.5" text-anchor="middle">THE KNEE — ~130 dB SPL @ 0.1 m</text>
+<line class="ctline" x1="540" y1="2422" x2="540" y2="2460" />
+<text class="ct" x="540" y="2414" font-size="9" text-anchor="middle">SL_whisper — up to 110 dB</text>
+<text class="tf" x="540" y="2404" font-size="8" text-anchor="middle">(not ~70, as long assumed) — CN10-34</text>
+<line class="ink" x1="940" y1="2438" x2="1160" y2="2438" stroke-width="2.6" marker-end="url(#pl07-arw)"/>
+<text class="hd" x="1040" y="2432" font-size="9" text-anchor="middle">SL_open ~130, up to and beyond 140 — CN10-33</text>
+<line class="ink" x1="340" y1="2460" x2="1240" y2="2460" stroke-width="1.2" />
+<line class="faint" x1="340" y1="2460" x2="340" y2="2463" />
+<line class="faint" x1="360" y1="2460" x2="360" y2="2463" />
+<line class="faint" x1="380" y1="2460" x2="380" y2="2463" />
+<line class="faint" x1="400" y1="2460" x2="400" y2="2463" />
+<line class="faint" x1="420" y1="2460" x2="420" y2="2463" />
+<line class="faint" x1="440" y1="2460" x2="440" y2="2463" />
+<line class="faint" x1="460" y1="2460" x2="460" y2="2463" />
+<line class="faint" x1="480" y1="2460" x2="480" y2="2463" />
+<line class="faint" x1="500" y1="2460" x2="500" y2="2463" />
+<line class="faint" x1="520" y1="2460" x2="520" y2="2463" />
+<line class="faint" x1="540" y1="2460" x2="540" y2="2463" />
+<line class="faint" x1="560" y1="2460" x2="560" y2="2463" />
+<line class="faint" x1="580" y1="2460" x2="580" y2="2463" />
+<line class="faint" x1="600" y1="2460" x2="600" y2="2463" />
+<line class="faint" x1="620" y1="2460" x2="620" y2="2463" />
+<line class="faint" x1="640" y1="2460" x2="640" y2="2463" />
+<line class="faint" x1="660" y1="2460" x2="660" y2="2463" />
+<line class="faint" x1="680" y1="2460" x2="680" y2="2463" />
+<line class="faint" x1="700" y1="2460" x2="700" y2="2463" />
+<line class="faint" x1="720" y1="2460" x2="720" y2="2463" />
+<line class="faint" x1="740" y1="2460" x2="740" y2="2463" />
+<line class="faint" x1="760" y1="2460" x2="760" y2="2463" />
+<line class="faint" x1="780" y1="2460" x2="780" y2="2463" />
+<line class="faint" x1="800" y1="2460" x2="800" y2="2463" />
+<line class="faint" x1="820" y1="2460" x2="820" y2="2463" />
+<line class="faint" x1="840" y1="2460" x2="840" y2="2463" />
+<line class="faint" x1="860" y1="2460" x2="860" y2="2463" />
+<line class="faint" x1="880" y1="2460" x2="880" y2="2463" />
+<line class="faint" x1="900" y1="2460" x2="900" y2="2463" />
+<line class="faint" x1="920" y1="2460" x2="920" y2="2463" />
+<line class="faint" x1="940" y1="2460" x2="940" y2="2463" />
+<line class="faint" x1="960" y1="2460" x2="960" y2="2463" />
+<line class="faint" x1="980" y1="2460" x2="980" y2="2463" />
+<line class="faint" x1="1000" y1="2460" x2="1000" y2="2463" />
+<line class="faint" x1="1020" y1="2460" x2="1020" y2="2463" />
+<line class="faint" x1="1040" y1="2460" x2="1040" y2="2463" />
+<line class="faint" x1="1060" y1="2460" x2="1060" y2="2463" />
+<line class="faint" x1="1080" y1="2460" x2="1080" y2="2463" />
+<line class="faint" x1="1100" y1="2460" x2="1100" y2="2463" />
+<line class="faint" x1="1120" y1="2460" x2="1120" y2="2463" />
+<line class="faint" x1="1140" y1="2460" x2="1140" y2="2463" />
+<line class="faint" x1="1160" y1="2460" x2="1160" y2="2463" />
+<line class="faint" x1="1180" y1="2460" x2="1180" y2="2463" />
+<line class="faint" x1="1200" y1="2460" x2="1200" y2="2463" />
+<line class="faint" x1="1220" y1="2460" x2="1220" y2="2463" />
+<line class="faint" x1="1240" y1="2460" x2="1240" y2="2463" />
+<line class="ink" x1="340" y1="2460" x2="340" y2="2468" stroke-width="1.2" />
+<text class="t" x="340" y="2482" font-size="9.5" text-anchor="middle">100</text>
+<line class="ink" x1="540" y1="2460" x2="540" y2="2468" stroke-width="1.2" />
+<text class="t" x="540" y="2482" font-size="9.5" text-anchor="middle">110</text>
+<line class="ink" x1="740" y1="2460" x2="740" y2="2468" stroke-width="1.2" />
+<text class="t" x="740" y="2482" font-size="9.5" text-anchor="middle">120</text>
+<line class="ink" x1="940" y1="2460" x2="940" y2="2468" stroke-width="1.2" />
+<text class="t" x="940" y="2482" font-size="9.5" text-anchor="middle">130</text>
+<line class="ink" x1="1140" y1="2460" x2="1140" y2="2468" stroke-width="1.2" />
+<text class="t" x="1140" y="2482" font-size="9.5" text-anchor="middle">140</text>
+<text class="tr" x="1248" y="2482" font-size="9" font-style="italic">dB SPL re 20 µPa @ 0.1 m</text>
+<line class="fnline" x1="320" y1="2392" x2="320" y2="2452" />
+<text class="fn" x="314" y="2400" font-size="9" text-anchor="end" font-weight="700">NO y AXIS IS DRAWN</text>
+<text class="fn" x="314" y="2412" font-size="8" text-anchor="end">○ the corpus carries no cost value in J, W</text>
+<text class="fn" x="314" y="2422" font-size="8" text-anchor="end">or ml O₂. CN10-41 carries a REGIME, not a</text>
+<text class="fn" x="314" y="2432" font-size="8" text-anchor="end">number. The knee's LOCATION is sourced;</text>
+<text class="fn" x="314" y="2442" font-size="8" text-anchor="end">the curve's SHAPE and HEIGHT are not,</text>
+<text class="fn" x="314" y="2452" font-size="8" text-anchor="end">and so they are not drawn.</text>
+<text class="t" x="74" y="2512" font-size="9.5">p @ 140 dB = 20×10⁻⁶ × 10^(140/20) = 200 Pa at 0.1 m — about 0.2% of one atmosphere, from a mammal weighing a few grams.  △ CN10-35</text>
+<rect class="frame" x="74" y="2528" width="430" height="140" stroke-width="0.6"/>
+<text class="hd" x="84" y="2546" font-size="10">SPEAKMAN &amp; RACEY 1991</text>
+<text class="tf" x="84" y="2557" font-size="8" font-style="italic">Nature 350:421–423 · DOI 10.1038/350421a0</text>
+<line class="faint" x1="84" y1="2563" x2="494" y2="2563" />
+<text class="t" x="84" y="2577" font-size="8.5">“No cost of echolocation for bats in flight”.</text>
+<text class="t" x="84" y="2588.5" font-size="8.5">Mass-adjusted flight energy expenditure in</text>
+<text class="t" x="84" y="2600" font-size="8.5">echolocating bats NOT significantly different</text>
+<text class="t" x="84" y="2611.5" font-size="8.5">from non-echolocating bats and birds.</text>
+<text class="t" x="84" y="2623" font-size="8.5">MECHANISM OFFERED: the call rides an exhalation</text>
+<text class="t" x="84" y="2634.5" font-size="8.5">the flight muscles are producing anyway.</text>
+<rect class="frame" x="505" y="2528" width="430" height="140" stroke-width="0.6"/>
+<text class="hd" x="515" y="2546" font-size="10">VOIGT &amp; LEWANZIK 2012</text>
+<text class="tf" x="515" y="2557" font-size="8" font-style="italic">J Comp Physiol B 182:831–840</text>
+<line class="faint" x1="515" y1="2563" x2="925" y2="2563" />
+<text class="t" x="515" y="2577" font-size="8.5">Re-tested in the 5 g Rhogeessa io: cost of transport</text>
+<text class="t" x="515" y="2588.5" font-size="8.5">NOT related to pulse emission rate, and flight power</text>
+<text class="t" x="515" y="2600" font-size="8.5">LOWER than predicted if call cost were additive.</text>
+<text class="t" x="515" y="2611.5" font-size="8.5">Consistent with Speakman &amp; Racey. Non-buzz rate</text>
+<text class="t" x="515" y="2623" font-size="8.5">19.7 ± 2.7 pulses/s — CN10-42, drawn in Panel IV.</text>
+<text class="t" x="515" y="2634.5" font-size="8.5">Two independent lines, same direction.</text>
+<rect class="frame" x="936" y="2528" width="430" height="140" stroke-width="0.6"/>
+<text class="hd" x="946" y="2546" font-size="10">CURRIE ET AL. 2020 — THE KNEE</text>
+<text class="tf" x="946" y="2557" font-size="8" font-style="italic">Nat Ecol Evol 4(9):1174–1177</text>
+<line class="faint" x1="946" y1="2563" x2="1356" y2="2563" />
+<text class="t" x="946" y="2577" font-size="8.5">BOUNDED IT. Costs are negligible ONLY for low call</text>
+<text class="t" x="946" y="2588.5" font-size="8.5">intensities; above 130 dB SPL (re 10 cm) sound</text>
+<text class="t" x="946" y="2600" font-size="8.5">production becomes, in their word, exorbitant for</text>
+<text class="t" x="946" y="2611.5" font-size="8.5">small bats. So “echolocation is free during flight” is</text>
+<text class="t" x="946" y="2623" font-size="8.5">not wrong — it is SCOPE-LIMITED, and 2020 printed</text>
+<text class="t" x="946" y="2634.5" font-size="8.5">the scope. ‡ CN10-41 · resolved along intensity.</text>
+<text class="ct" x="1366" y="2512" font-size="9" text-anchor="end">“Echolocation is free for flying bats”, quoted without the 2020 bound, is a SCOPE ERROR, not a citation. ✗ CN-10's inline defect log.</text>
+<rect class="frame" x="60" y="2710" width="1320" height="550" />
+<line class="rule" x1="60" y1="2744" x2="1380" y2="2744" stroke-width="1.1" />
+<text class="hd" x="74" y="2734" font-size="15" letter-spacing="1.4">VII</text>
+<text class="hd2" x="108" y="2734" font-size="13" letter-spacing="1.1">KEY, CAPTION, AND WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="hd" x="74" y="2768" font-size="10.5" letter-spacing="0.4">FIGURE KEY — MARKS, NOT COLOURS</text>
+<text class="hd2" x="74" y="2779" font-size="8.5">this plate must survive greyscale printing</text>
+<line class="rule" x1="74" y1="2785" x2="466" y2="2785" />
+<text class="hd" x="80" y="2807" font-size="13" text-anchor="middle">⟹</text>
+<text class="hd" x="98" y="2804" font-size="9.5">THE EPISTEMIC ARROW</text>
+<text class="tf" x="98" y="2814" font-size="8">the ②→③ arrow of Panel I. Heavy weight + this mark, never colour.</text>
+<text class="hd" x="80" y="2832.5" font-size="13" text-anchor="middle">—</text>
+<text class="hd" x="98" y="2829.5" font-size="9.5">OBSERVED-REPLICATED</text>
+<text class="tf" x="98" y="2839.5" font-size="8">measured, and independently replicated across labs, datasets or taxa.</text>
+<text class="hd" x="80" y="2858" font-size="13" text-anchor="middle">‡</text>
+<text class="hd" x="98" y="2855" font-size="9.5">OBSERVED-CONTESTED</text>
+<text class="tf" x="98" y="2865" font-size="8">measured, but genuinely disputed — or a splice. Both positions carried.</text>
+<text class="hd" x="80" y="2883.5" font-size="13" text-anchor="middle">△</text>
+<text class="hd" x="98" y="2880.5" font-size="9.5">MODELED</text>
+<text class="tf" x="98" y="2890.5" font-size="8">derived from a model that fits data. THE ASSUMPTIONS ARE THE FENCE.</text>
+<text class="hd" x="80" y="2909" font-size="13" text-anchor="middle">○</text>
+<text class="hd" x="98" y="2906" font-size="9.5">NOT-MEASURED</text>
+<text class="tf" x="98" y="2916" font-size="8">nobody has measured it. An absence IN THE LITERATURE.</text>
+<text class="hd" x="80" y="2934.5" font-size="13" text-anchor="middle">◇</text>
+<text class="hd" x="98" y="2931.5" font-size="9.5">NOT-SOURCED</text>
+<text class="tf" x="98" y="2941.5" font-size="8">a value this corpus could not trace. An absence IN OUR HOMEWORK.</text>
+<text class="hd" x="80" y="2960" font-size="13" text-anchor="middle">⌀</text>
+<text class="hd" x="98" y="2957" font-size="9.5">NOT-CONFIRMED</text>
+<text class="tf" x="98" y="2967" font-size="8">the primary is NAMED, at one remove, and was not read in this pass.</text>
+<text class="hd" x="80" y="2985.5" font-size="13" text-anchor="middle">✗</text>
+<text class="hd" x="98" y="2982.5" font-size="9.5">recorded NEGATIVE / trap</text>
+<text class="tf" x="98" y="2992.5" font-size="8">a defect, carried first-class — never deleted, never mocked.</text>
+<text class="tf" x="74" y="3005" font-size="8.5">The six marks — ‡ △ ○ ◇ ⌀ are NATURA classes (six of NA-00’s twelve, amended 2026-07-15:</text>
+<text class="tf" x="74" y="3015" font-size="8.5">three groups — measured / derived / fenced). ⟹ is a DRAWING mark, not a class; ✗ is CN-10’s</text>
+<text class="fn" x="74" y="3025" font-size="8.5">own inline defect log — and NEGATIVE is a UNI LEDGER STATE, never borrowed into NATURA.</text>
+<line class="rule" x1="480" y1="2762" x2="480" y2="3030" />
+<text class="hd" x="494" y="2768" font-size="10.5" letter-spacing="0.4">CAPTION — six numbered readings, keyed to the panels</text>
+<line class="rule" x1="494" y1="2785" x2="1366" y2="2785" />
+<text class="hd" x="500" y="2801" font-size="11">1</text>
+<text class="hd" x="516" y="2801" font-size="9.5">THE LOOP (I).</text>
+<text class="t" x="610.6" y="2801" font-size="9">A bat emits, waits 2R/c, updates, and changes the next call. The call costs joules and dB and returns an echo</text>
+<text class="t" x="516" y="2812.5" font-size="9">that does not feed, warm or move the bat: EMISSION COST PAID FOR INFORMATION RETURN, BOTH SIDES ON A METER. The arrow marked ⟹ — echo to belief</text>
+<text class="t" x="516" y="2824" font-size="9">update — is where the information arrives. The EPISTEMIC TERM of G(π) is that arrow’s EXPECTATION, taken at ① before emitting. The arrow is an</text>
+<text class="t" x="516" y="2835.5" font-size="9">outcome; the term scores a policy. Two different objects. Do not merge them.</text>
+<text class="hd" x="500" y="2852.5" font-size="11">2</text>
+<text class="hd" x="516" y="2852.5" font-size="9.5">RANGE IS TIME (II).</text>
+<text class="t" x="647.8" y="2852.5" font-size="9">The echo carries range as delay: 2R = ct, at 5.83 ms per metre of range, drawn on a log ruler so a</text>
+<text class="t" x="516" y="2864" font-size="9">~40-fold span of range fits one axis — buzz floor 0.086 m to search ceiling 3.4 m, CN10-18. △ computed here.</text>
+<text class="hd" x="500" y="2881" font-size="11">3</text>
+<text class="hd" x="516" y="2881" font-size="9.5">THE COLLAPSE (III).</text>
+<text class="t" x="647.8" y="2881" font-size="9">Call duration τ falls ~30× across one attack — 15–20 ms to 0.5–1 ms — and the overlap-free</text>
+<text class="t" x="516" y="2892.5" font-size="9">floor R ≥ c·τ/2 collapses with it, staying under the closing target. The bat does not solve overlap with better processing. It changes its own</text>
+<text class="t" x="516" y="2904" font-size="9">emission so the question stays answerable.</text>
+<text class="hd" x="500" y="2921" font-size="11">4</text>
+<text class="hd" x="516" y="2921" font-size="9.5">THE BUZZ (IV).</text>
+<text class="t" x="616.8" y="2921" font-size="9">Rate rises beyond 160 calls/s — information rate thrown to the ceiling where uncertainty is most</text>
+<text class="t" x="516" y="2932.5" font-size="9">expensive. The ceiling is LARYNGEAL MOTOR PERFORMANCE, not pulse–echo overlap: a tidy, arithmetically correct hypothesis (1.07 m) that lost to a</text>
+<text class="t" x="516" y="2944" font-size="9">work-loop assay on a muscle. Recorded ✗, first-class.</text>
+<text class="hd" x="500" y="2961" font-size="11">5</text>
+<text class="hd" x="516" y="2961" font-size="9.5">DOPPLER-SHIFT COMPENSATION (V).</text>
+<text class="t" x="722.2" y="2961" font-size="9">Closing at 5 m/s, an 83.0 kHz emission returns at 85.4 kHz — 2.4 kHz above F_ref,</text>
+<text class="t" x="516" y="2972.5" font-size="9">and roughly 1 kHz clear of the fovea’s 84.5 kHz upper edge. (Both numbers are correct and they are NOT the same number; the ~1 kHz is the one that</text>
+<text class="t" x="516" y="2984" font-size="9">carries the argument.) The bat lowers its emission ~2.4 kHz to 80.6 kHz and lands the echo back on F_ref. This lowers the AMBIGUITY term of G(π).</text>
+<text class="t" x="516" y="2995.5" font-size="9">It is not the epistemic term, and it is not γ.</text>
+<text class="hd" x="500" y="3012.5" font-size="11">6</text>
+<text class="hd" x="516" y="3012.5" font-size="9.5">THE PRICE (VI).</text>
+<text class="t" x="623" y="3012.5" font-size="9">Below ~130 dB SPL @ 0.1 m the epistemic term is nearly free — it rides an action the animal is</text>
+<text class="t" x="516" y="3024" font-size="9">taking anyway. Above it, sound production is exorbitant for small bats. The price of information is not zero and not constant. It is a function with a</text>
+<text class="t" x="516" y="3035.5" font-size="9">knee, and the knee has been measured. No cost value is plotted: the corpus carries none.</text>
+<line class="rule" x1="74" y1="3042" x2="1366" y2="3042" stroke-width="1.2" />
+<text class="hd" x="74" y="3064" font-size="12" letter-spacing="1.6">WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="hd2" x="1366" y="3064" font-size="9.5" text-anchor="end">The measurements are the asset and they stand alone. If the active-inference lens were withdrawn tomorrow, DSC would still hold the echo to its band.</text>
+<text class="hd" x="74" y="3084" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="132" y="3084" font-size="8.5">that a bat computes expected free energy.</text>
+<text class="t" x="74" y="3094.5" font-size="8.5">Nothing here shows a bat evaluating G(π) over a policy space, or anything</text>
+<text class="t" x="74" y="3104.5" font-size="8.5">isomorphic to it. G(π) in nats has never been decoded from any taxon:</text>
+<text class="t" x="74" y="3114.5" font-size="8.5">○ NOT-MEASURED, NA-02. “Minimising the ambiguity term” is OUR description of</text>
+<text class="t" x="74" y="3124.5" font-size="8.5">its behaviour, in our vocabulary, for our purposes. THE BAT IS NOT DOING OUR</text>
+<text class="t" x="74" y="3134.5" font-size="8.5">ARITHMETIC.</text>
+<text class="hd" x="74" y="3149.5" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="132" y="3149.5" font-size="8.5">that DSC is γ (policy precision).</text>
+<text class="t" x="74" y="3160" font-size="8.5">γ is the softmax inverse temperature over policies, units nats⁻¹. The fovea is</text>
+<text class="t" x="74" y="3170" font-size="8.5">SENSORY precision — the sharpness of p(o|s). Different objects, different units.</text>
+<text class="t" x="74" y="3180" font-size="8.5">DSC lowers the AMBIGUITY term. Conflating them is a category error.</text>
+<text class="hd" x="74" y="3195" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="132" y="3195" font-size="8.5">that the active-inference reading is REQUIRED</text>
+<text class="t" x="74" y="3205.5" font-size="8.5">to explain any measurement here. Classical sensorimotor control, signal-</text>
+<text class="t" x="74" y="3215.5" font-size="8.5">detection theory and plain optimal-foraging accounts predict much of it. No</text>
+<text class="t" x="74" y="3225.5" font-size="8.5">discriminating experiment is offered, and none is known to the corpus in this</text>
+<text class="t" x="74" y="3235.5" font-size="8.5">pass. Until one exists, the lens earns nothing it has not paid for.</text>
+<line class="faint" x1="478" y1="3074" x2="478" y2="3244" />
+<text class="hd" x="516" y="3084" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="574" y="3084" font-size="8.5">a within-animal pairing of fovea width and DSC precision.</text>
+<text class="t" x="516" y="3094.5" font-size="8.5">○ NOT-MEASURED — CN10-30. R. ferrumequinum’s fovea against H. armiger’s</text>
+<text class="t" x="516" y="3104.5" font-size="8.5">DSC is a splice across two species and two families; Panel V prints the</text>
+<text class="t" x="516" y="3114.5" font-size="8.5">arithmetic that exposes it. The “~14×” is illustrative, not a measurement.</text>
+<text class="hd" x="516" y="3129.5" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="574" y="3129.5" font-size="8.5">any per-phase call-rate ladder.</text>
+<text class="t" x="516" y="3140" font-size="8.5">The corpus carries exactly two rates — 19.7 ± 2.7 pulses/s non-buzz (R. io,</text>
+<text class="t" x="516" y="3150" font-size="8.5">Voigt &amp; Lewanzik 2012) and &gt;160 calls/s buzz (Elemans et al. 2011; Moss &amp;</text>
+<text class="t" x="516" y="3160" font-size="8.5">Surlykke 2010). Different species, different studies. Panel IV draws two</text>
+<text class="t" x="516" y="3170" font-size="8.5">levels and refuses to draw a curve through them.</text>
+<text class="hd" x="516" y="3185" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="574" y="3185" font-size="8.5">any cost of echolocation in J, W or ml O₂.</text>
+<text class="t" x="516" y="3195.5" font-size="8.5">Panel VI has no y axis because the corpus has no value to put on one. The</text>
+<text class="t" x="516" y="3205.5" font-size="8.5">knee’s LOCATION (~130 dB SPL @ 0.1 m) is sourced; the curve’s SHAPE and</text>
+<text class="t" x="516" y="3215.5" font-size="8.5">HEIGHT are not, and are not drawn.</text>
+<text class="hd" x="516" y="3230.5" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="574" y="3230.5" font-size="8.5">any bat range-discrimination threshold.</text>
+<text class="t" x="516" y="3241" font-size="8.5">The “jitter” psychophysics is contested and ◇ NOT-SOURCED here — CN10-32.</text>
+<line class="faint" x1="920" y1="3074" x2="920" y2="3244" />
+<text class="hd" x="958" y="3084" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="1016" y="3084" font-size="8.5">that the terminal-buzz ceiling is set by pulse–echo overlap.</text>
+<text class="t" x="958" y="3094.5" font-size="8.5">✗ Refuted — CN10-21. The 1.07 m is drawn in Panel IV precisely BECAUSE it is</text>
+<text class="t" x="958" y="3104.5" font-size="8.5">wrong. A derivation that predicts the right number for the wrong reason is</text>
+<text class="t" x="958" y="3114.5" font-size="8.5">exactly the failure this wing exists to catch, and recording it is the point.</text>
+<text class="hd" x="958" y="3129.5" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="1016" y="3129.5" font-size="8.5">that a bat is conscious, aware, or has experience.</text>
+<text class="t" x="958" y="3140" font-size="8.5">Nagel’s question is a real philosophical question. It is not answered,</text>
+<text class="t" x="958" y="3150" font-size="8.5">addressed, or bounded by any measurement on this plate, and it lives in a</text>
+<text class="t" x="958" y="3160" font-size="8.5">different ledger. A PERMANENT OPEN QUESTION. “Full human” and “beyond human”</text>
+<text class="t" x="958" y="3170" font-size="8.5">appear here as no target, milestone or deliverable.</text>
+<text class="hd" x="958" y="3185" font-size="8.5">Not claimed:</text>
+<text class="hd2" x="1016" y="3185" font-size="8.5">that any citation on this plate raises any UNI rung.</text>
+<text class="t" x="958" y="3195.5" font-size="8.5">A NATURE CITATION IS NEVER A UNI GATE. The NATURA classes and the UNI 4-value</text>
+<text class="t" x="958" y="3205.5" font-size="8.5">fence (proven / designed / hypothesized / not-yet-built) describe different</text>
+<text class="t" x="958" y="3215.5" font-size="8.5">kinds of claim and NEVER merge. ZERO UNI CLAIMS ON THIS PLATE. Program</text>
+<text class="t" x="958" y="3225.5" font-size="8.5">position, unsoftened: ~2 of 11+ rungs earned; a developmental active-inference</text>
+<text class="t" x="958" y="3235.5" font-size="8.5">SIMULATION; a toy world, never a person.</text>
+</svg>

@@ -1,0 +1,393 @@
+<svg class="pl10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3280" width="100%" role="img" aria-labelledby="pl10-title pl10-desc" preserveAspectRatio="xMidYMid meet">
+<title id="pl10-title">Plate PL-10 — Gaia: the laboratory boundary</title>
+<desc id="pl10-desc">An engraved-style encyclopedia plate on the world/agent coupling. Panel I draws the laboratory named Gaia as the generative process on the left, hatched, and the agent holding the generative model on the right, with the Markov blanket b = {s,a} as the agent’s only boundary: s is the world’s only route in, a is the mind’s only route out. A framed miniature inside the agent’s internal states shows that the generative model’s object is the blanket, not the world. A forbidden double-headed path is cut with a cross exactly where it tries to cross the blanket wall, marking the oracle cut. Panel II states the partition formally. Panel III draws the human visual blanket as a funnel to scale at 83 to 1 in width, from 92 million rods and 4.6 million cones against 1,159,000 optic nerve axons, and marks the ratio MODELED because it divides unpaired cohorts. Panel IV records that one token, Gaia, names two different subjects in two different ledgers. Panel V draws the Pearl-to-Friston slide. Panel VI sets the two emptinesses side by side: NOT-MEASURED in nature against not-yet-built in UNI. Every number carries units, a ledger row and an evidence class, and the Gaia side carries no number at all.</desc>
+<style>
+.pl10{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f; --faintink:#736b5f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+@media (prefers-color-scheme:dark){
+  .pl10{
+    --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960; --faintink:#8a8479;
+    --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+  }
+}
+:root[data-theme="dark"] .pl10{
+  --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960; --faintink:#8a8479;
+  --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+}
+:root[data-theme="light"] .pl10{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f; --faintink:#736b5f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+.pl10 text{font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",Times,serif;
+  fill:var(--ink,#1b1a17);}
+.pl10 .t{fill:var(--ink,#1b1a17);}
+.pl10 .tf{fill:var(--faintink,#736b5f);}
+.pl10 .tr{fill:var(--rule,#5a544b);}
+.pl10 .hd{fill:var(--ink,#1b1a17);font-weight:700;}
+.pl10 .hd2{fill:var(--rule,#5a544b);font-style:italic;}
+.pl10 .ct{fill:var(--contest,#8c2f1d);}
+.pl10 .fn{fill:var(--fence,#3c5670);}
+.pl10 .mono{font-family:"Courier New",Courier,monospace;}
+.pl10 .frame{fill:none;stroke:var(--rule,#5a544b);stroke-width:1;}
+.pl10 .rule{stroke:var(--rule,#5a544b);stroke-width:.7;fill:none;}
+.pl10 .ink{stroke:var(--ink,#1b1a17);stroke-width:1;fill:none;}
+.pl10 .thin{stroke:var(--ink,#1b1a17);stroke-width:.55;fill:none;}
+.pl10 .faint{stroke:var(--faint,#a49b8f);stroke-width:.55;fill:none;}
+.pl10 .dim{stroke:var(--rule,#5a544b);stroke-width:.8;fill:none;}
+.pl10 .dash{stroke:var(--faint,#a49b8f);stroke-width:.7;fill:none;stroke-dasharray:5 4;}
+.pl10 .ctline{stroke:var(--contest,#8c2f1d);stroke-width:1.1;fill:none;stroke-dasharray:7 4;}
+.pl10 .ctsolid{stroke:var(--contest,#8c2f1d);stroke-width:1.2;fill:none;}
+.pl10 .fnline{stroke:var(--fence,#3c5670);stroke-width:1;fill:none;stroke-dasharray:1.6 3.2;}
+.pl10 .dot{fill:var(--ink,#1b1a17);stroke:none;}
+.pl10 .dotf{fill:var(--faint,#a49b8f);stroke:none;}
+.pl10 .dotc{fill:var(--contest,#8c2f1d);stroke:none;}
+.pl10 .case{stroke:var(--bg,#f6f2e9);stroke-width:5.5;fill:none;stroke-linecap:round;}
+.pl10 .bgfill{fill:var(--bg,#f6f2e9);stroke:none;}
+.pl10 .panelfill{fill:var(--panel,#efe9dc);stroke:none;}
+</style>
+<defs>
+<marker id="pl10-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--ink,#1b1a17)"/></marker>
+<marker id="pl10-arwc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--contest,#8c2f1d)"/></marker>
+<marker id="pl10-arwf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--fence,#3c5670)"/></marker>
+<marker id="pl10-arwr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--rule,#5a544b)"/></marker>
+<pattern id="pl10-h-a" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl10-h-b" width="5.5" height="5.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5.5" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl10-h-x" width="7" height="7" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--hatch,#8a8278)" stroke-width="0.45"/><line x1="0" y1="0" x2="7" y2="0" stroke="var(--hatch,#8a8278)" stroke-width="0.45"/></pattern>
+<pattern id="pl10-stip" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.4" cy="1.4" r="0.42" fill="var(--faint,#a49b8f)"/><circle cx="4.4" cy="4.4" r="0.42" fill="var(--faint,#a49b8f)"/></pattern>
+<pattern id="pl10-void" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--fence,#3c5670)" stroke-width=".45" opacity=".5"/></pattern>
+<pattern id="pl10-ghost" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--contest,#8c2f1d)" stroke-width=".5" opacity=".55"/></pattern>
+</defs>
+<rect class="bgfill" x="0" y="0" width="1440" height="3280"/>
+<rect class="frame" x="24" y="24" width="1392" height="3232" stroke-width="1.6"/>
+<rect class="frame" x="31" y="31" width="1378" height="3218" stroke-width="0.6"/>
+<text x="60" y="66" class="tr" font-size="11" letter-spacing="2.6">UNI ENCYCLOPEDIA &amp; COOKBOOK · NATURA WING · THE CROSSWALK</text>
+<text x="60" y="108" class="hd" font-size="30" letter-spacing="3">PLATE PL-10</text>
+<text x="322" y="108" class="t" font-size="21" letter-spacing="1.2">GAIA — THE LABORATORY BOUNDARY</text>
+<text x="60" y="134" class="tf" font-size="10.5">Source chapters: NA-04 (primary) · NA-02 · NA-00 · CN-03 §Gaia · rows NA04-01…09 / 13 and CN03-76 of encyclopedia/NATURE-LEDGER.md · lexicon/CONCEPTS.json · prompts/_drafts/draft-A-formal.md §4, §11.1, §11.4 · corpus tip f1be794</text>
+<text x="1380" y="66" class="tr" font-size="11" text-anchor="end" letter-spacing="1.1">~2 of 11+ developmental rungs earned</text>
+<text x="1380" y="84" class="hd" font-size="11" text-anchor="end" letter-spacing="1.6">THIS PLATE SPANS BOTH LEDGERS — THAT IS ITS SUBJECT</text>
+<text x="1380" y="101" class="tf" font-size="10.5" text-anchor="end">They never merge. A nature citation is never a UNI gate.</text>
+<line class="rule" x1="60" y1="150" x2="1380" y2="150" stroke-width="1.2"/>
+<rect class="frame" x="60" y="175" width="1320" height="1010"/>
+<line class="rule" x1="60" y1="209" x2="1380" y2="209" stroke-width="1.1"/>
+<text x="74" y="199" class="hd" font-size="15" letter-spacing="1.4">I</text>
+<text x="98" y="199" class="hd2" font-size="13" letter-spacing="1.1">THE COUPLING — one process, one model, one blanket between them</text>
+<text x="1366" y="199" class="tf" font-size="10" text-anchor="end">the distinction this plate exists to make unmissable</text>
+<rect class="frame" x="96" y="250" width="1248" height="800" rx="24" stroke-width="1.5"/>
+<rect class="frame" x="102" y="256" width="1236" height="788" rx="19" stroke-width="0.5"/>
+<rect class="bgfill" x="122" y="237" width="404" height="26"/>
+<text x="134" y="256" class="hd" font-size="12.5" letter-spacing="1.5">GAIA — THE LABORATORY (the bounded setting)</text>
+<rect class="bgfill" x="1070" y="237" width="252" height="26"/>
+<text x="1318" y="256" class="fn" font-size="10" text-anchor="end">UNI fence: not-yet-built · 0 rows in CLAIM-LEDGER</text>
+<rect class="frame" x="122" y="292" width="600" height="736" rx="12" stroke-width="0.9"/>
+<rect class="" x="123" y="293" width="598" height="734" rx="11" fill="url(#pl10-h-a)" stroke="none"/>
+<rect class="" x="482" y="672" width="210" height="180" rx="6" fill="url(#pl10-h-b)" stroke="none" opacity="0.9"/>
+<text x="146" y="332" class="hd" font-size="34">η</text>
+<text x="180" y="332" class="hd" font-size="13.5" letter-spacing="1.2">EXTERNAL STATES — WORLD</text>
+<text x="146" y="354" class="tf" font-size="10" font-style="italic">everything in the laboratory outside the agent’s blanket</text>
+<rect class="frame" x="146" y="376" width="330" height="62" rx="3" stroke-width="1.3"/>
+<rect class="frame" x="149" y="379" width="324" height="56" rx="2" stroke-width="0.5"/>
+<text x="160" y="402" class="hd mono" font-size="17">world.process</text>
+<text x="160" y="424" class="hd" font-size="10.5" letter-spacing="1.5">THE GENERATIVE PROCESS</text>
+<text x="146" y="464" class="t" font-size="11">what the world ACTUALLY does.</text>
+<text x="146" y="480" class="t" font-size="10">Exists independently of any agent’s beliefs.</text>
+<text x="146" y="496" class="t" font-size="10">Need not share the model’s form, variables,</text>
+<text x="146" y="512" class="t" font-size="10">or factorization.</text>
+<text x="146" y="534" class="tf" font-size="9.5" font-style="italic">— draft-A §11.1 · lexicon: GENERATIVE_PROCESS</text>
+<text x="146" y="592" class="hd" font-size="11">The agent never reaches this region.</text>
+<text x="146" y="610" class="t" font-size="10">It is reached exactly never — only ever</text>
+<text x="146" y="626" class="t" font-size="10">INFERRED THROUGH A SURFACE. (NA-04)</text>
+<text x="146" y="992" class="t" font-size="9.5" font-style="italic">In Gaia, η is written by the builder — which is why the</text>
+<text x="146" y="1006" class="t" font-size="9.5" font-style="italic">leak is possible, and why it is testable. See VI.</text>
+<rect class="frame" x="880" y="300" width="440" height="600" rx="34" stroke-width="1.6"/>
+<rect class="frame" x="904" y="324" width="392" height="552" rx="18" stroke-width="1.1"/>
+<rect class="" x="882" y="302" width="436" height="22" fill="url(#pl10-h-x)" stroke="none"/>
+<rect class="" x="882" y="876" width="436" height="22" fill="url(#pl10-h-x)" stroke="none"/>
+<rect class="" x="882" y="324" width="22" height="552" fill="url(#pl10-h-x)" stroke="none"/>
+<rect class="" x="1296" y="324" width="22" height="552" fill="url(#pl10-h-x)" stroke="none"/>
+<rect class="" x="905" y="325" width="390" height="550" rx="17" fill="url(#pl10-stip)" stroke="none" opacity="0.75"/>
+<text x="1100" y="284" class="hd" font-size="13" text-anchor="middle" letter-spacing="2.2">THE AGENT</text>
+<text x="920" y="358" class="hd" font-size="30">μ</text>
+<text x="950" y="358" class="hd" font-size="12.5" letter-spacing="1.1">INTERNAL STATES — MIND</text>
+<rect class="frame" x="920" y="376" width="300" height="60" rx="3" stroke-width="1.3"/>
+<rect class="frame" x="923" y="379" width="294" height="54" rx="2" stroke-width="0.5"/>
+<text x="932" y="401" class="hd mono" font-size="17">model.p_os</text>
+<text x="932" y="423" class="hd" font-size="10.5" letter-spacing="1.2">THE GENERATIVE MODEL · p(o,s)</text>
+<text x="920" y="452" class="t" font-size="9.5" font-style="italic">the agent’s HYPOTHESIS — a choice, not a measurement</text>
+<text x="1100" y="940" class="hd" font-size="13" text-anchor="middle" letter-spacing="1.2">b = { s , a }  —  THE BLANKET · BODY</text>
+<text x="1100" y="956" class="t" font-size="9.5" text-anchor="middle">the agent’s entire boundary. Every dependency between μ and η is routed through it.</text>
+<rect class="frame" x="918" y="542" width="306" height="192" rx="3" stroke-width="1.4"/>
+<rect class="frame" x="922" y="546" width="298" height="184" rx="2" stroke-width="0.5"/>
+<rect class="bgfill" x="926" y="550" width="290" height="176"/>
+<rect class="frame" x="926" y="550" width="290" height="176" stroke-width="0.8"/>
+<text x="1071" y="568" class="hd" font-size="9.5" text-anchor="middle" letter-spacing="0.8">p(o,s)  —  WHAT THE MODEL IS OF</text>
+<rect class="" x="948" y="584" width="246" height="26" fill="url(#pl10-h-x)" stroke="none" opacity="0.85"/>
+<rect class="frame" x="948" y="584" width="246" height="26" stroke-width="0.9"/>
+<text x="1071" y="602" class="hd" font-size="8.6" text-anchor="middle">the blanket surface  b</text>
+<path class="ink" d="M 948 679.89 L 954.15 679.76 L 960.3 679.52 L 966.45 679.1 L 972.6 678.38 L 978.75 677.26 L 984.9 675.61 L 991.05 673.33 L 997.2 670.44 L 1003.35 667.02 L 1009.5 663.33 L 1015.65 659.75 L 1021.8 656.73 L 1027.95 654.71 L 1034.1 654 L 1040.25 654.71 L 1046.4 656.73 L 1052.55 659.75 L 1058.7 663.32 L 1064.85 666.97 L 1071 670.31 L 1077.15 673.02 L 1083.3 674.88 L 1089.45 675.75 L 1095.6 675.51 L 1101.75 674.15 L 1107.9 671.81 L 1114.05 668.86 L 1120.2 665.93 L 1126.35 663.77 L 1132.5 662.98 L 1138.65 663.81 L 1144.8 666.04 L 1150.95 669.1 L 1157.1 672.29 L 1163.25 675.05 L 1169.4 677.13 L 1175.55 678.49 L 1181.7 679.28 L 1187.85 679.69 L 1194 679.88" stroke-width="1.1"/>
+<line class="faint" x1="948" y1="684" x2="948" y2="689"/>
+<line class="faint" x1="978.75" y1="684" x2="978.75" y2="689"/>
+<line class="faint" x1="1009.5" y1="684" x2="1009.5" y2="689"/>
+<line class="faint" x1="1040.25" y1="684" x2="1040.25" y2="689"/>
+<line class="faint" x1="1071" y1="684" x2="1071" y2="689"/>
+<line class="faint" x1="1101.75" y1="684" x2="1101.75" y2="689"/>
+<line class="faint" x1="1132.5" y1="684" x2="1132.5" y2="689"/>
+<line class="faint" x1="1163.25" y1="684" x2="1163.25" y2="689"/>
+<line class="faint" x1="1194" y1="684" x2="1194" y2="689"/>
+<line class="dim" x1="948" y1="684" x2="1194" y2="684"/>
+<text x="948" y="706" class="t" font-size="8.4">expected observations o given s</text>
+<text x="1194" y="706" class="ct" font-size="8.4" text-anchor="end">— not a picture of η</text>
+<line class="faint" x1="1034.1" y1="612" x2="1034.1" y2="632" marker-end="url(#pl10-arwr)"/>
+<line class="faint" x1="1132.5" y1="612" x2="1132.5" y2="632" marker-end="url(#pl10-arwr)"/>
+<text x="918" y="756" class="hd ct" font-size="11.5" letter-spacing="0.6">THE MODEL’S OBJECT IS  b , NOT  η .</text>
+<text x="918" y="772" class="t" font-size="9.4">NA-04: “The generative model is not a model of η;</text>
+<text x="918" y="785" class="t" font-size="9.4">it is a model of HOW η IS EXPECTED TO SHOW UP IN b.”</text>
+<text x="918" y="798" class="t" font-size="9.4">The world enters as a hypothesis that explains the blanket.</text>
+<rect class="bgfill" x="879" y="473" width="26" height="34"/>
+<rect class="frame" x="879" y="473" width="26" height="34" stroke-width="1"/>
+<line class="ink" x1="728" y1="490" x2="930" y2="490" stroke-width="1.6" marker-end="url(#pl10-arw)"/>
+<text x="938" y="484" class="hd" font-size="17">s</text>
+<text x="952" y="486" class="hd" font-size="10" letter-spacing="1">SENSORY</text>
+<text x="804" y="466" class="hd" font-size="10" text-anchor="middle">the world’s only route IN</text>
+<text x="804" y="520" class="t mono" font-size="10.5" text-anchor="middle">η → s</text>
+<rect class="bgfill" x="879" y="828" width="26" height="34"/>
+<rect class="frame" x="879" y="828" width="26" height="34" stroke-width="1"/>
+<line class="ink" x1="930" y1="845" x2="728" y2="845" stroke-width="1.6" marker-end="url(#pl10-arw)"/>
+<text x="938" y="839" class="hd" font-size="17">a</text>
+<text x="952" y="841" class="hd" font-size="10" letter-spacing="1">ACTIVE</text>
+<text x="804" y="821" class="hd" font-size="10" text-anchor="middle">the mind’s only route OUT</text>
+<text x="804" y="875" class="t mono" font-size="10.5" text-anchor="middle">a → η</text>
+<path class="ctline" d="M 522 952 C 770 1006, 1050 1006, 1180 846" stroke-width="1.5" marker-end="url(#pl10-arwc)" marker-start="url(#pl10-arwc)"/>
+<circle cx="1180" cy="888" r="15" fill="var(--bg,#f6f2e9)" stroke="none"/>
+<line class="ctsolid" x1="1171" y1="879" x2="1189" y2="897" stroke-width="2.2"/>
+<line class="ctsolid" x1="1189" y1="879" x2="1171" y2="897" stroke-width="2.2"/>
+<circle cx="1180" cy="888" r="15" fill="none" stroke="var(--contest,#8c2f1d)" stroke-width="1.1"/>
+<text x="372" y="892" class="hd ct" font-size="13" letter-spacing="1.6">THE ORACLE CUT</text>
+<text x="372" y="910" class="ct" font-size="9.6">∂(dμ/dt)/∂η = 0      ∂(dη/dt)/∂μ = 0      (NA04-01 · NA04-03)</text>
+<text x="372" y="923" class="t" font-size="9.6">Any crossing that is not s or a is forbidden — which is why</text>
+<text x="372" y="936" class="t" font-size="9.6">the ✖ sits ON the wall, not in open space.</text>
+<text x="122" y="1084" class="hd ct" font-size="12.5">“If the agent’s inference can read the process, you have built an ORACLE and called it a MIND.”</text>
+<text x="122" y="1102" class="t" font-size="10">— draft-A §11.1. And the rail is structural, not behavioural: μ has NO REFERENCE TO η IN SCOPE AT ALL. Not “does not read it”: CANNOT.</text>
+<text x="1360" y="1084" class="hd mono" font-size="14" text-anchor="end">q(η|r)  ≠  p(η|y,m)</text>
+<text x="1360" y="1102" class="t" font-size="9.6" text-anchor="end">the posterior an agent HOLDS over external states is not the true conditional. Same word, different objects.</text>
+<line class="rule" x1="122" y1="1116" x2="1360" y2="1116" stroke-width="0.7"/>
+<text x="720" y="1142" class="hd" font-size="16" text-anchor="middle" letter-spacing="1.2">A MIND CAN NEVER TOUCH THE WORLD. IT CAN ONLY EVER TOUCH ITS OWN BLANKET.</text>
+<text x="720" y="1158" class="tf" font-size="10" text-anchor="middle" letter-spacing="1.4">NA-04 · DIFFERENT TYPES · DIFFERENT NAMESPACES · SAME ENGLISH WORDS</text>
+<rect class="frame" x="60" y="1215" width="650" height="400"/>
+<line class="rule" x1="60" y1="1249" x2="710" y2="1249" stroke-width="1.1"/>
+<text x="74" y="1239" class="hd" font-size="15" letter-spacing="1.4">II</text>
+<text x="110" y="1239" class="hd2" font-size="13" letter-spacing="1.1">THE PARTITION, FORMALLY</text>
+<text x="80" y="1277" class="t" font-size="10.5">Partition the states z into four DISJOINT subsets:</text>
+<text x="90" y="1301" class="hd mono" font-size="14">μ</text>
+<text x="118" y="1301" class="t" font-size="11">internal</text>
+<text x="210" y="1301" class="hd" font-size="10" letter-spacing="0.8">MIND</text>
+<text x="90" y="1322" class="hd mono" font-size="14">s</text>
+<text x="118" y="1322" class="t" font-size="11">sensory</text>
+<text x="90" y="1343" class="hd mono" font-size="14">a</text>
+<text x="118" y="1343" class="t" font-size="11">active</text>
+<text x="90" y="1364" class="hd mono" font-size="14">η</text>
+<text x="118" y="1364" class="t" font-size="11">external</text>
+<text x="210" y="1364" class="hd" font-size="10" letter-spacing="0.8">WORLD</text>
+<path class="ink" d="M 204 1316 L 210 1316 L 210 1347 L 204 1347" stroke-width="1"/>
+<text x="220" y="1335.5" class="hd" font-size="10" letter-spacing="0.8">BODY — the blanket  b = {s,a}</text>
+<rect class="frame" x="80" y="1377" width="610" height="46" stroke-width="0.8"/>
+<text x="385" y="1397" class="hd mono" font-size="13" text-anchor="middle">p(μ, η | b) = p(μ | b) · p(η | b)</text>
+<text x="385" y="1415" class="t mono" font-size="10.5" text-anchor="middle">⟺   μ ⊥ η | b   ⟺   I(μ ; η | b) = 0   [nats]</text>
+<text x="80" y="1455" class="t" font-size="9.6">In words: given the blanket, internal and external states carry no further information</text>
+<text x="80" y="1467.4" class="t" font-size="9.6"> about each other. Not mostly. Not usually. By definition — or the partition is not a</text>
+<text x="80" y="1479.8" class="t" font-size="9.6"> blanket. The term is Pearl’s (1988).</text>
+<text x="80" y="1500.2" class="hd" font-size="9.8">The free-energy literature adds a SPARSITY requirement:</text>
+<text x="90" y="1517.2" class="t mono" font-size="11">∂(dμ/dt)/∂η = 0    and    ∂(dη/dt)/∂μ = 0</text>
+<text x="80" y="1539.2" class="t" font-size="9.6">For linear Gaussian systems this reduces to the vanishing of the internal–external</text>
+<text x="80" y="1551.6" class="t" font-size="9.6"> precision blocks, H_μη = H_ημ = 0 — the form in which it was solved exactly, and largely</text>
+<text x="80" y="1564" class="t" font-size="9.6"> failed. See V.</text>
+<text x="80" y="1585" class="tf" font-size="8.8">M12 mapping: WORLD = η · BODY = b · MIND = μ · MIND.BODY = the coupling μ ↔ b (NA-04). M12 is status: method — a</text>
+<text x="80" y="1596" class="tf" font-size="8.8">governance pattern, not a capability claim.</text>
+<rect class="frame" x="730" y="1215" width="650" height="400"/>
+<line class="rule" x1="730" y1="1249" x2="1380" y2="1249" stroke-width="1.1"/>
+<text x="744" y="1239" class="hd" font-size="15" letter-spacing="1.4">III</text>
+<text x="792" y="1239" class="hd2" font-size="13" letter-spacing="1.1">THE BLANKET HAS A MEASURED WIDTH</text>
+<text x="1366" y="1239" class="tf" font-size="10" text-anchor="end">nature’s exhibit · NATURA class</text>
+<path class="" d="M 806 1287 L 1304 1287 L 1058 1415 L 1052 1415 Z" fill="url(#pl10-h-b)" stroke="none" opacity="0.8"/>
+<path class="ink" d="M 806 1287 L 1304 1287 L 1058 1415 L 1052 1415 Z" stroke-width="1.2"/>
+<line class="dim" x1="806" y1="1273" x2="1304" y2="1273" marker-start="url(#pl10-arwr)" marker-end="url(#pl10-arwr)"/>
+<text x="1055" y="1267" class="hd" font-size="9.4" text-anchor="middle">96.6 × 10⁶ photoreceptors  (transducing face)  ·  summed here: 92 + 4.6  ·  NA04-04 + NA04-05 · —  ·  same cohort</text>
+<text x="806" y="1305" class="t" font-size="9">92 × 10⁶ rods</text>
+<text x="806" y="1317" class="tf" font-size="8.2">NA04-04 · —</text>
+<text x="1304" y="1305" class="t" font-size="9" text-anchor="end">4.6 × 10⁶ cones</text>
+<text x="1304" y="1317" class="tf" font-size="8.2" text-anchor="end">NA04-05 · —</text>
+<line class="dim" x1="1055" y1="1423" x2="1055" y2="1445"/>
+<text x="1055" y="1459" class="hd" font-size="9.4" text-anchor="middle">1,159,000 ± 196,000 axons out  (NA04-07 · —)</text>
+<text x="1055" y="1472" class="tf" font-size="8.4" text-anchor="middle">22 nerves, 19 subjects, ages 20–75 · Jonas et al. 1990</text>
+<text x="1067" y="1411" class="tf" font-size="8.2">← throat drawn 6 px against a 498 px mouth</text>
+<text x="750" y="1499" class="t" font-size="12">△</text>
+<text x="768" y="1499" class="hd" font-size="10.5">r_retina  ≈ 83 : 1  [dimensionless]  — MODELED (NA04-08)</text>
+<text x="768" y="1514" class="t" font-size="9.2">drawn to scale in WIDTH: 498 px / 6 px = 83.0. (92 + 4.6)×10⁶ / 1.159×10⁶ = 83.3.</text>
+<text x="768" y="1527" class="ct" font-size="9.2">THE ASSUMPTIONS ARE THE FENCE: the ratio divides DIFFERENT, UNPAIRED cohorts</text>
+<text x="768" y="1539" class="ct" font-size="9.2">with no per-eye matching — and it averages a radically NON-UNIFORM surface:</text>
+<text x="768" y="1551" class="ct" font-size="9.2">foveal ≈ 1 : 1 against peripheral ≫ 100 : 1. Peak foveal cone density 199,000</text>
+<text x="768" y="1563" class="ct" font-size="9.2">cones/mm², range 100,000–324,000 between individuals (NA04-06 · —).</text>
+<text x="768" y="1575" class="t" font-size="9.2">Falsifier: measure both counts in the SAME eyes; a paired ratio outside ~50–150 : 1 refutes.</text>
+<text x="750" y="1591" class="hd" font-size="9.6">A blanket is not a window. It is a lossy, unevenly weighted, individually variable</text>
+<text x="750" y="1604" class="hd" font-size="9.6">compression stage — and it is the entire visual world’s only door. (NA-04)</text>
+<rect class="frame" x="60" y="1645" width="650" height="400"/>
+<line class="rule" x1="60" y1="1679" x2="710" y2="1679" stroke-width="1.1"/>
+<text x="74" y="1669" class="hd" font-size="15" letter-spacing="1.4">IV</text>
+<text x="110" y="1669" class="hd2" font-size="13" letter-spacing="1.1">TWO GAIAS, ONE TOKEN</text>
+<text x="696" y="1669" class="tf" font-size="10" text-anchor="end">recorded trap ✖</text>
+<rect class="frame" x="78" y="1689" width="614" height="118" stroke-width="0.8"/>
+<text x="90" y="1707" class="hd" font-size="11.5" letter-spacing="1">GAIA¹ — THE LABORATORY</text>
+<text x="680" y="1707" class="fn" font-size="9.2" text-anchor="end">UNI fence · not-yet-built</text>
+<text x="90" y="1723" class="t" font-size="9.2">The named simulation, world, and laboratory context of the builder. “It is a</text>
+<text x="90" y="1734.8" class="t" font-size="9.2"> naming convention, not a metaphysical claim.” It makes no assertion that the</text>
+<text x="90" y="1746.6" class="t" font-size="9.2"> world is alive, that the simulation is alive, or that anything in it</text>
+<text x="90" y="1758.4" class="t" font-size="9.2"> experiences anything.</text>
+<text x="90" y="1772.2" class="tf" font-size="8.8" font-style="italic">— prompts/_drafts/draft-A-formal.md §4. ZERO rows in CLAIM-LEDGER.md.</text>
+<rect class="frame" x="78" y="1827" width="614" height="132" stroke-width="0.8"/>
+<rect class="" x="79" y="1828" width="612" height="130" fill="url(#pl10-ghost)" stroke="none" opacity="0.25"/>
+<text x="90" y="1845" class="hd" font-size="11.5" letter-spacing="1">GAIA² — THE HYPOTHESIS</text>
+<text x="680" y="1845" class="ct" font-size="9.2" text-anchor="end">NATURA class · HYPOTHESIZED</text>
+<text x="90" y="1861" class="t" font-size="9.2">That the biosphere homeostatically regulates the planet (CN03-76 · Lovelock</text>
+<text x="90" y="1872.8" class="t" font-size="9.2"> &amp; Margulis 1974, Tellus 26(1–2):2–10). The disequilibrium OBSERVATION is</text>
+<text x="90" y="1884.6" class="t" font-size="9.2"> replicated and independent of the theory; the REGULATION claim has no unit</text>
+<text x="90" y="1896.4" class="t" font-size="9.2"> of selection — one Earth, no competing siblings, no reproduction (Doolittle</text>
+<text x="90" y="1908.2" class="t" font-size="9.2"> 1981; Dawkins 1982). Daisyworld (Watson &amp; Lovelock 1983) is an existence</text>
+<text x="90" y="1920" class="t" font-size="9.2"> proof that a mechanism is POSSIBLE, not evidence Earth uses it.</text>
+<text x="90" y="1933.8" class="ct" font-size="8.8">“Earth is an organism”, literally = INADMISSIBLE. Both “Gaia is science” and “Gaia is nonsense” = INADMISSIBLE as stated.</text>
+<text x="80" y="1997" class="ct" font-size="13">✖</text>
+<text x="100" y="1997" class="hd" font-size="10">ONE TOKEN, TWO SUBJECTS, TWO LEDGERS — and they never travel together.</text>
+<text x="100" y="2010" class="t" font-size="9">Naming a laboratory Gaia imports no claim about a living planet; citing the hypothesis describes no laboratory.</text>
+<text x="100" y="2022" class="t" font-size="9">lexicon/CONCEPTS.json records the hazard in its own words: “Heavy doctrinal freight: the name is a deity.”</text>
+<rect class="frame" x="730" y="1645" width="650" height="400"/>
+<line class="rule" x1="730" y1="1679" x2="1380" y2="1679" stroke-width="1.1"/>
+<text x="744" y="1669" class="hd" font-size="15" letter-spacing="1.4">V</text>
+<text x="768" y="1669" class="hd2" font-size="13" letter-spacing="1.1">PEARL vs FRISTON — the slide</text>
+<text x="1366" y="1669" class="tf" font-size="10" text-anchor="end">NA-04’s own most important section</text>
+<rect class="frame" x="748" y="1689" width="290" height="112" stroke-width="0.8"/>
+<text x="760" y="1707" class="hd" font-size="11" letter-spacing="1">PEARL BLANKET</text>
+<text x="760" y="1723" class="hd fn" font-size="13" letter-spacing="2">FREE</text>
+<text x="760" y="1741" class="t" font-size="8.8">a formal statistical construct over</text>
+<text x="760" y="1752" class="t" font-size="8.8">a graph YOU DREW; conditional-</text>
+<text x="760" y="1763" class="t" font-size="8.8">independence bookkeeping relative</text>
+<text x="760" y="1774" class="t" font-size="8.8">to a model. Cheap, well-defined,</text>
+<text x="760" y="1785" class="t" font-size="8.8">unobjectionable.</text>
+<rect class="frame" x="1072" y="1689" width="290" height="112" stroke-width="0.8"/>
+<text x="1084" y="1707" class="hd" font-size="11" letter-spacing="1">FRISTON BLANKET</text>
+<text x="1084" y="1723" class="hd ct" font-size="13" letter-spacing="2">EXPENSIVE</text>
+<text x="1084" y="1741" class="t" font-size="8.8">a metaphysical boundary of a real</text>
+<text x="1084" y="1752" class="t" font-size="8.8">thing — the claim that some system</text>
+<text x="1084" y="1763" class="t" font-size="8.8">genuinely HAS an inside, a surface,</text>
+<text x="1084" y="1774" class="t" font-size="8.8">an outside. Requires I(μ;η|b) ≈ 0 in</text>
+<text x="1084" y="1785" class="t" font-size="8.8">the actual system. Nobody estimated it.</text>
+<line class="ctline" x1="1044" y1="1737" x2="1066" y2="1737" stroke-width="1.6" marker-end="url(#pl10-arwc)"/>
+<circle cx="1055" cy="1737" r="11" fill="var(--bg,#f6f2e9)" stroke="none"/>
+<line class="ctsolid" x1="1048" y1="1730" x2="1062" y2="1744" stroke-width="1.9"/>
+<line class="ctsolid" x1="1062" y1="1730" x2="1048" y2="1744" stroke-width="1.9"/>
+<rect class="bgfill" x="1034" y="1754" width="42" height="13"/>
+<text x="1055" y="1764" class="hd ct" font-size="8.4" text-anchor="middle" letter-spacing="0.4">THE SLIDE</text>
+<text x="750" y="1821" class="t" font-size="9.2">✖ The field’s main error is sliding from the first to the second WITHOUT PAYING FOR IT:</text>
+<text x="750" y="1832.8" class="t" font-size="9.2"> you define a blanket (free — a modeling choice), then quietly conclude you have discovered</text>
+<text x="750" y="1844.6" class="t" font-size="9.2"> where the organism ends (expensive — an empirical claim requiring I(μ;η|b) ≈ 0, which</text>
+<text x="750" y="1856.4" class="t" font-size="9.2"> nobody estimated). Bruineberg, Dołęga, Dewhurst &amp; Baltieri (2022), Behavioral and Brain</text>
+<text x="750" y="1868.2" class="t" font-size="9.2"> Sciences 45:e183, DOI 10.1017/S0140525X21002351.</text>
+<rect class="frame" x="748" y="1876" width="614" height="76" stroke-width="0.8"/>
+<text x="760" y="1892" class="hd ct" font-size="10" letter-spacing="0.8">NEGATIVE — first-class, not softened</text>
+<text x="760" y="1906" class="t" font-size="8.8">Aguilera, Millidge, Tschantz &amp; Buckley (2022), Physics of Life Reviews 40:24–50,</text>
+<text x="760" y="1917.2" class="t" font-size="8.8"> solved linear Langevin / Ornstein–Uhlenbeck systems analytically: the blanket</text>
+<text x="760" y="1928.4" class="t" font-size="8.8"> conditions hold only in a “very narrow space of parameters”, forcing symmetries “not</text>
+<text x="760" y="1939.6" class="t" font-size="8.8"> expected in living beings” (NA04-03 · △).</text>
+<text x="750" y="1973" class="hd" font-size="10.6" letter-spacing="0.4">A MARKOV BLANKET IS A MODELING CHOICE YOU MUST JUSTIFY</text>
+<text x="750" y="1987" class="hd" font-size="10.6" letter-spacing="0.4">PER SYSTEM, NOT A FACT YOU MAY ASSUME. (NA-04)</text>
+<text x="750" y="2005" class="t" font-size="9">UNI is NOT claimed to have a blanket in the Friston sense. This plate takes no</text>
+<text x="750" y="2017" class="t" font-size="9">side in the dispute beyond insisting the slide be named.</text>
+<rect class="frame" x="60" y="2075" width="1320" height="380"/>
+<line class="rule" x1="60" y1="2109" x2="1380" y2="2109" stroke-width="1.1"/>
+<text x="74" y="2099" class="hd" font-size="15" letter-spacing="1.4">VI</text>
+<text x="110" y="2099" class="hd2" font-size="13" letter-spacing="1.1">THE TWO EMPTINESSES — they look identical; merging them is the cardinal error</text>
+<rect class="frame" x="80" y="2129" width="620" height="128" stroke-width="0.9"/>
+<text x="94" y="2151" class="hd" font-size="10.5" letter-spacing="1">NATURE  ·  NATURA class (NATURE-LEDGER)</text>
+<text x="94" y="2177" class="t mono" font-size="11">I(μ ; η | b)  for a real organism’s actual boundary</text>
+<text x="94" y="2201" class="hd" font-size="16" letter-spacing="1.4">NOT-MEASURED</text>
+<text x="94" y="2221" class="t" font-size="9">nature has not been asked. NA04-02: NOT-MEASURED for essentially all real</text>
+<text x="94" y="2233" class="t" font-size="9">biological systems. NA04-13: n_levels in any named organism — NOT-MEASURED.</text>
+<text x="94" y="2247" class="tf" font-size="8.8" font-style="italic">“The criterion exists, is clean, and is overwhelmingly unexercised.”</text>
+<rect class="frame" x="740" y="2129" width="620" height="128" stroke-width="0.9"/>
+<text x="754" y="2151" class="hd" font-size="10.5" letter-spacing="1">GAIA  ·  UNI 4-value fence (CLAIM-LEDGER)</text>
+<text x="754" y="2177" class="t mono" font-size="11">I(μ ; η | b)  for any UNI / Gaia boundary</text>
+<text x="754" y="2201" class="hd" font-size="16" letter-spacing="1.4">not-yet-built</text>
+<text x="754" y="2221" class="t" font-size="9">an absence in UNI’s BUILD — no engine, no run, no gate. Gaia has ZERO rows</text>
+<text x="754" y="2233" class="t" font-size="9">in CLAIM-LEDGER.md (grep, corpus tip f1be794). “No I(μ;η|b) has been</text>
+<text x="754" y="2245" class="t" font-size="9">estimated for any UNI boundary.” (NA-04, Not claimed)</text>
+<line class="fnline" x1="720" y1="2129" x2="720" y2="2257" stroke-width="1.4"/>
+<circle cx="720" cy="2193" r="15" fill="var(--bg,#f6f2e9)" stroke="none"/>
+<text x="720" y="2199" class="hd fn" font-size="18" text-anchor="middle">⊥</text>
+<text x="80" y="2283" class="t" font-size="9.8">NA-00, the crosswalk, and it is the load-bearing line on this plate: “UNI not having built it CAN NEVER be evidence nature lacks the value. Nature lacking a measurement CAN NEVER be a reason</text>
+<text x="80" y="2295.4" class="t" font-size="9.8"> UNI cannot build — nor an excuse to invent the number.”</text>
+<rect class="frame" x="80" y="2305.8" width="1280" height="108" stroke-width="0.8"/>
+<text x="94" y="2322.8" class="hd" font-size="10.5" letter-spacing="0.8">THE ONE REAL ASYMMETRY — and it is a requirement, not a boast</text>
+<text x="94" y="2337.8" class="t" font-size="9.2">In Gaia you have all four sets — μ, s, a, η — BY CONSTRUCTION. The estimate that is intractable for a mouse is directly computable for a simulated agent over its own logged trajectories.</text>
+<text x="94" y="2349.6" class="t" font-size="9.2"> So blanket_holds is never a declaration: it is a derived field carrying an estimated I(μ;η|b) in nats, its estimator, its CI and its sample size — shipped with a POSITIVE control (a</text>
+<text x="94" y="2361.4" class="t" font-size="9.2"> partition known to be blanketed → I ≈ 0) and a NEGATIVE control (a deliberate leak η → μ bypassing b → I &gt; 0, DETECTED). “An estimator that has never caught a real leak is not known to</text>
+<text x="94" y="2373.2" class="t" font-size="9.2"> work.” — draft-A §11.4</text>
+<text x="94" y="2397" class="ct" font-size="9.2">✖ And the fence that must travel with it: computing I(μ;η|b) ≈ 0 for a Gaia agent is a statement about YOUR SIMULATION. It is not evidence that any organism has a Markov blanket, not evidence for the FEP, and RAISES NO UNI RUNG.</text>
+<rect class="frame" x="60" y="2485" width="1320" height="730"/>
+<line class="rule" x1="60" y1="2519" x2="1380" y2="2519" stroke-width="1.1"/>
+<text x="74" y="2509" class="hd" font-size="15" letter-spacing="1.4">VII</text>
+<text x="122" y="2509" class="hd2" font-size="13" letter-spacing="1.1">KEY, CAPTION, AND WHAT THIS PLATE DOES NOT CLAIM</text>
+<text x="80" y="2547" class="hd" font-size="11">FIGURE KEY — marks, not colours (this plate must survive greyscale)</text>
+<text x="88" y="2567" class="t" font-size="13" text-anchor="middle">—</text>
+<text x="106" y="2567" class="hd" font-size="10.5">OBSERVED-REPLICATED</text>
+<text x="278" y="2567" class="t" font-size="10">measured, and independently replicated across labs, datasets or taxa.</text>
+<text x="88" y="2586" class="t" font-size="13" text-anchor="middle">△</text>
+<text x="106" y="2586" class="hd" font-size="10.5">MODELED</text>
+<text x="278" y="2586" class="t" font-size="10">derived from a model that fits data. THE ASSUMPTIONS ARE THE FENCE.</text>
+<text x="88" y="2605" class="fn" font-size="13" text-anchor="middle">◇</text>
+<text x="106" y="2605" class="hd" font-size="10.5">NOT-MEASURED</text>
+<text x="278" y="2605" class="t" font-size="10">the honest empty face: nobody has measured it. An absence IN THE LITERATURE.</text>
+<text x="88" y="2624" class="ct" font-size="13" text-anchor="middle">✖</text>
+<text x="106" y="2624" class="hd" font-size="10.5">NEGATIVE / trap</text>
+<text x="278" y="2624" class="t" font-size="10">a conflation, a slide or a first-class negative — recorded, never deleted, never mocked.</text>
+<text x="88" y="2643" class="fn" font-size="13" text-anchor="middle">⊥</text>
+<text x="106" y="2643" class="hd" font-size="10.5">SOVEREIGN</text>
+<text x="278" y="2643" class="t" font-size="10">two vocabularies that may never merge: the UNI 4-value fence and the NATURA class.</text>
+<text x="80" y="2670" class="tf" font-size="9.5">NATURA classes are NA-00’s twelve (amended 2026-07-15: measured / derived / fenced). The UNI fence is CLAIM-LEDGER’s four: proven · designed · hypothesized · not-yet-built.</text>
+<text x="80" y="2683" class="tf" font-size="9.5">Line weight, hatch density, dash pattern and mark carry every distinction colour carries. “proven” is reserved for UNI-ledger status and never describes nature.</text>
+<text x="80" y="2703" class="hd" font-size="12" letter-spacing="1.6">CAPTION</text>
+<text x="80" y="2723" class="t" font-size="9.5">1 · Panel I draws the coupling, and its whole job is one distinction. GAIA is the named simulation, world and laboratory context — the generative PROCESS side, world.process. The AGENT holds the generative MODEL, model.p_os = p(o,s). They are</text>
+<text x="80" y="2735.2" class="t" font-size="9.5"> different objects, and the builder must give them different types and different namespaces (draft-A §11.1). In Gaia you hold both, which is exactly why you can be honest about the gap and exactly why you can accidentally cheat.</text>
+<text x="80" y="2748" class="t" font-size="9.5">2 · The framed miniature inside μ is the load-bearing detail and it is drawn deliberately: the generative model is NOT a model of η. NA-04 — “The generative model is not a model of η; it is a model of how η is expected to show up in b.” The world</text>
+<text x="80" y="2760.2" class="t" font-size="9.5"> enters as a hypothesis that explains the blanket. A reader who takes the miniature for a picture of Gaia has just made the error this plate exists to name.</text>
+<text x="80" y="2773" class="t" font-size="9.5">3 · The ✖ sits ON the blanket wall, not in open space, because that is where the violation happens: any crossing that is not s or a is forbidden (NA04-01 · NA04-03). The rail is structural, not behavioural — μ has no reference to η in scope at all.</text>
+<text x="80" y="2785.2" class="t" font-size="9.5"> Not “does not read it”: cannot.</text>
+<text x="80" y="2798" class="t" font-size="9.5">4 · ATTRIBUTION, kept straight (SIGNUM SIGNUM MANET). The partition, the sparsity conditions and the sentence about what the model is a model OF are NA-04’s. The word-pair “generative model / generative process” and the namespaces world.process /</text>
+<text x="80" y="2810.2" class="t" font-size="9.5"> model.p_os are draft-A §11.1’s — NA-04 does not use the phrase “generative process”. The plate cites each to its own source rather than merging them.</text>
+<text x="80" y="2823" class="t" font-size="9.5">5 · NOTATION, and why it departs from the source. NA-04 writes the sparsity conditions with a derivative dot over the variable. This plate prints them expanded — ∂(dμ/dt)/∂η = 0 — because at this type size the combining dot does not survive: it</text>
+<text x="80" y="2835.2" class="t" font-size="9.5"> renders on the solidus, and what a reader would then see is ∂μ/∂η = 0, which is a DIFFERENT AND FALSE statement (states, not flows). The expanded form is the identical theorem in a form the page cannot corrupt.</text>
+<text x="80" y="2848" class="t" font-size="9.5">6 · The funnel (III) is drawn to scale in WIDTH only: a 498 px mouth against a 6 px throat = 83.0. The counts are OBSERVED-REPLICATED (NA04-04 · 05 · 07); the RATIO is MODELED △ (NA04-08) because it divides different, unpaired cohorts with no</text>
+<text x="80" y="2860.2" class="t" font-size="9.5"> per-eye matching. The funnel is drawn as one uniform cone because a drawing must choose — and the surface is not uniform (foveal ≈ 1:1 vs peripheral ≫ 100:1), so the non-uniformity is printed where the drawing lies about it.</text>
+<text x="80" y="2873" class="t" font-size="9.5">7 · Nothing on the Gaia side of this plate carries a number, and that is a finding, not an omission. Gaia has zero rows in CLAIM-LEDGER.md (grep, corpus tip f1be794); the ORCHESTRATE prompt that names it sits in prompts/_drafts/. UNI fence:</text>
+<text x="80" y="2885.2" class="t" font-size="9.5"> not-yet-built. Every quantity the Gaia side would carry is therefore printed as the absence it is.</text>
+<text x="80" y="2898" class="t" font-size="9.5">8 · The two emptinesses (VI) look identical and are not. NOT-MEASURED ◇ is an absence in the LITERATURE — nature has not been asked. not-yet-built is an absence in UNI’s BUILD. They sit either side of a ⊥ because the resemblance is the trap, and</text>
+<text x="80" y="2910.2" class="t" font-size="9.5"> NA-00’s crosswalk is the rule.</text>
+<text x="80" y="2923" class="t" font-size="9.5">9 · TWO GAIAS (IV) is recorded as a first-class trap ✖. The laboratory named Gaia (draft-A §4) and the Gaia hypothesis (CN03-76 · Lovelock &amp; Margulis 1974) are different subjects in different ledgers — one is UNI-side and not-yet-built, one is</text>
+<text x="80" y="2935.2" class="t" font-size="9.5"> nature-side and HYPOTHESIZED. This plate uses sense ¹ in its title and fences sense ² rather than inheriting it silently.</text>
+<text x="80" y="2948" class="t" font-size="9.5">10 · Panel V cuts against the rest of the plate, which is why it is on it. A Pearl blanket is free; a Friston blanket is expensive; the slide between them is the field’s characteristic error. On the evidence — Aguilera’s narrow corner, and I(μ;η|b)</text>
+<text x="80" y="2960.2" class="t" font-size="9.5"> essentially never estimated for a real organism — NA-04 judges “life has Markov blankets” currently closer to pattern-asserted than to mechanism-reproduced. The plate carries that judgement rather than drawing over it.</text>
+<text x="80" y="2987" class="hd" font-size="12" letter-spacing="1.6">WHAT THIS PLATE DOES NOT CLAIM</text>
+<text x="80" y="3007" class="t" font-size="9.5">· Not claimed: that Gaia exists as a running artifact. Gaia has zero rows in CLAIM-LEDGER; UNI fence: not-yet-built. This plate draws a DESIGN, and a design discharges no gate.</text>
+<text x="80" y="3019.8" class="t" font-size="9.5">· Not claimed: that any agent drawn here has a Markov blanket in the Friston sense. No I(μ;η|b) has been estimated for any UNI boundary, and NA04-02 cards it NOT-MEASURED ◇ for essentially all real biological systems. The blanket on this plate is a</text>
+<text x="80" y="3032" class="t" font-size="9.5"> partition drawn by a builder — the free kind.</text>
+<text x="80" y="3044.8" class="t" font-size="9.5">· Not claimed: that a Markov blanket implies a self, an experiencer, awareness, sentience, consciousness or a point of view. Explicitly disclaimed in NA-04, and no falsifier is offered because none exists. The same formalism admits partitions for a</text>
+<text x="80" y="3057" class="t" font-size="9.5"> Newton’s cradle, a burning fuse and the Lorenz attractor — Beck &amp; Ramstead (2025) ran blanket detection on exactly those. If a blanket implied a self, it would imply one for the burning fuse.</text>
+<text x="80" y="3069.8" class="t" font-size="9.5">· Not claimed: that the free-energy principle is true, or that blanket conditions are general. In the one setting where the question was solved exactly they held in a “very narrow space of parameters” (Aguilera et al. 2022) — carried here as a</text>
+<text x="80" y="3082" class="t" font-size="9.5"> first-class NEGATIVE, not softened.</text>
+<text x="80" y="3094.8" class="t" font-size="9.5">· Not claimed: that naming a laboratory “Gaia” asserts anything about Earth, the biosphere, or a living planet. And not claimed: that the Gaia hypothesis is settled — CN03-76 carries regulation as HYPOTHESIZED with the unit-of-selection objection</text>
+<text x="80" y="3107" class="t" font-size="9.5"> live and unanswered.</text>
+<text x="80" y="3119.8" class="t" font-size="9.5">· Not claimed: that 83 : 1 is a measured ratio, or that the sensory surface is uniform. It is MODELED △ across unpaired cohorts (NA04-08); foveal ≈ 1:1 against peripheral ≫ 100:1 is the fence, and the drawing is the thing being fenced.</text>
+<text x="80" y="3132.6" class="t" font-size="9.5">· Not claimed: that a low F certifies the model. NA-02, honest bound 1 — “A confidently wrong model can sit at low F … the whole construction is conditional on p(o,s) — a choice, not a measurement. Minimizing F never tests whether the generative</text>
+<text x="80" y="3144.8" class="t" font-size="9.5"> model was the right one.” That is the model/process gap restated as an objective, and it is why this plate draws the two apart.</text>
+<text x="80" y="3157.6" class="t" font-size="9.5">· Not claimed: that anything here raises any UNI rung. A NATURE CITATION IS NEVER A UNI GATE. The honest program position is unchanged by this plate: ~2 of 11+ developmental rungs earned, a developmental active-inference SIMULATION, a toy world,</text>
+<text x="80" y="3169.8" class="t" font-size="9.5"> never a person. “Full human” and “beyond human” appear nowhere as targets — they are permanent open questions (QUAESTIO-APERTA).</text>
+</svg>

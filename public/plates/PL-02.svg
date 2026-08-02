@@ -1,0 +1,386 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="pl-02-plate" viewBox="0 0 1120 1620" width="100%" role="img" aria-labelledby="pl02-title pl02-desc">
+<title id="pl02-title">Plate PL-02 &#8212; The one loop: VFE to understand, EFE to choose</title>
+<desc id="pl02-desc">An engraved-style plate after encyclopedia chapter NA-02. A five-step ring &#8212; 1 PERCEIVE, 2 PREDICT, 3 CHOOSE, 4 ACT, 5 OBSERVE AND UPDATE &#8212; with the variational free energy F placed at PERCEIVE, the expected free energy G placed at CHOOSE, and the softmax policy selection P(pi) = sigma(-gamma G(pi)) placed at a selection gate on the arc between CHOOSE and ACT. G is marked framing vocabulary, not a scheduler. Every identity is MODELED; gamma is NOT-MEASURED. No magnitude is depicted and nothing is drawn to scale.</desc>
+
+<style>
+#pl-02-plate{
+  --pl02-paper:#f4efe4; --pl02-paper-2:#eae3d3; --pl02-ink:#1b1815;
+  --pl02-ink-2:#4c463d; --pl02-ink-3:#6a6254; --pl02-accent:#7a3b22;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,"Times New Roman",Times,serif;
+  display:block; width:100%; height:auto; max-width:1120px; margin:0 auto;
+}
+@media (prefers-color-scheme:dark){
+  #pl-02-plate{
+    --pl02-paper:#14130f; --pl02-paper-2:#1d1b16; --pl02-ink:#ece5d6;
+    --pl02-ink-2:#b8b0a0; --pl02-ink-3:#8b8375; --pl02-accent:#d38f62;
+  }
+}
+:root[data-theme="dark"] #pl-02-plate, #pl-02-plate[data-theme="dark"]{
+  --pl02-paper:#14130f; --pl02-paper-2:#1d1b16; --pl02-ink:#ece5d6;
+  --pl02-ink-2:#b8b0a0; --pl02-ink-3:#8b8375; --pl02-accent:#d38f62;
+}
+:root[data-theme="light"] #pl-02-plate, #pl-02-plate[data-theme="light"]{
+  --pl02-paper:#f4efe4; --pl02-paper-2:#eae3d3; --pl02-ink:#1b1815;
+  --pl02-ink-2:#4c463d; --pl02-ink-3:#6a6254; --pl02-accent:#7a3b22;
+}
+
+#pl-02-plate .paper{fill:var(--pl02-paper,#f4efe4)}
+#pl-02-plate .paper2{fill:var(--pl02-paper-2,#eae3d3)}
+#pl-02-plate .hl{stroke:var(--pl02-ink,#1b1815);stroke-width:1.05}
+#pl-02-plate .sd{fill:var(--pl02-ink-3,#6a6254)}
+#pl-02-plate .mk{fill:var(--pl02-ink,#1b1815)}
+
+#pl-02-plate .r-thick{fill:none;stroke:var(--pl02-ink,#1b1815);stroke-width:2.6}
+#pl-02-plate .r-thin{fill:none;stroke:var(--pl02-ink,#1b1815);stroke-width:0.9}
+#pl-02-plate .r-hair{fill:none;stroke:var(--pl02-ink-3,#6a6254);stroke-width:0.55}
+#pl-02-plate .cart{fill:var(--pl02-paper-2,#eae3d3);stroke:var(--pl02-ink,#1b1815);stroke-width:1.15}
+#pl-02-plate .cart-in{fill:none;stroke:var(--pl02-ink-3,#6a6254);stroke-width:0.5}
+#pl-02-plate .node{fill:var(--pl02-paper,#f4efe4);stroke:var(--pl02-ink,#1b1815);stroke-width:1.6}
+#pl-02-plate .hatchring{fill:url(#pl02-hatch);stroke:var(--pl02-ink,#1b1815);stroke-width:0.8}
+#pl-02-plate .arc{fill:none;stroke:var(--pl02-ink,#1b1815);stroke-width:1.5}
+#pl-02-plate .leader{fill:none;stroke:var(--pl02-ink-3,#6a6254);stroke-width:0.8;stroke-dasharray:2.5 2.5}
+#pl-02-plate .brace{fill:none;stroke:var(--pl02-ink-2,#4c463d);stroke-width:0.9}
+#pl-02-plate .tagdisc{fill:var(--pl02-ink,#1b1815)}
+#pl-02-plate .dots{fill:none;stroke:var(--pl02-ink-3,#6a6254);stroke-width:0.7;stroke-dasharray:1 3}
+#pl-02-plate .stampbg{fill:url(#pl02-stipple);stroke:var(--pl02-accent,#7a3b22);stroke-width:1.3}
+#pl-02-plate .stampin{fill:var(--pl02-paper,#f4efe4);stroke:var(--pl02-accent,#7a3b22);stroke-width:0.5}
+
+#pl-02-plate text{fill:var(--pl02-ink,#1b1815)}
+#pl-02-plate .t-run{font-size:10px;letter-spacing:2.2px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-plateno{font-size:11px;letter-spacing:2.6px;fill:var(--pl02-accent,#7a3b22)}
+#pl-02-plate .t-title{font-size:34px;letter-spacing:6px}
+#pl-02-plate .t-sub{font-size:15px;font-style:italic;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-kick{font-size:9.4px;letter-spacing:1.6px;fill:var(--pl02-ink-3,#6a6254)}
+#pl-02-plate .t-cl{font-size:8.4px;letter-spacing:1.5px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-cl-t{font-size:8.4px;letter-spacing:0.55px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-math{font-size:19px;letter-spacing:0.4px}
+#pl-02-plate .t-math-m{font-size:12px;letter-spacing:0.2px}
+#pl-02-plate .t-math-s{font-size:10px;letter-spacing:0.15px}
+#pl-02-plate .t-bound{font-size:11px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-lbl{font-size:9px;font-style:italic;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-gloss{font-size:8.2px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-note{font-size:7.6px;fill:var(--pl02-ink-3,#6a6254)}
+#pl-02-plate .t-units{font-size:8.4px;fill:var(--pl02-ink-3,#6a6254)}
+#pl-02-plate .t-decl{font-size:10px;letter-spacing:0.8px}
+#pl-02-plate .t-node{font-size:9px;letter-spacing:0.5px}
+#pl-02-plate .t-tag{font-size:11px;fill:var(--pl02-paper,#f4efe4)}
+#pl-02-plate .t-med{font-size:8px}
+#pl-02-plate .t-medhd{font-size:9px;letter-spacing:1.2px}
+#pl-02-plate .t-medsym{font-size:15px;font-style:italic}
+#pl-02-plate .t-stamp{font-size:8.2px;letter-spacing:1.5px;fill:var(--pl02-ink,#1b1815)}
+#pl-02-plate .t-keyhd{font-size:11px;letter-spacing:3.5px}
+#pl-02-plate .t-keysub{font-size:8.4px;letter-spacing:1.4px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-keysym{font-size:10px}
+#pl-02-plate .t-key{font-size:8px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-caphd{font-size:10px;letter-spacing:2px}
+#pl-02-plate .t-capsub{font-size:8px;font-style:italic;fill:var(--pl02-ink-3,#6a6254)}
+#pl-02-plate .t-cap{font-size:8.2px;fill:var(--pl02-ink-2,#4c463d)}
+#pl-02-plate .t-capn{font-size:8.2px;fill:var(--pl02-ink,#1b1815)}
+#pl-02-plate .msub{font-size:70%}
+#pl-02-plate .mid{text-anchor:middle}
+#pl-02-plate .end{text-anchor:end}
+</style>
+
+<defs>
+  <pattern id="pl02-hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="6" class="hl"/>
+  </pattern>
+  <pattern id="pl02-stipple" patternUnits="userSpaceOnUse" width="5" height="5">
+    <circle cx="1.2" cy="1.2" r="0.6" class="sd"/>
+    <circle cx="3.7" cy="3.7" r="0.6" class="sd"/>
+  </pattern>
+  <marker id="pl02-arw" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" class="mk"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1120" height="1620" class="paper"/>
+
+<!-- ============ FRAME ============ -->
+<rect x="20" y="20" width="1080" height="1580" class="r-thick"/>
+<rect x="29" y="29" width="1062" height="1562" class="r-thin"/>
+
+<!-- ============ HEADER ============ -->
+<text x="48" y="64" class="t-run">UNI ENCYCLOPEDIA &#183; WING NATURA</text>
+<text x="1072" y="64" class="t-plateno end">PLATE PL-02</text>
+<line x1="48" y1="80" x2="1072" y2="80" class="r-thin"/>
+
+<text x="560" y="128" class="t-title mid">THE ONE LOOP</text>
+<text x="560" y="158" class="t-sub mid">VFE to understand &#183; EFE to choose</text>
+<text x="560" y="182" class="t-kick mid">AFTER NA-02 &#8212; ACTIVE INFERENCE AS THE METHOD &#183; A METHOD, NOT A RESULT</text>
+
+<!-- ============ CARTOUCHE: F at PERCEIVE ============ -->
+<rect x="200" y="196" width="720" height="144" class="cart"/>
+<rect x="204" y="200" width="712" height="136" class="cart-in"/>
+<text x="216" y="218" class="t-cl">AT 1 &#183; PERCEIVE &#8212; MINIMIZE VARIATIONAL FREE ENERGY (VFE)</text>
+
+<text x="300" y="254" class="t-math">F  =</text>
+<text x="450" y="254" class="t-math mid">D<tspan class="msub" dy="3.5">KL</tspan><tspan dy="-3.5">[ q(s) &#8214; p(s) ]</tspan></text>
+<text x="580" y="254" class="t-math mid">&#8722;</text>
+<text x="732" y="254" class="t-math mid">E<tspan class="msub" dy="3.5">q(s)</tspan><tspan dy="-3.5">[ ln p(o|s) ]</tspan></text>
+
+<path d="M376,264 L376,268 L448,268 L448,272 L452,272 L452,268 L524,268 L524,264" class="brace"/>
+<text x="450" y="286" class="t-lbl mid">complexity</text>
+<path d="M652,264 L652,268 L730,268 L730,272 L734,272 L734,268 L812,268 L812,264" class="brace"/>
+<text x="732" y="286" class="t-lbl mid">accuracy</text>
+
+<text x="560" y="308" class="t-bound mid">F &#8805; &#8722; ln p(o)   &#183;   bound gap = D<tspan class="msub" dy="2">KL</tspan><tspan dy="-2">[ q(s) &#8214; p(s|o) ] , zero iff q(s) = p(s|o)</tspan></text>
+<text x="560" y="320" class="t-units mid">Minimizing F selects the SIMPLEST SUFFICIENT explanation &#8212; it is not maximizing fit.</text>
+<text x="560" y="331" class="t-units mid">F and the bound in NATS (natural log) &#183; 1 nat = log<tspan class="msub" dy="2">2</tspan><tspan dy="-2"> e = 1.442695&#8230; bits &#183; NA02-01 &#183; NA02-02 &#183; NA02-03 &#8212; MODELED</tspan></text>
+<line x1="560" y1="340" x2="560" y2="348" class="leader"/>
+
+<!-- ============ CARTOUCHE: PREDICT ============ -->
+<rect x="790" y="390" width="290" height="144" class="cart"/>
+<rect x="794" y="394" width="282" height="136" class="cart-in"/>
+<text x="806" y="412" class="t-cl">AT 2 &#183; PREDICT</text>
+<text x="806" y="434" class="t-decl">NO FORMULA &#8212; AND NOT OPTIONAL.</text>
+<line x1="806" y1="444" x2="1064" y2="444" class="r-hair"/>
+<text x="806" y="459" class="t-gloss">The falsifier goes in before the action.</text>
+<text x="806" y="470" class="t-gloss">Surprise cannot be computed against a</text>
+<text x="806" y="481" class="t-gloss">prediction that was never made.</text>
+<text x="806" y="492" class="t-gloss">Skip 2, and step 5 has nothing to update:</text>
+<text x="806" y="503" class="t-gloss">the loop degenerates into narration &#8212; a</text>
+<text x="806" y="514" class="t-gloss">model that only ever confirms itself.</text>
+<text x="806" y="528" class="t-note">no quantity &#183; no units &#183; nothing to plot</text>
+<line x1="790" y1="500" x2="782" y2="506" class="leader"/>
+
+<!-- ============ CARTOUCHE: OBSERVE &amp; UPDATE ============ -->
+<rect x="40" y="390" width="290" height="144" class="cart"/>
+<rect x="44" y="394" width="282" height="136" class="cart-in"/>
+<text x="56" y="412" class="t-cl">AT 5 &#183; OBSERVE &amp; UPDATE</text>
+<text x="56" y="434" class="t-decl">CAPTURE THE RECEIPT.</text>
+<line x1="56" y1="444" x2="314" y2="444" class="r-hair"/>
+<text x="56" y="459" class="t-gloss">The receipt is o &#8212; what actually</text>
+<text x="56" y="470" class="t-gloss">arrived at the sensor.</text>
+<text x="56" y="481" class="t-gloss">Surprise = the gap between the</text>
+<text x="56" y="492" class="t-gloss">step-2 prediction and o.</text>
+<text x="56" y="503" class="t-gloss">Update q(s) toward the observation;</text>
+<text x="56" y="514" class="t-gloss">do not explain the surprise away.</text>
+<text x="56" y="528" class="t-note">surprisal &#8722;ln p(o), in NATS</text>
+<line x1="330" y1="500" x2="338" y2="506" class="leader"/>
+
+<!-- ============ CARTOUCHE: G at CHOOSE ============ -->
+<rect x="760" y="570" width="320" height="242" class="cart"/>
+<rect x="764" y="574" width="312" height="234" class="cart-in"/>
+<text x="776" y="592" class="t-cl-t">AT 3 &#183; CHOOSE &#8212; MINIMIZE EXPECTED FREE ENERGY (EFE)</text>
+
+<text x="776" y="618" class="t-math-m">G(&#960;) = D<tspan class="msub" dy="2.5">KL</tspan><tspan dy="-2.5">[ q(o|&#960;) &#8214; p(o|C) ]</tspan></text>
+<line x1="962" y1="615" x2="1036" y2="615" class="dots"/>
+<text x="1064" y="618" class="t-lbl end">risk</text>
+<text x="828" y="638" class="t-math-m">+ E<tspan class="msub" dy="2.5">q(s|&#960;)</tspan><tspan dy="-2.5">[ H[ p(o|s) ] ]</tspan></text>
+<line x1="984" y1="635" x2="1016" y2="635" class="dots"/>
+<text x="1064" y="638" class="t-lbl end">ambiguity</text>
+
+<line x1="776" y1="654" x2="1064" y2="654" class="r-hair"/>
+<text x="776" y="670" class="t-note">the same scalar, rearranged &#8212;</text>
+
+<text x="776" y="690" class="t-math-s">G(&#960;) = &#8722; E<tspan class="msub" dy="2">q(o|&#960;)</tspan><tspan dy="-2">[ D</tspan><tspan class="msub" dy="2">KL</tspan><tspan dy="-2">[ q(s|o,&#960;) &#8214; q(s|&#960;) ] ]</tspan></text>
+<line x1="996" y1="687" x2="1022" y2="687" class="dots"/>
+<text x="1064" y="690" class="t-lbl end">epistemic</text>
+<text x="826" y="706" class="t-math-s">&#8722; E<tspan class="msub" dy="2">q(o|&#960;)</tspan><tspan dy="-2">[ ln p(o|C) ]</tspan></text>
+<line x1="946" y1="703" x2="1018" y2="703" class="dots"/>
+<text x="1064" y="706" class="t-lbl end">pragmatic</text>
+<text x="776" y="722" class="t-note">so minimizing G maximizes both.</text>
+
+<line x1="776" y1="732" x2="1064" y2="732" class="r-hair"/>
+<text x="776" y="745" class="t-note">Exact under the convention q(o,s|&#960;) = p(o|s) q(s|&#960;). The epistemic</text>
+<text x="776" y="754.5" class="t-note">form further treats q(s|o,&#960;) as standing in for p(s|o) &#8212; where q is a</text>
+<text x="776" y="764" class="t-note">poor posterior, the info-gain reading is itself approximate.</text>
+<text x="776" y="778" class="t-units">G in NATS &#183; NA02-04 &#8212; MODELED</text>
+
+<rect x="776" y="784" width="288" height="23" class="stampbg"/>
+<rect x="780" y="788" width="280" height="15" class="stampin"/>
+<text x="920" y="800" class="t-stamp mid">FRAMING VOCABULARY &#8212; NOT A SCHEDULER</text>
+<line x1="760" y1="740" x2="706" y2="732" class="leader"/>
+
+<!-- ============ CARTOUCHE: ACT ============ -->
+<rect x="40" y="570" width="320" height="242" class="cart"/>
+<rect x="44" y="574" width="312" height="234" class="cart-in"/>
+<text x="56" y="592" class="t-cl">AT 4 &#183; ACT</text>
+<text x="56" y="612" class="t-gloss">Take the lowest-G policy.</text>
+<line x1="56" y1="624" x2="344" y2="624" class="r-hair"/>
+<text x="56" y="640" class="t-cl">IN THE UNI PROGRAM:</text>
+<text x="56" y="656" class="t-gloss">Nothing computes G and schedules from it.</text>
+<text x="56" y="672" class="t-note">Work is ordered by &#8212;</text>
+<text x="66" y="688" class="t-gloss">&#183;  PENDING-burndown</text>
+<text x="66" y="701" class="t-gloss">&#183;  inadmissible-event catch</text>
+<text x="66" y="714" class="t-gloss">&#183;  migration gating</text>
+<text x="66" y="727" class="t-gloss">&#183;  read-agency</text>
+<line x1="56" y1="739" x2="344" y2="739" class="r-hair"/>
+<text x="56" y="752" class="t-note">Prose implying UNI runs EFE is drift, and is a defect.</text>
+<text x="56" y="761.5" class="t-note">[NA-02 &#167; Honest bounds 5]</text>
+<text x="56" y="771" class="t-note">UNI-side disposition: NEGATIVE / drift &#8212; a UNI LEDGER</text>
+<text x="56" y="780.5" class="t-note">state, not a NATURA evidence class. The two vocabularies</text>
+<text x="56" y="790" class="t-note">are sovereign and are never merged. UNI&#8217;s ledger, not this</text>
+<text x="56" y="799.5" class="t-note">plate, is the authority on UNI build status.</text>
+<line x1="360" y1="740" x2="414" y2="732" class="leader"/>
+
+<!-- ============ THE RING ============ -->
+<path d="M607.9,401.3 A185,185 0 0 1 715.2,479.3" class="arc" marker-end="url(#pl02-arw)"/>
+<path d="M744.7,570.3 A185,185 0 0 1 703.8,696.4" class="arc" marker-end="url(#pl02-arw)"/>
+<path d="M626.3,752.7 A185,185 0 0 1 493.7,752.7" class="arc" marker-end="url(#pl02-arw)"/>
+<path d="M416.2,696.4 A185,185 0 0 1 375.3,570.3" class="arc" marker-end="url(#pl02-arw)"/>
+<path d="M404.8,479.3 A185,185 0 0 1 512.1,401.3" class="arc" marker-end="url(#pl02-arw)"/>
+
+<!-- selection gate glyph, on the arc from 3 to 4 -->
+<circle cx="560" cy="765" r="21" class="node"/>
+<circle cx="560" cy="765" r="17" class="cart-in"/>
+<text x="560" y="772" class="t-math mid">&#963;</text>
+
+<!-- node 1 PERCEIVE (carries a scalar: hatched ring) -->
+<circle cx="560" cy="395" r="43" class="hatchring"/>
+<circle cx="560" cy="395" r="36" class="node"/>
+<text x="560" y="398" class="t-node mid">PERCEIVE</text>
+<circle cx="560" cy="359" r="11" class="tagdisc"/>
+<text x="560" y="363" class="t-tag mid">1</text>
+
+<!-- node 2 PREDICT -->
+<circle cx="735.9" cy="522.8" r="36" class="node"/>
+<text x="735.9" y="525.8" class="t-node mid">PREDICT</text>
+<circle cx="770.2" cy="511.7" r="11" class="tagdisc"/>
+<text x="770.2" y="515.7" class="t-tag mid">2</text>
+
+<!-- node 3 CHOOSE (carries a scalar: hatched ring) -->
+<circle cx="668.7" cy="729.7" r="43" class="hatchring"/>
+<circle cx="668.7" cy="729.7" r="36" class="node"/>
+<text x="668.7" y="732.7" class="t-node mid">CHOOSE</text>
+<circle cx="689.9" cy="758.8" r="11" class="tagdisc"/>
+<text x="689.9" y="762.8" class="t-tag mid">3</text>
+
+<!-- node 4 ACT -->
+<circle cx="451.3" cy="729.7" r="36" class="node"/>
+<text x="451.3" y="732.7" class="t-node mid">ACT</text>
+<circle cx="430.1" cy="758.8" r="11" class="tagdisc"/>
+<text x="430.1" y="762.8" class="t-tag mid">4</text>
+
+<!-- node 5 OBSERVE &amp; UPDATE -->
+<circle cx="384.1" cy="522.8" r="36" class="node"/>
+<text x="384.1" y="520.8" class="t-node mid">OBSERVE</text>
+<text x="384.1" y="532.8" class="t-node mid">&amp; UPDATE</text>
+<circle cx="349.8" cy="511.7" r="11" class="tagdisc"/>
+<text x="349.8" y="515.7" class="t-tag mid">5</text>
+
+<!-- ============ CENTRE MEDALLION ============ -->
+<circle cx="560" cy="580" r="95" class="cart"/>
+<circle cx="560" cy="580" r="88" class="cart-in"/>
+<text x="560" y="534" class="t-medhd mid">TWO QUANTITIES</text>
+<text x="560" y="546" class="t-medhd mid">TWO JOBS</text>
+<line x1="500" y1="554" x2="620" y2="554" class="r-hair"/>
+<text x="560" y="570" class="t-med mid"><tspan class="t-medsym">F</tspan>  scores BELIEFS &#8212;</text>
+<text x="560" y="581" class="t-med mid">what IS.</text>
+<text x="560" y="597" class="t-med mid"><tspan class="t-medsym">G</tspan>  scores POLICIES &#8212;</text>
+<text x="560" y="608" class="t-med mid">what has not</text>
+<text x="560" y="619" class="t-med mid">happened yet.</text>
+<line x1="500" y1="627" x2="620" y2="627" class="r-hair"/>
+<text x="560" y="641" class="t-med mid">both in NATS</text>
+
+<!-- ============ CARTOUCHE: the selection gate ============ -->
+<rect x="380" y="852" width="360" height="158" class="cart"/>
+<rect x="384" y="856" width="352" height="150" class="cart-in"/>
+<text x="560" y="874" class="t-cl mid">AT THE SELECTION GATE &#183; BETWEEN 3 AND 4</text>
+<text x="560" y="906" class="t-math mid">P(&#960;) = &#963;( &#8722;&#947; &#183; G(&#960;) )</text>
+<text x="560" y="926" class="t-bound mid">&#947; &#8594; 0 : uniform (indifferent) over &#960;      &#947; &#8594; &#8734; : deterministic argmin G</text>
+<line x1="396" y1="938" x2="724" y2="938" class="r-hair"/>
+<text x="560" y="952" class="t-note mid">&#947; carries units of INVERSE NATS (nats<tspan class="msub" dy="-3">&#8722;1</tspan><tspan dy="3">): the softmax argument must be</tspan></text>
+<text x="560" y="962" class="t-note mid">dimensionless and G is in nats &#8212; a detail routinely dropped. P(&#960;) is</text>
+<text x="560" y="972" class="t-note mid">dimensionless. &#947; is a free parameter with NO UNIVERSAL VALUE, &#947; &gt; 0,</text>
+<text x="560" y="982" class="t-note mid">fit per model or subject &#8212; NOT-MEASURED [NA02-05, NA02-06].</text>
+<text x="560" y="992" class="t-note mid">Friston et al. (2017): the fuller process-theory form also carries a</text>
+<text x="560" y="1002" class="t-note mid">past-evidence term alongside &#947;&#183;G, and &#947; is itself inferred, not fixed.</text>
+<line x1="560" y1="852" x2="560" y2="788" class="leader"/>
+
+<!-- ============ FIGURE KEY ============ -->
+<line x1="48" y1="1038" x2="1072" y2="1038" class="r-thin"/>
+<text x="560" y="1066" class="t-keyhd mid">FIGURE KEY</text>
+
+<text x="60" y="1092" class="t-keysub">SYMBOLS &#8212; STATE &amp; MODEL</text>
+<text x="60" y="1112" class="t-keysym">o</text><text x="124" y="1112" class="t-key">observations &#8212; what actually arrived at the sensor; the receipt</text>
+<text x="60" y="1130" class="t-keysym">s</text><text x="124" y="1130" class="t-key">hidden states &#8212; what you cannot see directly and must infer</text>
+<text x="60" y="1148" class="t-keysym">q(s)</text><text x="124" y="1148" class="t-key">approximate posterior &#8212; your honest, improvable belief; what you optimize</text>
+<text x="60" y="1166" class="t-keysym">p(o,s)</text><text x="124" y="1166" class="t-key">generative model &#8212; how states cause observations and how states evolve</text>
+<text x="60" y="1184" class="t-keysym">p(o|s)</text><text x="124" y="1184" class="t-key">likelihood &#8212; the A mapping in a discrete POMDP</text>
+<text x="60" y="1202" class="t-keysym">p(s)</text><text x="124" y="1202" class="t-key">prior &#8212; belief before this observation</text>
+<text x="60" y="1220" class="t-keysym">p(s|o)</text><text x="124" y="1220" class="t-key">true posterior &#8212; generally intractable; what q approximates</text>
+
+<text x="560" y="1092" class="t-keysub">SYMBOLS &#8212; POLICY, CHOICE &amp; OPERATORS</text>
+<text x="560" y="1112" class="t-keysym">&#960;</text><text x="624" y="1112" class="t-key">policy &#8212; a candidate action sequence</text>
+<text x="560" y="1130" class="t-keysym">C</text><text x="624" y="1130" class="t-key">preferences &#8212; a prior over PREFERRED observations, p(o|C); the goal, as a distribution</text>
+<text x="560" y="1148" class="t-keysym">&#947;</text><text x="624" y="1148" class="t-key">precision &#8212; inverse-temperature over policies; units nats<tspan class="msub" dy="-2.5">&#8722;1</tspan><tspan dy="2.5">; &#947; &gt; 0; NOT-MEASURED [NA02-05]</tspan></text>
+<text x="560" y="1166" class="t-keysym">F</text><text x="624" y="1166" class="t-key">variational free energy &#8212; scores beliefs; upper-bounds surprisal; NATS</text>
+<text x="560" y="1184" class="t-keysym">G</text><text x="624" y="1184" class="t-key">expected free energy &#8212; scores policies; NATS; on this plate: framing vocabulary, not a scheduler</text>
+<text x="560" y="1202" class="t-keysym">D<tspan class="msub" dy="2">KL</tspan></text><text x="624" y="1202" class="t-key">Kullback&#8211;Leibler divergence &#8212; non-negative; zero iff the two distributions are equal; NATS</text>
+<text x="560" y="1220" class="t-keysym">H</text><text x="624" y="1220" class="t-key">Shannon entropy &#8212; expected surprisal; NATS</text>
+<text x="560" y="1238" class="t-keysym">&#963;</text><text x="624" y="1238" class="t-key">softmax &#8212; normalizes &#8722;&#947;&#183;G into a distribution over policies; output dimensionless</text>
+
+<line x1="60" y1="1256" x2="1064" y2="1256" class="r-hair"/>
+<text x="60" y="1272" class="t-keysub">PLATE CONVENTIONS</text>
+<rect x="60" y="1282" width="22" height="11" class="hatchring"/>
+<text x="92" y="1291" class="t-key">hatched ring = this step carries a scalar quantity (F at 1, G at 3). The hatch denotes a CATEGORY, never a magnitude.</text>
+<circle cx="71" cy="1305" r="7.5" class="tagdisc"/>
+<text x="71" y="1308" class="t-tag mid" style="font-size:8px">1</text>
+<text x="92" y="1309" class="t-key">numbered tag = the step&#8217;s ordinal in the five-step loop of NA-02. Arrows carry sequence only, never a time-scale.</text>
+<text x="60" y="1327" class="t-key">Evidence classes on this plate, NATURA vocabulary [NA-00]:  MODELED &#8212; every identity here; the model&#8217;s assumptions ARE the fence.   &#183;   NOT-MEASURED &#8212; &#947;, and any organism computing F or G.</text>
+
+<!-- ============ CAPTION ============ -->
+<line x1="48" y1="1344" x2="1072" y2="1344" class="r-thin"/>
+<text x="48" y="1366" class="t-caphd">PLATE PL-02 &#8212; THE ONE LOOP</text>
+<text x="48" y="1380" class="t-capsub">After encyclopedia/wing-NATURA/NA-02-the-one-loop.md. Ledger rows NA02-01 &#8230; NA02-06 and NA02-10, encyclopedia/NATURE-LEDGER.md.</text>
+
+<text x="48" y="1400" class="t-capn">1.</text>
+<text x="66" y="1400" class="t-cap">The loop of NA-02, drawn once: 1 PERCEIVE, 2 PREDICT, 3 CHOOSE, 4 ACT, 5 OBSERVE &amp; UPDATE, and back to 1. The ring is a</text>
+<text x="66" y="1410.6" class="t-cap">sequence, not a clock &#8212; the arrows carry no time-scale, and no step is drawn larger or nearer because it matters more.</text>
+
+<text x="48" y="1424.6" class="t-capn">2.</text>
+<text x="66" y="1424.6" class="t-cap">Two steps carry a scalar, and only two: 1 and 3, marked by the hatched ring. F scores beliefs about what IS. G scores</text>
+<text x="66" y="1435.2" class="t-cap">policies &#8212; whose observations have not happened, which is exactly why F cannot score an action. Both are in nats. Per</text>
+<text x="66" y="1445.8" class="t-cap">NA-02, conflating the two is the most common error in applying this framework.</text>
+
+<text x="48" y="1459.8" class="t-capn">3.</text>
+<text x="66" y="1459.8" class="t-cap">Step 2 carries no formula and is not optional: the falsifier goes in before the action, because surprise cannot be</text>
+<text x="66" y="1470.4" class="t-cap">computed against a prediction that was never made. Skip it, and step 5 has nothing to update.</text>
+
+<text x="48" y="1484.4" class="t-capn">4.</text>
+<text x="66" y="1484.4" class="t-cap">Why one number must hold both terms. Goal-only (drop the epistemic term) charges toward C through states it cannot</text>
+<text x="66" y="1495" class="t-cap">identify. Explore-only (drop the pragmatic term) resolves uncertainty forever and arrives nowhere. Scored apart, the</text>
+<text x="66" y="1505.6" class="t-cap">trade-off weight must be hand-tuned &#8212; which is the judgement the construction exists to make principled. It is an</text>
+<text x="66" y="1516.2" class="t-cap">argument about bookkeeping discipline, not a claim that any organism computes G.</text>
+
+<text x="48" y="1530.2" class="t-capn">5.</text>
+<text x="66" y="1530.2" class="t-cap">Sources. Buckley et al. (2017) J. Math. Psych. 81:55&#8211;79 &#183; Da Costa et al. (2020) J. Math. Psych. 99:102447 &#183; Friston et al.</text>
+<text x="66" y="1540.8" class="t-cap">(2017) Neural Computation 29(1):1&#8211;49, DOI 10.1162/NECO_a_00912 &#183; Parr, Pezzulo &amp; Friston (2022) Active Inference,</text>
+<text x="66" y="1551.4" class="t-cap">MIT Press, DOI 10.7551/mitpress/12441.001.0001. Douady &amp; Couder&#8217;s unrelated G is NOT this G &#8212; see NA-02.</text>
+
+<text x="580" y="1366" class="t-caphd">WHAT THIS PLATE DOES NOT CLAIM</text>
+
+<text x="580" y="1396" class="t-capn">&#183;</text>
+<text x="592" y="1396" class="t-cap">A method, not a result. Reading this plate raises no rung and settles no question. It is not evidence that anything is</text>
+<text x="592" y="1406.6" class="t-cap">intelligent, aware, self-aware, or conscious. A system that minimizes F is a system that minimizes F.</text>
+
+<text x="580" y="1420.6" class="t-capn">&#183;</text>
+<text x="592" y="1420.6" class="t-cap">Not that any biological system computes F or G explicitly &#8212; NOT-MEASURED [NA02-10]. Falsifier: a pre-registered</text>
+<text x="592" y="1431.2" class="t-cap">neural recording decoding a per-policy G in nats.</text>
+
+<text x="580" y="1445.2" class="t-capn">&#183;</text>
+<text x="592" y="1445.2" class="t-cap">Not that a low F is a correctness certificate. F upper-bounds surprisal UNDER THE MODEL ALREADY HELD; the bound</text>
+<text x="592" y="1455.8" class="t-cap">gap is unobservable without the posterior that was intractable to begin with.</text>
+
+<text x="580" y="1469.8" class="t-capn">&#183;</text>
+<text x="592" y="1469.8" class="t-cap">Not that the FEP is established, general, or settled &#8212; genuinely contested. See NA-02 &#167; Honest bounds: Bruineberg et</text>
+<text x="592" y="1480.4" class="t-cap">al. (2022) BBS 45:e183 &#183; Aguilera et al. (2022) Phys. Life Rev. 40:24&#8211;50 &#183; Colombo &amp; Wright (2021) Synthese</text>
+<text x="592" y="1491" class="t-cap">198:3463&#8211;3488 &#183; Andrews (2021) Biol. Philos. 36:30.</text>
+
+<text x="580" y="1505" class="t-capn">&#183;</text>
+<text x="592" y="1505" class="t-cap">Not that &#947; has a universal natural value &#8212; NOT-MEASURED [NA02-05].</text>
+
+<text x="580" y="1519" class="t-capn">&#183;</text>
+<text x="592" y="1519" class="t-cap">Not that UNI computes G or schedules from it. G(&#960;) is framing vocabulary; UNI-side disposition NEGATIVE / drift, and</text>
+<text x="592" y="1529.6" class="t-cap">UNI&#8217;s ledger &#8212; not this plate &#8212; is the authority on UNI build status.</text>
+
+<text x="580" y="1543.6" class="t-capn">&#183;</text>
+<text x="592" y="1543.6" class="t-cap">Not a UNI gate. A nature citation is never a UNI gate: reading Friston or Da Costa raises no rung and makes no UNI</text>
+<text x="592" y="1554.2" class="t-cap">claim &#8220;proven&#8221;.</text>
+
+<text x="580" y="1568.2" class="t-capn">&#183;</text>
+<text x="592" y="1568.2" class="t-cap">Nothing about &#8220;full human&#8221; or &#8220;beyond human&#8221; &#8212; permanent open questions, never a target, never a deliverable.</text>
+
+</svg>

@@ -1,0 +1,820 @@
+<svg class="pl09" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 2920" width="100%" role="img" aria-labelledby="pl09-title pl09-desc" preserveAspectRatio="xMidYMid meet">
+<title id="pl09-title">Plate PL-09 &#8212; The two sovereign ledgers</title>
+<desc id="pl09-desc">An engraved-style encyclopedia plate drawing the architecture of two ledgers that are never merged. Panel I draws them as two trees in separate beds of soil with no root contact: on the left the UNI CLAIM-LEDGER, whose root is UNI's own gates run on UNI's own artifacts, carrying the four-value fence (proven, designed, hypothesized, not-yet-built), the four ledger states (PASS, FAIL, NEGATIVE, PENDING) at the ledger's own last recorded snapshot of 882 rows, and the A to U evidence classes; on the right the NATURA NATURE-LEDGER, whose root is third parties publishing in the literature, carrying twelve classes in three groups - group A measured 578 rows, group B derived 257 rows, group C fenced 80 rows - plus four rows drawn detached from every bough because they deliberately carry no class. The two crowns are joined by a dashed swag marked as an audited cross-link that is a citation only and never a merge, crossing a double-ruled sovereign boundary that reference may cross and inference may not. Panel II prints the cardinal rule: a nature citation is never a UNI gate. Panel III is the crosswalk of nine look-alike pairs, where the resemblance is the trap, and the load-bearing column states what each can never imply about the other. Panel IV draws TRUE, HONEST and META as three sovereign lanes of equal width, separated by boundary rules, with META marked as carried from outside this corpus. Every count carries units of ledger rows and a source, and the caption states what the plate does not claim.</desc>
+<style>
+.pl09{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+@media (prefers-color-scheme:dark){
+  .pl09{
+    --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+    --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+  }
+}
+:root[data-theme="dark"] .pl09{
+  --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+  --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+}
+:root[data-theme="light"] .pl09{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+.pl09 text{font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",Times,serif;
+  fill:var(--ink,#1b1a17);}
+.pl09 .t{fill:var(--ink,#1b1a17);}
+.pl09 .tf{fill:var(--faint,#a49b8f);}
+.pl09 .tr{fill:var(--rule,#5a544b);}
+.pl09 .hd{fill:var(--ink,#1b1a17);font-weight:700;}
+.pl09 .hd2{fill:var(--rule,#5a544b);font-style:italic;}
+.pl09 .ct{fill:var(--contest,#8c2f1d);}
+.pl09 .fn{fill:var(--fence,#3c5670);}
+.pl09 .mono{font-family:"Courier New",Courier,monospace;}
+.pl09 .frame{fill:none;stroke:var(--rule,#5a544b);stroke-width:1;}
+.pl09 .rule{stroke:var(--rule,#5a544b);stroke-width:.7;fill:none;}
+.pl09 .ink{stroke:var(--ink,#1b1a17);stroke-width:1;fill:none;}
+.pl09 .thin{stroke:var(--ink,#1b1a17);stroke-width:.55;fill:none;}
+.pl09 .faint{stroke:var(--faint,#a49b8f);stroke-width:.55;fill:none;}
+.pl09 .dim{stroke:var(--rule,#5a544b);stroke-width:.8;fill:none;}
+.pl09 .dash{stroke:var(--faint,#a49b8f);stroke-width:.7;fill:none;stroke-dasharray:5 4;}
+.pl09 .ctline{stroke:var(--contest,#8c2f1d);stroke-width:1.1;fill:none;stroke-dasharray:7 4;}
+.pl09 .fnline{stroke:var(--fence,#3c5670);stroke-width:1;fill:none;stroke-dasharray:1.6 3.2;}
+.pl09 .swag{stroke:var(--ink,#1b1a17);stroke-width:1.15;fill:none;stroke-dasharray:9 5;}
+.pl09 .bound{stroke:var(--ink,#1b1a17);stroke-width:1.5;fill:none;}
+.pl09 .dot{fill:var(--ink,#1b1a17);stroke:none;}
+.pl09 .dotf{fill:var(--faint,#a49b8f);stroke:none;}
+.pl09 .dotc{fill:var(--contest,#8c2f1d);stroke:none;}
+.pl09 .bgfill{fill:var(--bg,#f6f2e9);stroke:none;}
+.pl09 .panelfill{fill:var(--panel,#efe9dc);stroke:none;}
+</style>
+<defs>
+<marker id="pl09-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="var(--ink,#1b1a17)"/></marker>
+<pattern id="pl09-soilL" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl09-soilR" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl09-void" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--fence,#3c5670)" stroke-width=".45" opacity=".5"/></pattern>
+<pattern id="pl09-ghost" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--contest,#8c2f1d)" stroke-width=".5" opacity=".55"/></pattern>
+</defs>
+<rect class="bgfill" x="0" y="0" width="1440" height="2920"/>
+<rect class="frame" x="24" y="24" width="1392" height="2872" stroke-width="1.6"/>
+<rect class="frame" x="31" y="31" width="1378" height="2858" stroke-width="0.6"/>
+<text class="tr" x="60" y="64" font-size="11" letter-spacing="2.6">UNI ENCYCLOPEDIA &amp; COOKBOOK · THE TWO SOVEREIGN VOCABULARIES</text>
+<text class="hd" x="60" y="106" font-size="30" letter-spacing="3">PLATE PL-09</text>
+<text class="t" x="60" y="140" font-size="21" letter-spacing="1.4">THE TWO SOVEREIGN LEDGERS</text>
+<text class="tf" x="60" y="166" font-size="11">Primary source: NA-00 (encyclopedia/wing-NATURA/NA-00-how-to-read-this-wing.md) · NATURE-LEDGER.md §0 §1 §5 · CLAIM-LEDGER.md §0 · lexicon/CONCEPTS.json v1.0.0 (uncommitted — NOT in this tip) · corpus tip f1be794</text>
+<text class="tr" x="1380" y="64" font-size="11" text-anchor="end" letter-spacing="1.1">~2 of 11+ developmental rungs earned</text>
+<text class="hd" x="1380" y="84" font-size="12" text-anchor="end" letter-spacing="1.6">NO UNI RUNG IS RAISED BY THIS PLATE</text>
+<text class="tf" x="1380" y="102" font-size="10.5" text-anchor="end">A nature citation is never a UNI gate.</text>
+<line class="rule" x1="60" y1="182" x2="1380" y2="182" stroke-width="1.2"/>
+<g transform="translate(0,25)">
+<rect class="frame" x="60" y="175" width="1320" height="1005"/>
+<line class="rule" x1="60" y1="209" x2="1380" y2="209" stroke-width="1.1"/>
+<text class="hd" x="74" y="199" font-size="15" letter-spacing="1.4">I</text>
+<text class="hd2" x="92" y="199" font-size="13" letter-spacing="1.1">THE TWO SOVEREIGN TREES — separate roots, separate soil, no graft</text>
+<line class="bound" x1="717.5" y1="300" x2="717.5" y2="1095"/>
+<line class="bound" x1="722.5" y1="300" x2="722.5" y2="1095"/>
+<g transform="rotate(-90 720 880)">
+<rect class="bgfill" x="713" y="874.97" width="228.83" height="12.81"/>
+<text class="hd" x="720" y="884" font-size="10.5" letter-spacing="2.2">SOVEREIGN BOUNDARY — NEVER MERGED</text>
+</g>
+<path class="swag" d="M 380 296 Q 720 200 1060 296"/>
+<circle class="dot" cx="380" cy="296" r="2.4"/>
+<circle class="dot" cx="1060" cy="296" r="2.4"/>
+<rect class="bgfill" x="540.91" y="258.54" width="358.18" height="13.42"/>
+<text class="hd" x="720" y="268" font-size="11" text-anchor="middle">AUDITED CROSS-LINK — CITATION ONLY, NEVER A MERGE</text>
+<rect class="bgfill" x="437.06" y="276.83" width="565.88" height="11.59"/>
+<text class="t" x="720" y="285" font-size="9.5" text-anchor="middle">✗   No operation takes a NATURA row and a UNI row and produces a stronger row of either kind.</text>
+<text class="hd2" x="720" y="1120" font-size="10" text-anchor="middle">Reference may cross this line. Inference may not.</text>
+<path class="ink" d="M 371 1000 C 374 700, 375 496, 376.5 336" stroke-width="1.1"/>
+<path class="ink" d="M 389 1000 C 386 700, 385 496, 383.5 336" stroke-width="1.1"/>
+<path class="thin" d="M 377.5 336 L 377.34 363.67 L 377.18 391.33 L 377.01 419 L 376.85 446.67 L 376.69 474.33 L 376.52 502 L 376.36 529.67 L 376.2 557.33 L 376.03 585 L 375.87 612.67 L 375.71 640.33 L 375.54 668 L 375.38 695.67 L 375.22 723.33 L 375.05 751 L 374.89 778.67 L 374.73 806.33 L 374.56 834 L 374.4 861.67 L 374.24 889.33 L 374.07 917 L 373.91 944.67 L 373.75 972.33 L 373.58 1000" opacity=".34"/>
+<path class="thin" d="M 379.35 336 L 379.31 363.67 L 379.26 391.33 L 379.22 419 L 379.18 446.67 L 379.14 474.33 L 379.09 502 L 379.05 529.67 L 379.01 557.33 L 378.97 585 L 378.92 612.67 L 378.88 640.33 L 378.84 668 L 378.79 695.67 L 378.75 723.33 L 378.71 751 L 378.67 778.67 L 378.62 806.33 L 378.58 834 L 378.54 861.67 L 378.5 889.33 L 378.45 917 L 378.41 944.67 L 378.37 972.33 L 378.33 1000" opacity=".34"/>
+<path class="thin" d="M 381.08 336 L 381.16 363.67 L 381.23 391.33 L 381.3 419 L 381.37 446.67 L 381.44 474.33 L 381.51 502 L 381.58 529.67 L 381.65 557.33 L 381.72 585 L 381.8 612.67 L 381.87 640.33 L 381.94 668 L 382.01 695.67 L 382.08 723.33 L 382.15 751 L 382.22 778.67 L 382.29 806.33 L 382.36 834 L 382.43 861.67 L 382.51 889.33 L 382.58 917 L 382.65 944.67 L 382.72 972.33 L 382.79 1000" opacity=".34"/>
+<path class="thin" d="M 382.6 336 L 382.77 363.67 L 382.94 391.33 L 383.12 419 L 383.29 446.67 L 383.46 474.33 L 383.63 502 L 383.8 529.67 L 383.97 557.33 L 384.14 585 L 384.31 612.67 L 384.48 640.33 L 384.65 668 L 384.82 695.67 L 384.99 723.33 L 385.16 751 L 385.33 778.67 L 385.5 806.33 L 385.67 834 L 385.84 861.67 L 386.01 889.33 L 386.18 917 L 386.36 944.67 L 386.53 972.33 L 386.7 1000" opacity=".34"/>
+<rect class="frame" x="248" y="300" width="264" height="36"/>
+<text class="hd mono" x="380" y="316" font-size="13" text-anchor="middle" letter-spacing="1.1">CLAIM-LEDGER.md</text>
+<text class="hd2" x="380" y="330" font-size="9" text-anchor="middle">UNI's own build status</text>
+<rect class="" x="90" y="1000" width="578" height="90" fill="url(#pl09-soilL)"/>
+<line class="ink" x1="90" y1="1000" x2="668" y2="1000" stroke-width="1.2"/>
+<line class="faint" x1="90" y1="1090" x2="668" y2="1090"/>
+<circle class="dotf" cx="357.91" cy="1034.61" r="0.32"/>
+<circle class="dotf" cx="587.94" cy="1004.53" r="0.44"/>
+<circle class="dotf" cx="606.03" cy="1010.63" r="0.46"/>
+<circle class="dotf" cx="445.49" cy="1007.35" r="0.4"/>
+<circle class="dotf" cx="494.98" cy="1041.07" r="0.51"/>
+<circle class="dotf" cx="183.58" cy="1023.52" r="0.32"/>
+<circle class="dotf" cx="382.57" cy="1079.75" r="0.47"/>
+<circle class="dotf" cx="535.3" cy="1035.46" r="0.52"/>
+<circle class="dotf" cx="151.95" cy="1027.88" r="0.5"/>
+<circle class="dotf" cx="507.65" cy="1038.58" r="0.31"/>
+<circle class="dotf" cx="246.04" cy="1021.21" r="0.37"/>
+<circle class="dotf" cx="555.42" cy="1020.36" r="0.56"/>
+<circle class="dotf" cx="595.24" cy="1008.49" r="0.4"/>
+<circle class="dotf" cx="374.28" cy="1005.93" r="0.42"/>
+<circle class="dotf" cx="610.65" cy="1013.19" r="0.47"/>
+<circle class="dotf" cx="163.1" cy="1051.45" r="0.57"/>
+<circle class="dotf" cx="209.74" cy="1004.68" r="0.31"/>
+<circle class="dotf" cx="401.67" cy="1005.43" r="0.31"/>
+<circle class="dotf" cx="377.14" cy="1079.52" r="0.41"/>
+<circle class="dotf" cx="320.94" cy="1056.37" r="0.31"/>
+<circle class="dotf" cx="424.49" cy="1018.15" r="0.47"/>
+<circle class="dotf" cx="640.25" cy="1008.44" r="0.46"/>
+<circle class="dotf" cx="439.64" cy="1016.24" r="0.37"/>
+<circle class="dotf" cx="661.08" cy="1085.83" r="0.32"/>
+<circle class="dotf" cx="496.12" cy="1081.98" r="0.36"/>
+<circle class="dotf" cx="442.34" cy="1007.53" r="0.4"/>
+<circle class="dotf" cx="478.25" cy="1052.4" r="0.53"/>
+<circle class="dotf" cx="143.44" cy="1032.47" r="0.56"/>
+<circle class="dotf" cx="426.96" cy="1041.01" r="0.41"/>
+<circle class="dotf" cx="656.06" cy="1051.1" r="0.29"/>
+<circle class="dotf" cx="549.64" cy="1030.95" r="0.42"/>
+<circle class="dotf" cx="215.65" cy="1040.41" r="0.38"/>
+<circle class="dotf" cx="144.63" cy="1055.62" r="0.31"/>
+<circle class="dotf" cx="540.94" cy="1006.08" r="0.53"/>
+<circle class="dotf" cx="554.3" cy="1044.78" r="0.51"/>
+<circle class="dotf" cx="235.51" cy="1064.48" r="0.42"/>
+<circle class="dotf" cx="225.64" cy="1083.05" r="0.41"/>
+<circle class="dotf" cx="306.59" cy="1074.51" r="0.4"/>
+<circle class="dotf" cx="474.48" cy="1018.03" r="0.55"/>
+<circle class="dotf" cx="241.58" cy="1008.14" r="0.59"/>
+<circle class="dotf" cx="192.47" cy="1081.61" r="0.6"/>
+<circle class="dotf" cx="439.74" cy="1004.97" r="0.3"/>
+<circle class="dotf" cx="212.9" cy="1035.89" r="0.48"/>
+<circle class="dotf" cx="644.87" cy="1033.07" r="0.33"/>
+<circle class="dotf" cx="414.3" cy="1015.26" r="0.31"/>
+<circle class="dotf" cx="410.9" cy="1061.07" r="0.3"/>
+<circle class="dotf" cx="351.3" cy="1061.72" r="0.52"/>
+<circle class="dotf" cx="312.31" cy="1076.75" r="0.33"/>
+<circle class="dotf" cx="501.82" cy="1067.28" r="0.56"/>
+<circle class="dotf" cx="375.83" cy="1012.14" r="0.3"/>
+<circle class="dotf" cx="395.44" cy="1018.21" r="0.48"/>
+<circle class="dotf" cx="142.04" cy="1067.97" r="0.35"/>
+<circle class="dotf" cx="101.42" cy="1018.42" r="0.43"/>
+<circle class="dotf" cx="412.77" cy="1035.84" r="0.34"/>
+<circle class="dotf" cx="368.78" cy="1081.61" r="0.45"/>
+<circle class="dotf" cx="630.53" cy="1006.36" r="0.6"/>
+<circle class="dotf" cx="600.73" cy="1048.64" r="0.45"/>
+<circle class="dotf" cx="400.16" cy="1078.58" r="0.3"/>
+<circle class="dotf" cx="460.4" cy="1048.46" r="0.38"/>
+<circle class="dotf" cx="507.21" cy="1063.1" r="0.31"/>
+<circle class="dotf" cx="492.73" cy="1041.19" r="0.44"/>
+<circle class="dotf" cx="456.95" cy="1008.34" r="0.47"/>
+<circle class="dotf" cx="306.69" cy="1076.06" r="0.35"/>
+<circle class="dotf" cx="563.18" cy="1063.83" r="0.48"/>
+<circle class="dotf" cx="593.23" cy="1006.95" r="0.47"/>
+<circle class="dotf" cx="443.57" cy="1059.6" r="0.41"/>
+<circle class="dotf" cx="133.31" cy="1019.51" r="0.47"/>
+<circle class="dotf" cx="197.35" cy="1009.32" r="0.39"/>
+<circle class="dotf" cx="362.04" cy="1047.92" r="0.29"/>
+<circle class="dotf" cx="536.08" cy="1031.37" r="0.53"/>
+<circle class="dotf" cx="98.89" cy="1082.23" r="0.47"/>
+<circle class="dotf" cx="650.53" cy="1084.88" r="0.55"/>
+<circle class="dotf" cx="154.55" cy="1032.6" r="0.35"/>
+<circle class="dotf" cx="538.59" cy="1019.76" r="0.35"/>
+<circle class="dotf" cx="157.05" cy="1013.85" r="0.58"/>
+<circle class="dotf" cx="650.43" cy="1034.54" r="0.52"/>
+<circle class="dotf" cx="360.48" cy="1046.81" r="0.4"/>
+<circle class="dotf" cx="455.79" cy="1023.36" r="0.36"/>
+<circle class="dotf" cx="389.16" cy="1020.18" r="0.42"/>
+<circle class="dotf" cx="632.02" cy="1005.82" r="0.31"/>
+<circle class="dotf" cx="549.98" cy="1008.74" r="0.36"/>
+<circle class="dotf" cx="579.43" cy="1053.63" r="0.35"/>
+<circle class="dotf" cx="127.41" cy="1026.57" r="0.38"/>
+<circle class="dotf" cx="550.16" cy="1084" r="0.53"/>
+<circle class="dotf" cx="608" cy="1080.32" r="0.56"/>
+<circle class="dotf" cx="618.39" cy="1083.34" r="0.31"/>
+<circle class="dotf" cx="275.08" cy="1024.27" r="0.47"/>
+<circle class="dotf" cx="374.27" cy="1032.45" r="0.55"/>
+<circle class="dotf" cx="321.48" cy="1021.13" r="0.37"/>
+<circle class="dotf" cx="357.2" cy="1054.06" r="0.46"/>
+<path class="ink" d="M 373.1 1001 Q 358.81 1007.13 345.72 1013.25" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 345.72 1013.25 Q 335.39 1013.64 328.56 1014.03" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 328.56 1014.03 Q 320.59 1012.38 318.84 1010.73" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 328.56 1014.03 Q 325.18 1016.27 319.66 1018.51" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 345.72 1013.25 Q 335.71 1019.86 335.31 1026.46" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 335.31 1026.46 Q 334.49 1028.45 326.33 1030.45" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 335.31 1026.46 Q 335.04 1031.05 334.09 1035.64" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 376.4 1001 Q 364.42 1013.38 359.46 1025.76" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 359.46 1025.76 Q 356.31 1030.15 346.67 1034.55" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 346.67 1034.55 Q 340.84 1034.47 337.1 1034.39" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 346.67 1034.55 Q 342.68 1038.19 342.28 1041.84" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 359.46 1025.76 Q 360.49 1033.24 357.83 1040.72" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 357.83 1040.72 Q 359.63 1044.72 354.11 1048.72" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 357.83 1040.72 Q 360.73 1044.96 360.03 1049.19" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 378.92 1001 Q 377.24 1015.76 373.55 1030.52" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 373.55 1030.52 Q 362.65 1038.4 361.22 1046.28" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 361.22 1046.28 Q 357.39 1049.53 350.17 1052.77" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 350.17 1052.77 Q 351.86 1055.81 345.5 1058.84" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 361.22 1046.28 Q 364.97 1053.06 360 1059.84" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 360 1059.84 Q 353.27 1063.09 355.31 1066.34" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 360 1059.84 Q 366.21 1063.38 364.06 1066.92" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 373.55 1030.52 Q 374.07 1039.95 380.87 1049.38" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 380.87 1049.38 Q 380.53 1056.09 379.4 1062.81" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 379.4 1062.81 Q 373.44 1066.5 374.02 1070.19" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 379.4 1062.81 Q 377.35 1066.15 382.71 1069.48" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 380.87 1049.38 Q 381.3 1053.99 390.89 1058.61" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 390.89 1058.61 Q 393.21 1061.83 394.04 1065.05" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 390.89 1058.61 Q 399.43 1059.36 399.52 1060.1" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 381.08 1001 Q 381.62 1015.76 386.45 1030.52" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 386.45 1030.52 Q 387.69 1038.18 381.97 1045.85" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 381.97 1045.85 Q 383.66 1048.74 376.07 1051.63" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 381.97 1045.85 Q 379.5 1049.82 383.08 1053.8" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 386.45 1030.52 Q 390.11 1036.9 394.49 1043.28" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 394.49 1043.28 Q 392.59 1047.38 396.19 1051.49" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 394.49 1043.28 Q 402.34 1045.29 401.88 1047.29" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 383.6 1001 Q 387.54 1013.38 400.54 1025.76" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 400.54 1025.76 Q 405.28 1035.16 405.83 1044.57" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 405.83 1044.57 Q 406.99 1050.36 404.04 1056.16" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 404.04 1056.16 Q 404.38 1059.39 400.54 1062.63" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 405.83 1044.57 Q 408.92 1049.1 415.04 1053.64" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 415.04 1053.64 Q 411.71 1057.69 417.71 1061.75" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 415.04 1053.64 Q 421.27 1054.47 422.55 1055.31" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 400.54 1025.76 Q 406.9 1030.28 414.22 1034.8" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 414.22 1034.8 Q 416.62 1039.2 420.87 1043.59" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 420.87 1043.59 Q 425.56 1045 427.37 1046.41" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 414.22 1034.8 Q 424.33 1034.69 425.3 1034.59" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 386.9 1001 Q 395.67 1007.13 414.28 1013.25" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 414.28 1013.25 Q 417.75 1019.6 427.21 1025.95" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 427.21 1025.95 Q 426.43 1030.88 430.16 1035.82" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 427.21 1025.95 Q 434.26 1027.16 436.42 1028.38" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 414.28 1013.25 Q 425.25 1012.86 433.33 1012.46" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 433.33 1012.46 Q 441.58 1014.62 444.38 1016.78" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 444.38 1016.78 Q 448.15 1019.44 449.23 1022.1" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 433.33 1012.46 Q 438.71 1009.67 443.43 1006.87" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 443.43 1006.87 Q 448.93 1006.38 450.48 1005.88" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 443.43 1006.87 Q 441.45 1004.02 447.87 1001.16" stroke-width="0.55" opacity="0.56"/>
+<text class="hd" x="380" y="1112" font-size="10.5" text-anchor="middle">ROOT — UNI's own gates, run on UNI's own artifacts.</text>
+<text class="t" x="380" y="1125.5" font-size="9.5" text-anchor="middle">Authority over every UNI capability claim. Governs the 4-value fence.</text>
+<path class="ink" d="M 1051 1000 C 1054 700, 1055 496, 1056.5 336" stroke-width="1.1"/>
+<path class="ink" d="M 1069 1000 C 1066 700, 1065 496, 1063.5 336" stroke-width="1.1"/>
+<path class="thin" d="M 1057.5 336 L 1057.34 363.67 L 1057.18 391.33 L 1057.01 419 L 1056.85 446.67 L 1056.69 474.33 L 1056.52 502 L 1056.36 529.67 L 1056.2 557.33 L 1056.03 585 L 1055.87 612.67 L 1055.71 640.33 L 1055.54 668 L 1055.38 695.67 L 1055.22 723.33 L 1055.05 751 L 1054.89 778.67 L 1054.73 806.33 L 1054.56 834 L 1054.4 861.67 L 1054.24 889.33 L 1054.07 917 L 1053.91 944.67 L 1053.75 972.33 L 1053.58 1000" opacity=".34"/>
+<path class="thin" d="M 1059.35 336 L 1059.31 363.67 L 1059.26 391.33 L 1059.22 419 L 1059.18 446.67 L 1059.14 474.33 L 1059.09 502 L 1059.05 529.67 L 1059.01 557.33 L 1058.97 585 L 1058.92 612.67 L 1058.88 640.33 L 1058.84 668 L 1058.79 695.67 L 1058.75 723.33 L 1058.71 751 L 1058.67 778.67 L 1058.62 806.33 L 1058.58 834 L 1058.54 861.67 L 1058.5 889.33 L 1058.45 917 L 1058.41 944.67 L 1058.37 972.33 L 1058.33 1000" opacity=".34"/>
+<path class="thin" d="M 1061.09 336 L 1061.16 363.67 L 1061.23 391.33 L 1061.3 419 L 1061.37 446.67 L 1061.44 474.33 L 1061.51 502 L 1061.58 529.67 L 1061.65 557.33 L 1061.72 585 L 1061.8 612.67 L 1061.87 640.33 L 1061.94 668 L 1062.01 695.67 L 1062.08 723.33 L 1062.15 751 L 1062.22 778.67 L 1062.29 806.33 L 1062.36 834 L 1062.43 861.67 L 1062.51 889.33 L 1062.58 917 L 1062.65 944.67 L 1062.72 972.33 L 1062.79 1000" opacity=".34"/>
+<path class="thin" d="M 1062.6 336 L 1062.77 363.67 L 1062.94 391.33 L 1063.12 419 L 1063.29 446.67 L 1063.46 474.33 L 1063.63 502 L 1063.8 529.67 L 1063.97 557.33 L 1064.14 585 L 1064.31 612.67 L 1064.48 640.33 L 1064.65 668 L 1064.82 695.67 L 1064.99 723.33 L 1065.16 751 L 1065.33 778.67 L 1065.5 806.33 L 1065.67 834 L 1065.84 861.67 L 1066.01 889.33 L 1066.18 917 L 1066.36 944.67 L 1066.53 972.33 L 1066.7 1000" opacity=".34"/>
+<rect class="frame" x="928" y="300" width="264" height="36"/>
+<text class="hd mono" x="1060" y="316" font-size="13" text-anchor="middle" letter-spacing="1.1">NATURE-LEDGER.md</text>
+<text class="hd2" x="1060" y="330" font-size="9" text-anchor="middle">nature's observed regularities</text>
+<rect class="" x="772" y="1000" width="578" height="90" fill="url(#pl09-soilR)"/>
+<line class="ink" x1="772" y1="1000" x2="1350" y2="1000" stroke-width="1.2"/>
+<line class="faint" x1="772" y1="1090" x2="1350" y2="1090"/>
+<circle class="dotf" cx="779.86" cy="1075.59" r="0.44"/>
+<circle class="dotf" cx="1027.97" cy="1046.5" r="0.53"/>
+<circle class="dotf" cx="988.33" cy="1067.37" r="0.33"/>
+<circle class="dotf" cx="1334.77" cy="1061.06" r="0.38"/>
+<circle class="dotf" cx="1047.94" cy="1076.27" r="0.38"/>
+<circle class="dotf" cx="1174.45" cy="1078.56" r="0.59"/>
+<circle class="dotf" cx="921.77" cy="1069.17" r="0.47"/>
+<circle class="dotf" cx="1236.88" cy="1009.7" r="0.41"/>
+<circle class="dotf" cx="1033.39" cy="1070.79" r="0.42"/>
+<circle class="dotf" cx="799.95" cy="1021.15" r="0.55"/>
+<circle class="dotf" cx="1279.23" cy="1051.05" r="0.31"/>
+<circle class="dotf" cx="1216.69" cy="1075.03" r="0.37"/>
+<circle class="dotf" cx="1050.66" cy="1027.84" r="0.3"/>
+<circle class="dotf" cx="1194.31" cy="1017.04" r="0.31"/>
+<circle class="dotf" cx="1294.35" cy="1011.9" r="0.52"/>
+<circle class="dotf" cx="1240.58" cy="1024.56" r="0.4"/>
+<circle class="dotf" cx="903.08" cy="1062.06" r="0.59"/>
+<circle class="dotf" cx="1200.07" cy="1044.43" r="0.45"/>
+<circle class="dotf" cx="1008.57" cy="1062.58" r="0.37"/>
+<circle class="dotf" cx="915.88" cy="1061.1" r="0.36"/>
+<circle class="dotf" cx="1339.36" cy="1063.63" r="0.34"/>
+<circle class="dotf" cx="788.16" cy="1053.05" r="0.32"/>
+<circle class="dotf" cx="1060.97" cy="1053.21" r="0.54"/>
+<circle class="dotf" cx="997.2" cy="1048.77" r="0.54"/>
+<circle class="dotf" cx="852.76" cy="1031.55" r="0.54"/>
+<circle class="dotf" cx="980.12" cy="1080.29" r="0.31"/>
+<circle class="dotf" cx="824.43" cy="1033.78" r="0.43"/>
+<circle class="dotf" cx="985.53" cy="1022.08" r="0.42"/>
+<circle class="dotf" cx="1285.62" cy="1080.89" r="0.48"/>
+<circle class="dotf" cx="922.26" cy="1051.76" r="0.33"/>
+<circle class="dotf" cx="811.8" cy="1069.19" r="0.37"/>
+<circle class="dotf" cx="867.6" cy="1071.22" r="0.32"/>
+<circle class="dotf" cx="910.82" cy="1016.44" r="0.57"/>
+<circle class="dotf" cx="1164.52" cy="1018.84" r="0.3"/>
+<circle class="dotf" cx="1292.92" cy="1014.53" r="0.51"/>
+<circle class="dotf" cx="1169.35" cy="1052.23" r="0.43"/>
+<circle class="dotf" cx="1012.95" cy="1027.06" r="0.49"/>
+<circle class="dotf" cx="861.89" cy="1043.1" r="0.36"/>
+<circle class="dotf" cx="985.62" cy="1077.05" r="0.46"/>
+<circle class="dotf" cx="1143.85" cy="1057.08" r="0.28"/>
+<circle class="dotf" cx="1222.33" cy="1075.75" r="0.52"/>
+<circle class="dotf" cx="1073.73" cy="1073.35" r="0.58"/>
+<circle class="dotf" cx="933.77" cy="1017.46" r="0.39"/>
+<circle class="dotf" cx="786.37" cy="1023.28" r="0.31"/>
+<circle class="dotf" cx="780.95" cy="1036.78" r="0.28"/>
+<circle class="dotf" cx="1050" cy="1073.75" r="0.51"/>
+<circle class="dotf" cx="805.74" cy="1063.69" r="0.34"/>
+<circle class="dotf" cx="1235.32" cy="1056.79" r="0.45"/>
+<circle class="dotf" cx="1024.53" cy="1084.4" r="0.35"/>
+<circle class="dotf" cx="1288.18" cy="1020.79" r="0.31"/>
+<circle class="dotf" cx="898.99" cy="1007.05" r="0.55"/>
+<circle class="dotf" cx="881.36" cy="1051" r="0.37"/>
+<circle class="dotf" cx="980.32" cy="1068.44" r="0.46"/>
+<circle class="dotf" cx="928.28" cy="1065.09" r="0.33"/>
+<circle class="dotf" cx="799.27" cy="1060.98" r="0.55"/>
+<circle class="dotf" cx="1212.15" cy="1061.17" r="0.58"/>
+<circle class="dotf" cx="1303.95" cy="1050.51" r="0.34"/>
+<circle class="dotf" cx="1106.18" cy="1039.01" r="0.51"/>
+<circle class="dotf" cx="974.86" cy="1009.95" r="0.34"/>
+<circle class="dotf" cx="857.17" cy="1064.08" r="0.5"/>
+<circle class="dotf" cx="1079.77" cy="1030.06" r="0.51"/>
+<circle class="dotf" cx="1031.09" cy="1044.54" r="0.34"/>
+<circle class="dotf" cx="1344.28" cy="1040.29" r="0.43"/>
+<circle class="dotf" cx="894.45" cy="1040.73" r="0.43"/>
+<circle class="dotf" cx="1018.31" cy="1065.01" r="0.39"/>
+<circle class="dotf" cx="1131.04" cy="1058.95" r="0.32"/>
+<circle class="dotf" cx="1245.08" cy="1009.75" r="0.36"/>
+<circle class="dotf" cx="1249.77" cy="1013.77" r="0.37"/>
+<circle class="dotf" cx="1011.31" cy="1081.55" r="0.59"/>
+<circle class="dotf" cx="900.13" cy="1056.55" r="0.55"/>
+<circle class="dotf" cx="1068.98" cy="1029.79" r="0.33"/>
+<circle class="dotf" cx="815.79" cy="1007.66" r="0.3"/>
+<circle class="dotf" cx="1188.74" cy="1052.47" r="0.3"/>
+<circle class="dotf" cx="1309.82" cy="1084.83" r="0.41"/>
+<circle class="dotf" cx="982.47" cy="1075.79" r="0.49"/>
+<circle class="dotf" cx="1200.71" cy="1018.96" r="0.51"/>
+<circle class="dotf" cx="1028.18" cy="1008.54" r="0.3"/>
+<circle class="dotf" cx="926.67" cy="1023.22" r="0.37"/>
+<circle class="dotf" cx="1295.6" cy="1036.58" r="0.35"/>
+<circle class="dotf" cx="835.75" cy="1008.57" r="0.41"/>
+<circle class="dotf" cx="1015.67" cy="1010.5" r="0.45"/>
+<circle class="dotf" cx="972.35" cy="1005.56" r="0.43"/>
+<circle class="dotf" cx="865.79" cy="1018.79" r="0.52"/>
+<circle class="dotf" cx="1020.31" cy="1033.27" r="0.46"/>
+<circle class="dotf" cx="1194.3" cy="1055.43" r="0.58"/>
+<circle class="dotf" cx="1183.89" cy="1031.98" r="0.59"/>
+<circle class="dotf" cx="784.94" cy="1019.42" r="0.32"/>
+<circle class="dotf" cx="993.52" cy="1033.01" r="0.4"/>
+<circle class="dotf" cx="1136.69" cy="1032.52" r="0.43"/>
+<circle class="dotf" cx="1162.01" cy="1079.95" r="0.59"/>
+<path class="ink" d="M 1053.1 1001 Q 1038.09 1007.13 1025.72 1013.25" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1025.72 1013.25 Q 1018.94 1013.1 1005.37 1012.96" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1005.37 1012.96 Q 998.88 1009.97 996.61 1006.99" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 996.61 1006.99 Q 991.97 1006.5 989.58 1006.01" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1005.37 1012.96 Q 1003.03 1014.79 995.64 1016.62" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1025.72 1013.25 Q 1024.64 1020.51 1014.85 1027.76" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1014.85 1027.76 Q 1010.77 1029.91 1004.8 1032.06" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1004.8 1032.06 Q 997.9 1031.38 997.65 1030.7" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1014.85 1027.76 Q 1015.88 1033.35 1013.78 1038.93" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1013.78 1038.93 Q 1009.94 1042.18 1009.95 1045.43" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1013.78 1038.93 Q 1012.72 1042.14 1017.13 1045.34" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1056.4 1001 Q 1045.98 1013.38 1039.46 1025.76" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1039.46 1025.76 Q 1026.21 1029.81 1022.9 1033.86" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1022.9 1033.86 Q 1015.22 1034.35 1013.16 1034.85" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1022.9 1033.86 Q 1023.43 1038.16 1017.01 1042.46" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1039.46 1025.76 Q 1038.85 1035.02 1037.39 1044.27" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1037.39 1044.27 Q 1034.88 1048.06 1031.67 1051.84" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1037.39 1044.27 Q 1034.01 1048.88 1039.58 1053.49" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1058.92 1001 Q 1057.29 1015.76 1053.55 1030.52" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1053.55 1030.52 Q 1051.05 1038.21 1043.78 1045.91" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1043.78 1045.91 Q 1041.13 1048.44 1034.13 1050.97" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1043.78 1045.91 Q 1040.76 1050.52 1043.63 1055.12" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1053.55 1030.52 Q 1058.06 1037.97 1055.77 1045.43" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1055.77 1045.43 Q 1051.98 1050 1053.27 1054.58" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1055.77 1045.43 Q 1055.23 1048.98 1062.26 1052.54" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1061.08 1001 Q 1065 1015.76 1066.45 1030.52" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1066.45 1030.52 Q 1068.09 1040.04 1062.59 1049.56" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1062.59 1049.56 Q 1060.55 1054.42 1056.73 1059.29" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1062.59 1049.56 Q 1068.06 1055.82 1066.04 1062.08" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1066.04 1062.08 Q 1067.46 1064.38 1071.69 1066.67" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1066.45 1030.52 Q 1072.64 1037.6 1077.19 1044.68" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1077.19 1044.68 Q 1076.37 1050.05 1080.31 1055.42" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1080.31 1055.42 Q 1076.13 1059.17 1079.99 1062.93" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1077.19 1044.68 Q 1085.19 1046.54 1087.83 1048.41" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1087.83 1048.41 Q 1089.72 1047.6 1095.25 1046.79" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1063.6 1001 Q 1067.7 1013.38 1080.54 1025.76" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1080.54 1025.76 Q 1080.55 1035.06 1081.84 1044.36" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1081.84 1044.36 Q 1081.09 1050.04 1076.7 1055.71" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1076.7 1055.71 Q 1074.82 1058.36 1070.18 1061.01" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1076.7 1055.71 Q 1073.84 1059.34 1077.02 1062.97" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1081.84 1044.36 Q 1086.57 1049.11 1088.35 1053.85" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1088.35 1053.85 Q 1091.52 1057.53 1090.12 1061.22" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1088.35 1053.85 Q 1088.19 1056.19 1094.54 1058.53" stroke-width="0.55" opacity="0.56"/>
+<path class="ink" d="M 1080.54 1025.76 Q 1083.27 1029.3 1095 1032.84" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1095 1032.84 Q 1101 1037.25 1100.83 1041.67" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1095 1032.84 Q 1104.87 1032.16 1105.36 1031.49" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1066.9 1001 Q 1084.32 1007.13 1094.28 1013.25" stroke-width="2.3" opacity="0.89"/>
+<path class="ink" d="M 1094.28 1013.25 Q 1104.82 1018.46 1105.62 1023.67" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1105.62 1023.67 Q 1106.78 1028.2 1110.34 1032.73" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1105.62 1023.67 Q 1108.7 1025.55 1114.86 1027.43" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1094.28 1013.25 Q 1109.27 1013.2 1114.63 1013.15" stroke-width="1.43" opacity="0.72"/>
+<path class="ink" d="M 1114.63 1013.15 Q 1121.03 1015.94 1125.36 1018.72" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1114.63 1013.15 Q 1123.79 1009.56 1124.6 1005.97" stroke-width="0.88" opacity="0.62"/>
+<path class="ink" d="M 1124.6 1005.97 Q 1127.48 1002.95 1128.89 999.92" stroke-width="0.55" opacity="0.56"/>
+<text class="hd" x="1060" y="1112" font-size="10.5" text-anchor="middle">ROOT — third parties, in published literature.</text>
+<text class="t" x="1060" y="1125.5" font-size="9.5" text-anchor="middle">Authority over every NA/CN chapter row. Governs the NATURA class.</text>
+<rect class="bgfill" x="697.55" y="1044.69" width="44.89" height="10.37"/>
+<text class="tf" x="720" y="1052" font-size="8.5" text-anchor="middle">no soil</text>
+<rect class="bgfill" x="694.92" y="1055.69" width="50.16" height="10.37"/>
+<text class="tf" x="720" y="1063" font-size="8.5" text-anchor="middle">no graft</text>
+<rect class="frame" x="76" y="360" width="274" height="168"/>
+<line class="rule" x1="76" y1="382" x2="350" y2="382"/>
+<text class="hd" x="85" y="376" font-size="10.5" letter-spacing="0.8">THE 4-VALUE FENCE</text>
+<text class="hd2" x="341" y="376" font-size="9.5" text-anchor="end">UNI only</text>
+<path class="ink" d="M 375 520 Q 365 497.2 350 444" stroke-width="1.5"/>
+<circle class="dot" cx="350" cy="444" r="1.7"/>
+<text class="hd mono" x="86" y="396" font-size="10">proven</text>
+<text class="tf" x="86" y="407" font-size="8.6">a held, sealed, UNI-signed PASS (Class A/C, falsifier live)</text>
+<text class="hd mono" x="86" y="427" font-size="10">designed</text>
+<text class="tf" x="86" y="438" font-size="8.6">a typed/signed spec exists (build partial or unverified)</text>
+<text class="hd mono" x="86" y="458" font-size="10">hypothesized</text>
+<text class="tf" x="86" y="469" font-size="8.6">a stated UNI mechanism (no sealed gate; Class U)</text>
+<text class="hd mono" x="86" y="489" font-size="10">not-yet-built</text>
+<text class="tf" x="86" y="500" font-size="8.6">no engine, no run, no gate</text>
+<text class="fn" x="86" y="519" font-size="8.4" font-style="italic">No published per-value count. This plate invents none.</text>
+<rect class="frame" x="410" y="360" width="280" height="168"/>
+<line class="rule" x1="410" y1="382" x2="690" y2="382"/>
+<text class="hd" x="419" y="376" font-size="10.5" letter-spacing="0.8">THE 4 LEDGER STATES</text>
+<text class="hd2" x="681" y="376" font-size="9.5" text-anchor="end">UNI only</text>
+<path class="ink" d="M 385 520 Q 395 497.2 410 444" stroke-width="1.5"/>
+<circle class="dot" cx="410" cy="444" r="1.7"/>
+<text class="hd mono" x="420" y="394" font-size="10">PASS</text>
+<text class="t mono" x="600" y="394" font-size="10" text-anchor="end">350 rows</text>
+<line class="dash" x1="452.4" y1="391" x2="540" y2="391" opacity=".45"/>
+<text class="hd mono" x="420" y="411" font-size="10">FAIL</text>
+<text class="t mono" x="600" y="411" font-size="10" text-anchor="end">0 rows</text>
+<line class="dash" x1="452.4" y1="408" x2="540" y2="408" opacity=".45"/>
+<text class="hd mono" x="420" y="428" font-size="10">NEGATIVE</text>
+<text class="t mono" x="600" y="428" font-size="10" text-anchor="end">183 rows</text>
+<line class="dash" x1="478.8" y1="425" x2="540" y2="425" opacity=".45"/>
+<text class="hd mono" x="420" y="445" font-size="10">PENDING</text>
+<text class="t mono" x="600" y="445" font-size="10" text-anchor="end">349 rows</text>
+<line class="dash" x1="472.2" y1="442" x2="540" y2="442" opacity=".45"/>
+<line class="rule" x1="420" y1="462" x2="680" y2="462"/>
+<text class="hd" x="420" y="477" font-size="8.8">882 rows total — the ledger's own LAST RECORDED</text>
+<text class="hd" x="420" y="488" font-size="8.8">SNAPSHOT (CLAIM-LEDGER §0). Not recounted here.</text>
+<text class="t" x="420" y="501" font-size="8.8">183 published negatives are the credibility.</text>
+<text class="tf" x="420" y="519" font-size="8.4" font-style="italic">The ledger has NO contested state.</text>
+<rect class="frame" x="76" y="560" width="274" height="230"/>
+<line class="rule" x1="76" y1="582" x2="350" y2="582"/>
+<text class="hd" x="85" y="576" font-size="10.5" letter-spacing="0.8">EVIDENCE CLASSES A–U</text>
+<text class="hd2" x="341" y="576" font-size="9.5" text-anchor="end">UNI only</text>
+<path class="ink" d="M 375 800 Q 365 762.5 350 675" stroke-width="1.5"/>
+<circle class="dot" cx="350" cy="675" r="1.7"/>
+<text class="hd mono" x="86" y="596" font-size="9.5">A</text>
+<text class="t" x="146" y="596" font-size="8.8">machine-exact anchor</text>
+<text class="hd mono" x="86" y="611.5" font-size="9.5">B</text>
+<text class="t" x="146" y="611.5" font-size="8.8">mechanism + operator observation</text>
+<text class="hd mono" x="86" y="627" font-size="9.5">C</text>
+<text class="t" x="146" y="627" font-size="8.8">dev-gate / held-out eval</text>
+<text class="hd mono" x="86" y="642.5" font-size="9.5">E</text>
+<text class="t" x="146" y="642.5" font-size="8.8">test-covered</text>
+<text class="hd mono" x="86" y="658" font-size="9.5">F</text>
+<text class="t" x="146" y="658" font-size="8.8">doc / prior-claim (re-verify)</text>
+<text class="hd mono" x="86" y="673.5" font-size="9.5">U</text>
+<text class="t" x="146" y="673.5" font-size="8.8">claimed-but-unproven</text>
+<text class="hd mono" x="86" y="689" font-size="9.5">method</text>
+<text class="t" x="146" y="689" font-size="8.8">definitional / governance</text>
+<text class="hd" x="86" y="712" font-size="8.6">“Class U — not claimed” is itself</text>
+<text class="hd" x="86" y="723" font-size="8.6">a standing fence.</text>
+<text class="tf" x="86" y="741" font-size="8.4">Calibration only ever moves wording</text>
+<text class="tf" x="86" y="752" font-size="8.4">DOWN to the measured value, never up.</text>
+<text class="tf" x="86" y="763" font-size="8.4">The fence gets louder under pressure,</text>
+<text class="tf" x="86" y="774" font-size="8.4">not wider.</text>
+<rect class="frame" x="410" y="560" width="280" height="230"/>
+<line class="rule" x1="410" y1="582" x2="690" y2="582"/>
+<text class="hd" x="419" y="576" font-size="10.5" letter-spacing="0.8">WHAT MOVES A UNI ROW</text>
+<text class="hd2" x="681" y="576" font-size="9.5" text-anchor="end">UNI only</text>
+<path class="ink" d="M 385 800 Q 395 762.5 410 675" stroke-width="1.5"/>
+<circle class="dot" cx="410" cy="675" r="1.7"/>
+<text class="hd" x="420" y="594" font-size="9.4">—  A UNI gate</text>
+<text class="tf" x="438" y="605" font-size="8.4">held, sealed, pre-registered</text>
+<text class="hd" x="420" y="621" font-size="9.4">—  A UNI run</text>
+<text class="tf" x="438" y="632" font-size="8.4">against a pre-registered bar</text>
+<text class="hd" x="420" y="648" font-size="9.4">—  A UNI ablation</text>
+<text class="tf" x="438" y="659" font-size="8.4">that collapses the gain</text>
+<line class="rule" x1="420" y1="672" x2="680" y2="672"/>
+<text class="hd" x="420" y="688" font-size="11" letter-spacing="1.2">AND NOTHING ELSE.</text>
+<text class="t" x="420" y="704" font-size="9">Not a citation. Not a replication.</text>
+<text class="t" x="420" y="715" font-size="9">Not a model that fits. Not a consensus.</text>
+<text class="t" x="420" y="726" font-size="9">Not 919 rows of published nature.</text>
+<text class="tf" x="420" y="748" font-size="8.4">Verdict rule: a capability verdict is the</text>
+<text class="hd" x="420" y="759" font-size="8.4">CI BOUND THAT EXCLUDES THE THRESHOLD,</text>
+<text class="tf" x="420" y="770" font-size="8.4">never the point estimate.</text>
+<rect class="frame" x="750" y="360" width="280" height="168"/>
+<line class="rule" x1="750" y1="382" x2="1030" y2="382"/>
+<text class="hd" x="759" y="376" font-size="10.5" letter-spacing="0.8">GROUP A — MEASURED</text>
+<text class="hd2" x="1021" y="376" font-size="9.5" text-anchor="end">578 rows · 62.9%</text>
+<path class="ink" d="M 1055 520 Q 1045 497.2 1030 444" stroke-width="1.5"/>
+<circle class="dot" cx="1030" cy="444" r="1.7"/>
+<text class="t" x="764" y="400" font-size="10" text-anchor="middle">—</text>
+<text class="hd" x="776" y="400" font-size="9.4">OBSERVED-REPLICATED</text>
+<text class="t mono" x="1020" y="400" font-size="9.2" text-anchor="end">438 rows</text>
+<text class="tr" x="1020" y="410" font-size="8" text-anchor="end">47.7%</text>
+<text class="t" x="764" y="424" font-size="10" text-anchor="middle">—</text>
+<text class="hd" x="776" y="424" font-size="9.4">OBSERVED-SINGLE</text>
+<text class="t mono" x="1020" y="424" font-size="9.2" text-anchor="end">42 rows</text>
+<text class="tr" x="1020" y="434" font-size="8" text-anchor="end">4.6%</text>
+<text class="ct" x="863" y="424" font-size="9">⊙</text>
+<text class="t" x="764" y="448" font-size="10" text-anchor="middle">—</text>
+<text class="hd" x="776" y="448" font-size="9.4">OBSERVED-CONTESTED</text>
+<text class="t mono" x="1020" y="448" font-size="9.2" text-anchor="end">98 rows</text>
+<text class="tr" x="1020" y="458" font-size="8" text-anchor="end">10.7%</text>
+<text class="tf" x="760" y="500" font-size="8.3">an instrument was put on nature; the class</text>
+<text class="tf" x="760" y="510" font-size="8.3">says how much corroboration exists.</text>
+<text class="ct" x="760" y="521" font-size="8.3">⊙ = registered by amendment 2026-07-15</text>
+<rect class="frame" x="1090" y="360" width="280" height="168"/>
+<line class="rule" x1="1090" y1="382" x2="1370" y2="382"/>
+<text class="hd" x="1099" y="376" font-size="10.5" letter-spacing="0.8">GROUP B — DERIVED</text>
+<text class="hd2" x="1361" y="376" font-size="9.5" text-anchor="end">257 rows · 28.0%</text>
+<path class="ink" d="M 1065 520 Q 1075 497.2 1090 444" stroke-width="1.5"/>
+<circle class="dot" cx="1090" cy="444" r="1.7"/>
+<text class="t" x="1104" y="400" font-size="10" text-anchor="middle">△</text>
+<text class="hd" x="1116" y="400" font-size="9.4">MODELED</text>
+<text class="t mono" x="1360" y="400" font-size="9.2" text-anchor="end">251 rows</text>
+<text class="tr" x="1360" y="410" font-size="8" text-anchor="end">27.3%</text>
+<text class="t" x="1104" y="424" font-size="10" text-anchor="middle">△</text>
+<text class="hd" x="1116" y="424" font-size="9.4">MODELED-CONTESTED</text>
+<text class="t mono" x="1360" y="424" font-size="9.2" text-anchor="end">1 rows</text>
+<text class="tr" x="1360" y="434" font-size="8" text-anchor="end">0.1%</text>
+<text class="ct" x="1213.8" y="424" font-size="9">⊙</text>
+<text class="t" x="1104" y="448" font-size="10" text-anchor="middle">△</text>
+<text class="hd" x="1116" y="448" font-size="9.4">HYPOTHESIZED</text>
+<text class="t mono" x="1360" y="448" font-size="9.2" text-anchor="end">5 rows</text>
+<text class="tr" x="1360" y="458" font-size="8" text-anchor="end">0.5%</text>
+<text class="tf" x="1100" y="494" font-size="8.3">the number came out of a model;</text>
+<text class="hd" x="1100" y="504" font-size="8.3">THE ASSUMPTIONS ARE THE FENCE.</text>
+<text class="tf" x="1100" y="515" font-size="8">MODELED and OBSERVED-CONTESTED overlap in</text>
+<text class="tf" x="1100" y="524" font-size="8">reality — hence MODELED-CONTESTED.</text>
+<rect class="frame" x="750" y="560" width="280" height="230"/>
+<line class="rule" x1="750" y1="582" x2="1030" y2="582"/>
+<text class="hd" x="759" y="576" font-size="10.5" letter-spacing="0.8">GROUP C — FENCED</text>
+<text class="hd2" x="1021" y="576" font-size="9.5" text-anchor="end">80 rows · 8.7%</text>
+<path class="ink" d="M 1055 800 Q 1045 753.2 1030 644" stroke-width="1.5"/>
+<circle class="dot" cx="1030" cy="644" r="1.7"/>
+<text class="fn" x="764" y="600" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="600" font-size="9.4">INADMISSIBLE</text>
+<text class="t mono" x="1020" y="600" font-size="9.2" text-anchor="end">16 rows</text>
+<text class="tr" x="1020" y="610" font-size="8" text-anchor="end">1.7%</text>
+<text class="fn" x="764" y="624" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="624" font-size="9.4">SUPERSEDED</text>
+<text class="t mono" x="1020" y="624" font-size="9.2" text-anchor="end">3 rows</text>
+<text class="tr" x="1020" y="634" font-size="8" text-anchor="end">0.3%</text>
+<text class="ct" x="836" y="624" font-size="9">⊙</text>
+<text class="fn" x="764" y="648" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="648" font-size="9.4">NOT-MEASURED</text>
+<text class="t mono" x="1020" y="648" font-size="9.2" text-anchor="end">39 rows</text>
+<text class="tr" x="1020" y="658" font-size="8" text-anchor="end">4.2%</text>
+<text class="fn" x="764" y="672" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="672" font-size="9.4">NOT-SOURCED</text>
+<text class="t mono" x="1020" y="672" font-size="9.2" text-anchor="end">20 rows</text>
+<text class="tr" x="1020" y="682" font-size="8" text-anchor="end">2.2%</text>
+<text class="ct" x="841.4" y="672" font-size="9">⊙</text>
+<text class="fn" x="764" y="696" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="696" font-size="9.4">NOT-CONFIRMED</text>
+<text class="t mono" x="1020" y="696" font-size="9.2" text-anchor="end">1 rows</text>
+<text class="tr" x="1020" y="706" font-size="8" text-anchor="end">0.1%</text>
+<text class="ct" x="852.2" y="696" font-size="9">⊙</text>
+<text class="fn" x="764" y="720" font-size="10" text-anchor="middle">◇</text>
+<text class="hd" x="776" y="720" font-size="9.4">NOT-LOCATED</text>
+<text class="t mono" x="1020" y="720" font-size="9.2" text-anchor="end">1 rows</text>
+<text class="tr" x="1020" y="730" font-size="8" text-anchor="end">0.1%</text>
+<text class="ct" x="841.4" y="720" font-size="9">⊙</text>
+<text class="tf" x="760" y="750" font-size="8.3">the row carries no usable value, and the class says</text>
+<text class="hd" x="760" y="760" font-size="8.3">PRECISELY WHY NOT. The ways of being empty are</text>
+<text class="hd" x="760" y="770" font-size="8.3">NOT interchangeable; collapsing them is how a</text>
+<text class="hd" x="760" y="780" font-size="8.3">corpus starts lying.</text>
+<rect class="frame" x="1090" y="560" width="280" height="230" stroke-dasharray="3 3"/>
+<line class="rule" x1="1090" y1="582" x2="1370" y2="582"/>
+<text class="hd" x="1099" y="576" font-size="10.5" letter-spacing="0.8">CARRIED, NOT CLASSED</text>
+<text class="hd2" x="1361" y="576" font-size="9.5" text-anchor="end">4 rows · 0.4%</text>
+<text class="t" x="1100" y="600" font-size="8.6">Drawn detached from every bough on purpose:</text>
+<text class="t" x="1100" y="611" font-size="8.6">these rows carry NO evidence class, and that is</text>
+<text class="t" x="1100" y="622" font-size="8.6">correct rather than defective.</text>
+<path class="thin" d="M 1100 643 q 7 -6 14 0 q -7 6 -14 0 z" fill="url(#pl09-void)"/>
+<text class="hd mono" x="1122" y="646" font-size="8.8">NA03-16</text>
+<text class="tf" x="1122" y="656" font-size="8.2">the SI defining constants — definitional,</text>
+<text class="tf" x="1122" y="665" font-size="8.2">exact by convention. Not observations of nature.</text>
+<path class="thin" d="M 1100 677 q 7 -6 14 0 q -7 6 -14 0 z" fill="url(#pl09-void)"/>
+<text class="hd mono" x="1122" y="680" font-size="8.8">CN04-22</text>
+<text class="tf" x="1122" y="690" font-size="8.2">Hoyle's 1953 prediction — a prediction is not</text>
+<text class="tf" x="1122" y="699" font-size="8.2">a measurement. SIGNUM SIGNUM MANET.</text>
+<path class="thin" d="M 1100 711 q 7 -6 14 0 q -7 6 -14 0 z" fill="url(#pl09-void)"/>
+<text class="hd mono" x="1122" y="714" font-size="8.8">CN11-59</text>
+<text class="tf" x="1122" y="724" font-size="8.2">first-person testimony — an HONEST signal.</text>
+<text class="tf" x="1122" y="733" font-size="8.2">Not a NATURA class. Never calibrated. Ever.</text>
+<path class="thin" d="M 1100 745 q 7 -6 14 0 q -7 6 -14 0 z" fill="url(#pl09-void)"/>
+<text class="hd mono" x="1122" y="748" font-size="8.8">CN12-41</text>
+<text class="tf" x="1122" y="758" font-size="8.2">anima in silicio? — a register status,</text>
+<text class="tf" x="1122" y="767" font-size="8.2">extra Arborem: read, not acted upon.</text>
+<text class="hd" x="1100" y="782" font-size="8.4">A closed list of four — not an open category.</text>
+<line class="rule" x1="76" y1="862" x2="350" y2="862"/>
+<line class="rule" x1="410" y1="862" x2="690" y2="862"/>
+<line class="rule" x1="750" y1="862" x2="1030" y2="862"/>
+<line class="rule" x1="1090" y1="862" x2="1370" y2="862"/>
+<text class="hd" x="750" y="880" font-size="10" letter-spacing="1.4">RECONCILIATION</text>
+<text class="t mono" x="750" y="901" font-size="12">578 + 257 + 80 + 4 = 919 rows</text>
+<text class="tf" x="750" y="914" font-size="7.4">group A + group B + group C + carried-not-classed,</text>
+<text class="tf" x="750" y="924" font-size="7.4">across 23 chapters (NA-00…NA-10, CN-01…CN-12)</text>
+<text class="hd" x="750" y="942" font-size="9">OUT-OF-VOCABULARY ROWS: 0 of 919</text>
+<text class="tf" x="750" y="955" font-size="7.4">Receipt: tools/verify_class_vocabulary.py, re-run for</text>
+<text class="tf" x="750" y="965" font-size="7.4">this plate 2026-07-15 — RESULT: PASS (915 classed + 4 unclassed).</text>
+<text class="hd" x="1090" y="880" font-size="9.5">SIX → TWELVE, 2026-07-15</text>
+<text class="hd" x="1090" y="893" font-size="8.2">THE COUNT IS MEASURED, NOT DESIGNED.</text>
+<text class="t" x="1090" y="909" font-size="7.8">NA-00 declared “six classes and only six.” 72 of 919 rows</text>
+<text class="t" x="1090" y="919" font-size="7.8">(7.8%) fell outside it — written by the chapters themselves,</text>
+<text class="t" x="1090" y="929" font-size="7.8">before anyone went looking. The falsifier FIRED on both</text>
+<text class="t" x="1090" y="939" font-size="7.8">halves. Twelve is what 919 rows MEASURED, not a design</text>
+<text class="t" x="1090" y="949" font-size="7.8">target. A thirteenth is a finding, not a failure.</text>
+<text class="hd2" x="1090" y="965" font-size="7.8">A vocabulary that can name its own gaps is a vocabulary.</text>
+<text class="hd" x="76" y="880" font-size="9.2" letter-spacing="0.8">COUNTED TO A DIFFERENT STANDARD</text>
+<text class="t" x="76" y="898" font-size="7.8">The NATURA side is machine-counted and its</text>
+<text class="t" x="76" y="908" font-size="7.8">verifier was re-run for this plate. THIS side is</text>
+<text class="t" x="76" y="918" font-size="7.8">the ledger's own last recorded snapshot (882 rows)</text>
+<text class="t" x="76" y="928" font-size="7.8">and was NOT recounted here. An upstream prior</text>
+<text class="t" x="76" y="938" font-size="7.8">is never fresh evidence — so the plate draws the</text>
+<text class="t" x="76" y="948" font-size="7.8">asymmetry rather than smoothing it away.</text>
+<text class="hd" x="410" y="880" font-size="9.2" letter-spacing="0.8">NO PER-VALUE COUNT EXISTS</text>
+<text class="hd" x="410" y="893" font-size="8.2">for the 4-value fence.</text>
+<text class="t" x="410" y="909" font-size="7.8">This corpus publishes none, so this plate prints none.</text>
+<text class="t" x="410" y="919" font-size="7.8">A plausible-sounding number with no source is the</text>
+<text class="t" x="410" y="929" font-size="7.8">worst defect available here — NOT-MEASURED is</text>
+<text class="t" x="410" y="939" font-size="7.8">written instead.</text>
+<text class="hd" x="410" y="955" font-size="8.2">There is no third state.</text>
+<rect class="frame" x="60" y="1205" width="1320" height="112"/>
+<line class="ink" x1="60" y1="1205" x2="1380" y2="1205" stroke-width="2.2"/>
+<line class="ink" x1="60" y1="1317" x2="1380" y2="1317" stroke-width="2.2"/>
+<text class="hd" x="74" y="1229" font-size="15" letter-spacing="1.4">II</text>
+<text class="hd2" x="98" y="1229" font-size="13" letter-spacing="1.1">THE CARDINAL RULE</text>
+<text class="hd" x="720" y="1267" font-size="30" text-anchor="middle" letter-spacing="2.2">A NATURE CITATION IS NEVER A UNI GATE.</text>
+<text class="t" x="720" y="1287" font-size="10" text-anchor="middle">Reading Kleiber's law raises no UNI rung. Citing Douady &amp; Couder does not make any UNI claim “proven”.</text>
+<text class="hd2" x="720" y="1303" font-size="9.5" text-anchor="middle">A chapter that lets a literature citation imply a UNI capability has committed a lane-crossing and is defective — full stop, regardless of how good the citation is.</text>
+<rect class="frame" x="60" y="1345" width="1320" height="400"/>
+<line class="rule" x1="60" y1="1379" x2="1380" y2="1379" stroke-width="1.1"/>
+<text class="hd" x="74" y="1369" font-size="15" letter-spacing="1.4">III</text>
+<text class="hd2" x="116" y="1369" font-size="13" letter-spacing="1.1">THE CROSSWALK — nine look-alike pairs. THE RESEMBLANCE IS THE TRAP.</text>
+<text class="hd" x="76" y="1389" font-size="9" letter-spacing="1.1">UNI FENCE / STATE  (CLAIM-LEDGER)</text>
+<text class="hd" x="392" y="1389" font-size="9" letter-spacing="1.1">LOOK-ALIKE NATURA CLASS</text>
+<text class="hd" x="660" y="1389" font-size="9" letter-spacing="1.1">WHAT THIS CAN NEVER IMPLY ABOUT THE OTHER  —  the load-bearing column</text>
+<line class="rule" x1="76" y1="1395" x2="1364" y2="1395" stroke-width="1"/>
+<line class="faint" x1="384" y1="1377" x2="384" y2="1711"/>
+<line class="faint" x1="652" y1="1377" x2="652" y2="1711"/>
+<text class="hd mono" x="76" y="1419" font-size="10">proven</text>
+<text class="tf" x="76" y="1430" font-size="8.2">a held, sealed, UNI-signed PASS</text>
+<text class="t" x="394" y="1419" font-size="9.5">—</text>
+<text class="hd" x="408" y="1419" font-size="9.2">OBSERVED-REPLICATED</text>
+<text class="t" x="660" y="1419" font-size="8.8">A replicated natural regularity can never make a UNI claim “proven”. A UNI “proven” row can never</text>
+<text class="t" x="660" y="1430" font-size="8.8">make a natural regularity replicated, or count as evidence about nature.</text>
+<line class="faint" x1="76" y1="1438" x2="1364" y2="1438" opacity=".55"/>
+<text class="hd mono" x="76" y="1451" font-size="10">designed</text>
+<text class="tf" x="76" y="1462" font-size="8.2">a typed/signed spec; build unverified</text>
+<text class="t" x="394" y="1451" font-size="9.5">△</text>
+<text class="hd" x="408" y="1451" font-size="9.2">MODELED</text>
+<text class="t" x="660" y="1451" font-size="8.8">A model of nature that fits can never discharge a UNI design gate. A signed UNI design can never</text>
+<text class="t" x="660" y="1462" font-size="8.8">be evidence about how nature works.</text>
+<line class="faint" x1="76" y1="1470" x2="1364" y2="1470" opacity=".55"/>
+<text class="hd mono" x="76" y="1483" font-size="10">hypothesized</text>
+<text class="tf" x="76" y="1494" font-size="8.2">a stated UNI mechanism, no gate</text>
+<text class="t" x="394" y="1483" font-size="9.5">△</text>
+<text class="hd" x="408" y="1483" font-size="9.2">HYPOTHESIZED</text>
+<text class="t" x="660" y="1483" font-size="8.8">Same word, different subject. Nature's open mechanism can never move a UNI rung; UNI's open</text>
+<text class="t" x="660" y="1494" font-size="8.8">mechanism can never settle a scientific dispute.</text>
+<line class="faint" x1="76" y1="1502" x2="1364" y2="1502" opacity=".55"/>
+<text class="hd mono" x="76" y="1515" font-size="10">not-yet-built</text>
+<text class="tf" x="76" y="1526" font-size="8.2">no engine, no run, no gate</text>
+<text class="fn" x="394" y="1515" font-size="9.5">◇</text>
+<text class="hd" x="408" y="1515" font-size="9.2">NOT-MEASURED</text>
+<text class="t" x="660" y="1515" font-size="8.8">UNI not having built it can never be evidence nature lacks the value. Nature lacking a measurement</text>
+<text class="t" x="660" y="1526" font-size="8.8">can never be a reason UNI cannot build — nor an excuse to invent the number.</text>
+<line class="faint" x1="76" y1="1534" x2="1364" y2="1534" opacity=".55"/>
+<text class="tf" x="76" y="1547" font-size="10">— no UNI equivalent —</text>
+<text class="tf" x="76" y="1558" font-size="8.2">the 4 states are PASS/FAIL/NEG/PENDING</text>
+<text class="t" x="394" y="1547" font-size="9.5">—</text>
+<text class="hd" x="408" y="1547" font-size="9.2">OBSERVED-CONTESTED</text>
+<text class="t" x="660" y="1547" font-size="8.8">The UNI ledger has no contested state. A contested exponent can never be cited as settled to move</text>
+<text class="t" x="660" y="1558" font-size="8.8">a UNI row. The four states can never flatten a live scientific dispute into one number.</text>
+<line class="faint" x1="76" y1="1566" x2="1364" y2="1566" opacity=".55"/>
+<text class="hd mono" x="76" y="1579" font-size="10">NEGATIVE</text>
+<text class="tf" x="76" y="1590" font-size="8.2">a held UNI run that missed its bar</text>
+<text class="fn" x="394" y="1579" font-size="9.5">◇</text>
+<text class="hd" x="408" y="1579" font-size="9.2">INADMISSIBLE</text>
+<text class="t" x="660" y="1579" font-size="8.8">A UNI NEGATIVE is a result UNI earned. A nature claim's inadmissibility can never be recorded as a</text>
+<text class="t" x="660" y="1590" font-size="8.8">UNI NEGATIVE, and a UNI NEGATIVE can never be a statement about nature.</text>
+<line class="faint" x1="76" y1="1598" x2="1364" y2="1598" opacity=".55"/>
+<text class="hd mono" x="76" y="1611" font-size="10">NEGATIVE</text>
+<text class="tf" x="76" y="1622" font-size="8.2">second look-alike, added 2026-07-15</text>
+<text class="fn" x="394" y="1611" font-size="9.5">◇</text>
+<text class="hd" x="408" y="1611" font-size="9.2">SUPERSEDED</text>
+<text class="t" x="660" y="1611" font-size="8.8">Both describe something that lost — which is exactly why they are confusable. THIS IS WHY THE CLASS</text>
+<text class="t" x="660" y="1622" font-size="8.8">IS NAMED SUPERSEDED AND NOT NEGATIVE: one token may not serve both vocabularies.</text>
+<line class="faint" x1="76" y1="1630" x2="1364" y2="1630" opacity=".55"/>
+<text class="tf" x="76" y="1643" font-size="10">— no UNI equivalent —</text>
+<text class="tf" x="76" y="1654" font-size="8.2">a PASS is a sealed gate, not a lone reading</text>
+<text class="t" x="394" y="1643" font-size="9.5">—</text>
+<text class="hd" x="408" y="1643" font-size="9.2">OBSERVED-SINGLE</text>
+<text class="t" x="660" y="1643" font-size="8.8">A single unreplicated measurement can never move a UNI rung — least of all this class, which exists</text>
+<text class="t" x="660" y="1654" font-size="8.8">precisely to stop one study being read as settled.</text>
+<line class="faint" x1="76" y1="1662" x2="1364" y2="1662" opacity=".55"/>
+<text class="tf" x="76" y="1675" font-size="10">— no UNI equivalent —</text>
+<text class="tf" x="76" y="1686" font-size="8.2">not-yet-built is nearest, and is not close</text>
+<text class="fn" x="394" y="1675" font-size="9.5">◇</text>
+<text class="hd" x="408" y="1675" font-size="8.2">NOT-SOURCED · NOT-CONFIRMED · NOT-LOCATED</text>
+<text class="t" x="660" y="1675" font-size="8.8">These record a gap in THIS CORPUS'S HOMEWORK — not in UNI's build, not in nature. And none of the three</text>
+<text class="t" x="660" y="1686" font-size="8.8">may ever be read as NOT-MEASURED: that merge converts a research failure into a claim about science.</text>
+<line class="faint" x1="76" y1="1694" x2="1364" y2="1694" opacity=".55"/>
+<text class="hd2" x="76" y="1729" font-size="8.6">Each row pairs a UNI fence value with the NATURA class it SUPERFICIALLY RESEMBLES — because the resemblance is the trap. There is no operation that takes a NATURA row and a UNI row and produces a stronger row of either kind.</text>
+<rect class="frame" x="60" y="1775" width="1320" height="330"/>
+<line class="rule" x1="60" y1="1809" x2="1380" y2="1809" stroke-width="1.1"/>
+<text class="hd" x="74" y="1799" font-size="15" letter-spacing="1.4">IV</text>
+<text class="hd2" x="104" y="1799" font-size="13" letter-spacing="1.1">TRUE · HONEST · META — three sovereign lanes. Crossing them is the cardinal sin.</text>
+<rect class="frame" x="76" y="1823" width="1288" height="56"/>
+<text class="hd" x="90" y="1847" font-size="17" letter-spacing="2.6">TRUE</text>
+<text class="tf" x="90" y="1861" font-size="8.6">98 of 130 concepts</text>
+<text class="tf" x="90" y="1872" font-size="8">lexicon/CONCEPTS.json v1.0.0</text>
+<text class="hd" x="248" y="1841" font-size="10">falsifiable · reproducible · recalibratable</text>
+<text class="t" x="248" y="1856" font-size="8.8">Every NATURA class above and every UNI fence value is a TRUE-side instrument: each carries the falsifier that would move it.</text>
+<text class="t" x="248" y="1870" font-size="8.8">Separate store. Separate ledger. Separate Merkle root.</text>
+<line class="bound" x1="76" y1="1884" x2="1364" y2="1884"/>
+<line class="bound" x1="76" y1="1888" x2="1364" y2="1888"/>
+<rect class="bgfill" x="519.39" y="1882.78" width="353.22" height="10.25"/>
+<text class="hd" x="696" y="1890" font-size="8.4" text-anchor="middle" letter-spacing="1.2">SOVEREIGN BOUNDARY — the cardinal sin is crossing it</text>
+<rect class="frame" x="76" y="1893" width="1288" height="56"/>
+<text class="hd" x="90" y="1917" font-size="17" letter-spacing="2.6">HONEST</text>
+<text class="tf" x="90" y="1931" font-size="8.6">1 of 130 concepts</text>
+<text class="tf" x="90" y="1942" font-size="8">lexicon/CONCEPTS.json v1.0.0</text>
+<text class="hd" x="248" y="1911" font-size="10">lived experience — respected exactly as lived, and NEVER calibrated</text>
+<text class="t" x="248" y="1926" font-size="8.8">Testimony is not a failed measurement; it is a different kind of signal. Its lack of a falsifier IS THE POINT, NOT A GAP.</text>
+<text class="t" x="248" y="1940" font-size="8.8">The corpus's only HONEST row is CN11-59 (first-person testimony, CN-11), deliberately given no NATURA class.</text>
+<line class="bound" x1="76" y1="1954" x2="1364" y2="1954"/>
+<line class="bound" x1="76" y1="1958" x2="1364" y2="1958"/>
+<rect class="bgfill" x="519.39" y="1952.78" width="353.22" height="10.25"/>
+<text class="hd" x="696" y="1960" font-size="8.4" text-anchor="middle" letter-spacing="1.2">SOVEREIGN BOUNDARY — the cardinal sin is crossing it</text>
+<rect class="" x="76" y="1963" width="1288" height="56" fill="url(#pl09-void)" opacity=".5"/>
+<rect class="frame" x="76" y="1963" width="1288" height="56" stroke-dasharray="2.5 2.5"/>
+<text class="fn" x="90" y="1987" font-size="17" letter-spacing="2.6">META</text>
+<text class="tf" x="90" y="2001" font-size="8.6">31 of 130 concepts</text>
+<text class="tf" x="90" y="2012" font-size="8">lexicon/CONCEPTS.json v1.0.0</text>
+<text class="fn" x="248" y="1981" font-size="10">commentary about signals — travels separately, and is never True</text>
+<text class="t" x="248" y="1996" font-size="8.8">SIGNUM SIGNUM MANET: the signal and the commentary about it travel separately. Never merge an attribution.</text>
+<text class="fn" x="248" y="2010" font-size="8.8">CARRIED FROM OUTSIDE THIS CORPUS — see the fence below. Drawn on the lexicon's authority alone.</text>
+<line class="rule" x1="76" y1="2025" x2="1364" y2="2025"/>
+<text class="hd" x="76" y="2041" font-size="9.5">“store” ROUTES A CONCEPT TO ITS SOVEREIGN STORE AND IS NEVER A CLAIM ABOUT THE CONCEPT'S TRUTH.</text>
+<text class="t" x="76" y="2053" font-size="8.6">lexicon/CONCEPTS.json field_contract, verbatim: “TRUE | HONEST | META. Routing, not a truth claim.”  The three lanes are drawn EQUAL because sovereignty is not proportional to population.</text>
+<rect class="frame" x="76" y="2061" width="1288" height="34" stroke-dasharray="2.5 2.5"/>
+<text class="fn" x="86" y="2076" font-size="9" font-weight="700">◇  META'S PROVENANCE FENCE:</text>
+<text class="fn" x="250" y="2076" font-size="8.8">“META appears in 0 files of this corpus and is carried from the wider UNI Tree doctrine (arca META), not from anything the encyclopedia says.”</text>
+<text class="fn" x="86" y="2090" font-size="8.6">— lexicon/CONCEPTS.json, its own disclosure. Independently reproduced by grep, 2026-07-15: as a store name, META appears in no encyclopedia/ or cookbook/ chapter — only in the lexicon that declares it. The lane is drawn; the gap is printed with it.</text>
+<rect class="frame" x="60" y="2135" width="1320" height="700"/>
+<line class="rule" x1="60" y1="2169" x2="1380" y2="2169" stroke-width="1.1"/>
+<text class="hd" x="74" y="2159" font-size="15" letter-spacing="1.4">V</text>
+<text class="hd2" x="92" y="2159" font-size="13" letter-spacing="1.1">KEY, CAPTION, AND WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="hd" x="80" y="2183" font-size="11">FIGURE KEY — marks, not colours (this plate must survive greyscale)</text>
+<text class="hd" x="88" y="2203" font-size="13" text-anchor="middle">═</text>
+<text class="hd" x="106" y="2203" font-size="10.5">SOVEREIGN BOUNDARY</text>
+<text class="t" x="268" y="2203" font-size="10">separates two vocabularies. Reference may cross it; INFERENCE MAY NOT.</text>
+<text class="hd" x="88" y="2222" font-size="13" text-anchor="middle">╌</text>
+<text class="hd" x="106" y="2222" font-size="10.5">AUDITED CROSS-LINK</text>
+<text class="t" x="268" y="2222" font-size="10">a citation, and only a citation. The two ledgers are cross-referenced by explicit audited link only.</text>
+<text class="ct" x="88" y="2241" font-size="13" text-anchor="middle">✗</text>
+<text class="hd" x="106" y="2241" font-size="10.5">MERGE</text>
+<text class="t" x="268" y="2241" font-size="10">forbidden — the cardinal sin. Never drawn as a legal operation anywhere on this plate.</text>
+<text class="t" x="88" y="2260" font-size="13" text-anchor="middle">—</text>
+<text class="hd" x="106" y="2260" font-size="10.5">GROUP A · MEASURED</text>
+<text class="t" x="268" y="2260" font-size="10">an instrument was put on nature; the class says how much independent corroboration exists.</text>
+<text class="t" x="88" y="2279" font-size="13" text-anchor="middle">△</text>
+<text class="hd" x="106" y="2279" font-size="10.5">GROUP B · DERIVED</text>
+<text class="t" x="268" y="2279" font-size="10">the number came out of a model; THE ASSUMPTIONS ARE THE FENCE.</text>
+<text class="fn" x="88" y="2298" font-size="13" text-anchor="middle">◇</text>
+<text class="hd" x="106" y="2298" font-size="10.5">GROUP C · FENCED</text>
+<text class="t" x="268" y="2298" font-size="10">the row carries no usable value, and the class says precisely why not.</text>
+<text class="ct" x="88" y="2317" font-size="13" text-anchor="middle">⊙</text>
+<text class="hd" x="106" y="2317" font-size="10.5">REGISTERED 2026-07-15</text>
+<text class="t" x="268" y="2317" font-size="10">one of the six classes added when the six-class design was refuted by 72 of its own 919 rows.</text>
+<text class="t" x="88" y="2336" font-size="13" text-anchor="middle">□</text>
+<text class="hd" x="106" y="2336" font-size="10.5">CARRIED, NOT CLASSED</text>
+<text class="t" x="268" y="2336" font-size="10">four named rows that deliberately carry no class. A closed list of four, not an open category.</text>
+<text class="tf" x="80" y="2363" font-size="9.5">Line weight, dash pattern and hatch carry every distinction colour carries. The two trees are drawn at EQUAL ink weight on purpose: they are equal in sovereignty and differ only in</text>
+<text class="tf" x="80" y="2375" font-size="9.5">SUBJECT — one describes UNI's own build, the other describes nature. Neither outranks the other, and neither may be converted into the other.</text>
+<line class="rule" x1="76" y1="2389" x2="1364" y2="2389" stroke-width=".7"/>
+<text class="hd" x="80" y="2413" font-size="12" letter-spacing="1.6">CAPTION</text>
+<text class="t" x="80" y="2433" font-size="9.5">1 · The two trees (I) are drawn with SEPARATE ROOTS in SEPARATE BEDS OF SOIL, and the beds do not touch. That gap is the whole plate. The left tree's root is UNI's own gates run on</text>
+<text class="t" x="80" y="2445.2" font-size="9.5">     UNI's own artifacts; the right tree's root is third parties publishing in the literature. Different subject, different authority, different repair. No root crosses to the other bed, because</text>
+<text class="t" x="80" y="2457.4" font-size="9.5">     there is no operation that takes a NATURA row and a UNI row and produces a stronger row of either kind.</text>
+<text class="t" x="80" y="2469.6" font-size="9.5">2 · The NATURA counts are ROWS of encyclopedia/NATURE-LEDGER.md §5.1, machine-counted across 23 chapters: 578 (group A) + 257 (group B) + 80 (group C) + 4 (carried, not classed)</text>
+<text class="t" x="80" y="2481.8" font-size="9.5">     = 919 rows, 0 out of vocabulary. Receipt: tools/verify_class_vocabulary.py re-run for this plate, 2026-07-15 — RESULT: PASS, 915 rows placed in a registered class + 4 deliberately unclassed, 0 outside the vocabulary. Re-run it; if it disagrees, the plate is wrong.</text>
+<text class="t" x="80" y="2494" font-size="9.5">3 · The two sides are counted to DIFFERENT STANDARDS, and the plate draws the asymmetry rather than smoothing it. The NATURA side is machine-counted and its verifier was re-run here. The UNI side</text>
+<text class="t" x="80" y="2506.2" font-size="9.5">     is the ledger's own LAST RECORDED SNAPSHOT (882 rows = 350 PASS / 0 FAIL / 183 NEGATIVE / 349 PENDING, CLAIM-LEDGER §0) and was NOT recounted for this plate. For the 4-value fence</text>
+<text class="t" x="80" y="2518.4" font-size="9.5">     (proven · designed · hypothesized · not-yet-built) this corpus publishes NO per-value count, so the plate prints none. An unsourced count is the worst defect available here.</text>
+<text class="t" x="80" y="2530.6" font-size="9.5">4 · The dashed swag (I) is the audited cross-link, and it springs from CROWN TO CROWN — published text to published text — never root to root. It crosses the sovereign boundary because a</text>
+<text class="t" x="80" y="2542.8" font-size="9.5">     CITATION may cross it. An INFERENCE may not. That is the entire distinction the boundary encodes: the fence blocks implication, not reference.</text>
+<text class="t" x="80" y="2555" font-size="9.5">5 · The crosswalk (III) pairs each UNI value with the NATURA class it superficially resembles, because THE RESEMBLANCE IS THE TRAP. The two NEGATIVE rows are the sharpest case: NEGATIVE</text>
+<text class="t" x="80" y="2567.2" font-size="9.5">     and SUPERSEDED both describe something that lost, which is exactly why they are confusable — and is why the NATURA class is named SUPERSEDED. One token may not serve both vocabularies.</text>
+<text class="t" x="80" y="2579.4" font-size="9.5">6 · The three lanes (IV) are drawn at EQUAL WIDTH. This is an editorial choice with a reason: TRUE carries 98 of 130 concepts and HONEST carries 1, and drawing HONEST as a hairline would</text>
+<text class="t" x="80" y="2591.6" font-size="9.5">     imply that sovereignty scales with population. It does not. Honesty is never calibrated — that is the point, not a gap — and a lane with one row is exactly as sovereign as a lane with 98.</text>
+<text class="t" x="80" y="2603.8" font-size="9.5">7 · META's lane is drawn on the lexicon's authority ALONE and is marked with the fenced hatch. The corpus discloses its own gap and this plate carries the disclosure rather than quietly</text>
+<text class="t" x="80" y="2616" font-size="9.5">     inheriting it: META appears in 0 files of this corpus. Its lane is real routing vocabulary; it is not an encyclopedia concept, and the plate says so on its face.</text>
+<text class="t" x="80" y="2628.2" font-size="9.5">8 · The amendment (I, lower left) is drawn because the vocabulary's own history is load-bearing. NA-00 declared six classes; 72 of its own 919 rows (7.8%) fell outside them, and the chapters</text>
+<text class="t" x="80" y="2640.4" font-size="9.5">     themselves recorded the gap while writing. Six → twelve, 2026-07-15. Twelve is what 919 rows MEASURED, not a design target. A vocabulary that can name its own gaps is a vocabulary, not an achievement.</text>
+<line class="rule" x1="76" y1="2658.6" x2="1364" y2="2658.6" stroke-width=".7"/>
+<text class="hd" x="80" y="2680.6" font-size="12" letter-spacing="1.6">WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="t" x="80" y="2700.6" font-size="9.5">· Not claimed: that twelve is the correct, exhaustive or final number of NATURA classes. NA-00 declared six and was refuted by its own corpus — which is the strongest available reason not to claim the new number is final.</text>
+<text class="t" x="80" y="2712.8" font-size="9.5">· Not claimed: that the 22 un-traced rows (NOT-SOURCED 20 · NOT-CONFIRMED 1 · NOT-LOCATED 1) are repaired. They are now correctly LABELLED, which is a description of a defect, not its repair. Naming a defect precisely is not fixing it.</text>
+<text class="t" x="80" y="2725" font-size="9.5">· Not claimed: that the UNI snapshot (882 rows) is current, or was recounted here. It is carried as what it is — the ledger's own last recorded snapshot — and an upstream prior is never fresh evidence.</text>
+<text class="t" x="80" y="2737.2" font-size="9.5">· Not claimed: any per-value count for “proven” · “designed” · “hypothesized” · “not-yet-built”. This corpus publishes none, and this plate invents none. NOT-MEASURED is written instead of a plausible-sounding number.</text>
+<text class="t" x="80" y="2749.4" font-size="9.5">· Not claimed: that META is an encyclopedia concept. It appears in 0 files of this corpus and is carried from the wider UNI Tree doctrine (arca META). Its lane rests on the lexicon alone, and the lexicon discloses this itself.</text>
+<text class="t" x="80" y="2761.6" font-size="9.5">· Not claimed: that the lanes' equal width means equal population, or that any lane outranks another. Sovereignty is not proportional to population, and TRUE never outranks HONEST.</text>
+<text class="t" x="80" y="2773.8" font-size="9.5">· Not claimed: that anything on this plate raises, lowers or discharges any UNI row. This plate draws the ARCHITECTURE of two ledgers. It holds no gate and earns no rung; the honest program position is unchanged: ~2 of 11+ rungs earned.</text>
+<text class="t" x="80" y="2786" font-size="9.5">· Not claimed: anything whatever about “full human” or “the next evolution beyond human.” Both are QUAESTIO APERTA — permanent open questions, never targets, never milestones, never deliverables.</text>
+<text class="t" x="80" y="2798.2" font-size="9.5">· Not claimed: that this plate may stand in for either ledger. It is a drawing. WHERE THE PLATE AND A LEDGER DISAGREE, THE LEDGER WINS AND THE PLATE IS WRONG — the same supremacy rule both ledgers already run.</text>
+<text class="t" x="80" y="2810.4" font-size="9.5">· Not claimed: that panel IV's concept counts (98 · 1 · 31 of 130) are reproducible from the cited tip — lexicon/CONCEPTS.json is an UNCOMMITTED working-tree file, absent from f1be794. The NATURA counts and their verifier are in the tip; the lexicon is not.</text>
+</g>
+</svg>

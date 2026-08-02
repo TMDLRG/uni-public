@@ -68,8 +68,12 @@ const CORPORA = [
   {
     id: "encyclopedia", title: "The Encyclopedia", root_key: "uni-cookbook", dir: "encyclopedia",
     blurb: "The UNI method as a book: what is claimed, what is observed, and the two sovereign ledgers that keep those apart.",
-    exclude: [/^appendix-TA\//],
-    exclude_reason: "appendix-TA is Track-A, the commercial and delivery track. It is the operator's own material and his own published rate card — a SCOPE exclusion, not a secrecy one.",
+    // appendix-TA (Track A, the commercial and delivery track) was held from 2026-08-01 to 2026-08-02
+    // pending the operator's ruling, because it is client-engagement narrative and the safety scanner
+    // says on its own face it cannot vet narrative. The operator ruled it in 2026-08-02. Each of the
+    // six chapters opens by fencing itself as engineering and method rather than science — the
+    // distinction the hold was protecting — and all six are clean against every structural pattern
+    // and denied value.
   },
   {
     id: "cookbook", title: "The Cookbook", root_key: "uni-cookbook", dir: "cookbook",

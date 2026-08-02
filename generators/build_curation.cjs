@@ -70,6 +70,8 @@ const GROUPS = [
   { id: "films", title: "The films", intent: "Scripts, narration and dossiers for the films — including a toolchain document stating that one film cannot be rebuilt from its own source today." },
   { id: "lexicon", title: "The lexicon — one concept, five registers", intent: "What each term means in Sanskrit, Latin, English, Hindi and Spanish, what it must never be translated as, and which back-translation tests have not been run." },
   { id: "constants", title: "Constants, ratios and the nature ledger", intent: "Every load-bearing number with its units, scope, evidence class, source and falsifier — including the claims ruled INADMISSIBLE." },
+  { id: "plates", title: "The engraved plates", intent: "Ten drawn plates, each carrying what it claims, what it does NOT claim, and the falsifier for the drawing itself." },
+  { id: "encyclopedia-track-a", title: "Encyclopedia — Track A, the commercial appendix", intent: "The delivery and commercial track, published as engineering and method — each chapter fences itself as not-science on its own first page." },
 ];
 
 // ─── ordered rules, first match wins. No default bucket, deliberately. ───────────────────────────
@@ -93,6 +95,7 @@ const RULES = [
   [/^evidence\//, "evidence-receipts"],
 
   // ── the two books ─────────────────────────────────────────────────────────────────────────────
+  [/^encyclopedia\/appendix-ta-/, "encyclopedia-track-a"],
   [/^encyclopedia\/wing-natura/, "encyclopedia-nature"],
   [/^encyclopedia\/wing-s-/, "encyclopedia-stack"],
   [/^encyclopedia\//, "encyclopedia-method"],
@@ -131,6 +134,7 @@ const RULES = [
   [/^estate\//, "operator"],
   [/^lexicon\//, "lexicon"],
   [/^constants\//, "constants"],
+  [/^plates\//, "plates"],
 ];
 
 // Pages that belong in no route, each with a published reason. Kept as a mechanism even when empty:

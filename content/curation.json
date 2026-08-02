@@ -734,6 +734,36 @@
     "constants/inadmissible",
     "constants/open-questions"
    ]
+  },
+  {
+   "id": "plates",
+   "title": "The engraved plates",
+   "intent": "Ten drawn plates, each carrying what it claims, what it does NOT claim, and the falsifier for the drawing itself.",
+   "pages": [
+    "plates/pl-01",
+    "plates/pl-02",
+    "plates/pl-03",
+    "plates/pl-04",
+    "plates/pl-05",
+    "plates/pl-06",
+    "plates/pl-07",
+    "plates/pl-08",
+    "plates/pl-09",
+    "plates/pl-10"
+   ]
+  },
+  {
+   "id": "encyclopedia-track-a",
+   "title": "Encyclopedia — Track A, the commercial appendix",
+   "intent": "The delivery and commercial track, published as engineering and method — each chapter fences itself as not-science on its own first page.",
+   "pages": [
+    "encyclopedia/appendix-ta-ta-a-no-api-content-model",
+    "encyclopedia/appendix-ta-ta-b-commercial-proof",
+    "encyclopedia/appendix-ta-ta-c-website-self-driving",
+    "encyclopedia/appendix-ta-ta-d-engagement-pricing-brand",
+    "encyclopedia/appendix-ta-ta-e-delivery-route-auth-triage",
+    "encyclopedia/appendix-ta-ta-n-negatives-parks-open-threads"
+   ]
   }
  ],
  "uncategorised": []

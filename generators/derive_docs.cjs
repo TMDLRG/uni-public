@@ -33,6 +33,11 @@ const DERIVED_CORPORA = [
     blurb: "Every load-bearing number with its units, scope, evidence class, source and falsifier — including the 88 claims the ledger rules INADMISSIBLE.",
     off_main_nav: false,
   },
+  {
+    id: "plates", title: "The Engraved Plates",
+    blurb: "Ten drawn plates, each carrying what it claims, what it does NOT claim, and the falsifier for the drawing itself.",
+    off_main_nav: false,
+  },
 ];
 
 // ── markdown-safe rendering helpers ──────────────────────────────────────────────────────────────
@@ -211,11 +216,65 @@ const LEXICON_TERMS = [
   "lexicon/terms/pomdp-tensors.json", "lexicon/terms/natura-biology.json",
 ];
 
+// ── PLATES: one PL-NN.json + its .svg → one page ─────────────────────────────────────────────────
+// The page's provenance is the JSON (page.sha256 = digest of the JSON). The drawing is copied to
+// public/plates/ and referenced as an IMAGE, not inlined — inlining 100 KB of unvetted SVG into the
+// body would drag it through the Precise-identity byte comparison. The SVG is scanned through the
+// same fences before it is copied, and its own sha256 is recorded in the banner.
+function renderPlate(j, num, svgSha, sourceRel, commitShort) {
+  const pl = `PL-${String(num).padStart(2, "0")}`;
+  const out = [];
+  out.push(`# ${s(j.title || pl)}`);
+  out.push("");
+  out.push(banner(sourceRel, commitShort));
+  out.push(`> The drawing below is \`reader/plates/${pl}.svg\` at sha256 \`${svgSha.slice(0, 16)}\`.\n`);
+  out.push("");
+  if (j.caption) { out.push(s(typeof j.caption === "string" ? j.caption : JSON.stringify(j.caption))); out.push(""); }
+  out.push(`![${cell(j.title || pl)}](/plates/${pl}.svg)`);
+  out.push("");
+  if (Array.isArray(j.claims) && j.claims.length) {
+    out.push("**Claims**");
+    out.push("");
+    out.push("| ref | symbol | value | units | scope |");
+    out.push("|---|---|---|---|---|");
+    for (const c of j.claims) out.push(`| ${cell(c.ref)} | ${cell(c.symbol)} | ${cell(c.value)} | ${cell(c.units)} | ${cell(c.scope)} |`);
+    out.push("");
+  }
+  if (Array.isArray(j.structural_statements) && j.structural_statements.length) {
+    out.push("**Structural statements**");
+    out.push("");
+    for (const st of j.structural_statements) out.push(`- ${s(typeof st === "string" ? st : JSON.stringify(st))}`);
+    out.push("");
+  }
+  if (Array.isArray(j.not_claimed) && j.not_claimed.length) {
+    out.push("**What this plate does NOT claim**");
+    out.push("");
+    for (const nc of j.not_claimed) out.push(`- ${s(nc)}`);
+    out.push("");
+  }
+  if (Array.isArray(j.evidence_classes) && j.evidence_classes.length) {
+    out.push(`**Evidence classes used** — ${j.evidence_classes.map((e) => `\`${cell(e)}\``).join(" · ")}`);
+    out.push("");
+  }
+  if (j.design_fence) { out.push(`**Design fence** — ${s(typeof j.design_fence === "string" ? j.design_fence : JSON.stringify(j.design_fence))}`); out.push(""); }
+  const falsifier = j.falsifier_for_this_plate || (j.verification && j.verification.falsifier);
+  if (falsifier) { out.push(`**Falsifier for this plate** — ${s(typeof falsifier === "string" ? falsifier : JSON.stringify(falsifier))}`); out.push(""); }
+  if (Array.isArray(j.source_chapters) && j.source_chapters.length) {
+    out.push("**Source chapters**");
+    out.push("");
+    for (const sc of j.source_chapters) out.push(`- \`${cell(sc)}\``);
+    out.push("");
+  }
+  if (j.marginal_note) { out.push(`> ${s(typeof j.marginal_note === "string" ? j.marginal_note : JSON.stringify(j.marginal_note))}`); }
+  return out.join("\n");
+}
+
 function derivePages(ctx) {
   const { ROOTS, git, sha256, judge, redact, hasDenied, dirtyPaths, publication, MAX_REDACTIONS } = ctx;
   const root = ROOTS["uni-cookbook"];
   const results = [];
   if (!root || !fs.existsSync(root)) return results;
+  const REPO = path.resolve(__dirname, "..");
 
   const commit = git(root, ["rev-parse", "HEAD"]);
   const branch = git(root, ["rev-parse", "--abbrev-ref", "HEAD"]);
@@ -238,6 +297,29 @@ function derivePages(ctx) {
   for (const p of CONSTANT_PAGES) {
     units.push({ corpus: "constants", slugTail: p.slug, sourceRel: K20,
       render: (k) => renderConstantsArray(k, p.arr, p, K20, commitShort), pageTitle: p.title });
+  }
+
+  // plates: each is a JSON page whose drawing is a separate SVG asset. Scan the SVG through the same
+  // fences and copy the clean ones to public/plates/ BEFORE emitting the page; a dirty SVG is fenced
+  // as unprovenanced, a leaking one is refused, and neither reaches the wiki.
+  const publicPlates = path.join(REPO, "public", "plates");
+  for (let n = 1; n <= 10; n++) {
+    const pl = `PL-${String(n).padStart(2, "0")}`;
+    const jsonRel = `reader/plates/${pl}.json`;
+    const svgRel = `reader/plates/${pl}.svg`;
+    const jsonAbs = path.join(root, jsonRel);
+    const svgAbs = path.join(root, svgRel);
+    if (!fs.existsSync(jsonAbs) || !fs.existsSync(svgAbs)) continue;
+    if (dirty.has(jsonRel) || dirty.has(svgRel)) { results.push({ unprovenanced: { corpus: "plates", path: dirty.has(svgRel) ? svgRel : jsonRel, commit: commitShort } }); continue; }
+    const svgText = fs.readFileSync(svgAbs, "utf8");
+    if (hasDenied(svgText) || judge(svgText).length) {
+      results.push({ refused: { corpus: "plates", path: svgRel, bytes: Buffer.byteLength(svgText), sha256: sha256(svgText).slice(0, 16), reasons: [...new Set(judge(svgText).length ? judge(svgText) : ["operator-denied-value"])] } });
+      continue;
+    }
+    const svgSha = sha256(svgText);
+    fs.mkdirSync(publicPlates, { recursive: true });
+    fs.copyFileSync(svgAbs, path.join(publicPlates, `${pl}.svg`));
+    units.push({ corpus: "plates", slugTail: slug(pl), sourceRel: jsonRel, render: (j) => renderPlate(j, n, svgSha, jsonRel, commitShort) });
   }
 
   for (const u of units) {

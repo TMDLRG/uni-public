@@ -1,0 +1,570 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 2231" width="100%" role="img" class="pl03" aria-labelledby="pl03-title pl03-desc" preserveAspectRatio="xMidYMin meet">
+<title id="pl03-title">Plate PL-03 — The Scale Ladder: Quark to Galaxy</title>
+<desc id="pl03-desc">A vertical engraved plate. A logarithmic axis of characteristic length from 10 to the minus 16 to 10 to the 21 metres carries sixteen rungs from encyclopedia chapter NA-10, from the proton charge radius to the Milky Way isophotal diameter. Each rung lists characteristic length, time and energy, dominant force, governing dimensionless group, and whether a Markov blanket is identifiable. Regime boundaries are marked only where NA-10 names them. Fenced MODELED; no UNI claims.</desc>
+<style>
+.pl03{--paper:#f7f4ec;--ink:#1c1b18;--ink2:#4d4a44;--ink3:#8c877c;--rule:#bdb8ab;--accent:#8a3a24;--accentbg:#8a3a24;font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;}
+@media (prefers-color-scheme:dark){.pl03{--paper:#131412;--ink:#eae6da;--ink2:#b0aa9b;--ink3:#7b766c;--rule:#4b4842;--accent:#e28a63;--accentbg:#e28a63;}}
+[data-theme="dark"] .pl03,.pl03[data-theme="dark"]{--paper:#131412;--ink:#eae6da;--ink2:#b0aa9b;--ink3:#7b766c;--rule:#4b4842;--accent:#e28a63;--accentbg:#e28a63;}
+[data-theme="light"] .pl03,.pl03[data-theme="light"]{--paper:#f7f4ec;--ink:#1c1b18;--ink2:#4d4a44;--ink3:#8c877c;--rule:#bdb8ab;--accent:#8a3a24;--accentbg:#8a3a24;}
+.pl03 .paper{fill:var(--paper);}
+.pl03 .ink{fill:var(--ink);}
+.pl03 .ink2{fill:var(--ink2);}
+.pl03 .ink3{fill:var(--ink3);}
+.pl03 .acc{fill:var(--accent);}
+.pl03 .s-ink{stroke:var(--ink);fill:none;}
+.pl03 .s-ink2{stroke:var(--ink2);fill:none;}
+.pl03 .s-ink3{stroke:var(--ink3);fill:none;}
+.pl03 .s-rule{stroke:var(--rule);fill:none;}
+.pl03 .s-acc{stroke:var(--accent);fill:none;}
+.pl03 .f-paper{fill:var(--paper);}
+.pl03 .pat-s{stroke:var(--ink2);}
+.pl03 .pat-f{fill:var(--ink2);}
+.pl03 .pat-as{stroke:var(--accent);}
+.pl03 .sc{letter-spacing:.09em;}
+.pl03 .halo{stroke:var(--paper);}
+</style>
+<defs>
+<pattern id="pl03-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="pat-s" x1="0" y1="0" x2="0" y2="5" stroke="#4d4a44" stroke-width="0.85"/></pattern>
+<pattern id="pl03-hatch-acc" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="pat-as" x1="0" y1="0" x2="0" y2="6" stroke="#8a3a24" stroke-width="0.8"/></pattern>
+<pattern id="pl03-stipple" width="4" height="4" patternUnits="userSpaceOnUse"><circle class="pat-f" cx="1" cy="1" r="0.6" fill="#4d4a44"/><circle class="pat-f" cx="3" cy="3" r="0.6" fill="#4d4a44"/></pattern>
+</defs>
+<rect class="paper" x="0" y="0" width="1060" height="2231" fill="#f7f4ec"/>
+<g class="ink" fill="#1c1b18">
+<text class="sc" x="40" y="62" font-size="13">PLATE PL-03</text>
+<text class="sc ink2" fill="#4d4a44" x="1020" y="62" font-size="10.5" text-anchor="end">UNI ENCYCLOPEDIA · WING NATURA · SOURCE NA-10</text>
+<text x="40" y="103" font-size="31">The Scale Ladder: Quark to Galaxy</text>
+</g>
+<text class="ink2" fill="#4d4a44" x="40" y="126" font-size="10.6" font-style="italic">Sixteen rungs ordered by characteristic length across ~10³⁶ (NA10-40), from the proton rms charge radius to the Milky Way isophotal diameter. Every value carries its NATURA class or its fence.</text>
+<g class="s-ink" stroke="#1c1b18" fill="none"><line x1="40" y1="140" x2="1020" y2="140" stroke-width="1.5"/><line x1="40" y1="144.5" x2="1020" y2="144.5" stroke-width="0.5"/></g>
+<g class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="1">
+<line x1="200.0" y1="180.0" x2="200.0" y2="1290.0"/>
+<line x1="190.0" y1="1290.00" x2="200.0" y2="1290.00" stroke-width="0.9"/>
+<line x1="195.0" y1="1260.00" x2="200.0" y2="1260.00" stroke-width="0.5"/>
+<line x1="190.0" y1="1230.00" x2="200.0" y2="1230.00" stroke-width="0.9"/>
+<line x1="195.0" y1="1200.00" x2="200.0" y2="1200.00" stroke-width="0.5"/>
+<line x1="190.0" y1="1170.00" x2="200.0" y2="1170.00" stroke-width="0.9"/>
+<line x1="195.0" y1="1140.00" x2="200.0" y2="1140.00" stroke-width="0.5"/>
+<line x1="190.0" y1="1110.00" x2="200.0" y2="1110.00" stroke-width="0.9"/>
+<line x1="195.0" y1="1080.00" x2="200.0" y2="1080.00" stroke-width="0.5"/>
+<line x1="190.0" y1="1050.00" x2="200.0" y2="1050.00" stroke-width="0.9"/>
+<line x1="195.0" y1="1020.00" x2="200.0" y2="1020.00" stroke-width="0.5"/>
+<line x1="190.0" y1="990.00" x2="200.0" y2="990.00" stroke-width="0.9"/>
+<line x1="195.0" y1="960.00" x2="200.0" y2="960.00" stroke-width="0.5"/>
+<line x1="190.0" y1="930.00" x2="200.0" y2="930.00" stroke-width="0.9"/>
+<line x1="195.0" y1="900.00" x2="200.0" y2="900.00" stroke-width="0.5"/>
+<line x1="190.0" y1="870.00" x2="200.0" y2="870.00" stroke-width="0.9"/>
+<line x1="195.0" y1="840.00" x2="200.0" y2="840.00" stroke-width="0.5"/>
+<line x1="190.0" y1="810.00" x2="200.0" y2="810.00" stroke-width="0.9"/>
+<line x1="195.0" y1="780.00" x2="200.0" y2="780.00" stroke-width="0.5"/>
+<line x1="190.0" y1="750.00" x2="200.0" y2="750.00" stroke-width="0.9"/>
+<line x1="195.0" y1="720.00" x2="200.0" y2="720.00" stroke-width="0.5"/>
+<line x1="190.0" y1="690.00" x2="200.0" y2="690.00" stroke-width="0.9"/>
+<line x1="195.0" y1="660.00" x2="200.0" y2="660.00" stroke-width="0.5"/>
+<line x1="190.0" y1="630.00" x2="200.0" y2="630.00" stroke-width="0.9"/>
+<line x1="195.0" y1="600.00" x2="200.0" y2="600.00" stroke-width="0.5"/>
+<line x1="190.0" y1="570.00" x2="200.0" y2="570.00" stroke-width="0.9"/>
+<line x1="195.0" y1="540.00" x2="200.0" y2="540.00" stroke-width="0.5"/>
+<line x1="190.0" y1="510.00" x2="200.0" y2="510.00" stroke-width="0.9"/>
+<line x1="195.0" y1="480.00" x2="200.0" y2="480.00" stroke-width="0.5"/>
+<line x1="190.0" y1="450.00" x2="200.0" y2="450.00" stroke-width="0.9"/>
+<line x1="195.0" y1="420.00" x2="200.0" y2="420.00" stroke-width="0.5"/>
+<line x1="190.0" y1="390.00" x2="200.0" y2="390.00" stroke-width="0.9"/>
+<line x1="195.0" y1="360.00" x2="200.0" y2="360.00" stroke-width="0.5"/>
+<line x1="190.0" y1="330.00" x2="200.0" y2="330.00" stroke-width="0.9"/>
+<line x1="195.0" y1="300.00" x2="200.0" y2="300.00" stroke-width="0.5"/>
+<line x1="190.0" y1="270.00" x2="200.0" y2="270.00" stroke-width="0.9"/>
+<line x1="195.0" y1="240.00" x2="200.0" y2="240.00" stroke-width="0.5"/>
+<line x1="190.0" y1="210.00" x2="200.0" y2="210.00" stroke-width="0.9"/>
+<line x1="190.0" y1="180.00" x2="200.0" y2="180.00" stroke-width="0.9"/>
+</g>
+<g class="ink2" fill="#4d4a44" font-size="9.4" text-anchor="end">
+<text x="186" y="1293.20">10⁻¹⁶</text>
+<text x="186" y="1233.20">10⁻¹⁴</text>
+<text x="186" y="1173.20">10⁻¹²</text>
+<text x="186" y="1113.20">10⁻¹⁰</text>
+<text x="186" y="1053.20">10⁻⁸</text>
+<text x="186" y="993.20">10⁻⁶</text>
+<text x="186" y="933.20">10⁻⁴</text>
+<text x="186" y="873.20">10⁻²</text>
+<text x="186" y="813.20">10⁰</text>
+<text x="186" y="753.20">10²</text>
+<text x="186" y="693.20">10⁴</text>
+<text x="186" y="633.20">10⁶</text>
+<text x="186" y="573.20">10⁸</text>
+<text x="186" y="513.20">10¹⁰</text>
+<text x="186" y="453.20">10¹²</text>
+<text x="186" y="393.20">10¹⁴</text>
+<text x="186" y="333.20">10¹⁶</text>
+<text x="186" y="273.20">10¹⁸</text>
+<text x="186" y="213.20">10²⁰</text>
+<text x="186" y="183.20">10²¹</text>
+</g>
+<g class="ink3" fill="#8c877c" font-size="8.8" font-style="italic" text-anchor="end">
+<text x="141" y="1263.00">fm</text>
+<text x="141" y="1173.00">pm</text>
+<text x="141" y="1083.00">nm</text>
+<text x="141" y="993.00">µm</text>
+<text x="141" y="903.00">mm</text>
+<text x="141" y="813.00">m</text>
+<text x="141" y="723.00">km</text>
+<text x="141" y="633.00">Mm</text>
+<text x="141" y="543.00">Gm</text>
+<text x="141" y="453.00">Tm</text>
+<text x="141" y="363.00">Pm</text>
+<text x="141" y="273.00">Em</text>
+<text x="141" y="183.00">Zm</text>
+</g>
+<text class="ink3 sc" fill="#8c877c" font-size="8.6" text-anchor="middle" transform="translate(163,735.0) rotate(-90)">CHARACTERISTIC LENGTH L (metres)</text>
+<rect x="88" y="765.69" width="26" height="224.31" fill="url(#pl03-stipple)"/>
+<path class="s-acc" stroke="#8a3a24" fill="none" stroke-width="1.1" d="M 114 765.69 L 106 765.69 L 106 990.00 L 114 990.00"/>
+<text class="acc" fill="#8a3a24" font-size="8.5" text-anchor="middle" transform="translate(80,877.8) rotate(-90)">Re DOMAIN — RUNGS 7–10 ONLY</text>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="1262.26" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,1262.26 238.0,1262.26 262.0,1296.80 272.0,1296.80"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="1118.29" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,1118.29 238.0,1118.29 262.0,1224.13 272.0,1224.13"/>
+<circle class="s-ink f-paper" stroke="#1c1b18" fill="#f7f4ec" stroke-width="1.1" stroke-dasharray="2 1.6" cx="216.0" cy="1104.72" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,1104.72 238.0,1104.72 262.0,1151.47 272.0,1151.47"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="1059.03" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,1059.03 238.0,1059.03 262.0,1078.80 272.0,1078.80"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="1020.00" x2="216.0" y2="1040.97"/><line x1="211.0" y1="1020.00" x2="221.0" y2="1020.00"/><line x1="211.0" y1="1040.97" x2="221.0" y2="1040.97"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,1030.48 238.0,1030.48 262.0,1006.13 272.0,1006.13"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="990.00" x2="216.0" y2="999.03" stroke-dasharray="3 2"/><line x1="211.0" y1="990.00" x2="221.0" y2="990.00"/><line x1="211.0" y1="999.03" x2="221.0" y2="999.03"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,994.52 238.0,994.52 262.0,933.47 272.0,933.47"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="930.00" x2="216.0" y2="990.00"/><line x1="211.0" y1="930.00" x2="221.0" y2="930.00"/><line x1="211.0" y1="990.00" x2="221.0" y2="990.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,960.00 238.0,960.00 262.0,860.80 272.0,860.80"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="870.00" x2="216.0" y2="930.00"/><line x1="211.0" y1="870.00" x2="221.0" y2="870.00"/><line x1="211.0" y1="930.00" x2="221.0" y2="930.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,900.00 238.0,900.00 262.0,788.13 272.0,788.13"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="840.00" x2="216.0" y2="870.00"/><line x1="211.0" y1="840.00" x2="221.0" y2="840.00"/><line x1="211.0" y1="870.00" x2="221.0" y2="870.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,855.00 238.0,855.00 262.0,715.47 272.0,715.47"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="765.69" x2="216.0" y2="900.00"/><line x1="211.0" y1="765.69" x2="221.0" y2="765.69"/><line x1="211.0" y1="900.00" x2="221.0" y2="900.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,832.84 238.0,832.84 262.0,642.80 272.0,642.80"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="690.00" x2="216.0" y2="840.00"/><line x1="211.0" y1="690.00" x2="221.0" y2="690.00"/><line x1="211.0" y1="840.00" x2="221.0" y2="840.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,765.00 238.0,765.00 262.0,570.13 272.0,570.13"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="216.0" y1="600.00" x2="216.0" y2="720.00"/><line x1="211.0" y1="600.00" x2="221.0" y2="600.00"/><line x1="211.0" y1="720.00" x2="221.0" y2="720.00"/></g>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,660.00 238.0,660.00 262.0,497.47 272.0,497.47"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="605.86" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,605.86 238.0,605.86 262.0,424.80 272.0,424.80"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="544.73" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,544.73 238.0,544.73 262.0,352.13 272.0,352.13"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="474.75" r="3.4"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,474.75 238.0,474.75 262.0,279.47 272.0,279.47"/>
+<circle class="s-ink f-paper" stroke="#1c1b18" fill="#f7f4ec" stroke-width="1.3" cx="216.0" cy="182.43" r="4.2"/>
+<circle class="ink" fill="#1c1b18" cx="216.0" cy="182.43" r="1"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="226.0,182.43 238.0,182.43 262.0,206.80 272.0,206.80"/>
+<circle class="s-ink3 f-paper" stroke="#8c877c" fill="#f7f4ec" stroke-width="0.9" stroke-dasharray="2 1.6" cx="216.0" cy="412.38" r="3"/>
+<polyline class="s-ink3" stroke="#8c877c" fill="none" stroke-width="0.5" points="218.4,409.98 228.0,404.38 228.0,398.00"/>
+<text class="ink3 halo" fill="#8c877c" stroke="#f7f4ec" stroke-width="2.6" stroke-linejoin="round" paint-order="stroke" font-size="7.8" font-style="italic" x="232" y="396">heliopause ~120 AU † (rung 15)</text>
+<g class="ink2 sc" fill="#4d4a44" font-size="8.2">
+<text x="300.0" y="176">RUNG</text>
+<text x="494.0" y="176">L (m)</text>
+<text x="738.0" y="176">t (s)  — placement aid, never a scaling relation</text>
+<text x="300.0" y="188">CHARACTERISTIC ENERGY</text>
+<text x="494.0" y="188">DOMINANT FORCE / CONSTRAINT</text>
+<text x="734.0" y="188">GOVERNING GROUP(S)</text>
+<text x="956.0" y="188">BLANKET?</text>
+</g>
+<line class="s-ink" stroke="#1c1b18" stroke-width="0.9" x1="276" y1="194" x2="1020.0" y2="194"/>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="1276.00" x2="1020.0" y2="1276.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="1296.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="1300.00" font-size="9.4" text-anchor="middle">1</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="1300.00" font-size="11.4">Quark / nucleon</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="1300.00" font-size="10.4">~8.4 × 10⁻¹⁶</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="1300.00" font-size="10.4">~2.8 × 10⁻²⁴ (r_p/c, computed)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="1314.50" font-size="8.4">~8.8 MeV/nucleon (BE/A; peak ⁶²Ni)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="1314.50" font-size="8.4">Strong (colour + residual)</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="1314.50" font-size="8.4">α_s(m_Z) = 0.1180 ± 0.0009 (PDG)</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="1307.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="1314.50" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="1203.33" x2="1020.0" y2="1203.33"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="1223.93" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="1227.33" font-size="9.4" text-anchor="middle">2</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="1227.33" font-size="11.4">Atom</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="1227.33" font-size="10.4">5.29177210544(82) × 10⁻¹¹ (a₀)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="1227.33" font-size="10.4">~1.5 × 10⁻¹⁶ (Bohr orbital period)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="1241.83" font-size="8.4">13.6 eV (H ionization)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="1241.83" font-size="8.4">Electromagnetic</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="1241.83" font-size="8.4">α⁻¹ = 137.035999177(21)</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="1234.8" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="1241.83" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="1130.67" x2="1020.0" y2="1130.67"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="1151.27" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="1154.67" font-size="9.4" text-anchor="middle">3</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="1154.67" font-size="11.4">Molecule</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="1154.67" font-size="10.4">~1.5 × 10⁻¹⁰ (C–C bond) †</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="1154.67" font-size="10.4">~1.1 × 10⁻¹⁴ (C–H stretch ~3000 cm⁻¹)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="1169.17" font-size="8.4">~348 kJ/mol (C–C)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="1169.17" font-size="8.4">EM / covalent</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="1169.17" font-size="8.4">E_bond/RT ≈ 140 at 300 K</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="1162.2" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="1169.17" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="1058.00" x2="1020.0" y2="1058.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="1078.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="1082.00" font-size="9.4" text-anchor="middle">4</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="1082.00" font-size="11.4">Macromolecule</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="1082.00" font-size="10.4">~5 × 10⁻⁹ (protein)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="1082.00" font-size="10.4">10⁻⁶ – 10⁰ (folding)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="1096.50" font-size="8.4">ΔG_fold ~20–63 kJ/mol net</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="1096.50" font-size="8.4">EM + hydrophobic effect + conformational entropy</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="1096.50" font-size="8.4">ΔG_fold/k_BT ~8–25</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="1089.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="1096.50" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="985.33" x2="1020.0" y2="985.33"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="1005.93" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="1009.33" font-size="9.4" text-anchor="middle">5</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="1009.33" font-size="11.4">Assembly<tspan class="ink2" fill="#4d4a44" font-size="7.6"> (ribosome, capsid, nucleosome)</tspan></text>
+<text class="ink" fill="#1c1b18" x="494.0" y="1009.33" font-size="10.4">2 × 10⁻⁸ – 10⁻⁷</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="1009.33" font-size="10.4">~5 × 10⁻² per residue (~20 aa/s)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="1023.83" font-size="8.4">4 ATP / peptide bond</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="1023.83" font-size="8.4">EM / self-assembly</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="1023.83" font-size="8.4">ΔG_bind/k_BT</text>
+<rect x="956.0" y="1016.8" width="8.0" height="8.0" fill="url(#pl03-stipple)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="1016.8" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="1023.83" font-size="8.4">Marginal</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="912.67" x2="1020.0" y2="912.67"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="933.27" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="936.67" font-size="9.4" text-anchor="middle">6</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="936.67" font-size="11.4">Organelle</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="936.67" font-size="10.4">5 × 10⁻⁷ – 10⁻⁶ (mitochondrion) †</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="936.67" font-size="10.4">NOT-MEASURED as a single quantity</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="951.17" font-size="8.4">ΔΨm; ATP flux</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="951.17" font-size="8.4">EM + membrane</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="951.17" font-size="8.4">S/V; Pe</text>
+<rect class="ink" fill="#1c1b18" x="956.0" y="944.2" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="951.17" font-size="8.4">Yes</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="840.00" x2="1020.0" y2="840.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="860.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="864.00" font-size="9.4" text-anchor="middle">7</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="864.00" font-size="11.4">Cell</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="864.00" font-size="10.4">10⁻⁶ – 10⁻⁴</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="864.00" font-size="10.4">~1.2 × 10³ (E. coli division, rich medium) †</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="878.50" font-size="8.4">~10⁷ ATP/s; ~10⁻¹² W</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="878.50" font-size="8.4">Viscosity + diffusion</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="878.50" font-size="8.4">Re ≈ 6 × 10⁻⁵; Pe ≈ 0.06–0.1; S/V = 3/R</text>
+<rect class="ink" fill="#1c1b18" x="956.0" y="871.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="878.50" font-size="8.4">Yes</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="767.33" x2="1020.0" y2="767.33"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="787.93" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="791.33" font-size="9.4" text-anchor="middle">8</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="791.33" font-size="11.4">Tissue</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="791.33" font-size="10.4">10⁻⁴ – 10⁻²</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="791.33" font-size="10.4">10⁰ – 10⁵</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="805.83" font-size="8.4">O₂ flux-limited</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="805.83" font-size="8.4">Diffusion + convection + mechanics</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="805.83" font-size="8.4">Pe; Da; Thiele modulus; O₂ penetration ~100–200 µm †</text>
+<rect x="956.0" y="798.8" width="8.0" height="8.0" fill="url(#pl03-stipple)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="798.8" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="805.83" font-size="8.4">Marginal</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="694.67" x2="1020.0" y2="694.67"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="715.27" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="718.67" font-size="9.4" text-anchor="middle">9</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="718.67" font-size="11.4">Organ</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="718.67" font-size="10.4">10⁻² – 10⁻¹</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="718.67" font-size="10.4">~1 (heartbeat)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="733.17" font-size="8.4">Regional metabolic rate</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="733.17" font-size="8.4">Bulk transport + mechanics</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="733.17" font-size="8.4">Re (aorta) ~10³–4×10³ †; Womersley α ~20 †</text>
+<rect x="956.0" y="726.2" width="8.0" height="8.0" fill="url(#pl03-stipple)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="726.2" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="733.17" font-size="8.4">Marginal</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="622.00" x2="1020.0" y2="622.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="642.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="646.00" font-size="9.4" text-anchor="middle">10</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="646.00" font-size="11.4">Organism</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="646.00" font-size="10.4">10⁻³ – 3 × 10¹</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="646.00" font-size="10.4">10⁻¹ – 10⁹ (beat → lifespan)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="660.50" font-size="8.4">BMR ∝ M^b</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="660.50" font-size="8.4">Inertia; gravity enters</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="660.50" font-size="8.4">Re 10⁻⁵ → 3 × 10⁸; Fr; St 0.2–0.4; Kleiber b</text>
+<rect class="ink" fill="#1c1b18" x="956.0" y="653.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="660.50" font-size="8.4">Yes</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="549.33" x2="1020.0" y2="549.33"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="569.93" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="573.33" font-size="9.4" text-anchor="middle">11</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="573.33" font-size="11.4">Colony / society</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="573.33" font-size="10.4">10⁻¹ – 10⁴</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="573.33" font-size="10.4">10⁶ – 10⁹</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="587.83" font-size="8.4">Colony energy budget</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="587.83" font-size="8.4">No new physical force — informational/behavioural coupling</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="587.83" font-size="8.4">NOT-MEASURED (no agreed group)</text>
+<rect x="956.0" y="580.8" width="8.0" height="8.0" fill="url(#pl03-hatch)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="580.8" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="587.83" font-size="8.4">Contested</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="476.67" x2="1020.0" y2="476.67"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="497.27" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="500.67" font-size="9.4" text-anchor="middle">12</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="500.67" font-size="11.4">Ecosystem</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="500.67" font-size="10.4">10³ – 10⁷</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="500.67" font-size="10.4">10⁸ – 10¹¹ (succession)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="515.17" font-size="8.4">NPP (W/m²)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="515.17" font-size="8.4">Energy flux + trophic structure</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="515.17" font-size="8.4">Trophic transfer efficiency ~10% nominal †</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="508.2" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="515.17" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="404.00" x2="1020.0" y2="404.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="424.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="428.00" font-size="9.4" text-anchor="middle">13</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="428.00" font-size="11.4">Planet</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="428.00" font-size="10.4">6.3781 × 10⁶ (IAU nom. eq. radius)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="428.00" font-size="10.4">8.6164 × 10⁴ (sidereal day); 3.156 × 10⁷ (orbit)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="442.50" font-size="8.4">1361 W/m² (IAU nominal TSI)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="442.50" font-size="8.4">Gravity + radiative EM</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="442.50" font-size="8.4">Ra; Ro; Ek</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="435.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="442.50" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="331.33" x2="1020.0" y2="331.33"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="351.93" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="355.33" font-size="9.4" text-anchor="middle">14</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="355.33" font-size="11.4">Star</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="355.33" font-size="10.4">6.957 × 10⁸ (IAU nom. solar radius)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="355.33" font-size="10.4">~10¹⁰ yr (nuclear, Sun)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="369.83" font-size="8.4">3.828 × 10²⁶ W (IAU nom. luminosity)</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="369.83" font-size="8.4">Gravity vs radiation/gas pressure</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="369.83" font-size="8.4">Eddington ratio</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="362.8" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="369.83" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="258.67" x2="1020.0" y2="258.67"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="279.27" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="282.67" font-size="9.4" text-anchor="middle">15</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="282.67" font-size="11.4">Stellar system</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="282.67" font-size="10.4">1.495978707 × 10¹¹ (1 AU, exact)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="282.67" font-size="10.4">3.156 × 10⁷ (1 yr)</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="297.17" font-size="8.4">GM⊙ = 1.3271244 × 10²⁰ m³/s²</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="297.17" font-size="8.4">Gravity (Keplerian)</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="297.17" font-size="8.4">Kepler's third law; eccentricity</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="290.2" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="297.17" font-size="8.4">No</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.4" x1="276" y1="186.00" x2="1020.0" y2="186.00"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.8" cx="284.0" cy="206.60" r="8.4"/>
+<text class="ink" fill="#1c1b18" x="284.0" y="210.00" font-size="9.4" text-anchor="middle">16</text>
+<text class="ink" fill="#1c1b18" x="300.0" y="210.00" font-size="11.4">Galaxy</text>
+<text class="ink" fill="#1c1b18" x="494.0" y="210.00" font-size="10.4">~8.3 × 10²⁰ (D25 = 26.8 ± 1.1 kpc)</text>
+<text class="ink2" fill="#4d4a44" x="738.0" y="210.00" font-size="10.4">~7 × 10¹⁵ (galactic year, ~225–250 Myr) †</text>
+<text class="ink2" fill="#4d4a44" x="300.0" y="224.50" font-size="8.4">NOT-MEASURED here</text>
+<text class="ink2" fill="#4d4a44" x="494.0" y="224.50" font-size="8.4">Gravity + dark-matter halo</text>
+<text class="ink2" fill="#4d4a44" x="734.0" y="224.50" font-size="8.4">Flat rotation curve; M/L; Toomre Q</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="956.0" y="217.5" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="970.0" y="224.50" font-size="8.4">No</text>
+<rect x="276" y="1253.42" width="744.0" height="11" fill="url(#pl03-hatch-acc)"/>
+<g class="s-acc" stroke="#8a3a24" fill="none" stroke-width="0.7"><line x1="276" y1="1253.42" x2="1020.0" y2="1253.42"/><line x1="276" y1="1264.42" x2="1020.0" y2="1264.42"/></g>
+<text class="acc sc halo" fill="#8a3a24" stroke="#f7f4ec" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke" x="293.0" y="1261.52" font-size="7.6">REGIME BOUNDARY · DOMINANT FORCE CHANGES IDENTITY: STRONG → ELECTROMAGNETIC</text>
+<rect x="276" y="744.75" width="744.0" height="11" fill="url(#pl03-hatch-acc)"/>
+<g class="s-acc" stroke="#8a3a24" fill="none" stroke-width="0.7"><line x1="276" y1="744.75" x2="1020.0" y2="744.75"/><line x1="276" y1="755.75" x2="1020.0" y2="755.75"/></g>
+<text class="acc sc halo" fill="#8a3a24" stroke="#f7f4ec" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke" x="293.0" y="752.85" font-size="7.6">REGIME BOUNDARY · DIFFUSION → CONVECTION (NA-10 detection test 2)</text>
+<rect x="276" y="454.08" width="744.0" height="11" fill="url(#pl03-hatch-acc)"/>
+<g class="s-acc" stroke="#8a3a24" fill="none" stroke-width="0.7"><line x1="276" y1="454.08" x2="1020.0" y2="454.08"/><line x1="276" y1="465.08" x2="1020.0" y2="465.08"/></g>
+<text class="acc sc halo" fill="#8a3a24" stroke="#f7f4ec" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke" x="293.0" y="462.18" font-size="7.6">REGIME BOUNDARY · EM → GRAVITY (gravity enters at rung 10; leads from rung 13)</text>
+<line class="s-ink" stroke="#1c1b18" stroke-width="0.9" x1="276" y1="1322.00" x2="1020.0" y2="1322.00"/>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.5"><line x1="40" y1="1348" x2="1020" y2="1348"/></g>
+<text class="ink sc" fill="#1c1b18" x="40.0" y="1362.0" font-size="9.6">FIGURE KEY</text>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.7" x1="40.0" y1="1368.0" x2="430.0" y2="1368.0"/>
+<circle class="ink" fill="#1c1b18" cx="50" cy="1381.0" r="3.4"/>
+<text class="ink2" fill="#4d4a44" x="62.0" y="1384.00" font-size="8.1"><tspan font-style="italic">point</tspan> — a measured or adopted single value</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1393.40" font-size="7.5">(rungs 1, 2, 4, 13, 14, 15: radii or defined lengths)</text>
+<circle class="s-ink f-paper" stroke="#1c1b18" fill="#f7f4ec" stroke-width="1.3" cx="50" cy="1405.0" r="4.2"/><circle class="ink" fill="#1c1b18" cx="50" cy="1405.0" r="1"/>
+<text class="ink2" fill="#4d4a44" x="62.0" y="1408.00" font-size="8.1"><tspan font-style="italic">open point</tspan> — D25 isophotal diameter (rung 16):</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1417.40" font-size="7.5">a brightness convention (B-band 25 mag/arcsec²), not a geometric extent</text>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.2"><line x1="50" y1="1423.0" x2="50" y2="1433.0"/><line x1="45" y1="1423.0" x2="55" y2="1423.0"/><line x1="45" y1="1433.0" x2="55" y2="1433.0"/></g>
+<text class="ink2" fill="#4d4a44" x="62.0" y="1432.00" font-size="8.1"><tspan font-style="italic">extent bar</tspan> — a rung range (rungs 5–12). This is the</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1441.40" font-size="7.5">chapter's CARVING: a choice fenced MODELED, not a measurement</text>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.1" stroke-dasharray="3 2"><line x1="50" y1="1447.0" x2="50" y2="1457.0"/></g>
+<text class="ink2" fill="#4d4a44" x="62.0" y="1456.00" font-size="8.1"><tspan font-style="italic">dashed mark</tspan> / † — NOT-SOURCED in NA-10's own pass</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1470.00" font-size="7.5">† is NOT NOT-MEASURED, and the two are never merged (NA-00):</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1479.20" font-size="7.5">NOT-MEASURED = nature has not been asked — a fact about the world's</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1488.40" font-size="7.5">knowledge. NOT-SOURCED = we cannot say who asked — a fact about this</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1497.60" font-size="7.5">corpus's own homework. This plate marks † only where NA-10 marks itself;</text>
+<text class="ink3" fill="#8c877c" x="62.0" y="1506.80" font-size="7.5">an unmarked cell is not thereby sourced.</text>
+<text class="ink2" fill="#4d4a44" x="40.0" y="1526.00" font-size="8.1"><tspan class="sc">BLANKET GLYPHS</tspan> (NA-04 typing; is a Markov blanket identifiable?)</text>
+<rect class="ink" fill="#1c1b18" x="50.0" y="1538.0" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="62.0" y="1545.00" font-size="7.8">Yes</text>
+<rect x="146.0" y="1538.0" width="8.0" height="8.0" fill="url(#pl03-stipple)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="146.0" y="1538.0" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="158.0" y="1545.00" font-size="7.8">Marginal</text>
+<rect x="242.0" y="1538.0" width="8.0" height="8.0" fill="url(#pl03-hatch)"/><rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="242.0" y="1538.0" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="254.0" y="1545.00" font-size="7.8">Contested</text>
+<rect class="s-ink" stroke="#1c1b18" fill="none" stroke-width="0.9" x="338.0" y="1538.0" width="8.0" height="8.0"/>
+<text class="ink2" fill="#4d4a44" x="350.0" y="1545.00" font-size="7.8">No</text>
+<rect x="44" y="1553.0" width="14" height="8" fill="url(#pl03-hatch-acc)"/>
+<text class="ink2" fill="#4d4a44" x="64.0" y="1560.00" font-size="7.8">accent band — a regime boundary NAMED BY NA-10 (not inferred here)</text>
+<text class="ink3" fill="#8c877c" x="40.0" y="1573.00" font-size="7.5">SI prefixes on the axis are DEFINITIONAL (BIPM), not measurements.</text>
+<text class="ink3" fill="#8c877c" x="40.0" y="1582.20" font-size="7.5">Classes on this plate — NATURA twelve-value vocabulary (NA-00, as amended</text>
+<text class="ink3" fill="#8c877c" x="40.0" y="1591.40" font-size="7.5">2026-07-15-A): OBSERVED-REPLICATED · OBSERVED-CONTESTED · MODELED ·</text>
+<text class="ink3" fill="#8c877c" x="40.0" y="1600.60" font-size="7.5">NOT-MEASURED · NOT-SOURCED. A NATURA class is NEVER a UNI gate.</text>
+<text class="ink sc" fill="#1c1b18" x="450.0" y="1362.0" font-size="9.6">WHERE THE POWER LAW BREAKS — THE RECEIPT</text>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.7" x1="450.0" y1="1368.0" x2="740.0" y2="1368.0"/>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1382.00" font-size="7.8">DeLong, Okie, Moses, Sibly &amp; Brown (2010), PNAS 107(29):12941–5.</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1391.60" font-size="7.8">B ∝ M^b fitted across ~16 orders of magnitude in BODY MASS,</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1401.20" font-size="7.8">split at the major evolutionary transitions:</text>
+<g class="ink2 sc" fill="#4d4a44" font-size="7.2"><text x="450" y="1414.0">GROUP</text><text x="562" y="1414.0">b ACTIVE</text><text x="638" y="1414.0">b INACT.</text><text x="700" y="1414.0">n (a/i)</text></g>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.6" x1="450" y1="1417.0" x2="740" y2="1417.0"/>
+<text class="ink" fill="#1c1b18" x="450" y="1428.0" font-size="8.2">Prokaryotes <tspan class="ink3" fill="#8c877c" font-size="7">superlinear</tspan></text>
+<text class="ink" fill="#1c1b18" x="562" y="1428.0" font-size="8.2">1.7</text>
+<text class="ink2" fill="#4d4a44" x="638" y="1428.0" font-size="8.2">2.0</text>
+<text class="ink2" fill="#4d4a44" x="700" y="1428.0" font-size="8.2">44 / 121</text>
+<text class="ink" fill="#1c1b18" x="450" y="1440.6" font-size="8.2">Protists <tspan class="ink3" fill="#8c877c" font-size="7">linear</tspan></text>
+<text class="ink" fill="#1c1b18" x="562" y="1440.6" font-size="8.2">1.0</text>
+<text class="ink2" fill="#4d4a44" x="638" y="1440.6" font-size="8.2">1.1</text>
+<text class="ink2" fill="#4d4a44" x="700" y="1440.6" font-size="8.2">51 / 52</text>
+<text class="ink" fill="#1c1b18" x="450" y="1453.2" font-size="8.2">Metazoans <tspan class="ink3" fill="#8c877c" font-size="7">sublinear</tspan></text>
+<text class="ink" fill="#1c1b18" x="562" y="1453.2" font-size="8.2">0.76</text>
+<text class="ink2" fill="#4d4a44" x="638" y="1453.2" font-size="8.2">0.79</text>
+<text class="ink2" fill="#4d4a44" x="700" y="1453.2" font-size="8.2">71 / 15</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1469.80" font-size="7.8">Their explicit conclusion: Kleiber's 3/4-power law DOES NOT APPLY</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1479.40" font-size="7.8">universally across organisms (NA10-24). The exponent does not drift —</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1489.00" font-size="7.8">it changes curvature relative to linear, exactly at the transitions.</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1498.60" font-size="7.8">That is a rung boundary showing up in the residuals.</text>
+<rect class="s-acc" stroke="#8a3a24" fill="none" stroke-width="0.8" x="450" y="1505.8" width="290" height="42"/>
+<text class="acc" fill="#8a3a24" x="457.0" y="1515.80" font-size="7.6">These breaks were fitted against MASS, not length. They have</text>
+<text class="acc" fill="#8a3a24" x="457.0" y="1525.20" font-size="7.6">NO position on this plate's L axis, and are shown apart on purpose</text>
+<text class="acc" fill="#8a3a24" x="457.0" y="1534.60" font-size="7.6">rather than placed at a length nobody measured.</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1559.80" font-size="7.8"><tspan class="sc">VISCOUS → INERTIAL (Re ≈ 1)</tspan> — NA-10's headline boundary,</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1569.40" font-size="7.8">the death of the scallop theorem. It lies INSIDE the rungs 7–10</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1579.00" font-size="7.8">domain and has NO single L: Re = vL/ν depends on v. Drawn as a</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1588.60" font-size="7.8">bracket on the axis, never as a line. Span Re ≈ 10⁻⁵ → 3 × 10⁸,</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1598.20" font-size="7.8">~10¹³ — ~13 orders, NOT the ~10¹⁰ in circulation (NA10-15,</text>
+<text class="ink2" fill="#4d4a44" x="450.0" y="1607.80" font-size="7.8">corrected in-chapter). Re is not defined for an atom or a galaxy.</text>
+<text class="ink sc" fill="#1c1b18" x="760.0" y="1362.0" font-size="9.6">BEFORE EXTRAPOLATING — RUN ALL FIVE</text>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.7" x1="760.0" y1="1368.0" x2="1020.0" y2="1368.0"/>
+<text class="ink2" fill="#4d4a44" x="760.0" y="1382.00" font-size="7.8"><tspan font-style="italic">A power law fitted within a regime does not extrapolate</tspan></text>
+<text class="ink2" fill="#4d4a44" x="760.0" y="1391.60" font-size="7.8"><tspan font-style="italic">through a regime boundary.</tspan> Not "less accurately". It does</text>
+<text class="ink2" fill="#4d4a44" x="760.0" y="1401.20" font-size="7.8">not carry, and its exponent stops being a fact about the world.</text>
+<text class="ink" fill="#1c1b18" x="760" y="1418.00" font-size="8.4">1</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1418.00" font-size="7.6">Did the dominant dimensionless group move by orders of</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1427.30" font-size="7.6">magnitude across the span? (Re: ~13 orders, bacterium → whale.)</text>
+<text class="ink" fill="#1c1b18" x="760" y="1440.10" font-size="8.4">2</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1440.10" font-size="7.6">Did the dominant force change IDENTITY? (Viscosity → inertia.</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1449.40" font-size="7.6">Diffusion → convection. EM → gravity.) A change of dominant</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1458.70" font-size="7.6">term, not of coefficient, is a boundary.</text>
+<text class="ink" fill="#1c1b18" x="760" y="1471.50" font-size="8.4">3</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1471.50" font-size="7.6">Does the log–log plot have curvature? Fit a quadratic in log-mass</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1480.80" font-size="7.6">and test the coefficient against zero. Curvature is a power law's</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1490.10" font-size="7.6">own confession. (NA10-25 — OBSERVED-CONTESTED: carried live on</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1499.40" font-size="7.6">both sides, settled by neither.)</text>
+<text class="ink" fill="#1c1b18" x="760" y="1512.20" font-size="8.4">4</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1512.20" font-size="7.6">Does the fitted exponent depend on WHICH SUBSET you fit? Small-</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1521.50" font-size="7.6">dominated → ~2/3; large-dominated → ~3/4. If so you have a curve,</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1530.80" font-size="7.6">not a law. (NA10-26 — OBSERVED-CONTESTED.)</text>
+<text class="ink" fill="#1c1b18" x="760" y="1543.60" font-size="8.4">5</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1543.60" font-size="7.6">Is there an INDEPENDENT structural boundary at the suspected</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1552.90" font-size="7.6">break? A break located only by scanning residuals is a fitted</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1562.20" font-size="7.6">artefact until pre-registered. Per M2 the verdict is the CI bound</text>
+<text class="ink2" fill="#4d4a44" x="772.0" y="1571.50" font-size="7.6">EXCLUDING the threshold, never the point estimate.</text>
+<g class="s-ink" stroke="#1c1b18" fill="none" stroke-width="1.5"><line x1="40" y1="1668" x2="1020" y2="1668"/></g>
+<text class="ink sc" fill="#1c1b18" x="40" y="1682.0" font-size="9.6">CAPTION</text>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.7" x1="40" y1="1688.0" x2="520" y2="1688.0"/>
+<text class="ink sc" fill="#1c1b18" x="540" y="1682.0" font-size="9.6">WHAT THIS PLATE DOES NOT CLAIM</text>
+<line class="s-ink2" stroke="#4d4a44" stroke-width="0.7" x1="540" y1="1688.0" x2="1020" y2="1688.0"/>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1699.20" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1702.00" font-size="7.4" text-anchor="middle">1</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1702.00" font-size="7.5"><tspan class="sc">THE PLATE.</tspan> Sixteen rungs from NA-10's ladder table, ordered by</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1711.20" font-size="7.5">characteristic length L, spanning ~10³⁶ (NA10-40) from the proton rms charge</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1720.40" font-size="7.5">radius 8.4075(64) × 10⁻¹⁶ m (NA10-01, OBSERVED-REPLICATED, CODATA 2022) to the</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1729.60" font-size="7.5">Milky Way D25 isophotal diameter ≈8.3 × 10²⁰ m (NA10-37, OBSERVED-CONTESTED;</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1738.80" font-size="7.5">primary not read in NA-10's pass). The axis carries L and nothing else.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1749.70" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1752.50" font-size="7.4" text-anchor="middle">2</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1752.50" font-size="7.5"><tspan class="sc">RUNGS OVERLAP IN L.</tspan> Rungs 8 (tissue, 10⁻⁴–10⁻² m) and 10 (organism,</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1761.70" font-size="7.5">10⁻³–3 × 10¹ m) both occupy 10⁻³ m. The dominant force is therefore a property of</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1770.90" font-size="7.5">the RUNG, not of the length — so this axis carries no force band. Read force from</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1780.10" font-size="7.5">the row, never from a position on the bar.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1791.00" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1793.80" font-size="7.4" text-anchor="middle">3</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1793.80" font-size="7.5"><tspan class="sc">THE L COLUMN IS NOT ONE MEASURAND.</tspan> Rungs 1/2/13/14 are radii; rung 16</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1803.00" font-size="7.5">is a D25 isophotal diameter (a brightness convention); rungs 5–12 are ranges. Per</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1812.20" font-size="7.5">NA-10: the span is real; the uniformity is approximate. The ladder's top rung is</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1821.40" font-size="7.5">measured by a different KIND of instrument than its bottom rung.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1832.30" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1835.10" font-size="7.4" text-anchor="middle">4</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1835.10" font-size="7.5"><tspan class="sc">EXTENT BARS ARE THE CARVING, NOT A MEASUREMENT.</tspan> NA-10 fences the rung</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1844.30" font-size="7.5">count and the rung boundaries as a CHOICE, not a discovery: a different carving</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1853.50" font-size="7.5">(adding virus, biofilm, galaxy cluster) is equally defensible. What is not a choice</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1862.70" font-size="7.5">is that the dominant force changes identity across the span.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1873.60" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1876.40" font-size="7.4" text-anchor="middle">5</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1876.40" font-size="7.5"><tspan class="sc">THE t COLUMN MUST NEVER BE REGRESSED.</tspan> r_p/c (a light-crossing time), a</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1885.60" font-size="7.5">C–H stretch period (a vibration), a division time (a doubling) and the Sun's nuclear</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1894.80" font-size="7.5">lifetime (fuel exhaustion) are four different physical measurands in one column. It</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1904.00" font-size="7.5">is a placement aid. NA-10 records regressing it as a NEGATIVE / conflation trap.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1914.90" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1917.70" font-size="7.4" text-anchor="middle">6</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1917.70" font-size="7.5"><tspan class="sc">† = NOT-SOURCED IN NA-10'S OWN PASS</tspan> — the chapter prints the value and</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1926.90" font-size="7.5">could not trace it to a source: rung 3 L, rung 6 L, rung 7 t, rung 15 heliopause,</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1936.10" font-size="7.5">rung 16 t, and the groups at rungs 8, 9, 12 (NA10-43/44/45). NA-10 caught these on</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1945.30" font-size="7.5">its own re-read and named them rather than leave them standing. Their presence is</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1954.50" font-size="7.5">the evidence that its gate works, not evidence that it failed.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="1965.40" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="1968.20" font-size="7.4" text-anchor="middle">7</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1968.20" font-size="7.5"><tspan class="sc">BOUNDARIES ARE MARKED ONLY WHERE NA-10 NAMES THEM.</tspan> The viscous → inertial</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1977.40" font-size="7.5">crossing (Re ≈ 1) has NO single L — Re = vL/ν depends on v — so it is a bracket over</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1986.60" font-size="7.5">rungs 7–10, not a line. The metabolic-exponent breaks were fitted against mass, not</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="1995.80" font-size="7.5">length, and are shown in a separate panel on purpose.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="2006.70" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="2009.50" font-size="7.4" text-anchor="middle">8</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2009.50" font-size="7.5"><tspan class="sc">BLANKETS ARE NOT MONOTONE IN L.</tspan> Identifiable at rung 6 (double membrane,</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2018.70" font-size="7.5">own genome, own fission), rung 7 (plasma membrane — the canonical case) and rung 10;</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2027.90" font-size="7.5">absent above and below. Rungs 5, 8, 9 marginal (8 also contested); rung 11 contested</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2037.10" font-size="7.5">(the superorganism debate). A galaxy is enormous and has no blanket; a mitochondrion</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2046.30" font-size="7.5">is a micron across and has one. SIZE IS NOT WHAT MAKES A BOUNDARY.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="2057.20" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="2060.00" font-size="7.4" text-anchor="middle">9</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2060.00" font-size="7.5"><tspan class="sc">WHAT A RUNG IS, OPERABLY</tspan> — all three, or you have named a size, not a level:</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2069.20" font-size="7.5">(a) a boundary with real conditional independence (Markov blanket, NA-04); (b) a new</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2078.40" font-size="7.5">characteristic timescale separates from the level below (Simon 1962, near-decomposa-</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2087.60" font-size="7.5">bility); (c) the level has its own dynamics not requiring the level below (Anderson</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2096.80" font-size="7.5">1972, More Is Different). (b) causes (c). Emergence here is a claim about spectral</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2106.00" font-size="7.5">gaps in a dynamical system, not about magic.</text>
+<circle class="s-ink2" stroke="#4d4a44" fill="none" stroke-width="0.6" cx="46" cy="2116.90" r="6.4"/>
+<text class="ink" fill="#1c1b18" x="46" y="2119.70" font-size="7.4" text-anchor="middle">10</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2119.70" font-size="7.5"><tspan class="sc">LEDGER SUPREMACY, APPLIED.</tspan> Where a chapter and NATURE-LEDGER disagree, the</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2128.90" font-size="7.5">ledger wins (NA-00). Rung 1's t is printed at the ledger's precision, ~2.8 × 10⁻²⁴ s</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2138.10" font-size="7.5">(NA10-02, MODELED — computed, and NOT a measured interaction time); NA-10's ladder</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2147.30" font-size="7.5">cell rounds it to ~3 × 10⁻²⁴ s. Rung 1's energy is sourced across chapters to CN04-25</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2156.50" font-size="7.5">(BE/A peak = ⁶²Ni at 8.7945 MeV/nucleon — not ⁵⁶Fe, which has the lowest MASS per</text>
+<text class="ink2" fill="#4d4a44" x="60.0" y="2165.70" font-size="7.5">nucleon, a different quantity).</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1702.00" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1702.00" font-size="7.5"><tspan class="sc">NOT</tspan> a progression, a hierarchy of value, an arrow, or a direction. It is an</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1711.20" font-size="7.5">ordering BY LENGTH. The blanket column does not ascend with it, and specific power</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1720.40" font-size="7.5">runs AGAINST it: a bacterium outputs ~5 × 10⁶ times more power per kilogram than the</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1729.60" font-size="7.5">Sun does (NA10-29, MODELED ÷ MODELED — both endpoints are conversions).</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1743.30" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1743.30" font-size="7.5"><tspan class="sc">NOT</tspan> that "information density" or "degree of internal model" increases along the</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1752.50" font-size="7.5">ladder. NOT-MEASURED — no measurand, no units, no instrument (NA10-41, NA10-42).</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1761.70" font-size="7.5">This is the gradient the ladder most invites and the one with the least behind it,</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1770.90" font-size="7.5">and that asymmetry is stated on purpose. Falsifier: state the measurand, state the</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1780.10" font-size="7.5">units, measure two non-adjacent rungs with it.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1793.80" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1793.80" font-size="7.5"><tspan class="sc">NOT</tspan> a ladder of consciousness, awareness, or mind. NA-10 records that reading</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1803.00" font-size="7.5">INADMISSIBLE: no measurand, no units, no instrument, no falsifier — and the one</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1812.20" font-size="7.5">structurally checkable property (the blanket) does not ascend with scale. Recorded,</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1821.40" font-size="7.5">not mocked: the intuition that the ladder points somewhere is honest and common. It</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1830.60" font-size="7.5">is simply not a measurement, and dressing it as one is the defect.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1844.30" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1844.30" font-size="7.5"><tspan class="sc">NOT</tspan> that the sixteen rungs are the right sixteen. The carving is a choice; the</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1853.50" font-size="7.5">boundaries' physics is not.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1867.20" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1867.20" font-size="7.5"><tspan class="sc">NOT</tspan> that Kleiber's 3/4 is a law of life. It is a metazoan-regime fit; prokaryotes</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1876.40" font-size="7.5">are superlinear at ~1.7 (NA10-21, NA10-24). NA-10 records the 3/4 exponent as the</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1885.60" font-size="7.5">single most over-extrapolated number in its wing.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1899.30" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1899.30" font-size="7.5"><tspan class="sc">NOT</tspan> an optimum. Per Gould &amp; Lewontin (1979), nothing here establishes that any</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1908.50" font-size="7.5">rung's arrangement is optimal; drift, phylogenetic inertia, developmental constraint</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1917.70" font-size="7.5">and frozen accidents produce structure that solves nothing. Nature's authority here</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1926.90" font-size="7.5">is precisely and only this: it already ran the experiment under real constraints,</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1936.10" font-size="7.5">with the failures deleted. Every value above is a hypothesis generator, never a proof.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1949.80" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1949.80" font-size="7.5"><tspan class="sc">NOT</tspan> a UNI claim of any kind. A NATURE CITATION IS NEVER A UNI GATE: reading</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1959.00" font-size="7.5">Kleiber's law raises no UNI rung. This plate contains ZERO UNI claims, and the honest</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1968.20" font-size="7.5">program position is untouched by every value on it — ~2 of 11+ developmental rungs</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1977.40" font-size="7.5">earned; a developmental active-inference SIMULATION; a toy world, never a person.</text>
+<text class="ink2" fill="#4d4a44" x="540" y="1991.10" font-size="7.5">—</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="1991.10" font-size="7.5"><tspan class="sc">QUAESTIO APERTA.</tspan> "Full human" and "beyond human" appear nowhere here as a target,</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="2000.30" font-size="7.5">a milestone, or a deliverable. They are permanent open questions. The scale ladder has</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="2009.50" font-size="7.5">no top, no destination, and no rung labelled with either — and the temptation to read</text>
+<text class="ink2" fill="#4d4a44" x="554.0" y="2018.70" font-size="7.5">one in at rung 10 or 11 is exactly what the NOT-MEASURED fence exists to refuse.</text>
+<rect class="s-acc" stroke="#8a3a24" fill="none" stroke-width="0.9" x="540" y="2029.4" width="480" height="80.0"/>
+<text class="acc" fill="#8a3a24" x="550.0" y="2040.40" font-size="7.4"><tspan class="sc">HONEST FENCE — MODELED.</tspan> This plate is a placement model rendering NA-10,</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2049.40" font-size="7.4">itself fenced MODELED: it composes measured constants and published fits through</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2058.40" font-size="7.4">stated assumptions — that "characteristic length" is well-defined per rung; that one</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2067.40" font-size="7.4">force dominates per regime; that adopted IAU nominal constants (rungs 13–15) stand in</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2076.40" font-size="7.4">for measured values. They are exact BY ADOPTION, explicitly not current best estimates,</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2085.40" font-size="7.4">and must never be quoted as measurements with uncertainties. THE ASSUMPTIONS ARE THE</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2094.40" font-size="7.4">FENCE. Per M22 (the cavity principle) NA-10's placements are an upstream prior and this</text>
+<text class="acc" fill="#8a3a24" x="550.0" y="2103.40" font-size="7.4">plate must never be re-served as fresh evidence downstream.</text>
+<line class="s-rule" stroke="#bdb8ab" stroke-width="0.5" x1="40" y1="2197.4" x2="1020" y2="2197.4"/>
+<text class="ink3" fill="#8c877c" x="40" y="2213.4" font-size="7.4">PL-03 · source: encyclopedia/wing-NATURA/NA-10-the-scale-ladder-and-gradients.md · classes and rows per encyclopedia/NATURE-LEDGER.md (ledger wins on disagreement) · vocabulary per NA-00 as amended 2026-07-15-A.</text>
+<text class="ink3" fill="#8c877c" x="1020" y="2213.4" font-size="7.4" text-anchor="end">Design-only: no script, no external reference.</text>
+</svg>

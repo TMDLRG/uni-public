@@ -1,0 +1,610 @@
+<svg class="pl08" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3417" width="100%" role="img" aria-labelledby="pl08-title pl08-desc" preserveAspectRatio="xMidYMid meet">
+<title id="pl08-title">Plate PL-08 — The ratios: one plate, many scales</title>
+<desc id="pl08-desc">An engraved-style encyclopedia plate on allometry and dimensionless scaling, in seven panels. Panel I draws Kleiber's law as a log-log plot carrying BOTH disputed lines: a 3/4 line drawn tangent at about 4.2 kg and a 2/3 line drawn tangent at about 160 g, both tangent to the same convex quadratic of Kolokotrones et al. 2010, with the fitted data bracketed from 3.6 g to 460 kg and everything beyond hatched as extrapolation. The dispute between Rubner's 2/3 surface law and Kleiber's 3/4 from 13 points is labelled in a box on the plate. A residual strip beneath subtracts the curve, so that each straight line is seen to touch zero only at its own tangent mass and fall away on both sides; the cost of extrapolating the 3/4 line down to a 3 g shrew is measured there at 1.95 times. Panel II plots the local slope, a straight rising line, crossing 2/3 at 160 g and 3/4 at 4.2 kg: there is no single exponent, there is a curve. Panel III is a confidence-interval ruler of nine fitted exponents against the 2/3 and 3/4 thresholds, annotated that the nine rows are only five papers. Panel IV shows the claim dissolving on its own spread: 51 percent of compiled exponents fall outside 0.7 to 0.8, and the intraspecific mode is 0.667. Panel V draws the Strouhal 0.2 to 0.4 cruise band with the only per-taxon values this corpus carries, odontocetes and one bat, and prints the gap where the other named taxa would go. Panel VI draws the Froude gait transition at 0.5, the inverted-pendulum ceiling at 1, and the transition measured in actual lunar gravity at 1.39 plus or minus 0.45, whose lower bound never reaches 0.5. Panel VII carries the figure key, the numbered caption, and what the plate does not claim. Every line carries an evidence-class badge. The vertical datum of panel I is a stated drafting choice: no absolute metabolic rate and no prefactor is drawn or claimed.</desc>
+<style>
+.pl08{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+@media (prefers-color-scheme:dark){
+  .pl08{
+    --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+    --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+  }
+}
+:root[data-theme="dark"] .pl08{
+  --ink:#e9e5db; --bg:#14161a; --rule:#9a9288; --faint:#6f6960;
+  --contest:#e2795a; --fence:#8fb6dd; --hatch:#7a746a; --panel:#1c1f24;
+}
+:root[data-theme="light"] .pl08{
+  --ink:#1b1a17; --bg:#f6f2e9; --rule:#5a544b; --faint:#a49b8f;
+  --contest:#8c2f1d; --fence:#3c5670; --hatch:#8a8278; --panel:#efe9dc;
+}
+.pl08 text{font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",Times,serif;
+  fill:var(--ink,#1b1a17);}
+.pl08 .t{fill:var(--ink,#1b1a17);}
+.pl08 .tf{fill:var(--faint,#a49b8f);}
+.pl08 .tr{fill:var(--rule,#5a544b);}
+.pl08 .hd{fill:var(--ink,#1b1a17);font-weight:700;}
+.pl08 .hd2{fill:var(--rule,#5a544b);font-style:italic;}
+.pl08 .ct{fill:var(--contest,#8c2f1d);}
+.pl08 .fn{fill:var(--fence,#3c5670);}
+.pl08 .mono{font-family:"Courier New",Courier,monospace;fill:var(--ink,#1b1a17);}
+.pl08 .frame{fill:none;stroke:var(--rule,#5a544b);stroke-width:1;}
+.pl08 .rule{stroke:var(--rule,#5a544b);stroke-width:.7;fill:none;}
+.pl08 .ink{stroke:var(--ink,#1b1a17);stroke-width:1;fill:none;}
+.pl08 .thin{stroke:var(--ink,#1b1a17);stroke-width:.55;fill:none;}
+.pl08 .faint{stroke:var(--faint,#a49b8f);stroke-width:.55;fill:none;}
+.pl08 .dim{stroke:var(--rule,#5a544b);stroke-width:.8;fill:none;}
+.pl08 .dash{stroke:var(--faint,#a49b8f);stroke-width:.7;fill:none;stroke-dasharray:5 4;}
+.pl08 .meas{stroke:var(--ink,#1b1a17);stroke-width:1;fill:none;}
+.pl08 .ci{stroke:var(--ink,#1b1a17);stroke-width:1.4;fill:none;stroke-linecap:butt;}
+.pl08 .ln34{stroke:var(--contest,#8c2f1d);stroke-width:1.1;fill:none;stroke-dasharray:9 4;}
+.pl08 .ln23{stroke:var(--fence,#3c5670);stroke-width:1.1;fill:none;stroke-dasharray:2.2 3.4;}
+.pl08 .ctline{stroke:var(--contest,#8c2f1d);stroke-width:1.1;fill:none;stroke-dasharray:7 4;}
+.pl08 .fnline{stroke:var(--fence,#3c5670);stroke-width:1;fill:none;stroke-dasharray:1.6 3.2;}
+.pl08 .ghostline{stroke:var(--contest,#8c2f1d);stroke-width:1;fill:none;stroke-dasharray:2 4;opacity:.75;}
+.pl08 .arrowline{stroke:var(--rule,#5a544b);stroke-width:1.2;fill:none;}
+.pl08 .dot{fill:var(--ink,#1b1a17);stroke:none;}
+.pl08 .dotf{fill:var(--faint,#a49b8f);stroke:none;}
+.pl08 .dotc{fill:var(--contest,#8c2f1d);stroke:none;}
+.pl08 .ring{fill:none;stroke:var(--ink,#1b1a17);stroke-width:.8;}
+.pl08 .bgfill{fill:var(--bg,#f6f2e9);stroke:none;}
+.pl08 .panelfill{fill:var(--panel,#efe9dc);stroke:none;}
+.pl08 .barfill{fill:url(#pl08-h-b);stroke:none;}
+.pl08 .hatch-a{fill:url(#pl08-h-a);stroke:none;}
+.pl08 .hatch-b{fill:url(#pl08-h-b);stroke:none;}
+.pl08 .hatch-c{fill:url(#pl08-h-c);stroke:none;}
+.pl08 .void-fill{fill:url(#pl08-void);stroke:none;}
+.pl08 .ghost-fill{fill:url(#pl08-ghost);stroke:none;}
+</style>
+<defs>
+<pattern id="pl08-h-a" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl08-h-b" width="5.5" height="5.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5.5" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl08-h-c" width="3.2" height="3.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.2" stroke="var(--hatch,#8a8278)" stroke-width="0.5"/></pattern>
+<pattern id="pl08-ghost" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--contest,#8c2f1d)" stroke-width=".5" opacity=".55"/></pattern>
+<pattern id="pl08-void" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--fence,#3c5670)" stroke-width=".45" opacity=".5"/></pattern>
+</defs>
+<rect class="bgfill" x="0" y="0" width="1440" height="3417"/>
+<rect class="frame" x="24.0" y="24.0" width="1392.0" height="3369.0" stroke-width="1.6"/>
+<rect class="frame" x="31.0" y="31.0" width="1378.0" height="3355.0" stroke-width="0.6"/>
+<!-- PL-08 · design-only: no script, no event handlers, no external references. -->
+<text class="tr" x="60.0" y="66.0" font-size="11" letter-spacing="2.6">UNI ENCYCLOPEDIA &amp; COOKBOOK · NATURA WING</text>
+<text class="hd" x="60.0" y="108.0" font-size="30" letter-spacing="3">PLATE PL-08</text>
+<text class="t" x="345.0" y="108.0" font-size="21" letter-spacing="1.2">THE RATIOS — ONE PLATE, MANY SCALES</text>
+<text class="tf" x="60.0" y="134.0" font-size="11">Source chapters: NA-05 (primary) · NA-06 · NA-07 · CN-08 · CN-10 · CN-11 · rows NA05-01…47, NA06-01…07, NA07-12/13, CN08-22/26, CN10-43/44, CN11-40…42 · corpus tip f1be794</text>
+<text class="tr" x="1380.0" y="66.0" font-size="11" text-anchor="end" letter-spacing="1.1">~2 of 11+ developmental rungs earned</text>
+<text class="hd" x="1380.0" y="84.0" font-size="11" text-anchor="end" letter-spacing="1.6">ZERO UNI CLAIMS ON THIS PLATE</text>
+<text class="tf" x="1380.0" y="101.0" font-size="10.5" text-anchor="end">A nature citation is never a UNI gate.</text>
+<line class="rule" x1="60.00" y1="150.00" x2="1380.00" y2="150.00" stroke-width="1.2"/>
+<rect class="frame" x="60.0" y="175.0" width="820.0" height="785.0"/>
+<line class="rule" x1="60.00" y1="209.00" x2="880.00" y2="209.00" stroke-width="1.1"/>
+<text class="hd" x="74.0" y="199.0" font-size="15" letter-spacing="1.4">I</text>
+<text class="hd2" x="93.2" y="199.0" font-size="13" letter-spacing="1.1">KLEIBER'S LAW — both lines drawn, and why they cannot both be right</text>
+<rect class="void-fill" x="636.1" y="252.0" width="213.9" height="420.0"/>
+<rect class="frame" x="150.0" y="252.0" width="700.0" height="420.0" stroke-width="0.9"/>
+<line class="faint" x1="209.48" y1="252.00" x2="209.48" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="300.98" y1="252.00" x2="300.98" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="392.48" y1="252.00" x2="392.48" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="483.99" y1="252.00" x2="483.99" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="575.49" y1="252.00" x2="575.49" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="666.99" y1="252.00" x2="666.99" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="758.50" y1="252.00" x2="758.50" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="850.00" y1="252.00" x2="850.00" y2="672.00" stroke-dasharray="2 5"/>
+<line class="faint" x1="150.00" y1="631.25" x2="850.00" y2="631.25" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="634.7" font-size="9" text-anchor="end">-2</text>
+<line class="faint" x1="150.00" y1="568.57" x2="850.00" y2="568.57" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="572.0" font-size="9" text-anchor="end">-1</text>
+<line class="faint" x1="150.00" y1="505.88" x2="850.00" y2="505.88" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="509.3" font-size="9" text-anchor="end">0</text>
+<line class="faint" x1="150.00" y1="443.19" x2="850.00" y2="443.19" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="446.6" font-size="9" text-anchor="end">+1</text>
+<line class="faint" x1="150.00" y1="380.51" x2="850.00" y2="380.51" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="383.9" font-size="9" text-anchor="end">+2</text>
+<line class="faint" x1="150.00" y1="317.82" x2="850.00" y2="317.82" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="321.2" font-size="9" text-anchor="end">+3</text>
+<line class="faint" x1="150.00" y1="255.13" x2="850.00" y2="255.13" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="258.5" font-size="9" text-anchor="end">+4</text>
+<text class="t" transform="translate(118.0,462.0) rotate(-90)" font-size="10" text-anchor="middle">Δ log₁₀ B   (B in W · a ratio, dimensionless)</text>
+<path class="ln23" d="M 150.00 646.39 L 850.00 326.69" stroke-width="1.2"/>
+<path class="ln34" d="M 150.00 659.77 L 850.00 300.11" stroke-width="1.2"/>
+<path class="ink" d="M 150.00 640.06 L 152.92 638.94 L 155.83 637.82 L 158.75 636.70 L 161.67 635.57 L 164.58 634.44 L 167.50 633.30 L 170.42 632.16 L 173.33 631.02 L 176.25 629.88 L 179.17 628.73 L 182.08 627.57 L 185.00 626.41 L 187.92 625.25 L 190.83 624.09 L 193.75 622.92 L 196.67 621.75 L 199.58 620.57 L 202.50 619.39 L 205.42 618.21 L 208.33 617.02 L 211.25 615.83 L 214.17 614.63 L 217.08 613.44 L 220.00 612.23 L 222.92 611.03 L 225.83 609.82 L 228.75 608.60 L 231.67 607.39 L 234.58 606.17 L 237.50 604.94 L 240.42 603.71 L 243.33 602.48 L 246.25 601.24 L 249.17 600.00 L 252.08 598.76 L 255.00 597.51 L 257.92 596.26 L 260.83 595.01 L 263.75 593.75 L 266.67 592.49 L 269.58 591.22 L 272.50 589.95 L 275.42 588.68 L 278.33 587.40 L 281.25 586.12 L 284.17 584.84 L 287.08 583.55 L 290.00 582.25 L 292.92 580.96 L 295.83 579.66 L 298.75 578.36 L 301.67 577.05 L 304.58 575.74 L 307.50 574.42 L 310.42 573.10 L 313.33 571.78 L 316.25 570.46 L 319.17 569.13 L 322.08 567.79 L 325.00 566.46 L 327.92 565.12 L 330.83 563.77 L 333.75 562.42 L 336.67 561.07 L 339.58 559.71 L 342.50 558.35 L 345.42 556.99 L 348.33 555.62 L 351.25 554.25 L 354.17 552.88 L 357.08 551.50 L 360.00 550.12 L 362.92 548.73 L 365.83 547.34 L 368.75 545.95 L 371.67 544.55 L 374.58 543.15 L 377.50 541.75 L 380.42 540.34 L 383.33 538.93 L 386.25 537.51 L 389.17 536.09 L 392.08 534.67 L 395.00 533.24 L 397.92 531.81 L 400.83 530.38 L 403.75 528.94 L 406.67 527.50 L 409.58 526.05 L 412.50 524.60 L 415.42 523.15 L 418.33 521.69 L 421.25 520.23 L 424.17 518.76 L 427.08 517.30 L 430.00 515.82 L 432.92 514.35 L 435.83 512.87 L 438.75 511.39 L 441.67 509.90 L 444.58 508.41 L 447.50 506.91 L 450.42 505.42 L 453.33 503.91 L 456.25 502.41 L 459.17 500.90 L 462.08 499.39 L 465.00 497.87 L 467.92 496.35 L 470.83 494.82 L 473.75 493.30 L 476.67 491.76 L 479.58 490.23 L 482.50 488.69 L 485.42 487.15 L 488.33 485.60 L 491.25 484.05 L 494.17 482.49 L 497.08 480.94 L 500.00 479.37 L 502.92 477.81 L 505.83 476.24 L 508.75 474.67 L 511.67 473.09 L 514.58 471.51 L 517.50 469.92 L 520.42 468.34 L 523.33 466.74 L 526.25 465.15 L 529.17 463.55 L 532.08 461.95 L 535.00 460.34 L 537.92 458.73 L 540.83 457.11 L 543.75 455.50 L 546.67 453.88 L 549.58 452.25 L 552.50 450.62 L 555.42 448.99 L 558.33 447.35 L 561.25 445.71 L 564.17 444.07 L 567.08 442.42 L 570.00 440.77 L 572.92 439.11 L 575.83 437.45 L 578.75 435.79 L 581.67 434.12 L 584.58 432.45 L 587.50 430.78 L 590.42 429.10 L 593.33 427.42 L 596.25 425.73 L 599.17 424.04 L 602.08 422.35 L 605.00 420.65 L 607.92 418.95 L 610.83 417.25 L 613.75 415.54 L 616.67 413.83 L 619.58 412.11 L 622.50 410.39 L 625.42 408.67 L 628.33 406.95 L 631.25 405.21 L 634.17 403.48" stroke-width="2.2"/>
+<path class="ink" d="M 637.08 401.74 L 640.00 400.00 L 642.92 398.26 L 645.83 396.51 L 648.75 394.75 L 651.67 393.00 L 654.58 391.24 L 657.50 389.47 L 660.42 387.71 L 663.33 385.93 L 666.25 384.16 L 669.17 382.38 L 672.08 380.60 L 675.00 378.81 L 677.92 377.02 L 680.83 375.23 L 683.75 373.43 L 686.67 371.63 L 689.58 369.82 L 692.50 368.01 L 695.42 366.20 L 698.33 364.38 L 701.25 362.56 L 704.17 360.74 L 707.08 358.91 L 710.00 357.08 L 712.92 355.24 L 715.83 353.40 L 718.75 351.56 L 721.67 349.72 L 724.58 347.87 L 727.50 346.01 L 730.42 344.15 L 733.33 342.29 L 736.25 340.43 L 739.17 338.56 L 742.08 336.69 L 745.00 334.81 L 747.92 332.93 L 750.83 331.04 L 753.75 329.16 L 756.67 327.27 L 759.58 325.37 L 762.50 323.47 L 765.42 321.57 L 768.33 319.66 L 771.25 317.75 L 774.17 315.84 L 777.08 313.92 L 780.00 312.00 L 782.92 310.07 L 785.83 308.15 L 788.75 306.21 L 791.67 304.28 L 794.58 302.34 L 797.50 300.39 L 800.42 298.45 L 803.33 296.49 L 806.25 294.54 L 809.17 292.58 L 812.08 290.62 L 815.00 288.65 L 817.92 286.68 L 820.83 284.71 L 823.75 282.73 L 826.67 280.75 L 829.58 278.76 L 832.50 276.77 L 835.42 274.78 L 838.33 272.79 L 841.25 270.79 L 844.17 268.78 L 847.08 266.77 L 850.00 264.76" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.6"/>
+<circle class="dot" cx="319.66" cy="568.90" r="3.4"/>
+<circle class="ring" cx="319.66" cy="568.90" r="6.2"/>
+<circle class="dot" cx="449.51" cy="505.88" r="3.4"/>
+<circle class="ring" cx="449.51" cy="505.88" r="6.2"/>
+<text class="t" x="307.7" y="583.9" font-size="8.6" text-anchor="end">2/3 tangent</text>
+<text class="tf" x="309.7" y="582.9" font-size="8" text-anchor="end">~160 g △</text>
+<text class="t" x="461.5" y="520.9" font-size="8.6">3/4 tangent</text>
+<text class="tf" x="460.5" y="519.9" font-size="8">~4.2 kg △</text>
+<rect class="panelfill" x="174.7" y="264.0" width="276.0" height="88.0"/>
+<rect class="frame" x="174.7" y="264.0" width="276.0" height="88.0" stroke-width="0.8"/>
+<text class="hd" x="183.7" y="280.0" font-size="10.5" letter-spacing="1.2">THE DISPUTE  ‡</text>
+<text class="t" x="183.7" y="294.0" font-size="8.4">Rubner 1883: 2/3, from the surface law.</text>
+<text class="t" x="183.7" y="304.6" font-size="8.4">Kleiber 1932: 3/4, from n = 13 points.</text>
+<text class="t" x="183.7" y="315.2" font-size="8.4">Both are drawn TANGENT to the same curve.</text>
+<text class="t" x="183.7" y="325.8" font-size="8.4">Each is locally right, globally wrong. Fit a</text>
+<text class="t" x="183.7" y="336.4" font-size="8.4">mouse-heavy set → 2/3; a dog-and-up set → 3/4.</text>
+<text class="t" x="183.7" y="347.0" font-size="8.4">Neither of them is the curve.</text>
+<rect class="panelfill" x="174.7" y="368.0" width="276.0" height="50.0"/>
+<rect class="frame" x="174.7" y="368.0" width="276.0" height="50.0" stroke-width="0.8"/>
+<line class="ink" x1="183.71" y1="379.00" x2="217.71" y2="379.00" stroke-width="1.9"/>
+<text class="t" x="224.7" y="382.0" font-size="8.2">the quadratic — Kolokotrones 2010  △ NA05-07</text>
+<line class="ln34" x1="183.71" y1="392.00" x2="217.71" y2="392.00" stroke-width="1.2"/>
+<text class="t" x="224.7" y="395.0" font-size="8.2">b = 3/4, tangent at ~4.2 kg  ‡ NA05-01</text>
+<line class="ln23" x1="183.71" y1="405.00" x2="217.71" y2="405.00" stroke-width="1.2"/>
+<text class="t" x="224.7" y="408.0" font-size="8.2">b = 2/3, tangent at ~160 g  ‡ NA05-02</text>
+<line class="meas" x1="161.63" y1="635.58" x2="161.63" y2="653.80" stroke-width="1.1"/>
+<line class="meas" x1="157.63" y1="635.58" x2="165.63" y2="635.58" stroke-width="1.1"/>
+<line class="meas" x1="157.63" y1="653.80" x2="165.63" y2="653.80" stroke-width="1.1"/>
+<line class="faint" x1="166.63" y1="644.69" x2="372.00" y2="598.00" stroke-width="0.7"/>
+<text class="hd" x="378.0" y="602.0" font-size="9">×1.95 — a 3 g shrew</text>
+<text class="t" x="378.0" y="614.0" font-size="8.2">The 3/4 line, extrapolated 3.1 decades DOWN from its own tangent mass,</text>
+<text class="t" x="378.0" y="625.0" font-size="8.2">underpredicts the shrew by ~2× (0.291 in log₁₀) △ NA-05. Not catastrophic —</text>
+<text class="t" x="378.0" y="636.0" font-size="8.2">and THAT is why it is dangerous: a 2× error looks like measurement noise,</text>
+<text class="t" x="378.0" y="647.0" font-size="8.2">passes review, and is wrong for a structural reason no better data will fix.</text>
+<rect class="void-fill" x="636.1" y="706.0" width="213.9" height="100.0"/>
+<rect class="frame" x="150.0" y="706.0" width="700.0" height="100.0" stroke-width="0.9"/>
+<line class="rule" x1="150.00" y1="711.36" x2="850.00" y2="711.36" stroke-width="0.9"/>
+<text class="tf" x="143.0" y="714.6" font-size="8" text-anchor="end">0.0</text>
+<text class="tf" x="143.0" y="759.2" font-size="8" text-anchor="end">-0.5</text>
+<line class="faint" x1="150.00" y1="756.00" x2="850.00" y2="756.00" stroke-dasharray="2 5"/>
+<text class="tf" x="143.0" y="803.8" font-size="8" text-anchor="end">-1.0</text>
+<line class="faint" x1="150.00" y1="800.64" x2="850.00" y2="800.64" stroke-dasharray="2 5"/>
+<line class="faint" x1="209.48" y1="706.00" x2="209.48" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="209.48" y1="806.00" x2="209.48" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="209.5" y="823.0" font-size="9" text-anchor="middle">10 g</text>
+<line class="faint" x1="300.98" y1="706.00" x2="300.98" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="300.98" y1="806.00" x2="300.98" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="301.0" y="823.0" font-size="9" text-anchor="middle">100 g</text>
+<line class="faint" x1="392.48" y1="706.00" x2="392.48" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="392.48" y1="806.00" x2="392.48" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="392.5" y="823.0" font-size="9" text-anchor="middle">1 kg</text>
+<line class="faint" x1="483.99" y1="706.00" x2="483.99" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="483.99" y1="806.00" x2="483.99" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="484.0" y="823.0" font-size="9" text-anchor="middle">10 kg</text>
+<line class="faint" x1="575.49" y1="706.00" x2="575.49" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="575.49" y1="806.00" x2="575.49" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="575.5" y="823.0" font-size="9" text-anchor="middle">100 kg</text>
+<line class="faint" x1="666.99" y1="706.00" x2="666.99" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="666.99" y1="806.00" x2="666.99" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="667.0" y="823.0" font-size="9" text-anchor="middle">1 t</text>
+<line class="faint" x1="758.50" y1="706.00" x2="758.50" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="758.50" y1="806.00" x2="758.50" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="758.5" y="823.0" font-size="9" text-anchor="middle">10 t</text>
+<line class="faint" x1="850.00" y1="706.00" x2="850.00" y2="806.00" stroke-dasharray="2 5"/>
+<line class="rule" x1="850.00" y1="806.00" x2="850.00" y2="811.00" stroke-width="0.8"/>
+<text class="tf" x="850.0" y="823.0" font-size="9" text-anchor="middle">100 t</text>
+<path class="ln34" d="M 150.00 739.44 L 152.92 738.89 L 155.83 738.35 L 158.75 737.82 L 161.67 737.29 L 164.58 736.77 L 167.50 736.25 L 170.42 735.74 L 173.33 735.23 L 176.25 734.73 L 179.17 734.23 L 182.08 733.74 L 185.00 733.25 L 187.92 732.77 L 190.83 732.30 L 193.75 731.83 L 196.67 731.36 L 199.58 730.90 L 202.50 730.45 L 205.42 730.00 L 208.33 729.56 L 211.25 729.12 L 214.17 728.69 L 217.08 728.26 L 220.00 727.84 L 222.92 727.42 L 225.83 727.01 L 228.75 726.60 L 231.67 726.20 L 234.58 725.81 L 237.50 725.42 L 240.42 725.03 L 243.33 724.66 L 246.25 724.28 L 249.17 723.91 L 252.08 723.55 L 255.00 723.19 L 257.92 722.84 L 260.83 722.49 L 263.75 722.15 L 266.67 721.81 L 269.58 721.48 L 272.50 721.16 L 275.42 720.83 L 278.33 720.52 L 281.25 720.21 L 284.17 719.90 L 287.08 719.61 L 290.00 719.31 L 292.92 719.02 L 295.83 718.74 L 298.75 718.46 L 301.67 718.19 L 304.58 717.92 L 307.50 717.66 L 310.42 717.40 L 313.33 717.15 L 316.25 716.91 L 319.17 716.67 L 322.08 716.43 L 325.00 716.20 L 327.92 715.98 L 330.83 715.76 L 333.75 715.54 L 336.67 715.33 L 339.58 715.13 L 342.50 714.93 L 345.42 714.74 L 348.33 714.55 L 351.25 714.37 L 354.17 714.19 L 357.08 714.02 L 360.00 713.86 L 362.92 713.70 L 365.83 713.54 L 368.75 713.39 L 371.67 713.25 L 374.58 713.11 L 377.50 712.97 L 380.42 712.84 L 383.33 712.72 L 386.25 712.60 L 389.17 712.49 L 392.08 712.38 L 395.00 712.28 L 397.92 712.18 L 400.83 712.09 L 403.75 712.01 L 406.67 711.93 L 409.58 711.85 L 412.50 711.78 L 415.42 711.72 L 418.33 711.66 L 421.25 711.60 L 424.17 711.55 L 427.08 711.51 L 430.00 711.47 L 432.92 711.44 L 435.83 711.41 L 438.75 711.39 L 441.67 711.38 L 444.58 711.36 L 447.50 711.36 L 450.42 711.36 L 453.33 711.36 L 456.25 711.37 L 459.17 711.39 L 462.08 711.41 L 465.00 711.43 L 467.92 711.47 L 470.83 711.50 L 473.75 711.54 L 476.67 711.59 L 479.58 711.64 L 482.50 711.70 L 485.42 711.77 L 488.33 711.84 L 491.25 711.91 L 494.17 711.99 L 497.08 712.07 L 500.00 712.16 L 502.92 712.26 L 505.83 712.36 L 508.75 712.47 L 511.67 712.58 L 514.58 712.69 L 517.50 712.82 L 520.42 712.94 L 523.33 713.08 L 526.25 713.21 L 529.17 713.36 L 532.08 713.51 L 535.00 713.66 L 537.92 713.82 L 540.83 713.98 L 543.75 714.15 L 546.67 714.33 L 549.58 714.51 L 552.50 714.70 L 555.42 714.89 L 558.33 715.09 L 561.25 715.29 L 564.17 715.49 L 567.08 715.71 L 570.00 715.93 L 572.92 716.15 L 575.83 716.38 L 578.75 716.61 L 581.67 716.85 L 584.58 717.10 L 587.50 717.35 L 590.42 717.60 L 593.33 717.86 L 596.25 718.13 L 599.17 718.40 L 602.08 718.68 L 605.00 718.96 L 607.92 719.25 L 610.83 719.54 L 613.75 719.84 L 616.67 720.14 L 619.58 720.45 L 622.50 720.76 L 625.42 721.08 L 628.33 721.41 L 631.25 721.74 L 634.17 722.07 L 637.08 722.41 L 640.00 722.76 L 642.92 723.11 L 645.83 723.47 L 648.75 723.83 L 651.67 724.20 L 654.58 724.57 L 657.50 724.95 L 660.42 725.33 L 663.33 725.72 L 666.25 726.12 L 669.17 726.51 L 672.08 726.92 L 675.00 727.33 L 677.92 727.75 L 680.83 728.17 L 683.75 728.59 L 686.67 729.02 L 689.58 729.46 L 692.50 729.90 L 695.42 730.35 L 698.33 730.80 L 701.25 731.26 L 704.17 731.72 L 707.08 732.19 L 710.00 732.67 L 712.92 733.15 L 715.83 733.63 L 718.75 734.12 L 721.67 734.62 L 724.58 735.12 L 727.50 735.62 L 730.42 736.14 L 733.33 736.65 L 736.25 737.17 L 739.17 737.70 L 742.08 738.24 L 745.00 738.77 L 747.92 739.32 L 750.83 739.87 L 753.75 740.42 L 756.67 740.98 L 759.58 741.54 L 762.50 742.11 L 765.42 742.69 L 768.33 743.27 L 771.25 743.86 L 774.17 744.45 L 777.08 745.04 L 780.00 745.65 L 782.92 746.25 L 785.83 746.87 L 788.75 747.49 L 791.67 748.11 L 794.58 748.74 L 797.50 749.37 L 800.42 750.01 L 803.33 750.66 L 806.25 751.31 L 809.17 751.96 L 812.08 752.62 L 815.00 753.29 L 817.92 753.96 L 820.83 754.64 L 823.75 755.32 L 826.67 756.01 L 829.58 756.70 L 832.50 757.40 L 835.42 758.10 L 838.33 758.81 L 841.25 759.52 L 844.17 760.24 L 847.08 760.97 L 850.00 761.70" stroke-width="1.4"/>
+<path class="ln23" d="M 150.00 720.38 L 152.92 720.07 L 155.83 719.77 L 158.75 719.47 L 161.67 719.18 L 164.58 718.89 L 167.50 718.61 L 170.42 718.33 L 173.33 718.06 L 176.25 717.80 L 179.17 717.54 L 182.08 717.29 L 185.00 717.04 L 187.92 716.79 L 190.83 716.56 L 193.75 716.32 L 196.67 716.10 L 199.58 715.87 L 202.50 715.66 L 205.42 715.44 L 208.33 715.24 L 211.25 715.04 L 214.17 714.84 L 217.08 714.65 L 220.00 714.47 L 222.92 714.29 L 225.83 714.11 L 228.75 713.94 L 231.67 713.78 L 234.58 713.62 L 237.50 713.47 L 240.42 713.32 L 243.33 713.18 L 246.25 713.04 L 249.17 712.91 L 252.08 712.79 L 255.00 712.67 L 257.92 712.55 L 260.83 712.44 L 263.75 712.34 L 266.67 712.24 L 269.58 712.14 L 272.50 712.05 L 275.42 711.97 L 278.33 711.89 L 281.25 711.82 L 284.17 711.75 L 287.08 711.69 L 290.00 711.63 L 292.92 711.58 L 295.83 711.53 L 298.75 711.49 L 301.67 711.46 L 304.58 711.43 L 307.50 711.40 L 310.42 711.38 L 313.33 711.37 L 316.25 711.36 L 319.17 711.36 L 322.08 711.36 L 325.00 711.37 L 327.92 711.38 L 330.83 711.40 L 333.75 711.42 L 336.67 711.45 L 339.58 711.48 L 342.50 711.52 L 345.42 711.57 L 348.33 711.62 L 351.25 711.67 L 354.17 711.73 L 357.08 711.80 L 360.00 711.87 L 362.92 711.95 L 365.83 712.03 L 368.75 712.11 L 371.67 712.21 L 374.58 712.30 L 377.50 712.41 L 380.42 712.52 L 383.33 712.63 L 386.25 712.75 L 389.17 712.87 L 392.08 713.00 L 395.00 713.14 L 397.92 713.28 L 400.83 713.43 L 403.75 713.58 L 406.67 713.73 L 409.58 713.90 L 412.50 714.06 L 415.42 714.24 L 418.33 714.41 L 421.25 714.60 L 424.17 714.78 L 427.08 714.98 L 430.00 715.18 L 432.92 715.38 L 435.83 715.59 L 438.75 715.81 L 441.67 716.03 L 444.58 716.25 L 447.50 716.49 L 450.42 716.72 L 453.33 716.96 L 456.25 717.21 L 459.17 717.46 L 462.08 717.72 L 465.00 717.98 L 467.92 718.25 L 470.83 718.53 L 473.75 718.81 L 476.67 719.09 L 479.58 719.38 L 482.50 719.68 L 485.42 719.98 L 488.33 720.28 L 491.25 720.59 L 494.17 720.91 L 497.08 721.23 L 500.00 721.56 L 502.92 721.89 L 505.83 722.23 L 508.75 722.57 L 511.67 722.92 L 514.58 723.28 L 517.50 723.64 L 520.42 724.00 L 523.33 724.37 L 526.25 724.75 L 529.17 725.13 L 532.08 725.51 L 535.00 725.90 L 537.92 726.30 L 540.83 726.70 L 543.75 727.11 L 546.67 727.52 L 549.58 727.94 L 552.50 728.36 L 555.42 728.79 L 558.33 729.23 L 561.25 729.66 L 564.17 730.11 L 567.08 730.56 L 570.00 731.01 L 572.92 731.47 L 575.83 731.94 L 578.75 732.41 L 581.67 732.89 L 584.58 733.37 L 587.50 733.86 L 590.42 734.35 L 593.33 734.85 L 596.25 735.35 L 599.17 735.86 L 602.08 736.37 L 605.00 736.89 L 607.92 737.42 L 610.83 737.95 L 613.75 738.48 L 616.67 739.02 L 619.58 739.57 L 622.50 740.12 L 625.42 740.68 L 628.33 741.24 L 631.25 741.81 L 634.17 742.38 L 637.08 742.96 L 640.00 743.54 L 642.92 744.13 L 645.83 744.72 L 648.75 745.32 L 651.67 745.93 L 654.58 746.54 L 657.50 747.15 L 660.42 747.77 L 663.33 748.40 L 666.25 749.03 L 669.17 749.67 L 672.08 750.31 L 675.00 750.96 L 677.92 751.61 L 680.83 752.27 L 683.75 752.93 L 686.67 753.60 L 689.58 754.27 L 692.50 754.95 L 695.42 755.64 L 698.33 756.33 L 701.25 757.02 L 704.17 757.72 L 707.08 758.43 L 710.00 759.14 L 712.92 759.86 L 715.83 760.58 L 718.75 761.31 L 721.67 762.04 L 724.58 762.78 L 727.50 763.52 L 730.42 764.27 L 733.33 765.02 L 736.25 765.78 L 739.17 766.55 L 742.08 767.32 L 745.00 768.09 L 747.92 768.87 L 750.83 769.66 L 753.75 770.45 L 756.67 771.25 L 759.58 772.05 L 762.50 772.86 L 765.42 773.67 L 768.33 774.49 L 771.25 775.31 L 774.17 776.14 L 777.08 776.97 L 780.00 777.81 L 782.92 778.66 L 785.83 779.51 L 788.75 780.36 L 791.67 781.22 L 794.58 782.09 L 797.50 782.96 L 800.42 783.84 L 803.33 784.72 L 806.25 785.61 L 809.17 786.50 L 812.08 787.40 L 815.00 788.30 L 817.92 789.21 L 820.83 790.12 L 823.75 791.04 L 826.67 791.97 L 829.58 792.90 L 832.50 793.83 L 835.42 794.77 L 838.33 795.72 L 841.25 796.67 L 844.17 797.63 L 847.08 798.59 L 850.00 799.56" stroke-width="1.4"/>
+<circle class="dot" cx="449.51" cy="711.36" r="3.0"/>
+<circle class="dot" cx="319.66" cy="711.36" r="3.0"/>
+<text class="t" transform="translate(118.0,756.0) rotate(-90)" font-size="9" text-anchor="middle">line − curve</text>
+<text class="hd" x="158.0" y="786.4" font-size="8.4">RESIDUAL — the SAME two straight lines, with the curve subtracted.</text>
+<text class="t" x="158.0" y="797.4" font-size="8.2">Each touches zero ONLY at its own tangent mass, and falls away on BOTH sides.</text>
+<circle class="dotc" cx="161.63" cy="737.30" r="2.6"/>
+<text class="ct" x="168.6" y="740.3" font-size="7.8">−0.291</text>
+<text class="fn" x="630.1" y="745.8" font-size="7.8" text-anchor="end">−0.352 → ×2.25 at 460 kg</text>
+<text class="t" x="500.0" y="840.0" font-size="10" text-anchor="middle">body mass  M  [g] — log₁₀ scale, 7.65 decades</text>
+<line class="dim" x1="168.88" y1="858.00" x2="636.13" y2="858.00" stroke-width="1.1"/>
+<line class="dim" x1="168.88" y1="854.00" x2="168.88" y2="862.00" stroke-width="1.1"/>
+<line class="dim" x1="636.13" y1="854.00" x2="636.13" y2="862.00" stroke-width="1.1"/>
+<text class="t" x="402.5" y="851.0" font-size="8.6" text-anchor="middle">FITTED DATA — 3.6 g … 460 kg (local slope 0.57 → 0.87) · NA05-09</text>
+<line class="fnline" x1="636.13" y1="858.00" x2="850.00" y2="858.00" stroke-width="1.1"/>
+<text class="fn" x="850.0" y="851.0" font-size="8.6" text-anchor="end">EXTRAPOLATED ◇</text>
+<text class="tf" x="76.0" y="884.0" font-size="8.6">The residual strip carries the SAME curve and lines, with the curve subtracted. Its vertical scale is ×1.42 the panel above — the deviation is NOT</text>
+<text class="tf" x="76.0" y="895.0" font-size="8.6">magnified; the TREND IS REMOVED, which is the only reason a 0.3-log error is visible at all against a 7.65-decade span. That is the honest reason</text>
+<text class="tf" x="76.0" y="906.0" font-size="8.6">the dispute survived a century: on the panel above, the two lines and the curve are separated by ~5% of the plot height. The error hides in the ink.</text>
+<text class="tf" x="76.0" y="921.0" font-size="8.6">Vertical datum is a DRAFTING CHOICE: b₀ is not printed in this corpus ◇, and a prefactor is unit-bookkeeping, not science (NA-05). Only SLOPES</text>
+<text class="tf" x="76.0" y="932.0" font-size="8.6">and Δlog₁₀B are asserted. Curve from b₁ = 0.5371, b₂ = 0.0294 (T-corrected, M₀ = 1 g · NA05-07/08). b₂ is unit-invariant; b₁ ALONE is INADMISSIBLE ⊘</text>
+<text class="tf" x="76.0" y="943.0" font-size="8.6">as “the exponent” — it is the local slope at M₀ = 1 g and moves if you measure mass in kg (NA05-08, MacKay 2011).</text>
+<rect class="frame" x="910.0" y="175.0" width="470.0" height="785.0"/>
+<line class="rule" x1="910.00" y1="209.00" x2="1380.00" y2="209.00" stroke-width="1.1"/>
+<text class="hd" x="924.0" y="199.0" font-size="15" letter-spacing="1.4">II</text>
+<text class="hd2" x="951.2" y="199.0" font-size="13" letter-spacing="1.1">THE LOCAL SLOPE — there is no exponent</text>
+<rect class="void-fill" x="1233.9" y="252.0" width="116.1" height="348.0"/>
+<rect class="frame" x="970.0" y="252.0" width="380.0" height="348.0" stroke-width="0.9"/>
+<line class="rule" x1="1002.29" y1="600.00" x2="1002.29" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1002.3" y="617.0" font-size="8.5" text-anchor="middle">10 g</text>
+<line class="rule" x1="1051.96" y1="600.00" x2="1051.96" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1052.0" y="617.0" font-size="8.5" text-anchor="middle">100 g</text>
+<line class="rule" x1="1101.63" y1="600.00" x2="1101.63" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1101.6" y="617.0" font-size="8.5" text-anchor="middle">1 kg</text>
+<line class="rule" x1="1151.31" y1="600.00" x2="1151.31" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1151.3" y="617.0" font-size="8.5" text-anchor="middle">10 kg</text>
+<line class="rule" x1="1200.98" y1="600.00" x2="1200.98" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1201.0" y="617.0" font-size="8.5" text-anchor="middle">100 kg</text>
+<line class="rule" x1="1250.65" y1="600.00" x2="1250.65" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1250.7" y="617.0" font-size="8.5" text-anchor="middle">1 t</text>
+<line class="rule" x1="1300.33" y1="600.00" x2="1300.33" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1300.3" y="617.0" font-size="8.5" text-anchor="middle">10 t</text>
+<line class="rule" x1="1350.00" y1="600.00" x2="1350.00" y2="605.00" stroke-width="0.8"/>
+<text class="tf" x="1350.0" y="617.0" font-size="8.5" text-anchor="middle">100 t</text>
+<line class="fnline" x1="970.00" y1="498.25" x2="1350.00" y2="498.25" stroke-width="1"/>
+<text class="fn" x="976.0" y="493.2" font-size="8.8">2/3 — Rubner</text>
+<line class="ctline" x1="970.00" y1="447.37" x2="1350.00" y2="447.37" stroke-width="1"/>
+<text class="ct" x="976.0" y="442.4" font-size="8.8">3/4 — Kleiber</text>
+<line class="dash" x1="970.00" y1="294.74" x2="1350.00" y2="294.74" stroke-width="1"/>
+<text class="tf" x="976.0" y="289.7" font-size="8.8">1 — isometry</text>
+<text class="tf" x="963.0" y="542.1" font-size="8.5" text-anchor="end">0.6</text>
+<text class="tf" x="963.0" y="481.1" font-size="8.5" text-anchor="end">0.7</text>
+<text class="tf" x="963.0" y="420.0" font-size="8.5" text-anchor="end">0.8</text>
+<text class="tf" x="963.0" y="359.0" font-size="8.5" text-anchor="end">0.9</text>
+<text class="tf" x="963.0" y="297.9" font-size="8.5" text-anchor="end">1.0</text>
+<text class="t" x="1160.0" y="634.0" font-size="9.5" text-anchor="middle">body mass  M  [g] — log₁₀ scale</text>
+<text class="t" transform="translate(938.0,426.0) rotate(-90)" font-size="9.5" text-anchor="middle">local slope  d(log B)/d(log M)  [—]</text>
+<path class="faint" d="M 970.00 561.82 L 1361.42 252.00" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path class="ink" d="M 970.00 564.78 L 1233.90 374.06" stroke-width="2.2"/>
+<path class="ink" d="M 1233.90 374.06 L 1350.00 290.16" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.6"/>
+<text class="tf" x="1280.5" y="309.1" font-size="8">no-T fit</text>
+<circle class="dot" cx="1062.10" cy="498.25" r="3.4"/>
+<circle class="dot" cx="1132.59" cy="447.37" r="3.4"/>
+<circle class="dot" cx="1343.66" cy="294.74" r="3.4"/>
+<text class="t" x="1069.1" y="513.2" font-size="8.2">160 g △</text>
+<text class="t" x="1139.6" y="462.4" font-size="8.2">4.2 kg △</text>
+<text class="ct" x="1336.7" y="308.7" font-size="8.2" text-anchor="end">74 t ◇ EXTRAPOLATED</text>
+<text class="tf" x="1045.3" y="490.2" font-size="7.8" text-anchor="end">93 g</text>
+<text class="tf" x="1109.6" y="439.4" font-size="7.8" text-anchor="end">1.8 kg</text>
+<text class="mono" x="928.0" y="660.0" font-size="9">slope(M) = b₁ + 2b₂·log₁₀M = 0.5371 + 0.0588·log₁₀M(g)</text>
+<text class="tf" x="928.0" y="672.0" font-size="8.4">△ NA05-09 — linear in log M, so this panel is a straight line.</text>
+<text class="t" x="928.0" y="690.0" font-size="8.8">ONE curve crosses 2/3 at ~160 g and 3/4 at ~4.2 kg. The “dispute” is two</text>
+<text class="t" x="928.0" y="702.2" font-size="8.8">horizontal lines that the same rising slope passes through at different</text>
+<text class="t" x="928.0" y="714.4" font-size="8.8">masses. Kolokotrones et al. 2010: datasets with fewer large mammals give</text>
+<text class="t" x="928.0" y="726.6" font-size="8.8">smaller exponents — which IS the difference between White &amp; Seymour's data</text>
+<text class="t" x="928.0" y="738.8" font-size="8.8">and Savage's binned data. Neither team was incompetent. Both were fitting</text>
+<text class="t" x="928.0" y="751.0" font-size="8.8">a line to a curve.  ‡ NA05-07</text>
+<text class="tf" x="928.0" y="774.0" font-size="8.4">The faint line is the SAME model without the temperature term: the crossings</text>
+<text class="tf" x="928.0" y="785.0" font-size="8.4">move to ~93 g and ~1.8 kg (NA05-10/11). Even the mass at which “3/4 is true”</text>
+<text class="tf" x="928.0" y="796.0" font-size="8.4">depends on which fit you took.</text>
+<text class="ct" x="928.0" y="814.0" font-size="8.4">✗ Right of 460 kg is EXTRAPOLATION — rule 5's “#1 way scaling arguments</text>
+<text class="ct" x="928.0" y="825.0" font-size="8.4">   fail”. Kolokotrones et al. hedge the 74 t reading twice themselves: the rise</text>
+<text class="ct" x="928.0" y="836.0" font-size="8.4">   “may be due to the paucity of data for large animals”, and “If this is</text>
+<text class="ct" x="928.0" y="847.0" font-size="8.4">   correct”. It sits ~2.2 decades past the data.</text>
+<rect class="frame" x="60.0" y="990.0" width="1320.0" height="513.0"/>
+<line class="rule" x1="60.00" y1="1024.00" x2="1380.00" y2="1024.00" stroke-width="1.1"/>
+<text class="hd" x="74.0" y="1014.0" font-size="15" letter-spacing="1.4">III</text>
+<text class="hd2" x="109.2" y="1014.0" font-size="13" letter-spacing="1.1">THE VERDICT IS THE CI BOUND EXCLUDING THE THRESHOLD — NEVER THE POINT ESTIMATE  (rule M2)</text>
+<line class="fnline" x1="645.00" y1="1050.00" x2="645.00" y2="1356.00" stroke-width="1.1"/>
+<text class="fn" x="645.0" y="1044.0" font-size="11" text-anchor="middle" font-weight="700">2/3</text>
+<line class="ctline" x1="895.00" y1="1050.00" x2="895.00" y2="1356.00" stroke-width="1.1"/>
+<text class="ct" x="895.0" y="1044.0" font-size="11" text-anchor="middle" font-weight="700">3/4</text>
+<text class="tf" x="595.0" y="1372.0" font-size="8.5" text-anchor="middle">0.65</text>
+<text class="tf" x="745.0" y="1372.0" font-size="8.5" text-anchor="middle">0.70</text>
+<text class="tf" x="895.0" y="1372.0" font-size="8.5" text-anchor="middle">0.75</text>
+<text class="t" x="760.0" y="1387.0" font-size="9.5" text-anchor="middle">fitted exponent  b  [—]</text>
+<text class="t" x="506.0" y="1071.4" font-size="9.2" text-anchor="end">Kleiber 1932 — the original</text>
+<text class="tf" x="506.0" y="1081.4" font-size="7.8" text-anchor="end">n = 13 points</text>
+<circle class="dotf" cx="865.00" cy="1068.00" r="3.2"/>
+<text class="fn" x="857.0" y="1071.4" font-size="8" text-anchor="end">interval NOT-READ ◇</text>
+<text class="t" x="1016.0" y="1071.4" font-size="9">no CI on record in this corpus</text>
+<text class="tf" x="1016.0" y="1081.4" font-size="7.8">NA05-01 ‡◇</text>
+<text class="t" x="506.0" y="1098.4" font-size="9.2" text-anchor="end">Savage 2004 — BINNED</text>
+<text class="tf" x="506.0" y="1108.4" font-size="7.8" text-anchor="end">n = 52 bins</text>
+<line class="ci" x1="778.00" y1="1095.00" x2="931.00" y2="1095.00" stroke-width="1.4"/>
+<line class="ci" x1="778.00" y1="1090.50" x2="778.00" y2="1099.50" stroke-width="1.4"/>
+<line class="ci" x1="931.00" y1="1090.50" x2="931.00" y2="1099.50" stroke-width="1.4"/>
+<circle class="dot" cx="856.00" cy="1095.00" r="3.0"/>
+<text class="t" x="1016.0" y="1098.4" font-size="9">includes 3/4 · excludes 2/3</text>
+<text class="tf" x="1016.0" y="1108.4" font-size="7.8">NA05-03 ‡</text>
+<text class="t" x="506.0" y="1125.4" font-size="9.2" text-anchor="end">Savage 2004 — UNBINNED (same paper)</text>
+<text class="tf" x="506.0" y="1135.4" font-size="7.8" text-anchor="end">n = 626 spp.</text>
+<line class="ci" x1="742.00" y1="1122.00" x2="817.00" y2="1122.00" stroke-width="1.4"/>
+<line class="ci" x1="742.00" y1="1117.50" x2="742.00" y2="1126.50" stroke-width="1.4"/>
+<line class="ci" x1="817.00" y1="1117.50" x2="817.00" y2="1126.50" stroke-width="1.4"/>
+<circle class="dot" cx="781.00" cy="1122.00" r="3.0"/>
+<text class="t" x="1016.0" y="1125.4" font-size="9">EXCLUDES 2/3 AND 3/4</text>
+<text class="tf" x="1016.0" y="1135.4" font-size="7.8">NA05-04 ‡</text>
+<text class="t" x="506.0" y="1152.4" font-size="9.2" text-anchor="end">White &amp; Seymour 2003 — interspecific</text>
+<text class="tf" x="506.0" y="1162.4" font-size="7.8" text-anchor="end">n = 469 spp.</text>
+<circle class="dotf" cx="685.00" cy="1149.00" r="3.2"/>
+<text class="fn" x="693.0" y="1152.4" font-size="8">interval NOT-READ ◇</text>
+<text class="t" x="1016.0" y="1152.4" font-size="9">excludes 3/4 · includes 2/3</text>
+<text class="tf" x="1016.0" y="1162.4" font-size="7.8">NA05-05 ‡◇</text>
+<text class="t" x="506.0" y="1179.4" font-size="9.2" text-anchor="end">White &amp; Seymour 2003 — interordinal</text>
+<text class="tf" x="506.0" y="1189.4" font-size="7.8" text-anchor="end">15 orders</text>
+<circle class="dotf" cx="595.00" cy="1176.00" r="3.2"/>
+<text class="fn" x="603.0" y="1179.4" font-size="8">interval NOT-READ ◇</text>
+<text class="t" x="1016.0" y="1179.4" font-size="9">excludes 3/4</text>
+<text class="tf" x="1016.0" y="1189.4" font-size="7.8">NA05-05 ‡◇</text>
+<text class="t" x="506.0" y="1206.4" font-size="9.2" text-anchor="end">W&amp;S 2005 — true BMR (= row 4 re-rounded)</text>
+<text class="tf" x="506.0" y="1216.4" font-size="7.8" text-anchor="end">n = 469 spp.</text>
+<line class="ci" x1="661.00" y1="1203.00" x2="745.00" y2="1203.00" stroke-width="1.4"/>
+<line class="ci" x1="661.00" y1="1198.50" x2="661.00" y2="1207.50" stroke-width="1.4"/>
+<line class="ci" x1="745.00" y1="1198.50" x2="745.00" y2="1207.50" stroke-width="1.4"/>
+<circle class="dot" cx="703.00" cy="1203.00" r="3.0"/>
+<text class="t" x="1016.0" y="1206.4" font-size="9">excludes 3/4 · ~excludes 2/3</text>
+<text class="tf" x="1016.0" y="1216.4" font-size="7.8">NA05-06 ‡</text>
+<text class="t" x="506.0" y="1233.4" font-size="9.2" text-anchor="end">W&amp;S 2005 — standard SMR</text>
+<text class="tf" x="506.0" y="1243.4" font-size="7.8" text-anchor="end">n = 469 spp.</text>
+<line class="ci" x1="631.00" y1="1230.00" x2="709.00" y2="1230.00" stroke-width="1.4"/>
+<line class="ci" x1="631.00" y1="1225.50" x2="631.00" y2="1234.50" stroke-width="1.4"/>
+<line class="ci" x1="709.00" y1="1225.50" x2="709.00" y2="1234.50" stroke-width="1.4"/>
+<circle class="dot" cx="670.00" cy="1230.00" r="3.0"/>
+<text class="t" x="1016.0" y="1233.4" font-size="9">includes 2/3 · excludes 3/4</text>
+<text class="tf" x="1016.0" y="1243.4" font-size="7.8">NA05-06 ‡</text>
+<text class="t" x="506.0" y="1260.4" font-size="9.2" text-anchor="end">W&amp;S 2005 — thermoneutral RMR</text>
+<text class="tf" x="506.0" y="1270.4" font-size="7.8" text-anchor="end">rate REDEFINED</text>
+<line class="ci" x1="742.00" y1="1257.00" x2="820.00" y2="1257.00" stroke-width="1.4"/>
+<line class="ci" x1="742.00" y1="1252.50" x2="742.00" y2="1261.50" stroke-width="1.4"/>
+<line class="ci" x1="820.00" y1="1252.50" x2="820.00" y2="1261.50" stroke-width="1.4"/>
+<circle class="dot" cx="781.00" cy="1257.00" r="3.0"/>
+<text class="hd" x="1016.0" y="1260.4" font-size="9">EXCLUDES BOTH</text>
+<text class="tf" x="1016.0" y="1270.4" font-size="7.8">NA05-06 ‡</text>
+<text class="t" x="506.0" y="1287.4" font-size="9.2" text-anchor="end">MacKay 2011 — 70 marsupials</text>
+<text class="tf" x="506.0" y="1297.4" font-size="7.8" text-anchor="end">R² = 0.990</text>
+<line class="ci" x1="865.00" y1="1284.00" x2="925.00" y2="1284.00" stroke-width="1.4"/>
+<line class="ci" x1="865.00" y1="1279.50" x2="865.00" y2="1288.50" stroke-width="1.4"/>
+<line class="ci" x1="925.00" y1="1279.50" x2="925.00" y2="1288.50" stroke-width="1.4"/>
+<circle class="dot" cx="895.00" cy="1284.00" r="3.0"/>
+<text class="t" x="1016.0" y="1287.4" font-size="9">3/4 nearly exact — for marsupials</text>
+<text class="tf" x="1016.0" y="1297.4" font-size="7.8">NA05-14 ‡</text>
+<text class="t" x="506.0" y="1319.0" font-size="9.2" text-anchor="end">Hou et al. 2010 — ant colonies</text>
+<text class="tf" x="506.0" y="1329.0" font-size="7.8" text-anchor="end">n = 12 colonies</text>
+<text class="ct" x="524.0" y="1322.4" font-size="8.5">0.81, 95% CI [0.55, 1.08] — off this scale in both directions. The interval excludes 2/3, 3/4 AND isometry alike: the study decides nothing.  ✗ NA05-38</text>
+<text class="ct" x="80.0" y="1412.0" font-size="9.5" font-weight="700">✗  COUNT THE PAPERS, NOT THE ROWS — the error this panel exists to expose, and which NA-05 caught in its own table.</text>
+<text class="t" x="80.0" y="1426.0" font-size="8.8">These nine rows are FIVE papers. Rows 2–3 are ONE Savage fit, binned and unbinned — the binning is a defensible choice, and the choice is what produces the headline.</text>
+<text class="t" x="80.0" y="1438.2" font-size="8.8">Rows 4 and 6 are the SAME n = 469 regression at two roundings: the 2005 figure is White &amp; Seymour restating their own 2003 result in their own review. That is not replication.</text>
+<text class="t" x="80.0" y="1450.4" font-size="8.8">Rows 7–8 change the RATE DEFINITION, not the dataset. Six rows of rounding-level agreement are not six independent corroborations.</text>
+<text class="t" x="80.0" y="1462.6" font-size="8.8">◇  RETRIEVAL DISCLOSED: the Savage CIs are quoted from search-indexed full text; the PDF returned HTTP 403 and was NOT opened. They are load-bearing, so they are flagged, not laundered.</text>
+<text class="t" x="80.0" y="1474.8" font-size="8.8">◇  The White &amp; Seymour “±” bars are drawn as printed by the source. Whether they are SD, SEM or CI is not stated in this pass — so the bar is drawn, and the convention is fenced.</text>
+<rect class="frame" x="60.0" y="1533.0" width="1320.0" height="270.0"/>
+<line class="rule" x1="60.00" y1="1567.00" x2="1380.00" y2="1567.00" stroke-width="1.1"/>
+<text class="hd" x="74.0" y="1557.0" font-size="15" letter-spacing="1.4">IV</text>
+<text class="hd2" x="101.2" y="1557.0" font-size="13" letter-spacing="1.1">AND THE “3/4 IS TYPICAL” CLAIM DISSOLVES ON ITS OWN SPREAD</text>
+<text class="t" x="80.0" y="1614.0" font-size="9.5">Glazier 2005 — 146 allometric relations (Peters 1983)</text>
+<text class="tf" x="80.0" y="1626.0" font-size="8.2">range &lt;0.5 to &gt;1.0 · mean 0.738 ± 0.018 · 72% vertebrate, in a world where most animals are invertebrates   ‡ NA05-45</text>
+<line class="ink" x1="589.38" y1="1611.00" x2="808.12" y2="1611.00" stroke-width="1.7"/>
+<line class="ink" x1="589.38" y1="1605.50" x2="589.38" y2="1616.50" stroke-width="1.7"/>
+<line class="ink" x1="808.12" y1="1605.50" x2="808.12" y2="1616.50" stroke-width="1.7"/>
+<rect class="hatch-b" x="676.9" y="1604.5" width="43.8" height="13.0"/>
+<rect class="frame" x="676.9" y="1604.5" width="43.8" height="13.0" stroke-width="0.7"/>
+<text class="tf" x="583.4" y="1614.2" font-size="8" text-anchor="end">0.5</text>
+<text class="tf" x="814.1" y="1614.2" font-size="8">1</text>
+<text class="t" x="80.0" y="1676.0" font-size="9.5">Withers 1992 — 220 spp., INTRAspecific</text>
+<text class="tf" x="80.0" y="1688.0" font-size="8.2">range 0.3 – 1.8 · mean 0.724 · the MODE is 0.667, not 0.75   ‡ NA05-46</text>
+<line class="ink" x1="501.88" y1="1673.00" x2="1158.12" y2="1673.00" stroke-width="1.7"/>
+<line class="ink" x1="501.88" y1="1667.50" x2="501.88" y2="1678.50" stroke-width="1.7"/>
+<line class="ink" x1="1158.12" y1="1667.50" x2="1158.12" y2="1678.50" stroke-width="1.7"/>
+<rect class="hatch-b" x="676.9" y="1666.5" width="43.8" height="13.0"/>
+<rect class="frame" x="676.9" y="1666.5" width="43.8" height="13.0" stroke-width="0.7"/>
+<text class="tf" x="495.9" y="1676.2" font-size="8" text-anchor="end">0.3</text>
+<text class="tf" x="1164.1" y="1676.2" font-size="8">1.8</text>
+<text class="tf" x="698.8" y="1589.0" font-size="8.2" text-anchor="middle">the “quarter-power” window 0.7 – 0.8</text>
+<line class="faint" x1="698.75" y1="1593.00" x2="698.75" y2="1603.00" stroke-width="0.7"/>
+<text class="tf" x="1200.0" y="1614.0" font-size="8.2">fitted exponent b [—]</text>
+<text class="tf" x="1200.0" y="1676.0" font-size="8.2">fitted exponent b [—]</text>
+<text class="hd" x="80.0" y="1713.0" font-size="9.8">49% of Glazier's exponents fall inside 0.7 – 0.8.   51% FALL OUTSIDE IT.</text>
+<rect class="hatch-b" x="80.0" y="1719.0" width="303.8" height="14.0"/>
+<rect class="frame" x="80.0" y="1719.0" width="303.8" height="14.0" stroke-width="0.7"/>
+<rect class="ghost-fill" x="383.8" y="1719.0" width="316.2" height="14.0"/>
+<rect class="frame" x="383.8" y="1719.0" width="316.2" height="14.0" stroke-width="0.7"/>
+<text class="t" x="231.9" y="1729.0" font-size="8.5" text-anchor="middle">49% inside</text>
+<text class="ct" x="541.9" y="1729.0" font-size="8.5" text-anchor="middle">51% outside</text>
+<text class="ct" x="80.0" y="1751.0" font-size="8.8">✗  “Kleiber's law is a law.” — recorded NEGATIVE as a naming defect (NA-05). It is a robust</text>
+<text class="ct" x="80.0" y="1762.6" font-size="8.8">     REGULARITY OVER A RANGE — a real and useful thing — and it is not a law.</text>
+<text class="ct" x="740.0" y="1713.0" font-size="9.4" font-weight="700">✗  AND THE EXPONENT DOES NOT DISCRIMINATE THE MECHANISMS</text>
+<text class="t" x="740.0" y="1729.0" font-size="8.6">McMahon's elastic similarity (1973) and WBE's fractal network (1997) are incompatible</text>
+<text class="t" x="740.0" y="1740.6" font-size="8.6">mechanisms that predict the SAME 3/4. Per M7, an exponent that multiple unrelated</text>
+<text class="t" x="740.0" y="1752.2" font-size="8.6">mechanisms produce is weak evidence for any of them — and “the model predicts 3/4 and we</text>
+<text class="t" x="740.0" y="1763.8" font-size="8.6">observe 3/4” is the most common malformed argument in this literature. △ NA05-36.</text>
+<text class="t" x="740.0" y="1775.4" font-size="8.6">Elastic similarity then mostly FAILED its own test: Alexander et al. (1979) measured</text>
+<text class="t" x="740.0" y="1787.0" font-size="8.6">mammal limb bones at length ∝ M^0.31, diameter ∝ M^0.35 — close to GEOMETRIC similarity,</text>
+<text class="t" x="740.0" y="1798.6" font-size="8.6">not elastic (0.25 / 0.375). NA05-37 ◇ (primary paywalled; via secondary sources, which</text>
+<text class="t" x="740.0" y="1810.2" font-size="8.6">give the species count as 37 against the 32 printed — the direction is corroborated).</text>
+<text class="t" x="740.0" y="1821.8" font-size="8.6">And WBE's own finite-size form predicts CONCAVE curvature; the data are CONVEX. Not a</text>
+<text class="t" x="740.0" y="1833.4" font-size="8.6">poor fit — the WRONG SIGN. △ NA05-18. What is refuted is the 1997 geometry, not network</text>
+<text class="t" x="740.0" y="1845.0" font-size="8.6">explanations as a class. That distinction is the whole discipline.</text>
+<rect class="frame" x="60.0" y="1833.0" width="700.0" height="500.0"/>
+<line class="rule" x1="60.00" y1="1867.00" x2="760.00" y2="1867.00" stroke-width="1.1"/>
+<text class="hd" x="74.0" y="1857.0" font-size="15" letter-spacing="1.4">V</text>
+<text class="hd2" x="93.2" y="1857.0" font-size="13" letter-spacing="1.1">STROUHAL  St = f·A / U — convergence, and its scope</text>
+<rect class="hatch-b" x="434.2" y="1917.0" width="82.2" height="232.0"/>
+<line class="ink" x1="434.22" y1="1917.00" x2="434.22" y2="2149.00" stroke-width="1.2"/>
+<line class="ink" x1="516.44" y1="1917.00" x2="516.44" y2="2149.00" stroke-width="1.2"/>
+<rect class="hatch-c" x="454.8" y="1917.0" width="41.1" height="232.0"/>
+<line class="fnline" x1="454.78" y1="1917.00" x2="454.78" y2="2149.00" stroke-width="1.2"/>
+<line class="fnline" x1="495.89" y1="1917.00" x2="495.89" y2="2149.00" stroke-width="1.2"/>
+<text class="fn" x="475.3" y="2139.0" font-size="7.6" text-anchor="middle">0.25–0.35</text>
+<text class="fn" x="475.3" y="2129.0" font-size="7.6" text-anchor="middle">foil peak</text>
+<text class="hd" x="475.3" y="1895.0" font-size="10.5" text-anchor="middle">0.2 &lt; St &lt; 0.4  AT CRUISE</text>
+<text class="tf" x="475.3" y="1907.0" font-size="8" text-anchor="middle">Taylor, Nudds &amp; Thomas 2003, Nature 425:707–711 · NA06-01</text>
+<line class="rule" x1="352.00" y1="2149.00" x2="352.00" y2="2154.00" stroke-width="0.8"/>
+<text class="tf" x="352.0" y="2166.0" font-size="8.5" text-anchor="middle">0.0</text>
+<line class="rule" x1="434.22" y1="2149.00" x2="434.22" y2="2154.00" stroke-width="0.8"/>
+<text class="tf" x="434.2" y="2166.0" font-size="8.5" text-anchor="middle">0.2</text>
+<line class="rule" x1="516.44" y1="2149.00" x2="516.44" y2="2154.00" stroke-width="0.8"/>
+<text class="tf" x="516.4" y="2166.0" font-size="8.5" text-anchor="middle">0.4</text>
+<line class="rule" x1="598.67" y1="2149.00" x2="598.67" y2="2154.00" stroke-width="0.8"/>
+<text class="tf" x="598.7" y="2166.0" font-size="8.5" text-anchor="middle">0.6</text>
+<line class="rule" x1="680.89" y1="2149.00" x2="680.89" y2="2154.00" stroke-width="0.8"/>
+<text class="tf" x="680.9" y="2166.0" font-size="8.5" text-anchor="middle">0.8</text>
+<text class="t" x="537.0" y="2181.0" font-size="9" text-anchor="middle">St = f·A/U  [—]   f in Hz, A peak-to-peak in m, U in m·s⁻¹</text>
+<text class="t" x="76.0" y="1938.0" font-size="8.8">Odontocetes — SPECIES AVERAGES</text>
+<text class="tf" x="76.0" y="1948.5" font-size="7.6">6 spp. · Rohr &amp; Fish 2004, J Exp Biol 207:1633</text>
+<text class="tf" x="76.0" y="1959.0" font-size="7.6">—  0.2–0.4  ·  NA06-02</text>
+<rect class="bgfill" x="434.2" y="1931.5" width="82.2" height="11.0"/>
+<rect class="frame" x="434.2" y="1931.5" width="82.2" height="11.0" stroke-width="1.2"/>
+<line class="ink" x1="436.22" y1="1937.00" x2="514.44" y2="1937.00" stroke-width="1.0"/>
+<text class="t" x="76.0" y="1980.0" font-size="8.8">…but only 44% of 248 INDIVIDUAL values</text>
+<text class="tf" x="76.0" y="1990.5" font-size="7.6">captive · “considerable scatter”, their words</text>
+<text class="tf" x="76.0" y="2001.0" font-size="7.6">—  0.225–0.275  ·  NA06-02</text>
+<rect class="bgfill" x="444.5" y="1973.5" width="20.6" height="11.0"/>
+<rect class="frame" x="444.5" y="1973.5" width="20.6" height="11.0" stroke-width="1.2"/>
+<line class="ink" x1="446.50" y1="1979.00" x2="463.06" y2="1979.00" stroke-width="1.0"/>
+<text class="t" x="76.0" y="2022.0" font-size="8.8">Bat — Glossophaga soricina, 4–6 m·s⁻¹</text>
+<text class="tf" x="76.0" y="2032.5" font-size="7.6">minimum-power speed · wind tunnel</text>
+<text class="tf" x="76.0" y="2043.0" font-size="7.6">—  0.17–0.22  ·  CN10-44</text>
+<rect class="bgfill" x="421.9" y="2015.5" width="20.6" height="11.0"/>
+<rect class="frame" x="421.9" y="2015.5" width="20.6" height="11.0" stroke-width="1.2"/>
+<line class="ink" x1="423.89" y1="2021.00" x2="440.44" y2="2021.00" stroke-width="1.0"/>
+<text class="ct" x="449.4" y="2023.6" font-size="7.8">‡ BELOW the 0.2 bound</text>
+<text class="t" x="76.0" y="2064.0" font-size="8.8">Bat — same animal, 3.4–4 m·s⁻¹</text>
+<text class="tf" x="76.0" y="2074.5" font-size="7.6">Lindhe Norberg &amp; Winter 2006, JEB 209:3887</text>
+<text class="tf" x="76.0" y="2085.0" font-size="7.6">—  0.25–0.4  ·  CN10-44</text>
+<rect class="bgfill" x="454.8" y="2057.5" width="61.7" height="11.0"/>
+<rect class="frame" x="454.8" y="2057.5" width="61.7" height="11.0" stroke-width="1.2"/>
+<line class="ink" x1="456.78" y1="2063.00" x2="514.44" y2="2063.00" stroke-width="1.0"/>
+<text class="t" x="76.0" y="2106.0" font-size="8.8">Bat — same animal, below 3 m·s⁻¹</text>
+<text class="tf" x="76.0" y="2116.5" font-size="7.6">unsteady; lift/thrust production degrades</text>
+<text class="tf" x="76.0" y="2127.0" font-size="7.6">—  0.5–0.68  ·  CN10-44</text>
+<rect class="bgfill" x="557.6" y="2099.5" width="74.0" height="11.0"/>
+<rect class="frame" x="557.6" y="2099.5" width="74.0" height="11.0" stroke-width="1.2"/>
+<line class="ink" x1="559.56" y1="2105.00" x2="629.56" y2="2105.00" stroke-width="1.0"/>
+<line class="arrowline" x1="413.67" y1="2203.00" x2="680.89" y2="2203.00" stroke-width="1.4"/>
+<path class="arrowline" d="M 673.89 2199.00 L 680.89 2203.00 L 673.89 2207.00" stroke-width="1.4" fill="none"/>
+<text class="tf" x="413.7" y="2196.0" font-size="8" text-anchor="middle">0.15</text>
+<text class="tf" x="680.9" y="2196.0" font-size="8" text-anchor="middle">0.8</text>
+<text class="t" x="76.0" y="2204.0" font-size="8.8">Eloy 2012 — the OPTIMUM is size-dependent</text>
+<text class="tf" x="76.0" y="2214.5" font-size="7.6">53 spp. · Lighthill elongated-body model · △ NA06-03</text>
+<text class="t" x="413.7" y="2219.0" font-size="8.2">largest cetaceans → smallest tadpoles. Not one band.</text>
+<text class="hd" x="76.0" y="2243.0" font-size="8.6">SAME SYMBOL, DIFFERENT REGIME — do NOT transfer 0.2–0.4 outside cruise: water-walkers run</text>
+<text class="t" x="76.0" y="2254.6" font-size="8.6">St = 0.01–0.1 (arthropods) and 0.1–1 (large) — Bush &amp; Hu 2006, NA07-13. The scope IS the science.</text>
+<text class="t" x="76.0" y="2271.0" font-size="8.6">‡ The band is a CENTRAL TENDENCY, not a law of individuals. Eloy notes the flapping-foil experiments</text>
+<text class="t" x="76.0" y="2282.6" font-size="8.6">actually peaked at 0.25 &lt; St &lt; 0.35 — TIGHTER than the quoted band, marked here by the two fine inner</text>
+<text class="t" x="76.0" y="2294.2" font-size="8.6">rules. ✗ Convergence across independent lineages is evidence of a CONSTRAINT-OPTIMUM and a hypothesis</text>
+<text class="t" x="76.0" y="2305.8" font-size="8.6">generator — never proof that any animal's St is an adaptation (Gould &amp; Lewontin 1979).</text>
+<rect class="frame" x="790.0" y="1833.0" width="590.0" height="500.0"/>
+<line class="rule" x1="790.00" y1="1867.00" x2="1380.00" y2="1867.00" stroke-width="1.1"/>
+<text class="hd" x="804.0" y="1857.0" font-size="15" letter-spacing="1.4">VI</text>
+<text class="hd2" x="831.2" y="1857.0" font-size="13" letter-spacing="1.1">FROUDE  Fr = v²/(g·L) — the gait transition</text>
+<line class="rule" x1="850.00" y1="2023.00" x2="850.00" y2="2028.00" stroke-width="0.8"/>
+<text class="tf" x="850.0" y="2040.0" font-size="8.5" text-anchor="middle">0.0</text>
+<line class="rule" x1="970.00" y1="2023.00" x2="970.00" y2="2028.00" stroke-width="0.8"/>
+<text class="tf" x="970.0" y="2040.0" font-size="8.5" text-anchor="middle">0.5</text>
+<line class="rule" x1="1090.00" y1="2023.00" x2="1090.00" y2="2028.00" stroke-width="0.8"/>
+<text class="tf" x="1090.0" y="2040.0" font-size="8.5" text-anchor="middle">1.0</text>
+<line class="rule" x1="1210.00" y1="2023.00" x2="1210.00" y2="2028.00" stroke-width="0.8"/>
+<text class="tf" x="1210.0" y="2040.0" font-size="8.5" text-anchor="middle">1.5</text>
+<line class="rule" x1="1330.00" y1="2023.00" x2="1330.00" y2="2028.00" stroke-width="0.8"/>
+<text class="tf" x="1330.0" y="2040.0" font-size="8.5" text-anchor="middle">2.0</text>
+<line class="rule" x1="850.00" y1="2023.00" x2="1330.00" y2="2023.00" stroke-width="1"/>
+<text class="t" x="1090.0" y="2055.0" font-size="9" text-anchor="middle">Froude number  Fr = v²/(g·L)   [—]    L = hip height [m]</text>
+<line class="ink" x1="970.00" y1="1921.00" x2="970.00" y2="2023.00" stroke-width="1.8"/>
+<circle class="dot" cx="970.00" cy="2023.00" r="4.0"/>
+<text class="hd" x="970.0" y="1909.0" font-size="12" text-anchor="middle">Fr ≈ 0.5</text>
+<text class="t" x="970.0" y="1919.0" font-size="8.2" text-anchor="middle">walk → run, bipeds, EARTH 1 g</text>
+<line class="dim" x1="1090.00" y1="1921.00" x2="1090.00" y2="2023.00" stroke-width="1.4" stroke-dasharray="7 4"/>
+<text class="hd" x="1090.0" y="1909.0" font-size="11" text-anchor="middle">Fr = 1</text>
+<text class="t" x="1090.0" y="1919.0" font-size="8.2" text-anchor="middle">inverted-pendulum ceiling △</text>
+<line class="ghostline" x1="1019.70" y1="1935.00" x2="1019.70" y2="2023.00" stroke-width="1.2"/>
+<text class="ct" x="1019.7" y="2017.0" font-size="7.8" text-anchor="middle">0.71 ✗</text>
+<line class="ci" x1="1075.60" y1="1979.00" x2="1291.60" y2="1979.00" stroke-width="1.8"/>
+<line class="ci" x1="1075.60" y1="1973.00" x2="1075.60" y2="1985.00" stroke-width="1.8"/>
+<line class="ci" x1="1291.60" y1="1973.00" x2="1291.60" y2="1985.00" stroke-width="1.8"/>
+<circle class="dotc" cx="1183.60" cy="1979.00" r="4.2"/>
+<text class="hd" x="1183.6" y="1968.0" font-size="10" text-anchor="middle">Fr = 1.39 ± 0.45</text>
+<text class="ct" x="1183.6" y="1996.0" font-size="8" text-anchor="middle">MEASURED IN ACTUAL LUNAR GRAVITY</text>
+<text class="tf" x="1183.6" y="2006.0" font-size="7.4" text-anchor="middle">n = 8 · 6 of 8 chose Fr &gt; 1.0 · De Witt 2014 — NA06-05</text>
+<line class="meas" x1="970.00" y1="1949.00" x2="1075.60" y2="1949.00" stroke-width="1.1"/>
+<line class="meas" x1="970.00" y1="1945.00" x2="970.00" y2="1953.00" stroke-width="1.1"/>
+<line class="meas" x1="1075.60" y1="1945.00" x2="1075.60" y2="1953.00" stroke-width="1.1"/>
+<text class="ct" x="1022.8" y="1943.0" font-size="7.6" text-anchor="middle">the lunar band's LOWER bound</text>
+<text class="ct" x="1022.8" y="1961.0" font-size="7.6" text-anchor="middle">never reaches 0.5</text>
+<text class="ct" x="810.0" y="2078.0" font-size="9.6" font-weight="700">✗  NEGATIVE — Fr ≈ 0.5 IS NOT A UNIVERSAL GAIT CONSTANT.</text>
+<text class="t" x="810.0" y="2091.0" font-size="8.8">It held on Earth and it FAILED off-Earth. A dimensionless ratio produced a real,</text>
+<text class="t" x="810.0" y="2102.6" font-size="8.8">checkable prediction; the prediction was checked in actual lunar gravity; it lost.</text>
+<text class="t" x="810.0" y="2114.2" font-size="8.8">The loss is drawn, not buried. Fr ≈ 0.5 is scoped to bipeds at 1 g.</text>
+<text class="t" x="810.0" y="2134.0" font-size="8.4">Alexander; Kram, Domingo &amp; Ferris 1997, J Exp Biol 200(4):821–826 — bipeds</text>
+<text class="t" x="810.0" y="2145.0" font-size="8.4">“…all choose to switch … at approximately the same Froude number (0.5)”.</text>
+<text class="mono" x="810.0" y="2161.0" font-size="8.6">v = √(Fr·g·L) — computed, NOT observed   △ CN11-41/42</text>
+<text class="mono" x="810.0" y="2174.0" font-size="8.6">L = 0.9 m, g = 9.81 m·s⁻²:  Fr 0.5 → 2.1 m·s⁻¹ · Fr 1 → 3.0 m·s⁻¹</text>
+<text class="mono" x="810.0" y="2186.0" font-size="8.6">L = 0.8–1.0 m → 2.0–2.2 m·s⁻¹</text>
+<text class="t" x="810.0" y="2202.0" font-size="8.8">We switch at 2.1 m·s⁻¹, well below the 3.0 m·s⁻¹ we could still walk at. The</text>
+<text class="t" x="810.0" y="2213.6" font-size="8.8">transition is an ENERGETIC CHOICE, not a mechanical limit.</text>
+<text class="fn" x="810.0" y="2229.0" font-size="8.4">◇ A MEASURED absolute preferred transition speed, with its n, is NOT-SOURCED in</text>
+<text class="fn" x="810.0" y="2240.0" font-size="8.4">   this pass (Kram et al. paywalled). Only the DIMENSIONLESS number is sourced.</text>
+<text class="ct" x="810.0" y="2256.0" font-size="8.4">✗ CONVENTION TRAP (CN-08): Fr = v²/(gL) and Fr = v/√(gL) differ BY A SQUARE.</text>
+<text class="ct" x="810.0" y="2267.0" font-size="8.4">   “Fr = 0.5” in one is “Fr ≈ 0.71” in the other — the ghost tick above. A gait</text>
+<text class="ct" x="810.0" y="2278.0" font-size="8.4">   threshold quoted without its convention is not a threshold.</text>
+<text class="ct" x="810.0" y="2294.0" font-size="8.4">‡ CLASS CONFLICT in this corpus's own ledger: CN11-40 classes Fr ≈ 0.5</text>
+<text class="ct" x="810.0" y="2305.0" font-size="8.4">   OBSERVED-REPLICATED, NA06-04 classes it OBSERVED-CONTESTED. The stricter</text>
+<text class="ct" x="810.0" y="2316.0" font-size="8.4">   class is carried here. See caption 7 — it is a choice, not a finding.</text>
+<line class="rule" x1="60.00" y1="2363.00" x2="1380.00" y2="2363.00" stroke-width="1.2"/>
+<text class="hd" x="74.0" y="2389.0" font-size="15" letter-spacing="1.4">VII</text>
+<text class="hd2" x="119.7" y="2389.0" font-size="13" letter-spacing="1.1">KEY, CAPTION, AND WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="hd" x="80.0" y="2425.0" font-size="11">FIGURE KEY — marks, not colours (this plate must survive greyscale)</text>
+<text class="t" x="88.0" y="2445.0" font-size="13" text-anchor="middle">—</text>
+<text class="hd" x="106.0" y="2445.0" font-size="10.5">OBSERVED-REPLICATED</text>
+<text class="t" x="276.0" y="2445.0" font-size="10">measured, and independently replicated across labs, datasets or taxa. Drawn as a SOLID rule or bar.</text>
+<text class="ct" x="88.0" y="2464.0" font-size="13" text-anchor="middle">‡</text>
+<text class="hd" x="106.0" y="2464.0" font-size="10.5">OBSERVED-CONTESTED</text>
+<text class="t" x="276.0" y="2464.0" font-size="10">measured, but the community genuinely disputes it. Both positions carried; the dispute named.</text>
+<text class="t" x="88.0" y="2483.0" font-size="13" text-anchor="middle">⊙</text>
+<text class="hd" x="106.0" y="2483.0" font-size="10.5">OBSERVED-SINGLE</text>
+<text class="t" x="276.0" y="2483.0" font-size="10">measured once; no independent replication on record. One study is not a literature.</text>
+<text class="t" x="88.0" y="2502.0" font-size="13" text-anchor="middle">△</text>
+<text class="hd" x="106.0" y="2502.0" font-size="10.5">MODELED</text>
+<text class="t" x="276.0" y="2502.0" font-size="10">derived from a model that fits data. THE ASSUMPTIONS ARE THE FENCE.</text>
+<text class="fn" x="88.0" y="2521.0" font-size="13" text-anchor="middle">◇</text>
+<text class="hd" x="106.0" y="2521.0" font-size="10.5">NOT-SOURCED</text>
+<text class="t" x="276.0" y="2521.0" font-size="10">a value this corpus could not trace to a source. A gap in our homework, NOT in the literature.</text>
+<text class="fn" x="88.0" y="2540.0" font-size="13" text-anchor="middle">⊘</text>
+<text class="hd" x="106.0" y="2540.0" font-size="10.5">INADMISSIBLE</text>
+<text class="t" x="276.0" y="2540.0" font-size="10">cannot be asserted as stated — unfalsifiable, or an artifact of its own units.</text>
+<text class="ct" x="88.0" y="2559.0" font-size="13" text-anchor="middle">✗</text>
+<text class="hd" x="106.0" y="2559.0" font-size="10.5">NEGATIVE / trap</text>
+<text class="t" x="276.0" y="2559.0" font-size="10">a conflation, a defect or a failed prediction, recorded first-class — never deleted, never mocked.</text>
+<text class="tf" x="80.0" y="2586.0" font-size="9.5">Classes are NATURA classes (NA-00, amended 2026-07-15: twelve classes in three groups — measured / derived / fenced); this plate uses six of the twelve, plus the</text>
+<text class="tf" x="80.0" y="2599.0" font-size="9.5">first-class NEGATIVE record. They are SOVEREIGN from the UNI fence (proven · designed · hypothesized · not-yet-built) and never merge. Line weight, hatch density</text>
+<text class="tf" x="80.0" y="2612.0" font-size="9.5">and dash pattern carry every distinction colour carries.</text>
+<line class="rule" x1="76.00" y1="2634.00" x2="1364.00" y2="2634.00" stroke-width="0.7"/>
+<text class="hd" x="80.0" y="2658.0" font-size="12" letter-spacing="1.6">CAPTION</text>
+<text class="t" x="80.0" y="2678.0" font-size="9.5">1 · Panel I is drawn from THREE sourced constants and nothing else: b₁ = 0.5371, b₂ = 0.0294 (Kolokotrones et al. 2010, Nature 464:753–756, temperature-corrected fit,</text>
+<text class="t" x="80.0" y="2690.2" font-size="9.5">     n = 636 mammals, mass in g, B in W · NA05-07/08) and the local-slope identity slope = b₁ + 2b₂·log₁₀M (NA05-09). The 3/4 line is drawn TANGENT to that curve at</text>
+<text class="t" x="80.0" y="2702.4" font-size="9.5">     ~4.2 kg and the 2/3 line TANGENT at ~160 g, because those are the masses at which each exponent is locally true (NA05-10/11). The vertical datum is the 4.2 kg</text>
+<text class="t" x="80.0" y="2714.6" font-size="9.5">     tangent point: b₀ is not printed in this corpus ◇, so no absolute metabolic rate is drawn or claimed. Reproduced here and checked against NA-05's own printed</text>
+<text class="t" x="80.0" y="2726.8" font-size="9.5">     arithmetic (0.263 − 2.332 = −2.069; 0.75 × (0.477 − 3.623) = −2.360; difference 0.291 in log₁₀ → ×1.95). If that arithmetic is wrong, this panel is wrong.</text>
+<text class="t" x="80.0" y="2739.0" font-size="9.5">2 · The dispute is the flagship and it is LIVE. Rubner (1883) argues 2/3 from the surface law — heat leaves through a surface ∝ L², mass grows ∝ L³ — and that is</text>
+<text class="t" x="80.0" y="2751.2" font-size="9.5">     dimensional analysis, which is usually right. Kleiber (1932, Hilgardia 6:315–353) reports ~3/4 from 13 data points. Kolokotrones et al. (2010) answer that the</text>
+<text class="t" x="80.0" y="2763.4" font-size="9.5">     log–log relation is CONVEX and therefore not a power law at all (b₂ = 0.0322 ± 0.0053, P = 9.0 × 10⁻¹⁰). MacKay (2011, J Theor Biol 280:194–196) disputes THAT:</text>
+<text class="t" x="80.0" y="2775.6" font-size="9.5">     b₁ is an artifact of choosing M₀ = 1 g; the quadratic buys R² only 0.958 → 0.961; Hayssen &amp; Lacy (1985) fitted and rejected the same model 25 years earlier; and</text>
+<text class="t" x="80.0" y="2787.8" font-size="9.5">     Order by Order only the Rodentia retain significant curvature — though MacKay concedes in the same paragraph that pooled across all eutheria it “remains</text>
+<text class="t" x="80.0" y="2800.0" font-size="9.5">     significant” under his own test. Deeds, Savage &amp; Fontana (2011, J Theor Biol 280:197–198) reply — but they are THREE OF KOLOKOTRONES ET AL.'S OWN FOUR</text>
+<text class="t" x="80.0" y="2812.2" font-size="9.5">     AUTHORS, so a rebuttal by the accused, not an independent corroboration — conceding the b₁ artifact while arguing only b₂ carries the curvature claim, and</text>
+<text class="t" x="80.0" y="2824.4" font-size="9.5">     leaving MacKay's Hayssen &amp; Lacy receipt and his 70-marsupial fit (k = 0.75 ± 0.01, R² = 0.990 · NA05-14) unanswered. The claim, the resolution, AND the objection</text>
+<text class="t" x="80.0" y="2836.6" font-size="9.5">     to the resolution are all contested. All three are on this plate, including the half that does not suit the fence.</text>
+<text class="t" x="80.0" y="2848.8" font-size="9.5">3 · Panel III is rule M2 rendered: the verdict is the CI bound that excludes the threshold, never the point estimate. Savage's 0.712 and 0.737 LOOK like agreement;</text>
+<text class="t" x="80.0" y="2861.0" font-size="9.5">     their intervals reach opposite verdicts. The panel deliberately shows nine rows that are FIVE papers, because reading rounding-level agreement as independent</text>
+<text class="t" x="80.0" y="2873.2" font-size="9.5">     corroboration is the exact error NA-05 caught in its own table — and then had to re-class its own row for committing.</text>
+<text class="t" x="80.0" y="2885.4" font-size="9.5">4 · Panel V draws only what is sourced. Taylor, Nudds &amp; Thomas (2003) NAME dolphins, sharks, bony fish, birds, bats and insects as converging on 0.2 &lt; St &lt; 0.4 at</text>
+<text class="t" x="80.0" y="2897.6" font-size="9.5">     cruise, and this corpus carries per-taxon values for only TWO of them: odontocetes (Rohr &amp; Fish 2004 · NA06-02) and one bat (Lindhe Norberg &amp; Winter 2006 ·</text>
+<text class="t" x="80.0" y="2909.8" font-size="9.5">     CN10-44). Per-taxon values for birds, sharks, bony fish and insects are NOT-SOURCED in this pass ◇, so this plate plots NONE and prints the gap instead of dots.</text>
+<text class="t" x="80.0" y="2922.0" font-size="9.5">     Falsifier: read Taylor et al.'s figure 1 and print the per-taxon values it carries.</text>
+<text class="t" x="80.0" y="2934.2" font-size="9.5">5 · Panel VI's Fr = 0.5 and Fr = 1.39 ± 0.45 sit on ONE dimensionless axis because that is the whole claim — a dimensionless number is the only thing that can travel</text>
+<text class="t" x="80.0" y="2946.4" font-size="9.5">     between a laboratory on Earth and a body in lunar gravity. The lunar band [0.94, 1.84] does not reach 0.5 at its lower bound. The prediction did not merely widen;</text>
+<text class="t" x="80.0" y="2958.6" font-size="9.5">     it lost. Lunar g is NOT printed here: only the dimensionless result is sourced, and converting it to a speed would need a gravity this plate did not source ◇.</text>
+<text class="t" x="80.0" y="2970.8" font-size="9.5">6 · ✗ A SECOND APPLICATION OF THE SAME NUMBER ALSO BROKE, and is recorded here rather than omitted for tidiness. Alexander's trackway formula</text>
+<text class="t" x="80.0" y="2983.0" font-size="9.5">     u = 0.25·g^0.5·λ^1.67·h^(−1.17) reads a dinosaur's speed off a fossil trackway (1.0–3.6 m·s⁻¹ ‡ NA07-16). Prescott, Griffin, Demuth et al. (2025, Biol Lett</text>
+<text class="t" x="80.0" y="2995.2" font-size="9.5">     21:20250191) walked guineafowl across mud and found calculated speed ran 1.17× to 4.74× measured, typically ~2× ⊙ (n = 2, one species · CN08-26): “speed estimates from trackways are</text>
+<text class="t" x="80.0" y="3007.4" font-size="9.5">     inaccurate, if not outright misleading.” It is not drawn as a panel because this plate's subject is the GAIT TRANSITION; it is printed because a negative that is</text>
+<text class="t" x="80.0" y="3019.6" font-size="9.5">     merely off-topic is still a negative.</text>
+<text class="t" x="80.0" y="3031.8" font-size="9.5">7 · ✗ TWO DEFECTS THIS PLATE FOUND IN THE CORPUS'S OWN LEDGER, recorded first-class and NOT silently harmonised. (a) Fr at walk→run ≈ 0.5 carries TWO</text>
+<text class="t" x="80.0" y="3044.0" font-size="9.5">     CLASSES: CN11-40 classes it OBSERVED-REPLICATED, NA06-04 classes the same quantity OBSERVED-CONTESTED — and the two rows cite DIFFERENT Alexander</text>
+<text class="t" x="80.0" y="3056.2" font-size="9.5">     papers (1984, Int J Robot Res 3(2):49–59 vs 1983, J. Zool.). (b) The Prescott et al. 2025 guineafowl ratio carries two classes: NA06-07 says OBSERVED-REPLICATED,</text>
+<text class="t" x="80.0" y="3068.4" font-size="9.5">     CN08-26 says OBSERVED-SINGLE (n = 2, one species). NA-05's own rule is that ONE RESULT CANNOT HOLD TWO CLASSES — it re-classed NA05-06 for precisely this.</text>
+<text class="t" x="80.0" y="3080.6" font-size="9.5">     This plate carries the STRICTER class in both cases (OBSERVED-CONTESTED ‡; OBSERVED-SINGLE ⊙) and prints the conflict. Falsifier: reconcile the four rows in</text>
+<text class="t" x="80.0" y="3092.8" font-size="9.5">     encyclopedia/NATURE-LEDGER.md — in each pair, one row must move. Until then the badge on this plate is the conservative one, and it is a choice, not a finding.</text>
+<line class="rule" x1="76.00" y1="3117.00" x2="1364.00" y2="3117.00" stroke-width="0.7"/>
+<text class="hd" x="80.0" y="3139.0" font-size="12" letter-spacing="1.6">WHAT THIS PLATE DOES NOT CLAIM</text>
+<text class="t" x="80.0" y="3159.0" font-size="9.5">· Not claimed: that metabolic rate scales as M^(3/4). Nor as M^(2/3). Both lines are drawn because both are claimed in the literature; the plate asserts NEITHER. NA-05's</text>
+<text class="t" x="80.0" y="3171.2" font-size="9.5">   position is that the question is malformed as usually asked, because the log–log relation carries curvature — and that THAT position is contested too.</text>
+<text class="t" x="80.0" y="3183.4" font-size="9.5">· Not claimed: any absolute metabolic rate, or any prefactor. The vertical axis in I is a difference of logarithms with its datum stated. b₀ is not printed in this corpus, and a</text>
+<text class="t" x="80.0" y="3195.6" font-size="9.5">   prefactor moves by 1000^b when you change grams to kilograms while the exponent does not move at all. The exponent is the candidate science; the prefactor is bookkeeping.</text>
+<text class="t" x="80.0" y="3207.8" font-size="9.5">· Not claimed: that b₁ = 0.5371 is “the metabolic exponent”. It is the local slope at M₀ = 1 g and changes value if you measure mass in kilograms (b₁′ = b₁ − 2b₂ log k).</text>
+<text class="t" x="80.0" y="3220.0" font-size="9.5">   Only b₂ and the local slope at a NAMED mass survive a change of unit. Quoted as “the exponent” it is INADMISSIBLE ⊘ (NA05-08).</text>
+<text class="t" x="80.0" y="3232.2" font-size="9.5">· Not claimed: that Kolokotrones et al. (2010) settled the dispute, or that the curvature is a law of size rather than a between-Order artifact. That is exactly what is contested.</text>
+<text class="t" x="80.0" y="3244.4" font-size="9.5">· Not claimed: anything to the right of the fitted-data bracket. The 74 t reading is an EXTRAPOLATION ~2.2 decades past the data, hedged twice by its own authors, and is</text>
+<text class="t" x="80.0" y="3256.6" font-size="9.5">   drawn dashed and hatched for that reason. A power law fitted in one range does not extrapolate through a regime change, and the fit will not warn you.</text>
+<text class="t" x="80.0" y="3268.8" font-size="9.5">· Not claimed: that St = 0.2–0.4 is a law, that it applies off cruise, or that any animal's St is an adaptation. It is a central tendency at cruise; individual scatter is large</text>
+<text class="t" x="80.0" y="3281.0" font-size="9.5">   (only 44% of 248 odontocete values fall in 0.225–0.275); the modelled optimum is size-dependent (0.15 → 0.8); and one bat's efficient cruise sits BELOW the 0.2 bound.</text>
+<text class="t" x="80.0" y="3293.2" font-size="9.5">· Not claimed: per-taxon Strouhal values for birds, sharks, bony fish or insects. This corpus does not carry them. The plate prints the gap ◇ rather than inventing points.</text>
+<text class="t" x="80.0" y="3305.4" font-size="9.5">· Not claimed: that Fr ≈ 0.5 is a universal gait-transition constant, or a mechanical limit. It is scoped to bipeds at 1 g; the mechanical ceiling is Fr = 1; and the measured</text>
+<text class="t" x="80.0" y="3317.6" font-size="9.5">   lunar transition was 1.39 ± 0.45. Nor is a measured absolute transition speed claimed — the 2.1 m·s⁻¹ is computed from Fr and L, not observed ◇.</text>
+<text class="t" x="80.0" y="3329.8" font-size="9.5">· Not claimed: that any exponent, band or threshold here is an OPTIMUM. Per Gould &amp; Lewontin (1979), drift, phylogenetic inertia, developmental constraint, pleiotropy and</text>
+<text class="t" x="80.0" y="3342.0" font-size="9.5">   frozen accidents produce values that optimise nothing — and an exponent is an unusually easy thing to find a story for after the fact. Every number here is a hypothesis</text>
+<text class="t" x="80.0" y="3354.2" font-size="9.5">   generator. Per M7, a design taken from this plate must still beat a TUNED baseline on a PRE-REGISTERED metric with a discriminator that collapses the gain, or it is NEGATIVE.</text>
+<text class="t" x="80.0" y="3366.4" font-size="9.5">· Not claimed: that anything here raises any UNI rung. A NATURE CITATION IS NEVER A UNI GATE. This plate contains ZERO UNI claims, and the honest program position is</text>
+<text class="t" x="80.0" y="3378.6" font-size="9.5">   unchanged by it: ~2 of 11+ developmental rungs earned, a developmental active-inference simulation. “Full human” and “beyond human” appear nowhere as targets —</text>
+<text class="t" x="80.0" y="3390.8" font-size="9.5">   they are permanent open questions, and reading one into a scaling law would be the exact lane-crossing this wing exists to prevent.</text>
+</svg>

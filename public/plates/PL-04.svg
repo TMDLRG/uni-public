@@ -1,0 +1,811 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2760" preserveAspectRatio="xMidYMid meet" role="img" class="pl04" aria-labelledby="pl04-title pl04-desc">
+<title id="pl04-title">Plate PL-04 — The cell: an engineered system with a budget</title>
+<desc id="pl04-desc">A labelled anatomical plate of a schematic cell. Nine numbered call-outs (plasma membrane, nucleus, mitochondrion, ATP synthase, ribosome, microtubule with kinesin, actin cortex, cytoplasm, receptor) each carry a measured value with units and an evidence class. Four detail figures enlarge the membrane in section, the F1 rotary motor, kinesin on a microtubule, and the ribosome. A budget table compares Escherichia coli with a mammalian cell. The drawing is schematic and not to scale; only the printed numbers are claims. Every number resolves to a row of the NATURE-LEDGER. Primary source: chapter NA-08, cell-level design.</desc>
+
+<style>
+  /*  PL-04 — palette. Restrained: ink, one sanguine accent, one muted grey-brown.
+      Every distinction that matters is carried by WORDS and by HATCH PATTERN,
+      never by hue alone — the plate must survive greyscale printing.
+      Host pages may override any --pl-* custom property.
+
+      SCOPING: every rule below is scoped under .pl04, and the vars sit on the
+      svg element itself, not on :root. An unscoped `text {}` rule, or a bare
+      :root, in a style block inside an INLINE svg is NOT scoped to that svg —
+      it would restyle the host document (this plate's class names — .title,
+      .note, .ref, .em — are generic enough to collide). The colophon claims
+      this plate renders standalone AND inline; that claim is only true when
+      scoped. Theme follows prefers-color-scheme AND an explicit data-theme,
+      as on the other nine plates — data-theme wins in both directions.
+
+      NOTE, learned here: style content in SVG is XML, not HTML — it is not
+      CDATA. A literal element tag written inside a CSS comment is parsed as
+      markup and silently breaks the document. Name tags in prose, never in
+      angle brackets, inside this block.                                        */
+  .pl04 {
+    --pl-bg:     #f7f3ea;
+    --pl-ink:    #1b1917;
+    --pl-line:   #33302a;
+    --pl-muted:  #6d6456;
+    --pl-accent: #8c3a2b;
+    --pl-hatch:  #6d6456;
+  }
+  @media (prefers-color-scheme: dark) {
+    .pl04 {
+      --pl-bg:     #14120f;
+      --pl-ink:    #ece7dc;
+      --pl-line:   #c6bfb1;
+      --pl-muted:  #9a9082;
+      --pl-accent: #e08d70;
+      --pl-hatch:  #8d8474;
+    }
+  }
+  :root[data-theme="dark"] .pl04, .pl04[data-theme="dark"] {
+    --pl-bg:     #14120f;
+    --pl-ink:    #ece7dc;
+    --pl-line:   #c6bfb1;
+    --pl-muted:  #9a9082;
+    --pl-accent: #e08d70;
+    --pl-hatch:  #8d8474;
+  }
+  :root[data-theme="light"] .pl04, .pl04[data-theme="light"] {
+    --pl-bg:     #f7f3ea;
+    --pl-ink:    #1b1917;
+    --pl-line:   #33302a;
+    --pl-muted:  #6d6456;
+    --pl-accent: #8c3a2b;
+    --pl-hatch:  #6d6456;
+  }
+
+  .pl04 .paper   { fill: var(--pl-bg, #f7f3ea); }
+  .pl04 text     { fill: var(--pl-ink, #1b1917);
+             font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
+                          "Times New Roman", Times, serif;
+             -webkit-font-smoothing: antialiased; }
+
+  /* ---- rules and frames ---- */
+  .pl04 .rule-heavy { stroke: var(--pl-line, #33302a); stroke-width: 1.6; }
+  .pl04 .rule-fine  { stroke: var(--pl-line, #33302a); stroke-width: 0.5; }
+  .pl04 .rule-hair  { stroke: var(--pl-muted, #6d6456); stroke-width: 0.4; }
+
+  /* ---- drawing line weights: fine, engraved ---- */
+  .pl04 .ln          { fill: none; stroke: var(--pl-line, #33302a); stroke-width: 1;
+                 stroke-linecap: round; stroke-linejoin: round; }
+  .pl04 .ln-heavy    { fill: none; stroke: var(--pl-line, #33302a); stroke-width: 1.7;
+                 stroke-linecap: round; stroke-linejoin: round; }
+  .pl04 .ln-fine     { fill: none; stroke: var(--pl-line, #33302a); stroke-width: 0.6;
+                 stroke-linecap: round; stroke-linejoin: round; }
+  .pl04 .ln-hair     { fill: none; stroke: var(--pl-muted, #6d6456); stroke-width: 0.45;
+                 stroke-linecap: round; }
+  .pl04 .ln-dash     { fill: none; stroke: var(--pl-muted, #6d6456); stroke-width: 0.7;
+                 stroke-dasharray: 3 3; }
+  .pl04 .fill-ink    { fill: var(--pl-ink, #1b1917); stroke: none; }
+  .pl04 .fill-paper  { fill: var(--pl-bg, #f7f3ea); }
+  .pl04 .fill-accent { fill: var(--pl-accent, #8c3a2b); stroke: none; }
+  .pl04 .ln-accent   { fill: none; stroke: var(--pl-accent, #8c3a2b); stroke-width: 1.1;
+                 stroke-linecap: round; }
+
+  /* ---- leaders ---- */
+  .pl04 .leader { fill: none; stroke: var(--pl-muted, #6d6456); stroke-width: 0.6; }
+  .pl04 .leader-dot { fill: var(--pl-accent, #8c3a2b); stroke: none; }
+
+  /* ---- type ---- */
+  .pl04 .eyebrow { font-size: 12px; letter-spacing: 3.2px; fill: var(--pl-muted, #6d6456);
+             text-transform: uppercase; }
+  .pl04 .title   { font-size: 34px; letter-spacing: 0.2px; }
+  .pl04 .subtitle{ font-size: 14px; font-style: italic; fill: var(--pl-muted, #6d6456); }
+  .pl04 .colophon{ font-size: 11px; fill: var(--pl-muted, #6d6456); letter-spacing: 0.3px; }
+
+  .pl04 .sec     { font-size: 14px; letter-spacing: 2.4px; }
+  .pl04 .figno   { font-size: 12.5px; letter-spacing: 1.8px; }
+  .pl04 .figcap  { font-size: 12px; font-style: italic; fill: var(--pl-muted, #6d6456); }
+
+  .pl04 .lbl     { font-size: 13px; letter-spacing: 1.5px; }
+  .pl04 .lbl-num { font-size: 13px; letter-spacing: 0; fill: var(--pl-accent, #8c3a2b); }
+  .pl04 .lbl-val { font-size: 11.5px; font-style: italic; fill: var(--pl-muted, #6d6456); }
+
+  .pl04 .cap     { font-size: 12px; }
+  .pl04 .cap-t   { font-size: 12px; letter-spacing: 1.4px; }
+  .pl04 .det     { font-size: 11.5px; }
+  .pl04 .tab     { font-size: 12px; }
+  .pl04 .tab-h   { font-size: 11px; letter-spacing: 1.6px; fill: var(--pl-muted, #6d6456); }
+  .pl04 .tab-l   { font-size: 12px; font-style: italic; fill: var(--pl-muted, #6d6456); }
+  .pl04 .note    { font-size: 11.5px; }
+  .pl04 .micro   { font-size: 9px; letter-spacing: 0.4px; fill: var(--pl-muted, #6d6456); }
+  .pl04 .micro-i { font-size: 9px; font-style: italic; fill: var(--pl-ink, #1b1917); }
+
+  /* Evidence class tag. The MEANING is in the letters, never in the colour —
+     colour is decoration only, so the plate reads identically in greyscale. */
+  .pl04 .cls     { font-size: 10.5px; letter-spacing: 1px; fill: var(--pl-accent, #8c3a2b); }
+  .pl04 .fence   { font-size: 10.5px; letter-spacing: 1px; fill: var(--pl-ink, #1b1917); }
+  .pl04 .em      { font-style: italic; }
+  .pl04 .ref     { fill: var(--pl-muted, #6d6456); }
+</style>
+
+<defs>
+  <!-- hatching: the region key. Distinguishable without colour. -->
+  <pattern id="p-cyto" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="var(--pl-hatch, #6d6456)" stroke-width="0.4"/>
+  </pattern>
+  <pattern id="p-nucleo" patternUnits="userSpaceOnUse" width="7" height="7">
+    <circle cx="1.8" cy="1.8" r="0.75" fill="var(--pl-hatch, #6d6456)"/>
+    <circle cx="5.2" cy="4.9" r="0.6" fill="var(--pl-hatch, #6d6456)"/>
+  </pattern>
+  <pattern id="p-matrix" patternUnits="userSpaceOnUse" width="5" height="5">
+    <line x1="0" y1="0.5" x2="5" y2="0.5" stroke="var(--pl-hatch, #6d6456)" stroke-width="0.4"/>
+  </pattern>
+  <pattern id="p-sub" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(-45)">
+    <line x1="0" y1="0" x2="0" y2="6" stroke="var(--pl-hatch, #6d6456)" stroke-width="0.45"/>
+  </pattern>
+
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--pl-line, #33302a)"/>
+  </marker>
+  <marker id="ar-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--pl-accent, #8c3a2b)"/>
+  </marker>
+  <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <line x1="5" y1="1" x2="5" y2="9" stroke="var(--pl-line, #33302a)" stroke-width="1"/>
+  </marker>
+
+  <!-- one lipid: head + two tails. Used in the membrane detail. -->
+  <g id="lipid">
+    <circle cx="0" cy="0" r="3.6" class="ln-fine"/>
+    <path d="M -1.5 3.4 C -2.2 12, -1.2 18, -1.8 24" class="ln-fine"/>
+    <path d="M  1.5 3.4 C  2.2 12,  1.2 18,  1.8 24" class="ln-fine"/>
+  </g>
+</defs>
+
+<rect class="paper" x="0" y="0" width="1600" height="2760"/>
+
+<!-- ============================== HEADER ============================== -->
+<text class="eyebrow" x="48" y="42">UNI Encyclopedia of Nature · Wing NATURA · Plate PL-04</text>
+<text class="title"   x="48" y="84">The Cell — an engineered system with a budget</text>
+<text class="subtitle" x="48" y="107">Every label carries its measured value, its units, its scope and its evidence class. Where the corpus has no sourced number, the label says so.</text>
+<text class="colophon" x="1552" y="42" text-anchor="end">PRIMARY SOURCE · NA-08 cell-level design</text>
+<text class="colophon" x="1552" y="60" text-anchor="end">SECONDARY · NA-10 scale ladder · CN-05 dna · CN-11 humans</text>
+<text class="colophon" x="1552" y="78" text-anchor="end">CLASSES · NA-00 as amended 2026-07-15 (twelve classes)</text>
+<text class="colophon" x="1552" y="96" text-anchor="end">EVERY NUMBER RESOLVES TO A ROW OF NATURE-LEDGER.md — OR SAYS, IN PLACE, THAT IT DOES NOT</text>
+<line class="rule-heavy" x1="48" y1="120" x2="1552" y2="120"/>
+<line class="rule-fine"  x1="48" y1="125" x2="1552" y2="125"/>
+
+<!-- ============================== FIG. 1 — THE CELL ============================== -->
+
+<!-- cytoplasm ground -->
+<path d="M 472 468 C 466 336, 604 208, 794 211 C 966 214, 1126 318, 1132 452 C 1138 574, 1014 694, 818 700 C 648 706, 484 604, 472 468 Z"
+      fill="url(#p-cyto)"/>
+
+<!-- plasma membrane: outer leaflet + inner leaflet (schematic double line) -->
+<path d="M 472 468 C 466 336, 604 208, 794 211 C 966 214, 1126 318, 1132 452 C 1138 574, 1014 694, 818 700 C 648 706, 484 604, 472 468 Z"
+      class="ln-heavy"/>
+<g transform="translate(802,455) scale(0.985) translate(-802,-455)">
+  <path d="M 472 468 C 466 336, 604 208, 794 211 C 966 214, 1126 318, 1132 452 C 1138 574, 1014 694, 818 700 C 648 706, 484 604, 472 468 Z"
+        class="ln-fine"/>
+</g>
+
+<!-- 7 · actin cortex: fine mesh just inside the membrane (left field) -->
+<g class="ln-hair">
+  <path d="M 492 386 C 520 400, 528 440, 520 486"/>
+  <path d="M 506 350 C 538 372, 552 424, 546 480"/>
+  <path d="M 524 574 C 556 566, 578 592, 584 626"/>
+  <path d="M 494 512 C 528 522, 546 560, 552 600"/>
+  <path d="M 486 440 C 522 452, 552 470, 588 476"/>
+  <path d="M 500 480 C 534 494, 566 512, 600 520"/>
+  <path d="M 552 620 C 588 616, 622 632, 656 650"/>
+  <path d="M 534 330 C 560 350, 590 358, 624 356"/>
+</g>
+
+<!-- 9 · receptors on the membrane (upper-left arc) -->
+<!-- each receptor straddles the bilayer on the local membrane normal:
+     stem crosses into the cytoplasm, ligand-binding head projects outward. -->
+<g class="ln-fine">
+  <path d="M 641 250 L 630 236"/><path d="M 625 239 L 635 232"/>
+  <path d="M 689 234 L 680 218"/><path d="M 675 221 L 686 215"/>
+  <path d="M 739 224 L 734 206"/><path d="M 728 208 L 740 205"/>
+</g>
+<!-- extracellular ligand: the thing being counted. Deliberately outside the cell. -->
+<g class="ln-hair">
+  <circle cx="616" cy="228" r="1.6"/><circle cx="660" cy="206" r="1.6"/>
+  <circle cx="712" cy="196" r="1.6"/><circle cx="766" cy="198" r="1.6"/>
+  <circle cx="640" cy="188" r="1.6"/><circle cx="690" cy="182" r="1.4"/>
+</g>
+
+<!-- 2 · nucleus: envelope (double), nucleoplasm stipple, disordered chromatin -->
+<circle cx="700" cy="400" r="118" fill="url(#p-nucleo)"/>
+<circle cx="700" cy="400" r="118" class="ln-heavy"/>
+<circle cx="700" cy="400" r="111" class="ln-fine"/>
+<!-- nuclear pores: paired ticks bridging the envelope -->
+<g class="ln-fine">
+  <path d="M 700 282 L 700 289"/><path d="M 712 283 L 711 290"/>
+  <path d="M 806 358 L 799 361"/><path d="M 810 370 L 803 372"/>
+  <path d="M 762 508 L 758 502"/><path d="M 751 515 L 748 508"/>
+  <path d="M 592 476 L 597 470"/><path d="M 583 466 L 589 461"/>
+  <path d="M 585 336 L 591 340"/><path d="M 594 325 L 599 330"/>
+</g>
+<!-- chromatin: a disordered curvilinear chain (Ou et al. 2017). The 30-nm fibre
+     is OBSERVED-CONTESTED in vivo (CN05-42) and is deliberately NOT drawn. -->
+<g class="ln-fine">
+  <path d="M 636 352 C 664 332, 690 356, 714 340 C 738 324, 764 342, 758 366
+           C 752 390, 716 380, 700 398 C 684 416, 706 438, 730 434"/>
+  <path d="M 648 424 C 668 442, 660 468, 686 470 C 712 472, 720 448, 744 456
+           C 768 464, 776 442, 766 420"/>
+  <path d="M 622 396 C 638 372, 616 350, 634 330"/>
+  <path d="M 662 470 C 636 466, 624 442, 630 420"/>
+  <path d="M 736 306 C 752 322, 780 320, 786 344 C 792 368, 772 380, 782 402"/>
+  <path d="M 668 316 C 686 302, 712 306, 726 296"/>
+</g>
+
+<!-- 5 · ribosomes: free stipple + a polysome on a strand of mRNA -->
+<g class="ln-fine">
+  <path d="M 872 306 C 918 286, 964 298, 1000 286" fill="none"/>
+</g>
+<g>
+  <g transform="translate(888,300)"><ellipse cx="0" cy="-3.5" rx="6.5" ry="5" class="ln-fine" fill="url(#p-sub)"/><ellipse cx="0" cy="3" rx="5" ry="3.4" class="ln-fine"/></g>
+  <g transform="translate(924,294)"><ellipse cx="0" cy="-3.5" rx="6.5" ry="5" class="ln-fine" fill="url(#p-sub)"/><ellipse cx="0" cy="3" rx="5" ry="3.4" class="ln-fine"/></g>
+  <g transform="translate(958,292)"><ellipse cx="0" cy="-3.5" rx="6.5" ry="5" class="ln-fine" fill="url(#p-sub)"/><ellipse cx="0" cy="3" rx="5" ry="3.4" class="ln-fine"/></g>
+  <g transform="translate(987,289)"><ellipse cx="0" cy="-3.5" rx="6.5" ry="5" class="ln-fine" fill="url(#p-sub)"/><ellipse cx="0" cy="3" rx="5" ry="3.4" class="ln-fine"/></g>
+</g>
+<g class="ln-hair">
+  <circle cx="872" cy="360" r="2.6"/><circle cx="906" cy="404" r="2.6"/>
+  <circle cx="852" cy="452" r="2.6"/><circle cx="944" cy="356" r="2.6"/>
+  <circle cx="890" cy="470" r="2.6"/><circle cx="820" cy="316" r="2.6"/>
+  <circle cx="962" cy="424" r="2.6"/><circle cx="600" cy="576" r="2.6"/>
+  <circle cx="660" cy="556" r="2.6"/><circle cx="556" cy="424" r="2.6"/>
+  <circle cx="726" cy="586" r="2.6"/><circle cx="1006" cy="392" r="2.6"/>
+  <circle cx="620" cy="290" r="2.6"/><circle cx="866" cy="536" r="2.6"/>
+</g>
+
+<!-- 3 · mitochondrion: outer + inner membrane, cristae, matrix hatch -->
+<g transform="rotate(-20 990 545)">
+  <ellipse cx="990" cy="545" rx="112" ry="54" fill="url(#p-matrix)"/>
+  <ellipse cx="990" cy="545" rx="112" ry="54" class="ln-heavy"/>
+  <ellipse cx="990" cy="545" rx="103" ry="45" class="ln-fine"/>
+  <!-- cristae: folds of the inner membrane -->
+  <g class="ln-fine">
+    <path d="M 930 502 C 940 522, 922 534, 934 552 C 944 568, 928 578, 936 588"/>
+    <path d="M 966 501 C 976 521, 958 533, 970 551 C 980 567, 964 577, 972 587"/>
+    <path d="M 1002 501 C 1012 521, 994 533, 1006 551 C 1016 567, 1000 577, 1008 587"/>
+    <path d="M 1038 504 C 1048 524, 1030 536, 1042 554 C 1050 568, 1038 576, 1044 584"/>
+  </g>
+  <!-- 4 · ATP synthase: lollipops on the inner membrane -->
+  <g class="ln-fine">
+    <path d="M 948 512 L 954 506"/><circle cx="957" cy="502" r="4.4" class="fill-accent"/>
+    <path d="M 984 512 L 990 506"/><circle cx="993" cy="502" r="4.4" class="fill-accent"/>
+    <path d="M 1020 512 L 1026 506"/><circle cx="1029" cy="502" r="4.4" class="fill-accent"/>
+    <path d="M 952 578 L 958 584"/><circle cx="961" cy="588" r="4.4" class="fill-accent"/>
+    <path d="M 1000 578 L 1006 584"/><circle cx="1009" cy="588" r="4.4" class="fill-accent"/>
+  </g>
+</g>
+
+<!-- 6 · microtubule with kinesin hauling a vesicle -->
+<g>
+  <path d="M 545 585 C 690 646, 850 654, 1000 622" class="ln"/>
+  <path d="M 545 601 C 690 662, 850 670, 1000 638" class="ln"/>
+  <!-- tubulin dimer ticks, sampled along the rail -->
+  <g class="ln-hair">
+    <path d="M 569 596 L 572 612"/><path d="M 597 606 L 600 622"/><path d="M 626 614 L 629 630"/>
+    <path d="M 655 622 L 658 638"/><path d="M 684 628 L 687 644"/><path d="M 713 633 L 716 649"/>
+    <path d="M 743 637 L 746 653"/><path d="M 772 639 L 775 655"/><path d="M 802 641 L 805 657"/>
+    <path d="M 831 641 L 834 657"/><path d="M 861 641 L 864 657"/><path d="M 890 639 L 893 655"/>
+    <path d="M 920 636 L 923 652"/><path d="M 949 632 L 952 648"/><path d="M 978 627 L 981 643"/>
+  </g>
+  <!-- kinesin: two heads on the lattice, coiled stalk, vesicle -->
+  <ellipse cx="782" cy="633" rx="9" ry="6" class="ln-fine" transform="rotate(6 782 633)"/>
+  <ellipse cx="806" cy="636" rx="9" ry="6" class="ln-fine" transform="rotate(6 806 636)"/>
+  <path d="M 788 628 C 796 612, 790 600, 796 586" class="ln-fine"/>
+  <path d="M 800 630 C 806 614, 798 600, 800 586" class="ln-fine"/>
+  <path d="M 796 586 C 793 580, 799 578, 800 586" class="ln-fine"/>
+  <circle cx="798" cy="562" r="22" class="ln" fill="none"/>
+  <circle cx="798" cy="562" r="16" class="ln-hair" fill="none"/>
+  <path d="M 858 618 L 906 615" class="ln-accent" marker-end="url(#ar-a)"/>
+</g>
+
+<!-- ========== Fig. 1 leaders + labels ========== -->
+<g class="leader">
+  <path d="M 450 278 L 514 337"/>
+  <path d="M 450 190 L 626 234"/>
+  <path d="M 450 428 L 498 442"/>
+  <path d="M 450 558 L 566 540"/>
+  <path d="M 1150 270 L 1004 288"/>
+  <path d="M 1150 378 L 816 394"/>
+  <path d="M 1150 498 L 1084 520"/>
+  <path d="M 1150 590 L 1036 566"/>
+  <path d="M 1150 674 L 1004 630"/>
+</g>
+<g class="leader-dot">
+  <circle cx="514" cy="337" r="2.2"/><circle cx="626" cy="234" r="2.2"/>
+  <circle cx="498" cy="442" r="2.2"/><circle cx="566" cy="540" r="2.2"/>
+  <circle cx="1004" cy="288" r="2.2"/><circle cx="816" cy="394" r="2.2"/>
+  <circle cx="1084" cy="520" r="2.2"/><circle cx="1036" cy="566" r="2.2"/>
+  <circle cx="1004" cy="630" r="2.2"/>
+</g>
+
+<!-- LEFT labels -->
+<text class="lbl" x="440" y="182" text-anchor="end"><tspan class="lbl-num">9 </tspan>RECEPTOR — SENSING</text>
+<text class="lbl-val" x="440" y="199" text-anchor="end">δc/c ~ (D·a·c·T)^(−1/2) · prefactor disputed</text>
+
+<text class="lbl" x="440" y="270" text-anchor="end"><tspan class="lbl-num">1 </tspan>PLASMA MEMBRANE</text>
+<text class="lbl-val" x="440" y="287" text-anchor="end">d = 4–5 nm · V_m ≈ −70 mV</text>
+<text class="lbl-val" x="440" y="302" text-anchor="end">E_m = 1.4–1.8 × 10⁷ V/m (modelled, V/d)</text>
+
+<text class="lbl" x="440" y="420" text-anchor="end"><tspan class="lbl-num">7 </tspan>ACTIN CORTEX</text>
+<text class="lbl-val" x="440" y="437" text-anchor="end">ℓ_p ≈ 17.7 µm — ≈294× softer than a microtubule</text>
+
+<text class="lbl" x="440" y="550" text-anchor="end"><tspan class="lbl-num">8 </tspan>CYTOPLASM — THE REGIME</text>
+<text class="lbl-val" x="440" y="567" text-anchor="end">Re ≈ 6 × 10⁻⁵ · Pe ≈ 0.06–0.1</text>
+<text class="lbl-val" x="440" y="582" text-anchor="end">D_GFP = 27 µm²/s (CHO) · t ≈ L²/(6D)</text>
+
+<!-- RIGHT labels -->
+<text class="lbl" x="1160" y="262"><tspan class="lbl-num">5 </tspan>RIBOSOME</text>
+<text class="lbl-val" x="1160" y="279">≈20 aa/s (E. coli) · 4 ATP per peptide bond</text>
+<text class="lbl-val" x="1160" y="294">error 10⁻⁴–10⁻³ per codon · diameter NOT-SOURCED</text>
+
+<text class="lbl" x="1160" y="370"><tspan class="lbl-num">2 </tspan>NUCLEUS</text>
+<text class="lbl-val" x="1160" y="387">diameter NOT-SOURCED · V ≈ 113 µm³ (modelled, d = 6 µm)</text>
+<text class="lbl-val" x="1160" y="402">2.08 m of DNA in ~5.8% of the volume · ε_final 10⁻⁸–10⁻¹⁰/nt</text>
+
+<text class="lbl" x="1160" y="490"><tspan class="lbl-num">3 </tspan>MITOCHONDRION</text>
+<text class="lbl-val" x="1160" y="507">length NOT-SOURCED · characteristic time NOT-MEASURED</text>
+<text class="lbl-val" x="1160" y="522">own genome 16,569 bp (human mtDNA)</text>
+
+<text class="lbl" x="1160" y="582"><tspan class="lbl-num">4 </tspan>ATP SYNTHASE (F₁)</text>
+<text class="lbl-val" x="1160" y="599">τ ≈ 40 pN·nm · ≈130 rev/s · 3 × 120° per turn</text>
+<text class="lbl-val" x="1160" y="614">80 pN·nm of work against 90 available</text>
+
+<text class="lbl" x="1160" y="666"><tspan class="lbl-num">6 </tspan>MICROTUBULE + KINESIN</text>
+<text class="lbl-val" x="1160" y="683">8 nm/step · 1 ATP/step · ≈0.5–1 µm/s</text>
+<text class="lbl-val" x="1160" y="698">stall 5–6 pN or 7–8 pN — assay-dependent</text>
+
+<text class="figno" x="800" y="742" text-anchor="middle">FIG. 1 — THE CELL, SCHEMATIC</text>
+<text class="figcap" x="800" y="760" text-anchor="middle">Not to scale, and not to any one organism. No drawn size, spacing or count on this figure is a measurement.</text>
+
+<line class="rule-fine" x1="48" y1="782" x2="1552" y2="782"/>
+
+<!-- ============================== FIG. 2–5 — THE DETAILS ============================== -->
+<text class="sec" x="48" y="812">THE DETAILS, AT NO STATED MAGNIFICATION</text>
+<line class="rule-hair" x1="48" y1="822" x2="1552" y2="822"/>
+
+<!-- ================ FIG. 2 — MEMBRANE IN SECTION ================ -->
+<g>
+  <circle cx="236" cy="900" r="78" class="ln-fine" fill="none"/>
+  <clipPath id="c2"><circle cx="236" cy="900" r="78"/></clipPath>
+  <g clip-path="url(#c2)">
+    <!-- outer leaflet (heads up, tails down) -->
+    <g>
+      <use href="#lipid" x="170" y="874"/><use href="#lipid" x="181" y="874"/>
+      <use href="#lipid" x="192" y="874"/><use href="#lipid" x="203" y="874"/>
+      <use href="#lipid" x="214" y="874"/><use href="#lipid" x="225" y="874"/>
+      <use href="#lipid" x="236" y="874"/><use href="#lipid" x="247" y="874"/>
+      <use href="#lipid" x="258" y="874"/><use href="#lipid" x="269" y="874"/>
+      <use href="#lipid" x="280" y="874"/><use href="#lipid" x="291" y="874"/>
+      <use href="#lipid" x="302" y="874"/>
+    </g>
+    <!-- inner leaflet: mirrored about the midplane y = 900 -->
+    <g transform="translate(0,1800) scale(1,-1)">
+      <use href="#lipid" x="170" y="874"/><use href="#lipid" x="181" y="874"/>
+      <use href="#lipid" x="192" y="874"/><use href="#lipid" x="203" y="874"/>
+      <use href="#lipid" x="214" y="874"/><use href="#lipid" x="225" y="874"/>
+      <use href="#lipid" x="236" y="874"/><use href="#lipid" x="247" y="874"/>
+      <use href="#lipid" x="258" y="874"/><use href="#lipid" x="269" y="874"/>
+      <use href="#lipid" x="280" y="874"/><use href="#lipid" x="291" y="874"/>
+      <use href="#lipid" x="302" y="874"/>
+    </g>
+    <!-- charge: outside positive, inside negative -->
+    <g class="ln-fine">
+      <path d="M 186 857 L 196 857 M 191 852 L 191 862"/>
+      <path d="M 226 857 L 236 857 M 231 852 L 231 862"/>
+      <path d="M 266 857 L 276 857 M 271 852 L 271 862"/>
+      <path d="M 186 940 L 196 940"/><path d="M 226 940 L 236 940"/>
+      <path d="M 266 940 L 276 940"/>
+    </g>
+    <!-- the field, spanning the bilayer and nothing else -->
+    <path d="M 208 868 L 208 934" class="ln-accent" marker-end="url(#ar-a)"/>
+    <text class="micro-i" x="213" y="904">E</text>
+  </g>
+  <!-- dimension: bilayer thickness, head-top to head-bottom -->
+  <g class="ln-fine">
+    <path d="M 318 870 L 336 870"/><path d="M 318 930 L 336 930"/>
+    <path d="M 330 870 L 330 930" marker-start="url(#tick)" marker-end="url(#tick)"/>
+  </g>
+  <text class="micro" x="340" y="884">4–5 nm</text>
+  <text class="micro" x="340" y="896">OBS-REP</text>
+  <text class="micro" x="236" y="838" text-anchor="middle">OUTSIDE  0 mV</text>
+  <text class="micro" x="236" y="962" text-anchor="middle">INSIDE  −70 mV</text>
+</g>
+<text class="figno" x="236" y="1000" text-anchor="middle">FIG. 2 — THE MEMBRANE</text>
+<text class="det" x="48" y="1022">
+  <tspan x="48">Bilayer thickness d = 4–5 nm <tspan class="cls">OBS-REP</tspan> [NA08-31]; a resting</tspan>
+  <tspan x="48" dy="14">neuron holds V_m ≈ −70 mV <tspan class="cls">OBS-REP</tspan> [NA08-32]. Divide:</tspan>
+  <tspan x="48" dy="14">E_m = V/d = 1.4–1.8 × 10⁷ V/m <tspan class="cls">MODEL</tspan> [NA08-33]. Dry air at</tspan>
+  <tspan x="48" dy="14">1 atm breaks down at ≈3 × 10⁶ V/m [NA08-34] — so the</tspan>
+  <tspan x="48" dy="14">membrane sustains ≈5× the field that makes air spark,</tspan>
+  <tspan x="48" dy="14">continuously, for decades, across a structure two molecules</tspan>
+  <tspan x="48" dy="14">thick. That is not a metaphor; it is V/d. Specific capacitance</tspan>
+  <tspan x="48" dy="14">C_m ≈ 1 µF/cm² (0.01 F/m²) <tspan class="cls">OBS-REP</tspan> [NA08-35], near-invariant</tspan>
+  <tspan x="48" dy="14">across cell types — bilayer thickness barely moves.</tspan>
+</text>
+
+<!-- ================ FIG. 3 — F1 ROTARY MOTOR ================ -->
+<g>
+  <circle cx="612" cy="900" r="78" class="ln-fine" fill="none"/>
+  <!-- stator ring -->
+  <circle cx="612" cy="900" r="52" class="ln" fill="none"/>
+  <circle cx="612" cy="900" r="44" fill="url(#p-sub)"/>
+  <circle cx="612" cy="900" r="44" class="ln-fine" fill="none"/>
+  <!-- three catalytic sectors at 90°, 210°, 330° -->
+  <g class="ln-fine">
+    <path d="M 612 900 L 612 944"/>
+    <path d="M 612 900 L 574 878"/>
+    <path d="M 612 900 L 650 878"/>
+  </g>
+  <!-- gamma shaft -->
+  <circle cx="612" cy="900" r="9" class="fill-accent"/>
+  <circle cx="612" cy="900" r="9" class="ln-fine" fill="none"/>
+  <!-- rotation arrow -->
+  <path d="M 612 838 A 62 62 0 0 1 666 870" class="ln-accent" marker-end="url(#ar-a)"/>
+  <!-- the 120 degree step -->
+  <path d="M 612 862 A 38 38 0 0 1 645 881" class="ln" fill="none" marker-end="url(#ar)"/>
+  <text class="micro-i" x="658" y="864" text-anchor="middle">120°</text>
+  <!-- the 90 + 30 substep -->
+  <path d="M 612 900 L 612 856" class="ln-dash"/>
+  <path d="M 612 900 L 650 878" class="ln-dash"/>
+  <text class="micro" x="612" y="840" text-anchor="middle">τ ≈ 40 pN·nm</text>
+  <text class="micro" x="612" y="950" text-anchor="middle">120° = ~90° + ~30°</text>
+  <text class="micro" x="612" y="966" text-anchor="middle">~130 rev/s</text>
+</g>
+<text class="figno" x="612" y="1000" text-anchor="middle">FIG. 3 — ATP SYNTHASE (F₁)</text>
+<text class="det" x="424" y="1022">
+  <tspan x="424">Noji et al. 1997 fixed an actin filament to the γ subunit and</tspan>
+  <tspan x="424" dy="14">watched it turn: one revolution = three discrete 120° steps,</tspan>
+  <tspan x="424" dy="14">each driven by one ATP. Torque τ_F1 ≈ 40 pN·nm, constant</tspan>
+  <tspan x="424" dy="14">across load and speed <tspan class="cls">OBS-REP</tspan> [NA08-14]. Work per 120° step</tspan>
+  <tspan x="424" dy="14">≈80 pN·nm against ≈90 pN·nm of available ATP free energy</tspan>
+  <tspan x="424" dy="14"><tspan class="cls">OBS-REP</tspan> [NA08-15] — it runs near the thermodynamic ceiling.</tspan>
+  <tspan x="424" dy="14">ω_F1 ≈ 130 rev/s at saturating ATP, the 120° resolving into</tspan>
+  <tspan x="424" dy="14">~90° + ~30° substeps <tspan class="cls">OBS-REP</tspan> [NA08-16]. In vivo ΔG_ATP =</tspan>
+  <tspan x="424" dy="14">−47 to −50 kJ/mol [NA08-12] — not ΔG°' [NA08-13].</tspan>
+</text>
+
+<!-- ================ FIG. 4 — KINESIN ================ -->
+<g>
+  <circle cx="988" cy="900" r="78" class="ln-fine" fill="none"/>
+  <clipPath id="c4"><circle cx="988" cy="900" r="78"/></clipPath>
+  <g clip-path="url(#c4)">
+    <!-- microtubule lattice: runs out of the field of view at both ends -->
+    <path d="M 908 920 L 1068 920" class="ln"/>
+    <path d="M 908 940 L 1068 940" class="ln"/>
+    <g class="ln-hair">
+      <path d="M 924 920 L 924 940"/><path d="M 940 920 L 940 940"/>
+      <path d="M 956 920 L 956 940"/><path d="M 972 920 L 972 940"/>
+      <path d="M 988 920 L 988 940"/><path d="M 1004 920 L 1004 940"/>
+      <path d="M 1020 920 L 1020 940"/><path d="M 1036 920 L 1036 940"/>
+      <path d="M 1052 920 L 1052 940"/>
+    </g>
+    <g class="ln-hair">
+      <circle cx="932" cy="930" r="1.2"/><circle cx="964" cy="930" r="1.2"/>
+      <circle cx="996" cy="930" r="1.2"/><circle cx="1028" cy="930" r="1.2"/>
+    </g>
+    <!-- kinesin: trailing + leading head, both bound to the lattice -->
+    <ellipse cx="964" cy="914" rx="10" ry="6.5" class="ln-fine"/>
+    <ellipse cx="996" cy="914" rx="10" ry="6.5" class="ln-fine"/>
+    <path d="M 970 908 C 978 894, 972 884, 980 872" class="ln-fine"/>
+    <path d="M 990 908 C 996 894, 988 884, 984 872" class="ln-fine"/>
+    <path d="M 980 872 C 976 864, 986 862, 984 872" class="ln-fine"/>
+    <circle cx="982" cy="856" r="17" class="ln" fill="none"/>
+    <circle cx="982" cy="856" r="11" class="ln-hair" fill="none"/>
+    <!-- the 8 nm step, bracketed below the lattice -->
+    <g class="ln-fine">
+      <path d="M 964 944 L 964 956"/><path d="M 996 944 L 996 956"/>
+      <path d="M 964 951 L 996 951" marker-start="url(#tick)" marker-end="url(#tick)"/>
+    </g>
+    <text class="micro" x="980" y="970" text-anchor="middle">8 nm</text>
+    <path d="M 1020 914 L 1048 914" class="ln-accent" marker-end="url(#ar-a)"/>
+  </g>
+</g>
+<text class="figno" x="988" y="1000" text-anchor="middle">FIG. 4 — KINESIN ON A MICROTUBULE</text>
+<text class="det" x="800" y="1022">
+  <tspan x="800">A 1 m axon cannot deliver a protein by diffusion — that would</tspan>
+  <tspan x="800" dy="14">take ~195 yr [NA08-03]. So it does not: kinesin walks the cargo.</tspan>
+  <tspan x="800" dy="14">Step d_kin = 8 nm <tspan class="cls">OBS-REP</tspan> [NA08-17], one ATP per 8-nm step</tspan>
+  <tspan x="800" dy="14"><tspan class="cls">OBS-REP</tspan> [NA08-18], v_kin ≈ 0.5–1 µm/s (commonly ~0.8) at</tspan>
+  <tspan x="800" dy="14">saturating ATP, near-zero load, in vitro <tspan class="cls">OBS-REP</tspan> [NA08-20].</tspan>
+  <tspan x="800" dy="14">Stall force F_stall,kin = 5–6 pN (Svoboda &amp; Block 1994) OR 7–8 pN</tspan>
+  <tspan x="800" dy="14">(force clamp, Visscher et al. 1999) <tspan class="cls">OBS-CON</tspan> [NA08-19].</tspan>
+  <tspan x="800" dy="14">Carry both. Name the assay. Do not average them — the spread</tspan>
+  <tspan x="800" dy="14">is the measurement's, and averaging it away invents a number.</tspan>
+</text>
+
+<!-- ================ FIG. 5 — RIBOSOME ================ -->
+<g>
+  <circle cx="1364" cy="900" r="78" class="ln-fine" fill="none"/>
+  <clipPath id="c5"><circle cx="1364" cy="900" r="78"/></clipPath>
+  <g clip-path="url(#c5)">
+    <!-- large subunit -->
+    <path d="M 1332 862 C 1358 850, 1394 856, 1404 876 C 1412 894, 1402 910, 1384 914
+             C 1360 918, 1332 912, 1324 896 C 1318 882, 1322 868, 1332 862 Z"
+          fill="url(#p-sub)"/>
+    <path d="M 1332 862 C 1358 850, 1394 856, 1404 876 C 1412 894, 1402 910, 1384 914
+             C 1360 918, 1332 912, 1324 896 C 1318 882, 1322 868, 1332 862 Z" class="ln"/>
+    <!-- small subunit -->
+    <path d="M 1332 922 C 1356 914, 1390 920, 1394 934 C 1398 948, 1372 954, 1350 950
+             C 1332 946, 1324 930, 1332 922 Z" fill="url(#p-sub)"/>
+    <path d="M 1332 922 C 1356 914, 1390 920, 1394 934 C 1398 948, 1372 954, 1350 950
+             C 1332 946, 1324 930, 1332 922 Z" class="ln"/>
+    <!-- mRNA threading the interface; it runs out of the field of view both ways -->
+    <path d="M 1292 926 C 1322 918, 1400 926, 1434 918" class="ln-accent"/>
+    <g class="ln-hair">
+      <path d="M 1310 923 L 1310 929"/><path d="M 1330 921 L 1330 927"/>
+      <path d="M 1350 921 L 1350 927"/><path d="M 1370 923 L 1370 929"/>
+      <path d="M 1390 924 L 1390 930"/><path d="M 1410 923 L 1410 929"/>
+    </g>
+    <!-- tRNA in the A and P sites -->
+    <path d="M 1362 920 L 1362 902 L 1374 896" class="ln-fine"/>
+    <path d="M 1344 920 L 1344 904 L 1334 898" class="ln-fine"/>
+    <!-- nascent chain out of the exit tunnel -->
+    <g class="ln-fine">
+      <path d="M 1366 860 C 1378 853, 1358 846, 1368 838 C 1374 834, 1364 832, 1368 829"/>
+      <circle cx="1366" cy="860" r="2.4"/><circle cx="1375" cy="851" r="2.4"/>
+      <circle cx="1361" cy="844" r="2.4"/><circle cx="1370" cy="836" r="2.4"/>
+      <circle cx="1368" cy="829" r="2.4"/>
+    </g>
+    <text class="micro" x="1364" y="962" text-anchor="middle">≈20 aa/s</text>
+    <path d="M 1400 944 L 1424 940" class="ln-accent" marker-end="url(#ar-a)"/>
+  </g>
+</g>
+<text class="figno" x="1364" y="1000" text-anchor="middle">FIG. 5 — THE RIBOSOME</text>
+<text class="det" x="1176" y="1022">
+  <tspan x="1176">Rate r_rib,ec ≈ 20 aa/s (range 4–22, growth-rate dependent)</tspan>
+  <tspan x="1176" dy="14"><tspan class="cls">OBS-REP</tspan> [NA08-23]; r_rib,euk = 3–10 aa/s (yeast, 30 °C), ≈6 aa/s</tspan>
+  <tspan x="1176" dy="14">(mouse ES) <tspan class="cls">OBS-REP</tspan> [NA08-24]. Error ε_rib = 10⁻⁴–10⁻³ per</tspan>
+  <tspan x="1176" dy="14">codon <tspan class="cls">OBS-REP</tspan> [NA08-25], against ε_final = 10⁻⁸–10⁻¹⁰/nt</tspan>
+  <tspan x="1176" dy="14">[NA08-30]: 10⁴–10⁷× sloppier <tspan class="cls">MODEL</tspan> — the full span those two</tspan>
+  <tspan x="1176" dy="14">rows allow, and it sets per-codon against per-nt. Sloppier is a</tspan>
+  <tspan x="1176" dy="14">design choice, not a defect: proteins are disposable, the genome</tspan>
+  <tspan x="1176" dy="14">is not. Each peptide bond costs c_pep = 4 ATP <tspan class="cls">OBS-REP</tspan> [NA08-10]</tspan>
+  <tspan x="1176" dy="14">— 2 from pyrophosphate release at tRNA charging, 1 GTP for each</tspan>
+  <tspan x="1176" dy="14">of two elongation factors. Building the polymer is the budget.</tspan>
+</text>
+
+<line class="rule-fine" x1="48" y1="1180" x2="1552" y2="1180"/>
+
+<!-- ============================== THE BUDGET ============================== -->
+<text class="sec" x="48" y="1212">THE BUDGET — A JUST-IN-TIME SYSTEM WITH NO RESERVOIR</text>
+<line class="rule-hair" x1="48" y1="1222" x2="1552" y2="1222"/>
+
+<text class="tab-h" x="200" y="1248">ESCHERICHIA COLI</text>
+<text class="tab-h" x="830" y="1248">MAMMALIAN CELL</text>
+<line class="rule-hair" x1="48" y1="1258" x2="1552" y2="1258"/>
+
+<text class="tab-l" x="48"  y="1282">ATP consumed</text>
+<text class="tab"   x="200" y="1282">~10⁷ per second   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-07]</tspan></text>
+<text class="tab"   x="830" y="1282">~10⁹ per second   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-08]</tspan></text>
+
+<text class="tab-l" x="48"  y="1306">Power</text>
+<text class="tab"   x="200" y="1306">~10⁻¹² W   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-09]</tspan></text>
+<text class="tab"   x="830" y="1306">~3 × 10⁻¹⁰ W   <tspan class="ref">(NA-08 energy table; BNID 111474/111475 — no ledger row)</tspan></text>
+
+<text class="tab-l" x="48"  y="1330">Specific power</text>
+<text class="tab"   x="200" y="1330">~1,000 W/kg   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-09]</tspan></text>
+<text class="tab"   x="830" y="1330">~100 W/kg   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[CN11-16]</tspan></text>
+
+<text class="tab-l" x="48"  y="1354">Scope</text>
+<text class="tab"   x="200" y="1354"><tspan class="em">growing; glucose minimal media</tspan></text>
+<text class="tab"   x="830" y="1354"><tspan class="em">fibroblast, ~3,000 µm³</tspan></text>
+
+<text class="tab-l" x="48"  y="1378">Dominant sink</text>
+<text class="tab"   x="200" y="1378">protein synthesis — ≈61% of total ATP</text>
+<text class="tab"   x="830" y="1378">ion pumping — ≈50%, via the Na⁺/K⁺-ATPase (grey matter)   <tspan class="ref">(NA-08; A&amp;L 2001 + Howarth 2012 — no ledger row)</tspan></text>
+<text class="tab"   x="200" y="1400">(19.1 of 31.4 mmol ATP/g cells)   <tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-11]</tspan></text>
+<text class="tab"   x="830" y="1400">1 ATP per 3 Na⁺ extruded   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-49]</tspan></text>
+<text class="tab"   x="200" y="1422">c_pep = 4 ATP per peptide bond   <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-10]</tspan></text>
+<text class="tab"   x="830" y="1422">Signalling split: action potentials 47 / postsynaptic glutamate 34 /</text>
+<text class="tab"   x="200" y="1444">DNA, lipid and wall synthesis are rounding</text>
+<text class="tab"   x="830" y="1444">resting potential 13 / glutamate recycling 3 (% of signalling ATP)</text>
+<text class="tab"   x="200" y="1466">errors beside the polymer.</text>
+<text class="tab"   x="830" y="1466"><tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-48]</tspan> — a modelled apportionment for rodent grey matter,</text>
+<text class="tab"   x="830" y="1488">not per-process measurement. Attwell &amp; Laughlin 2001: cite only with</text>
+<text class="tab"   x="830" y="1510">the Howarth, Gleeson &amp; Attwell 2012 revision named.</text>
+
+<line class="rule-hair" x1="48" y1="1530" x2="770" y2="1530"/>
+<text class="note" x="48" y="1554">
+  <tspan x="48"><tspan class="fence">NO RESERVOIR.</tspan> NA-08 states that <tspan class="em">E. coli</tspan> turns over its entire ATP</tspan>
+  <tspan x="48" dy="15">pool in about one second. This pass located no primary for that</tspan>
+  <tspan x="48" dy="15">figure, so it is carried <tspan class="cls">NOT-SRC</tspan> and not as a measurement.</tspan>
+  <tspan x="48" dy="15">Falsifier: produce the primary source, or strike the value. The</tspan>
+  <tspan x="48" dy="15">lesson it carries is the chapter's: there is no buffer, which is</tspan>
+  <tspan x="48" dy="15">why the cell's power supply cannot be interrupted.</tspan>
+</text>
+
+<line class="rule-fine" x1="48" y1="1656" x2="1552" y2="1656"/>
+
+<!-- ============================== THE CEILING ============================== -->
+<text class="sec" x="48" y="1688">THE CEILING — WHAT SETS THE SIZE, AND WHAT IT COSTS TO EXCEED IT</text>
+<line class="rule-hair" x1="48" y1="1698" x2="1552" y2="1698"/>
+<text class="note" x="48" y="1722">
+  <tspan x="48">Two constraints, both punishing size, both quadratic-or-worse. <tspan class="fence">SURFACE.</tspan> S/V = 3/R — ≈6 µm⁻¹ at R = 0.5 µm (<tspan class="em">E. coli</tspan>) against ≈0.3 µm⁻¹ at R = 10 µm</tspan>
+  <tspan x="48" dy="16">(mammalian) <tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-04]</tspan> — a 20-fold cut in nutrient-flux area per unit of metabolising cytoplasm. Volume grows as R³, uptake area as R²: growth is self-strangling.</tspan>
+  <tspan x="48" dy="16"><tspan class="fence">TRANSPORT.</tspan> t ≈ L²/(6D), taking D = 27 µm²/s <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-02]</tspan> — 1 µm → 6.2 ms (free) · 10 µm → 0.62 s (tolerable) · 100 µm → 62 s (already a problem) ·</tspan>
+  <tspan x="48" dy="16">1 mm → ~1.7 h (broken) · 1 m → ~6.2 × 10⁹ s ≈ 195 yr <tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-03]</tspan>. The exponent is the whole story: distance is quadratic in time; double the cell, quadruple the wait.</tspan>
+  <tspan x="48" dy="16">A motor neuron running from spinal cord to toe cannot use diffusion — not inefficiently, <tspan class="em">not at all</tspan>. Kinesin at ~0.8 µm/s covers 1 m in ~1.25 × 10⁶ s ≈ 14 d <tspan class="cls">MODEL</tspan>, computed</tspan>
+  <tspan x="48" dy="16">in-chapter from v_kin <tspan class="ref">[NA08-20]</tspan>: a motor beats diffusion by ~4 orders of magnitude over that span. <tspan class="em">E. coli</tspan> sits at ~1 µm × ~2 µm, ~1 µm³ ≈ 1 fL (NA-08; BNID 100004; Milo &amp;</tspan>
+  <tspan x="48" dy="16">Phillips 2015 — no ledger row), inside the band where diffusion is still free. <tspan class="fence">THE APPARENT EXCEPTION.</tspan> <tspan class="em">Thiomargarita namibiensis</tspan> reaches 750 µm <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-05]</tspan> — but</tspan>
+  <tspan x="48" dy="16">80–98% of its volume is a nitrate vacuole and its living cytoplasm is a shell ~1–2 µm thick <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-06]</tspan>. The diffusion length that carries the flux is still ~1–2 µm. It got big</tspan>
+  <tspan x="48" dy="16">by making most of itself not cytoplasm. <tspan class="em">The constraint was obeyed, not defeated</tspan> — when a case looks like a counterexample, find the length scale that actually carries the flux.</tspan>
+</text>
+
+<line class="rule-fine" x1="48" y1="1866" x2="1552" y2="1866"/>
+
+<!-- ============================== THE CAPTION ============================== -->
+<text class="sec" x="48" y="1898">THE PLATE, NUMBERED</text>
+<line class="rule-hair" x1="48" y1="1908" x2="1552" y2="1908"/>
+
+<!-- ==== caption column 1 ==== -->
+<text class="cap" x="48" y="1932">
+  <tspan x="48" class="cap-t">1 · PLASMA MEMBRANE — FIG. 2</tspan>
+  <tspan x="48" dy="17">d_bilayer = 4–5 nm <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-31]</tspan>. V_m ≈ −70 mV <tspan class="cls">OBS-REP</tspan></tspan>
+  <tspan x="48" dy="14.5">(resting neuron) <tspan class="ref">[NA08-32]</tspan>. E_m = 1.4–1.8 × 10⁷ V/m <tspan class="cls">MODEL</tspan></tspan>
+  <tspan x="48" dy="14.5"><tspan class="ref">[NA08-33]</tspan> — computed as V/d from the two rows above, not</tspan>
+  <tspan x="48" dy="14.5">measured directly; the assumptions are the fence. C_m ≈ 1 µF/cm²</tspan>
+  <tspan x="48" dy="14.5">(0.01 F/m²) <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-35]</tspan>, near-invariant across cell types.</tspan>
+  <tspan x="48" dy="14.5">Why a bilayer and nothing else: it is the only structure that is</tspan>
+  <tspan x="48" dy="14.5">at once self-assembling, self-healing, fluid enough for embedded</tspan>
+  <tspan x="48" dy="14.5">proteins to diffuse, and insulating enough to hold 10⁷ V/m.</tspan>
+</text>
+<text class="cap" x="48" y="2090">
+  <tspan x="48" class="cap-t">2 · NUCLEUS</tspan>
+  <tspan x="48" dy="17">Diameter: <tspan class="cls">NOT-SRC</tspan> — this corpus carries no sourced measurement.</tspan>
+  <tspan x="48" dy="14.5">CN-05 <tspan class="em">assumes</tspan> a sphere, d = 6 µm, to model volume: V_nucleus ≈</tspan>
+  <tspan x="48" dy="14.5">113 µm³ <tspan class="cls">MODEL</tspan> <tspan class="ref">[CN05-38]</tspan>. L_DNA = 1.04 m haploid (2.08 m diploid)</tspan>
+  <tspan x="48" dy="14.5"><tspan class="cls">MODEL</tspan> <tspan class="ref">[CN05-37]</tspan>; f_DNA,vol ≈ 5.8% of nuclear volume <tspan class="cls">MODEL</tspan></tspan>
+  <tspan x="48" dy="14.5"><tspan class="ref">[CN05-39]</tspan> — the nucleus is ~94% not-DNA, so packing is a topology</tspan>
+  <tspan x="48" dy="14.5">and access problem, not a space problem. Volume was never the</tspan>
+  <tspan x="48" dy="14.5">constraint. Linear packing ratio ≈ 3.5 × 10⁵ <tspan class="cls">MODEL</tspan> <tspan class="ref">[CN05-40]</tspan>.</tspan>
+  <tspan x="48" dy="14.5">Genome fidelity ε_final = 10⁻⁸–10⁻¹⁰ per nt <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-30]</tspan> — a</tspan>
+  <tspan x="48" dy="14.5">systems property, not a component property, bought with three</tspan>
+  <tspan x="48" dy="14.5">cheap layers: polymerase selectivity alone ε_pol ≈ 10⁻⁴–10⁻⁵</tspan>
+  <tspan x="48" dy="14.5"><tspan class="ref">[NA08-28]</tspan>, + exonucleolytic proofreading ≈ 10⁻⁶–10⁻⁷ <tspan class="ref">[NA08-29]</tspan>,</tspan>
+  <tspan x="48" dy="14.5">+ mismatch repair. Quoting 10⁻¹⁰ as the polymerase's own error</tspan>
+  <tspan x="48" dy="14.5">rate is the recorded conflation trap. Chromatin is drawn as a</tspan>
+  <tspan x="48" dy="14.5">disordered curvilinear chain (Ou et al. 2017); the 30-nm fibre is</tspan>
+  <tspan x="48" dy="14.5"><tspan class="cls">OBS-CON</tspan> in vivo <tspan class="ref">[CN05-42]</tspan> and is deliberately not drawn here.</tspan>
+</text>
+
+<!-- ==== caption column 2 ==== -->
+<text class="cap" x="553" y="1932">
+  <tspan x="553" class="cap-t">3 · MITOCHONDRION</tspan>
+  <tspan x="553" dy="17">Length: <tspan class="cls">NOT-SRC</tspan>. NA-10's scale ladder prints a rung-6 value;</tspan>
+  <tspan x="553" dy="14.5">that chapter's own gate struck it as carrying no source, and this</tspan>
+  <tspan x="553" dy="14.5">plate does not re-import it. Characteristic time: <tspan class="cls">NOT-MEAS</tspan> as a</tspan>
+  <tspan x="553" dy="14.5">single quantity <tspan class="ref">[NA-10, rung 6]</tspan>. The two fences are not inter-</tspan>
+  <tspan x="553" dy="14.5">changeable: <tspan class="cls">NOT-MEAS</tspan> is nature's absence, <tspan class="cls">NOT-SRC</tspan> is ours.</tspan>
+  <tspan x="553" dy="14.5">Own genome: 16,569 bp (human mtDNA, T2T-CHM13) <tspan class="cls">OBS-REP</tspan></tspan>
+  <tspan x="553" dy="14.5"><tspan class="ref">[CN05-17]</tspan>. Blanket: double membrane, own genome, own fission</tspan>
+  <tspan x="553" dy="14.5"><tspan class="ref">[NA-10, rung 6]</tspan> — a former rung-7 blanket demoted to an</tspan>
+  <tspan x="553" dy="14.5">organelle's. Observables named, values not carried here: ΔΨm and</tspan>
+  <tspan x="553" dy="14.5">ATP flux. A micron across, and it has a boundary; a galaxy is</tspan>
+  <tspan x="553" dy="14.5">enormous and has none. Size is not what makes a blanket.</tspan>
+</text>
+<text class="cap" x="553" y="2119">
+  <tspan x="553" class="cap-t">4 · ATP SYNTHASE (F₁) — FIG. 3</tspan>
+  <tspan x="553" dy="17">τ_F1 ≈ 40 pN·nm <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-14]</tspan> — torque constant across load</tspan>
+  <tspan x="553" dy="14.5">and speed. One revolution = three discrete 120° steps, each driven</tspan>
+  <tspan x="553" dy="14.5">by one ATP; each 120° resolves into ~90° + ~30° substeps.</tspan>
+  <tspan x="553" dy="14.5">W_F1 ≈ 80 pN·nm per 120° step against ~90 pN·nm available</tspan>
+  <tspan x="553" dy="14.5"><tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-15]</tspan> — operating near the thermodynamic ceiling.</tspan>
+  <tspan x="553" dy="14.5">ω_F1 ≈ 130 rev/s at saturating ATP <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-16]</tspan>. The</tspan>
+  <tspan x="553" dy="14.5">free energy it works against: in vivo ΔG_ATP = −47 to −50 kJ/mol</tspan>
+  <tspan x="553" dy="14.5">(≈20 k_BT ≈ 80–90 pN·nm) <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-12]</tspan> — which is <tspan class="em">not</tspan> the</tspan>
+  <tspan x="553" dy="14.5">standard-condition ΔG°' = −28 to −34 kJ/mol (≈12 k_BT) <tspan class="cls">OBS-REP</tspan></tspan>
+  <tspan x="553" dy="14.5"><tspan class="ref">[NA08-13]</tspan>. The two are measured at different conditions, they</tspan>
+  <tspan x="553" dy="14.5">differ by ~8 k_BT, and swapping them breaks the energy budget.</tspan>
+</text>
+<text class="cap" x="553" y="2317">
+  <tspan x="553" class="cap-t">5 · RIBOSOME — FIG. 5</tspan>
+  <tspan x="553" dy="17">Diameter: <tspan class="cls">NOT-SRC</tspan> — no sourced row in this corpus. See Fig. 5</tspan>
+  <tspan x="553" dy="14.5">for rate, error and cost, all of which <tspan class="em">are</tspan> sourced.</tspan>
+</text>
+
+<!-- ==== caption column 3 ==== -->
+<text class="cap" x="1058" y="1932">
+  <tspan x="1058" class="cap-t">6 · MICROTUBULE + KINESIN — FIG. 4</tspan>
+  <tspan x="1058" dy="17">Kinesin's numbers are at Fig. 4. The rail it walks on:</tspan>
+  <tspan x="1058" dy="14.5">κ_MT = 2.2 × 10⁻²³ N·m² (±6.4%); 2.1 × 10⁻²³ (±4.7%, rhodamine)</tspan>
+  <tspan x="1058" dy="14.5"><tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-36]</tspan>, taxol-stabilised, flexural rigidity (Gittes et</tspan>
+  <tspan x="1058" dy="14.5">al. 1993). Persistence length ℓ_p,MT ≈ 5,200 µm — 5.2 mm — from</tspan>
+  <tspan x="1058" dy="14.5">ℓ_p = κ/k_BT <tspan class="cls">OBS-REP</tspan> <tspan class="ref">[NA08-37]</tspan>: a filament nanometres wide whose</tspan>
+  <tspan x="1058" dy="14.5">bending length is millimetres. Fenced: whether ℓ_p,MT varies with</tspan>
+  <tspan x="1058" dy="14.5">filament length is contested <tspan class="cls">OBS-CON</tspan> <tspan class="ref">[NA08-38]</tspan> — Pampaloni et</tspan>
+  <tspan x="1058" dy="14.5">al. 2006 report a length-dependence, which contradicts a single</tspan>
+  <tspan x="1058" dy="14.5">MT constant. Both positions travel; neither is resolved here.</tspan>
+</text>
+<text class="cap" x="1058" y="2090">
+  <tspan x="1058" class="cap-t">7 · ACTIN CORTEX</tspan>
+  <tspan x="1058" dy="17">ℓ_p,actin ≈ 17.7 µm <tspan class="cls">OBS-REP</tspan> (rhodamine-phalloidin) <tspan class="ref">[NA08-39]</tspan>.</tspan>
+  <tspan x="1058" dy="14.5">Ratio ℓ_p,MT/ℓ_p,actin ≈ 294 (~300×) <tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-40]</tspan> — computed</tspan>
+  <tspan x="1058" dy="14.5">from the two Gittes et al. 1993 values: one stiff beam and one</tspan>
+  <tspan x="1058" dy="14.5">flexible cable, in the same cytoplasm, from one paper.</tspan>
+</text>
+<text class="cap" x="1058" y="2177">
+  <tspan x="1058" class="cap-t">8 · CYTOPLASM — THE REGIME</tspan>
+  <tspan x="1058" dy="17">Re ≈ 6 × 10⁻⁵ <tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-43]</tspan> (<tspan class="em">E. coli</tspan>: v ≈ 3 × 10⁻⁵ m/s, L = 2 µm,</tspan>
+  <tspan x="1058" dy="14.5">ρ = 10³ kg/m³, µ = 10⁻³ Pa·s; inputs order-of-magnitude, Purcell</tspan>
+  <tspan x="1058" dy="14.5">1977) — inertia does not exist; stop coasting. Pe ≈ 0.06–0.1</tspan>
+  <tspan x="1058" dy="14.5"><tspan class="cls">MODEL</tspan> <tspan class="ref">[NA08-44]</tspan> (D ~ 10⁻⁹ m²/s, small molecule) — stirring is</tspan>
+  <tspan x="1058" dy="14.5">useless at this scale: you cannot mix your way out, you can only</tspan>
+  <tspan x="1058" dy="14.5">wait or pump. D_GFP,euk = 27 µm²/s <tspan class="cls">OBS-REP</tspan> (GFP-S65T, CHO)</tspan>
+  <tspan x="1058" dy="14.5"><tspan class="ref">[NA08-02]</tspan>; D_GFP,ec = 7.7 ± 2.5 µm²/s <tspan class="cls">OBS-REP</tspan> (GFP 27 kDa,</tspan>
+  <tspan x="1058" dy="14.5"><tspan class="em">E. coli</tspan>, FRAP) <tspan class="ref">[NA08-01]</tspan>. Convention: t ≈ L²/(6D) is 3D. State it.</tspan>
+</text>
+<text class="cap" x="1058" y="2317">
+  <tspan x="1058" class="cap-t">9 · RECEPTOR — THE SENSING FLOOR</tspan>
+  <tspan x="1058" dy="17">δc/c ~ (D·a·c·T)^(−1/2) <tspan class="cls">OBS-REP</tspan> as a scaling <tspan class="ref">[NA08-41]</tspan> (Berg &amp;</tspan>
+  <tspan x="1058" dy="14.5">Purcell 1977). To halve the error, quadruple the integration time:</tspan>
+  <tspan x="1058" dy="14.5">a speed–accuracy tradeoff derived from physics. The prefactor is</tspan>
+  <tspan x="1058" dy="14.5">disputed <tspan class="cls">OBS-CON</tspan> <tspan class="ref">[NA08-42]</tspan> — Kaizu et al. 2014 report a factor</tspan>
+  <tspan x="1058" dy="14.5">1/(2(1−n̄)) missing from Bialek &amp; Setayeshgar 2005. The scaling is</tspan>
+  <tspan x="1058" dy="14.5">settled; the constant is not, so no closed form is printed here.</tspan>
+</text>
+
+<line class="rule-fine" x1="48" y1="2432" x2="1552" y2="2432"/>
+
+<!-- ============================== KEY + NOT CLAIMED ============================== -->
+<text class="sec" x="48"   y="2462">KEY</text>
+<text class="sec" x="553"  y="2462">THIS PLATE DOES NOT CLAIM</text>
+<line class="rule-hair" x1="48" y1="2472" x2="1552" y2="2472"/>
+
+<text class="det" x="48" y="2494">
+  <tspan x="48"><tspan class="cls">OBS-REP</tspan> OBSERVED-REPLICATED · <tspan class="cls">OBS-CON</tspan> OBSERVED-CONTESTED ·</tspan>
+  <tspan x="48" dy="14"><tspan class="cls">MODEL</tspan> MODELED · <tspan class="cls">NOT-SRC</tspan> NOT-SOURCED · <tspan class="cls">NOT-MEAS</tspan> NOT-MEASURED.</tspan>
+  <tspan x="48" dy="14">Abbreviated for the plate; canonical strings in NA-00 (twelve classes,</tspan>
+  <tspan x="48" dy="14">three groups) and in NATURE-LEDGER.md. <tspan class="cls">MODEL</tspan> means the assumptions</tspan>
+  <tspan x="48" dy="14">are the fence. <tspan class="cls">OBS-CON</tspan> means both positions are carried on purpose.</tspan>
+  <tspan x="48" dy="14"><tspan class="fence">NOT-MEASURED and NOT-SOURCED are never merged</tspan> — nature has not been</tspan>
+  <tspan x="48" dy="14">asked, versus we cannot say who asked. One gap is nature's, one is ours;</tspan>
+  <tspan x="48" dy="14">they take different repairs, and collapsing them lets a research failure</tspan>
+  <tspan x="48" dy="14">pass as a discovery about the frontier. <tspan class="ref">[NA08-31]</tspan> = a row id in</tspan>
+  <tspan x="48" dy="14">encyclopedia/NATURE-LEDGER.md, carrying its own scope, source and</tspan>
+  <tspan x="48" dy="14">falsifier. <tspan class="fence">THREE NUMBERS HERE HAVE NO LEDGER ROW</tspan> — mammalian power,</tspan>
+  <tspan x="48" dy="14"><tspan class="em">E. coli</tspan> size, and the ion-pumping share. Each traces to NA-08 on disk and</tspan>
+  <tspan x="48" dy="14">names its source in place, but no row carries its scope and falsifier. They</tspan>
+  <tspan x="48" dy="14">are a repair queue against the ledger, not a licence. Colour carries no</tspan>
+  <tspan x="48" dy="14">meaning here — the plate reads identically in greyscale. <tspan class="fence">HATCHING:</tspan></tspan>
+  <tspan x="48" dy="14">diagonal = cytoplasm · stipple = nucleoplasm · horizontal = mitochondrial</tspan>
+  <tspan x="48" dy="14">matrix · double line = a lipid bilayer.</tspan>
+</text>
+
+<text class="det" x="553" y="2494">
+  <tspan x="553"><tspan class="fence">NOT TO SCALE.</tspan> No drawn dimension, proportion, position or count on</tspan>
+  <tspan x="553" dy="14">this plate is a measurement. The drawing is schematic throughout; only</tspan>
+  <tspan x="553" dy="14">the printed numbers are claims. A 4–5 nm bilayer and a 6 µm nucleus</tspan>
+  <tspan x="553" dy="14">cannot share one drawing at one scale, and this one does not try.</tspan>
+  <tspan x="553" dy="14"><tspan class="fence">NOT ONE CELL.</tspan> The figure is a composite. <tspan class="em">E. coli</tspan>-scoped and mammalian-</tspan>
+  <tspan x="553" dy="14">scoped numbers are labelled by scope and are never averaged. No</tspan>
+  <tspan x="553" dy="14">organism has this budget.</tspan>
+  <tspan x="553" dy="14"><tspan class="fence">NOT AN OPTIMUM.</tspan> Per Gould &amp; Lewontin (1979), nothing here establishes</tspan>
+  <tspan x="553" dy="14">any cellular feature as optimal. Phylogenetic inertia, drift, constraint</tspan>
+  <tspan x="553" dy="14">and contingency produce features that solve nothing. Nature's authority</tspan>
+  <tspan x="553" dy="14">is precisely and only this: it ran a very long parallel search under real</tspan>
+  <tspan x="553" dy="14">physical constraints in which the failures were deleted. That makes</tspan>
+  <tspan x="553" dy="14">every number here a hypothesis generator, not a proof.</tspan>
+</text>
+
+<text class="det" x="1058" y="2494">
+  <tspan x="1058"><tspan class="fence">NOT A UNI GATE.</tspan> Every class on this plate is NATURA — nature's observed</tspan>
+  <tspan x="1058" dy="14">regularities. A nature citation NEVER raises a UNI rung. The NATURA</tspan>
+  <tspan x="1058" dy="14">vocabulary and the UNI ledger vocabulary (proven / designed /</tspan>
+  <tspan x="1058" dy="14">hypothesized / not-yet-built) describe different kinds of claim and</tspan>
+  <tspan x="1058" dy="14">never merge. This plate contains zero UNI claims.</tspan>
+  <tspan x="1058" dy="14"><tspan class="fence">NOT COGNITION.</tspan> "Bounded inference" at 9 is a statistical description of</tspan>
+  <tspan x="1058" dy="14">a physical process. Nothing here claims that a cell is aware, sentient,</tspan>
+  <tspan x="1058" dy="14">or that it knows anything. Berg &amp; Purcell bound an estimate; a bound is</tspan>
+  <tspan x="1058" dy="14">not an experience.</tspan>
+  <tspan x="1058" dy="14"><tspan class="fence">NOT A CONSTRUCTION PLAN.</tspan> Nothing here is a roadmap to building a cell,</tspan>
+  <tspan x="1058" dy="14">and nothing here bears on "full human" or "beyond human" — permanent</tspan>
+  <tspan x="1058" dy="14">open questions, never targets, never deliverables.</tspan>
+  <tspan x="1058" dy="14"><tspan class="fence">NOT EXHAUSTIVE.</tspan> Cytoplasmic streaming, syncytia and multinucleation are</tspan>
+  <tspan x="1058" dy="14">named size-ceiling workarounds and are not analysed here.</tspan>
+</text>
+
+<line class="rule-heavy" x1="48" y1="2712" x2="1552" y2="2712"/>
+<text class="colophon" x="48" y="2732">UNI Encyclopedia of Nature · wing NATURA · PLATE PL-04 · sidecar PL-04.json carries every claim as a row with its scope, class, source and falsifier.</text>
+<text class="colophon" x="1552" y="2732" text-anchor="end">DESIGN-ONLY · no script · no event handler · no external reference · renders standalone and inline</text>
+</svg>
