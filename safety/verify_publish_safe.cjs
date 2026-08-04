@@ -106,6 +106,49 @@ const STRUCTURAL = [
   ["credential-assignment", /[A-Za-z_][A-Za-z0-9_.]*(?:password|passwd|secret|cookie|api_?key)\s*=\s*(?!\[redacted)(?![A-Za-z_$][\w$]*[.(])[^\s"'`,;)\][]+/gi],
 ];
 
+// ─── COMMITTED CATEGORY RULES — the operator's DECLARED CATEGORIES, safe to publish ──────────────
+//
+// ADDED 2026-08-04, after the operator ruled the OAS- prefix in. This is a third rule table, with a
+// deliberate boundary against the two above and one below.
+//
+//   STRUCTURAL              — shapes (regexes) that describe FORMATS: AWS keys, PEM blocks, private
+//                             IP ranges. Safe to publish because they name a shape, not a secret.
+//   COMMITTED_CATEGORY      — case-insensitive substrings that name a CATEGORY the operator has
+//                             chosen to defend across. A project-key prefix like "OAS-" is the
+//                             archetype: knowing "OAS-" is defended tells an attacker NOTHING about
+//                             what any specific ticket is or contains. It is a category, and a
+//                             category rule catches every sibling automatically — which is the
+//                             defect that this file's denied-value check on its own could not close.
+//   patterns.local.json     — actual sensitive VALUES ("Bill Ihrie", the QA hostname). Gitignored,
+//                             because listing these publicly WOULD be a machine-readable index of
+//                             the secrets they name.
+//
+// A rule belongs HERE, not in patterns.local.json, when publishing the rule itself leaks nothing.
+// A rule belongs THERE when publishing the rule IS publishing the thing it protects. The test is
+// concrete: could a stranger reading this array learn anything they did not already know? If yes,
+// move it to patterns.local.json.
+//
+// WHY THIS IS THE DURABLE FIX. patterns.local.json's header calls itself "GENERATED, NEVER
+// COMMITTED" from "the private control workspace". Measurement 2026-08-04: there IS no generator
+// on this box; the file is hand-maintained and the header is a discipline label, not a build step.
+// So a value written into patterns.local.json today survives forever by accident, not by design —
+// and any future generator someone WRITES could silently drop it. A rule written here, in the
+// COMMITTED gate source, is durable by construction: it is what the gate runs, it lives in one
+// place, and its regeneration story is `git`. The receipt that carried the temporary version of
+// this rule flagged the durability gap explicitly (see UNI.Minecraft/docs/receipts/
+// voice_camera_supervision_2026-08-04.md); this closes it.
+//
+// FALSE-POSITIVE COST, stated rather than hidden: this is a case-insensitive substring test, not a
+// word-boundary regex. A word ending in "oas" immediately followed by a hyphen would match. That is
+// unlikely enough in this corpus to be acceptable, and if it ever bites, the fix is to promote the
+// rule to a proper /\bOAS-\d+/i regex here — not to loosen or remove the rule.
+const COMMITTED_CATEGORY = [
+  // The operator's project key. Supersedes the four literals OAS-788/789/790/808 that used to sit
+  // in patterns.local.json (operator's ruling 2026-08-04). Catches every ticket in the key,
+  // including siblings not yet declared — which is the whole point.
+  ["oas-ticket-prefix", "OAS-"],
+];
+
 // Paths that must never exist in this repo at all, by name.
 const FORBIDDEN_PATHS = [
   /(^|[\\/])session-history([\\/]|$)/i,
@@ -206,23 +249,28 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
           found.slice(0, 8).map((f) => `${f.rel} [${f.label} x${f.n}]`).join(" · "));
   }
 
-  // ─── 5. THE OPERATOR'S DENIED VALUES ────────────────────────────────────────────────────────
-  if (denied && Array.isArray(denied.values) && denied.values.length) {
+  // ─── 5. THE OPERATOR'S DENIED VALUES + COMMITTED CATEGORY RULES ────────────────────────────
+  // Two sources, one pass, one report. Values from patterns.local.json are reported as [denied#N]
+  // exactly as before (index-only, so the log stays paste-safe). Committed category rules from
+  // COMMITTED_CATEGORY above are reported by their LABEL (e.g. [cat:oas-ticket-prefix]) because
+  // those labels are already public — they live in this file, which ships. See the block above
+  // for why category rules belong in the committed source rather than in patterns.local.json.
+  if (denied && Array.isArray(denied.values)) {
     const tracked = trackedFiles().filter(isTextish).filter((f) => !SELF.test(f));
     const found = [];
+    const denyList = denied.values.map((v, i) => ({ needle: String(v).toLowerCase(), tag: `denied#${i}`, kind: "local" }));
+    const catList = COMMITTED_CATEGORY.map(([label, sub]) => ({ needle: String(sub).toLowerCase(), tag: `cat:${label}`, kind: "committed" }));
+    const all = denyList.concat(catList);
     for (const rel of tracked) {
       let src;
       try { src = fs.readFileSync(path.join(REPO, rel), "utf8").toLowerCase(); } catch { continue; }
-      denied.values.forEach((v, i) => {
-        const needle = String(v).toLowerCase();
-        if (needle && src.includes(needle)) found.push(`${rel} [denied#${i}]`);
-      });
+      for (const r of all) if (r.needle && src.includes(r.needle)) found.push(`${rel} [${r.tag}]`);
     }
     found.length === 0
-      ? ok("no operator-denied value appears in any tracked file",
-          `${denied.values.length} denied value(s) checked against ${tracked.length} file(s). Reported by INDEX, never by value, ` +
-          `so this gate's own output is safe to paste into a log or a pull request.`)
-      : bad("no operator-denied value appears in any tracked file", `${found.length} hit(s): ${found.slice(0, 6).join(" · ")}`);
+      ? ok("no operator-denied value or category rule appears in any tracked file",
+          `${denied.values.length} denied value(s) + ${COMMITTED_CATEGORY.length} committed category rule(s) checked against ${tracked.length} file(s). ` +
+          `Values are reported by INDEX (safe to paste); committed rules by LABEL, since they already ship in this file.`)
+      : bad("no operator-denied value or category rule appears in any tracked file", `${found.length} hit(s): ${found.slice(0, 8).join(" · ")}`);
   }
 
   // ─── 5b. THE BUILT OUTPUT — what actually ships ─────────────────────────────────────────────
@@ -265,13 +313,19 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
           denied.values.forEach((v, i) => {
             if (v && low.includes(String(v).toLowerCase())) found.push(`out/${rel} [denied#${i}]`);
           });
+          // Committed category rules apply to the export just as they apply to source.
+          // Reported by label rather than index (the label already ships in this file).
+          for (const [label, sub] of COMMITTED_CATEGORY) {
+            if (sub && low.includes(String(sub).toLowerCase())) found.push(`out/${rel} [cat:${label}]`);
+          }
         }
       }
       found.length === 0
         ? ok("the exported site was scanned, and it is what actually ships",
             `${files.length} exported file(s), ${scanned.length} scanned as text — every HTML page, JS chunk, ` +
-            `CSS file, JSON blob, source map and SVG — against ${STRUCTURAL.length} structural patterns and ` +
-            `${denied && denied.values ? denied.values.length : 0} denied value(s). Source files being clean does ` +
+            `CSS file, JSON blob, source map and SVG — against ${STRUCTURAL.length} structural patterns, ` +
+            `${denied && denied.values ? denied.values.length : 0} denied value(s), and ` +
+            `${COMMITTED_CATEGORY.length} committed category rule(s). Source files being clean does ` +
             `not make the export clean; they are different sets.`)
         : bad("the exported site was scanned, and it is what actually ships", found.slice(0, 8).join(" · "));
     }
@@ -368,6 +422,31 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
       pass: FORBIDDEN_PATHS.some((re) => re.test("docs/session-history/x.jsonl.gz")),
       detail: "docs/session-history/x.jsonl.gz",
     });
+    // COMMITTED CATEGORY: every rule declared above must actually bite on a sample that contains
+    // the substring, and NOT bite on a sample that avoids it. If a category rule fires nowhere, it
+    // is not a rule, it is a comment - and a comment that reads as a rule is worse than either.
+    // A negative control per rule catches the mistake of using a substring so short or generic
+    // that it convicts ordinary prose (see the false-positive cost note above the declaration).
+    const runCategory = (text) => {
+      const low = text.toLowerCase();
+      for (const [label, sub] of COMMITTED_CATEGORY) if (sub && low.includes(String(sub).toLowerCase())) return label;
+      return null;
+    };
+    const catCases = [
+      // Each entry: [label, positive sample that must hit, negative sample that must NOT hit].
+      ["oas-ticket-prefix", "See ticket OAS-999 for details.", "See ticket ABC-999 for details."],
+    ];
+    for (const [label, pos, neg] of catCases) {
+      const posHit = runCategory(pos);
+      const negHit = runCategory(neg);
+      muts.push({
+        label: `category rule '${label}' bites AND does not convict a negative`,
+        pass: posHit === label && negHit !== label,
+        detail: posHit === label && negHit !== label
+          ? `caught the positive as [${posHit}] and left the negative clean`
+          : `positive=${posHit || "MISSED"} negative=${negHit || "clean"} — a category rule with no positive proof is decoration, and one that fires on the negative sample would false-positive`,
+      });
+    }
     try { fs.rmSync(tmp, { recursive: true, force: true }); } catch { /* noop */ }
   }
 
