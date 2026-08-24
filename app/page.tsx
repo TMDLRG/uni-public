@@ -1,11 +1,28 @@
 import { estate, block } from "./lib/estate";
 import { Cite } from "./components/Cite";
+import docs from "../content/generated/docs.json";
 
 type GateBlock = { total: number; ci_true: number; ci_false: number; citation: any };
 type PlanBlock = { steps: number; stages: number; tally: Record<string, number>; citation: any };
 type ModBlock = { count: number; lines: number; citation: any };
 
+/**
+ * CITATION RESOLVABILITY IS COUNTED, NEVER TYPED. The paragraph below used to assert that none of
+ * the source repositories could be opened. That was true when written and stopped being true on
+ * 2026-08-02, when three redacted snapshots were published and the citation machinery began
+ * resolving against them -- and the sentence stayed on the FRONT PAGE for 22 days, contradicting
+ * this site's own manifest. A typed number is a claim with a half-life; this one is derived.
+ */
+function citationTally() {
+  const pages = (docs as { pages: { citation?: { resolvable?: boolean; repo?: string } }[] }).pages;
+  const total = pages.length;
+  const open = pages.filter((p) => p.citation?.resolvable).length;
+  const closedRepos = [...new Set(pages.filter((p) => !p.citation?.resolvable).map((p) => p.citation?.repo).filter(Boolean))];
+  return { total, open, closed: total - open, closedRepos };
+}
+
 export default function Home() {
+  const cites = citationTally();
   const gates = block<GateBlock>("uni-minecraft", "gate-registry");
   const plan = block<PlanBlock>("uni-minecraft", "plan");
   const mods = block<ModBlock>("uni-minecraft", "module-map");
@@ -103,10 +120,24 @@ export default function Home() {
       <h2>What this site does not claim</h2>
       <section className="card">
         <p>
-          <b>The source repositories are not public yet.</b> Every citation here names a real repo,
-          branch, commit and path — and today none of them can be opened, so each one says so on its
-          face. That is deliberate. A citation you cannot follow is an appeal to authority, and
-          marking it is the difference between documentation and a brochure.
+          <b>Most citations open, and what they open is frozen.</b> Every citation here names a real
+          repo, branch, commit and path. {cites.open} of {cites.total} page citations resolve into a
+          public, <i>redacted, frozen snapshot</i> of the source repository, taken 2026-08-02 — one
+          commit, no history — so what you open is that tree as it stood on that day, not as it
+          stands now. The working repositories themselves stay private. The remaining{" "}
+          {cites.closed} belong to {cites.closedRepos.join(", ")}, which has no published snapshot,
+          and they say so on their face rather than emitting a link that would 404. A citation you
+          cannot follow is an appeal to authority, and marking it is the difference between
+          documentation and a brochure.
+        </p>
+        <p className="dim">
+          <b>Corrected 2026-08-24.</b> This paragraph read <i>“The source repositories are not public
+          yet … today none of them can be opened.”</i> That stopped being true on 2026-08-02, when the
+          snapshots were published and the citations began resolving against them, and the sentence
+          stayed on this page for the 22 days since — contradicting the site&rsquo;s own manifest, on
+          the one page most readers see. The counts above are now derived from the manifest at build
+          time rather than typed, because that is the only version of this sentence that cannot rot
+          again. The original wording is quoted rather than removed.
         </p>
         <p>
           <b>Passing gates are not proof of biological parity.</b> The estate's own contract is

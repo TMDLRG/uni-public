@@ -3,16 +3,16 @@ lens_schema: 1
 scope: article
 key: start-here
 corpus: 
-source_sha256: b4e1bac874b330b8
-source_body_sha256: b4e1bac874b330b8
+source_sha256: 4cf5f1d63a10cae6
+source_body_sha256: 4cf5f1d63a10cae6
 source_title: Start here
-source_words: 747
+source_words: 868
 authored_by: claude-opus-5
-authored_at: 2026-08-01
+authored_at: 2026-08-24
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 2026-08-24 the source moved. A count of executable checks was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.
+note: 2026-08-24 the source moved. The article corrected a claim that no source repository could be opened, which had been false since 2026-08-02. The lens repeated that claim and is corrected with it.
 ---
 <!--PLAIN-->
 
@@ -61,6 +61,9 @@ confuse you if nobody says it first.
 
 It closes with a reading order and with what the site is not claiming: passing gates are not
 biological parity, not general intelligence, not human parity. Where a claim is not established the
-site says so rather than choosing a comfortable reading. And the source repositories are not public
-yet, so every citation names a real file you cannot open — which the article marks rather than
-hides, on the grounds that a citation you cannot follow is an appeal to authority.
+site says so rather than choosing a comfortable reading. And the working repositories stay private while most citations
+do open, into a frozen snapshot published on a stated day, so what a reader reaches is that tree as
+it stood then rather than as it stands now. Where no snapshot exists the citation says it cannot be
+opened rather than emitting a link that would fail, on the grounds that a citation you cannot follow
+is an appeal to authority. The article carries a correction to that passage, which for a time said
+none of them could be opened after that had stopped being true.

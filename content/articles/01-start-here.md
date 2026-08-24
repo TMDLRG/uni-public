@@ -97,6 +97,15 @@ estate's own contract says so explicitly, and separates observation from reconst
 simulation as a matter of rule rather than of taste. Where a claim is not established, this site says
 NOT ESTABLISHED rather than choosing a comfortable reading.
 
-The source repositories are **not public yet**, so every citation on this site names a real file at a
-real commit and tells you it cannot be opened. A citation you cannot follow is an appeal to
-authority; marking it is the difference between documentation and a brochure.
+The working repositories stay private, but **most citations do open** — into a redacted, frozen
+snapshot published on 2026-08-02, one commit deep with no history. So a citation names a real file at
+a real commit, and what opens is that tree as it stood on that day rather than as it stands now.
+Where no snapshot exists, the citation says it cannot be opened instead of emitting a link that would
+fail. A citation you cannot follow is an appeal to authority; marking it is the difference between
+documentation and a brochure.
+
+> **Corrected 2026-08-24.** This paragraph said the source repositories were *not public yet* and
+> that every citation *tells you it cannot be opened*. That stopped being true on 2026-08-02, when
+> the snapshots were published, and the sentence stood for the 22 days since while the site's own
+> manifest recorded the opposite. It is quoted rather than deleted, because a correction that erases
+> what it corrects leaves no record of having been wrong.

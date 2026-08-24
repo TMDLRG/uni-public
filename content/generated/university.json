@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-24T15:57:17.982Z",
+  "read_at": "2026-08-24T20:35:16.577Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -79,7 +79,8 @@
         "visibility": "public",
         "resolvable": true,
         "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "public_url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench"
+        "public_url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench",
+        "snapshot": null
       }
     },
     {
@@ -94,7 +95,7 @@
       "one_line": "A pure-Elixir categorical active-inference colony: embodied agents living in a real Minecraft world, each running one mean-field predict-act tick as its life, with a broadcast platform built over it.",
       "why_it_is_here": "It is the world where the agents actually live, and the home of the Function Designer Card that compiles a declarative model description into a runnable brain.",
       "measured": {
-        "file_count": 22512,
+        "file_count": 22602,
         "languages": [
           {
             "name": "Elixir",
@@ -121,7 +122,7 @@
             "files": 46
           }
         ],
-        "uncommitted": 1,
+        "uncommitted": 2,
         "ahead_behind": {
           "ahead": 9,
           "behind": 0
@@ -136,7 +137,15 @@
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
-        "public_url": "https://github.com/TMDLRG/uni-minecraft"
+        "public_url": "https://github.com/TMDLRG/uni-minecraft",
+        "snapshot": {
+          "repo": "uni-minecraft",
+          "taken": "2026-08-02",
+          "commits": 1,
+          "measured_on": "2026-08-24",
+          "history": "squashed - no history",
+          "url": "https://github.com/TMDLRG/uni-minecraft"
+        }
       }
     },
     {
@@ -193,7 +202,15 @@
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
-        "public_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
+        "public_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack",
+        "snapshot": {
+          "repo": "uni-flagellum-motor-stack",
+          "taken": "2026-08-02",
+          "commits": 1,
+          "measured_on": "2026-08-24",
+          "history": "squashed - no history",
+          "url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
+        }
       }
     },
     {
@@ -246,7 +263,15 @@
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-cookbook",
-        "public_url": "https://github.com/TMDLRG/uni-cookbook"
+        "public_url": "https://github.com/TMDLRG/uni-cookbook",
+        "snapshot": {
+          "repo": "uni-cookbook",
+          "taken": "2026-08-02",
+          "commits": 1,
+          "measured_on": "2026-08-24",
+          "history": "squashed - no history",
+          "url": "https://github.com/TMDLRG/uni-cookbook"
+        }
       }
     },
     {
@@ -261,7 +286,7 @@
       "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
       "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
       "measured": {
-        "file_count": 413,
+        "file_count": 416,
         "languages": [
           {
             "name": "Markdown",
@@ -269,22 +294,22 @@
           },
           {
             "name": "TypeScript",
-            "files": 25
+            "files": 26
           },
           {
             "name": "JSON",
-            "files": 24
+            "files": 25
           },
           {
             "name": "JavaScript",
-            "files": 23
+            "files": 24
           },
           {
             "name": "CSS",
             "files": 1
           }
         ],
-        "uncommitted": 2,
+        "uncommitted": 3,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -294,12 +319,13 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "ea156503439f8d045af9dc741b5330bcdbe59738",
-        "commit_short": "ea156503439f",
+        "commit": "e4c9d262273cc0f50503d95013c3bffc6ec97402",
+        "commit_short": "e4c9d262273c",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
-        "public_url": "https://github.com/TMDLRG/uni-public"
+        "public_url": "https://github.com/TMDLRG/uni-public",
+        "snapshot": null
       }
     }
   ],

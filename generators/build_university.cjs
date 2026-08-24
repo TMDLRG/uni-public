@@ -162,6 +162,12 @@ function main() {
       resolvable: p.visibility === "public",
       public_repo: p.public_repo || undefined,
       public_url: p.public_repo ? `https://github.com/TMDLRG/${p.public_repo}` : undefined,
+      // A FROZEN PUBLIC SNAPSHOT IS NOT THE SAME AS A PUBLIC REPOSITORY, and conflating them made
+      // this page tell readers a door could not be opened when it could. Carried separately, with
+      // what it actually is, so the door can open AND still say the commit beside it is not in there.
+      snapshot: p.public_snapshot
+        ? { ...p.public_snapshot, url: `https://github.com/TMDLRG/${p.public_snapshot.repo}` }
+        : null,
     };
 
     projects.push({

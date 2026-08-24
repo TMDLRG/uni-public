@@ -57,6 +57,7 @@ type Project = {
     repo: string; title: string; branch: string; commit_short: string;
     visibility: "public" | "private"; resolvable: boolean;
     public_repo?: string; public_url?: string;
+    snapshot?: { repo: string; url: string; taken: string; commits: number; history: string; measured_on: string } | null;
   };
 };
 
@@ -98,7 +99,11 @@ function Door({ p }: { p: Project }) {
   return (
     <article className="project-door">
       <header>
-        <h3>{c.resolvable ? <a href={c.public_url} rel="noreferrer">{p.title}</a> : p.title}</h3>
+        <h3>
+          {c.resolvable ? <a href={c.public_url} rel="noreferrer">{p.title}</a>
+            : c.snapshot ? <a href={c.snapshot.url} rel="noreferrer">{p.title}</a>
+            : p.title}
+        </h3>
         <p className="door-state">
           <span className={`pill ${pillFor(p.maturity.value)}`}>{p.maturity.value}</span>
           <span className="declared-note"> declared, not measured</span>
@@ -136,7 +141,19 @@ function Door({ p }: { p: Project }) {
         {c.title} @ {c.commit_short} ({c.branch}){" "}
         {c.resolvable
           ? <>— <a href={c.public_url} rel="noreferrer">open the repository</a></>
-          : <span className="unresolved">— this repository is not public yet, so this door cannot be opened. It is listed because leaving it out would make this hallway claim a completeness it does not have.</span>}
+          : c.snapshot
+            ? <>
+                — the working repository is private. A redacted{" "}
+                <a href={c.snapshot.url} rel="noreferrer">frozen snapshot</a> of it is public: taken{" "}
+                {c.snapshot.taken}, {c.snapshot.commits} commit, {c.snapshot.history}.{" "}
+                <span className="unresolved">
+                  The commit above is the private working commit these figures were read at and is
+                  not in that snapshot, so nothing here deep-links into it. Anything you open there
+                  is as the tree stood on {c.snapshot.taken}, not as it stands now.
+                </span>{" "}
+                <span className="dim">(snapshot state measured {c.snapshot.measured_on})</span>
+              </>
+            : <span className="unresolved">— this repository is not public and has no published snapshot, so this door cannot be opened. It is listed because leaving it out would make this hallway claim a completeness it does not have.</span>}
       </div>
     </article>
   );
