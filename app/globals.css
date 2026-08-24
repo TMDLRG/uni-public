@@ -293,3 +293,22 @@ figure.quote figcaption b { color: var(--ok); }
 .door:hover, .door:focus-visible { border-color: var(--acc); }
 .door b { display: block; font-size: 17px; color: var(--acc); margin-bottom: 6px; }
 .reassure { color: var(--dim); font-size: 15px; text-align: center; margin: 18px auto; max-width: 60ch; }
+
+/* THE HALLWAY (/hall).
+   Named project-door, NOT door: .door is already the OnRamp anchor-tile and its `.door b` rule
+   would restyle content inside these cards. Two different things must not share a class name. */
+.project-doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin: 18px 0 28px; }
+.project-door { background: var(--pnl); border: 1px solid var(--ln); border-radius: var(--r); padding: 18px 20px; }
+.project-door h3 { margin: 0 0 6px; font-size: 18px; }
+.project-door > p { margin: 8px 0; }
+.door-state { margin: 0 0 10px !important; }
+/* The declared/measured distinction is carried in the type itself, not only in the words: a claim
+   renders smaller and quieter than the measurements beside it. */
+.declared-note { font-size: 12px; color: var(--dim); margin-left: 8px; }
+.measured { display: grid; grid-template-columns: 1fr; gap: 6px; margin: 14px 0; font-size: 14px; }
+.measured > div { display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: baseline; }
+.measured dt { color: var(--dim); font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+.measured dd { margin: 0; }
+/* .unresolved was only ever styled inside .cite; the hallway also uses it inside a <dd> to mark a
+   stated absence, so it needs to carry the same warning colour wherever it appears. */
+.unresolved { color: var(--warn); }

@@ -29,6 +29,10 @@ const NAV = [
   // Second, deliberately. A visitor who arrives mid-broadcast wants to know what is being worked on
   // and what it is stuck on before they want the archive.
   { href: "/live/", label: "Live" },
+  // /hall is the corridor: one door per project, placed here because a visitor who has just been
+  // told what is happening now wants to know what the estate IS before they read about it. It sits
+  // ahead of Articles for the same reason Live sits ahead of the archive.
+  { href: "/hall/", label: "The hallway" },
   { href: "/articles/", label: "Articles" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },

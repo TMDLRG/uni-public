@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "schema": "uni.public.university/1.0.0",
+  "generated_by": "generators/build_university.cjs",
+  "read_at": "2026-08-24T15:57:17.982Z",
+  "note": [
+    "Every measured number here was read from the repository named in its citation, at the commit",
+    "named in that citation. Nothing on this page is typed.",
+    "maturity is the one exception and it says so per row: it is an operator's claim, not a",
+    "measurement, because no generator can measure whether a thing is finished.",
+    "Projects that could not be measured on this machine are listed under `skipped` with the reason,",
+    "rather than omitted — a silently shortened list would claim a completeness it does not have."
+  ],
+  "maturity_vocabulary": {
+    "running": "a process answers on a port, or a deployed URL responds, right now",
+    "built": "code exists and runs when started; nothing is answering at read time",
+    "design-only": "specified in documents; the code does not exist yet",
+    "contradicted": "was tried and the evidence went against it — kept visible on purpose",
+    "archived": "superseded or duplicated by another entry; retained for history"
+  },
+  "counts": {
+    "declared": 5,
+    "measured": 5,
+    "skipped": 0
+  },
+  "roots_note": null,
+  "projects": [
+    {
+      "id": "workbench",
+      "title": "The ORCHESTRATE Active Inference Workbench",
+      "wing": "teaching",
+      "maturity": {
+        "value": "built",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "one_line": "A pedagogical BEAM-native active-inference workbench: discrete-time POMDP with mean-field variational message passing and an expected-free-energy-weighted policy posterior, plus a 10-chapter curriculum, a visual model builder, and browser learning labs.",
+      "why_it_is_here": "It is the teaching faculty. It already holds a working model builder, a four-level learning ladder and a runnable cookbook — the University links to it rather than rebuilding it.",
+      "measured": {
+        "file_count": 2085,
+        "languages": [
+          {
+            "name": "HTML",
+            "files": 683
+          },
+          {
+            "name": "Elixir",
+            "files": 579
+          },
+          {
+            "name": "Markdown",
+            "files": 153
+          },
+          {
+            "name": "JSON",
+            "files": 145
+          },
+          {
+            "name": "CSS",
+            "files": 113
+          },
+          {
+            "name": "Python",
+            "files": 50
+          }
+        ],
+        "uncommitted": 0,
+        "ahead_behind": {
+          "ahead": 0,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "workbench",
+        "title": "The ORCHESTRATE Active Inference Workbench",
+        "branch": "master",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251",
+        "visibility": "public",
+        "resolvable": true,
+        "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "public_url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench"
+      }
+    },
+    {
+      "id": "uni-minecraft",
+      "title": "UNI.MineCraft — the colony",
+      "wing": "worlds",
+      "maturity": {
+        "value": "running",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "one_line": "A pure-Elixir categorical active-inference colony: embodied agents living in a real Minecraft world, each running one mean-field predict-act tick as its life, with a broadcast platform built over it.",
+      "why_it_is_here": "It is the world where the agents actually live, and the home of the Function Designer Card that compiles a declarative model description into a runnable brain.",
+      "measured": {
+        "file_count": 22512,
+        "languages": [
+          {
+            "name": "Elixir",
+            "files": 365
+          },
+          {
+            "name": "Markdown",
+            "files": 323
+          },
+          {
+            "name": "JSON",
+            "files": 264
+          },
+          {
+            "name": "JavaScript",
+            "files": 207
+          },
+          {
+            "name": "C#",
+            "files": 148
+          },
+          {
+            "name": "PowerShell",
+            "files": 46
+          }
+        ],
+        "uncommitted": 1,
+        "ahead_behind": {
+          "ahead": 9,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "uni-minecraft",
+        "title": "UNI.MineCraft — the colony",
+        "branch": "gen2-runtime",
+        "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+        "commit_short": "896c2527f700",
+        "visibility": "private",
+        "resolvable": false,
+        "public_repo": "uni-minecraft",
+        "public_url": "https://github.com/TMDLRG/uni-minecraft"
+      }
+    },
+    {
+      "id": "uni-flagellum",
+      "title": "UNI-FLAGELLUM — the science instrument",
+      "wing": "science",
+      "maturity": {
+        "value": "built",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "one_line": "A CPU-only digital-organ laboratory that keeps a bacterial flagellar-motor world process strictly separate from the active-inference agent that models it.",
+      "why_it_is_here": "It is where a claim meets a real measured organism, and where the estate keeps a result that went against it in plain view.",
+      "measured": {
+        "file_count": 740,
+        "languages": [
+          {
+            "name": "JSON",
+            "files": 156
+          },
+          {
+            "name": "Markdown",
+            "files": 130
+          },
+          {
+            "name": "Python",
+            "files": 79
+          },
+          {
+            "name": "JavaScript",
+            "files": 38
+          },
+          {
+            "name": "TypeScript",
+            "files": 21
+          },
+          {
+            "name": "HTML",
+            "files": 6
+          }
+        ],
+        "uncommitted": 3,
+        "ahead_behind": {
+          "ahead": 11,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "uni-flagellum",
+        "title": "UNI-FLAGELLUM — the science instrument",
+        "branch": "hierarchical-aif/motor-stack",
+        "commit": "ae3548f9bd3cc58ad75d7f2b420a047a22f58cd8",
+        "commit_short": "ae3548f9bd3c",
+        "visibility": "private",
+        "resolvable": false,
+        "public_repo": "uni-flagellum-motor-stack",
+        "public_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
+      }
+    },
+    {
+      "id": "uni-cookbook",
+      "title": "The UNI Encyclopedia & Cookbook",
+      "wing": "teaching",
+      "maturity": {
+        "value": "built",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "one_line": "An encyclopedia and a literal cookbook of buildable recipes across a developmental ladder, governed by two sovereign ledgers that never let a nature citation count as a UNI result.",
+      "why_it_is_here": "Its two-ledger discipline is the honesty model the whole University adopts: what UNI has earned and what nature has shown are different registers and are never merged.",
+      "measured": {
+        "file_count": 159,
+        "languages": [
+          {
+            "name": "Markdown",
+            "files": 113
+          },
+          {
+            "name": "JSON",
+            "files": 21
+          },
+          {
+            "name": "Python",
+            "files": 8
+          },
+          {
+            "name": "JavaScript",
+            "files": 3
+          },
+          {
+            "name": "CSS",
+            "files": 2
+          }
+        ],
+        "uncommitted": 0,
+        "ahead_behind": {
+          "ahead": 0,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "uni-cookbook",
+        "title": "The UNI Encyclopedia & Cookbook",
+        "branch": "main",
+        "commit": "575fc93d9d31a66ef4400a0acbb90b140144702b",
+        "commit_short": "575fc93d9d31",
+        "visibility": "private",
+        "resolvable": false,
+        "public_repo": "uni-cookbook",
+        "public_url": "https://github.com/TMDLRG/uni-cookbook"
+      }
+    },
+    {
+      "id": "uni-public",
+      "title": "UNI.Public — the documentation estate",
+      "wing": "instruments",
+      "maturity": {
+        "value": "running",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
+      "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
+      "measured": {
+        "file_count": 413,
+        "languages": [
+          {
+            "name": "Markdown",
+            "files": 327
+          },
+          {
+            "name": "TypeScript",
+            "files": 25
+          },
+          {
+            "name": "JSON",
+            "files": 24
+          },
+          {
+            "name": "JavaScript",
+            "files": 23
+          },
+          {
+            "name": "CSS",
+            "files": 1
+          }
+        ],
+        "uncommitted": 2,
+        "ahead_behind": {
+          "ahead": 0,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "uni-public",
+        "title": "UNI.Public — the documentation estate",
+        "branch": "main",
+        "commit": "ea156503439f8d045af9dc741b5330bcdbe59738",
+        "commit_short": "ea156503439f",
+        "visibility": "public",
+        "resolvable": true,
+        "public_repo": "uni-public",
+        "public_url": "https://github.com/TMDLRG/uni-public"
+      }
+    }
+  ],
+  "skipped": []
+}
