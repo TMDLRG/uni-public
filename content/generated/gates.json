@@ -13,43 +13,45 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-02T09:38:36.608Z",
+ "measured_at": "2026-08-24T17:08:58.893Z",
  "source": {
   "repo": "uni-minecraft",
-  "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-  "commit_short": "44baf03d5041",
+  "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+  "commit_short": "896c2527f700",
   "branch": "gen2-runtime",
-  "clean": true
+  "clean": false
  },
  "local": {
-  "ran": 32,
+  "ran": 33,
   "law_violations": 0,
-  "registry_complete": true,
-  "runner_ok": true,
+  "registry_complete": false,
+  "runner_ok": false,
   "tally": {
    "PASS": 31,
    "NOT_RUN_EXTERNAL": 3,
-   "FAIL": 1
+   "FAIL": 2
   }
  },
  "ci": {
   "available": true,
-  "runs_examined": 94,
+  "runs_examined": 128,
   "tally": {
-   "failure": 94
+   "failure": 128
   },
   "successes": 0,
   "latest": {
-   "id": 30739562843,
+   "id": 32039787788,
    "conclusion": "failure",
-   "at": "2026-08-02T08:19:47Z",
-   "commit": "44baf03d5041",
+   "at": "2026-08-17T14:39:17Z",
+   "commit": "ad6e73976201",
    "workflow": "CI"
   },
   "not_passing": [
-   "host-tracking=FAIL"
+   "host-tracking=FAIL",
+   "golive-refuses-agents=FAIL",
+   "gate-attempts=FAIL"
   ],
-  "verdict_tally": "31 PASS · 1 FAIL",
+  "verdict_tally": "30 PASS · 3 FAIL",
   "failing_jobs": [
    "Test & QA (Elixir 1.18 / OTP 27)",
    "gates-node (viewer/*.cjs gate law + registry completeness)"
@@ -212,8 +214,8 @@
    "ci": true,
    "gate_row": "f31-golive-refuses-agents",
    "why": null,
-   "state": "PASS",
-   "exit": 0,
+   "state": "FAIL",
+   "exit": 1,
    "law_ok": true
   },
   {
@@ -242,8 +244,8 @@
    "ci": true,
    "gate_row": "gate-attempts-sidecar",
    "why": null,
-   "state": "PASS",
-   "exit": 0,
+   "state": "FAIL",
+   "exit": 1,
    "law_ok": true
   },
   {
@@ -352,8 +354,8 @@
    "ci": true,
    "gate_row": "claims-checked-against-disk",
    "why": null,
-   "state": "FAIL",
-   "exit": 1,
+   "state": "PASS",
+   "exit": 0,
    "law_ok": true
   },
   {
@@ -401,6 +403,16 @@
    "file": "viewer/verify_concepts.cjs",
    "ci": true,
    "gate_row": "concept-registry-locators-resolve",
+   "why": null,
+   "state": "PASS",
+   "exit": 0,
+   "law_ok": true
+  },
+  {
+   "id": "obs-fence",
+   "file": "viewer/verify_obs_fence.cjs",
+   "ci": true,
+   "gate_row": "obs-supervisor-refuses-to-kill-a-live-encoder",
    "why": null,
    "state": "PASS",
    "exit": 0,

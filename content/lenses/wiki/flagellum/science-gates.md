@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: flagellum/science-gates
 corpus: flagellum
-source_sha256: 4f1bf29386c66957
-source_body_sha256: 4f1bf29386c66957
+source_sha256: 737391cdfa1948b3
+source_body_sha256: 737391cdfa1948b3
 source_title: Scientific parity gates
-source_words: 1121
+source_words: 1127
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the source moved. The censored-likelihood row restated its one-line finding with different interval counts. This lens cites no count from that table and its account of the row still holds, so the prose is unchanged and only the digests are re-stamped.
 ---
 <!--PLAIN-->
 

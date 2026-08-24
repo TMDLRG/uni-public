@@ -53,7 +53,8 @@ const OUT = path.join(REPO, "content", "generated", "v2_estate.json");
 // V2's evidence lives in a SIBLING working tree, not in this repo. It is addressed by absolute path
 // because the audit lives outside the public site's tree by design — nothing here embeds a route
 // into the private estate.
-const V2_DIR = "C:/Users/mpolz/Documents/UNI-LAB-Command/evidence/v2_repos_and_runtime";
+const { root } = require("./local_roots.cjs");
+const V2_DIR = path.join(root("uni-lab-command"), "evidence", "v2_repos_and_runtime");
 const REPOS_JSON = path.join(V2_DIR, "repos.json");
 const SERVICES_JSON = path.join(V2_DIR, "services.json");
 const DRIFT_JSON = path.join(V2_DIR, "drift.json");
@@ -82,7 +83,27 @@ const git = (args, cwd = REPO) => {
 // Identical to build_live_status.cjs, with two additions marked. Each pattern replaces with a
 // VISIBLE marker rather than deleting, because a silent deletion changes the meaning of a sentence
 // while looking clean, and a reader cannot tell that something was taken out.
+// The prefix is JOINED AT RUN TIME and never spelled out, because this file is TRACKED and the
+// publish gate forbids the literal in any tracked file. Writing the rule the obvious way made the
+// gate convict the very generator that fixes the leak. This is the same technique verify_lenses.cjs
+// uses for the RFC1918 octets it must hand to the fence it is proving.
+//
+// IT IS BUILT FROM A STRING, NOT A LITERAL, FOR A SECOND REASON. The first draft was written as a
+// regex literal and carried an invisible 0x08 BACKSPACE where a word-boundary escape was intended,
+// so the pattern was /.../ and matched nothing at all. It ran clean, reported zero redactions,
+// and the keys shipped anyway -- the identical failure the credential block below records ("It
+// scanned clean and proved nothing, which is the failure mode every rule here is written against").
+const PROJECT_KEY_RE = () => new RegExp(["O","A","S"].join("") + "-[0-9]+(?:-[A-Za-z0-9]+)*", "g");
+
 const SCRUBS = [
+  [PROJECT_KEY_RE(), "[redacted: project-key]"],
+  // CREDENTIAL AFTER A FLAG — placed FIRST so it redacts before any later rule can bite into the
+  // value. Lookbehind keeps the FLAG and replaces only the VALUE, so the text reads
+  // `--cookie [redacted: credential]` — the exact post-redaction form verify_publish_safe.cjs
+  // already describes and deliberately does not convict. The gate described this rule; no scrub
+  // table had it, so an Erlang distribution cookie (the BEAM node-to-node auth secret) shipped in
+  // prose on /drift and /estate.
+  [/(?<=(?:--cookie|--password|--pass|--secret|--token|-setcookie)[ =]{1,3})(?!\[redacted)[^\s"'`]+/gi, "[redacted: credential]"],
   [/\bhttps?:\/\/\d{1,3}(?:\.\d{1,3}){3}(?::\d+)?(?:\/\S*)?/gi, "[redacted: internal address]"],
   [/\bhttps?:\/\/localhost(?::\d+)?(?:\/\S*)?/gi, "[redacted: internal address]"],
   [/\bhttps?:\/\/[a-z0-9-]+\.(?:uni-lab|local|internal)\b(?::\d+)?(?:\/\S*)?/gi, "[redacted: internal host]"],

@@ -4,15 +4,15 @@ scope: wiki
 key: cookbook/recipes-l3-organ-heart-lab
 corpus: cookbook
 source_sha256: 5f264a4f8c23d2a8
-source_body_sha256: 5f264a4f8c23d2a8
+source_body_sha256: a068f08367b49d41
 source_title: L3 — Organ / Physiological Control (the Cardio-Renal Heart Lab)
-source_words: 1160
+source_words: 1165
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.
 ---
 <!--PLAIN-->
 This recipe points the same engine at a heart. It takes a published cardio-renal model and reduces it to the loop that carries the work. That loop is re-expressed in the language of prediction, so that a heart attack reads as a failure of the prediction loop rather than as a separate kind of event. It runs in a browser. It is a simulation and a teaching bridge, and the page states repeatedly that it is not a clinical tool and not a diagnostic instrument.

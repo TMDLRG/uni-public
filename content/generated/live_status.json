@@ -14,12 +14,12 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_live_status.cjs",
- "plan_read_at": "2026-08-02T15:09:01.871Z",
+ "plan_read_at": "2026-08-24T17:08:59.152Z",
  "source": {
   "repo": "uni-minecraft",
   "path": "evidence/remediation/phase9_plan.json",
-  "commit": "58617846d636d380608b7bb158e638e5623b1821",
-  "commit_short": "58617846d636",
+  "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+  "commit_short": "896c2527f700",
   "branch": "gen2-runtime",
   "plan_authored_at": "2026-07-26"
  },
@@ -800,24 +800,26 @@
   "declare a BagIt pack DISTRIBUTABLE — building a bag is agent work; declaring it fit to leave the box is the same class as the public push"
  ],
  "gates": {
-  "measured_at": "2026-08-02T09:38:36.608Z",
-  "commit": "44baf03d5041",
-  "registered": 35,
+  "measured_at": "2026-08-24T17:08:58.893Z",
+  "commit": "896c2527f700",
+  "registered": 36,
   "local_tally": {
    "PASS": 31,
    "NOT_RUN_EXTERNAL": 3,
-   "FAIL": 1
+   "FAIL": 2
   },
   "ci_available": true,
   "ci_latest": {
-   "id": 30739562843,
+   "id": 32039787788,
    "conclusion": "failure",
-   "at": "2026-08-02T08:19:47Z",
-   "commit": "44baf03d5041",
+   "at": "2026-08-17T14:39:17Z",
+   "commit": "ad6e73976201",
    "workflow": "CI"
   },
   "ci_not_passing": [
-   "host-tracking=FAIL"
+   "host-tracking=FAIL",
+   "golive-refuses-agents=FAIL",
+   "gate-attempts=FAIL"
   ],
   "note": "Measured by generators/build_gates.cjs at the date above, NOT at this page's build time. A static page cannot know whether a gate passes right now."
  },

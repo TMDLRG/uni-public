@@ -3,16 +3,16 @@ lens_schema: 1
 scope: article
 key: install
 corpus: 
-source_sha256: 8eb1abfd322a946e
-source_body_sha256: 8eb1abfd322a946e
+source_sha256: dadf2a3b31831a2a
+source_body_sha256: dadf2a3b31831a2a
 source_title: Install guide
-source_words: 1471
+source_words: 1618
 authored_by: claude-opus-5
-authored_at: 2026-08-01
+authored_at: 2026-08-24
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the source moved. An elevated widget-swap step that nothing invokes was documented rather than excluded from coverage, because raising an exclusion ceiling is how full coverage is preserved while covering less. Both lanes revised to carry it.
 ---
 <!--PLAIN-->
 
@@ -27,8 +27,11 @@ game, and a set of paid or platform-specific things for the studio. A container 
 listed too, and marked pending.
 
 It gives install steps for each part in turn, and tells you to change a default password that ships
-in a setup script before anything else. It ends with a plain list of what you will not be able to
-install at all, because the source repositories are not public and some of the data is not
+in a setup script before anything else. One listed step is an elevated swap nothing invokes, kept because it defeats a race the obvious
+approach loses: the service keeping the widget alive restarts it mid-copy, so the new file never
+lands and the old code returns healthy.
+
+It ends with a plain list of what you will not be able to install at all, because the source repositories are not public and some of the data is not
 redistributed.
 
 <!--CLEAR-->
@@ -63,6 +66,13 @@ The game setup deliberately does not accept the licence for you. And before anyt
 tells you to change a default remote-console password that ships in the setup script. It notes that a
 scan of this very site found that default published on several pages alongside another shared secret,
 that both are now redacted, and that the publishing check gained a rule it did not have before.
+
+One of the elevated steps is invoked by nothing and is listed anyway, because reading it is the
+point. Replacing the widget binary the obvious way loses a race: the service whose job is to keep the
+widget alive restarts it within about a second and re-locks the file before the copy finishes, so the
+copy fails quietly and the widget returns looking healthy while running the old code. Stopping the
+service first is what needs elevation, and the script refuses to claim success unless the binary
+timestamp moved and the widget came back.
 
 It closes with what you will not be able to install. The source repositories are private, the private
 network does not exist for you, and several absolute paths are hard-coded. The observed-experiment

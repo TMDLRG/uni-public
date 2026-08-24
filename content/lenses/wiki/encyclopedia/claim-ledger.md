@@ -4,15 +4,15 @@ scope: wiki
 key: encyclopedia/claim-ledger
 corpus: encyclopedia
 source_sha256: 81881670d9b69f86
-source_body_sha256: 81881670d9b69f86
+source_body_sha256: 5a5e1f9920bc973b
 source_title: CLAIM-LEDGER.md — Master Evidence-Classed Claim Ledger
-source_words: 15213
+source_words: 15216
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.
 ---
 <!--PLAIN-->
 

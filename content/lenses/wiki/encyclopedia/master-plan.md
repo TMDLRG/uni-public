@@ -4,15 +4,15 @@ scope: wiki
 key: encyclopedia/master-plan
 corpus: encyclopedia
 source_sha256: 54833a6ef8dc6799
-source_body_sha256: 54833a6ef8dc6799
+source_body_sha256: f5d2b2eaaff930be
 source_title: MASTER-PLAN.md — The UNI Encyclopedia (table of contents + authoring rules)
-source_words: 10428
+source_words: 10429
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.
 ---
 <!--PLAIN-->
 

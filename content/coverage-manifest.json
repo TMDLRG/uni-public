@@ -240,6 +240,12 @@
    "anchor": "node viewer/launcher.cjs"
   },
   {
+   "id": "server:uni-minecraft:model_view.cjs",
+   "command": "node viewer/model_view.cjs",
+   "article": "run-it",
+   "anchor": "node viewer/model_view.cjs"
+  },
+  {
    "id": "server:uni-minecraft:overlay_server.cjs",
    "command": "node viewer/overlay_server.cjs",
    "article": "the-broadcast-suite",
@@ -258,10 +264,22 @@
    "anchor": "node viewer/track/track_server.cjs"
   },
   {
+   "id": "server:uni-minecraft:voice_server.cjs",
+   "command": "node viewer/voice_server.cjs",
+   "article": "the-broadcast-suite",
+   "anchor": "node viewer/voice_server.cjs"
+  },
+  {
    "id": "powershell:uni-minecraft:apply_nrpt.ps1",
    "command": "powershell -File viewer/apply_nrpt.ps1",
    "article": "install",
    "anchor": "powershell -File viewer/apply_nrpt.ps1"
+  },
+  {
+   "id": "powershell:uni-minecraft:channel_windows_watchdog.ps1",
+   "command": "powershell -File viewer/channel_windows_watchdog.ps1",
+   "article": "maintenance",
+   "anchor": "powershell -File viewer/channel_windows_watchdog.ps1"
   },
   {
    "id": "powershell:uni-minecraft:diag_dns.ps1",
@@ -438,6 +456,12 @@
    "anchor": "powershell -File viewer/hud/native/_swap_service_elevated.ps1"
   },
   {
+   "id": "powershell:uni-minecraft:hud/native/_swap_widget_quiet_elevated.ps1",
+   "command": "powershell -File viewer/hud/native/_swap_widget_quiet_elevated.ps1",
+   "article": "install",
+   "anchor": "powershell -File viewer/hud/native/_swap_widget_quiet_elevated.ps1"
+  },
+  {
    "id": "powershell:uni-minecraft:hud/native/_update_service_binaries_elevated.ps1",
    "command": "powershell -File viewer/hud/native/_update_service_binaries_elevated.ps1",
    "excluded": true,
@@ -448,6 +472,12 @@
    "command": "powershell -File viewer/hud/native/_urlacl_and_networkservice_elevated.ps1",
    "excluded": true,
    "reason": "Elevated steps of the native HUD's code-signing and service-registration chain, invoked while developing the widget itself. Documenting a code-signing procedure for a certificate the reader cannot possess would be a recipe that ends at a wall. The two elevated scripts a reader DOES need — the launcher install and the service swap — are covered in the install guide, and the two restart drills are covered in the maintenance guide."
+  },
+  {
+   "id": "powershell:uni-minecraft:hud/native/hud_boot_healthcheck.ps1",
+   "command": "powershell -File viewer/hud/native/hud_boot_healthcheck.ps1",
+   "article": "maintenance",
+   "anchor": "powershell -File viewer/hud/native/hud_boot_healthcheck.ps1"
   },
   {
    "id": "powershell:uni-minecraft:hud/native/hud_native_boot_proof.ps1",
@@ -478,6 +508,12 @@
    "command": "powershell -File viewer/restream.ps1",
    "article": "the-broadcast-suite",
    "anchor": "powershell -File viewer/restream.ps1"
+  },
+  {
+   "id": "powershell:uni-minecraft:studio_boot.ps1",
+   "command": "powershell -File viewer/studio_boot.ps1",
+   "article": "the-broadcast-suite",
+   "anchor": "powershell -File viewer/studio_boot.ps1"
   },
   {
    "id": "powershell:uni-minecraft:studio_channels.ps1",

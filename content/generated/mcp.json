@@ -17,7 +17,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_mcp.cjs",
- "read_at": "2026-08-02T17:21:12.142Z",
+ "read_at": "2026-08-24T17:08:59.371Z",
  "source": {
   "repo": "uni-lab-command",
   "path": "evidence/v1_mcp/catalogue.json",
@@ -27,7 +27,7 @@
   "catalogue_authored_at": null,
   "alignment_file_total_lines": 1044
  },
- "summary": "SWU-MCP is a lifecycle-gated Agile orchestration server (v1.3.0) exposing 59 tools and 14 prompts against a per-program-run scoped state store; the currently bound program run [redacted: programme-run id] is UNI-LAB.MineCraft.Broadcast.Flagellum.UNI.DDNA.UNI.ZOO and sits in INCEPTION mode with 0/6 sessions started and no epics, stories, tickets, sprints, stakeholders or personas [class A]. Enforcement is layered: mode-level allow/block lists refuse whole tools in the wrong mode (verification_manage, uat_manage, cicd_manage, delivery_pipeline, living_docs_manage, ticket_orchestrate, and release_manage non-list actions all returned -32002 in INCEPTION [class A]), and content-level gates emit [BLOCK] messages for undersized/uncompliant Story/Ticket/Epic/RISK/ADR/NFR content per alignment file lines 616-636 [class F]. The Foundation-Enhancement-Assurance-Execution ORCHESTRATE framework wraps every call: many tools append an [ABS:*] persona/guidance banner and a _WORKFLOW footer that self-reports \"1/9 required steps complete, blocked by I02..I10\" — a hidden state variable not returned by mode_manage.get, which reports blocked_reason as an empty array (an observed disagreement between two authoritative surfaces on the same server [class A]). Reads are cleanly separated from writes for most tools, but seven (agile_plan, backlog_manage, doc_builder, audit_link_external, apikey_issue, apikey_revoke, bulk_manage) expose only mutating actions and were deferred entirely per the uncertain-is-write rule. The state store is program-run isolated (comment_manage on OAS-001 returned \"belongs to a different program run\" [class A]) and audit_manage.verify_chain reports valid=true, 500 events verified, no broken sequences [class A per INPUT B]. Fourteen calibration-emitted LESSON memory entries reference personas (Vox Novus, Guard Ian, etc.) that do not exist in persona_manage.list — a dangling-reference defect V1 observed but did not repair [class A].",
+ "summary": "SWU-MCP is a lifecycle-gated Agile orchestration server (v1.3.0) exposing 59 tools and 14 prompts against a per-program-run scoped state store; the currently bound program run [redacted: programme-run id] is UNI-LAB.MineCraft.Broadcast.Flagellum.UNI.DDNA.UNI.ZOO and sits in INCEPTION mode with 0/6 sessions started and no epics, stories, tickets, sprints, stakeholders or personas [class A]. Enforcement is layered: mode-level allow/block lists refuse whole tools in the wrong mode (verification_manage, uat_manage, cicd_manage, delivery_pipeline, living_docs_manage, ticket_orchestrate, and release_manage non-list actions all returned -32002 in INCEPTION [class A]), and content-level gates emit [BLOCK] messages for undersized/uncompliant Story/Ticket/Epic/RISK/ADR/NFR content per alignment file lines 616-636 [class F]. The Foundation-Enhancement-Assurance-Execution ORCHESTRATE framework wraps every call: many tools append an [ABS:*] persona/guidance banner and a _WORKFLOW footer that self-reports \"1/9 required steps complete, blocked by I02..I10\" — a hidden state variable not returned by mode_manage.get, which reports blocked_reason as an empty array (an observed disagreement between two authoritative surfaces on the same server [class A]). Reads are cleanly separated from writes for most tools, but seven (agile_plan, backlog_manage, doc_builder, audit_link_external, apikey_issue, apikey_revoke, bulk_manage) expose only mutating actions and were deferred entirely per the uncertain-is-write rule. The state store is program-run isolated (comment_manage on [redacted: project-key] returned \"belongs to a different program run\" [class A]) and audit_manage.verify_chain reports valid=true, 500 events verified, no broken sequences [class A per INPUT B]. Fourteen calibration-emitted LESSON memory entries reference personas (Vox Novus, Guard Ian, etc.) that do not exist in persona_manage.list — a dangling-reference defect V1 observed but did not repair [class A].",
  "totals": {
   "tools": 59,
   "prompts": 14,
@@ -358,7 +358,7 @@
    "read_actions_observed_count": 1,
    "mutating_actions_deferred_count": 4,
    "evidence_class": "A",
-   "notes": "Cross-program isolation observed: OAS-001 rejected as 'belongs to a different program run'.",
+   "notes": "Cross-program isolation observed: [redacted: project-key] rejected as 'belongs to a different program run'.",
    "category": "work-items"
   },
   {
@@ -990,7 +990,7 @@
  "withheld": {
   "checked": true,
   "items": 0,
-  "scrub_hits": 1,
-  "note": "No item was withheld. Structural details (addresses, hostnames, ports) were redacted in place 1 time(s) — each with a visible marker so the reader can see something was removed."
+  "scrub_hits": 3,
+  "note": "No item was withheld. Structural details (addresses, hostnames, ports) were redacted in place 3 time(s) — each with a visible marker so the reader can see something was removed."
  }
 }

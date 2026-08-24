@@ -35,12 +35,12 @@
         "repo": "uni-minecraft",
         "title": "UNI.Minecraft",
         "branch": "gen2-runtime",
-        "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-        "commit_short": "44baf03d5041",
+        "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+        "commit_short": "896c2527f700",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-02T03:19:43-05:00",
+      "source_last_commit": "2026-08-19T14:31:55-05:00",
       "blocks": [
         {
           "kind": "gate-registry",
@@ -48,14 +48,14 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-            "commit_short": "44baf03d5041",
+            "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+            "commit_short": "896c2527f700",
             "visibility": "public",
             "resolvable": true,
             "path": "viewer/gate_registry.json"
           },
-          "total": 35,
-          "ci_true": 32,
+          "total": 36,
+          "ci_true": 33,
           "ci_false": 3,
           "gates": [
             {
@@ -302,6 +302,13 @@
               "ci": true,
               "gate_row": "concept-registry-locators-resolve",
               "why": "The specification asked for a Latin-anchored semantic layer and nothing of the kind existed. This gate holds the registry to the one property that makes it a MAP OF THE SYSTEM rather than a glossary invented beside it: NO ROW MAY EXIST WITHOUT A locator THAT RESOLVES. 18 rows point at a real line found by searching for the token rather than by guessing a number; 3 name a declared external namespace (uni-lab-mcp) and are REFUSED any confidence above provisional, because an unpinned locator cannot support more. Four further fences each guard a distinct way this becomes false precision: ipa may b"
+            },
+            {
+              "id": "obs-fence",
+              "file": "viewer/verify_obs_fence.cjs",
+              "ci": true,
+              "gate_row": "obs-supervisor-refuses-to-kill-a-live-encoder",
+              "why": "Found by audit on 2026-08-02 while the estate was TWO HOURS LIVE on two platforms, with the faulty watcher resident and re-deciding every fifteen seconds. obs_supervisor.cjs decides whether it may force-terminate OBS, and it asked 'are we streaming?' over the OBS WEBSOCKET -- but every state it exists to repair (a blocking safe-mode dialog, a dead websocket) is a state in which that websocket cannot answer. Its fence, written 'if (st.known && st.streaming)', declined ONLY on a confident yes, so 'I do not know' fell through to killAll() and its WMI Terminate. OBS pushes RTMP to the audience the"
             }
           ]
         },
@@ -311,8 +318,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-            "commit_short": "44baf03d5041",
+            "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+            "commit_short": "896c2527f700",
             "visibility": "public",
             "resolvable": true,
             "path": "evidence/remediation/phase9_plan.json"
@@ -334,14 +341,14 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-            "commit_short": "44baf03d5041",
+            "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+            "commit_short": "896c2527f700",
             "visibility": "public",
             "resolvable": true,
             "glob": "lib/sp/**/*.ex"
           },
           "count": 111,
-          "lines": 19134,
+          "lines": 19344,
           "modules": [
             {
               "path": "lib/sp/baselines/homeostatic.ex",
@@ -906,8 +913,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "44baf03d50417a0e677c2147f50e2819c7344633",
-            "commit_short": "44baf03d5041",
+            "commit": "896c2527f700f0442d76ba34c12a94c448102821",
+            "commit_short": "896c2527f700",
             "visibility": "public",
             "resolvable": true,
             "glob": "production/schemas/*.json"
@@ -963,12 +970,12 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
-        "commit_short": "b909801f3db4",
+        "commit": "ae3548f9bd3cc58ad75d7f2b420a047a22f58cd8",
+        "commit_short": "ae3548f9bd3c",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-01T19:16:13-05:00",
+      "source_last_commit": "2026-08-24T10:51:21-05:00",
       "blocks": [
         {
           "kind": "adr-index",
@@ -976,13 +983,13 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
-            "commit_short": "b909801f3db4",
+            "commit": "ae3548f9bd3cc58ad75d7f2b420a047a22f58cd8",
+            "commit_short": "ae3548f9bd3c",
             "visibility": "public",
             "resolvable": true,
             "glob": "docs/control-plane/decisions/*.md"
           },
-          "count": 10,
+          "count": 11,
           "items": [
             {
               "path": "docs/control-plane/decisions/ADR-0001-four-bodies.md",
@@ -1043,6 +1050,12 @@
               "title": "ADR-0010 — Room state is contamination; room purpose is function",
               "bytes": 5672,
               "sha256": "19b6fff27252e8e0"
+            },
+            {
+              "path": "docs/control-plane/decisions/ADR-0011-proto-program-execution-constitution.md",
+              "title": "ADR-0011 — The Proto programme's execution constitution: source-of-truth, authority, and assumptions",
+              "bytes": 11130,
+              "sha256": "f175568075a7a9d4"
             }
           ]
         },
@@ -1052,8 +1065,8 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "b909801f3db41da6c6c80e3fa672365e24350c04",
-            "commit_short": "b909801f3db4",
+            "commit": "ae3548f9bd3cc58ad75d7f2b420a047a22f58cd8",
+            "commit_short": "ae3548f9bd3c",
             "visibility": "public",
             "resolvable": true,
             "glob": "experiments/*manifest*.json"

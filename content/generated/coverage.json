@@ -18,8 +18,8 @@
    "id": "entry_points",
    "label": "Entry points",
    "denominator": "discovered",
-   "total": 104,
-   "covered": 80,
+   "total": 110,
+   "covered": 86,
    "excluded": 24
   },
   {
@@ -34,16 +34,16 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 524,
-   "covered": 524,
+   "total": 542,
+   "covered": 542,
    "excluded": 0
   }
  ],
  "ratchet": {
-  "bounds": 81,
-  "held": 81,
+  "bounds": 84,
+  "held": 84,
   "breached": 0,
-  "at_the_line": 65,
+  "at_the_line": 54,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -70,14 +70,14 @@
    },
    {
     "label": "entry points discovered · server",
-    "now": 8,
+    "now": 10,
     "bound": 8,
     "kind": "min",
     "ok": true
    },
    {
     "label": "entry points discovered · powershell",
-    "now": 42,
+    "now": 46,
     "bound": 42,
     "kind": "min",
     "ok": true
@@ -98,7 +98,7 @@
    },
    {
     "label": "entry points discovered · total",
-    "now": 104,
+    "now": 110,
     "bound": 104,
     "kind": "min",
     "ok": true
@@ -106,7 +106,7 @@
    {
     "label": "pages published · encyclopedia",
     "now": 45,
-    "bound": 39,
+    "bound": 45,
     "kind": "min",
     "ok": true
    },
@@ -119,35 +119,35 @@
    },
    {
     "label": "pages published · control-plane",
-    "now": 33,
+    "now": 34,
     "bound": 33,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · flagellum",
-    "now": 14,
+    "now": 18,
     "bound": 14,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · workbench",
-    "now": 1,
+    "now": 2,
     "bound": 1,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · minecraft",
-    "now": 87,
+    "now": 90,
     "bound": 87,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · evidence",
-    "now": 105,
+    "now": 114,
     "bound": 105,
     "kind": "min",
     "ok": true
@@ -244,9 +244,16 @@
     "ok": true
    },
    {
+    "label": "pages published · plates",
+    "now": 10,
+    "bound": 10,
+    "kind": "min",
+    "ok": true
+   },
+   {
     "label": "pages published · total",
-    "now": 524,
-    "bound": 508,
+    "now": 542,
+    "bound": 524,
     "kind": "min",
     "ok": true
    },
@@ -301,21 +308,21 @@
    },
    {
     "label": "pages in route · architecture",
-    "now": 33,
+    "now": 34,
     "bound": 33,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · flagellum",
-    "now": 9,
+    "now": 13,
     "bound": 9,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · workbench",
-    "now": 2,
+    "now": 3,
     "bound": 2,
     "kind": "min",
     "ok": true
@@ -378,21 +385,21 @@
    },
    {
     "label": "pages in route · plans",
-    "now": 15,
+    "now": 18,
     "bound": 15,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · evidence-receipts",
-    "now": 62,
+    "now": 69,
     "bound": 62,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages in route · evidence-prereg",
-    "now": 37,
+    "now": 39,
     "bound": 37,
     "kind": "min",
     "ok": true
@@ -468,6 +475,20 @@
     "ok": true
    },
    {
+    "label": "pages in route · plates",
+    "now": 10,
+    "bound": 10,
+    "kind": "min",
+    "ok": true
+   },
+   {
+    "label": "pages in route · encyclopedia-track-a",
+    "now": 6,
+    "bound": 6,
+    "kind": "min",
+    "ok": true
+   },
+   {
     "label": "RUNNABLE markers",
     "now": 16,
     "bound": 16,
@@ -476,7 +497,7 @@
    },
    {
     "label": "entry points documented",
-    "now": 80,
+    "now": 86,
     "bound": 80,
     "kind": "min",
     "ok": true
@@ -518,7 +539,7 @@
    },
    {
     "label": "quoted source blocks",
-    "now": 15,
+    "now": 16,
     "bound": 15,
     "kind": "min",
     "ok": true
@@ -526,7 +547,7 @@
    {
     "label": "curated routes",
     "now": 33,
-    "bound": 31,
+    "bound": 33,
     "kind": "min",
     "ok": true
    },
@@ -588,7 +609,7 @@
    },
    {
     "label": "substance · the-broadcast-suite",
-    "now": 12659,
+    "now": 13978,
     "bound": 9494,
     "kind": "min",
     "ok": true
@@ -602,21 +623,21 @@
    },
    {
     "label": "substance · install",
-    "now": 7492,
+    "now": 8244,
     "bound": 5619,
     "kind": "min",
     "ok": true
    },
    {
     "label": "substance · run-it",
-    "now": 8667,
+    "now": 9202,
     "bound": 6500,
     "kind": "min",
     "ok": true
    },
    {
     "label": "substance · maintenance",
-    "now": 8190,
+    "now": 10694,
     "bound": 6142,
     "kind": "min",
     "ok": true

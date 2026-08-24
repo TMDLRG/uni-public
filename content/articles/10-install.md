@@ -247,6 +247,21 @@ powershell -File viewer/hud/hud_service_uninstall.ps1
 The service installer above is **retired and refuses to run** — it is listed because it still exists
 and you will find it. The native path replaced it.
 
+There is one more elevated swap, written for a specific rebuild and invoked by nothing:
+
+```bash
+powershell -File viewer/hud/native/_swap_widget_quiet_elevated.ps1
+```
+
+It is worth reading even though you will probably never run it, because it exists to defeat a race
+that the obvious approach loses. The launcher service's whole job is to keep the widget alive, so
+killing the widget and copying the new binary over it does not work: the launcher restarts the widget
+in about a second and re-locks the file before the copy finishes. The copy then fails quietly and the
+widget comes back looking perfectly healthy, running the old code. The only order that works is to
+stop the *service* first — which is what needs elevation — and the script refuses to report success
+unless the binary timestamp actually moved **and** the widget came back. Measured 2026-08-24: nothing
+in the repository invokes it.
+
 ## The three declarations that disagree
 
 Stated together, because they are the ones most likely to cost you an hour:

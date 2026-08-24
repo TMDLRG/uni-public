@@ -145,8 +145,8 @@
    "key": "encyclopedia/claim-ledger",
    "corpus": "encyclopedia",
    "source_sha256": "81881670d9b69f86",
-   "source_body_sha256": "81881670d9b69f86",
-   "source_words": 15213,
+   "source_body_sha256": "5a5e1f9920bc973b",
+   "source_words": 15216,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -164,7 +164,7 @@
     "words": 369,
     "sha256": "30158cfce1e7733c"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/encyclopedia/claim-ledger.md"
   },
   {
@@ -172,8 +172,8 @@
    "key": "encyclopedia/master-plan",
    "corpus": "encyclopedia",
    "source_sha256": "54833a6ef8dc6799",
-   "source_body_sha256": "54833a6ef8dc6799",
-   "source_words": 10428,
+   "source_body_sha256": "f5d2b2eaaff930be",
+   "source_words": 10429,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -191,7 +191,7 @@
     "words": 386,
     "sha256": "01a1aa74babcd9cc"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/encyclopedia/master-plan.md"
   },
   {
@@ -361,8 +361,8 @@
    "key": "encyclopedia/wing-n-n2-same-math-many-scales",
    "corpus": "encyclopedia",
    "source_sha256": "f3158b737ac41b7f",
-   "source_body_sha256": "f3158b737ac41b7f",
-   "source_words": 1790,
+   "source_body_sha256": "347230292e269cef",
+   "source_words": 1792,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -380,7 +380,7 @@
     "words": 419,
     "sha256": "358b9e73f42a4733"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/encyclopedia/wing-n-n2-same-math-many-scales.md"
   },
   {
@@ -847,8 +847,8 @@
    "key": "encyclopedia/wing-s-s-l3-organ-heart-lab",
    "corpus": "encyclopedia",
    "source_sha256": "d6d16d96c741a549",
-   "source_body_sha256": "d6d16d96c741a549",
-   "source_words": 1510,
+   "source_body_sha256": "d5fea9da49e9dca2",
+   "source_words": 1517,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -866,7 +866,7 @@
     "words": 385,
     "sha256": "fabe2c35f667b994"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/encyclopedia/wing-s-s-l3-organ-heart-lab.md"
   },
   {
@@ -1306,8 +1306,8 @@
    "key": "cookbook/master-plan",
    "corpus": "cookbook",
    "source_sha256": "fea791865145fdca",
-   "source_body_sha256": "fea791865145fdca",
-   "source_words": 9936,
+   "source_body_sha256": "b5dc62a7a5822276",
+   "source_words": 9937,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1325,7 +1325,7 @@
     "words": 575,
     "sha256": "f736756e5093f217"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/cookbook/master-plan.md"
   },
   {
@@ -1900,8 +1900,8 @@
    "key": "cookbook/recipes-l3-organ-heart-lab",
    "corpus": "cookbook",
    "source_sha256": "5f264a4f8c23d2a8",
-   "source_body_sha256": "5f264a4f8c23d2a8",
-   "source_words": 1160,
+   "source_body_sha256": "a068f08367b49d41",
+   "source_words": 1165,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1919,7 +1919,7 @@
     "words": 462,
     "sha256": "e26cf2bde6892c01"
    },
-   "note": "",
+   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
    "source_file": "content/lenses/wiki/cookbook/recipes-l3-organ-heart-lab.md"
   },
   {
@@ -3114,9 +3114,9 @@
    "scope": "wiki",
    "key": "flagellum/science-gates",
    "corpus": "flagellum",
-   "source_sha256": "4f1bf29386c66957",
-   "source_body_sha256": "4f1bf29386c66957",
-   "source_words": 1121,
+   "source_sha256": "737391cdfa1948b3",
+   "source_body_sha256": "737391cdfa1948b3",
+   "source_words": 1127,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -3134,7 +3134,7 @@
     "words": 546,
     "sha256": "52e38759ff8ee859"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. The censored-likelihood row restated its one-line finding with different interval counts. This lens cites no count from that table and its account of the row still holds, so the prose is unchanged and only the digests are re-stamped.",
    "source_file": "content/lenses/wiki/flagellum/science-gates.md"
   },
   {
@@ -4113,27 +4113,27 @@
    "scope": "wiki",
    "key": "minecraft/runbook-studio",
    "corpus": "minecraft",
-   "source_sha256": "ca506630e70c1ec5",
-   "source_body_sha256": "174805c70b7a6fb7",
-   "source_words": 2670,
+   "source_sha256": "218755b51505b291",
+   "source_body_sha256": "f07a013835fa158f",
+   "source_words": 3101,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>Turning a broadcast studio on is all this runbook covers. It draws a clear line at the top: this page is how to switch it on, while a separate manual is how to run a show.</p><p>It carries two banners. One is a correction saying which machine is now the real mixer and that the boot flow is now hidden, with one visible window for the operator. The other marks the whole page as an interim system and names a newer document that overrides it on conflict.</p><p>The useful core is a single command that brings everything up in order, health-gated and safe to repeat, followed by a manual sequence if you need it, and a catalogue of scenes grouped by show type.</p><p>Two sections are about honesty rather than mechanics. Text going on screen is checked against a list of words that may not be used without a record of what was run, and the outward cut is typed by a human, always. The page also quotes the science record as it stood, with one result partial and one provisional, and tells you to check the master plan before strengthening anything said on air.</p>",
-    "chars": 1044,
-    "words": 195,
-    "sha256": "05967e030bd7f8eb"
+    "html": "<p>Turning a broadcast studio on is what this runbook is for, and it separates itself from a sibling manual about running a show.</p><p>It carries two banners: one names which machine is now the real mixer and says the boot flow is hidden, with one window visible to the operator; the other marks the page as interim and names a newer document that overrides it on conflict.</p><p>The useful core is a single command that brings everything up in order, health-gated and safe to repeat, a manual sequence if needed, and a catalogue of scenes grouped by show type.</p><p>Two sections are about honesty rather than mechanics. Screen text is checked against a list of words that may not be used without a record of what was run, and the outward cut is always typed by a human. The page quotes the science record as it stood, one result partial and one provisional, and says to check the master plan before strengthening anything said on air.</p><p>Turning it off carries its own correction, the sharpest passage here. An earlier version named a command that would not have stopped the outward broadcast, and the one that does was measured reporting success while the show still went out. A corrected order follows, and you confirm by counting what is still running.</p>",
+    "chars": 1255,
+    "words": 219,
+    "sha256": "0dca36a12fcae66a"
    },
    "clear": {
-    "html": "<p>Bringing a broadcast studio up is this runbook's whole subject, and it separates itself carefully from a sibling document: this page is how to turn it on, and the manual is how to operate a show.</p><p>Two banners sit at the top and both correct the body below them. The first is a correction naming which machine is now the production mixer rather than a rehearsal preview. It also describes a boot flow that is now hidden: everything starts without visible windows, and a single operator surface opens once the system answers. It also records that a crash dialog is suppressed by clearing a marker before each launch and by a watcher that dismisses dialogs. The second banner marks the whole page as an interim system for development use, and names a document that overrides it on any conflict.</p><p>The practical core is a start sequence. One command brings the whole stack up in order, gated on health checks and safe to run again, and the order it starts things in is listed. Variants show the current state or add supervision. A manual sequence follows for when the single command is not wanted, with one small warning about a command name that a shell would otherwise interpret as something else entirely.</p><p>A long catalogue then describes the available scenes grouped by kind of show. One scene is singled out because it belongs to no group and can only be reached by putting it on air, which the page flags as a consequence rather than a quirk. Sections on overlays and audio follow.</p><p>The command centre is described as the primary control surface, with the address to open and what it offers. Further sections cover connecting cameras and microphones from another computer with nothing to install, and the idea of camera roles. A scene names a position rather than a device, so that assigning a camera to a role updates every scene that uses it at once.</p><p>A text console is offered as a fallback and for scripting, and a dual-target restreamer section explains how one encode is sent onward to two platforms.</p><p>Two sections are about honesty rather than mechanics, and they are the ones that give the page its character. Overlay text describes behaviour and learning only, and the science record at the time of writing is quoted with two results that are partial and provisional, with an instruction to check the current state before strengthening anything said on air. Text destined for the screen is linted against a list of forbidden words. There is a way to force a phrase past the check, which the page says means you own the claim, and it must have a committed receipt, a file recording what was run.</p><p>The autonomy limit follows: the show runs itself inside a session the operator opened, but the outward cut is typed by the human every time, and the agent never holds a key and never approves going live for itself.</p><p>A short shutdown sequence closes the page.</p>",
-    "chars": 2864,
-    "words": 503,
-    "sha256": "c5bcef3ccb47b7c9"
+    "html": "<p>Bringing a broadcast studio up is this runbook's subject, and it separates itself from a sibling document: this page is how to turn it on, the manual is how to operate a show.</p><p>Two banners sit at the top and both correct the body below them. The first is a correction naming which machine is now the production mixer rather than a rehearsal preview. It also describes a boot flow that is now hidden: everything starts without visible windows, and a single operator surface opens once the system answers. It also records that a crash dialog is suppressed before each launch and by a watcher that dismisses dialogs. The second banner marks the whole page as an interim system for development use, and names a document that overrides it on any conflict.</p><p>The practical core is a start sequence. One command brings the whole stack up in order, gated on health checks and safe to run again, and the order it starts things in is listed. Variants show the current state or add supervision. A manual sequence follows for when the single command is not wanted, with a warning about a command name a shell would otherwise read as something else.</p><p>A long catalogue describes the scenes, grouped by kind of show, with one singled out because it belongs to no group and can only be reached by putting it on air. Sections on overlays and audio follow.</p><p>The command centre is described as the primary control surface, with the address to open and what it offers. Further sections cover connecting cameras and microphones from another computer with nothing to install, and the idea of camera roles: a scene names a position rather than a device, so assigning a camera to a role updates every scene that uses it at once.</p><p>A text console is offered as a fallback and for scripting, and a restreamer section explains how one encode is sent onward to two platforms.</p><p>Two sections are about honesty rather than mechanics, and they give the page its character. Overlay text describes behaviour and learning only, and the science record at the time of writing is quoted with two results that are partial and provisional, with an instruction to check the current state before strengthening anything said on air. Text destined for the screen is linted against a list of forbidden words. There is a way to force a phrase past the check, which the page says means you own the claim, and it must have a committed receipt recording what was run.</p><p>The autonomy limit follows: the show runs itself inside a session the operator opened, but the outward cut is typed by the human every time, and the agent never holds a key nor approves going live for itself.</p><p>The page ends on shutdown, and that is now the longest correction it carries. An earlier version named a command that would not have stopped the outward broadcast, and the one that does was measured printing success while both pushers were still running. Two reasons are given: the success line prints whether or not the kill matched anything, and three separate things bring the pushers back within seconds. A corrected order follows: sign off while still on air, cut to standby and hold, stop the supervisors, stop the pushers, verify by counting processes rather than trusting any printed verdict, and stop the stream last. The page names the fault as one it keeps meeting: a signal that measures whether a thing exists rather than what the audience is receiving.</p>",
+    "chars": 3410,
+    "words": 592,
+    "sha256": "52dc2561154cdfde"
    },
-   "note": "",
+   "note": "2026-08-24 the source gained a corrected shutdown section. The previous lens closed with the sentence that a short shutdown sequence closes the page, which became false the moment that correction landed. Both lanes rewritten to carry it, because it is now the most consequential passage on the page.",
    "source_file": "content/lenses/wiki/minecraft/runbook-studio.md"
   },
   {
@@ -4329,8 +4329,8 @@
    "scope": "wiki",
    "key": "minecraft/uni-production-platform",
    "corpus": "minecraft",
-   "source_sha256": "ec01e61d2d3973fb",
-   "source_body_sha256": "fce8b62b08dd6b94",
+   "source_sha256": "38faf370e35f21fa",
+   "source_body_sha256": "6e90a685a42fb767",
    "source_words": 4129,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -4349,7 +4349,7 @@
     "words": 565,
     "sha256": "fb205a2057678404"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. One sentence now names a different bring-up script. This lens names no script and its account is unchanged, so only the digests are re-stamped.",
    "source_file": "content/lenses/wiki/minecraft/uni-production-platform.md"
   },
   {
@@ -7920,35 +7920,35 @@
    "scope": "wiki",
    "key": "evidence/work-orders-producer-golive",
    "corpus": "evidence",
-   "source_sha256": "59cefd33b2c4c65d",
-   "source_body_sha256": "c9c39a02731505f8",
-   "source_words": 1057,
+   "source_sha256": "ea8694917fac678e",
+   "source_body_sha256": "48350323ad1e6182",
+   "source_words": 1136,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>Read the banner first: this work order is superseded and should not be pasted as it stands. Several of its claims about what did not exist were true when written and are false now, and following it would route someone down a path that has since been deprecated. Underneath the banner it is a self-contained brief for one evening's job: take a live world out to two platforms at once, add a camera and some clips, and caption everything honestly. One instruction in it is binding rather than technical: consult the science ledger — the list of results, added to and never edited — where one result stood partial and another provisional, and say the weaker true thing. It is kept as a record of that moment rather than as instructions to follow.</p>",
-    "chars": 743,
-    "words": 133,
-    "sha256": "779f8f597bc11806"
+    "html": "<p>Read the banner first: this work order is superseded and should not be pasted as it stands. Several of its claims about what did not exist were true when written and are false now, and following it would route someone down a path that has since been deprecated. Underneath the banner it is a self-contained brief for one evening's job: take a live world out to two platforms at once, add a camera and some clips, and caption everything honestly. One instruction in it is binding rather than technical: consult the science ledger — the list of results, added to and never edited — where one result stood partial and another provisional, and say the weaker true thing. It is kept as a record of that moment rather than as instructions to follow. The body now also corrects itself in two places, naming a bring-up script that has been superseded and recording what following the old instruction cost.</p>",
+    "chars": 897,
+    "words": 158,
+    "sha256": "40c8be30f2b73fb5"
    },
    "clear": {
-    "html": "<p>A work order carrying a supersede banner at the top, and that banner is the operative part of the page. Claims in the body about components not existing are named as now false, and the reader is pointed at three other documents instead, because following this one would lead down a deprecated path.</p><p>Underneath, it is a brief written to be pasted into a fresh session and addressed to whoever would run the broadcast. It states the mission for one evening, names a hard deadline, and lists what to read before touching anything.</p><p>The most useful section is the honest state, written so the recipient does not chase a dead end. This is what works today. This is designed but not built. Do not try to stand the larger thing up tonight, because the hardware is not provisioned; mine it for reference only. That candour is exactly what makes the later banner necessary, since the state it described has moved.</p><p>The tasks are ordered as the fastest honest path: bring the world up, build the scenes, add the camera and clip sources, and then the one genuinely new piece. The software cannot push to two platforms at once, and needs a local fan-out in between. Three options are ranked, with a hosted fallback if time runs short. Keys are to come from the environment or the clipboard, and never to be written to disk or committed.</p><p>One task is marked binding, and it is about language rather than engineering. Captions may describe what is happening, but must never present a scientific result as passed if it is not, and must never claim experience. When unsure, check the ledger — the list that is added to and never edited — and default to the weaker true statement, because no headline outruns the committed file recording what was run.</p><p>A scope note then defines what autonomous means for the night. The show runs itself inside a session a person opened, while going out to the public stays human-triggered by design. The safety model forbids the producer approving its own go-live. Closing notes to the owner repeat which world to point at, which one not to, and that the full build is a follow-on rather than a midnight task.</p>",
-    "chars": 2127,
-    "words": 376,
-    "sha256": "480f6f095fffd323"
+    "html": "<p>A work order carrying a supersede banner at the top, and that banner is the operative part of the page. Claims in the body about components not existing are named as now false, and the reader is pointed at three other documents instead, because following this one would lead down a deprecated path.</p><p>Underneath, it is a brief written to be pasted into a fresh session and addressed to whoever would run the broadcast. It states the mission for one evening, names a hard deadline, and lists what to read before touching anything.</p><p>The most useful section is the honest state, written so the recipient does not chase a dead end. This is what works today. This is designed but not built. Do not try to stand the larger thing up tonight, because the hardware is not provisioned; mine it for reference only. That candour is exactly what makes the later banner necessary, since the state it described has moved.</p><p>The tasks are ordered as the fastest honest path: bring the world up, build the scenes, add the camera and clip sources, and then the one genuinely new piece. Two of those steps now carry corrections written into the body itself, both naming a bring-up script that has been superseded. One records what following the old instruction cost: it overwrote a shared file with a smaller set and silently stranded the sources that carry every film and clip. The old script now refuses to run, and the page notes that a work order can be copied where a refusal cannot, which is why both were fixed. The software cannot push to two platforms at once, and needs a local fan-out in between. Three options are ranked, with a hosted fallback if time runs short. Keys are to come from the environment or the clipboard, and never to be written to disk or committed.</p><p>One task is marked binding, and it is about language rather than engineering. Captions may describe what is happening, but must never present a scientific result as passed if it is not, and must never claim experience. When unsure, check the ledger — the list that is added to and never edited — and default to the weaker true statement, because no headline outruns the committed file recording what was run.</p><p>A scope note then defines what autonomous means for the night. The show runs itself inside a session a person opened, while going out to the public stays human-triggered by design. The safety model forbids the producer approving its own go-live. Closing notes to the owner repeat which world to point at, which one not to, and that the full build is a follow-on rather than a midnight task.</p>",
+    "chars": 2569,
+    "words": 453,
+    "sha256": "173365101289edfb"
    },
-   "note": "",
+   "note": "2026-08-24 the source gained two inline corrections about a superseded bring-up script and what following it cost. Both lanes extended to carry them, since the page is kept precisely as a record of a superseded instruction.",
    "source_file": "content/lenses/wiki/evidence/work-orders-producer-golive.md"
   },
   {
    "scope": "article",
    "key": "start-here",
    "corpus": null,
-   "source_sha256": "3f5e38f29cf694fa",
-   "source_body_sha256": "3f5e38f29cf694fa",
+   "source_sha256": "b4e1bac874b330b8",
+   "source_body_sha256": "b4e1bac874b330b8",
    "source_words": 747,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -7967,15 +7967,15 @@
     "words": 407,
     "sha256": "568b75b61ef77ccb"
    },
-   "note": "Rebound 2026-08-02 after the 495-page expansion re-resolved the article's live {{count}} markers, moving its body digest. The prose was re-read against the new bytes and left unchanged because it contains no numeral, so the counts that moved appear nowhere in it. A rebind is only honest when the delta is checked; this one was.",
+   "note": "2026-08-24 the source moved. A count of executable checks was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.",
    "source_file": "content/lenses/articles/start-here.md"
   },
   {
    "scope": "article",
    "key": "the-colony",
    "corpus": null,
-   "source_sha256": "e64563db00b695bd",
-   "source_body_sha256": "e64563db00b695bd",
+   "source_sha256": "bec741b36f48f093",
+   "source_body_sha256": "bec741b36f48f093",
    "source_words": 540,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -7994,7 +7994,7 @@
     "words": 390,
     "sha256": "bc3f5a0857c52c79"
    },
-   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
+   "note": "2026-08-24 the source moved. A count of test files was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.",
    "source_file": "content/lenses/articles/the-colony.md"
   },
   {
@@ -8055,8 +8055,8 @@
    "scope": "article",
    "key": "the-brain",
    "corpus": null,
-   "source_sha256": "9376fc5b3bf50df5",
-   "source_body_sha256": "9376fc5b3bf50df5",
+   "source_sha256": "a4dd689d31130200",
+   "source_body_sha256": "a4dd689d31130200",
    "source_words": 761,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
@@ -8075,7 +8075,7 @@
     "words": 449,
     "sha256": "9944be06bebdc92f"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. A count of test files was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.",
    "source_file": "content/lenses/articles/the-brain.md"
   },
   {
@@ -8136,27 +8136,27 @@
    "scope": "article",
    "key": "the-broadcast-suite",
    "corpus": null,
-   "source_sha256": "19122e241c0325f5",
-   "source_body_sha256": "19122e241c0325f5",
-   "source_words": 2675,
+   "source_sha256": "67c5b6818843af83",
+   "source_body_sha256": "67c5b6818843af83",
+   "source_words": 2952,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>This page explains how the project turns its colony into an actual live television programme, and then how to run it. It is the part of the system with the most moving parts and the least written about it, so the page does both jobs at once.</p><p>The first thing it insists on is that two studio systems exist with different scene contracts, and that a guide blending them is wrong. One of them airs; the other is a later design that has not yet run. Everything the page describes is the one that airs. It walks the chain from the game world to a public platform, marking which stages are automatic and which need a person. It describes the scenes, and the show itself, which is a data file with its own checks. It also describes a word filter that refuses claims the project will not make, while admitting the filter is blunt and cannot tell a claim from its denial.</p><p>It then covers going live. Several code paths can start a stream, all of them run through one guard, and today that guard refuses all of them. The running instructions begin by telling you to put a password on the control socket first.</p>",
-    "chars": 1100,
-    "words": 205,
-    "sha256": "b5237bfc151b5922"
+    "html": "<p>This page explains how the project turns its colony into a live television programme, and then how to run it. It is the part with the most moving parts and the least written about it, so it does both jobs at once.</p><p>It insists first that two studio systems exist with different scene contracts, and that a guide blending them is wrong. One airs; the other is a later design that has not yet run, and everything here describes the one that airs. It walks the chain from the game world to a public platform, marking which stages are automatic and which need a person. It describes the scenes, and the show itself, a data file with its own checks. It also describes a word filter that refuses claims the project will not make, admitting it is blunt and cannot tell a claim from its denial.</p><p>It then covers going live. Several code paths can start a stream, all run through one guard, and today that guard refuses all of them. The running instructions begin by telling you to password the control socket. It also flags a superseded script that now refuses to run, a boot path that comes up quiet unless told otherwise, and a voice path where sound in the room is not sound on air.</p>",
+    "chars": 1187,
+    "words": 218,
+    "sha256": "38baf68c5a6983b8"
    },
    "clear": {
-    "html": "<p>This is the longest article on the site and it does two jobs: explain the broadcast, then tell you how to run it — the subsystem with the most moving parts and the least written about it.</p><p>It insists first that there are two studio systems with different scene contracts, and that any guide blending them is wrong. One is the operated studio that actually airs, driven from a Windows render box. The other is a later containerised design whose own scene builder and verifier declare themselves authored but not yet run on node hardware. Everything that follows describes the first.</p><p>The chain to air is set out stage by stage, each marked automatic or operator. Two carry design decisions worth knowing. The world view is captured as a window rather than loaded as a browser source, because the embedded browser hits a limit on heavy content and renders black. And the encoder runs once, every destination receiving a copy of the same bytes.</p><p>The scenes are built by a program that tears everything down and rebuilds it, refuses to run while streaming unless forced, and boots every microphone and camera muted. One scene belongs to no group, which means it cannot be previewed, which means the only route to it puts it straight on air. That is recorded openly and answered by a check that fails if anyone schedules it, not by deleting it.</p><p>The show itself is a data file rather than a script, its rows carrying the scene, what is on screen, the host's beats, the caption, and what must never be said. Its verifier runs a short list of checks, and the article is more interested in what they check for than in their passing. That the show is not empty. That every scene it names exists in the build, and that no row names the unpreviewable one. That captions pass the word filter, and that the clock closes by arithmetic and by the file's own declared total. And that nothing in the show can start a stream.</p><p>The word filter refuses a list of claim words, names the offending word, suggests a rewording, and logs any override rather than passing silently. The article is candid that it is blunt: one caption trips on a word inside a sentence denying that very thing, and the answer was to speak that caption aloud rather than weaken the filter.</p><p>Going live runs through one guard, required by every path that could reach it, with the completeness of that list enforced by a walk over the scripts rather than by memory. The guard requires several conditions and today refuses everything. What it does not cover is stated plainly. It binds this codebase's paths, not the machine, so anything on the render box that can talk to the control socket bypasses it entirely. That is why the running instructions open by telling you to set a password on that socket.</p><p>The rest is operational: bringing the stack up in a health-gated order, building the scenes, proving the overlays are on screen, driving the show, arming the fan-out, and a pre-flight. It stresses that the test cannot tell you that you are on the air; only the platform's own dashboard can. And it lists the honest limits of a long run: no soak test, a capture failure with detection but no automatic recovery, two supervisors that disagree under air, and an emergency stop no human has fired.</p>",
-    "chars": 3251,
-    "words": 576,
-    "sha256": "16a056c33f74158c"
+    "html": "<p>The longest article on the site, doing two jobs: explain the broadcast, then tell you how to run it — the subsystem with the most moving parts and least written about it.</p><p>It insists first that two studio systems exist with different scene contracts, and that any guide blending them is wrong. One is the operated studio that actually airs, driven from a Windows render box. The other is a later containerised design whose scene builder and verifier declare themselves authored but not yet run on node hardware. Everything that follows describes the first.</p><p>The chain to air is set out stage by stage, each marked automatic or operator. Two carry design decisions worth knowing. The world view is captured as a window rather than loaded as a browser source, because the embedded browser hits a limit on heavy content and renders black. The encoder runs once, every destination getting a copy of the same bytes.</p><p>The scenes are built by a program that tears everything down and rebuilds, refuses to run while streaming unless forced, and boots every microphone and camera muted. One scene belongs to no group, so it cannot be previewed, so the only route to it puts it straight on air. That is recorded openly and answered by a check that fails if anyone schedules it, not by deleting it.</p><p>The show itself is a data file rather than a script, its rows carrying the scene, what is on screen, the host's beats, the caption, and what must never be said. Its verifier runs a short list of checks, and is more interested in what they check for than in their passing: that the show is not empty; that every scene it names exists in the build and no row names the unpreviewable one; that captions pass the word filter; that the clock closes both by arithmetic and by the file's own declared total; and that nothing in the show can start a stream.</p><p>The word filter refuses a list of claim words, names the offender, suggests a rewording, and logs any override rather than passing silently. The article is candid that it is blunt: one caption trips on a word inside a sentence denying it, and the answer was to speak it aloud rather than weaken the filter.</p><p>Going live runs through one guard required by every path that could reach it, the completeness of that list enforced by a walk over the scripts rather than by memory. The guard requires several conditions and refuses everything today. What it does not cover is stated plainly: it binds this codebase's paths, not the machine, so anything on the render box that can reach the control socket bypasses it. That is why the running instructions open by telling you to password that socket.</p><p>The rest is operational: bringing the stack up in health-gated order, building the scenes, proving the overlays are on screen, driving the show, arming the fan-out, and a pre-flight. It stresses that the test cannot tell you that you are on air; only the platform's own dashboard can. Three things in the running half are singled out: a superseded script that now refuses to run, kept so the documents citing it explain themselves; a boot path that comes up quiet unless a flag says otherwise; and the voice, where sound on the machine is not sound reaching the broadcast.</p><p>And it lists the honest limits of a long run: no soak test, a capture failure detected but not automatically recovered, two supervisors that disagree under air, and an emergency stop no human has fired.</p>",
+    "chars": 3444,
+    "words": 600,
+    "sha256": "f66dbc5668e18c30"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. Three things were added to the running half - a superseded script that now refuses, a quiet-by-default boot path, and the voice server. Both lanes revised to carry them.",
    "source_file": "content/lenses/articles/the-broadcast-suite.md"
   },
   {
@@ -8190,81 +8190,81 @@
    "scope": "article",
    "key": "install",
    "corpus": null,
-   "source_sha256": "8eb1abfd322a946e",
-   "source_body_sha256": "8eb1abfd322a946e",
-   "source_words": 1471,
+   "source_sha256": "dadf2a3b31831a2a",
+   "source_body_sha256": "dadf2a3b31831a2a",
+   "source_words": 1618,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>This is the prerequisite list, and its distinguishing feature is that it does not pretend the project agrees with itself. Every version on the page is quoted from the file that declares it. Where two files disagree, both are shown and the disagreement is named rather than smoothed over.</p><p>It opens by admitting that nothing here is centrally pinned, which is why three of the declarations conflict. It then lists what each part needs. A language and its platform, a runtime for the scripting parts, and an interpreter for the experiment pipeline. An older platform version for the game, and a set of paid or platform-specific things for the studio. A container stack for one part is listed too, and marked pending.</p><p>It gives install steps for each part in turn, and tells you to change a default password that ships in a setup script before anything else. It ends with a plain list of what you will not be able to install at all, because the source repositories are not public and some of the data is not redistributed.</p>",
-    "chars": 1019,
-    "words": 180,
-    "sha256": "06e34cbfbfea57a9"
+    "html": "<p>This is the prerequisite list, and its distinguishing feature is that it does not pretend the project agrees with itself. Every version on the page is quoted from the file that declares it. Where two files disagree, both are shown and the disagreement is named rather than smoothed over.</p><p>It opens by admitting that nothing here is centrally pinned, which is why three of the declarations conflict. It then lists what each part needs. A language and its platform, a runtime for the scripting parts, and an interpreter for the experiment pipeline. An older platform version for the game, and a set of paid or platform-specific things for the studio. A container stack for one part is listed too, and marked pending.</p><p>It gives install steps for each part in turn, and tells you to change a default password that ships in a setup script before anything else. One listed step is an elevated swap nothing invokes, kept because it defeats a race the obvious approach loses: the service keeping the widget alive restarts it mid-copy, so the new file never lands and the old code returns healthy.</p><p>It ends with a plain list of what you will not be able to install at all, because the source repositories are not public and some of the data is not redistributed.</p>",
+    "chars": 1269,
+    "words": 220,
+    "sha256": "3d55825bab4d0fa0"
    },
    "clear": {
-    "html": "<p>This is the prerequisite page, and what makes it unusual is stated in its second paragraph. Every version here is quoted from the file that declares it, and where two files disagree both are shown and the disagreement is named rather than smoothed over. A list that resolves conflicts silently will send you to the wrong version and give you no way to find out why.</p><p>The honest headline comes first. Nothing in the estate is centrally pinned; there is no single version file of any of the usual kinds. That is why three declarations conflict. For the main language, the core project and the web interface declare different floors. The newer one is right and the older is stale but harmless, because the automated pipeline runs the newer for both — which is precisely why it has stayed wrong. For the scripting runtime, three different figures are declared in three places and one file declares nothing at all. For the interpreter, the pipeline pins a version while the laboratory pins its libraries and not the interpreter itself, and a recorded audit notes that its environment matched by luck rather than by constraint. The game needs a specific older platform version, and the page warns that the failure will not obviously say so.</p><p>The rest is listed by what needs it. The game itself, a paid product you must own. A desktop framework for the widget. The studio software, which must be a native install rather than a headless one. Then a media server, a media converter on the path, a certificate tool, a shell, and a container stack for the design that is marked pending.</p><p>Install instructions follow, part by part. The core fetches nothing. The exact ordered sequence the automated pipeline runs is given as the sequence to copy, with a note that two of its pairs of steps are pairs — running either half alone proves nothing. A quiet lesson is attached: that pipeline declares which branches it runs on, and for a long time the real working branch was not among them, so it had never run once on any commit. A green badge and a configured pipeline are different claims.</p><p>The game setup deliberately does not accept the licence for you. And before anything else, the page tells you to change a default remote-console password that ships in the setup script. It notes that a scan of this very site found that default published on several pages alongside another shared secret, that both are now redacted, and that the publishing check gained a rule it did not have before.</p><p>It closes with what you will not be able to install. The source repositories are private, the private network does not exist for you, and several absolute paths are hard-coded. The observed-experiment reproduction needs a dataset that is not redistributed. Going live needs something nothing in the repository can mint, and three units of the containerised design were never written.</p>",
-    "chars": 2862,
-    "words": 494,
-    "sha256": "8fe1513956a72dc1"
+    "html": "<p>This is the prerequisite page, and what makes it unusual is stated in its second paragraph. Every version here is quoted from the file that declares it, and where two files disagree both are shown and the disagreement is named rather than smoothed over. A list that resolves conflicts silently will send you to the wrong version and give you no way to find out why.</p><p>The honest headline comes first. Nothing in the estate is centrally pinned; there is no single version file of any of the usual kinds. That is why three declarations conflict. For the main language, the core project and the web interface declare different floors. The newer one is right and the older is stale but harmless, because the automated pipeline runs the newer for both — which is precisely why it has stayed wrong. For the scripting runtime, three different figures are declared in three places and one file declares nothing at all. For the interpreter, the pipeline pins a version while the laboratory pins its libraries and not the interpreter itself, and a recorded audit notes that its environment matched by luck rather than by constraint. The game needs a specific older platform version, and the page warns that the failure will not obviously say so.</p><p>The rest is listed by what needs it. The game itself, a paid product you must own. A desktop framework for the widget. The studio software, which must be a native install rather than a headless one. Then a media server, a media converter on the path, a certificate tool, a shell, and a container stack for the design that is marked pending.</p><p>Install instructions follow, part by part. The core fetches nothing. The exact ordered sequence the automated pipeline runs is given as the sequence to copy, with a note that two of its pairs of steps are pairs — running either half alone proves nothing. A quiet lesson is attached: that pipeline declares which branches it runs on, and for a long time the real working branch was not among them, so it had never run once on any commit. A green badge and a configured pipeline are different claims.</p><p>The game setup deliberately does not accept the licence for you. And before anything else, the page tells you to change a default remote-console password that ships in the setup script. It notes that a scan of this very site found that default published on several pages alongside another shared secret, that both are now redacted, and that the publishing check gained a rule it did not have before.</p><p>One of the elevated steps is invoked by nothing and is listed anyway, because reading it is the point. Replacing the widget binary the obvious way loses a race: the service whose job is to keep the widget alive restarts it within about a second and re-locks the file before the copy finishes, so the copy fails quietly and the widget returns looking healthy while running the old code. Stopping the service first is what needs elevation, and the script refuses to claim success unless the binary timestamp moved and the widget came back.</p><p>It closes with what you will not be able to install. The source repositories are private, the private network does not exist for you, and several absolute paths are hard-coded. The observed-experiment reproduction needs a dataset that is not redistributed. Going live needs something nothing in the repository can mint, and three units of the containerised design were never written.</p>",
+    "chars": 3442,
+    "words": 588,
+    "sha256": "b9957f77909f773f"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. An elevated widget-swap step that nothing invokes was documented rather than excluded from coverage, because raising an exclusion ceiling is how full coverage is preserved while covering less. Both lanes revised to carry it.",
    "source_file": "content/lenses/articles/install.md"
   },
   {
    "scope": "article",
    "key": "run-it",
    "corpus": null,
-   "source_sha256": "f7040ce44c3f399a",
-   "source_body_sha256": "f7040ce44c3f399a",
-   "source_words": 1624,
+   "source_sha256": "e223174053ac5fb9",
+   "source_body_sha256": "e223174053ac5fb9",
+   "source_words": 1738,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>This is the reference page: every runnable entry point in the project, with the command that really starts it, grouped by subsystem. Its most useful feature is that each section is marked with whether you can actually run it — on an ordinary machine, partly, or not at all without the operator's private infrastructure.</p><p>The entry points are discovered from the source automatically, so if something new appears and nobody documents it, a check goes red naming it.</p><p>The page runs through the reasoning core, the colony, the broadcast director, the science control plane, the operator surfaces, the motor laboratory, the maths workbench and the broadcast. For each it gives the commands and, more usefully, the reason the order matters. One check in the core exists to make sure an agent's beliefs can be read. A model nobody can look inside cannot be shown to be wrong.</p><p>It ends by collecting the boundary in one place: what a stranger can run, and what needs a private repository, a specific machine, a private network, an unpublished dataset, paid keys and one named person's typed confirmation. The page does not treat that boundary as an apology.</p>",
-    "chars": 1150,
-    "words": 194,
-    "sha256": "b326a6278a2bdea4"
+    "html": "<p>This is the reference page: every runnable entry point in the project, with the command that really starts it, grouped by subsystem. Its most useful feature is that each section is marked with whether you can actually run it — on an ordinary machine, partly, or not at all without the operator's private infrastructure.</p><p>The entry points are discovered from the source automatically, so if something new appears and nobody documents it, a check goes red naming it.</p><p>The page runs through the reasoning core, the colony, the broadcast director, the science control plane, the operator surfaces, the motor laboratory, the maths workbench and the broadcast. For each it gives the commands and, more usefully, the reason the order matters. One check in the core exists to make sure an agent's beliefs can be read. A model nobody can look inside cannot be shown to be wrong.</p><p>It also covers a reading surface for the model itself, which draws the mathematics rather than driving it.</p><p>It ends by collecting the boundary in one place: what a stranger can run, and what needs a private repository, a specific machine, a private network, an unpublished dataset, paid keys and one named person's typed confirmation. The page does not treat that boundary as an apology.</p>",
+    "chars": 1277,
+    "words": 212,
+    "sha256": "2d8543c8a48ddb14"
    },
    "clear": {
-    "html": "<p>This is the reference page rather than a narrative one: every runnable entry point in the estate, with the command that really starts it. Entry points are discovered from the source repositories by an automated check, so anything new that nobody documents turns that check red and names it.</p><p>Every section carries one of three markers, and the article insists they mean exactly what they say. Runnable on an ordinary machine with free software and no accounts. Partly runnable, with some of it needing something you may not have. Or needing the operator's infrastructure, in which case you can read it to understand the system but will not be able to execute it.</p><p>The tour begins with the inference core, which is fully offline and deterministic. It includes an unusual check that the agent's internal state is legible, on the reasoning that a system whose beliefs cannot be inspected cannot be falsified, and an unfalsifiable model is not a scientific object however well it performs. Then the colony, where a single agent runs if you own the game and have the right platform version. One option there lets the same agent run blind or seen, so that removing a sense can be tested: an ablation that changes nothing tells you the sense was not being used. Then the broadcast director, which runs, though the camera and overlays it drives need the studio.</p><p>Then the science control plane. Its check runner is described as the single most useful command in the estate for finding out what is actually true right now. It lists the checks it cannot run rather than dropping them, because a check quietly not run is indistinguishable from one that passes.</p><p>Then the operator surfaces, deliberately independent so that no single failure blinds the operator. One of them draws its plan from a hard-coded path elsewhere, and on any other machine it renders an empty plan rather than an error. The last of its rooms is a checkpoint no check can pass on the operator's behalf: two images side by side, and a person says whether they differ with no text read.</p><p>Then the motor laboratory, with a standing instruction to run before verifying and never only the second, because a verifier pointed at a stale artifact will happily confirm last week's result. The honest note attached is that the widest cross-study check and the observed experiment both need material that is not redistributed. Then the maths workbench, which executes the committed model libraries themselves rather than a second copy of the maths for display.</p><p>It ends by collecting the boundary in one place — what you can run and what you cannot. That list is not an apology, because being told precisely where the wall is beats discovering it at step nine.</p>",
-    "chars": 2712,
-    "words": 465,
-    "sha256": "6fef6058bc446eb7"
+    "html": "<p>This is the reference page rather than a narrative one: every runnable entry point in the estate, with the command that really starts it. Entry points are discovered from the source repositories by an automated check, so anything new that nobody documents turns that check red and names it.</p><p>Every section carries one of three markers, and the article insists they mean exactly what they say. Runnable on an ordinary machine with free software and no accounts. Partly runnable, with some of it needing something you may not have. Or needing the operator's infrastructure, in which case you can read it to understand the system but will not be able to execute it.</p><p>The tour begins with the inference core, which is fully offline and deterministic. It includes an unusual check that the agent's internal state is legible, on the reasoning that a system whose beliefs cannot be inspected cannot be falsified, and an unfalsifiable model is not a scientific object however well it performs. Then the colony, where a single agent runs if you own the game and have the right platform version. One option there lets the same agent run blind or seen, so that removing a sense can be tested: an ablation that changes nothing tells you the sense was not being used. Then the broadcast director, which runs, though the camera and overlays it drives need the studio.</p><p>Then the science control plane. Its check runner is described as the single most useful command in the estate for finding out what is actually true right now. It lists the checks it cannot run rather than dropping them, because a check quietly not run is indistinguishable from one that passes.</p><p>Then the operator surfaces, deliberately independent so that no single failure blinds the operator. One of them draws its plan from a hard-coded path elsewhere, and on any other machine it renders an empty plan rather than an error. The last of its rooms is a checkpoint no check can pass on the operator's behalf: two images side by side, and a person says whether they differ with no text read.</p><p>Then the motor laboratory, with a standing instruction to run before verifying and never only the second, because a verifier pointed at a stale artifact will happily confirm last week's result. The honest note attached is that the widest cross-study check and the observed experiment both need material that is not redistributed. Then the maths workbench, which executes the committed model libraries themselves rather than a second copy of the maths for display.</p><p>A reading surface for the model is covered too. It reports what is built and what is running, read live from disk and cached nowhere, and carries three pages: the whiteboard, which opens one factor up and walks a single turn of thought step by step; a view of the whole organism; and a page naming what is currently broken. Its closing section asks whether the page is telling the truth, and nothing on any of them changes the model they draw.</p><p>It ends by collecting the boundary in one place — what you can run and what you cannot. That list is not an apology, because being told precisely where the wall is beats discovering it at step nine.</p>",
+    "chars": 3197,
+    "words": 547,
+    "sha256": "24ed4797108cf5ff"
    },
-   "note": "Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.",
+   "note": "2026-08-24 the source moved. A section was added for the model reading surface. Both lanes revised to carry it.",
    "source_file": "content/lenses/articles/run-it.md"
   },
   {
    "scope": "article",
    "key": "maintenance",
    "corpus": null,
-   "source_sha256": "27075bfb77786667",
-   "source_body_sha256": "27075bfb77786667",
-   "source_words": 1478,
+   "source_sha256": "eca87f85d4313c9a",
+   "source_body_sha256": "eca87f85d4313c9a",
+   "source_words": 2001,
    "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
+   "authored_at": "2026-08-24",
    "review_state": "draft",
    "reviewed_by": null,
    "reviewed_at": null,
    "plain": {
-    "html": "<p>Keeping the system running once it exists is its own job: restarting things that crash, making them come back after a reboot, checking health, backing up, repairing the record, and recovering from disaster.</p><p>It hangs on one distinction the project takes seriously. Surviving a crash and surviving a reboot are two different claims, and collapsing them is how a system comes to believe it is durable when it is not. So each startup entry has a separate prover that reports success only if the machine actually rebooted after the entry was installed. Installing one is not evidence that it ever fired.</p><p>It also insists that questions about the current state are answered by asking the running system rather than by reading files, and it names three such questions no committed file can answer honestly. Corrections to the record are appended, never edited.</p><p>The page ends by listing what the project knows it cannot promise, including that no long-duration test exists and that the emergency stop has never been fired by a person.</p>",
-    "chars": 1028,
-    "words": 172,
-    "sha256": "87bf25f0fe3769cc"
+    "html": "<p>Keeping the system running is its own job: restarting things that crash, making them come back after a reboot, checking health, backing up, repairing the record, and recovering from disaster.</p><p>It hangs on one distinction the project takes seriously. Surviving a crash and surviving a reboot are two different claims, and collapsing them is how a system comes to believe it is durable when it is not. So each startup entry has a separate prover that reports success only if the machine actually rebooted after it was installed. Installing one is not evidence that it fired.</p><p>It also insists that questions about the current state are answered by asking the running system rather than reading files, and names three such questions no committed file can answer honestly. Corrections to the record are appended, never edited.</p><p>Two of its sections are about stopping rather than starting: a quiet mode that shuts the heavy media half while the watching stays up, and a check after a reboot that asks whether the machine actually stayed quiet.</p><p>The page ends by listing what the project knows it cannot promise, including that no long-duration test exists and that the emergency stop has never been fired by a person. One of those admissions carries a correction: it had understated how much of the record exists.</p>",
+    "chars": 1325,
+    "words": 219,
+    "sha256": "2588c8a6b3d4de6e"
    },
    "clear": {
-    "html": "<p>This is the operations page: watchdogs, boot persistence, health checks, certificates, repair of the append-only record, backups and disaster recovery. Most of it turns on one distinction the estate takes more seriously than most — that crash-restart and reboot-survival are two different claims, and collapsing them is how a system comes to believe it is durable when it is not. Installing a startup entry is not evidence that it fired.</p><p>Health comes first, and the instruction is to ask the running system rather than read the repository, because a repository tells you what was intended and only a probe tells you what is. Three questions in particular are deliberately not answered by any committed file — whether the trees are clean, whether the suite passes, whether the gates pass — because they are facts about a run rather than about the tree. A governing document upstream used to answer all three in prose, and one of those answers was measured at one moment and was false three minutes later, while reading as present tense.</p><p>Watchdogs handle crash restart, one per surface. A conflict is recorded rather than resolved. Two supervisors disagree while the system is on air, one standing down during a stream and the other restarting unconditionally. Resolving it needs a decision about which behaviour is correct, and nobody has made it.</p><p>Boot persistence is installed separately and proved separately. Each installer pairs with a prover that reports success only if the machine actually rebooted after the install marker was written. A prover that said yes merely because a file exists would be certifying its own installation rather than the behaviour it was installed for. Two drills exercise recovery paths deliberately, on the grounds that a recovery path never exercised is a hypothesis.</p><p>Certificate renewal happens as a side effect of normal operation rather than as a task someone has to remember.</p><p>The evidence record has its own maintenance: a set of one-shot recorders, all of which append nothing if run again. They exist because the record's own anti-silence guard fired — work had continued and the record had not. Two of them are corrections and one supersedes an earlier reference, and the page underlines why. A correction is appended, never edited. An append-only record that permits a fix in place has no memory of having been wrong, which is the only thing it was built to remember.</p><p>Backups, archiving and a heartbeat are four scheduled units, all marked as design and not yet run on node hardware, so the section is the intended shape rather than a running system. Their ordering is deliberate: reverse two of them and every backup is a day stale.</p><p>Upgrades come with warnings. Removing the colony container destroys the agents' memories, so capture comes first. One deployment script refuses to run because it is stale against the current topology. And the fan-out arm deliberately does not survive a reboot. Two housekeeping gaps are stated rather than left to be discovered: nothing rotates the logs, and one evidence store grows without bound by design.</p><p>The closing section lists what is not underwritten — no soak test, a capture failure with detection but no automatic recovery, a long run that is not underwritten, and an emergency stop no human has fired. A fifth is named as the sharpest. Every registered check has no rows in the one record that is meant to hold them, and writing those rows is the operator's task rather than an agent's.</p>",
-    "chars": 3483,
-    "words": 581,
-    "sha256": "357950333e5fabc9"
+    "html": "<p>This is the operations page: watchdogs, boot persistence, health checks, certificates, repair of the append-only record, backups and disaster recovery. Most of it turns on one distinction the estate takes seriously: crash-restart and reboot-survival are two different claims, and collapsing them is how a system comes to believe it is durable when it is not. Installing a startup entry is not evidence that it fired.</p><p>Health comes first: ask the running system rather than read the repository, because a repository tells you what was intended and only a probe tells you what is. Three questions are deliberately not answered by any committed file — whether the trees are clean, whether the suite passes, whether the gates pass — because they are facts about a run, not about the tree. A governing document upstream answered all three in prose, and one answer was false three minutes after it was measured, while reading as present tense.</p><p>Watchdogs handle crash restart, one per surface. A conflict is recorded rather than resolved: two supervisors disagree while the system is on air, one standing down during a stream, the other restarting unconditionally, and nobody has decided which is correct.</p><p>Boot persistence is installed and proved separately. Each installer pairs with a prover that reports success only if the machine rebooted after the install marker was written. A prover that said yes because a file exists would certify its own installation rather than the behaviour it was installed for. Two drills exercise recovery paths deliberately, because a recovery path never exercised is a hypothesis.</p><p>Certificate renewal is a side effect of normal operation rather than a task someone must remember.</p><p>The evidence record has its own maintenance: one-shot recorders that append nothing if run again. They exist because the record's own anti-silence guard fired: work had continued and the record had not. A correction is appended, never edited. An append-only record that permits a fix in place has no memory of having been wrong, which is the only thing it was built to remember.</p><p>Backups, archiving and a heartbeat are four scheduled units, all marked as design and not yet run on node hardware — the intended shape rather than a running system. Reverse two of them and every backup is a day stale.</p><p>Upgrades come with warnings: removing the colony container destroys the agents' memories, so capture comes first. One deployment script refuses to run because it is stale against the current topology, and the fan-out arm does not survive a reboot by design. Two housekeeping gaps are stated rather than left to be found: nothing rotates the logs, and one evidence store grows without bound by design.</p><p>The closing section lists what is not underwritten — no soak test, a capture failure detected but not automatically recovered, a long run nobody has underwritten, and an emergency stop no human has fired. A fifth is named as the sharpest: all but one of the registered checks have no row in the record meant to hold them, and writing those rows is the operator's task, not an agent's. The page carries a correction to that line, which previously said none of them did, and names the join key that hid it.</p><p>Two sections concern stopping rather than starting. A quiet mode shuts the expensive media half while monitoring stays up, held by a latch written before anything stops, because the supervisors would otherwise undo it in seconds. Its failsafe leans the opposite way to the healer's: an unreadable latch reads as not quiet. A companion check after a reboot asks whether the machine actually stayed quiet.</p>",
+    "chars": 3658,
+    "words": 600,
+    "sha256": "536c5c1b6b8e97fa"
    },
-   "note": "",
+   "note": "2026-08-24 the source moved. Two sections were added, on quiet mode and on proving the state after a reboot, and one closing claim was corrected. Both lanes revised to carry them.",
    "source_file": "content/lenses/articles/maintenance.md"
   },
   {
@@ -8296,12 +8296,12 @@
   }
  ],
  "totals": {
-  "content_routes": 537,
+  "content_routes": 555,
   "lensed": 303,
   "reviewed": 0,
   "draft": 303,
   "absent_records": 0,
-  "unlensed": 234,
+  "unlensed": 252,
   "orientations": 8
  },
  "limits": [

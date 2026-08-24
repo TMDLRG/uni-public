@@ -350,6 +350,21 @@ particular, set an OBS WebSocket password first.
 
 ---
 
+## Run the whiteboard
+
+A reading surface for the model rather than a control surface for it. It answers what is built and
+what is being run, read live from disk and cached nowhere, and it carries three pages: the whiteboard
+itself, which opens one factor up and walks a single turn of thought step by step; a view of the
+whole organism; and a defects-and-repairs page that names what is currently wrong.
+
+```bash
+node viewer/model_view.cjs
+```
+
+The whiteboard's last section asks whether the page is telling the truth, which is the habit this
+estate is trying to build rather than a flourish. Nothing on any of these pages changes the model
+they draw.
+
 ## The honest boundary
 
 Collected in one place, because it is the question a stranger actually has.

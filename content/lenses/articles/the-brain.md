@@ -3,8 +3,8 @@ lens_schema: 1
 scope: article
 key: the-brain
 corpus: 
-source_sha256: 9376fc5b3bf50df5
-source_body_sha256: 9376fc5b3bf50df5
+source_sha256: a4dd689d31130200
+source_body_sha256: a4dd689d31130200
 source_title: The active-inference brain
 source_words: 761
 authored_by: claude-opus-5
@@ -12,7 +12,7 @@ authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the source moved. A count of test files was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.
 ---
 <!--PLAIN-->
 

@@ -83,6 +83,44 @@ duplicate.
 
 ---
 
+## Quiet mode — stop the media stack, keep watching
+
+The broadcast stack is heavy and this is not a machine that exists only to broadcast. Quiet mode
+stops the expensive half — the mixer, the media server, the browser profiles holding the camera
+views, the encoders pushing to air — while the monitoring surfaces stay up, so the machine is still
+observable while it is quiet.
+
+The state is a declared latch on disk, and it is written *before* anything is stopped. That ordering
+is the whole design. Every supervisor reads the latch and stands down rather than restarting what
+quiet mode just closed, and without it quiet mode does not survive: this system has several
+supervisors, one of them on a five-second timer, and any one of them will undo a quiet in seconds.
+
+```bash
+powershell -File viewer/channel_windows_watchdog.ps1
+```
+
+That is one of the supervisors that must consult the latch. Run it once for a single check to see
+what it would do rather than leaving it looping.
+
+The failsafe direction is deliberate and it is the opposite of the healer's. An unreadable or absent
+latch reads as **not quiet**, so a corrupt file brings the stack back rather than silently holding a
+studio dark. Quiet and resume are both reachable from the operator's surfaces rather than only from a
+shell, because a mode you cannot leave without a terminal is a trap.
+
+## After a reboot, prove the state rather than assume it
+
+A boot that looks fine is a failure this estate keeps meeting. This runs after the machine comes back
+and writes a verdict rather than an impression.
+
+```bash
+powershell -File viewer/hud/native/hud_boot_healthcheck.ps1
+```
+
+It proves the monitoring surface is actually serving rather than merely running, checks the monitors
+it expects to find, and asks the one thing no liveness probe can answer: did the box *stay* quiet. If
+something restarted the stack during boot, the check re-asserts quiet rather than reporting a state
+that has already stopped being true.
+
 ## Boot persistence — reboot survival
 
 A separate claim, installed separately, and *proved* separately.
@@ -281,8 +319,22 @@ document.
 4. **The emergency stop has never been fired by a human.** Sixty seconds of rehearsal before a public
    run is cheap insurance against the one path nobody has walked.
 
-There is a fifth, and it is the sharpest: **every registered gate has zero rows in the canonical
-ledger.** The instruments run and their results are real, but the record that they ran is not yet
-written where the schema says it must be. Authoring those rows is the operator's task and no agent may
-do it for him — the ledger has a single writer, and that constraint is worth more than the
+There is a fifth, and it is the sharpest: **35 of the 36 registered gates have no row in the
+canonical ledger.** The instruments run and their results are real, but the record that they ran is
+not yet written where the schema says it must be. Authoring those rows is the operator's task and no
+agent may do it for him — the ledger has a single writer, and that constraint is worth more than the
 convenience of automating it away.
+
+> **Corrected 2026-08-24. This paragraph previously read "every registered gate has zero rows in the
+> canonical ledger", and that was false.** One gate does have rows. Measured by joining the registry
+> to the ledger on each gate's row alias rather than on its identifier: `sight-blind` is recorded
+> under the name `hud-sight-shows-blind`, against a receipt dated 2026-07-17, and its latest verdict
+> there is PARTIAL rather than PASS.
+>
+> The join key is the whole trap. Matching on the identifier returns zero and looks like a clean,
+> checked answer, which is how a wrong number survives being checked. The same false sentence stood
+> in four of the estate's own governing documents for a fortnight before it was caught there, and it
+> reached this page from them — so the correction upstream did not reach the copy a reader could
+> actually see. The original wording is kept above rather than quietly replaced, because a record
+> that permits a fix in place has no memory of having been wrong, which is the only thing it was
+> built to remember.

@@ -234,6 +234,43 @@ powershell -File viewer/studio_channels.ps1
 powershell -File viewer/launch_channels.ps1
 ```
 
+**That second one is superseded and now refuses to run.** It is listed here because five documents
+still cite it, and a deleted file makes a citation dangle where a refusing file makes it explain
+itself. It is not an alternative to the one above it:
+
+{{quote:uni-minecraft:viewer/launch_channels.ps1:1-8}}
+
+The refusal was added alongside the fix to the document that was still instructing people to run it,
+on the reasoning that a work order can be copied where a refusing file cannot.
+
+## Bring it up at boot, quiet by default
+
+The stack can come up with the machine, and it comes up *quiet* unless explicitly told otherwise.
+This is a development box before it is a studio, and the failure that actually costs you is not a
+boot that needed a second command — it is a boot that quietly loaded the machine for a week.
+
+```bash
+powershell -File viewer/studio_boot.ps1
+```
+
+Going live at boot requires a flag file placed deliberately. The default direction matters more than
+the mechanism.
+
+## The voice on air
+
+The spoken line is its own small server feeding a browser source inside the mixer.
+
+```bash
+node viewer/voice_server.cjs
+```
+
+The distinction that costs people hours is that local speech makes sound *on the machine*, which is
+not the same as sound *in the broadcast*. The server reports whether any page is actually connected
+and refuses rather than pretending when none is. That refusal is the point: this path has already
+been configured perfectly, made real audible sound in the room, and sent silence to air, with every
+readable property green. Configuration cannot tell you which happened. Only a meter reading on the
+source can.
+
 ## Build the scenes
 
 ```bash

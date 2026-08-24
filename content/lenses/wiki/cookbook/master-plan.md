@@ -4,15 +4,15 @@ scope: wiki
 key: cookbook/master-plan
 corpus: cookbook
 source_sha256: fea791865145fdca
-source_body_sha256: fea791865145fdca
+source_body_sha256: b5dc62a7a5822276
 source_title: MASTER-PLAN.md — The COMPLETE Human Mind/Body Build (a buildable RECIPE)
-source_words: 9936
+source_words: 9937
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.
 ---
 <!--PLAIN-->
 This is the whole cookbook compressed into one document. It is the outline of a single buildable recipe for a complete developmental arc, from conception through metabolism, movement, perception and language and on to open questions about creativity and awareness, all expressed as one engine shown at many scales. It describes a simulation — a bounded peek at a toy world, never a person.

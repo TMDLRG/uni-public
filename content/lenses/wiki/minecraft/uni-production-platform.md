@@ -3,8 +3,8 @@ lens_schema: 1
 scope: wiki
 key: minecraft/uni-production-platform
 corpus: minecraft
-source_sha256: ec01e61d2d3973fb
-source_body_sha256: fce8b62b08dd6b94
+source_sha256: 38faf370e35f21fa
+source_body_sha256: 6e90a685a42fb767
 source_title: UNI Production Platform — end-to-end live broadcast on UNI.OS
 source_words: 4129
 authored_by: claude-opus-5
@@ -12,7 +12,7 @@ authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-08-24 the source moved. One sentence now names a different bring-up script. This lens names no script and its account is unchanged, so only the digests are re-stamped.
 ---
 <!--PLAIN-->
 This is a complete design for a live broadcast platform, and it is careful to say that it is a design. Nothing in it is deployed, and every sentence of the form the platform will do something is marked as a proposal rather than a statement of fact.

@@ -14,7 +14,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_estate.cjs",
- "read_at": "2026-08-02T17:30:30.176Z",
+ "read_at": "2026-08-24T17:08:59.618Z",
  "source": {
   "v2_evidence_root": "UNI-LAB-Command/evidence/v2_repos_and_runtime",
   "files": [
@@ -22,8 +22,8 @@
    "services.json",
    "drift.json"
   ],
-  "public_site_commit": "30a7a17724aaef682d4ffad90fc4750ae84795d4",
-  "public_site_commit_short": "30a7a17724aa",
+  "public_site_commit": "ea156503439f8d045af9dc741b5330bcdbe59738",
+  "public_site_commit_short": "ea156503439f",
   "public_site_branch": "main"
  },
  "summary": "Twenty-four drifts, and the worst of them are on air right now. The single highest-blast finding is that viewer/channels.json — the contract obs_stage.cjs binds OBS window-capture sources against — declares THREE capture windows and only ONE exists: ch_glass (Chrome PID 49868) is alive, ch_colony and ch_overlook are gone, and zero chrome.exe on this box carries --remote-debugging-port. Every OBS scene that captures the colony or the overlook is bound to a window title that no longer exists, and a window capture of a missing window renders black with no error anywhere. Second: the colony camera's health check is TCP-connect-only (door_healer.cjs:69) against a socat forwarder that the lab measured accepting a client per second, logging \"successfully connected\", then EOFing both directions in the same journal second with zero bytes moved — the greenest possible probe over the emptiest possible pipe. Third: two live servers are running bytes older than the commits that changed them — publisher.cjs (PID 40356, started 01:40:10; last commit f67a5d7 at 09:05:22, ~7h25m behind) owns the LAN-wide HTTPS gateway [redacted: port], and track_server.cjs (PID 30176, started 09:29:47; last commit e0163b8 at 09:39:33) is the operator surface. The gate written for exactly this, build-identity, is ci:true and was not run. Fourth, and public: the committed and deployed content/generated/live_status.json still says \"The operator has not declared a watch URL, so none is published\" while he is live on YouTube and Twitch; the fix exists only in an uncommitted working-tree file. I also verified what is NOT drifting, because that matters: gates.ndjson is exactly 207 rows at sha256 1daac9124c0ce483…4ee1, the control-plane ledger is 32 entries with anchor head b90b7498… length 32 in agreement, the plan is 7 stages / 43 steps / 31 DONE / 1 IN_PROGRESS / 1 BLOCKED / 8 PLANNED / 2 OPERATOR, next_act is CHECKPOINT-E, and the Checkpoint-E surface is genuinely live and correct — /lab/l6 returns 9005 bytes and the two shots return 3371 and 3375 bytes exactly as the banner claims. Only the gates block is stale, by one: 36 registered / 33 ci:true measured against a generated block that says 35 / 32, in all three declared copies. Two corrections to my own working hypotheses, said before the findings that survived them: /hud returning 404 on [redacted: port] is BY DESIGN (launcher.cjs:342 says so explicitly — the HUD is a native WPF widget, not a webpage), and voice_server.cjs IS running (PID 28628 on [redacted: internal address][redacted: port], /healthz 200) — my first process filter missed it because it was launched with cwd=viewer and no path prefix. Nothing was started, stopped, killed or edited; no file outside the evidence path was written.",
@@ -2160,7 +2160,7 @@
   {
    "title": "A 4.85 MB BEAM crash dump has sat at the repository root for six days and no Erlang node is running",
    "kind": "uncleared-crash-artifact",
-   "claim": "studio_up.ps1 step 2 launches ONE Phoenix node (elixir --sname uni --cookie sp -S mix phx.server) and guards hard against zombies and duplicates: 'ABORT: a Phoenix process is already running but [redacted: port] is not responding -- ZOMBIE.'",
+   "claim": "studio_up.ps1 step 2 launches ONE Phoenix node (elixir --sname uni --cookie [redacted: credential] -S mix phx.server) and guards hard against zombies and duplicates: 'ABORT: a Phoenix process is already running but [redacted: port] is not responding -- ZOMBIE.'",
    "reality": "erl_crash.dump, 4,852,467 bytes, dated 2026-07-27 21:40, at the UNI.Minecraft root — untracked by git status, so gitignored, and never cleared. Right now there is no beam.smp, erl, werl or java process on the box and nothing listening on 4000, 25565 or 25575. epmd is alive (PID 3960 on 4369) with no node behind it. The dump was not opened (read-only, and it is large).",
    "locator": "[redacted: local path] ; [redacted: local path]",
    "blast_radius": "Six days of unread evidence about how the BEAM died, on a box whose Elixir core is the pure-science substrate. The zombie guard in studio_up is well built and would have caught a half-dead node — but nothing brought the node back, and nothing surfaces its absence, because -Status does not check it either.",
@@ -2313,7 +2313,7 @@
  "withheld": {
   "checked": true,
   "items_refused": 0,
-  "structural_references_redacted": 353,
-  "note": "No item was withheld from the estate directory. 353 structural reference(s) (internal addresses, hostnames, ports, local filesystem paths) were REDACTED IN PLACE with a visible marker, because the sentence still means something without them. That is a different act from a refusal and the number is stated so the two do not blur."
+  "structural_references_redacted": 354,
+  "note": "No item was withheld from the estate directory. 354 structural reference(s) (internal addresses, hostnames, ports, local filesystem paths) were REDACTED IN PLACE with a visible marker, because the sentence still means something without them. That is a different act from a refusal and the number is stated so the two do not blur."
  }
 }

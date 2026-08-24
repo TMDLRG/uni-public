@@ -3,8 +3,8 @@ lens_schema: 1
 scope: article
 key: start-here
 corpus: 
-source_sha256: 3f5e38f29cf694fa
-source_body_sha256: 3f5e38f29cf694fa
+source_sha256: b4e1bac874b330b8
+source_body_sha256: b4e1bac874b330b8
 source_title: Start here
 source_words: 747
 authored_by: claude-opus-5
@@ -12,7 +12,7 @@ authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: Rebound 2026-08-02 after the 495-page expansion re-resolved the article's live {{count}} markers, moving its body digest. The prose was re-read against the new bytes and left unchanged because it contains no numeral, so the counts that moved appear nowhere in it. A rebind is only honest when the delta is checked; this one was.
+note: 2026-08-24 the source moved. A count of executable checks was updated. This lens cites no count, so the prose is unchanged and only the digests are re-stamped.
 ---
 <!--PLAIN-->
 

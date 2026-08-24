@@ -3,16 +3,16 @@ lens_schema: 1
 scope: article
 key: run-it
 corpus: 
-source_sha256: f7040ce44c3f399a
-source_body_sha256: f7040ce44c3f399a
+source_sha256: e223174053ac5fb9
+source_body_sha256: e223174053ac5fb9
 source_title: Run it
-source_words: 1624
+source_words: 1738
 authored_by: claude-opus-5
-authored_at: 2026-08-01
+authored_at: 2026-08-24
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: Rebound 2026-08-01. The article's live {{count}} markers re-resolved against the current source and one internal link was corrected, so the body digest moved. The prose was re-read against the new bytes and left unchanged because it contains no numeral and no route, so nothing in it could have gone stale. A rebind is only honest when the delta is checked; this one was.
+note: 2026-08-24 the source moved. A section was added for the model reading surface. Both lanes revised to carry it.
 ---
 <!--PLAIN-->
 
@@ -29,6 +29,9 @@ plane, the operator surfaces, the motor laboratory, the maths workbench and the 
 it gives the commands and, more usefully, the reason the order matters. One check in the core exists
 to make sure an agent's beliefs can be read. A model nobody can look inside cannot be shown to be
 wrong.
+
+It also covers a reading surface for the model itself, which draws the mathematics rather than
+driving it.
 
 It ends by collecting the boundary in one place: what a stranger can run, and what needs a private
 repository, a specific machine, a private network, an unpublished dataset, paid keys and one named
@@ -68,6 +71,12 @@ second, because a verifier pointed at a stale artifact will happily confirm last
 honest note attached is that the widest cross-study check and the observed experiment both need
 material that is not redistributed. Then the maths workbench, which executes the committed model
 libraries themselves rather than a second copy of the maths for display.
+
+A reading surface for the model is covered too. It reports what is built and what is running, read
+live from disk and cached nowhere, and carries three pages: the whiteboard, which opens one factor up
+and walks a single turn of thought step by step; a view of the whole organism; and a page naming what
+is currently broken. Its closing section asks whether the page is telling the truth, and nothing on
+any of them changes the model they draw.
 
 It ends by collecting the boundary in one place — what you can run and what you cannot. That list is
 not an apology, because being told precisely where the wall is beats discovering it at step nine.

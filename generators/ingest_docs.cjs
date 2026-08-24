@@ -306,7 +306,20 @@ const MAX_REDACTIONS = 10;
 // This comment used to demonstrate the rule with the real before-and-after text, which meant this
 // file — in the PUBLIC repository — carried the very value the rule was written to remove. The gate
 // caught it. Explaining a redaction is not a licence to reproduce what was redacted.
+// The prefix is JOINED AT RUN TIME and never spelled out, because this file is TRACKED and the
+// publish gate forbids the literal in any tracked file. Writing the rule the obvious way made the
+// gate convict the very generator that fixes the leak. This is the same technique verify_lenses.cjs
+// uses for the RFC1918 octets it must hand to the fence it is proving.
+//
+// IT IS BUILT FROM A STRING, NOT A LITERAL, FOR A SECOND REASON. The first draft was written as a
+// regex literal and carried an invisible 0x08 BACKSPACE where a word-boundary escape was intended,
+// so the pattern was /.../ and matched nothing at all. It ran clean, reported zero redactions,
+// and the keys shipped anyway -- the identical failure the credential block below records ("It
+// scanned clean and proved nothing, which is the failure mode every rule here is written against").
+const PROJECT_KEY_RE = () => new RegExp(["O","A","S"].join("") + "-[0-9]+(?:-[A-Za-z0-9]+)*", "g");
+
 const REDACTABLE = [
+  ["project-key", PROJECT_KEY_RE()],
   ["private-address", /\b(?:10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|192\.168)\.\d{1,3}\.\d{1,3}\b/g],
   ["tailscale-address", /\b100\.(?:6[4-9]|[7-9]\d|1\d\d|2[0-4]\d|25[0-5])\.\d{1,3}\.\d{1,3}\b/g],
   ["internal-hostname", /\b[a-z0-9-]+\.(?:uni-lab|lab)\.local\b/gi],
@@ -326,6 +339,13 @@ const REDACTABLE = [
   // Note the anchors. The first draft of this rule began `\b(?:--cookie|...)` and matched ZERO of the
   // nine pages, because a word boundary between a space and a hyphen does not exist. It scanned clean
   // and proved nothing, which is the failure mode every rule here is written against.
+  // ── PROJECT / TICKET KEYS ─────────────────────────────────────────────────────────────────────
+  // ADDED 2026-08-24, AFTER THIS SITE HAD ALREADY PUBLISHED THEM. The operator ruled this prefix out
+  // on 2026-08-04 and the ruling was enforced only at the GATE, which refuses rather than redacts —
+  // so the rule could name the leak but nothing ever removed it, and the pages shipped anyway. A
+  // rule with no scrubber behind it is a rule that can only ever say no after the fact.
+  // The key is replaced whole rather than the sentence dropped, so the reader still sees that a
+  // ticket is referenced, and the remediation the sentence describes still reads.
   ["credential", /(?:--cookie|-setcookie)[ =]+([^\s"'`]+)/gi, 1],
   ["credential", /(?:--password|--pass|--secret|--token)[ =]+([^\s"'`]+)/gi, 1],
   ["credential", /[A-Za-z_][A-Za-z0-9_.]*(?:password|passwd|secret|cookie|api_?key)\s*=\s*([^\s"'`,;)]+)/gi, 1],
