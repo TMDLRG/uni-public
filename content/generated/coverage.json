@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 542,
-   "covered": 542,
+   "total": 544,
+   "covered": 544,
    "excluded": 0
   }
  ],
@@ -43,7 +43,7 @@
   "bounds": 84,
   "held": 84,
   "breached": 0,
-  "at_the_line": 54,
+  "at_the_line": 52,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -119,7 +119,7 @@
    },
    {
     "label": "pages published · control-plane",
-    "now": 34,
+    "now": 35,
     "bound": 33,
     "kind": "min",
     "ok": true
@@ -189,7 +189,7 @@
    },
    {
     "label": "pages published · flagellum-repo",
-    "now": 3,
+    "now": 4,
     "bound": 3,
     "kind": "min",
     "ok": true
@@ -252,7 +252,7 @@
    },
    {
     "label": "pages published · total",
-    "now": 542,
+    "now": 544,
     "bound": 524,
     "kind": "min",
     "ok": true
@@ -273,7 +273,7 @@
    },
    {
     "label": "pages in route · method",
-    "now": 11,
+    "now": 12,
     "bound": 11,
     "kind": "min",
     "ok": true
@@ -308,7 +308,7 @@
    },
    {
     "label": "pages in route · architecture",
-    "now": 34,
+    "now": 35,
     "bound": 33,
     "kind": "min",
     "ok": true

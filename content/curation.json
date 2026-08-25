@@ -54,6 +54,7 @@
     "minecraft/control-plane-limitations",
     "minecraft/gates-public-gate-log",
     "minecraft/limitations",
+    "flagellum-repo/claude",
     "flagellum-repo/tests-red-readme"
    ]
   },
@@ -182,6 +183,7 @@
     "control-plane/failure-modes",
     "control-plane/next-session-brief",
     "control-plane/readme",
+    "control-plane/resume",
     "control-plane/decisions-adr-0001-four-bodies",
     "control-plane/decisions-adr-0002-gaia-projects-never-computes",
     "control-plane/decisions-adr-0003-control-plane-is-the-lab",
