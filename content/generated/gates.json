@@ -13,11 +13,11 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-25T01:08:31.008Z",
+ "measured_at": "2026-08-27T06:46:49.873Z",
  "source": {
   "repo": "uni-minecraft",
-  "commit": "896c2527f700f0442d76ba34c12a94c448102821",
-  "commit_short": "896c2527f700",
+  "commit": "b13905dc6c9cd338cdcce1f2f833e29fcef5f001",
+  "commit_short": "b13905dc6c9c",
   "branch": "gen2-runtime",
   "clean": false
  },
@@ -27,23 +27,23 @@
   "registry_complete": false,
   "runner_ok": false,
   "tally": {
-   "PASS": 31,
-   "NOT_RUN_EXTERNAL": 3,
-   "FAIL": 2
+   "PASS": 30,
+   "FAIL": 3,
+   "NOT_RUN_EXTERNAL": 3
   }
  },
  "ci": {
   "available": true,
-  "runs_examined": 128,
+  "runs_examined": 130,
   "tally": {
-   "failure": 128
+   "failure": 130
   },
   "successes": 0,
   "latest": {
-   "id": 32039787788,
+   "id": 33046638466,
    "conclusion": "failure",
-   "at": "2026-08-17T14:39:17Z",
-   "commit": "ad6e73976201",
+   "at": "2026-08-27T06:39:06Z",
+   "commit": "b13905dc6c9c",
    "workflow": "CI"
   },
   "not_passing": [
@@ -53,7 +53,6 @@
   ],
   "verdict_tally": "30 PASS · 3 FAIL",
   "failing_jobs": [
-   "Test & QA (Elixir 1.18 / OTP 27)",
    "gates-node (viewer/*.cjs gate law + registry completeness)"
   ]
  },
@@ -134,8 +133,8 @@
    "ci": true,
    "gate_row": "host-address-tracking",
    "why": null,
-   "state": "PASS",
-   "exit": 0,
+   "state": "FAIL",
+   "exit": 1,
    "law_ok": true
   },
   {
