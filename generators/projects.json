@@ -30,7 +30,15 @@
     "So a snapshot is declared separately from visibility, and it carries WHAT IT IS: frozen, taken on",
     "a stated date, a stated number of commits, no history. The commit in the citation is the PRIVATE",
     "working commit the bytes were read at; it does not exist in the snapshot, and the door says so",
-    "rather than emitting a deep link that would 404."
+    "rather than emitting a deep link that would 404.",
+    "",
+    "A MIRROR AND A FROZEN SNAPSHOT ARE DIFFERENT THINGS AND THE DOOR MUST SAY WHICH. On 2026-08-24",
+    "the operator ruled the snapshots into real mirrors: a live public repository that tracks the",
+    "private one by promotion, one commit per promotion, each recording the private commit it came",
+    "from, merged by a human through a pull request. Two have been promoted and merged; one has an",
+    "open pull request and is still frozen. `public_mirror.kind` carries that distinction, because",
+    "'frozen since 2026-08-02' and 'updated today' are not the same promise to a reader, and rendering",
+    "them identically is how a stale link keeps its credibility."
   ],
   "schema_version": 1,
   "maturity_vocabulary": {
@@ -70,12 +78,13 @@
       "read": [
         "docs/UNIVERSE.md"
       ],
-      "public_snapshot": {
+      "public_mirror": {
+        "kind": "mirror",
         "repo": "uni-minecraft",
-        "taken": "2026-08-02",
-        "commits": 1,
-        "measured_on": "2026-08-24",
-        "history": "squashed - no history"
+        "updated": "2026-08-24",
+        "tracks_commit": "b13905dc6c9c",
+        "mirror_commit": "fd7e7d8c5763",
+        "measured_on": "2026-08-24"
       }
     },
     {
@@ -92,12 +101,13 @@
       "read": [
         "README.md"
       ],
-      "public_snapshot": {
+      "public_mirror": {
+        "kind": "mirror",
         "repo": "uni-flagellum-motor-stack",
-        "taken": "2026-08-02",
-        "commits": 1,
-        "measured_on": "2026-08-24",
-        "history": "squashed - no history"
+        "updated": "2026-08-24",
+        "tracks_commit": "42701377519",
+        "mirror_commit": "afe2ebf01bb5",
+        "measured_on": "2026-08-24"
       }
     },
     {
@@ -114,12 +124,14 @@
       "read": [
         "README.md"
       ],
-      "public_snapshot": {
+      "public_mirror": {
+        "kind": "frozen-snapshot",
         "repo": "uni-cookbook",
         "taken": "2026-08-02",
         "commits": 1,
-        "measured_on": "2026-08-24",
-        "history": "squashed - no history"
+        "history": "squashed - no history",
+        "note": "a promotion is open but not yet merged",
+        "measured_on": "2026-08-24"
       }
     },
     {

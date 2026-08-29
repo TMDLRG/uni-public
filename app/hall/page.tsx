@@ -57,7 +57,11 @@ type Project = {
     repo: string; title: string; branch: string; commit_short: string;
     visibility: "public" | "private"; resolvable: boolean;
     public_repo?: string; public_url?: string;
-    snapshot?: { repo: string; url: string; taken: string; commits: number; history: string; measured_on: string } | null;
+    mirror?: {
+      kind: "mirror" | "frozen-snapshot"; repo: string; url: string; measured_on: string;
+      updated?: string; tracks_commit?: string; mirror_commit?: string;
+      taken?: string; commits?: number; history?: string; note?: string;
+    } | null;
   };
 };
 
@@ -101,7 +105,7 @@ function Door({ p }: { p: Project }) {
       <header>
         <h3>
           {c.resolvable ? <a href={c.public_url} rel="noreferrer">{p.title}</a>
-            : c.snapshot ? <a href={c.snapshot.url} rel="noreferrer">{p.title}</a>
+            : c.mirror ? <a href={c.mirror.url} rel="noreferrer">{p.title}</a>
             : p.title}
         </h3>
         <p className="door-state">
@@ -141,17 +145,29 @@ function Door({ p }: { p: Project }) {
         {c.title} @ {c.commit_short} ({c.branch}){" "}
         {c.resolvable
           ? <>— <a href={c.public_url} rel="noreferrer">open the repository</a></>
-          : c.snapshot
+          : c.mirror && c.mirror.kind === "mirror"
             ? <>
                 — the working repository is private. A redacted{" "}
-                <a href={c.snapshot.url} rel="noreferrer">frozen snapshot</a> of it is public: taken{" "}
-                {c.snapshot.taken}, {c.snapshot.commits} commit, {c.snapshot.history}.{" "}
+                <a href={c.mirror.url} rel="noreferrer">live mirror</a> of it is public, updated{" "}
+                {c.mirror.updated}: it tracks this repository by promotion, one commit per
+                promotion, each recording the private commit it came from, and every promotion is
+                merged by a person through a pull request. This door opens on the tree promoted from{" "}
+                <code>{c.mirror.tracks_commit}</code> — the same commit the figures above were read
+                at, so what you open is what this page was built from.{" "}
+                <span className="dim">(mirror state measured {c.mirror.measured_on})</span>
+              </>
+          : c.mirror
+            ? <>
+                — the working repository is private. A redacted{" "}
+                <a href={c.mirror.url} rel="noreferrer">frozen snapshot</a> of it is public: taken{" "}
+                {c.mirror.taken}, {c.mirror.commits} commit, {c.mirror.history}.{" "}
                 <span className="unresolved">
                   The commit above is the private working commit these figures were read at and is
                   not in that snapshot, so nothing here deep-links into it. Anything you open there
-                  is as the tree stood on {c.snapshot.taken}, not as it stands now.
+                  is as the tree stood on {c.mirror.taken}, not as it stands now.
+                  {c.mirror.note ? ` (${c.mirror.note})` : ""}
                 </span>{" "}
-                <span className="dim">(snapshot state measured {c.snapshot.measured_on})</span>
+                <span className="dim">(snapshot state measured {c.mirror.measured_on})</span>
               </>
             : <span className="unresolved">— this repository is not public and has no published snapshot, so this door cannot be opened. It is listed because leaving it out would make this hallway claim a completeness it does not have.</span>}
       </div>

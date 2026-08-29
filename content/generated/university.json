@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-24T20:35:16.577Z",
+  "read_at": "2026-08-29T18:36:15.971Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -80,7 +80,7 @@
         "resolvable": true,
         "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "public_url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench",
-        "snapshot": null
+        "mirror": null
       }
     },
     {
@@ -95,7 +95,7 @@
       "one_line": "A pure-Elixir categorical active-inference colony: embodied agents living in a real Minecraft world, each running one mean-field predict-act tick as its life, with a broadcast platform built over it.",
       "why_it_is_here": "It is the world where the agents actually live, and the home of the Function Designer Card that compiles a declarative model description into a runnable brain.",
       "measured": {
-        "file_count": 22602,
+        "file_count": 23452,
         "languages": [
           {
             "name": "Elixir",
@@ -124,7 +124,7 @@
         ],
         "uncommitted": 2,
         "ahead_behind": {
-          "ahead": 9,
+          "ahead": 0,
           "behind": 0
         }
       },
@@ -132,18 +132,19 @@
         "repo": "uni-minecraft",
         "title": "UNI.MineCraft — the colony",
         "branch": "gen2-runtime",
-        "commit": "896c2527f700f0442d76ba34c12a94c448102821",
-        "commit_short": "896c2527f700",
+        "commit": "b13905dc6c9cd338cdcce1f2f833e29fcef5f001",
+        "commit_short": "b13905dc6c9c",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
         "public_url": "https://github.com/TMDLRG/uni-minecraft",
-        "snapshot": {
+        "mirror": {
+          "kind": "mirror",
           "repo": "uni-minecraft",
-          "taken": "2026-08-02",
-          "commits": 1,
+          "updated": "2026-08-24",
+          "tracks_commit": "b13905dc6c9c",
+          "mirror_commit": "fd7e7d8c5763",
           "measured_on": "2026-08-24",
-          "history": "squashed - no history",
           "url": "https://github.com/TMDLRG/uni-minecraft"
         }
       }
@@ -187,9 +188,9 @@
             "files": 6
           }
         ],
-        "uncommitted": 3,
+        "uncommitted": 1,
         "ahead_behind": {
-          "ahead": 11,
+          "ahead": 12,
           "behind": 0
         }
       },
@@ -197,18 +198,19 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM — the science instrument",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "ae3548f9bd3cc58ad75d7f2b420a047a22f58cd8",
-        "commit_short": "ae3548f9bd3c",
+        "commit": "42701377519255dd421a36f14780def586cff596",
+        "commit_short": "427013775192",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
         "public_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack",
-        "snapshot": {
+        "mirror": {
+          "kind": "mirror",
           "repo": "uni-flagellum-motor-stack",
-          "taken": "2026-08-02",
-          "commits": 1,
+          "updated": "2026-08-24",
+          "tracks_commit": "42701377519",
+          "mirror_commit": "afe2ebf01bb5",
           "measured_on": "2026-08-24",
-          "history": "squashed - no history",
           "url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
         }
       }
@@ -264,12 +266,14 @@
         "resolvable": false,
         "public_repo": "uni-cookbook",
         "public_url": "https://github.com/TMDLRG/uni-cookbook",
-        "snapshot": {
+        "mirror": {
+          "kind": "frozen-snapshot",
           "repo": "uni-cookbook",
           "taken": "2026-08-02",
           "commits": 1,
-          "measured_on": "2026-08-24",
           "history": "squashed - no history",
+          "note": "a promotion is open but not yet merged",
+          "measured_on": "2026-08-24",
           "url": "https://github.com/TMDLRG/uni-cookbook"
         }
       }
@@ -309,7 +313,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 3,
+        "uncommitted": 13,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -319,13 +323,13 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "e4c9d262273cc0f50503d95013c3bffc6ec97402",
-        "commit_short": "e4c9d262273c",
+        "commit": "5cf0d855fc0bcbeee2242688e217202864f86af4",
+        "commit_short": "5cf0d855fc0b",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
         "public_url": "https://github.com/TMDLRG/uni-public",
-        "snapshot": null
+        "mirror": null
       }
     }
   ],
