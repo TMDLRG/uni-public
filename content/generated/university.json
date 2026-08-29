@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-29T20:15:58.532Z",
+  "read_at": "2026-08-29T20:30:57.836Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -312,7 +312,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 10,
+        "uncommitted": 5,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -322,8 +322,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "2f351179873da1d7546c01d22059f33d29dc5311",
-        "commit_short": "2f351179873d",
+        "commit": "1c4f5b8e6ec5c3f03e92b9fcf6885a42db515840",
+        "commit_short": "1c4f5b8e6ec5",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",

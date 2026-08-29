@@ -13,7 +13,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-29T20:15:55.552Z",
+ "measured_at": "2026-08-29T20:30:55.119Z",
  "source": {
   "repo": "uni-minecraft",
   "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
@@ -27,8 +27,8 @@
   "registry_complete": false,
   "runner_ok": false,
   "tally": {
-   "PASS": 30,
-   "FAIL": 3,
+   "PASS": 31,
+   "FAIL": 2,
    "NOT_RUN_EXTERNAL": 3
   }
  },
@@ -352,8 +352,8 @@
    "ci": true,
    "gate_row": "claims-checked-against-disk",
    "why": null,
-   "state": "FAIL",
-   "exit": 1,
+   "state": "PASS",
+   "exit": 0,
    "law_ok": true
   },
   {
