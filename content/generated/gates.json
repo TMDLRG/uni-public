@@ -13,7 +13,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-29T18:36:13.247Z",
+ "measured_at": "2026-08-29T18:47:58.805Z",
  "source": {
   "repo": "uni-minecraft",
   "commit": "b13905dc6c9cd338cdcce1f2f833e29fcef5f001",

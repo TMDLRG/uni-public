@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-29T18:36:15.971Z",
+  "read_at": "2026-08-29T18:48:01.350Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -267,12 +267,11 @@
         "public_repo": "uni-cookbook",
         "public_url": "https://github.com/TMDLRG/uni-cookbook",
         "mirror": {
-          "kind": "frozen-snapshot",
+          "kind": "mirror",
           "repo": "uni-cookbook",
-          "taken": "2026-08-02",
-          "commits": 1,
-          "history": "squashed - no history",
-          "note": "a promotion is open but not yet merged",
+          "updated": "2026-08-24",
+          "tracks_commit": "575fc93d9d31",
+          "mirror_commit": "424e57945d0e",
           "measured_on": "2026-08-24",
           "url": "https://github.com/TMDLRG/uni-cookbook"
         }
@@ -313,7 +312,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 13,
+        "uncommitted": 9,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -323,8 +322,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "5cf0d855fc0bcbeee2242688e217202864f86af4",
-        "commit_short": "5cf0d855fc0b",
+        "commit": "4873de310af2bd2b1f28e211466e6e58ae8d820c",
+        "commit_short": "4873de310af2",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",

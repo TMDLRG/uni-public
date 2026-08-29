@@ -125,12 +125,11 @@
         "README.md"
       ],
       "public_mirror": {
-        "kind": "frozen-snapshot",
+        "kind": "mirror",
         "repo": "uni-cookbook",
-        "taken": "2026-08-02",
-        "commits": 1,
-        "history": "squashed - no history",
-        "note": "a promotion is open but not yet merged",
+        "updated": "2026-08-24",
+        "tracks_commit": "575fc93d9d31",
+        "mirror_commit": "424e57945d0e",
         "measured_on": "2026-08-24"
       }
     },
