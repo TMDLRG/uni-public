@@ -35,12 +35,12 @@
         "repo": "uni-minecraft",
         "title": "UNI.Minecraft",
         "branch": "gen2-runtime",
-        "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-        "commit_short": "3b7a8711552d",
+        "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+        "commit_short": "1bba66fb53d6",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-29T13:56:42-05:00",
+      "source_last_commit": "2026-08-29T14:44:05-05:00",
       "blocks": [
         {
           "kind": "gate-registry",
@@ -48,8 +48,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-            "commit_short": "3b7a8711552d",
+            "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+            "commit_short": "1bba66fb53d6",
             "visibility": "public",
             "resolvable": true,
             "path": "viewer/gate_registry.json"
@@ -318,8 +318,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-            "commit_short": "3b7a8711552d",
+            "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+            "commit_short": "1bba66fb53d6",
             "visibility": "public",
             "resolvable": true,
             "path": "evidence/remediation/phase9_plan.json"
@@ -341,8 +341,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-            "commit_short": "3b7a8711552d",
+            "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+            "commit_short": "1bba66fb53d6",
             "visibility": "public",
             "resolvable": true,
             "glob": "lib/sp/**/*.ex"
@@ -913,8 +913,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-            "commit_short": "3b7a8711552d",
+            "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+            "commit_short": "1bba66fb53d6",
             "visibility": "public",
             "resolvable": true,
             "glob": "production/schemas/*.json"

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-29T19:31:35.125Z",
+  "read_at": "2026-08-29T20:15:58.532Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -132,8 +132,8 @@
         "repo": "uni-minecraft",
         "title": "UNI.MineCraft — the colony",
         "branch": "gen2-runtime",
-        "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-        "commit_short": "3b7a8711552d",
+        "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+        "commit_short": "1bba66fb53d6",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
@@ -142,8 +142,8 @@
           "kind": "mirror",
           "repo": "uni-minecraft",
           "updated": "2026-08-24",
-          "tracks_commit": "b13905dc6c9c",
-          "mirror_commit": "fd7e7d8c5763",
+          "tracks_commit": "1bba66fb53d6",
+          "mirror_commit": "84fb968f5dba",
           "measured_on": "2026-08-24",
           "url": "https://github.com/TMDLRG/uni-minecraft"
         }
@@ -312,7 +312,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 8,
+        "uncommitted": 10,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -322,8 +322,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "93d44f2ccfcceae74bc575ebb25bd3fb6ac6152a",
-        "commit_short": "93d44f2ccfcc",
+        "commit": "2f351179873da1d7546c01d22059f33d29dc5311",
+        "commit_short": "2f351179873d",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",

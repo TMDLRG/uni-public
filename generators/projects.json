@@ -82,8 +82,8 @@
         "kind": "mirror",
         "repo": "uni-minecraft",
         "updated": "2026-08-24",
-        "tracks_commit": "b13905dc6c9c",
-        "mirror_commit": "fd7e7d8c5763",
+        "tracks_commit": "1bba66fb53d6",
+        "mirror_commit": "84fb968f5dba",
         "measured_on": "2026-08-24"
       }
     },

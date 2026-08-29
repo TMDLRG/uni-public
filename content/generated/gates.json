@@ -13,11 +13,11 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-29T19:31:32.393Z",
+ "measured_at": "2026-08-29T20:15:55.552Z",
  "source": {
   "repo": "uni-minecraft",
-  "commit": "3b7a8711552d87ef71800ae06cf4f5e49a223ebe",
-  "commit_short": "3b7a8711552d",
+  "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
+  "commit_short": "1bba66fb53d6",
   "branch": "gen2-runtime",
   "clean": false
  },
@@ -34,24 +34,23 @@
  },
  "ci": {
   "available": true,
-  "runs_examined": 131,
+  "runs_examined": 132,
   "tally": {
-   "failure": 131
+   "failure": 132
   },
   "successes": 0,
   "latest": {
-   "id": 33269591986,
+   "id": 33271632545,
    "conclusion": "failure",
-   "at": "2026-08-29T18:56:47Z",
-   "commit": "3b7a8711552d",
+   "at": "2026-08-29T19:44:09Z",
+   "commit": "1bba66fb53d6",
    "workflow": "CI"
   },
   "not_passing": [
    "host-tracking=FAIL",
-   "golive-refuses-agents=FAIL",
-   "gate-attempts=FAIL"
+   "golive-refuses-agents=FAIL"
   ],
-  "verdict_tally": "30 PASS · 3 FAIL",
+  "verdict_tally": "31 PASS · 2 FAIL",
   "failing_jobs": [
    "gates-node (viewer/*.cjs gate law + registry completeness)"
   ]
@@ -243,8 +242,8 @@
    "ci": true,
    "gate_row": "gate-attempts-sidecar",
    "why": null,
-   "state": "FAIL",
-   "exit": 1,
+   "state": "PASS",
+   "exit": 0,
    "law_ok": true
   },
   {
@@ -353,8 +352,8 @@
    "ci": true,
    "gate_row": "claims-checked-against-disk",
    "why": null,
-   "state": "PASS",
-   "exit": 0,
+   "state": "FAIL",
+   "exit": 1,
    "law_ok": true
   },
   {

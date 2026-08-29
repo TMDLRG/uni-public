@@ -17,7 +17,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_mcp.cjs",
- "read_at": "2026-08-29T19:31:32.936Z",
+ "read_at": "2026-08-29T20:15:56.158Z",
  "source": {
   "repo": "uni-lab-command",
   "path": "evidence/v1_mcp/catalogue.json",

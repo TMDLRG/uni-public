@@ -17,7 +17,7 @@
       "branch": "gen2-runtime",
       "visibility": "public",
       "public_repo": "uni-minecraft",
-      "public_snapshot_commit": "fd7e7d8c5763a79c9379a96a0f6b0092277daf51",
+      "public_snapshot_commit": "84fb968f5dba60517a55f5b81cab8a6adc935f77",
       "inclusion": "spine",
       "one_line": "The colony, the Producer, the scientific control plane, the operator plane and the broadcast suite.",
       "read": [
