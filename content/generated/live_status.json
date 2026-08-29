@@ -14,7 +14,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_live_status.cjs",
- "plan_read_at": "2026-08-29T19:04:33.303Z",
+ "plan_read_at": "2026-08-29T19:31:32.700Z",
  "source": {
   "repo": "uni-minecraft",
   "path": "evidence/remediation/phase9_plan.json",
@@ -800,7 +800,7 @@
   "declare a BagIt pack DISTRIBUTABLE — building a bag is agent work; declaring it fit to leave the box is the same class as the public push"
  ],
  "gates": {
-  "measured_at": "2026-08-29T19:04:32.995Z",
+  "measured_at": "2026-08-29T19:31:32.393Z",
   "commit": "3b7a8711552d",
   "registered": 36,
   "local_tally": {

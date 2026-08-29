@@ -45,6 +45,7 @@
 "use strict";
 
 const cp = require("child_process");
+const fs = require("fs");
 const path = require("path");
 
 const REPO = path.resolve(__dirname, "..");
@@ -56,6 +57,18 @@ const CANNOT_RUN_HERE = [
   { key: "exported site was scanned", why: "out/ needs `npm run build`, which reads the private source repositories a runner does not have" },
 ];
 
+// The generator-chain check needs NO private input, so unlike the two below it can run here in
+// full. It is the check that would have caught build_university.cjs sitting outside `generate` for
+// days while the page it feeds went stale — exactly the class of defect a runner should catch and
+// a human reading a green page never will.
+try {
+  process.stdout.write(cp.execFileSync("node", [path.join(REPO, "safety", "verify_generator_chain.cjs")],
+    { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 }));
+} catch (e) {
+  process.stdout.write((e.stdout || "") + (e.stderr || ""));
+  console.error("PRE-FLIGHT FAIL — the generator chain is incomplete (see above).");
+  process.exit(1);
+}
 let out = "";
 try {
   out = cp.execFileSync("node", [path.join(REPO, "safety", "verify_publish_safe.cjs"), "--prove"],
@@ -88,11 +101,40 @@ console.log(`
 `);
 
 if (missing.length) {
-  console.error(`PRE-FLIGHT FAIL — ${missing.length} check(s) that CANNOT run here did not fail as expected:`);
-  for (const c of missing) console.error(`  · ${c.key}`);
-  console.error(`\n  Either a private input has leaked into this repository — which is itself the emergency this\n` +
-                `  gate exists to prevent — or the gate's wording changed and this pre-flight is now matching\n` +
-                `  nothing, which would make it a rubber stamp. Both need a human.`);
+  // A CHECK THAT SHOULD BE UNANSWERABLE HERE ANSWERED. There are two very different reasons, and
+  // conflating them makes this either a false alarm on the operator's own machine or a MISSED
+  // emergency on a runner. The discriminator is whether the private input is TRACKED:
+  //   present and untracked -> not a runner; a machine that legitimately holds it. Not a fault.
+  //   present and TRACKED   -> a private input has been committed. That is the emergency.
+  const tracked = (name) => {
+    try {
+      return cp.execFileSync("git", ["-C", REPO, "ls-files", "--error-unmatch", name],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim().length > 0;
+    } catch { return false; }
+  };
+  const LOCAL_INPUTS = ["safety/patterns.local.json", "generators/roots.local.json"];
+  const committed = LOCAL_INPUTS.filter(tracked);
+  const untracked = LOCAL_INPUTS.filter((f) => fs.existsSync(path.join(REPO, f)) && !tracked(f));
+
+  if (committed.length) {
+    console.error("PRE-FLIGHT FAIL — a private input is COMMITTED: " + committed.join(", "));
+    console.error("  This is the emergency the gate exists to prevent. Remove it from the index AND from");
+    console.error("  history -- deleting a file does not unpublish it -- and rotate anything it named.");
+    process.exit(1);
+  }
+  if (untracked.length) {
+    console.log("PRE-FLIGHT NOT APPLICABLE — this machine holds the private inputs, untracked:");
+    for (const f of untracked) console.log("  · " + f + " (present, not tracked — correct)");
+    console.log("");
+    console.log("  So the two checks a runner cannot answer were answered, and that is not a fault.");
+    console.log("  This pre-flight is for CI. Here, run `npm run prepublish:check` — the full gate,");
+    console.log("  which is strictly stronger than anything this file can do.");
+    process.exit(0);
+  }
+  console.error("PRE-FLIGHT FAIL — check(s) that cannot run here did not fail, and no private input is");
+  console.error("  present to explain it. The gate's wording has probably changed, which would make this");
+  console.error("  pre-flight match nothing and become a rubber stamp. Needs a human.");
+  for (const c of missing) console.error("  · " + c.key);
   process.exit(1);
 }
 if (unexpected.length) {

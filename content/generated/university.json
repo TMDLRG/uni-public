@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-29T19:04:35.826Z",
+  "read_at": "2026-08-29T19:31:35.125Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -289,7 +289,7 @@
       "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
       "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
       "measured": {
-        "file_count": 417,
+        "file_count": 418,
         "languages": [
           {
             "name": "Markdown",
@@ -301,7 +301,7 @@
           },
           {
             "name": "JavaScript",
-            "files": 25
+            "files": 26
           },
           {
             "name": "JSON",
@@ -312,7 +312,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 10,
+        "uncommitted": 8,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -322,8 +322,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "c016fb4f9af143cc3523b18cf4a5568d3040a09a",
-        "commit_short": "c016fb4f9af1",
+        "commit": "93d44f2ccfcceae74bc575ebb25bd3fb6ac6152a",
+        "commit_short": "93d44f2ccfcc",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",

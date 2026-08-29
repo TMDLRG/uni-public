@@ -18,7 +18,7 @@
     "start": "next start",
     "safe": "node safety/verify_publish_safe.cjs",
     "safe:prove": "node safety/verify_publish_safe.cjs --prove",
-    "gate": "node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node safety/verify_provenance.cjs && node generators/verify_public_consistency.cjs --prove && node generators/verify_lenses.cjs --prove",
+    "gate": "node safety/verify_generator_chain.cjs && node safety/verify_publish_safe.cjs --prove && node safety/verify_coverage.cjs --prove && node safety/verify_provenance.cjs && node generators/verify_public_consistency.cjs --prove && node generators/verify_lenses.cjs --prove",
     "prepublish:check": "npm run gate && npm run build && node generators/verify_a11y.cjs --prove",
     "coverage": "node safety/verify_coverage.cjs",
     "coverage:prove": "node safety/verify_coverage.cjs --prove",
@@ -30,7 +30,8 @@
     "a11y:prove": "node generators/verify_a11y.cjs --prove",
     "lenses": "node generators/build_lenses.cjs",
     "lenses:scaffold": "node generators/build_lenses.cjs --scaffold --corpus",
-    "lenses:prove": "node generators/verify_lenses.cjs --prove"
+    "lenses:prove": "node generators/verify_lenses.cjs --prove",
+    "generator-chain": "node safety/verify_generator_chain.cjs"
   },
   "dependencies": {
     "marked": "^18.0.7",
