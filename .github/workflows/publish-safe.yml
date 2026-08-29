@@ -1,0 +1,43 @@
+name: publish-safe pre-flight
+
+# WHY THIS EXISTS. Until 2026-08-24 this repository had NO CI. Vercel deploys every push to `main`,
+# so the only thing between a push and a public deployment was somebody remembering to run
+# `npm run gate` by hand. On 2026-08-24 the gate was found RED at HEAD while the site was already
+# deployed, carrying an Erlang distribution cookie and a client project key. Nothing had noticed,
+# because nothing was looking.
+#
+# WHAT THIS IS AND IS NOT. It runs the REAL gate and asserts the only failures are the two that
+# cannot be answered on a runner (the gitignored denylist, and the exported site which needs the
+# private source repositories). A third failure is red. See safety/ci_preflight.cjs for why running
+# a stripped-down copy of the gate would be worse than running none.
+#
+# A GREEN TICK HERE DOES NOT MEAN THE SITE IS SAFE TO PUBLISH. The pre-flight prints that on every
+# run. The full `npm run prepublish:check` still has to pass on a machine with the private inputs.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    name: publish-safe pre-flight (structural checks + mutations)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # FULL history. The forbidden-path check scans every reachable blob, not just the working
+          # tree, because DELETING A FILE DOES NOT UNPUBLISH IT — this estate already shipped a
+          # 116 MB archive that .vercelignore excluded from deploys while it stayed fully present in
+          # the repository. With the default shallow clone that check would silently cover nothing.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # No `npm ci`. The gate and the pre-flight are stdlib-only Node, and installing dependencies
+      # would add a supply-chain surface to the one job whose purpose is to reduce exposure.
+      - name: publish-safe pre-flight
+        run: node safety/ci_preflight.cjs
