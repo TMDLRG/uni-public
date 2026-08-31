@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-31T01:12:32.867Z",
+  "read_at": "2026-08-31T06:50:56.746Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -134,8 +134,8 @@
         "repo": "uni-minecraft",
         "title": "UNI.MineCraft — the colony",
         "branch": "gen2-runtime",
-        "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-        "commit_short": "30bb14d1a6e7",
+        "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+        "commit_short": "db7dafeb44d1",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
@@ -201,8 +201,8 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM — the science instrument",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "8570426d8165aebf68b97865d27de0d1843ccff0",
-        "commit_short": "8570426d8165",
+        "commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+        "commit_short": "23251469fd98",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
@@ -294,34 +294,34 @@
       "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
       "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
       "measured": {
-        "file_count": 436,
+        "file_count": 469,
         "languages": [
           {
             "name": "Markdown",
             "files": 327
           },
           {
+            "name": "JSON",
+            "files": 36
+          },
+          {
             "name": "TypeScript",
-            "files": 31
+            "files": 32
           },
           {
             "name": "JavaScript",
-            "files": 28
-          },
-          {
-            "name": "JSON",
-            "files": 28
+            "files": 29
           },
           {
             "name": "HTML",
-            "files": 7
+            "files": 13
           },
           {
             "name": "CSS",
             "files": 1
           }
         ],
-        "uncommitted": 18,
+        "uncommitted": 30,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -331,8 +331,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "ebf2b6e0cb710b731cbb861ccc8522709f365370",
-        "commit_short": "ebf2b6e0cb71",
+        "commit": "c7576046f505b1a89db045159a6d4091ae220ae8",
+        "commit_short": "c7576046f505",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
@@ -384,7 +384,7 @@
             "files": 4
           }
         ],
-        "uncommitted": 0,
+        "uncommitted": 1,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0

@@ -118,8 +118,10 @@ body {
 
 header {
   border-bottom: 1px solid var(--ln);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
+  background: var(--bg);
+  /* NOT sticky, deliberately. With a two-row nav the sticky header grew tall and translucent, and
+     page content scrolled up UNDERNEATH it — headings bleeding through a blurred bar, measured on
+     the live /hall on 2026-08-30. A header that is only at the top cannot sit on top of anything. */
 }
 .head { display: flex; align-items: center; gap: 24px; padding: 14px 22px; flex-wrap: wrap; }
 .brand { text-decoration: none; color: var(--tx); font-size: 16px; letter-spacing: .2px; }
@@ -129,6 +131,33 @@ header nav { display: flex; gap: 18px; flex-wrap: wrap; margin-left: auto; }
 header nav a { color: var(--dim); text-decoration: none; font-size: 15px; padding: 2px 0; border-bottom: 2px solid transparent; }
 header nav a:hover { color: var(--acc); }
 header nav a[aria-current="page"] { color: var(--tx); border-bottom-color: var(--acc); }
+
+/* The record — the quieter second row. Registers a reader checks, not doors a visitor enters. */
+.head--records { border-top: 1px solid var(--ln); padding-top: 8px; padding-bottom: 10px; gap: 14px; }
+.head--records nav { gap: 14px; margin-left: 0; }
+.head--records nav a { font-size: 13px; }
+.records-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--dim); white-space: nowrap; }
+
+/* The entry room. The classroom is embedded whole — the real vendored page, not a screenshot. */
+.enter-room { margin: 6px 0 26px; }
+.enter-room iframe {
+  width: 100%; height: min(74vh, 760px); display: block;
+  border: 1px solid var(--ln); border-radius: 14px; background: #101014;
+}
+.enter-doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 22px 0 8px; }
+.enter-doors a.door {
+  display: block; padding: 16px 18px; border: 1px solid var(--ln); border-radius: 12px;
+  background: var(--pan); text-decoration: none; color: var(--tx);
+}
+.enter-doors a.door:hover { border-color: var(--acc); }
+.enter-doors a.door b { display: block; margin-bottom: 6px; color: var(--acc); }
+.enter-doors a.door span { color: var(--dim); font-size: 14.5px; line-height: 1.5; display: block; }
+
+/* Long identifiers — hashes, repo paths, generated URLs — wrap instead of pushing the page wide. */
+.cite, .cite code, code, kbd { overflow-wrap: anywhere; }
+pre { overflow-x: auto; max-width: 100%; }
+pre code { overflow-wrap: normal; }
+table { display: block; overflow-x: auto; max-width: 100%; }
 
 main { padding: 40px 22px 72px; }
 

@@ -30,6 +30,42 @@
     {
       "source": "/play/:slug",
       "destination": "/play/:slug.html"
+    },
+    {
+      "source": "/classroom",
+      "destination": "/classroom.html"
+    },
+    {
+      "source": "/models",
+      "destination": "/models.html"
+    },
+    {
+      "source": "/architecture",
+      "destination": "/architecture.html"
+    },
+    {
+      "source": "/snapshot",
+      "destination": "/snapshot.html"
+    },
+    {
+      "source": "/model",
+      "destination": "/model.html"
+    },
+    {
+      "source": "/organism",
+      "destination": "/organism.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/defects",
+      "destination": "/wiki/minecraft/whiteboard-defects-and-repairs/",
+      "permanent": false
+    },
+    {
+      "source": "/doors",
+      "destination": "/wiki/flagellum/external-doors-acquisition-checklist/",
+      "permanent": false
     }
   ]
 }

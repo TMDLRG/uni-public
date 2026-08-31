@@ -148,13 +148,6 @@
       "state": "built, verified self-contained, not yet deployed",
       "why": "a Next.js application that does not yet set output:'export'; its 50 exhibits prerender cleanly and carry no external calls, but the repository has no public remote, so there is nothing a citation could resolve to yet",
       "what_would_change_this": "a public repository plus a one-line static-export config"
-    },
-    {
-      "id": "classroom",
-      "title": "The Classroom — the room you stand in",
-      "state": "built; its asset gate recorded PASS 15/15 on 2026-08-20; not yet deployed",
-      "why": "a photo-real room with pixel-measured, hash-bound hotspots — the quality floor the University's entry is being held to. It lives in the flagellum workspace and is not yet served from any public host.",
-      "what_would_change_this": "publication through the flagellum mirror plus a hosting decision"
     }
   ]
 }

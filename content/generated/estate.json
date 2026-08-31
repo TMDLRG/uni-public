@@ -35,12 +35,12 @@
         "repo": "uni-minecraft",
         "title": "UNI.Minecraft",
         "branch": "gen2-runtime",
-        "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-        "commit_short": "30bb14d1a6e7",
+        "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+        "commit_short": "db7dafeb44d1",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-30T19:51:53-05:00",
+      "source_last_commit": "2026-08-31T01:37:20-05:00",
       "blocks": [
         {
           "kind": "gate-registry",
@@ -48,8 +48,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-            "commit_short": "30bb14d1a6e7",
+            "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+            "commit_short": "db7dafeb44d1",
             "visibility": "public",
             "resolvable": true,
             "path": "viewer/gate_registry.json"
@@ -318,8 +318,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-            "commit_short": "30bb14d1a6e7",
+            "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+            "commit_short": "db7dafeb44d1",
             "visibility": "public",
             "resolvable": true,
             "path": "evidence/remediation/phase9_plan.json"
@@ -340,8 +340,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-            "commit_short": "30bb14d1a6e7",
+            "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+            "commit_short": "db7dafeb44d1",
             "visibility": "public",
             "resolvable": true,
             "glob": "lib/sp/**/*.ex"
@@ -912,8 +912,8 @@
             "repo": "uni-minecraft",
             "title": "UNI.Minecraft",
             "branch": "gen2-runtime",
-            "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
-            "commit_short": "30bb14d1a6e7",
+            "commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+            "commit_short": "db7dafeb44d1",
             "visibility": "public",
             "resolvable": true,
             "glob": "production/schemas/*.json"
@@ -969,12 +969,12 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "8570426d8165aebf68b97865d27de0d1843ccff0",
-        "commit_short": "8570426d8165",
+        "commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+        "commit_short": "23251469fd98",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-30T19:52:06-05:00",
+      "source_last_commit": "2026-08-31T01:37:17-05:00",
       "blocks": [
         {
           "kind": "adr-index",
@@ -982,8 +982,8 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "8570426d8165aebf68b97865d27de0d1843ccff0",
-            "commit_short": "8570426d8165",
+            "commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+            "commit_short": "23251469fd98",
             "visibility": "public",
             "resolvable": true,
             "glob": "docs/control-plane/decisions/*.md"
@@ -1064,8 +1064,8 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "8570426d8165aebf68b97865d27de0d1843ccff0",
-            "commit_short": "8570426d8165",
+            "commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+            "commit_short": "23251469fd98",
             "visibility": "public",
             "resolvable": true,
             "glob": "experiments/*manifest*.json"

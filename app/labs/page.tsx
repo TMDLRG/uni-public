@@ -1,5 +1,14 @@
 import Link from "next/link";
 import labs from "../../content/generated/labs.json";
+import roomsData from "../../content/generated/rooms.json";
+
+type Room = {
+  slug: string; title: string; served_at: string; one_line: string;
+  what_is_static_here: string; source_url: string; source_path: string;
+  mirror_commit_short: string; served_sha256?: string;
+  verified?: { match?: boolean };
+};
+const rooms = (roomsData as unknown as { rooms: Room[]; counts: { rooms: number; assets: number } });
 
 export const metadata = {
   title: "The labs",
@@ -158,6 +167,33 @@ export default function Labs() {
         is the syllabus they teach inside, and <Link href="/hall/">the hallway</Link> places them
         among the rest of the estate.
       </p>
+
+      <section>
+        <h2>Walk in</h2>
+        <p>
+          The laboratory&rsquo;s own rooms, served whole from this site — {rooms.counts.rooms} rooms
+          and {rooms.counts.assets} assets, every file an exact copy of a named path at a named
+          commit, verified byte-for-byte on every build. The classroom is also the site&rsquo;s{" "}
+          <Link href="/">front door</Link>.
+        </p>
+        <div className="project-doors">
+          {rooms.rooms.map((r) => (
+            <article className="project-door" key={r.slug}>
+              <header>
+                <h3><a href={r.served_at}>{r.title}</a></h3>
+              </header>
+              <p>{r.one_line}</p>
+              <p className="dim">{r.what_is_static_here}</p>
+              <div className="cite">
+                {r.verified && r.verified.match === true
+                  ? <>byte-verified · sha256 <code>{(r.served_sha256 || "").slice(0, 16)}</code> · </>
+                  : <span className="unresolved">byte-verification NOT established for this copy · </span>}
+                <a href={r.source_url} rel="noreferrer">{r.source_path}</a> @ {r.mirror_commit_short}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section>
         <h2>Run them here</h2>

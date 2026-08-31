@@ -1,0 +1,128 @@
+{
+  "note": [
+    "THE ROOMS REGISTRY — the walk-in surfaces of the University: the classroom, the specimen and",
+    "model pages around it, and the whiteboard where the mathematics is drawn live.",
+    "",
+    "Same contract as generators/labs.json: every served file is a VERBATIM copy of a named path at",
+    "a named commit of a source repository, verified byte-for-byte on every build by",
+    "build_rooms.cjs, which fails the build on any drift. Copies are never edited; fixes land in",
+    "the source repository and the pin advances.",
+    "",
+    "TWO SOURCE REPOSITORIES, one per wing: the flagellum laboratory (classroom + specimen bench +",
+    "models + architecture + state snapshot + licensed microscopy) and the minecraft colony (the",
+    "whiteboard pair). Each vendored file records its repo-relative source path; the public mirror",
+    "commit for deep links is recorded once per source. On 2026-08-31 every file below was proven",
+    "BLOB-IDENTICAL between the private working HEAD and the public mirror commit named here",
+    "(git ls-tree sha1 equality, 29 of 29), so verifying against the local clone verifies what a",
+    "reader can fetch from the mirror.",
+    "",
+    "WHY THE SERVED PATHS LOOK THE WAY THEY DO: these pages were written against a local viewer",
+    "that serves them at /classroom, /models, /architecture, /snapshot, / — and the classroom",
+    "requests its art at /assets/classroom/* and its microscopy at /assets/media/*. The copies are",
+    "not edited, so this site serves them at THE SAME ABSOLUTE PATHS, which is what keeps every",
+    "internal link and fetch inside the vendored pages working without touching a byte. The two",
+    "fetches that expect a live viewer API (/api/classroom, /api/models) fail closed into the",
+    "pages' own catch branches — the rooms state what is static about themselves.",
+    "",
+    "The whiteboard pair links /model, /organism, /defects and / among themselves; /model and",
+    "/organism are served here verbatim, /defects is redirected to the published defects register",
+    "in the wiki, and / is this site's entry."
+  ],
+  "schema_version": 1,
+  "sources": {
+    "flagellum": {
+      "root_key": "uni-flagellum",
+      "public_repo": "uni-flagellum-motor-stack",
+      "pinned_commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+      "mirror_commit": "d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599"
+    },
+    "minecraft": {
+      "root_key": "uni-minecraft",
+      "public_repo": "uni-minecraft",
+      "pinned_commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+      "mirror_commit": "d73ba89cb419b3871ad9228c1874a01b6c296e5d"
+    }
+  },
+  "rooms": [
+    {
+      "slug": "classroom",
+      "title": "The classroom",
+      "source": "flagellum",
+      "served_at": "/classroom",
+      "file": "public/classroom.html",
+      "source_path": "docs/classroom.html",
+      "one_line": "The room you stand in: a photo-real laboratory with pixel-measured, hash-bound hotspots — the whiteboard, the specimen bench, the frequency wall and the mind-body wall.",
+      "what_is_static_here": "the two viewer-API fetches fail closed into the page's own fallbacks; everything else — the room, the anchors, the specimens, the microscopy — is served from this site"
+    },
+    {
+      "slug": "models",
+      "title": "The models",
+      "source": "flagellum",
+      "served_at": "/models",
+      "file": "public/models.html",
+      "source_path": "docs/models.html",
+      "one_line": "Every model the laboratory carries, as the classroom's own model wall presents them.",
+      "what_is_static_here": "the live model-registry fetch fails closed; the page's built-in content is served as committed"
+    },
+    {
+      "slug": "architecture",
+      "title": "The architecture",
+      "source": "flagellum",
+      "served_at": "/architecture",
+      "file": "public/architecture.html",
+      "source_path": "docs/architecture.html",
+      "one_line": "How the laboratory is built: the world process, the recorder, the reconstruction and the agent, kept deliberately separate.",
+      "what_is_static_here": "fully static — no fetches"
+    },
+    {
+      "slug": "snapshot",
+      "title": "Model state snapshot",
+      "source": "flagellum",
+      "served_at": "/snapshot",
+      "file": "public/snapshot.html",
+      "source_path": "docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
+      "one_line": "The dated state of the parity programme: the ladder, the gates, and what stands where — as of the date in its own title.",
+      "what_is_static_here": "a dated document by design; it says its own date"
+    },
+    {
+      "slug": "whiteboard-model",
+      "title": "The whiteboard — the model",
+      "source": "minecraft",
+      "served_at": "/model",
+      "file": "public/model.html",
+      "source_path": "docs/whiteboard/model.html",
+      "one_line": "Every matrix drawn, every step of the mathematics shown as it happens — the colony's generative model on one board.",
+      "what_is_static_here": "fully static — no fetches; the defaults on the board are the committed defaults"
+    },
+    {
+      "slug": "whiteboard-organism",
+      "title": "The whiteboard — the organism",
+      "source": "minecraft",
+      "served_at": "/organism",
+      "file": "public/organism.html",
+      "source_path": "docs/whiteboard/organism.html",
+      "one_line": "The organism view of the same mathematics: the factors as organs of one living loop.",
+      "what_is_static_here": "fully static — no fetches"
+    }
+  ],
+  "asset_sets": [
+    {
+      "source": "flagellum",
+      "served_prefix": "/assets/classroom/",
+      "dir": "public/assets/classroom",
+      "source_prefix": "docs/classroom-assets/",
+      "note": "the room background, the sha-bound anchor map, and the flagellar specimen composites — PDB 7E82 (Salmonella) and 6YSL (Bacillus) basal-body renderings, per-protein"
+    },
+    {
+      "source": "flagellum",
+      "served_prefix": "/assets/media/",
+      "dir": "public/assets/media",
+      "source_prefix": "public/media/",
+      "files": [
+        "mears-2014-run-tumble.mp4",
+        "singh-2024-switching.mp4"
+      ],
+      "note": "licensed microscopy the classroom plays at the bench; the .webp posters stay in the mirror and are not requested by the page"
+    }
+  ]
+}

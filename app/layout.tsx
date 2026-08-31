@@ -23,49 +23,43 @@ export const metadata: Metadata = {
 // /estate/, /evidence/ and /contribute/ — three links to pages that had never been written, which
 // would have shipped a navigation bar where three of five items 404. A nav is a promise about what
 // the site contains.
+//
+// TWO TIERS, TWO ROWS, ONE LIST. On 2026-08-30 this nav grew to eighteen equal items in one row —
+// it wrapped, the sticky header grew under content, and the operator's verdict was the right one:
+// a firehose without clear purpose. Tier 1 is THE LAB — the rooms a visitor walks into and the
+// pages that teach; it is short because a doorway is not a directory. Tier 2 is THE RECORD — the
+// registers a visitor checks; it renders as a quieter second row. One literal, because two gates
+// read the hrefs out of this exact array and a split list is how a nav and its checker drift.
+//
+// `file: true` marks routes served as VERBATIM VENDORED FILES through a rewrite (no trailing
+// slash — the rewrite source is the bare path) and rendered as plain anchors, because next/link
+// has nothing to prefetch for a route Next does not own.
 const NAV = [
-  { href: "/", label: "Overview" },
-  { href: "/start/", label: "Begin here" },
-  // Second, deliberately. A visitor who arrives mid-broadcast wants to know what is being worked on
-  // and what it is stuck on before they want the archive.
-  { href: "/live/", label: "Live" },
-  // /hall is the corridor: one door per project, placed here because a visitor who has just been
-  // told what is happening now wants to know what the estate IS before they read about it. It sits
-  // ahead of Articles for the same reason Live sits ahead of the archive.
-  { href: "/hall/", label: "The hallway" },
-  // The University's teaching row sits together, straight after the corridor that reaches it:
-  // /labs is where a visitor RUNS the mathematics (seven labs served from this site, byte-verified
-  // against their public source commit), /course is the 39-session syllabus read out of the
-  // Workbench's own data modules, /build is how a model is made, /not-an-llm is what this is and
-  // is not, and /wrong is the falsification wall — front of house, not a footnote, because a
-  // project that only narrates its wins is advertising.
-  { href: "/labs/", label: "Labs" },
-  { href: "/course/", label: "The course" },
-  { href: "/build/", label: "Build" },
-  { href: "/not-an-llm/", label: "Not an LLM" },
-  { href: "/wrong/", label: "What is wrong" },
-  { href: "/contribute/", label: "Contribute" },
-  { href: "/articles/", label: "Articles" },
-  { href: "/wiki/", label: "Wiki" },
-  { href: "/gates/", label: "Gates" },
-  // /mcp sits between /gates and /estate: it publishes the SWU-MCP surface as V1's inspection
-  // catalogued it — a dated, read-only projection of the 59 tools, 14 prompts and the lifecycle
-  // gates the server refuses on. It is a description of the ORCHESTRATION LAYER the agents run
-  // through, before /estate describes the CODE AND SERVICES that layer is orchestrating.
-  { href: "/mcp/", label: "MCP" },
-  // /estate sits between /gates and /evidence deliberately: it is a directory of the code and the
-  // services actually running, and it also carries the DRIFT register — places the declaration and
-  // the runtime disagree. A reader who has just seen "these gates passed" learns next what
-  // machinery those gates were run against, and where it disagrees with itself.
-  { href: "/estate/", label: "Estate" },
-  // /drift is the adverse-results register and it gets its own entry rather than living only as a
-  // section of /estate. The rule this site is built on is that adverse results are never buried —
-  // said first, to everyone, not appended where they read as a caveat. A reader must be able to
-  // reach "what is broken here" in ONE hop without first knowing what the word "estate" means.
-  { href: "/drift/", label: "Drift" },
-  { href: "/evidence/", label: "Evidence" },
-  { href: "/coverage/", label: "Coverage" },
-  { href: "/omissions/", label: "What is not here" },
+  { href: "/", label: "Enter", tier: 1 },
+  { href: "/classroom", label: "The classroom", tier: 1, file: true },
+  { href: "/model", label: "The whiteboard", tier: 1, file: true },
+  { href: "/labs/", label: "Labs", tier: 1 },
+  { href: "/course/", label: "The course", tier: 1 },
+  { href: "/hall/", label: "The hallway", tier: 1 },
+  { href: "/wrong/", label: "What is wrong", tier: 1 },
+  { href: "/contribute/", label: "Contribute", tier: 1 },
+  // ── the record ──────────────────────────────────────────────────────────────────────────────
+  { href: "/overview/", label: "Overview", tier: 2 },
+  { href: "/start/", label: "Begin here", tier: 2 },
+  { href: "/live/", label: "Live", tier: 2 },
+  { href: "/build/", label: "Build", tier: 2 },
+  { href: "/not-an-llm/", label: "Not an LLM", tier: 2 },
+  { href: "/articles/", label: "Articles", tier: 2 },
+  { href: "/wiki/", label: "Wiki", tier: 2 },
+  { href: "/gates/", label: "Gates", tier: 2 },
+  { href: "/mcp/", label: "MCP", tier: 2 },
+  { href: "/estate/", label: "Estate", tier: 2 },
+  // /drift keeps its own entry: adverse results are never buried, and a reader reaches "what is
+  // broken here" in one hop without first knowing what the word "estate" means.
+  { href: "/drift/", label: "Drift", tier: 2 },
+  { href: "/evidence/", label: "Evidence", tier: 2 },
+  { href: "/coverage/", label: "Coverage", tier: 2 },
+  { href: "/omissions/", label: "What is not here", tier: 2 },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -79,7 +73,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <b>UNI</b> <span>Universal Natural Intelligence</span>
             </Link>
             <nav aria-label="Primary">
-              {NAV.map((n) => (
+              {NAV.filter((n) => n.tier === 1).map((n) =>
+                n.file
+                  ? <a key={n.href} href={n.href}>{n.label}</a>
+                  : <NavLink key={n.href} href={n.href} label={n.label} />
+              )}
+            </nav>
+          </div>
+          <div className="wrap head head--records">
+            <span className="records-label" aria-hidden="true">the record</span>
+            <nav aria-label="Records">
+              {NAV.filter((n) => n.tier === 2).map((n) => (
                 <NavLink key={n.href} href={n.href} label={n.label} />
               ))}
             </nav>

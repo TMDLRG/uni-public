@@ -1,1 +1,9 @@
 public/play/*.html -text
+public/classroom.html -text
+public/models.html -text
+public/architecture.html -text
+public/snapshot.html -text
+public/model.html -text
+public/organism.html -text
+public/assets/classroom/* -text
+public/assets/media/* -text

@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "schema": "uni.public.rooms/1.0.0",
+  "generated_by": "generators/build_rooms.cjs",
+  "read_at": "2026-08-31T06:50:59.412Z",
+  "note": [
+    "THE ROOMS REGISTRY — the walk-in surfaces of the University: the classroom, the specimen and",
+    "model pages around it, and the whiteboard where the mathematics is drawn live.",
+    "",
+    "Same contract as generators/labs.json: every served file is a VERBATIM copy of a named path at",
+    "a named commit of a source repository, verified byte-for-byte on every build by",
+    "build_rooms.cjs, which fails the build on any drift. Copies are never edited; fixes land in",
+    "the source repository and the pin advances.",
+    "",
+    "TWO SOURCE REPOSITORIES, one per wing: the flagellum laboratory (classroom + specimen bench +",
+    "models + architecture + state snapshot + licensed microscopy) and the minecraft colony (the",
+    "whiteboard pair). Each vendored file records its repo-relative source path; the public mirror",
+    "commit for deep links is recorded once per source. On 2026-08-31 every file below was proven",
+    "BLOB-IDENTICAL between the private working HEAD and the public mirror commit named here",
+    "(git ls-tree sha1 equality, 29 of 29), so verifying against the local clone verifies what a",
+    "reader can fetch from the mirror.",
+    "",
+    "WHY THE SERVED PATHS LOOK THE WAY THEY DO: these pages were written against a local viewer",
+    "that serves them at /classroom, /models, /architecture, /snapshot, / — and the classroom",
+    "requests its art at /assets/classroom/* and its microscopy at /assets/media/*. The copies are",
+    "not edited, so this site serves them at THE SAME ABSOLUTE PATHS, which is what keeps every",
+    "internal link and fetch inside the vendored pages working without touching a byte. The two",
+    "fetches that expect a live viewer API (/api/classroom, /api/models) fail closed into the",
+    "pages' own catch branches — the rooms state what is static about themselves.",
+    "",
+    "The whiteboard pair links /model, /organism, /defects and / among themselves; /model and",
+    "/organism are served here verbatim, /defects is redirected to the published defects register",
+    "in the wiki, and / is this site's entry."
+  ],
+  "sources": {
+    "flagellum": {
+      "root_key": "uni-flagellum",
+      "public_repo": "uni-flagellum-motor-stack",
+      "pinned_commit": "23251469fd98f12858378345ba64625bfcfb7c02",
+      "mirror_commit": "d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599"
+    },
+    "minecraft": {
+      "root_key": "uni-minecraft",
+      "public_repo": "uni-minecraft",
+      "pinned_commit": "db7dafeb44d14d97225114ef194e8363c576e798",
+      "mirror_commit": "d73ba89cb419b3871ad9228c1874a01b6c296e5d"
+    }
+  },
+  "counts": {
+    "rooms": 6,
+    "assets": 23
+  },
+  "rooms": [
+    {
+      "slug": "classroom",
+      "title": "The classroom",
+      "source": "flagellum",
+      "served_at": "/classroom",
+      "file": "public/classroom.html",
+      "source_path": "docs/classroom.html",
+      "one_line": "The room you stand in: a photo-real laboratory with pixel-measured, hash-bound hotspots — the whiteboard, the specimen bench, the frequency wall and the mind-body wall.",
+      "what_is_static_here": "the two viewer-API fetches fail closed into the page's own fallbacks; everything else — the room, the anchors, the specimens, the microscopy — is served from this site",
+      "served_sha256": "58e45e17d63e7812b740a1eda6ffece5c6258f1655929a0f1c016ea1509534a4",
+      "bytes": 50513,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-flagellum-motor-stack",
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/classroom.html",
+      "mirror_commit_short": "d3d1b57c8c8b"
+    },
+    {
+      "slug": "models",
+      "title": "The models",
+      "source": "flagellum",
+      "served_at": "/models",
+      "file": "public/models.html",
+      "source_path": "docs/models.html",
+      "one_line": "Every model the laboratory carries, as the classroom's own model wall presents them.",
+      "what_is_static_here": "the live model-registry fetch fails closed; the page's built-in content is served as committed",
+      "served_sha256": "48286419304e3d59529e191e520ee9ddabd2d98f54f5efef83ed8cb7c24e7f65",
+      "bytes": 23109,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-flagellum-motor-stack",
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/models.html",
+      "mirror_commit_short": "d3d1b57c8c8b"
+    },
+    {
+      "slug": "architecture",
+      "title": "The architecture",
+      "source": "flagellum",
+      "served_at": "/architecture",
+      "file": "public/architecture.html",
+      "source_path": "docs/architecture.html",
+      "one_line": "How the laboratory is built: the world process, the recorder, the reconstruction and the agent, kept deliberately separate.",
+      "what_is_static_here": "fully static — no fetches",
+      "served_sha256": "e9436a6615414253355b0107a2d73daa9f36c8c50a1c38b399859aac39608f2a",
+      "bytes": 19329,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-flagellum-motor-stack",
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/architecture.html",
+      "mirror_commit_short": "d3d1b57c8c8b"
+    },
+    {
+      "slug": "snapshot",
+      "title": "Model state snapshot",
+      "source": "flagellum",
+      "served_at": "/snapshot",
+      "file": "public/snapshot.html",
+      "source_path": "docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
+      "one_line": "The dated state of the parity programme: the ladder, the gates, and what stands where — as of the date in its own title.",
+      "what_is_static_here": "a dated document by design; it says its own date",
+      "served_sha256": "436acd02041e42ad3bf22c7f95d20722d321516540bec41a9faca752b40287ad",
+      "bytes": 25920,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-flagellum-motor-stack",
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
+      "mirror_commit_short": "d3d1b57c8c8b"
+    },
+    {
+      "slug": "whiteboard-model",
+      "title": "The whiteboard — the model",
+      "source": "minecraft",
+      "served_at": "/model",
+      "file": "public/model.html",
+      "source_path": "docs/whiteboard/model.html",
+      "one_line": "Every matrix drawn, every step of the mathematics shown as it happens — the colony's generative model on one board.",
+      "what_is_static_here": "fully static — no fetches; the defaults on the board are the committed defaults",
+      "served_sha256": "7d7658495e6e08a4755a006a96411da0f7a6024b83d8439c4c580dda04229f02",
+      "bytes": 31358,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-minecraft",
+      "source_url": "https://github.com/TMDLRG/uni-minecraft/blob/d73ba89cb419b3871ad9228c1874a01b6c296e5d/docs/whiteboard/model.html",
+      "mirror_commit_short": "d73ba89cb419"
+    },
+    {
+      "slug": "whiteboard-organism",
+      "title": "The whiteboard — the organism",
+      "source": "minecraft",
+      "served_at": "/organism",
+      "file": "public/organism.html",
+      "source_path": "docs/whiteboard/organism.html",
+      "one_line": "The organism view of the same mathematics: the factors as organs of one living loop.",
+      "what_is_static_here": "fully static — no fetches",
+      "served_sha256": "19c3064aba2ecc914551c3cf6bea4c85fa9fa728d4db581c249ca18f1cec80d4",
+      "bytes": 18568,
+      "verified": {
+        "match": true
+      },
+      "source_repo": "uni-minecraft",
+      "source_url": "https://github.com/TMDLRG/uni-minecraft/blob/d73ba89cb419b3871ad9228c1874a01b6c296e5d/docs/whiteboard/organism.html",
+      "mirror_commit_short": "d73ba89cb419"
+    }
+  ],
+  "asset_sets": [
+    {
+      "source": "flagellum",
+      "served_prefix": "/assets/classroom/",
+      "dir": "public/assets/classroom",
+      "source_prefix": "docs/classroom-assets/",
+      "note": "the room background, the sha-bound anchor map, and the flagellar specimen composites — PDB 7E82 (Salmonella) and 6YSL (Bacillus) basal-body renderings, per-protein",
+      "count": 21,
+      "files": [
+        {
+          "file": "6ysl-composite-front.svg",
+          "served_sha256": "b256c141f4cb9a2b2b2c80fbfb0e89fc739b7ab90ae1a2d5990e075b451f6ad0",
+          "bytes": 17673,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "6ysl-composite-top.svg",
+          "served_sha256": "1f47dcaab83a11180b08c1f98f8f00715afe5e51b8e560bafbfdcb2e95cdcabf",
+          "bytes": 17534,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "6ysl-e1-motility-protein-a-front.svg",
+          "served_sha256": "c2db7f4ce33fa656365cd8d164933966b1578ae1399e23f961034d2484a41b44",
+          "bytes": 16997,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "6ysl-e2-motility-protein-b-front.svg",
+          "served_sha256": "b20c7bd2b0503e83b2577a8cdfb11a044bdcede4165711e5ffab598981a7e4c0",
+          "bytes": 1233,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-composite-front.svg",
+          "served_sha256": "6e67a72b0e5ceaaa7bed220470e496919f0ca0009a00990a2346f0edc52b4ec5",
+          "bytes": 194553,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-composite-top.svg",
+          "served_sha256": "629f02f777e66b7a71679cb65e0f51da2bc7cacace7b9f882a66f37edf035db0",
+          "bytes": 193378,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e1-flagellar-basal-body-rod-protein-flgg-front.svg",
+          "served_sha256": "05695e6fed8e8495f16b42f509b7f5975f997a7a5ad1519f88591828cf87a898",
+          "bytes": 85020,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e2-flagellar-basal-body-rod-protein-flgf-front.svg",
+          "served_sha256": "19c3c446dd7c80bb9fc8355cf6453287576bb43b40e9b553356301feead0b388",
+          "bytes": 17166,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e3-flagellar-ms-ring-l2-front.svg",
+          "served_sha256": "a288e317025d3a7802b1ccd9baa9905990fc633726d0c3d121e1e199304a648b",
+          "bytes": 1682,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e4-flagellar-ms-ring-l1-front.svg",
+          "served_sha256": "4b2b2e60a80fcf273f3cbb801f95edbebc4d88b9ce1ed44c4464ce423dc9aaca",
+          "bytes": 2004,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e5-flagellar-basal-body-rod-protein-flgc-front.svg",
+          "served_sha256": "2da84e77ff8d3afc7704c8f04088e441c181493e6ccb4ab210667f00921fad60",
+          "bytes": 10710,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e6-flagellar-basal-body-rod-protein-flgb-front.svg",
+          "served_sha256": "045cbb55bcea9913a3adf27271337ebb418ff3134585e33310a38712520afb4a",
+          "bytes": 7497,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e7-flagellar-hook-basal-body-complex-protein-flie-front.svg",
+          "served_sha256": "ff9114e4a155f0ce0df298a88457f72a74f1e95d2fd1a0111f4f12aa3c5e3526",
+          "bytes": 5783,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "7e82-e8-flagellar-hook-protein-flge-front.svg",
+          "served_sha256": "bd4f538d5fd1d90ac3a904bf173907b2c4338ffe675fa7d2fc62ca82364a94dd",
+          "bytes": 61539,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "MANIFEST.json",
+          "served_sha256": "7a382269b485174a7b539b8ab79f7eef20458bd6a344d5bb1acafdffa4735f6f",
+          "bytes": 1506,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "blankets-as-is.v1.json",
+          "served_sha256": "dd10a4980e768b24d6b6d4141d5e1bd46f5c9effea9cb35a17012a54c8ac35d2",
+          "bytes": 4669,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "room-anchors.v1.json",
+          "served_sha256": "55c4a88336a52ee2c0c907f1faf745a065c1d9ee62bd4be07af608b2ba89f4ce",
+          "bytes": 1313,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "room-bg.webp",
+          "served_sha256": "3797f69f2d6db9f989bd3a4be5410183dda035e663c47ad49b6077d6f0732778",
+          "bytes": 66330,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "signal-inventory.v1.json",
+          "served_sha256": "ddb9e5b2cf0e109f8cf701d3e2c41bff8e8584072c9918e8369cff34271b4f9b",
+          "bytes": 519194,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "structures-manifest.json",
+          "served_sha256": "052ce982d45853a520cf02b8ba12444bf04c5c204a047d888696045e630a2abe",
+          "bytes": 9143,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "timescales.v1.json",
+          "served_sha256": "d2b068959e3a27bde745c33d0bdd8c412b6b2ac2caea042ee4ebc4bcc22f67a3",
+          "bytes": 23489,
+          "verified": {
+            "match": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "flagellum",
+      "served_prefix": "/assets/media/",
+      "dir": "public/assets/media",
+      "source_prefix": "public/media/",
+      "files": [
+        {
+          "file": "mears-2014-run-tumble.mp4",
+          "served_sha256": "b5839132aec15ca099e9b99e6bd0f57fa26a720a97928e0a5f285eb5d9cd5050",
+          "bytes": 1634522,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "singh-2024-switching.mp4",
+          "served_sha256": "d8cff0a3536a7dd9fbf2acc5b34c815cfdf2588b83725de7f8fe04a72fd5f6e9",
+          "bytes": 20790989,
+          "verified": {
+            "match": true
+          }
+        }
+      ],
+      "note": "licensed microscopy the classroom plays at the bench; the .webp posters stay in the mirror and are not requested by the page",
+      "count": 2
+    }
+  ]
+}
