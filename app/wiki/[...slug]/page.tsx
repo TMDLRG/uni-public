@@ -17,18 +17,37 @@ import { lensFor, orientationFor } from "../../lib/lenses";
  */
 
 export function generateStaticParams() {
-  return docs.pages.map((p) => ({ slug: p.slug.split("/") }));
+  const params = docs.pages.map((p) => ({ slug: p.slug.split("/") }));
+  // A page whose slug ends in /index ALSO answers at its parent path. Not cosmetics: the apex
+  // domain proxies this site with cleanUrls on, which 308s any …/index/ URL to the parent BEFORE
+  // its proxy rewrite fires — so without this alias, exactly those pages 404 for every reader on
+  // the apex. Measured 2026-08-30: /wiki/constants/index/ was the one page that shape caught.
+  // The alias set is ENUMERATED from the corpus (every /index slug, not a hand-picked one), and a
+  // parent that is already a real page is never shadowed.
+  const taken = new Set(docs.pages.map((p) => p.slug));
+  for (const p of docs.pages) {
+    if (p.slug.endsWith("/index")) {
+      const parent = p.slug.slice(0, -"/index".length);
+      if (parent && !taken.has(parent)) params.push({ slug: parent.split("/") });
+    }
+  }
+  return params;
+}
+
+/** Resolve a slug to its page, accepting the parent-of-/index alias emitted above. */
+function pageForSlug(joined: string) {
+  return pageBySlug(joined) || pageBySlug(`${joined}/index`);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
-  const page = pageBySlug(slug.join("/"));
+  const page = pageForSlug(slug.join("/"));
   return { title: page ? page.title : "Not found" };
 }
 
 export default async function WikiPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
-  const page = pageBySlug(slug.join("/"));
+  const page = pageForSlug(slug.join("/"));
   if (!page) notFound();
 
   const corpus = docs.corpora.find((c) => c.id === page.corpus);

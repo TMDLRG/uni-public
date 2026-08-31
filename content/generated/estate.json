@@ -969,12 +969,12 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "42701377519255dd421a36f14780def586cff596",
-        "commit_short": "427013775192",
+        "commit": "06a4a2a007086392fce214be8f1823354f25209d",
+        "commit_short": "06a4a2a00708",
         "visibility": "public",
         "resolvable": true
       },
-      "source_last_commit": "2026-08-24T19:52:10-05:00",
+      "source_last_commit": "2026-08-30T19:29:00-05:00",
       "blocks": [
         {
           "kind": "adr-index",
@@ -982,8 +982,8 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "42701377519255dd421a36f14780def586cff596",
-            "commit_short": "427013775192",
+            "commit": "06a4a2a007086392fce214be8f1823354f25209d",
+            "commit_short": "06a4a2a00708",
             "visibility": "public",
             "resolvable": true,
             "glob": "docs/control-plane/decisions/*.md"
@@ -1064,8 +1064,8 @@
             "repo": "uni-flagellum",
             "title": "UNI-FLAGELLUM",
             "branch": "hierarchical-aif/motor-stack",
-            "commit": "42701377519255dd421a36f14780def586cff596",
-            "commit_short": "427013775192",
+            "commit": "06a4a2a007086392fce214be8f1823354f25209d",
+            "commit_short": "06a4a2a00708",
             "visibility": "public",
             "resolvable": true,
             "glob": "experiments/*manifest*.json"
