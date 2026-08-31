@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-31T00:24:49.918Z",
+  "read_at": "2026-08-31T00:31:33.309Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -143,10 +143,10 @@
         "mirror": {
           "kind": "mirror",
           "repo": "uni-minecraft",
-          "updated": "2026-08-24",
-          "tracks_commit": "1bba66fb53d6",
-          "mirror_commit": "84fb968f5dba",
-          "measured_on": "2026-08-24",
+          "updated": "2026-08-31",
+          "tracks_commit": "b737739330e0",
+          "mirror_commit": "f4a55b7f8cca",
+          "measured_on": "2026-08-31",
           "url": "https://github.com/TMDLRG/uni-minecraft"
         }
       }
@@ -164,7 +164,7 @@
       "one_line": "A CPU-only digital-organ laboratory that keeps a bacterial flagellar-motor world process strictly separate from the active-inference agent that models it.",
       "why_it_is_here": "It is where a claim meets a real measured organism, and where the estate keeps a result that went against it in plain view.",
       "measured": {
-        "file_count": 742,
+        "file_count": 743,
         "languages": [
           {
             "name": "JSON",
@@ -176,7 +176,7 @@
           },
           {
             "name": "Python",
-            "files": 79
+            "files": 80
           },
           {
             "name": "JavaScript",
@@ -191,9 +191,9 @@
             "files": 6
           }
         ],
-        "uncommitted": 7,
+        "uncommitted": 1,
         "ahead_behind": {
-          "ahead": 12,
+          "ahead": 0,
           "behind": 0
         }
       },
@@ -201,8 +201,8 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM — the science instrument",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "42701377519255dd421a36f14780def586cff596",
-        "commit_short": "427013775192",
+        "commit": "06a4a2a007086392fce214be8f1823354f25209d",
+        "commit_short": "06a4a2a00708",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
@@ -210,10 +210,10 @@
         "mirror": {
           "kind": "mirror",
           "repo": "uni-flagellum-motor-stack",
-          "updated": "2026-08-24",
-          "tracks_commit": "42701377519",
-          "mirror_commit": "afe2ebf01bb5",
-          "measured_on": "2026-08-24",
+          "updated": "2026-08-31",
+          "tracks_commit": "06a4a2a",
+          "mirror_commit": "dab2c86720c7",
+          "measured_on": "2026-08-31",
           "url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
         }
       }
@@ -321,7 +321,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 31,
+        "uncommitted": 1,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -331,8 +331,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "fab3e4b2fca60c9e3fada2f1ebe1e10b9cb765e4",
-        "commit_short": "fab3e4b2fca6",
+        "commit": "bc397ab830a051dde662047ad9ff14fb1e3f2ea9",
+        "commit_short": "bc397ab830a0",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
@@ -384,7 +384,7 @@
             "files": 4
           }
         ],
-        "uncommitted": 1,
+        "uncommitted": 0,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -394,8 +394,8 @@
         "repo": "uni-campus",
         "title": "The UNI Campus — universalnaturalintelligence.com",
         "branch": "master",
-        "commit": "653d7f710cb465e27cb330bafa69a50c168be0f2",
-        "commit_short": "653d7f710cb4",
+        "commit": "590e5b6d8b25ccdd117bab335701a41380c79539",
+        "commit_short": "590e5b6d8b25",
         "visibility": "private",
         "resolvable": false,
         "mirror": null

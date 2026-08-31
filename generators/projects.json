@@ -81,10 +81,10 @@
       "public_mirror": {
         "kind": "mirror",
         "repo": "uni-minecraft",
-        "updated": "2026-08-24",
-        "tracks_commit": "1bba66fb53d6",
-        "mirror_commit": "84fb968f5dba",
-        "measured_on": "2026-08-24"
+        "updated": "2026-08-31",
+        "tracks_commit": "b737739330e0",
+        "mirror_commit": "f4a55b7f8cca",
+        "measured_on": "2026-08-31"
       }
     },
     {
@@ -104,10 +104,10 @@
       "public_mirror": {
         "kind": "mirror",
         "repo": "uni-flagellum-motor-stack",
-        "updated": "2026-08-24",
-        "tracks_commit": "42701377519",
-        "mirror_commit": "afe2ebf01bb5",
-        "measured_on": "2026-08-24"
+        "updated": "2026-08-31",
+        "tracks_commit": "06a4a2a",
+        "mirror_commit": "dab2c86720c7",
+        "measured_on": "2026-08-31"
       }
     },
     {
