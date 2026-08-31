@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.course/1.0.0",
   "generated_by": "generators/build_course.cjs",
-  "read_at": "2026-08-31T00:24:50.619Z",
+  "read_at": "2026-08-31T01:12:33.550Z",
   "note": [
     "This syllabus was parsed out of WorkbenchWeb.Book.Sessions and .Chapters — the literal data",
     "modules the running Workbench serves its curriculum from — at the commit below. The parser",

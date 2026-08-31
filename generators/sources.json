@@ -17,14 +17,26 @@
       "branch": "gen2-runtime",
       "visibility": "public",
       "public_repo": "uni-minecraft",
-      "public_snapshot_commit": "84fb968f5dba60517a55f5b81cab8a6adc935f77",
+      "public_snapshot_commit": "92cd157725927e4b1314ce52878de920d57d6c9e",
       "inclusion": "spine",
       "one_line": "The colony, the Producer, the scientific control plane, the operator plane and the broadcast suite.",
       "read": [
-        { "kind": "gate-registry", "path": "viewer/gate_registry.json" },
-        { "kind": "plan", "path": "evidence/remediation/phase9_plan.json" },
-        { "kind": "module-map", "glob": "lib/sp/**/*.ex" },
-        { "kind": "schema", "glob": "production/schemas/*.json" }
+        {
+          "kind": "gate-registry",
+          "path": "viewer/gate_registry.json"
+        },
+        {
+          "kind": "plan",
+          "path": "evidence/remediation/phase9_plan.json"
+        },
+        {
+          "kind": "module-map",
+          "glob": "lib/sp/**/*.ex"
+        },
+        {
+          "kind": "schema",
+          "glob": "production/schemas/*.json"
+        }
       ]
     },
     {
@@ -34,12 +46,18 @@
       "branch": "hierarchical-aif/motor-stack",
       "visibility": "public",
       "public_repo": "uni-flagellum-motor-stack",
-      "public_snapshot_commit": "afe2ebf01bb58e72939f5e87f88e34625ae1b0c4",
+      "public_snapshot_commit": "3c078d47fbb5c9eb8fc6f44f971ef9d7c8da701d",
       "inclusion": "spine",
       "one_line": "The bacterial flagellar-motor laboratory: licensed microscopy beside a deterministic reconstruction and an active-inference agent.",
       "read": [
-        { "kind": "adr-index", "glob": "docs/control-plane/decisions/*.md" },
-        { "kind": "evidence-manifest", "glob": "experiments/*manifest*.json" }
+        {
+          "kind": "adr-index",
+          "glob": "docs/control-plane/decisions/*.md"
+        },
+        {
+          "kind": "evidence-manifest",
+          "glob": "experiments/*manifest*.json"
+        }
       ]
     },
     {
@@ -53,8 +71,14 @@
       "inclusion": "spine",
       "one_line": "Two book-length works on the UNI method, rendered by a stdlib-only Python generator.",
       "read": [
-        { "kind": "chapter-index", "glob": "encyclopedia/**/*.md" },
-        { "kind": "chapter-index", "glob": "cookbook/**/*.md" }
+        {
+          "kind": "chapter-index",
+          "glob": "encyclopedia/**/*.md"
+        },
+        {
+          "kind": "chapter-index",
+          "glob": "cookbook/**/*.md"
+        }
       ],
       "exclude": [
         "encyclopedia/appendix-TA/**"

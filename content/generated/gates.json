@@ -13,11 +13,11 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_gates.cjs",
- "measured_at": "2026-08-31T00:24:46.926Z",
+ "measured_at": "2026-08-31T01:12:29.941Z",
  "source": {
   "repo": "uni-minecraft",
-  "commit": "b737739330e05826e07903aaa4581f05eb896647",
-  "commit_short": "b737739330e0",
+  "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
+  "commit_short": "30bb14d1a6e7",
   "branch": "gen2-runtime",
   "clean": false
  },
@@ -34,16 +34,16 @@
  },
  "ci": {
   "available": true,
-  "runs_examined": 133,
+  "runs_examined": 134,
   "tally": {
-   "failure": 133
+   "failure": 134
   },
   "successes": 0,
   "latest": {
-   "id": 33344239909,
+   "id": 33345829329,
    "conclusion": "failure",
-   "at": "2026-08-31T00:19:19Z",
-   "commit": "b737739330e0",
+   "at": "2026-08-31T00:51:57Z",
+   "commit": "30bb14d1a6e7",
    "workflow": "CI"
   },
   "not_passing": [

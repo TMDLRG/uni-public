@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-31T00:31:33.309Z",
+  "read_at": "2026-08-31T01:12:32.867Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -134,8 +134,8 @@
         "repo": "uni-minecraft",
         "title": "UNI.MineCraft — the colony",
         "branch": "gen2-runtime",
-        "commit": "b737739330e05826e07903aaa4581f05eb896647",
-        "commit_short": "b737739330e0",
+        "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
+        "commit_short": "30bb14d1a6e7",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
@@ -144,8 +144,8 @@
           "kind": "mirror",
           "repo": "uni-minecraft",
           "updated": "2026-08-31",
-          "tracks_commit": "b737739330e0",
-          "mirror_commit": "f4a55b7f8cca",
+          "tracks_commit": "30bb14d",
+          "mirror_commit": "92cd15772592",
           "measured_on": "2026-08-31",
           "url": "https://github.com/TMDLRG/uni-minecraft"
         }
@@ -201,8 +201,8 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM — the science instrument",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "06a4a2a007086392fce214be8f1823354f25209d",
-        "commit_short": "06a4a2a00708",
+        "commit": "8570426d8165aebf68b97865d27de0d1843ccff0",
+        "commit_short": "8570426d8165",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
@@ -211,8 +211,8 @@
           "kind": "mirror",
           "repo": "uni-flagellum-motor-stack",
           "updated": "2026-08-31",
-          "tracks_commit": "06a4a2a",
-          "mirror_commit": "dab2c86720c7",
+          "tracks_commit": "8570426",
+          "mirror_commit": "3c078d47fbb5",
           "measured_on": "2026-08-31",
           "url": "https://github.com/TMDLRG/uni-flagellum-motor-stack"
         }
@@ -321,7 +321,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 1,
+        "uncommitted": 18,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -331,8 +331,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "bc397ab830a051dde662047ad9ff14fb1e3f2ea9",
-        "commit_short": "bc397ab830a0",
+        "commit": "ebf2b6e0cb710b731cbb861ccc8522709f365370",
+        "commit_short": "ebf2b6e0cb71",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
@@ -439,8 +439,8 @@
         ],
         "uncommitted": 21,
         "ahead_behind": {
-          "not_established": true,
-          "why": "no upstream configured for this branch"
+          "ahead": 0,
+          "behind": 0
         }
       },
       "citation": {

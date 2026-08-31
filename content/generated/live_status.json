@@ -14,12 +14,12 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_live_status.cjs",
- "plan_read_at": "2026-08-31T00:24:47.218Z",
+ "plan_read_at": "2026-08-31T01:12:30.238Z",
  "source": {
   "repo": "uni-minecraft",
   "path": "evidence/remediation/phase9_plan.json",
-  "commit": "b737739330e05826e07903aaa4581f05eb896647",
-  "commit_short": "b737739330e0",
+  "commit": "30bb14d1a6e700f262ba528855c698a0e7c0321b",
+  "commit_short": "30bb14d1a6e7",
   "branch": "gen2-runtime",
   "plan_authored_at": "2026-07-26"
  },
@@ -61,7 +61,8 @@
     "how_it_ended": "WITHDRAWN by operator ruling 2026-08-10: the two-image shot surface at the lab viewer was ruled a fatal hallucination -- never resurface it. Not completed, not failed: condemned. This plan carried it as next_act for 20 more days because the ruling was recorded in no repository file -- the exact one-source-of-truth failure this key exists to prevent, this time in the other direction: the file was the stale copy and the truth lived only in a conversation."
    }
   ],
-  "why_this_key_exists": "docs/control-plane/AGENT-CALIBRATION-PROMPT.md instructs every fresh agent to read this plan and do what its next_act says. Until 2026-07-29 NO SUCH KEY EXISTED, and five governing documents at six locations named a next act -- 'build L6' -- that had shipped at 6234f3d on 2026-07-28T19:11:29. A fresh agent obeying the calibration prompt BEFORE verifying anything would have rebuilt a finished build. This key is the single authoritative answer. The documents RENDER it from here and must not restate it: a restated fact is a fact with a half-life, and this one had a half-life of six hours."
+  "why_this_key_exists": "docs/control-plane/AGENT-CALIBRATION-PROMPT.md instructs every fresh agent to read this plan and do what its next_act says. Until 2026-07-29 NO SUCH KEY EXISTED, and five governing documents at six locations named a next act -- 'build L6' -- that had shipped at 6234f3d on 2026-07-28T19:11:29. A fresh agent obeying the calibration prompt BEFORE verifying anything would have rebuilt a finished build. This key is the single authoritative answer. The documents RENDER it from here and must not restate it: a restated fact is a fact with a half-life, and this one had a half-life of six hours.",
+  "blocked_on": "nothing -- both fronts accept agent work today; operator dependencies inside them (per-repair co-signs) are queued as they arise, and none gates the next step"
  },
  "law": "This file is the SINGLE SOURCE OF TRUTH for the plan. UNI TRACK renders it and Gaia projects it verbatim. None of the three may state a status the others do not. A drift signal compares this file's claims against the artifacts on disk — that comparison IS the resonance check, and it is designed so equal:true is reachable.",
  "status_vocabulary": [
@@ -820,8 +821,8 @@
   "declare a BagIt pack DISTRIBUTABLE — building a bag is agent work; declaring it fit to leave the box is the same class as the public push"
  ],
  "gates": {
-  "measured_at": "2026-08-31T00:24:46.926Z",
-  "commit": "b737739330e0",
+  "measured_at": "2026-08-31T01:12:29.941Z",
+  "commit": "30bb14d1a6e7",
   "registered": 36,
   "local_tally": {
    "PASS": 31,
@@ -830,10 +831,10 @@
   },
   "ci_available": true,
   "ci_latest": {
-   "id": 33344239909,
+   "id": 33345829329,
    "conclusion": "failure",
-   "at": "2026-08-31T00:19:19Z",
-   "commit": "b737739330e0",
+   "at": "2026-08-31T00:51:57Z",
+   "commit": "30bb14d1a6e7",
    "workflow": "CI"
   },
   "ci_not_passing": [
