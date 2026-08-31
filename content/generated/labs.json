@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "schema": "uni.public.labs/1.0.0",
+  "generated_by": "generators/build_labs.cjs",
+  "read_at": "2026-08-31T00:24:50.483Z",
+  "note": [
+    "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
+    "the public source repository on every build; a mismatch fails the build rather than shipping.",
+    "External labs carry declared URLs, never a liveness claim. Labs that exist but are hosted",
+    "nowhere are listed with what is missing — a shortened list is how an inventory starts lying."
+  ],
+  "workbench": {
+    "root_key": "orc-workbench",
+    "branch": "master",
+    "pinned_commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+    "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
+    "source_dir": "learninglabs",
+    "measured": {
+      "head_commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+      "commits_since_pin": 0
+    }
+  },
+  "counts": {
+    "vendored": 7,
+    "external": 6,
+    "not_hosted": 2
+  },
+  "vendored": [
+    {
+      "slug": "bayes-chips",
+      "title": "Bayes Machine",
+      "one_line": "Bayes' theorem as a physical machine: prior chips pour through likelihood gates and what lands in the tray is the posterior.",
+      "math": "P(h|e) = P(e|h)P(h) / P(e), run as countable chips rather than symbols",
+      "minutes": "10–20",
+      "served_at": "/play/bayes-chips.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/BayesChips.html",
+        "path": "learninglabs/BayesChips.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "61e4db4f88baf03674ca6f26c1e1d4b249577e8e86e336d18a8d7dcf7574a219",
+      "bytes": 115217,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "pomdp-machine",
+      "title": "POMDP Machine",
+      "one_line": "The discrete-time generative model behind every UNI agent: A, B, C, D matrices you can set by hand, then step and watch beliefs move.",
+      "math": "Hidden-state inference and expected free energy over policies in a partially observed Markov decision process",
+      "minutes": "15–30",
+      "served_at": "/play/pomdp-machine.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/active_inference_pomdp_machine.html",
+        "path": "learninglabs/active_inference_pomdp_machine.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "e0d80c4bd573aac877783a4270c6c25b7c38d09a720853e6bf106437fb3024c3",
+      "bytes": 91037,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "free-energy-forge",
+      "title": "Free-Energy Forge",
+      "one_line": "Equation 4.19 taken apart on a bench: every term of variational free energy shown, moved, and re-assembled.",
+      "math": "F = E_q[ln q(s) − ln p(o,s)] decomposed into energy and entropy, then into accuracy and complexity",
+      "minutes": "15–30",
+      "served_at": "/play/free-energy-forge.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/free_energy_forge_eq419.html",
+        "path": "learninglabs/free_energy_forge_eq419.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "ef0899cd8d45262bc102e19b5ffbc1537cc4c86f44593cbeef8909960036f1eb",
+      "bytes": 83770,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "laplace-tower",
+      "title": "Laplace Tower",
+      "one_line": "A predictive-coding hierarchy built floor by floor: prediction errors climb, predictions descend, precision decides who is heard.",
+      "math": "Hierarchical Gaussian generative models under the Laplace approximation — precision-weighted prediction error",
+      "minutes": "15–30",
+      "served_at": "/play/laplace-tower.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/laplace_tower_predictive_coding_builder.html",
+        "path": "learninglabs/laplace_tower_predictive_coding_builder.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "1dda273ce562657e1ad09548f1d3f777ec390bc003c516f1321e4bc5068eaa68",
+      "bytes": 88624,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "jumping-frog",
+      "title": "Jumping Frog",
+      "one_line": "The gentlest start here: one frog, two lily pads, and the whole idea of a generative model before any matrix is named.",
+      "math": "A two-state, two-observation generative model — the smallest POMDP that can still surprise you",
+      "minutes": "8–15",
+      "served_at": "/play/jumping-frog.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/jumping_frog_generative_model_lab.html",
+        "path": "learninglabs/jumping_frog_generative_model_lab.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "5abad46eba4e167e9c84c777f6d5be8135f3428cd32d84378bca75616c72e29d",
+      "bytes": 80967,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "atlas",
+      "title": "Active Inference Atlas",
+      "one_line": "The brain-shaped map: cortical circuits, predictive coding and neuromodulation located on one navigable atlas.",
+      "math": "Message passing between cortical layers as belief propagation; neuromodulators as precision control",
+      "minutes": "15–30",
+      "served_at": "/play/atlas.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/active_inference_atlas_educational_sim.html",
+        "path": "learninglabs/active_inference_atlas_educational_sim.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "8ebe6c2214253b66661060d9b0094f6cd2ec46b502addc20c6628867684a3b24",
+      "bytes": 96276,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    },
+    {
+      "slug": "anatomy-of-inference",
+      "title": "Anatomy of Inference",
+      "one_line": "Figure 5.5 as a working studio: the full perception–action cycle traced through a living diagram.",
+      "math": "The perception–action loop of active inference, factor by factor",
+      "minutes": "15–30",
+      "served_at": "/play/anatomy-of-inference.html",
+      "source": {
+        "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/anatomy_of_inference_studio.html",
+        "path": "learninglabs/anatomy_of_inference_studio.html",
+        "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+        "commit_short": "c2c9c7246251"
+      },
+      "served_sha256": "3dcb75e0341394449811a29ab477f0f2cc0054e9ea6430985d5331837a0723a2",
+      "bytes": 89150,
+      "verified": {
+        "match": true,
+        "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
+      }
+    }
+  ],
+  "external": [
+    {
+      "id": "precision-lab",
+      "title": "Precision Lab",
+      "live_url": "https://universalnaturalintelligence.com/",
+      "source_note": "developed in the operator's campus repository (private); the engine is a verified translation of the Workbench's Elixir POMDP engine",
+      "one_line": "Three precision dials — trust in the senses, trust in actions, commitment to a plan — steer a maze agent through visibly different behavioural regimes.",
+      "math": "Power-law precision on A and B matrices; policy temperature in π = σ(−G/T); EFE split into epistemic and pragmatic parts",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    },
+    {
+      "id": "echo-lab",
+      "title": "Echo Lab",
+      "live_url": "https://universalnaturalintelligence.com/echo-lab",
+      "source_note": "operator's campus repository (private)",
+      "one_line": "Active inference with echolocation: sensing as an act the agent chooses to spend.",
+      "math": "Epistemic value of an active sensing action vs. its pragmatic cost",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    },
+    {
+      "id": "loop-lab",
+      "title": "Loop Lab",
+      "live_url": "https://universalnaturalintelligence.com/loop-lab",
+      "source_note": "operator's campus repository (private)",
+      "one_line": "The math of stuck patterns: how a loop forms, holds, and breaks.",
+      "math": "Bifurcation structure of a belief–action loop under changing precision",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    },
+    {
+      "id": "heart-lab",
+      "title": "Heart Lab",
+      "live_url": "https://universalnaturalintelligence.com/heart-lab",
+      "source_note": "operator's campus repository (private)",
+      "one_line": "The long-term cardio-renal loop as a control problem the body is always solving.",
+      "math": "Slow homeostatic regulation as inference over interoceptive states",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    },
+    {
+      "id": "cell-lab",
+      "title": "Cell Lab",
+      "live_url": "https://universalnaturalintelligence.com/cell-lab",
+      "source_note": "operator's campus repository (private)",
+      "one_line": "An autopoietic service cell under active-inference test: a system that maintains itself or stops existing.",
+      "math": "Autopoiesis read as existence-preserving free-energy minimisation",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    },
+    {
+      "id": "sensorium",
+      "title": "UNI·Sensorium",
+      "live_url": "https://universalnaturalintelligence.com/sensorium",
+      "source_note": "operator's campus repository (private)",
+      "one_line": "A program learning to read, one letter at a time — watched live as it happens.",
+      "math": "Sequential inference over character streams",
+      "liveness": "NOT PROBED — the URL is a declared destination; a static build cannot honestly claim what answers right now"
+    }
+  ],
+  "not_hosted": [
+    {
+      "id": "bayes-museum",
+      "title": "The Bayes Museum — 50 exhibits",
+      "state": "built, verified self-contained, not yet deployed",
+      "why": "a Next.js application that does not yet set output:'export'; its 50 exhibits prerender cleanly and carry no external calls, but the repository has no public remote, so there is nothing a citation could resolve to yet",
+      "what_would_change_this": "a public repository plus a one-line static-export config"
+    },
+    {
+      "id": "classroom",
+      "title": "The Classroom — the room you stand in",
+      "state": "built; its asset gate recorded PASS 15/15 on 2026-08-20; not yet deployed",
+      "why": "a photo-real room with pixel-measured, hash-bound hotspots — the quality floor the University's entry is being held to. It lives in the flagellum workspace and is not yet served from any public host.",
+      "what_would_change_this": "publication through the flagellum mirror plus a hosting decision"
+    }
+  ]
+}

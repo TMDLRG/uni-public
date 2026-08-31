@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "schema": "uni.public.course/1.0.0",
+  "generated_by": "generators/build_course.cjs",
+  "read_at": "2026-08-31T00:24:50.619Z",
+  "note": [
+    "This syllabus was parsed out of WorkbenchWeb.Book.Sessions and .Chapters — the literal data",
+    "modules the running Workbench serves its curriculum from — at the commit below. The parser",
+    "fails the build if its counts disagree with the module's own declared arithmetic, so this",
+    "page cannot silently publish a shortened course."
+  ],
+  "source": {
+    "repo": "TheORCHESTRATEActiveInferenceWorkbench",
+    "public_url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench",
+    "sessions_path": "active_inference/apps/workbench_web/lib/workbench_web/book/sessions.ex",
+    "chapters_path": "active_inference/apps/workbench_web/lib/workbench_web/book/chapters.ex",
+    "commit": "c2c9c7246251c3b53354048b45fa9fab277e160b",
+    "commit_short": "c2c9c7246251"
+  },
+  "paths": {
+    "kid": "second person, grade-5 vocabulary, one concrete image",
+    "real": "plain English, grade-8 vocabulary, one analogy",
+    "equation": "the math in Unicode, tied to the labelled equation",
+    "derivation": "formal voice — proof sketch or citation"
+  },
+  "counts": {
+    "chapters": 11,
+    "sessions": 39,
+    "total_minutes": 435
+  },
+  "chapters": [
+    {
+      "num": 0,
+      "slug": "preface",
+      "title": "Preface",
+      "part": "preface",
+      "hero": "Why this book exists — and how to read it.",
+      "sessions": [
+        {
+          "chapter": 0,
+          "slug": "s1_orientation",
+          "title": "Orientation — how to use this suite",
+          "minutes": 6,
+          "ordinal": 1
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "slug": "overview",
+      "title": "Overview",
+      "part": "theory",
+      "hero": "Perception, action, learning — one loop, one theory.",
+      "sessions": [
+        {
+          "chapter": 1,
+          "slug": "s1_what_is_ai",
+          "title": "What Active Inference claims",
+          "minutes": 10,
+          "ordinal": 1
+        },
+        {
+          "chapter": 1,
+          "slug": "s2_perception_and_action",
+          "title": "Perception and action — one loop",
+          "minutes": 10,
+          "ordinal": 2
+        },
+        {
+          "chapter": 1,
+          "slug": "s3_why_one_theory",
+          "title": "Why one theory — and what this book covers",
+          "minutes": 6,
+          "ordinal": 3
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "slug": "low-road",
+      "title": "The Low Road to Active Inference",
+      "part": "theory",
+      "hero": "From Bayes' rule to variational free energy — the minimal machinery.",
+      "sessions": [
+        {
+          "chapter": 2,
+          "slug": "s1_inference_as_bayes",
+          "title": "Inference as Bayes' rule",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 2,
+          "slug": "s2_why_free_energy",
+          "title": "Why free energy — bounding surprise",
+          "minutes": 12,
+          "ordinal": 2
+        },
+        {
+          "chapter": 2,
+          "slug": "s3_cost_of_being_wrong",
+          "title": "Variational free energy, decomposed",
+          "minutes": 10,
+          "ordinal": 3
+        },
+        {
+          "chapter": 2,
+          "slug": "s4_action_as_inference",
+          "title": "Action as sampling from a prior",
+          "minutes": 12,
+          "ordinal": 4
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "slug": "high-road",
+      "title": "The High Road to Active Inference",
+      "part": "theory",
+      "hero": "Expected Free Energy: the value of a plan, as a bill with two lines.",
+      "sessions": [
+        {
+          "chapter": 3,
+          "slug": "s1_expected_free_energy",
+          "title": "Expected Free Energy — scoring a plan",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 3,
+          "slug": "s2_epistemic_pragmatic",
+          "title": "Epistemic vs pragmatic value",
+          "minutes": 12,
+          "ordinal": 2
+        },
+        {
+          "chapter": 3,
+          "slug": "s3_softmax_policy",
+          "title": "The softmax policy",
+          "minutes": 8,
+          "ordinal": 3
+        },
+        {
+          "chapter": 3,
+          "slug": "s4_what_makes_an_agent_active",
+          "title": "What makes an agent 'active'",
+          "minutes": 10,
+          "ordinal": 4
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "slug": "generative-models",
+      "title": "The Generative Models of Active Inference",
+      "part": "theory",
+      "hero": "Every belief, every action, every thought — inside one generative model.",
+      "sessions": [
+        {
+          "chapter": 4,
+          "slug": "s1_setup",
+          "title": "Why generative models — the engine of AIF",
+          "minutes": 10,
+          "ordinal": 1
+        },
+        {
+          "chapter": 4,
+          "slug": "s2_a_matrix",
+          "title": "A as emission — observation model",
+          "minutes": 8,
+          "ordinal": 2
+        },
+        {
+          "chapter": 4,
+          "slug": "s3_efe_intro",
+          "title": "Expected Free Energy — your first look",
+          "minutes": 12,
+          "ordinal": 3
+        },
+        {
+          "chapter": 4,
+          "slug": "s4_mdp_world",
+          "title": "A full discrete MDP",
+          "minutes": 12,
+          "ordinal": 4
+        },
+        {
+          "chapter": 4,
+          "slug": "s5_practice",
+          "title": "Build your first agent",
+          "minutes": 15,
+          "ordinal": 5
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "slug": "message-passing",
+      "title": "Message Passing and Neurobiology",
+      "part": "theory",
+      "hero": "The cortex as a factor graph — and the neuromodulators as precision knobs.",
+      "sessions": [
+        {
+          "chapter": 5,
+          "slug": "s1_factor_graphs",
+          "title": "Factor graphs and message passing",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 5,
+          "slug": "s2_predictive_coding",
+          "title": "Predictive coding in hierarchy",
+          "minutes": 12,
+          "ordinal": 2
+        },
+        {
+          "chapter": 5,
+          "slug": "s3_neuromodulation",
+          "title": "Precision, neuromodulation, and ACh/NA/DA/5-HT",
+          "minutes": 12,
+          "ordinal": 3
+        },
+        {
+          "chapter": 5,
+          "slug": "s4_brain_map",
+          "title": "Anatomy of belief updating",
+          "minutes": 12,
+          "ordinal": 4
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "slug": "recipe",
+      "title": "A Recipe for Designing Active Inference Models",
+      "part": "practice",
+      "hero": "Ship your first agent — what's hidden, what's seen, what costs what.",
+      "sessions": [
+        {
+          "chapter": 6,
+          "slug": "s1_states_obs_actions",
+          "title": "What's hidden, what's seen, what costs what",
+          "minutes": 10,
+          "ordinal": 1
+        },
+        {
+          "chapter": 6,
+          "slug": "s2_ab_c_d",
+          "title": "Fill in A, B, C, D",
+          "minutes": 12,
+          "ordinal": 2
+        },
+        {
+          "chapter": 6,
+          "slug": "s3_run_and_inspect",
+          "title": "Ship your agent — run, glass, iterate",
+          "minutes": 10,
+          "ordinal": 3
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "slug": "discrete-time",
+      "title": "Active Inference in Discrete Time",
+      "part": "practice",
+      "hero": "POMDPs in full colour — message passing, Dirichlet learning, hierarchy.",
+      "sessions": [
+        {
+          "chapter": 7,
+          "slug": "s1_discrete_refresher",
+          "title": "Discrete time — a refresher",
+          "minutes": 8,
+          "ordinal": 1
+        },
+        {
+          "chapter": 7,
+          "slug": "s2_message_passing_4_13",
+          "title": "Eq. 4.13 message passing, unpacked",
+          "minutes": 14,
+          "ordinal": 2
+        },
+        {
+          "chapter": 7,
+          "slug": "s3_learning_a_b",
+          "title": "Dirichlet learning of A and B",
+          "minutes": 12,
+          "ordinal": 3
+        },
+        {
+          "chapter": 7,
+          "slug": "s4_hierarchical",
+          "title": "Hierarchical discrete AIF",
+          "minutes": 12,
+          "ordinal": 4
+        },
+        {
+          "chapter": 7,
+          "slug": "s5_worked_example",
+          "title": "A worked discrete example",
+          "minutes": 15,
+          "ordinal": 5
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "slug": "continuous-time",
+      "title": "Active Inference in Continuous Time",
+      "part": "practice",
+      "hero": "Motion of the mode is the mode of the motion.",
+      "sessions": [
+        {
+          "chapter": 8,
+          "slug": "s1_generalized_coords",
+          "title": "Generalised coordinates — motion of the mode",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 8,
+          "slug": "s2_eq_4_19",
+          "title": "Eq. 4.19 — the quadratic free energy",
+          "minutes": 14,
+          "ordinal": 2
+        },
+        {
+          "chapter": 8,
+          "slug": "s3_action_on_sensors",
+          "title": "Action on sensors — u̇ = −∂F/∂u",
+          "minutes": 10,
+          "ordinal": 3
+        },
+        {
+          "chapter": 8,
+          "slug": "s4_continuous_play",
+          "title": "Open sandbox — play with the forge and tower",
+          "minutes": 15,
+          "ordinal": 4
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "slug": "model-based-analysis",
+      "title": "Model-Based Data Analysis",
+      "part": "practice",
+      "hero": "Fit an Active Inference model to real data — and know when to trust it.",
+      "sessions": [
+        {
+          "chapter": 9,
+          "slug": "s1_fit_to_data",
+          "title": "Fitting AIF models to data",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 9,
+          "slug": "s2_comparing_models",
+          "title": "Bayesian model comparison",
+          "minutes": 12,
+          "ordinal": 2
+        },
+        {
+          "chapter": 9,
+          "slug": "s3_case_study",
+          "title": "A worked case study",
+          "minutes": 12,
+          "ordinal": 3
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "slug": "unified-theory",
+      "title": "Active Inference as a Unified Theory of Sentient Behavior",
+      "part": "practice",
+      "hero": "Where the theory goes — and where it bends.",
+      "sessions": [
+        {
+          "chapter": 10,
+          "slug": "s1_perception_action_learning",
+          "title": "One machine — perception, action, learning",
+          "minutes": 12,
+          "ordinal": 1
+        },
+        {
+          "chapter": 10,
+          "slug": "s2_limitations",
+          "title": "Where the theory bends",
+          "minutes": 10,
+          "ordinal": 2
+        },
+        {
+          "chapter": 10,
+          "slug": "s3_where_next",
+          "title": "Where to go next",
+          "minutes": 8,
+          "ordinal": 3
+        }
+      ]
+    }
+  ]
+}

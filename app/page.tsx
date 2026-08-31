@@ -1,6 +1,8 @@
 import { estate, block } from "./lib/estate";
 import { Cite } from "./components/Cite";
 import docs from "../content/generated/docs.json";
+import labs from "../content/generated/labs.json";
+import course from "../content/generated/course.json";
 
 type GateBlock = { total: number; ci_true: number; ci_false: number; citation: any };
 type PlanBlock = { steps: number; stages: number; tally: Record<string, number>; citation: any };
@@ -75,6 +77,48 @@ export default function Home() {
         </ul>
       </div>
 
+      <h2>The University</h2>
+      <div className="card">
+        <p>
+          This site is also a place to <i>learn and build</i> this science, not only to read about
+          it. All of it is free, open source, runs in your browser on the CPU, and is pinned to the
+          public commit it came from.
+        </p>
+        <ul className="toc">
+          <li>
+            <a href="/labs/"><b>The labs</b></a> — {(labs as any).counts.vendored} laboratories
+            served from this site, byte-verified against their public source commit on every build,
+            plus the campus labs at{" "}
+            <a href="https://universalnaturalintelligence.com/" rel="noreferrer">
+              universalnaturalintelligence.com
+            </a>. Real inference, no install, no account.
+          </li>
+          <li>
+            <a href="/course/"><b>The course</b></a> — {(course as any).counts.sessions} sessions
+            across {(course as any).counts.chapters} chapters, every session written four ways (for
+            a ten-year-old, in plain English, as the equation, as the derivation), read at build
+            time out of the curriculum&rsquo;s own source modules.
+          </li>
+          <li>
+            <a href="/build/"><b>Build with UNI</b></a> — how a model is declared, compiled and run
+            here: a card you can read, never a checkpoint you must trust.
+          </li>
+          <li>
+            <a href="/not-an-llm/"><b>Not an LLM</b></a> — what these models are and are not, with
+            the one benchmark that exists quoted both ways.
+          </li>
+          <li>
+            <a href="/wrong/"><b>What is wrong</b></a> — the falsification wall: every contradicted
+            claim and negative result, front of house. A project that only narrates its wins is
+            advertising.
+          </li>
+          <li>
+            <a href="/contribute/"><b>Contribute</b></a> — the co-op: everything lands by pull
+            request, including the operator&rsquo;s own work.
+          </li>
+        </ul>
+      </div>
+
       <h2>Measured right now</h2>
       <div className="grid">
         {gates && (
@@ -120,15 +164,23 @@ export default function Home() {
       <h2>What this site does not claim</h2>
       <section className="card">
         <p>
-          <b>Most citations open, and what they open is frozen.</b> Every citation here names a real
-          repo, branch, commit and path. {cites.open} of {cites.total} page citations resolve into a
-          public, <i>redacted, frozen snapshot</i> of the source repository, taken 2026-08-02 — one
-          commit, no history — so what you open is that tree as it stood on that day, not as it
-          stands now. The working repositories themselves stay private. The remaining{" "}
-          {cites.closed} belong to {cites.closedRepos.join(", ")}, which has no published snapshot,
-          and they say so on their face rather than emitting a link that would 404. A citation you
-          cannot follow is an appeal to authority, and marking it is the difference between
-          documentation and a brochure.
+          <b>Most citations open, and what they open is a mirror, not the private tree.</b> Every
+          citation here names a real repo, branch, commit and path. {cites.open} of {cites.total}{" "}
+          page citations resolve into a public, <i>redacted live mirror</i> of the source
+          repository — updated by promotion, one commit per promotion, each recording the private
+          commit it came from, merged by a person through a pull request — at the exact mirror
+          commit the cited bytes were read from. The working repositories themselves stay private.
+          The remaining {cites.closed} belong to {cites.closedRepos.join(", ")}, which has no
+          published mirror, and they say so on their face rather than emitting a link that would
+          404. A citation you cannot follow is an appeal to authority, and marking it is the
+          difference between documentation and a brochure.
+        </p>
+        <p className="dim">
+          <b>Corrected 2026-08-30.</b> This paragraph read <i>&ldquo;what they open is frozen … a
+          redacted, frozen snapshot … taken 2026-08-02 — one commit, no history.&rdquo;</i> That
+          stopped being true on 2026-08-24, when the operator ruled the snapshots into live mirrors
+          and all three were promoted and merged — and the sentence stayed here for the six days
+          since. Same failure as the correction below it, on the same page, one paragraph apart.
         </p>
         <p className="dim">
           <b>Corrected 2026-08-24.</b> This paragraph read <i>“The source repositories are not public

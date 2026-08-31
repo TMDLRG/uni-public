@@ -180,6 +180,10 @@ function main() {
       // maturity is a HUMAN CLAIM carried through from the manifest, not a measurement. The hallway
       // must label it as declared, or it will read as though something measured it.
       maturity: { value: p.maturity, claim_type: "declared_by_operator", measured: false },
+      // A live serving URL is likewise DECLARED — this generator does not probe it, because a
+      // build-time probe would bake "it answered once" into a page that renders for months. The
+      // hallway labels it as a declared destination, never as a liveness verdict.
+      live: p.live || null,
       one_line: p.one_line,
       why_it_is_here: p.why_it_is_here,
       measured: { file_count: c.files, languages, uncommitted: dirty, ahead_behind },

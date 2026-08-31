@@ -147,6 +147,39 @@
       "read": [
         "README.md"
       ]
+    },
+    {
+      "id": "uni-campus",
+      "title": "The UNI Campus — universalnaturalintelligence.com",
+      "root_key": "uni-precision",
+      "branch": "master",
+      "visibility": "private",
+      "maturity": "running",
+      "wing": "teaching",
+      "live": {
+        "url": "https://universalnaturalintelligence.com/",
+        "claim_type": "declared_by_operator",
+        "note": "the public front door: five hands-on labs, the Sensorium, Gentle Entry, a history of inference, the Cookbook and both books"
+      },
+      "one_line": "The public front door of the estate: the Precision, Echo, Loop, Heart and Cell labs, the Sensorium, Gentle Entry, a history of inference, and the published Cookbook — in ten languages.",
+      "why_it_is_here": "It is where a visitor first touches the mathematics — a lab in the browser within a minute, no install, no account — and every deeper door on this site leads back to code.",
+      "read": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "bayes-museum",
+      "title": "The Bayes Museum — 50 exhibits",
+      "root_key": "bayes-museum",
+      "branch": "master",
+      "visibility": "private",
+      "maturity": "built",
+      "wing": "teaching",
+      "one_line": "Fifty small exhibits of Bayesian reasoning in everyday clothes — weather, health, security, science — each one a single idea a visitor can hold.",
+      "why_it_is_here": "It is the breadth wing of the teaching faculty: where the labs go deep on one model, the museum goes wide across fifty. It has no public repository yet, and this door says so rather than hiding it.",
+      "read": [
+        "README.md"
+      ]
     }
   ]
 }

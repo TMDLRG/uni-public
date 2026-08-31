@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-29T20:30:57.836Z",
+  "read_at": "2026-08-31T00:24:49.918Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -19,8 +19,8 @@
     "archived": "superseded or duplicated by another entry; retained for history"
   },
   "counts": {
-    "declared": 5,
-    "measured": 5,
+    "declared": 7,
+    "measured": 7,
     "skipped": 0
   },
   "roots_note": null,
@@ -34,6 +34,7 @@
         "claim_type": "declared_by_operator",
         "measured": false
       },
+      "live": null,
       "one_line": "A pedagogical BEAM-native active-inference workbench: discrete-time POMDP with mean-field variational message passing and an expected-free-energy-weighted policy posterior, plus a 10-chapter curriculum, a visual model builder, and browser learning labs.",
       "why_it_is_here": "It is the teaching faculty. It already holds a working model builder, a four-level learning ladder and a runnable cookbook — the University links to it rather than rebuilding it.",
       "measured": {
@@ -92,6 +93,7 @@
         "claim_type": "declared_by_operator",
         "measured": false
       },
+      "live": null,
       "one_line": "A pure-Elixir categorical active-inference colony: embodied agents living in a real Minecraft world, each running one mean-field predict-act tick as its life, with a broadcast platform built over it.",
       "why_it_is_here": "It is the world where the agents actually live, and the home of the Function Designer Card that compiles a declarative model description into a runnable brain.",
       "measured": {
@@ -132,8 +134,8 @@
         "repo": "uni-minecraft",
         "title": "UNI.MineCraft — the colony",
         "branch": "gen2-runtime",
-        "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
-        "commit_short": "1bba66fb53d6",
+        "commit": "b737739330e05826e07903aaa4581f05eb896647",
+        "commit_short": "b737739330e0",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-minecraft",
@@ -158,18 +160,19 @@
         "claim_type": "declared_by_operator",
         "measured": false
       },
+      "live": null,
       "one_line": "A CPU-only digital-organ laboratory that keeps a bacterial flagellar-motor world process strictly separate from the active-inference agent that models it.",
       "why_it_is_here": "It is where a claim meets a real measured organism, and where the estate keeps a result that went against it in plain view.",
       "measured": {
-        "file_count": 740,
+        "file_count": 742,
         "languages": [
           {
             "name": "JSON",
-            "files": 156
+            "files": 157
           },
           {
             "name": "Markdown",
-            "files": 130
+            "files": 131
           },
           {
             "name": "Python",
@@ -188,7 +191,7 @@
             "files": 6
           }
         ],
-        "uncommitted": 1,
+        "uncommitted": 7,
         "ahead_behind": {
           "ahead": 12,
           "behind": 0
@@ -224,6 +227,7 @@
         "claim_type": "declared_by_operator",
         "measured": false
       },
+      "live": null,
       "one_line": "An encyclopedia and a literal cookbook of buildable recipes across a developmental ladder, governed by two sovereign ledgers that never let a nature citation count as a UNI result.",
       "why_it_is_here": "Its two-ledger discipline is the honesty model the whole University adopts: what UNI has earned and what nature has shown are different registers and are never merged.",
       "measured": {
@@ -286,10 +290,11 @@
         "claim_type": "declared_by_operator",
         "measured": false
       },
+      "live": null,
       "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
       "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
       "measured": {
-        "file_count": 418,
+        "file_count": 436,
         "languages": [
           {
             "name": "Markdown",
@@ -297,22 +302,26 @@
           },
           {
             "name": "TypeScript",
-            "files": 26
+            "files": 31
           },
           {
             "name": "JavaScript",
-            "files": 26
+            "files": 28
           },
           {
             "name": "JSON",
-            "files": 25
+            "files": 28
+          },
+          {
+            "name": "HTML",
+            "files": 7
           },
           {
             "name": "CSS",
             "files": 1
           }
         ],
-        "uncommitted": 5,
+        "uncommitted": 31,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -322,12 +331,126 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "1c4f5b8e6ec5c3f03e92b9fcf6885a42db515840",
-        "commit_short": "1c4f5b8e6ec5",
+        "commit": "fab3e4b2fca60c9e3fada2f1ebe1e10b9cb765e4",
+        "commit_short": "fab3e4b2fca6",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
         "public_url": "https://github.com/TMDLRG/uni-public",
+        "mirror": null
+      }
+    },
+    {
+      "id": "uni-campus",
+      "title": "The UNI Campus — universalnaturalintelligence.com",
+      "wing": "teaching",
+      "maturity": {
+        "value": "running",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "live": {
+        "url": "https://universalnaturalintelligence.com/",
+        "claim_type": "declared_by_operator",
+        "note": "the public front door: five hands-on labs, the Sensorium, Gentle Entry, a history of inference, the Cookbook and both books"
+      },
+      "one_line": "The public front door of the estate: the Precision, Echo, Loop, Heart and Cell labs, the Sensorium, Gentle Entry, a history of inference, and the published Cookbook — in ten languages.",
+      "why_it_is_here": "It is where a visitor first touches the mathematics — a lab in the browser within a minute, no install, no account — and every deeper door on this site leads back to code.",
+      "measured": {
+        "file_count": 642,
+        "languages": [
+          {
+            "name": "HTML",
+            "files": 106
+          },
+          {
+            "name": "JSON",
+            "files": 74
+          },
+          {
+            "name": "TypeScript",
+            "files": 60
+          },
+          {
+            "name": "JavaScript",
+            "files": 13
+          },
+          {
+            "name": "Markdown",
+            "files": 8
+          },
+          {
+            "name": "Python",
+            "files": 4
+          }
+        ],
+        "uncommitted": 1,
+        "ahead_behind": {
+          "ahead": 0,
+          "behind": 0
+        }
+      },
+      "citation": {
+        "repo": "uni-campus",
+        "title": "The UNI Campus — universalnaturalintelligence.com",
+        "branch": "master",
+        "commit": "653d7f710cb465e27cb330bafa69a50c168be0f2",
+        "commit_short": "653d7f710cb4",
+        "visibility": "private",
+        "resolvable": false,
+        "mirror": null
+      }
+    },
+    {
+      "id": "bayes-museum",
+      "title": "The Bayes Museum — 50 exhibits",
+      "wing": "teaching",
+      "maturity": {
+        "value": "built",
+        "claim_type": "declared_by_operator",
+        "measured": false
+      },
+      "live": null,
+      "one_line": "Fifty small exhibits of Bayesian reasoning in everyday clothes — weather, health, security, science — each one a single idea a visitor can hold.",
+      "why_it_is_here": "It is the breadth wing of the teaching faculty: where the labs go deep on one model, the museum goes wide across fifty. It has no public repository yet, and this door says so rather than hiding it.",
+      "measured": {
+        "file_count": 66,
+        "languages": [
+          {
+            "name": "TypeScript",
+            "files": 49
+          },
+          {
+            "name": "Markdown",
+            "files": 3
+          },
+          {
+            "name": "JSON",
+            "files": 3
+          },
+          {
+            "name": "JavaScript",
+            "files": 2
+          },
+          {
+            "name": "CSS",
+            "files": 1
+          }
+        ],
+        "uncommitted": 21,
+        "ahead_behind": {
+          "not_established": true,
+          "why": "no upstream configured for this branch"
+        }
+      },
+      "citation": {
+        "repo": "bayes-museum",
+        "title": "The Bayes Museum — 50 exhibits",
+        "branch": "master",
+        "commit": "af8260c09a919ba7f85be6089b14c2b154a8339b",
+        "commit_short": "af8260c09a91",
+        "visibility": "private",
+        "resolvable": false,
         "mirror": null
       }
     }

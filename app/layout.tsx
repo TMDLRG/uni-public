@@ -33,6 +33,18 @@ const NAV = [
   // told what is happening now wants to know what the estate IS before they read about it. It sits
   // ahead of Articles for the same reason Live sits ahead of the archive.
   { href: "/hall/", label: "The hallway" },
+  // The University's teaching row sits together, straight after the corridor that reaches it:
+  // /labs is where a visitor RUNS the mathematics (seven labs served from this site, byte-verified
+  // against their public source commit), /course is the 39-session syllabus read out of the
+  // Workbench's own data modules, /build is how a model is made, /not-an-llm is what this is and
+  // is not, and /wrong is the falsification wall — front of house, not a footnote, because a
+  // project that only narrates its wins is advertising.
+  { href: "/labs/", label: "Labs" },
+  { href: "/course/", label: "The course" },
+  { href: "/build/", label: "Build" },
+  { href: "/not-an-llm/", label: "Not an LLM" },
+  { href: "/wrong/", label: "What is wrong" },
+  { href: "/contribute/", label: "Contribute" },
   { href: "/articles/", label: "Articles" },
   { href: "/wiki/", label: "Wiki" },
   { href: "/gates/", label: "Gates" },

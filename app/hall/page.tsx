@@ -50,6 +50,7 @@ type Project = {
   title: string;
   wing: string;
   maturity: { value: string; claim_type: string; measured: boolean };
+  live?: { url: string; claim_type: string; note?: string } | null;
   one_line: string;
   why_it_is_here: string;
   measured: Measured;
@@ -116,6 +117,16 @@ function Door({ p }: { p: Project }) {
 
       <p>{p.one_line}</p>
       <p className="dim">{p.why_it_is_here}</p>
+
+      {p.live && (
+        <p>
+          Serving at <a href={p.live.url} rel="noreferrer">{p.live.url}</a>{" "}
+          <span className="declared-note">
+            — a declared destination, not a probe. This static page cannot honestly claim what is
+            answering right now.
+          </span>
+        </p>
+      )}
 
       <dl className="measured">
         <div><dt>Files</dt><dd>{p.measured.file_count.toLocaleString()}</dd></div>

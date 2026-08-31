@@ -14,24 +14,40 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_live_status.cjs",
- "plan_read_at": "2026-08-29T20:30:55.413Z",
+ "plan_read_at": "2026-08-31T00:24:47.218Z",
  "source": {
   "repo": "uni-minecraft",
   "path": "evidence/remediation/phase9_plan.json",
-  "commit": "1bba66fb53d6c089896498d4c570afb4d304dc39",
-  "commit_short": "1bba66fb53d6",
+  "commit": "b737739330e05826e07903aaa4581f05eb896647",
+  "commit_short": "b737739330e0",
   "branch": "gen2-runtime",
   "plan_authored_at": "2026-07-26"
  },
  "phase": "PHASE-9 — RETURN TO RESONANCE",
  "next_act": {
-  "id": "CHECKPOINT-E",
-  "owner": "OPERATOR",
-  "one_line": "CHECKPOINT E -- the operator's. Two images side by side at [redacted: internal address] He says whether they differ with NO TEXT READ, and if so whether the reason is that the MATERIAL (truth_class) changed. That is the step's falsifier and it is M8, the operator's eye.",
-  "where": "stages[id=4].steps[id=4.6]",
-  "blocked_on": "M8 -- the operator's eye. No gate can stand in for it, and none is being asked to. Measured 2026-07-29: both images are real and they differ -- GET /api/lab/shot?swap=0 returns 3371 bytes and ?swap=1 returns 3375 bytes, both valid PNG, sha256 6eed6e94... and 0321be29..., embedded side by side at viewer/lab/l6.html:52-53. The surface is ready; the eye is not a gate.",
-  "authored_at": "2026-07-29",
-  "why_this_key_exists": "docs/control-plane/AGENT-CALIBRATION-PROMPT.md instructs every fresh agent to read this plan and do what its next_act says. Until 2026-07-29 NO SUCH KEY EXISTED, and five governing documents at six locations named a next act -- 'build L6' -- that had shipped at 6234f3d on 2026-07-28T19:11:29. A fresh agent obeying the calibration prompt BEFORE verifying anything would have rebuilt a finished build. This key is the single authoritative answer. The documents RENDER it from here and must not restate it: a restated fact is a fact with a half-life, and this one had a half-life of six hours.",
+  "id": "RESUME-THE-LIVE-FRONTS",
+  "owner": "AGENTS",
+  "one_line": "Two live fronts, both agent work, both measured live since 2026-08-19: (1) the whiteboard defect programme -- docs/whiteboard/DEFECTS-AND-REPAIRS.md, every repair proven on the real engine before it ships; (2) the public University assembly -- labs, course, falsification wall and contribution surfaces served from the documentation estate, every page pinned to the commit it was read from. The checkpoint this key used to name was ruled out by the operator; see was.",
+  "where": "docs/whiteboard/DEFECTS-AND-REPAIRS.md and the UNI.Public estate (the University routes)",
+  "authored_at": "2026-08-30",
+  "was": {
+   "id": "CHECKPOINT-E",
+   "owner": "OPERATOR",
+   "one_line": "CHECKPOINT E -- the operator's. Two images side by side at [redacted: internal address] He says whether they differ with NO TEXT READ, and if so whether the reason is that the MATERIAL (truth_class) changed. That is the step's falsifier and it is M8, the operator's eye.",
+   "where": "stages[id=4].steps[id=4.6]",
+   "blocked_on": "M8 -- the operator's eye. No gate can stand in for it, and none is being asked to. Measured 2026-07-29: both images are real and they differ -- GET /api/lab/shot?swap=0 returns 3371 bytes and ?swap=1 returns 3375 bytes, both valid PNG, sha256 6eed6e94... and 0321be29..., embedded side by side at viewer/lab/l6.html:52-53. The surface is ready; the eye is not a gate.",
+   "authored_at": "2026-07-29",
+   "why_this_key_exists": "docs/control-plane/AGENT-CALIBRATION-PROMPT.md instructs every fresh agent to read this plan and do what its next_act says. Until 2026-07-29 NO SUCH KEY EXISTED, and five governing documents at six locations named a next act -- 'build L6' -- that had shipped at 6234f3d on 2026-07-28T19:11:29. A fresh agent obeying the calibration prompt BEFORE verifying anything would have rebuilt a finished build. This key is the single authoritative answer. The documents RENDER it from here and must not restate it: a restated fact is a fact with a half-life, and this one had a half-life of six hours.",
+   "supersedes": [
+    {
+     "token": "L6",
+     "was": "Stage 4 step 4.6 -- build L6, THE GAUNTLET THEN THE CO-SIGN",
+     "shipped_at": "6234f3d",
+     "shipped_utc": "2026-07-28T19:11:29",
+     "note": "A RETIRED TOKEN. It must not appear inside any generated state block. viewer/verify_claims.cjs check C9.3 refuses it there, and the mutation M5 proves that refusal bites."
+    }
+   ]
+  },
   "supersedes": [
    {
     "token": "L6",
@@ -39,8 +55,13 @@
     "shipped_at": "6234f3d",
     "shipped_utc": "2026-07-28T19:11:29",
     "note": "A RETIRED TOKEN. It must not appear inside any generated state block. viewer/verify_claims.cjs check C9.3 refuses it there, and the mutation M5 proves that refusal bites."
+   },
+   {
+    "token": "CHECKPOINT-E",
+    "how_it_ended": "WITHDRAWN by operator ruling 2026-08-10: the two-image shot surface at the lab viewer was ruled a fatal hallucination -- never resurface it. Not completed, not failed: condemned. This plan carried it as next_act for 20 more days because the ruling was recorded in no repository file -- the exact one-source-of-truth failure this key exists to prevent, this time in the other direction: the file was the stale copy and the truth lived only in a conversation."
    }
-  ]
+  ],
+  "why_this_key_exists": "docs/control-plane/AGENT-CALIBRATION-PROMPT.md instructs every fresh agent to read this plan and do what its next_act says. Until 2026-07-29 NO SUCH KEY EXISTED, and five governing documents at six locations named a next act -- 'build L6' -- that had shipped at 6234f3d on 2026-07-28T19:11:29. A fresh agent obeying the calibration prompt BEFORE verifying anything would have rebuilt a finished build. This key is the single authoritative answer. The documents RENDER it from here and must not restate it: a restated fact is a fact with a half-life, and this one had a half-life of six hours."
  },
  "law": "This file is the SINGLE SOURCE OF TRUTH for the plan. UNI TRACK renders it and Gaia projects it verbatim. None of the three may state a status the others do not. A drift signal compares this file's claims against the artifacts on disk — that comparison IS the resonance check, and it is designed so equal:true is reachable.",
  "status_vocabulary": [
@@ -58,9 +79,8 @@
   "by_status": {
    "DONE": 31,
    "BLOCKED": 1,
-   "IN_PROGRESS": 1,
-   "PLANNED": 8,
-   "OPERATOR": 2
+   "OPERATOR": 3,
+   "PLANNED": 8
   }
  },
  "stages": [
@@ -457,7 +477,7 @@
     {
      "id": "4.6",
      "title": "THE LAB — builds 0 through 6",
-     "status": "IN_PROGRESS",
+     "status": "OPERATOR",
      "prediction": "M1 (verify_shot --mutate MUST FAIL) + M8",
      "falsifier": "A4",
      "artifact": null,
@@ -800,8 +820,8 @@
   "declare a BagIt pack DISTRIBUTABLE — building a bag is agent work; declaring it fit to leave the box is the same class as the public push"
  ],
  "gates": {
-  "measured_at": "2026-08-29T20:30:55.119Z",
-  "commit": "1bba66fb53d6",
+  "measured_at": "2026-08-31T00:24:46.926Z",
+  "commit": "b737739330e0",
   "registered": 36,
   "local_tally": {
    "PASS": 31,
@@ -810,10 +830,10 @@
   },
   "ci_available": true,
   "ci_latest": {
-   "id": 33271632545,
+   "id": 33344239909,
    "conclusion": "failure",
-   "at": "2026-08-29T19:44:09Z",
-   "commit": "1bba66fb53d6",
+   "at": "2026-08-31T00:19:19Z",
+   "commit": "b737739330e0",
    "workflow": "CI"
   },
   "ci_not_passing": [
@@ -827,7 +847,7 @@
   "claim_level": "presence_evident",
   "caveat": "presence_evident, NOT unforgeable. The fences prove the request came from this box, as a loopback name, with a preflight-forcing header. NONE OF THEM PROVES A HUMAN — an agent on this box can post this exact row. The chain makes it tamper-EVIDENT, not authentic. No gate may read this as authority.",
   "answered_count": 0,
-  "open_count": 22,
+  "open_count": 23,
   "chain_ok": true,
   "chain_faults": 0,
   "questions": [
@@ -961,6 +981,13 @@
     "id": "not_mine[9]",
     "kind": "not_mine",
     "text": "declare a BagIt pack DISTRIBUTABLE — building a bag is agent work; declaring it fit to leave the box is the same class as the public push",
+    "answered": false,
+    "answer": null
+   },
+   {
+    "id": "4.6",
+    "kind": "operator_step",
+    "text": "THE LAB — builds 0 through 6",
     "answered": false,
     "answer": null
    },
