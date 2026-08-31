@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.labs/1.0.0",
   "generated_by": "generators/build_labs.cjs",
-  "read_at": "2026-08-31T00:24:50.483Z",
+  "read_at": "2026-08-31T00:32:42.884Z",
   "note": [
     "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
     "the public source repository on every build; a mismatch fails the build rather than shipping.",
@@ -32,7 +32,7 @@
       "one_line": "Bayes' theorem as a physical machine: prior chips pour through likelihood gates and what lands in the tray is the posterior.",
       "math": "P(h|e) = P(e|h)P(h) / P(e), run as countable chips rather than symbols",
       "minutes": "10–20",
-      "served_at": "/play/bayes-chips.html",
+      "served_at": "/play/bayes-chips",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/BayesChips.html",
@@ -53,7 +53,7 @@
       "one_line": "The discrete-time generative model behind every UNI agent: A, B, C, D matrices you can set by hand, then step and watch beliefs move.",
       "math": "Hidden-state inference and expected free energy over policies in a partially observed Markov decision process",
       "minutes": "15–30",
-      "served_at": "/play/pomdp-machine.html",
+      "served_at": "/play/pomdp-machine",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/active_inference_pomdp_machine.html",
@@ -74,7 +74,7 @@
       "one_line": "Equation 4.19 taken apart on a bench: every term of variational free energy shown, moved, and re-assembled.",
       "math": "F = E_q[ln q(s) − ln p(o,s)] decomposed into energy and entropy, then into accuracy and complexity",
       "minutes": "15–30",
-      "served_at": "/play/free-energy-forge.html",
+      "served_at": "/play/free-energy-forge",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/free_energy_forge_eq419.html",
@@ -95,7 +95,7 @@
       "one_line": "A predictive-coding hierarchy built floor by floor: prediction errors climb, predictions descend, precision decides who is heard.",
       "math": "Hierarchical Gaussian generative models under the Laplace approximation — precision-weighted prediction error",
       "minutes": "15–30",
-      "served_at": "/play/laplace-tower.html",
+      "served_at": "/play/laplace-tower",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/laplace_tower_predictive_coding_builder.html",
@@ -116,7 +116,7 @@
       "one_line": "The gentlest start here: one frog, two lily pads, and the whole idea of a generative model before any matrix is named.",
       "math": "A two-state, two-observation generative model — the smallest POMDP that can still surprise you",
       "minutes": "8–15",
-      "served_at": "/play/jumping-frog.html",
+      "served_at": "/play/jumping-frog",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/jumping_frog_generative_model_lab.html",
@@ -137,7 +137,7 @@
       "one_line": "The brain-shaped map: cortical circuits, predictive coding and neuromodulation located on one navigable atlas.",
       "math": "Message passing between cortical layers as belief propagation; neuromodulators as precision control",
       "minutes": "15–30",
-      "served_at": "/play/atlas.html",
+      "served_at": "/play/atlas",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/active_inference_atlas_educational_sim.html",
@@ -158,7 +158,7 @@
       "one_line": "Figure 5.5 as a working studio: the full perception–action cycle traced through a living diagram.",
       "math": "The perception–action loop of active inference, factor by factor",
       "minutes": "15–30",
-      "served_at": "/play/anatomy-of-inference.html",
+      "served_at": "/play/anatomy-of-inference",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
         "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/c2c9c7246251c3b53354048b45fa9fab277e160b/learninglabs/anatomy_of_inference_studio.html",
