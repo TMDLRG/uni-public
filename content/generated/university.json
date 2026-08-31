@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.university/1.0.0",
   "generated_by": "generators/build_university.cjs",
-  "read_at": "2026-08-31T06:50:56.746Z",
+  "read_at": "2026-08-31T07:18:52.458Z",
   "note": [
     "Every measured number here was read from the repository named in its citation, at the commit",
     "named in that citation. Nothing on this page is typed.",
@@ -164,11 +164,11 @@
       "one_line": "A CPU-only digital-organ laboratory that keeps a bacterial flagellar-motor world process strictly separate from the active-inference agent that models it.",
       "why_it_is_here": "It is where a claim meets a real measured organism, and where the estate keeps a result that went against it in plain view.",
       "measured": {
-        "file_count": 743,
+        "file_count": 747,
         "languages": [
           {
             "name": "JSON",
-            "files": 157
+            "files": 159
           },
           {
             "name": "Markdown",
@@ -180,7 +180,7 @@
           },
           {
             "name": "JavaScript",
-            "files": 38
+            "files": 40
           },
           {
             "name": "TypeScript",
@@ -201,8 +201,8 @@
         "repo": "uni-flagellum",
         "title": "UNI-FLAGELLUM — the science instrument",
         "branch": "hierarchical-aif/motor-stack",
-        "commit": "23251469fd98f12858378345ba64625bfcfb7c02",
-        "commit_short": "23251469fd98",
+        "commit": "5c4b433688c9b37c4b528c80ea0b45d9a9043fbb",
+        "commit_short": "5c4b433688c9",
         "visibility": "private",
         "resolvable": false,
         "public_repo": "uni-flagellum-motor-stack",
@@ -294,7 +294,7 @@
       "one_line": "The public technical documentation of the estate, where every volatile number is generated from the repository it describes and carries the commit it was read from.",
       "why_it_is_here": "It is the shell this University is built into, and the reason every number on these pages can be traced rather than trusted.",
       "measured": {
-        "file_count": 469,
+        "file_count": 471,
         "languages": [
           {
             "name": "Markdown",
@@ -302,7 +302,7 @@
           },
           {
             "name": "JSON",
-            "files": 36
+            "files": 38
           },
           {
             "name": "TypeScript",
@@ -321,7 +321,7 @@
             "files": 1
           }
         ],
-        "uncommitted": 30,
+        "uncommitted": 14,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -331,8 +331,8 @@
         "repo": "uni-public",
         "title": "UNI.Public — the documentation estate",
         "branch": "main",
-        "commit": "c7576046f505b1a89db045159a6d4091ae220ae8",
-        "commit_short": "c7576046f505",
+        "commit": "1d75b0a9fea004e558678f7f971f2458b71fab59",
+        "commit_short": "1d75b0a9fea0",
         "visibility": "public",
         "resolvable": true,
         "public_repo": "uni-public",
@@ -384,7 +384,7 @@
             "files": 4
           }
         ],
-        "uncommitted": 1,
+        "uncommitted": 0,
         "ahead_behind": {
           "ahead": 0,
           "behind": 0
@@ -394,8 +394,8 @@
         "repo": "uni-campus",
         "title": "The UNI Campus — universalnaturalintelligence.com",
         "branch": "master",
-        "commit": "590e5b6d8b25ccdd117bab335701a41380c79539",
-        "commit_short": "590e5b6d8b25",
+        "commit": "9ed6b24b0626b0bbb691e725656a1ff91c54e270",
+        "commit_short": "9ed6b24b0626",
         "visibility": "private",
         "resolvable": false,
         "mirror": null

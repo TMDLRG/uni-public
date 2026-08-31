@@ -33,8 +33,8 @@
     "flagellum": {
       "root_key": "uni-flagellum",
       "public_repo": "uni-flagellum-motor-stack",
-      "pinned_commit": "23251469fd98f12858378345ba64625bfcfb7c02",
-      "mirror_commit": "d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599"
+      "pinned_commit": "5c4b433688c9b37c4b528c80ea0b45d9a9043fbb",
+      "mirror_commit": "7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7"
     },
     "minecraft": {
       "root_key": "uni-minecraft",

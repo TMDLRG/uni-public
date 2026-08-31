@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.rooms/1.0.0",
   "generated_by": "generators/build_rooms.cjs",
-  "read_at": "2026-08-31T06:50:59.412Z",
+  "read_at": "2026-08-31T07:18:55.310Z",
   "note": [
     "THE ROOMS REGISTRY — the walk-in surfaces of the University: the classroom, the specimen and",
     "model pages around it, and the whiteboard where the mathematics is drawn live.",
@@ -36,8 +36,8 @@
     "flagellum": {
       "root_key": "uni-flagellum",
       "public_repo": "uni-flagellum-motor-stack",
-      "pinned_commit": "23251469fd98f12858378345ba64625bfcfb7c02",
-      "mirror_commit": "d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599"
+      "pinned_commit": "5c4b433688c9b37c4b528c80ea0b45d9a9043fbb",
+      "mirror_commit": "7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7"
     },
     "minecraft": {
       "root_key": "uni-minecraft",
@@ -48,7 +48,7 @@
   },
   "counts": {
     "rooms": 6,
-    "assets": 23
+    "assets": 25
   },
   "rooms": [
     {
@@ -60,14 +60,14 @@
       "source_path": "docs/classroom.html",
       "one_line": "The room you stand in: a photo-real laboratory with pixel-measured, hash-bound hotspots — the whiteboard, the specimen bench, the frequency wall and the mind-body wall.",
       "what_is_static_here": "the two viewer-API fetches fail closed into the page's own fallbacks; everything else — the room, the anchors, the specimens, the microscopy — is served from this site",
-      "served_sha256": "58e45e17d63e7812b740a1eda6ffece5c6258f1655929a0f1c016ea1509534a4",
-      "bytes": 50513,
+      "served_sha256": "a4f1515153d3b9206a2ca92be838ec3cc3d5f9473d53947f7141c7134bc84a93",
+      "bytes": 52027,
       "verified": {
         "match": true
       },
       "source_repo": "uni-flagellum-motor-stack",
-      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/classroom.html",
-      "mirror_commit_short": "d3d1b57c8c8b"
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/classroom.html",
+      "mirror_commit_short": "7d9e0f3f4e5f"
     },
     {
       "slug": "models",
@@ -78,14 +78,14 @@
       "source_path": "docs/models.html",
       "one_line": "Every model the laboratory carries, as the classroom's own model wall presents them.",
       "what_is_static_here": "the live model-registry fetch fails closed; the page's built-in content is served as committed",
-      "served_sha256": "48286419304e3d59529e191e520ee9ddabd2d98f54f5efef83ed8cb7c24e7f65",
-      "bytes": 23109,
+      "served_sha256": "227c7a0edff18559b0a5aa67e9a93aa7db72de43b55813c312e8f9d3b3a34a54",
+      "bytes": 24700,
       "verified": {
         "match": true
       },
       "source_repo": "uni-flagellum-motor-stack",
-      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/models.html",
-      "mirror_commit_short": "d3d1b57c8c8b"
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/models.html",
+      "mirror_commit_short": "7d9e0f3f4e5f"
     },
     {
       "slug": "architecture",
@@ -102,8 +102,8 @@
         "match": true
       },
       "source_repo": "uni-flagellum-motor-stack",
-      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/architecture.html",
-      "mirror_commit_short": "d3d1b57c8c8b"
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/architecture.html",
+      "mirror_commit_short": "7d9e0f3f4e5f"
     },
     {
       "slug": "snapshot",
@@ -120,8 +120,8 @@
         "match": true
       },
       "source_repo": "uni-flagellum-motor-stack",
-      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/d3d1b57c8c8b2cdb8e39780ff141b6e55d29a599/docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
-      "mirror_commit_short": "d3d1b57c8c8b"
+      "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
+      "mirror_commit_short": "7d9e0f3f4e5f"
     },
     {
       "slug": "whiteboard-model",
@@ -167,7 +167,7 @@
       "dir": "public/assets/classroom",
       "source_prefix": "docs/classroom-assets/",
       "note": "the room background, the sha-bound anchor map, and the flagellar specimen composites — PDB 7E82 (Salmonella) and 6YSL (Bacillus) basal-body renderings, per-protein",
-      "count": 21,
+      "count": 23,
       "files": [
         {
           "file": "6ysl-composite-front.svg",
@@ -285,6 +285,22 @@
           "file": "MANIFEST.json",
           "served_sha256": "7a382269b485174a7b539b8ab79f7eef20458bd6a344d5bb1acafdffa4735f6f",
           "bytes": 1506,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "api-classroom.fixture.json",
+          "served_sha256": "3df666e2b106a119e7ef19c6cdf63a474a092d4e120881a33ca8d3606cfd7123",
+          "bytes": 40843,
+          "verified": {
+            "match": true
+          }
+        },
+        {
+          "file": "api-models.fixture.json",
+          "served_sha256": "2fd6b8a624fa725977a7db6cfeee96bd61e0e0a605ddb97b00ac27a8cf585717",
+          "bytes": 52323,
           "verified": {
             "match": true
           }
