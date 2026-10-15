@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.labs/1.0.0",
   "generated_by": "generators/build_labs.cjs",
-  "read_at": "2026-10-15T02:26:59.863Z",
+  "read_at": "2026-10-15T03:08:08.622Z",
   "note": [
     "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
     "the public source repository on every build; a mismatch fails the build rather than shipping.",
@@ -11,7 +11,7 @@
   ],
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "s/2026-10-14-cbt1-rebuild",
+    "branch": "master",
     "pinned_commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs",
