@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
+    "branch": "s/2026-10-14-cbt1-rebuild",
+    "pinned_commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -38,7 +38,7 @@
       "slug": "cbt-surprise",
       "source_file": "cbt_module_01_surprise.html",
       "title": "CBT Module 1 — Surprise",
-      "one_line": "The first module of the computer-based course — watch two tempting candidate rules for surprise die against one demand, S(p×q)=S(p)+S(q), and the logarithm be the only thing left standing. Then earn S(p) = −log p by hand.",
+      "one_line": "The first module of the computer-based course: build your OWN probability from a numberless hunch, then watch two tempting surprise rules die against one demand and earn S(p) = −log p by hand — nothing is handed to you.",
       "math": "Surprisal S(p) = −log p, forced by additivity S(p×q)=S(p)+S(q); units in bits and nats; the learner's own arithmetic lands −ln(0.69)=0.3710636814 on its sealed reference",
       "minutes": "20–40"
     },

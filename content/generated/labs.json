@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.labs/1.0.0",
   "generated_by": "generators/build_labs.cjs",
-  "read_at": "2026-10-15T00:27:14.967Z",
+  "read_at": "2026-10-15T02:26:59.863Z",
   "note": [
     "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
     "the public source repository on every build; a mismatch fails the build rather than shipping.",
@@ -11,12 +11,12 @@
   ],
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
+    "branch": "s/2026-10-14-cbt1-rebuild",
+    "pinned_commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs",
     "measured": {
-      "head_commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
+      "head_commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
       "commits_since_pin": 0
     }
   },
@@ -29,19 +29,19 @@
     {
       "slug": "cbt-surprise",
       "title": "CBT Module 1 — Surprise",
-      "one_line": "The first module of the computer-based course — watch two tempting candidate rules for surprise die against one demand, S(p×q)=S(p)+S(q), and the logarithm be the only thing left standing. Then earn S(p) = −log p by hand.",
+      "one_line": "The first module of the computer-based course: build your OWN probability from a numberless hunch, then watch two tempting surprise rules die against one demand and earn S(p) = −log p by hand — nothing is handed to you.",
       "math": "Surprisal S(p) = −log p, forced by additivity S(p×q)=S(p)+S(q); units in bits and nats; the learner's own arithmetic lands −ln(0.69)=0.3710636814 on its sealed reference",
       "minutes": "20–40",
       "served_at": "/play/cbt-surprise",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/cbt_module_01_surprise.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/cbt_module_01_surprise.html",
         "path": "learninglabs/cbt_module_01_surprise.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
-      "served_sha256": "a011b3021cb1e6bd48000891c2532c63074f91e18321575135af7407c614a5b1",
-      "bytes": 59397,
+      "served_sha256": "89ce7f903d463e1b30d470b2d90b4977ff7a32fbd9f5fc31179b52dcda421784",
+      "bytes": 64221,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)"
@@ -56,10 +56,10 @@
       "served_at": "/play/bayes-chips",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/BayesChips.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/BayesChips.html",
         "path": "learninglabs/BayesChips.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "61e4db4f88baf03674ca6f26c1e1d4b249577e8e86e336d18a8d7dcf7574a219",
       "bytes": 115217,
@@ -77,10 +77,10 @@
       "served_at": "/play/pomdp-machine",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/active_inference_pomdp_machine.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/active_inference_pomdp_machine.html",
         "path": "learninglabs/active_inference_pomdp_machine.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "e0d80c4bd573aac877783a4270c6c25b7c38d09a720853e6bf106437fb3024c3",
       "bytes": 91037,
@@ -98,10 +98,10 @@
       "served_at": "/play/free-energy-forge",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/free_energy_forge_eq419.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/free_energy_forge_eq419.html",
         "path": "learninglabs/free_energy_forge_eq419.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "ef0899cd8d45262bc102e19b5ffbc1537cc4c86f44593cbeef8909960036f1eb",
       "bytes": 83770,
@@ -119,10 +119,10 @@
       "served_at": "/play/laplace-tower",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/laplace_tower_predictive_coding_builder.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/laplace_tower_predictive_coding_builder.html",
         "path": "learninglabs/laplace_tower_predictive_coding_builder.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "1dda273ce562657e1ad09548f1d3f777ec390bc003c516f1321e4bc5068eaa68",
       "bytes": 88624,
@@ -140,10 +140,10 @@
       "served_at": "/play/jumping-frog",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/jumping_frog_generative_model_lab.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/jumping_frog_generative_model_lab.html",
         "path": "learninglabs/jumping_frog_generative_model_lab.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "5abad46eba4e167e9c84c777f6d5be8135f3428cd32d84378bca75616c72e29d",
       "bytes": 80967,
@@ -161,10 +161,10 @@
       "served_at": "/play/atlas",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/active_inference_atlas_educational_sim.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/active_inference_atlas_educational_sim.html",
         "path": "learninglabs/active_inference_atlas_educational_sim.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "8ebe6c2214253b66661060d9b0094f6cd2ec46b502addc20c6628867684a3b24",
       "bytes": 96276,
@@ -182,10 +182,10 @@
       "served_at": "/play/anatomy-of-inference",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
-        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/385d8e1034c5936ad760e36796507afb5ad142f2/learninglabs/anatomy_of_inference_studio.html",
+        "url": "https://github.com/TMDLRG/TheORCHESTRATEActiveInferenceWorkbench/blob/2a93be07464199696b69f8f6dbc5d27c98de7460/learninglabs/anatomy_of_inference_studio.html",
         "path": "learninglabs/anatomy_of_inference_studio.html",
-        "commit": "385d8e1034c5936ad760e36796507afb5ad142f2",
-        "commit_short": "385d8e1034c5"
+        "commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+        "commit_short": "2a93be074641"
       },
       "served_sha256": "3dcb75e0341394449811a29ab477f0f2cc0054e9ea6430985d5331837a0723a2",
       "bytes": 89150,
