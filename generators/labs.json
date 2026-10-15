@@ -28,7 +28,7 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "s/2026-10-15-cbt-cleanup",
+    "branch": "master",
     "pinned_commit": "852384bf90f06cf8b3eaceb534a1643233a61cc6",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
