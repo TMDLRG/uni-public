@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "7f08bfb918321872373823da2386ccd45bd76517",
+    "branch": "s/2026-10-15-cbt4",
+    "pinned_commit": "219e84edec68682f811baa3335ab72b0ebf66d65",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -56,6 +56,14 @@
       "title": "CBT Module 3 — A belief is a position",
       "one_line": "The true belief is behind the wall, so carry one you can move: a position on 0–1. Meet the three pressures on it — fit, stretch, looseness — and prove by your own ranking that no single one is enough (the conflict that forces free energy).",
       "math": "The movable belief q(η) with b=q(η=on)∈[0,1] — a free stand-in, not the true posterior; the three pressures (fit / stretch / looseness) and their conflict. Reuses Module 2's two-cause world (prior 0.7, evidence 0.69, posterior 0.913); no free-energy score drawn yet.",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-free-energy",
+      "source_file": "cbt_module_04_free_energy.html",
+      "title": "CBT Module 4 — Free energy",
+      "one_line": "Three pressures, one number: free energy is the height under a belief — energy minus looseness, fit-and-stretch fused in the joint minus the spread. Assemble it, verify the forbidden evidence sum is nowhere in it, and compute it by hand (F falls from 0.944576 to 0.371064).",
+      "math": "F[q]=Σ q(η)[ln q(η) − ln p(y,η)] = energy − entropy = complexity − accuracy; computable from the joint alone, with no evidence term. Reuses Module 2's joints (0.63/0.06). Goldens F(0.5)=0.944576, F(0.913)=min F=0.3710636814. :exact bound tag.",
       "minutes": "20–40"
     },
     {
