@@ -28,7 +28,7 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "s/2026-10-15-cbt7",
+    "branch": "master",
     "pinned_commit": "e8d728a169534a3f8032b59c43104e2d1d634ede",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
