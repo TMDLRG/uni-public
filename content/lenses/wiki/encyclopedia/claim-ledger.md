@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: encyclopedia/claim-ledger
 corpus: encyclopedia
-source_sha256: 81881670d9b69f86
-source_body_sha256: 5a5e1f9920bc973b
+source_sha256: 82eb60b7e5342620
+source_body_sha256: e891752c96e634ac
 source_title: CLAIM-LEDGER.md — Master Evidence-Classed Claim Ledger
-source_words: 15216
+source_words: 15559
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.
+note: 2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 row (DS0.1) and a frontier note were added — architecture sealed, A1–A10 PASS, raises no rung and births no organism. The high-level summary above stays accurate (the ~2-of-11+ position is unchanged) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review. — Prior (2026-08-24): a project-key redaction ruled on 2026-08-04 had shipped unscrubbed and is now replaced with a marker.
 ---
 <!--PLAIN-->
 

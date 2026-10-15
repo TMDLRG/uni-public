@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: cookbook/01-kitchen-rules
 corpus: cookbook
-source_sha256: b74261e12547caf9
-source_body_sha256: b74261e12547caf9
+source_sha256: 16ba4b59ff9a49e2
+source_body_sha256: 16ba4b59ff9a49e2
 source_title: CB-01 — The Kitchen Rules (the Method Constitution)
-source_words: 1886
+source_words: 1978
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): the M22 cavity rule gained a signed DEV-SPINE-0 instance (the echo/E1 repair, temporal ownership R1, standing check V41) and a DEV-SPINE-0 sealed note that raises no rung. The summary above (rules are governance, not capability) stays accurate and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.
 ---
 <!--PLAIN-->
 This chapter is the kitchen rather than a dish. Before any recipe in the cookbook, it sets out the rules that bind all of them: how a claim gets recorded, what counts as evidence, and what may never be said. The book describes a simulation — a bounded peek at a toy world, never a person — and that wording is repeated here rather than softened.

@@ -144,9 +144,9 @@
    "scope": "wiki",
    "key": "encyclopedia/claim-ledger",
    "corpus": "encyclopedia",
-   "source_sha256": "81881670d9b69f86",
-   "source_body_sha256": "5a5e1f9920bc973b",
-   "source_words": 15216,
+   "source_sha256": "82eb60b7e5342620",
+   "source_body_sha256": "e891752c96e634ac",
+   "source_words": 15559,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -164,7 +164,7 @@
     "words": 369,
     "sha256": "30158cfce1e7733c"
    },
-   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
+   "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 row (DS0.1) and a frontier note were added — architecture sealed, A1–A10 PASS, raises no rung and births no organism. The high-level summary above stays accurate (the ~2-of-11+ position is unchanged) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review. — Prior (2026-08-24): a project-key redaction ruled on 2026-08-04 had shipped unscrubbed and is now replaced with a marker.",
    "source_file": "content/lenses/wiki/encyclopedia/claim-ledger.md"
   },
   {
@@ -1170,9 +1170,9 @@
    "scope": "wiki",
    "key": "cookbook/00-index",
    "corpus": "cookbook",
-   "source_sha256": "8485ba8058b3f0d1",
-   "source_body_sha256": "8485ba8058b3f0d1",
-   "source_words": 613,
+   "source_sha256": "9db32e262efef968",
+   "source_body_sha256": "9db32e262efef968",
+   "source_words": 628,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1190,7 +1190,7 @@
     "words": 399,
     "sha256": "5452f3b93cae5f48"
    },
-   "note": "",
+   "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): one index line was added linking the new DEV-SPINE-0 chapter (CB-03). The summary above stays accurate (the index still lists chapters in order with honest labels) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/00-index.md"
   },
   {
@@ -1224,9 +1224,9 @@
    "scope": "wiki",
    "key": "cookbook/01-kitchen-rules",
    "corpus": "cookbook",
-   "source_sha256": "b74261e12547caf9",
-   "source_body_sha256": "b74261e12547caf9",
-   "source_words": 1886,
+   "source_sha256": "16ba4b59ff9a49e2",
+   "source_body_sha256": "16ba4b59ff9a49e2",
+   "source_words": 1978,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1244,16 +1244,16 @@
     "words": 543,
     "sha256": "761b5dbcf6edc9e5"
    },
-   "note": "",
+   "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): the M22 cavity rule gained a signed DEV-SPINE-0 instance (the echo/E1 repair, temporal ownership R1, standing check V41) and a DEV-SPINE-0 sealed note that raises no rung. The summary above (rules are governance, not capability) stays accurate and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/01-kitchen-rules.md"
   },
   {
    "scope": "wiki",
    "key": "cookbook/02-the-pantry",
    "corpus": "cookbook",
-   "source_sha256": "1c81292170dfda92",
-   "source_body_sha256": "1c81292170dfda92",
-   "source_words": 1868,
+   "source_sha256": "d8cac423572bfe73",
+   "source_body_sha256": "d8cac423572bfe73",
+   "source_words": 2015,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1271,7 +1271,7 @@
     "words": 563,
     "sha256": "40176c6f43d7f272"
    },
-   "note": "",
+   "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 developmental-organism row was added to the engine table (sealed, A1–A10 PASS, no organism born, no rung moved). The summary above stays accurate (a shelf of engines each carrying its own status label) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/02-the-pantry.md"
   },
   {

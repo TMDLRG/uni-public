@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: cookbook/02-the-pantry
 corpus: cookbook
-source_sha256: 1c81292170dfda92
-source_body_sha256: 1c81292170dfda92
+source_sha256: d8cac423572bfe73
+source_body_sha256: d8cac423572bfe73
 source_title: CB-02 — The shared pantry (engines and primitives)
-source_words: 1868
+source_words: 2015
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 developmental-organism row was added to the engine table (sealed, A1–A10 PASS, no organism born, no rung moved). The summary above stays accurate (a shelf of engines each carrying its own status label) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.
 ---
 <!--PLAIN-->
 A shelf, not a dish. It lists once, in one place, the engines and building blocks that every later recipe in the cookbook reaches for. When a recipe names an ingredient, you can come here to see exactly what that ingredient is, what status it holds, and what it must never be read to mean. All of it belongs to a simulation, not to a person.

@@ -3,16 +3,16 @@ lens_schema: 1
 scope: wiki
 key: cookbook/00-index
 corpus: cookbook
-source_sha256: 8485ba8058b3f0d1
-source_body_sha256: 8485ba8058b3f0d1
+source_sha256: 9db32e262efef968
+source_body_sha256: 9db32e262efef968
 source_title: The UNI Cookbook — the complete human mind/body build (a buildable recipe)
-source_words: 613
+source_words: 628
 authored_by: claude-opus-5
 authored_at: 2026-08-01
 review_state: draft
 reviewed_by: 
 reviewed_at: 
-note: 
+note: 2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): one index line was added linking the new DEV-SPINE-0 chapter (CB-03). The summary above stays accurate (the index still lists chapters in order with honest labels) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.
 ---
 <!--PLAIN-->
 This is the front door of a cookbook, and it is a map rather than a recipe. The cookbook describes a simulation: one engine, of a kind that learns by predicting and acting, wired up at many different scales. The scales run from a first cell division through metabolism, movement, perception and language, and on to open questions about creativity and awareness.
