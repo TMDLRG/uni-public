@@ -39,10 +39,44 @@ function pageForSlug(joined: string) {
   return pageBySlug(joined) || pageBySlug(`${joined}/index`);
 }
 
+// The cookbook's CANONICAL reader is the apex /cookbook/* (owner ruling 2026-10-15): the apex is the
+// apex-native, shell-navigated reader built by Precision from the SAME source repo. These /wiki copies
+// stay in the searchable corpus but declare the apex twin canonical, so search + answer-engines see ONE
+// home for each page, not two. deploy-preflight has NO apex twin, so it is intentionally absent here
+// (wiki-only) and carries no canonical tag.
+const APEX_ORIGIN = "https://universalnaturalintelligence.com";
+// Every /wiki page that has an apex /cookbook twin, mapped to that twin. Core pages are explicit;
+// the L0–L12 recipes follow the rule uni-public "cookbook/recipes-lN-…" → apex "/cookbook/lN-…".
+// Pages with NO apex twin (the natura recipes, the encyclopedia wings, nature-ledger, the GPT
+// consults, master-plan, and deploy-preflight) are intentionally absent and carry no canonical tag.
+const COOKBOOK_CANONICAL: Record<string, string> = {
+  "encyclopedia/claim-ledger": APEX_ORIGIN + "/cookbook/claim-ledger",
+  "cookbook/00-index": APEX_ORIGIN + "/cookbook",
+  "cookbook/00-front-matter": APEX_ORIGIN + "/cookbook/front-matter",
+  "cookbook/01-kitchen-rules": APEX_ORIGIN + "/cookbook/kitchen-rules",
+  "cookbook/02-the-pantry": APEX_ORIGIN + "/cookbook/pantry",
+  "cookbook/03-dev-spine-0": APEX_ORIGIN + "/cookbook/dev-spine-0",
+  "cookbook/99-closing": APEX_ORIGIN + "/cookbook/closing",
+  "cookbook/continuity-substrate": APEX_ORIGIN + "/cookbook/continuity-substrate",
+};
+for (const r of [
+  "l0-genome-zygote", "l1-cellular", "l2-metabolism", "l3-organ-heart-lab",
+  "l4-affect-as-precision", "l5-sensorimotor", "l6-perception", "l7-language",
+  "l8-self-model-metacognition", "l9-reasoning-conscience", "l10-wisdom",
+  "l11-dreaming", "l12-creativity-awareness",
+]) {
+  COOKBOOK_CANONICAL["cookbook/recipes-" + r] = APEX_ORIGIN + "/cookbook/" + r;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
-  const page = pageForSlug(slug.join("/"));
-  return { title: page ? page.title : "Not found" };
+  const key = slug.join("/");
+  const page = pageForSlug(key);
+  const canonical = COOKBOOK_CANONICAL[key];
+  return {
+    title: page ? page.title : "Not found",
+    ...(canonical ? { alternates: { canonical } } : {}),
+  };
 }
 
 export default async function WikiPage({ params }: { params: Promise<{ slug: string[] }> }) {
