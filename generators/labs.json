@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "e65ce35af7b2df55dc0d569a41b34cdd174cf507",
+    "branch": "s/2026-10-15-cbt7",
+    "pinned_commit": "e8d728a169534a3f8032b59c43104e2d1d634ede",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -80,6 +80,14 @@
       "title": "CBT Module 6 — The floor you cannot cross",
       "one_line": "Split free energy the other way — F = surprise + gap — and a floor appears: F can never fall below the surprise −ln(0.69)=0.371064. Try to push F below the floor and you can't; the proof is one line (ln x ≤ x−1) drawn above a curve.",
       "math": "F = −ln p(y) + KL(q‖posterior) = surprise + gap, gap ≥ 0 ⇒ F ≥ −ln p(y) = 0.3710636814 (the floor), touched only at the posterior b=0.913; proved by Gibbs' inequality (ln x ≤ x−1). gap(0.5)=0.573512. :exact bound tag.",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-minimize-f",
+      "source_file": "cbt_module_07_minimize_f.html",
+      "title": "CBT Module 7 — Minimize free energy",
+      "one_line": "The punchline: roll downhill on the one number you can compute and you're handed both things the wall took — the true belief (the posterior 0.913) AND the true surprise (−ln 0.69 = 0.371064), at once. A bound tag keeps it honest: not every F is a safe bound.",
+      "math": "argmin F = posterior, min F = −ln p(y) = 0.3710636814 (the surprise); minimizing the computable F = minimizing the gap → 0 at the posterior. Bound tags: :exact (on the floor), :exact_mean_field / :laplace (valid ceilings above), :mmp (can dip below — ln2=0.693147 vs ln2/2=0.346574 — never a bound; MMP-BOUND-01).",
       "minutes": "20–40"
     },
     {
