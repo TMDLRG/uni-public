@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "2ecc5a5140ef7ed8fa36d3d075e122a529b63b6f",
+    "branch": "s/2026-10-15-cbt-fix",
+    "pinned_commit": "7f08bfb918321872373823da2386ccd45bd76517",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
