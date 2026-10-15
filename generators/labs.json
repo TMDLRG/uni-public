@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "2a93be07464199696b69f8f6dbc5d27c98de7460",
+    "branch": "s/2026-10-14-cbt2",
+    "pinned_commit": "71f04d6e2946c8376fcbcdf125c84e5950c5fa41",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -40,6 +40,14 @@
       "title": "CBT Module 1 — Surprise",
       "one_line": "The first module of the computer-based course: build your OWN probability from a numberless hunch, then watch two tempting surprise rules die against one demand and earn S(p) = −log p by hand — nothing is handed to you.",
       "math": "Surprisal S(p) = −log p, forced by additivity S(p×q)=S(p)+S(q); units in bits and nats; the learner's own arithmetic lands −ln(0.69)=0.3710636814 on its sealed reference",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-the-wall",
+      "source_file": "cbt_module_02_the_wall.html",
+      "title": "CBT Module 2 — The wall",
+      "one_line": "The true surprise of what you sense is −ln of the evidence — a sum over every hidden cause. Build that sum by hand (it is Module 1's 0.69 all along), then turn the dial and watch the term count explode past any hope of finishing: the wall.",
+      "math": "Evidence p(y)=Σ p(y|η)p(η); true surprise −ln p(y); posterior p(η|y)=p(y,η)/p(y); the intractable-evidence (partition-function) wall. Goldens: evidence 0.69, surprisal 0.3710636814, posterior 0.913.",
       "minutes": "20–40"
     },
     {
