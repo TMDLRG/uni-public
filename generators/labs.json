@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "71f04d6e2946c8376fcbcdf125c84e5950c5fa41",
+    "branch": "s/2026-10-14-cbt3",
+    "pinned_commit": "2ecc5a5140ef7ed8fa36d3d075e122a529b63b6f",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -48,6 +48,14 @@
       "title": "CBT Module 2 — The wall",
       "one_line": "The true surprise of what you sense is −ln of the evidence — a sum over every hidden cause. Build that sum by hand (it is Module 1's 0.69 all along), then turn the dial and watch the term count explode past any hope of finishing: the wall.",
       "math": "Evidence p(y)=Σ p(y|η)p(η); true surprise −ln p(y); posterior p(η|y)=p(y,η)/p(y); the intractable-evidence (partition-function) wall. Goldens: evidence 0.69, surprisal 0.3710636814, posterior 0.913.",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-belief-position",
+      "source_file": "cbt_module_03_belief_position.html",
+      "title": "CBT Module 3 — A belief is a position",
+      "one_line": "The true belief is behind the wall, so carry one you can move: a position on 0–1. Meet the three pressures on it — fit, stretch, looseness — and prove by your own ranking that no single one is enough (the conflict that forces free energy).",
+      "math": "The movable belief q(η) with b=q(η=on)∈[0,1] — a free stand-in, not the true posterior; the three pressures (fit / stretch / looseness) and their conflict. Reuses Module 2's two-cause world (prior 0.7, evidence 0.69, posterior 0.913); no free-energy score drawn yet.",
       "minutes": "20–40"
     },
     {
