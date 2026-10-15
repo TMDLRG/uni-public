@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 545,
-   "covered": 545,
+   "total": 546,
+   "covered": 546,
    "excluded": 0
   }
  ],
@@ -43,7 +43,7 @@
   "bounds": 84,
   "held": 84,
   "breached": 0,
-  "at_the_line": 52,
+  "at_the_line": 50,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -112,7 +112,7 @@
    },
    {
     "label": "pages published · cookbook",
-    "now": 34,
+    "now": 35,
     "bound": 34,
     "kind": "min",
     "ok": true
@@ -252,7 +252,7 @@
    },
    {
     "label": "pages published · total",
-    "now": 545,
+    "now": 546,
     "bound": 524,
     "kind": "min",
     "ok": true
@@ -364,7 +364,7 @@
    },
    {
     "label": "pages in route · cookbook-kitchen",
-    "now": 8,
+    "now": 9,
     "bound": 8,
     "kind": "min",
     "ok": true
