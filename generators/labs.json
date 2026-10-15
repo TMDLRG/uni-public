@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "59f20825d248d3f84b8e4e16dd10914d1c00c50e",
+    "branch": "s/2026-10-15-cbt5",
+    "pinned_commit": "a18a2cb754030559d2c114cdf02717577da70ce6",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -64,6 +64,14 @@
       "title": "CBT Module 4 — Free energy",
       "one_line": "Three pressures, one number: free energy is the height under a belief — energy minus looseness, fit-and-stretch fused in the joint minus the spread. Assemble it, verify the forbidden evidence sum is nowhere in it, and compute it by hand (F falls from 0.944576 to 0.371064).",
       "math": "F[q]=Σ q(η)[ln q(η) − ln p(y,η)] = energy − entropy = complexity − accuracy; computable from the joint alone, with no evidence term. Reuses Module 2's joints (0.63/0.06). Goldens F(0.5)=0.944576, F(0.913)=min F=0.3710636814. :exact bound tag.",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-landscape",
+      "source_file": "cbt_module_05_the_landscape.html",
+      "title": "CBT Module 5 — The landscape",
+      "one_line": "Free energy over every belief makes a valley. Feel the slope (a log-odds mismatch) blind, drop a ball anywhere, and watch it roll to the floor at b=0.913 — which is the Module 2 posterior. The valley bottom is Bayes, reached without the evidence.",
+      "math": "F(b) over b∈[0,1] is a convex valley; slope dF/db = ln(b/(1−b)) − ln(p(y,on)/p(y,off)) = log-odds mismatch; blind gradient descent reaches the floor b=0.913 = the posterior 0.63/0.69. Curve points F(0)=2.813, F(0.5)=0.944576, F(0.913)=0.371064, F(1)=0.462.",
       "minutes": "20–40"
     },
     {
