@@ -70,19 +70,19 @@ for (const r of [
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
-  const key = slug.join("/");
-  const page = pageForSlug(key);
-  const canonical = COOKBOOK_CANONICAL[key];
-  return {
-    title: page ? page.title : "Not found",
-    ...(canonical ? { alternates: { canonical } } : {}),
-  };
+  const page = pageForSlug(slug.join("/"));
+  // The apex /cookbook canonical is emitted as a raw <link> in WikiPage (hoisted to <head> by React 19),
+  // NOT via alternates.canonical — because this app runs trailingSlash:true, which appends a slash and
+  // would make the canonical point at a 308 redirect. The raw href stays slash-less to match the apex
+  // page's own <link rel="canonical"> byte-for-byte. Map: COOKBOOK_CANONICAL.
+  return { title: page ? page.title : "Not found" };
 }
 
 export default async function WikiPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
   const page = pageForSlug(slug.join("/"));
   if (!page) notFound();
+  const canonical = COOKBOOK_CANONICAL[slug.join("/")];  // apex /cookbook twin, slash-less (see note above)
 
   const corpus = docs.corpora.find((c) => c.id === page.corpus);
   const siblings = pagesInCorpus(page.corpus);
@@ -103,6 +103,7 @@ export default async function WikiPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article>
+      {canonical ? <link rel="canonical" href={canonical} /> : null}
       <p className="dim">
         <Link href="/wiki/">Wiki</Link>
         {corpus ? <> · <Link href={`/wiki/#${corpus.id}`}>{corpus.title}</Link></> : null}
