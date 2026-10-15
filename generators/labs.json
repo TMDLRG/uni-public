@@ -28,8 +28,8 @@
   "schema_version": 1,
   "workbench": {
     "root_key": "orc-workbench",
-    "branch": "master",
-    "pinned_commit": "3af52deca82df211c239fa5a512eb28942255d7a",
+    "branch": "s/2026-10-15-cbt6",
+    "pinned_commit": "e65ce35af7b2df55dc0d569a41b34cdd174cf507",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -72,6 +72,14 @@
       "title": "CBT Module 5 — The landscape",
       "one_line": "Free energy over every belief makes a valley. Feel the slope (a log-odds mismatch) blind, drop a ball anywhere, and watch it roll to the floor at b=0.913 — which is the Module 2 posterior. The valley bottom is Bayes, reached without the evidence.",
       "math": "F(b) over b∈[0,1] is a convex valley; slope dF/db = ln(b/(1−b)) − ln(p(y,on)/p(y,off)) = log-odds mismatch; blind gradient descent reaches the floor b=0.913 = the posterior 0.63/0.69. Curve points F(0)=2.813, F(0.5)=0.944576, F(0.913)=0.371064, F(1)=0.462.",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-the-floor",
+      "source_file": "cbt_module_06_the_floor.html",
+      "title": "CBT Module 6 — The floor you cannot cross",
+      "one_line": "Split free energy the other way — F = surprise + gap — and a floor appears: F can never fall below the surprise −ln(0.69)=0.371064. Try to push F below the floor and you can't; the proof is one line (ln x ≤ x−1) drawn above a curve.",
+      "math": "F = −ln p(y) + KL(q‖posterior) = surprise + gap, gap ≥ 0 ⇒ F ≥ −ln p(y) = 0.3710636814 (the floor), touched only at the posterior b=0.913; proved by Gibbs' inequality (ln x ≤ x−1). gap(0.5)=0.573512. :exact bound tag.",
       "minutes": "20–40"
     },
     {
