@@ -162,7 +162,10 @@ export default function Labs() {
         does not claim they answer right now. <b>Built, not yet hosted</b> are labs that exist and
         are served from nowhere — they are listed with what is missing rather than dropped. The labs
         are MIT-licensed and come from the public Workbench repository. Every lab served here runs
-        entirely in your browser: no account, no server, no analytics, CPU only.
+        entirely in your browser: no account, no server, no analytics, CPU only. What these labs and
+        the course model is a developmental <b>simulation</b> &mdash; about two of eleven-plus rungs
+        on a long ladder, never a person, never aware, never alive; each lab asserts only the
+        mathematics you can run inside it.
       </div>
 
       <p className="dim">
@@ -235,9 +238,10 @@ export default function Labs() {
       <section>
         <h2 id="part-2">Part II — Action and choice by hand (Modules 9&ndash;15)</h2>
         <p>
-          The second half, now live: how a mind <em>acts</em> and <em>chooses</em> — the second
-          engine, expected free energy as risk + ambiguity, explore-and-exploit, and precision. Seven
-          modules, built on Part I.
+          The second half, now live: you build the machinery of action by hand &mdash; expected free
+          energy as risk + ambiguity, the explore&ndash;exploit balance, and precision &mdash; each
+          derived step by step and <em>held open</em>, built to model how a mind would act and choose,
+          not asserted as a finished faculty. Seven modules, built on Part I.
         </p>
         <div className="project-doors">
           {part2.map((lab) => (

@@ -111,7 +111,7 @@
       "source_file": "cbt_module_08_scale_to_a_brain.html",
       "title": "CBT Module 8 — Scale to a brain",
       "one_line": "Two causes and one dial was a training world. A real mind is a tower of causes — each a belief rolling downhill on the one above, predictions flowing down and errors up until it settles. The exact floor survives as a genuine but looser ceiling. Part I closes; action (Part II) opens.",
-      "math": "Hierarchical (mean-field) inference: predictions descend, prediction errors ascend, beliefs settle. The exact floor −ln p(y)=0.3710636814 becomes a guaranteed-but-loose ceiling, tagged :exact_mean_field (always ≥ surprise, never equal off the exact posterior): F(0.80)=0.4319080875 and F(0.50)=0.9445759076 both sit above the floor. Teaser: expected free energy G over futures (action) — the build underway, not asserted. No DDNA runtime values reproduced; the tower is an illustrative mechanism, not a measurement.",
+      "math": "Hierarchical (mean-field) inference: predictions descend, prediction errors ascend, beliefs settle. The exact floor −ln p(y)=0.3710636814 becomes a guaranteed-but-loose ceiling, tagged :exact_mean_field (always ≥ surprise, never equal off the exact posterior): F(0.80)=0.4319080875 and F(0.50)=0.9445759076 both sit above the floor. Teaser: expected free energy G over futures (action) — built by hand in Part II, held open, not asserted. No DDNA runtime values reproduced; the tower is an illustrative mechanism, not a measurement.",
       "minutes": "20–40"
     },
     {
