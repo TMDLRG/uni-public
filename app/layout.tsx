@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import NavLink from "./components/NavLink";
+import SiteNav from "./components/SiteNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,47 +19,78 @@ export const metadata: Metadata = {
   },
 };
 
-// Every entry here must resolve to a page that exists. The first draft of this list carried
-// /estate/, /evidence/ and /contribute/ — three links to pages that had never been written, which
-// would have shipped a navigation bar where three of five items 404. A nav is a promise about what
-// the site contains.
+const BRAND = { href: "/", mark: "UNI", label: "Universal Natural Intelligence" };
+
+// THE PRIMARY NAV, converged on the apex's owner-approved 6-group structure (D-1) so the menu is
+// IDENTICAL across the whole estate — the apex pages and these uni-public estate pages now carry the
+// same grouped nav. The groups, labels and hrefs mirror the apex single source of truth
+// (nav/site-nav.json on the Precision repo); SiteNav renders them and marks the current page.
 //
-// TWO TIERS, TWO ROWS, ONE LIST. On 2026-08-30 this nav grew to eighteen equal items in one row —
-// it wrapped, the sticky header grew under content, and the operator's verdict was the right one:
-// a firehose without clear purpose. Tier 1 is THE LAB — the rooms a visitor walks into and the
-// pages that teach; it is short because a doorway is not a directory. Tier 2 is THE RECORD — the
-// registers a visitor checks; it renders as a quieter second row. One literal, because two gates
-// read the hrefs out of this exact array and a split list is how a nav and its checker drift.
+// WHY A LITERAL, STILL. Two gates read `const NAV = [...]` straight out of this file — verify_a11y
+// for the landmark/skip-link, and verify_public_consistency to prove the nav reaches every document
+// type the manifest promises. A nav that built its list anywhere else is how a nav and its checker
+// drift, so the data stays here and SiteNav only renders it.
 //
-// `file: true` marks routes served as VERBATIM VENDORED FILES through a rewrite (no trailing
-// slash — the rewrite source is the bare path) and rendered as plain anchors, because next/link
-// has nothing to prefetch for a route Next does not own.
+// HREFS ARE THE APEX FORM (no trailing slash), so the menu is byte-identical to the apex and every
+// target resolves on the apex — the canonical public host that actually serves these estate pages.
+// Most group items are apex routes this uni-public Next app does not own (/about, /videos, the demo
+// labs, /cookbook, /science …); SiteNav renders every item as a plain <a>, because there is nothing
+// for next/link to prefetch on a route Next does not own and a full navigation resolves it on the
+// apex. The uni-public-owned targets (/labs, /course, /wiki, /articles, /overview, /wrong, /gates,
+// /coverage, /mcp, /build, /start, /hall, /not-an-llm, /contribute, /evidence, /classroom) resolve
+// there too; on the bare uni-public.vercel.app host, trailingSlash sends them one hop to their
+// canonical slash form and the apex-only items are the declared-destination case this site already
+// documents elsewhere. The consistency gate normalises the trailing slash when it checks reachability.
 const NAV = [
-  { href: "/", label: "Enter", tier: 1 },
-  { href: "/classroom", label: "The classroom", tier: 1, file: true },
-  { href: "/model", label: "The whiteboard", tier: 1, file: true },
-  { href: "/labs/", label: "Labs", tier: 1 },
-  { href: "/course/", label: "The course", tier: 1 },
-  { href: "/hall/", label: "The hallway", tier: 1 },
-  { href: "/wrong/", label: "What is wrong", tier: 1 },
-  { href: "/contribute/", label: "Contribute", tier: 1 },
-  // ── the record ──────────────────────────────────────────────────────────────────────────────
-  { href: "/overview/", label: "Overview", tier: 2 },
-  { href: "/start/", label: "Begin here", tier: 2 },
-  { href: "/live/", label: "Live", tier: 2 },
-  { href: "/build/", label: "Build", tier: 2 },
-  { href: "/not-an-llm/", label: "Not an LLM", tier: 2 },
-  { href: "/articles/", label: "Articles", tier: 2 },
-  { href: "/wiki/", label: "Wiki", tier: 2 },
-  { href: "/gates/", label: "Gates", tier: 2 },
-  { href: "/mcp/", label: "MCP", tier: 2 },
-  { href: "/estate/", label: "Estate", tier: 2 },
-  // /drift keeps its own entry: adverse results are never buried, and a reader reaches "what is
-  // broken here" in one hop without first knowing what the word "estate" means.
-  { href: "/drift/", label: "Drift", tier: 2 },
-  { href: "/evidence/", label: "Evidence", tier: 2 },
-  { href: "/coverage/", label: "Coverage", tier: 2 },
-  { href: "/omissions/", label: "What is not here", tier: 2 },
+  { id: "start", label: "Start here", items: [
+    { href: "/gentle-entry", label: "Gentle Entry" },
+    { href: "/start", label: "Begin here" },
+    { href: "/not-an-llm", label: "Not an LLM" },
+    { href: "/hall", label: "The hallway" },
+  ] },
+  { id: "labs", label: "Labs", items: [
+    { href: "/labs", label: "All labs" },
+    { href: "/explorer", label: "Organism Explorer" },
+    { href: "/", label: "Precision Lab" },
+    { href: "/echo-lab", label: "Echo Lab" },
+    { href: "/loop-lab", label: "Loop Lab" },
+    { href: "/heart-lab", label: "Heart Lab" },
+    { href: "/cell-lab", label: "Cell Lab" },
+    { href: "/sensorium", label: "Sensorium" },
+    { href: "/classroom", label: "The classroom" },
+  ] },
+  { id: "learn", label: "Learn", items: [
+    { href: "/science", label: "The Science" },
+    { href: "/history", label: "History of Inference" },
+    { href: "/course", label: "The course" },
+    { href: "/workshop", label: "The UNI Workshop" },
+    { href: "/videos", label: "Videos" },
+    { href: "/blog", label: "Blog" },
+  ] },
+  { id: "docs", label: "Docs", items: [
+    { href: "/docs", label: "Docs home" },
+    { href: "/cookbook", label: "The Cookbook" },
+    { href: "/articles", label: "Articles" },
+    { href: "/wiki", label: "Wiki" },
+    { href: "/build", label: "Build with UNI" },
+    { href: "/mcp", label: "MCP" },
+  ] },
+  { id: "evidence", label: "Evidence", items: [
+    { href: "/overview", label: "Overview" },
+    { href: "/cookbook/claim-ledger", label: "The Claim Ledger" },
+    { href: "/wrong", label: "What is wrong" },
+    { href: "/gates", label: "Gates" },
+    { href: "/coverage", label: "Coverage" },
+    { href: "/evidence", label: "Evidence & Verdicts" },
+    { href: "/transparency", label: "Transparency" },
+  ] },
+  { id: "about", label: "About", items: [
+    { href: "/about", label: "About" },
+    { href: "/michael", label: "The Record" },
+    { href: "/book", label: "Big Brains Need Big Worlds" },
+    { href: "/run-on-rhythm", label: "Run on Rhythm" },
+    { href: "/contribute", label: "Contribute" },
+  ] },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -67,28 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <a href="#main" className="skip">Skip to content</a>
-        <header>
-          <div className="wrap head">
-            <Link href="/" className="brand">
-              <b>UNI</b> <span>Universal Natural Intelligence</span>
-            </Link>
-            <nav aria-label="Primary">
-              {NAV.filter((n) => n.tier === 1).map((n) =>
-                n.file
-                  ? <a key={n.href} href={n.href}>{n.label}</a>
-                  : <NavLink key={n.href} href={n.href} label={n.label} />
-              )}
-            </nav>
-          </div>
-          <div className="wrap head head--records">
-            <span className="records-label" aria-hidden="true">the record</span>
-            <nav aria-label="Records">
-              {NAV.filter((n) => n.tier === 2).map((n) => (
-                <NavLink key={n.href} href={n.href} label={n.label} />
-              ))}
-            </nav>
-          </div>
-        </header>
+        <SiteNav brand={BRAND} groups={NAV} />
 
         <main id="main" className="wrap">{children}</main>
 
