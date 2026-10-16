@@ -379,6 +379,7 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
       const DENY_SLUGS = [
         "encyclopedia/master-plan", "cookbook/master-plan",
         "cookbook/uni-gpt-consult-2026-06-27", "cookbook/uni-gpt-consult-package",
+        "encyclopedia/appendix-ta-ta-n-negatives-parks-open-threads", // OD-1 owner withdrawal (daemon port)
       ];
       const published = new Set((bundle.pages || []).map((p) => p.slug));
       const leaked = DENY_SLUGS.filter((s) => published.has(s));

@@ -425,9 +425,13 @@ function publication(rootKey) {
 // deny-listed files reached the live wiki (OD-1, 2026-10-16). Refused files are LISTED, never
 // dropped in silence; the ledger keeps only its publishable sections 0/1/2/8 with a visible notice.
 // Keyed by SLUG and SECTION NUMBER, never by the withheld values, so this file carries no leak.
-const DENY_SLUGS = new Set([
-  "encyclopedia/master-plan", "cookbook/master-plan",
-  "cookbook/uni-gpt-consult-2026-06-27", "cookbook/uni-gpt-consult-package",
+const DENY_SLUGS = new Map([
+  ["encyclopedia/master-plan", "m25-never-publish"],
+  ["cookbook/master-plan", "m25-never-publish"],
+  ["cookbook/uni-gpt-consult-2026-06-27", "m25-never-publish"],
+  ["cookbook/uni-gpt-consult-package", "m25-never-publish"],
+  // Owner ruling 2026-10-16 (OD-1): cut the Track-A appendix that carried the zero-auth daemon port.
+  ["encyclopedia/appendix-ta-ta-n-negatives-parks-open-threads", "od1-owner-withdrawal"],
 ]);
 function ledgerCut(slug, body) {
   if (slug !== "encyclopedia/claim-ledger") return body;
@@ -465,10 +469,11 @@ for (const c of CORPORA) {
     // A corpus rooted at the repo top (dir ".") must NOT prefix "./", or the dirty-path check and
     // the citation path both name a file git does not know by that name.
     const repoRel = (c.dir === "." ? "" : c.dir + "/") + rel;
-    // OD-1: a never-publish (M25) file is refused on sight and listed with its reason.
-    if (DENY_SLUGS.has(`${c.id}/${slugify(rel)}`)) {
+    // OD-1: a never-publish (M25) or owner-withdrawn file is refused on sight and listed with its reason.
+    const denyReason = DENY_SLUGS.get(`${c.id}/${slugify(rel)}`);
+    if (denyReason) {
       dropped++;
-      refused.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, reasons: ["m25-never-publish"] });
+      refused.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, reasons: [denyReason] });
       continue;
     }
     if (dirty.has(repoRel)) {
