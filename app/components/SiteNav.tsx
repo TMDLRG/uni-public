@@ -116,14 +116,19 @@ export default function SiteNav({ brand, groups }: { brand: Brand; groups: Group
                 </button>
                 <div className="nav-panel" id={"navp-" + g.id} role="menu">
                   {g.items.map((it) => {
-                    const active = isActive(it.href, cur);
+                    // `.current` marks the section (exact OR an ancestor of the current path) — the
+                    // visual highlight. `aria-current="page"` marks ONLY the exact current page, so a
+                    // sub-page never leaves two items (e.g. /cookbook and /cookbook/claim-ledger)
+                    // both announced as the current page.
+                    const section = isActive(it.href, cur);
+                    const exact = norm(it.href) === cur;
                     return (
                       <a
                         key={it.href}
                         href={it.href}
                         role="menuitem"
-                        className={active ? "current" : undefined}
-                        aria-current={active ? "page" : undefined}
+                        className={section ? "current" : undefined}
+                        aria-current={exact ? "page" : undefined}
                       >
                         {it.label}
                       </a>
