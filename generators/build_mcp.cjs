@@ -148,20 +148,20 @@ const SCRUBS = [
 // SOW id, never on its own. SolutionWright and the ORCHESTRATE tenant are the owner's OWN names and
 // are deliberately NOT listed — the ruling struck the COUNT, not the own-system names.
 const OWNER_REDACTIONS = [
-  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "gi")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
-  ["SOW count", /\b\d+ SOWs\b(?= including)/g],
-  ["client count", /\b\d+ clients\b(?= including)/g],
-  ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
+  ["sow-count", /\b\d+ SOWs\b(?= including)/g],
+  ["client-count", /\b\d+ clients\b(?= including)/g],
+  ["sow-name", new RegExp("Sandbox" + " Phase-1", "g")],
   // deliverable_manage summarises the same SOW's deliverables ("N SOW-NN deliverables D1..D5 …") —
   // the SOW's deliverable count + its deliverable ids. Caught as units BEFORE the SOW-id catch-all so
   // the whole "N SOW-NN deliverables" span collapses to one marker rather than leaving the count.
-  ["SOW deliverable count", /\b\d+ SOW-\d+ deliverables\b/gi],
-  ["deliverable ids", /\bD\d+\.\.D\d+\b/g],
+  ["sow-deliverable-count", /\b\d+ SOW-\d+ deliverables\b/gi],
+  ["deliverable-ids", /\bD\d+\.\.D\d+\b/g],
   // The SOW id, catch-all and boundary-guarded: a bare "SOW-01" or the full "SOW-01 V1.3, binding"
   // both collapse to one marker. \b-anchored and requiring "SOW-" + digits, so "SOWs", a lone "01",
   // and version strings like "v1.3.0" are never touched. Runs LAST, after the specific SOW patterns.
-  ["SOW id", /\bSOW-\d+(?: V\d+(?:\.\d+)?(?:,? binding)?)?/gi],
+  ["sow-id", /\bSOW-\d+(?: V\d+(?:\.\d+)?(?:,? binding)?)?/gi],
 ];
 let ownerRedactHits = 0;
 

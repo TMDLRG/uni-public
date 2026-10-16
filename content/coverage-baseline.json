@@ -37,7 +37,7 @@
   "entry_points_total": 104,
   "entry_points_covered": 80,
   "corpora_pages": {
-   "encyclopedia": 43,
+   "encyclopedia": 42,
    "cookbook": 32,
    "control-plane": 33,
    "flagellum": 14,
@@ -79,7 +79,7 @@
    "workbench": 2,
    "reports": 23,
    "lab-team": 7,
-   "encyclopedia-method": 15,
+   "encyclopedia-method": 14,
    "encyclopedia-nature": 12,
    "encyclopedia-stack": 11,
    "cookbook-kitchen": 6,
@@ -142,6 +142,11 @@
    "date": "2026-10-16",
    "what": "Lowered floors corpora_pages.encyclopedia (44 -> 43) and curation_routes.encyclopedia-track-a (6 -> 5), a drop of 1 page.",
    "why": "OD-1, owner ruling 2026-10-16: cut the Track-A appendix encyclopedia/appendix-ta-ta-n-negatives-parks-open-threads, which carried the zero-auth daemon port and leak-record markers. It is withdrawn at ingest (reason od1-owner-withdrawal) and re-checked by verify_publish_safe AND the in-build verify_public_consistency gate, so it stops being published and cannot return via any deploy. A REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS -- a page carrying a burned secret stopped being published -- so the encyclopedia floor and its Track-A route floor are lowered deliberately. The daemon itself is being firewalled/retired separately; scrubbing the record does not un-expose a port that was public."
+  },
+  {
+   "date": "2026-10-16",
+   "what": "Lowered floors corpora_pages.encyclopedia (43 -> 42) and curation_routes.encyclopedia-method (15 -> 14), a drop of 1 page — the sovereign wiki claim-ledger (encyclopedia/claim-ledger).",
+   "why": "OD-1, owner ruling 2026-10-16 (final wiki ruling): the owner's real SOW ids and the lowercased client-name are now redacted across the wiki. Redacting them in encyclopedia/claim-ledger pushed it over the ingest over-redaction husk-guard (42 redactions > 10), so ingest refuses it rather than publish a husk — its own publishable sections 0/1/2/8 turned out to be laden with client/SOW detail. The owner ruled ACCEPT THE DROP: a page whose publishable content was client/SOW detail stops being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, so the encyclopedia corpus floor and its encyclopedia-method route floor are lowered deliberately and recorded here rather than the husk-guard being weakened to preserve a number. The canonical claim-ledger remains at /cookbook."
   }
  ]
 }

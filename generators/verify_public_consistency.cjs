@@ -48,7 +48,9 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(REPO, p), "utf8"));
 // SolutionWright handle, an "N-LEAKED" word) is not convicted, and built from FRAGMENTS at run time
 // so this tracked gate carries neither literal. Defined before --prove so its mutation can use it.
 const OD1_NAMES = [
-  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  // client-name CASE-INSENSITIVE (owner ruling "redact everywhere"): a lowercased variant in a
+  // curated-digest path escaped the case-sensitive form. The compound is distinctive — no false hit.
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "gi")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
   // SOW/contract specifics + aggregate counts (owner's follow-on ruling 2026-10-16). Counts are
   // anchored to the "N SOWs/clients including …" phrasing so a bare "clients"/"SOWs" or an unrelated
@@ -58,13 +60,9 @@ const OD1_NAMES = [
   ["client count", /\b\d+ clients\b(?= including)/g],
   ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
   ["deliverable ids", /\bD\d+\.\.D\d+\b/g],
-];
-
-// SOW ids are scoped to the MCP CATALOGUE (content/generated/mcp.json), NOT the whole tree: the bare
-// "SOW-\d+" shape also lives in the published commercial-proof wiki appendix (the owner's engagement
-// narrative, under separate review), which a tree-wide catch-all would convict. On the MCP projection
-// it is the owner's ruled class. \b-anchored so "SOWs", a lone "01" and "v1.3.0" never match.
-const OD1_MCP = [
+  // SOW id, catch-all, TREE-WIDE: the owner's final editorial ruling (2026-10-16) redacts the wiki
+  // SOW ids too (pages kept, ids gone), so ANY "SOW-NN" on ANY generated surface fails closed in the
+  // Vercel build. \b-anchored so "SOWs", a lone "01" and "v1.3.0" never match.
   ["SOW id", /\bSOW-\d+/g],
 ];
 
@@ -343,19 +341,10 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
       if (n) hits.push(`${path.relative(REPO, fp)} [${label} x${n}]`);
     }
   }
-  // SOW ids: MCP catalogue only (the wiki appendix carries the same shape under separate review).
-  const mcpFile = path.join(genDir, "mcp.json");
-  if (fs.existsSync(mcpFile)) {
-    const mcpText = fs.readFileSync(mcpFile, "utf8");
-    for (const [label, re] of OD1_MCP) {
-      const n = (mcpText.match(re) || []).length;
-      if (n) hits.push(`content/generated/mcp.json [${label} x${n}]`);
-    }
-  }
   hits.length === 0
     ? ok("the OD-1 owner-ruled names are absent from every generated surface",
-        `${files.length} generated JSON file(s) scanned for client-name / leak-id / SOW name+counts / deliverable ids; ` +
-        `SOW ids scanned on the MCP catalogue. None present. A name in ANY built bundle — not only docs.json — fails this closed.`)
+        `${files.length} generated JSON file(s) scanned for client-name / leak-id / SOW name+id+counts / deliverable ids; ` +
+        `none present on the /mcp projection OR the wiki. A name in ANY built bundle fails this closed, in the Vercel build.`)
     : bad("the OD-1 owner-ruled names are absent from every generated surface",
         `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
 }

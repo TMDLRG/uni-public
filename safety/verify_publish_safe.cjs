@@ -156,7 +156,10 @@ const COMMITTED_CATEGORY = [
 // regex so a lookalike (the public SolutionWright repo-owner handle, an "N-LEAKED" word, …) is NOT
 // convicted, and built from FRAGMENTS joined at run time so this tracked gate carries neither literal.
 const OD1_NAMES = [
-  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  // client-name is CASE-INSENSITIVE (owner ruling "redact everywhere"): a lowercased variant in a
+  // curated-digest file path escaped the case-sensitive form. The compound is distinctive, so no
+  // unrelated word is convicted.
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "gi")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
   // SOW/contract specifics + aggregate counts (owner's follow-on ruling 2026-10-16). The counts are
   // ANCHORED to the "N SOWs/clients including …" aggregate phrasing, so a bare "clients"/"SOWs" or an
@@ -167,14 +170,10 @@ const OD1_NAMES = [
   ["client count", /\b\d+ clients\b(?= including)/g],
   ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
   ["deliverable ids", /\bD\d+\.\.D\d+\b/g],
-];
-
-// SOW ids are scoped to the MCP CATALOGUE (content/generated/mcp.json), NOT the whole tree. The bare
-// "SOW-\d+" shape also appears in the published commercial-proof wiki appendix, where it is the
-// owner's engagement narrative — a surface under SEPARATE review, not yet ruled. A tree-wide catch-all
-// would convict that not-yet-ruled content. On the MCP projection it IS the owner's ruled class, so it
-// fails closed there. \b-anchored + "SOW-"+digits, so "SOWs", a lone "01" and "v1.3.0" never match.
-const OD1_MCP = [
+  // SOW id, catch-all, now TREE-WIDE: the owner's final editorial ruling (2026-10-16) redacts the SOW
+  // ids on the wiki pages too (commercial-proof + engagement-pricing, pages kept, ids gone), so ANY
+  // "SOW-NN" on ANY generated surface fails closed. \b-anchored + "SOW-"+digits, so "SOWs", a lone
+  // "01" and version strings "v1.3.0" are never convicted.
   ["SOW id", /\bSOW-\d+/g],
 ];
 
@@ -448,21 +447,11 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
         if (n) hits.push(`${path.relative(REPO, fp)} [${label} x${n}]`);
       }
     }
-    // SOW ids: MCP catalogue only (see OD1_MCP note — the wiki appendix carries the same shape under
-    // separate review), so the fail-closed scan for them is scoped to content/generated/mcp.json.
-    const mcpFile = path.join(genDir, "mcp.json");
-    if (fs.existsSync(mcpFile)) {
-      const mcpText = fs.readFileSync(mcpFile, "utf8");
-      for (const [label, re] of OD1_MCP) {
-        const n = (mcpText.match(re) || []).length;
-        if (n) hits.push(`content/generated/mcp.json [${label} x${n}]`);
-      }
-    }
     hits.length === 0
       ? ok("the OD-1 owner-ruled names are absent from every generated surface",
-          `${files.length} generated JSON file(s) scanned for client-name / leak-id / SOW name+counts / deliverable ids; ` +
-          `SOW ids scanned on the MCP catalogue. None present. A name reaching ANY generated bundle — not only ` +
-          `docs.json — is the OD-1 leak this fails closed on; build_mcp.cjs's /mcp projection is the surface it was added for.`)
+          `${files.length} generated JSON file(s) scanned for client-name / leak-id / SOW name+id+counts / deliverable ids; ` +
+          `none present. A name reaching ANY generated bundle — the /mcp projection OR the wiki — is the OD-1 leak this ` +
+          `fails closed on, on every surface and every deploy.`)
       : bad("the OD-1 owner-ruled names are absent from every generated surface",
           `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
   }
@@ -554,9 +543,9 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
     // "clients"/"SOWs" with no aggregate "including", an unrelated number. A check that never bites is
     // a comment; one that convicts a lookalike is the 8442-class false positive this guards against.
     {
-      const byLabel = (l) => (OD1_NAMES.concat(OD1_MCP).find((e) => e[0] === l) || [])[1];
+      const byLabel = (l) => (OD1_NAMES.find((e) => e[0] === l) || [])[1];
       const cases = [
-        ["client-name", byLabel("client-name"), "a SOW with " + "Marketing" + "Wright" + " today", "fork of github.com/" + "Solution" + "Wright"],
+        ["client-name", byLabel("client-name"), "the " + "marketing" + "wright" + "-digest.md path (lowercase)", "fork of github.com/" + "Solution" + "Wright"],
         ["leak-record-id", byLabel("leak-record-id"), "incident " + ["N", "LEAK"].join("-") + " burned", "the job was " + ["N", "LEAKED"].join("-")],
         ["SOW count", byLabel("SOW count"), "9 SOWs including the first", "9 SOWs were signed last year"],
         ["client count", byLabel("client count"), "12 clients including two internal", "the server had 12 clients connected"],

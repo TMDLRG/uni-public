@@ -17,7 +17,7 @@
  ],
  "schema_version": 1,
  "generated_by": "generators/build_mcp.cjs",
- "read_at": "2026-10-16T20:23:52.612Z",
+ "read_at": "2026-10-16T21:07:49.387Z",
  "source": {
   "repo": "uni-lab-command",
   "path": "evidence/v1_mcp/catalogue.json",
@@ -349,7 +349,7 @@
    "read_actions_observed_count": 1,
    "mutating_actions_deferred_count": 3,
    "evidence_class": "A",
-   "notes": "[redacted: client count] including SolutionWright (internal) and ORC Default Tenant.",
+   "notes": "[redacted: client-count] including SolutionWright (internal) and ORC Default Tenant.",
    "category": "people"
   },
   {
@@ -376,7 +376,7 @@
    "read_actions_observed_count": 1,
    "mutating_actions_deferred_count": 3,
    "evidence_class": "A",
-   "notes": "[redacted: SOW deliverable count] [redacted: deliverable ids] all ACTIVE.",
+   "notes": "[redacted: sow-deliverable-count] [redacted: deliverable-ids] all ACTIVE.",
    "category": "contracts"
   },
   {
@@ -637,7 +637,7 @@
    "read_actions_observed_count": 1,
    "mutating_actions_deferred_count": 3,
    "evidence_class": "A",
-   "notes": "[redacted: SOW count] including [redacted: client-name] [redacted: SOW name] ([redacted: SOW id]).",
+   "notes": "[redacted: sow-count] including [redacted: client-name] [redacted: sow-name] ([redacted: sow-id]).",
    "category": "contracts"
   },
   {
