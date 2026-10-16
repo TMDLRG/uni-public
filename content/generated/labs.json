@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.labs/1.0.0",
   "generated_by": "generators/build_labs.cjs",
-  "read_at": "2026-10-16T05:01:33.835Z",
+  "read_at": "2026-10-16T16:27:59.357Z",
   "note": [
     "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
     "the public source repository on every build; a mismatch fails the build rather than shipping.",
@@ -32,6 +32,8 @@
       "one_line": "The first module of the computer-based course: build your OWN probability from a numberless hunch, then watch two tempting surprise rules die against one demand and earn S(p) = −log p by hand — nothing is handed to you.",
       "math": "Surprisal S(p) = −log p, forced by additivity S(p×q)=S(p)+S(q); units in bits and nats; the learner's own arithmetic lands −ln(0.69)=0.3710636814 on its sealed reference",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 1,
       "served_at": "/play/cbt-surprise",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -53,6 +55,8 @@
       "one_line": "The true surprise of what you sense is −ln of the evidence — a sum over every hidden cause. Build that sum by hand (it is Module 1's 0.69 all along), then turn the dial and watch the term count explode past any hope of finishing: the wall.",
       "math": "Evidence p(y)=Σ p(y|η)p(η); true surprise −ln p(y); posterior p(η|y)=p(y,η)/p(y); the intractable-evidence (partition-function) wall. Goldens: evidence 0.69, surprisal 0.3710636814, posterior 0.913.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 2,
       "served_at": "/play/cbt-the-wall",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -74,6 +78,8 @@
       "one_line": "The true belief is behind the wall, so carry one you can move: a position on 0–1. Meet the three pressures on it — fit, stretch, looseness — and prove by your own ranking that no single one is enough (the conflict that forces free energy).",
       "math": "The movable belief q(η) with b=q(η=on)∈[0,1] — a free stand-in, not the true posterior; the three pressures (fit / stretch / looseness) and their conflict. Reuses Module 2's two-cause world (prior 0.7, evidence 0.69, posterior 0.913); no free-energy score drawn yet.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 3,
       "served_at": "/play/cbt-belief-position",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -95,6 +101,8 @@
       "one_line": "Three pressures, one number: free energy is the height under a belief — energy minus looseness, fit-and-stretch fused in the joint minus the spread. Assemble it, verify the forbidden evidence sum is nowhere in it, and compute it by hand (F falls from 0.944576 to 0.371064).",
       "math": "F[q]=Σ q(η)[ln q(η) − ln p(y,η)] = energy − entropy = complexity − accuracy; computable from the joint alone, with no evidence term. Reuses Module 2's joints (0.63/0.06). Goldens F(0.5)=0.944576, F(0.913)=min F=0.3710636814. :exact bound tag.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 4,
       "served_at": "/play/cbt-free-energy",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -116,6 +124,8 @@
       "one_line": "Free energy over every belief makes a valley. Feel the slope (a log-odds mismatch) blind, drop a ball anywhere, and watch it roll to the floor at b=0.913 — which is the Module 2 posterior. The valley bottom is Bayes, reached without the evidence.",
       "math": "F(b) over b∈[0,1] is a convex valley; slope dF/db = ln(b/(1−b)) − ln(p(y,on)/p(y,off)) = log-odds mismatch; blind gradient descent reaches the floor b=0.913 = the posterior 0.63/0.69. Curve points F(0)=2.813, F(0.5)=0.944576, F(0.913)=0.371064, F(1)=0.462.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 5,
       "served_at": "/play/cbt-landscape",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -137,6 +147,8 @@
       "one_line": "Split free energy the other way — F = surprise + gap — and a floor appears: F can never fall below the surprise −ln(0.69)=0.371064. Try to push F below the floor and you can't; the proof is one line (ln x ≤ x−1) drawn above a curve.",
       "math": "F = −ln p(y) + KL(q‖posterior) = surprise + gap, gap ≥ 0 ⇒ F ≥ −ln p(y) = 0.3710636814 (the floor), touched only at the posterior b=0.913; proved by Gibbs' inequality (ln x ≤ x−1). gap(0.5)=0.573512. :exact bound tag.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 6,
       "served_at": "/play/cbt-the-floor",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -158,6 +170,8 @@
       "one_line": "The punchline: roll downhill on the one number you can compute and you're handed both things the wall took — the true belief (the posterior 0.913) AND the true surprise (−ln 0.69 = 0.371064), at once. A bound tag keeps it honest: not every F is a safe bound.",
       "math": "argmin F = posterior, min F = −ln p(y) = 0.3710636814 (the surprise); minimizing the computable F = minimizing the gap → 0 at the posterior. Bound tags: :exact (on the floor), :exact_mean_field / :laplace (valid ceilings above), :mmp (can dip below — ln2=0.693147 vs ln2/2=0.346574 — never a bound; MMP-BOUND-01).",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 7,
       "served_at": "/play/cbt-minimize-f",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -179,6 +193,8 @@
       "one_line": "Two causes and one dial was a training world. A real mind is a tower of causes — each a belief rolling downhill on the one above, predictions flowing down and errors up until it settles. The exact floor survives as a genuine but looser ceiling. Part I closes; action (Part II) opens.",
       "math": "Hierarchical (mean-field) inference: predictions descend, prediction errors ascend, beliefs settle. The exact floor −ln p(y)=0.3710636814 becomes a guaranteed-but-loose ceiling, tagged :exact_mean_field (always ≥ surprise, never equal off the exact posterior): F(0.80)=0.4319080875 and F(0.50)=0.9445759076 both sit above the floor. Teaser: expected free energy G over futures (action) — the build underway, not asserted. No DDNA runtime values reproduced; the tower is an illustrative mechanism, not a measurement.",
       "minutes": "20–40",
+      "track": "part-1",
+      "order": 8,
       "served_at": "/play/cbt-scale-brain",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -200,6 +216,8 @@
       "one_line": "Part II (Action) opens. Part I made beliefs fit the world; action makes the world fit beliefs — the same free energy, pointed the other way. A bedrock prior ('stay warm') you can't re-believe away forces you to act; a prediction you refuse to surrender becomes a goal.",
       "math": "Action lowers the same free energy by changing sensations, not the belief: minimise over the world's data rather than over q. An un-erasable (high-precision) prior barely moves under re-believing, so only action closes its gap — which is why bedrock priors are the engine of behaviour. Expected free energy (the forward cousin) is NOT yet built or sealed in the organism — standard theory, held open ('built to', never 'does').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 9,
       "served_at": "/play/cbt-second-engine",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -221,6 +239,8 @@
       "one_line": "The first half of how a mind chooses. To pick an action you haven't taken, you imagine the future it brings (run your model forward) and score that imagined future by risk — the distance between the future you'd predict and the future you prefer. Rank three futures (sweater, fire, do nothing) by risk without living any of them.",
       "math": "Expected free energy (G) is Part I's free energy rolled forward over an unlived future, scored from the model before acting. Its first (pragmatic) term is risk = KL(predicted outcomes ‖ preferred outcomes), where preferences are a prior over the sensations you expect; the epistemic term arrives in Module 11. G is NOT yet built or sealed in the organism — standard active inference, held open ('built to', never 'does').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 10,
       "served_at": "/play/cbt-scoring-a-future",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -242,6 +262,8 @@
       "one_line": "The second half of how a mind chooses. A mind doesn't only chase what it wants (risk); it pays to resolve what it doesn't know, because information is an investment that lowers every future bill. The blanket and the strange stove tie on risk and effort — only the stove resolves an uncertainty, and over many cold nights that pays for itself.",
       "math": "Expected free energy G = risk + ambiguity. The epistemic term (ambiguity) is expected information gain — how far an action is expected to shrink uncertainty about the hidden state; minimising G maximises information gain while minimising risk. Information is worth exactly the future free energy it saves. G and its epistemic term are NOT yet built or sealed in the organism — standard active inference (exact form in Module 14), held open ('built to', never 'does').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 11,
       "served_at": "/play/cbt-finding-out",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -263,6 +285,8 @@
       "one_line": "The keystone. Perception (Part I, over beliefs about now) and action (Part II, over actions into the future) are not two machines — they are one engine minimising one free energy on opposite sides of the same gap: bend the map to the territory (perceive), or bend the territory to the map (act). Close one gap from either side and watch the unity fall out.",
       "math": "One objective, two free arguments: minimise free energy over the belief q (perception, Part I) or over the actions that shape future sensations (action, Part II) — the same quantity, pushed on whichever side of the prediction gap gives. The perception half rests on the sealed Gate-F0 arithmetic; the action half (expected free energy) is NOT yet built or sealed in DDNA, so the unity is held open on its action half ('built to be', never 'is').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 12,
       "served_at": "/play/cbt-one-engine",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -284,6 +308,8 @@
       "one_line": "A mind chooses whole paths through a branching, uncertain future — it can't see the tree, so it plans a little ahead, acts, learns, and re-plans. The oldest dilemma, explore vs exploit, falls out of expected free energy for free: raise one uncertainty knob and the min-G agent switches by itself, no explore/exploit dial anywhere.",
       "math": "Score policies pi by their expected free energy G(pi) summed over the future; act by softmax(-gamma G(pi)) (gamma = precision, Module 15). Because G = risk + ambiguity, the epistemic half dominates under uncertainty (explore) and vanishes under confidence (exploit) — the balance auto-tunes, no separate exploration schedule. The policy machinery is NOT yet built or sealed in DDNA — standard active inference (exact G form in Module 14), held open ('built to run', never 'runs today').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 13,
       "served_at": "/play/cbt-uncertain-future",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -305,6 +331,8 @@
       "one_line": "G = risk + ambiguity, on the page and computed by hand. On a concrete cold-cabin choice, the reward-perfect sweater (G=0.60) LOSES to the uncertain-but-revealing stove (G=0.36) once ambiguity is added — the epistemic term flips the decision. A calculator, not a curve: you check the risk KL yourself.",
       "math": "risk = KL(predicted outcomes ‖ preferred outcomes) — EXACT and checkable (risk_A=0, risk_B=0.6 ln(0.6/0.9)+0.4 ln(0.4/0.1)=0.311). ambiguity = expected likelihood entropy E_state[H(o|s)] — illustrative values (0.60 state-blind sweater, 0.05 revealing stove). G_A=0.60, G_B=0.36 -> min G picks the stove. Canonical: G(pi)=KL[Q(o|pi)‖C(o)]+E_Q(s|pi)[H[P(o|s)]]. DDNA's G term is NOT yet built or sealed — held open ('built to', never 'does').",
       "minutes": "25–45",
+      "track": "part-2",
+      "order": 14,
       "served_at": "/play/cbt-g-formula",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",
@@ -326,6 +354,8 @@
       "one_line": "The last rung of Part II. Scoring ranks your options; precision (gamma) sets how hard you bet on the winner — decisiveness to doubt. Turn one dial over a FIXED set of G scores and watch the choice distribution sharpen onto the best (decisive) or flatten toward uniform (hedging): same scores, different sharpness.",
       "math": "A mind acts out policies with P(pi) proportional to exp(-gamma G(pi)) — a softmax with inverse temperature gamma = precision. gamma -> infinity: all weight on the lowest-G policy (decisive); gamma -> 0: uniform (hedging). gamma is inferred, tracking how much to trust one's own scoring (world reliable -> raise; volatile -> lower). A neuromodulator label is ONLY ever a functional analogue — never the specific chemical, never a feeling. Precision over policies rides on expected free energy, NOT yet built or sealed in DDNA — held open ('built to tune', never 'does').",
       "minutes": "20–40",
+      "track": "part-2",
+      "order": 15,
       "served_at": "/play/cbt-precision",
       "source": {
         "repo": "TheORCHESTRATEActiveInferenceWorkbench",

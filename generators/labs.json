@@ -36,6 +36,8 @@
   "vendored": [
     {
       "slug": "cbt-surprise",
+      "track": "part-1",
+      "order": 1,
       "source_file": "cbt_module_01_surprise.html",
       "title": "CBT Module 1 — Surprise",
       "one_line": "The first module of the computer-based course: build your OWN probability from a numberless hunch, then watch two tempting surprise rules die against one demand and earn S(p) = −log p by hand — nothing is handed to you.",
@@ -44,6 +46,8 @@
     },
     {
       "slug": "cbt-the-wall",
+      "track": "part-1",
+      "order": 2,
       "source_file": "cbt_module_02_the_wall.html",
       "title": "CBT Module 2 — The wall",
       "one_line": "The true surprise of what you sense is −ln of the evidence — a sum over every hidden cause. Build that sum by hand (it is Module 1's 0.69 all along), then turn the dial and watch the term count explode past any hope of finishing: the wall.",
@@ -52,6 +56,8 @@
     },
     {
       "slug": "cbt-belief-position",
+      "track": "part-1",
+      "order": 3,
       "source_file": "cbt_module_03_belief_position.html",
       "title": "CBT Module 3 — A belief is a position",
       "one_line": "The true belief is behind the wall, so carry one you can move: a position on 0–1. Meet the three pressures on it — fit, stretch, looseness — and prove by your own ranking that no single one is enough (the conflict that forces free energy).",
@@ -60,6 +66,8 @@
     },
     {
       "slug": "cbt-free-energy",
+      "track": "part-1",
+      "order": 4,
       "source_file": "cbt_module_04_free_energy.html",
       "title": "CBT Module 4 — Free energy",
       "one_line": "Three pressures, one number: free energy is the height under a belief — energy minus looseness, fit-and-stretch fused in the joint minus the spread. Assemble it, verify the forbidden evidence sum is nowhere in it, and compute it by hand (F falls from 0.944576 to 0.371064).",
@@ -68,6 +76,8 @@
     },
     {
       "slug": "cbt-landscape",
+      "track": "part-1",
+      "order": 5,
       "source_file": "cbt_module_05_the_landscape.html",
       "title": "CBT Module 5 — The landscape",
       "one_line": "Free energy over every belief makes a valley. Feel the slope (a log-odds mismatch) blind, drop a ball anywhere, and watch it roll to the floor at b=0.913 — which is the Module 2 posterior. The valley bottom is Bayes, reached without the evidence.",
@@ -76,6 +86,8 @@
     },
     {
       "slug": "cbt-the-floor",
+      "track": "part-1",
+      "order": 6,
       "source_file": "cbt_module_06_the_floor.html",
       "title": "CBT Module 6 — The floor you cannot cross",
       "one_line": "Split free energy the other way — F = surprise + gap — and a floor appears: F can never fall below the surprise −ln(0.69)=0.371064. Try to push F below the floor and you can't; the proof is one line (ln x ≤ x−1) drawn above a curve.",
@@ -84,6 +96,8 @@
     },
     {
       "slug": "cbt-minimize-f",
+      "track": "part-1",
+      "order": 7,
       "source_file": "cbt_module_07_minimize_f.html",
       "title": "CBT Module 7 — Minimize free energy",
       "one_line": "The punchline: roll downhill on the one number you can compute and you're handed both things the wall took — the true belief (the posterior 0.913) AND the true surprise (−ln 0.69 = 0.371064), at once. A bound tag keeps it honest: not every F is a safe bound.",
@@ -92,6 +106,8 @@
     },
     {
       "slug": "cbt-scale-brain",
+      "track": "part-1",
+      "order": 8,
       "source_file": "cbt_module_08_scale_to_a_brain.html",
       "title": "CBT Module 8 — Scale to a brain",
       "one_line": "Two causes and one dial was a training world. A real mind is a tower of causes — each a belief rolling downhill on the one above, predictions flowing down and errors up until it settles. The exact floor survives as a genuine but looser ceiling. Part I closes; action (Part II) opens.",
@@ -100,6 +116,8 @@
     },
     {
       "slug": "cbt-second-engine",
+      "track": "part-2",
+      "order": 9,
       "source_file": "cbt_module_09_the_second_engine.html",
       "title": "CBT Module 9 — The second engine",
       "one_line": "Part II (Action) opens. Part I made beliefs fit the world; action makes the world fit beliefs — the same free energy, pointed the other way. A bedrock prior ('stay warm') you can't re-believe away forces you to act; a prediction you refuse to surrender becomes a goal.",
@@ -108,6 +126,8 @@
     },
     {
       "slug": "cbt-scoring-a-future",
+      "track": "part-2",
+      "order": 10,
       "source_file": "cbt_module_10_scoring_a_future.html",
       "title": "CBT Module 10 — Scoring an unlived future",
       "one_line": "The first half of how a mind chooses. To pick an action you haven't taken, you imagine the future it brings (run your model forward) and score that imagined future by risk — the distance between the future you'd predict and the future you prefer. Rank three futures (sweater, fire, do nothing) by risk without living any of them.",
@@ -116,6 +136,8 @@
     },
     {
       "slug": "cbt-finding-out",
+      "track": "part-2",
+      "order": 11,
       "source_file": "cbt_module_11_finding_out.html",
       "title": "CBT Module 11 — The worth of finding out",
       "one_line": "The second half of how a mind chooses. A mind doesn't only chase what it wants (risk); it pays to resolve what it doesn't know, because information is an investment that lowers every future bill. The blanket and the strange stove tie on risk and effort — only the stove resolves an uncertainty, and over many cold nights that pays for itself.",
@@ -124,6 +146,8 @@
     },
     {
       "slug": "cbt-one-engine",
+      "track": "part-2",
+      "order": 12,
       "source_file": "cbt_module_12_one_engine.html",
       "title": "CBT Module 12 — One engine, two directions",
       "one_line": "The keystone. Perception (Part I, over beliefs about now) and action (Part II, over actions into the future) are not two machines — they are one engine minimising one free energy on opposite sides of the same gap: bend the map to the territory (perceive), or bend the territory to the map (act). Close one gap from either side and watch the unity fall out.",
@@ -132,6 +156,8 @@
     },
     {
       "slug": "cbt-uncertain-future",
+      "track": "part-2",
+      "order": 13,
       "source_file": "cbt_module_13_uncertain_future.html",
       "title": "CBT Module 13 — A path through an uncertain future",
       "one_line": "A mind chooses whole paths through a branching, uncertain future — it can't see the tree, so it plans a little ahead, acts, learns, and re-plans. The oldest dilemma, explore vs exploit, falls out of expected free energy for free: raise one uncertainty knob and the min-G agent switches by itself, no explore/exploit dial anywhere.",
@@ -140,6 +166,8 @@
     },
     {
       "slug": "cbt-g-formula",
+      "track": "part-2",
+      "order": 14,
       "source_file": "cbt_module_14_g_formula.html",
       "title": "CBT Module 14 — The formula, by hand",
       "one_line": "G = risk + ambiguity, on the page and computed by hand. On a concrete cold-cabin choice, the reward-perfect sweater (G=0.60) LOSES to the uncertain-but-revealing stove (G=0.36) once ambiguity is added — the epistemic term flips the decision. A calculator, not a curve: you check the risk KL yourself.",
@@ -148,6 +176,8 @@
     },
     {
       "slug": "cbt-precision",
+      "track": "part-2",
+      "order": 15,
       "source_file": "cbt_module_15_precision.html",
       "title": "CBT Module 15 — Precision: how hard to commit",
       "one_line": "The last rung of Part II. Scoring ranks your options; precision (gamma) sets how hard you bet on the winner — decisiveness to doubt. Turn one dial over a FIXED set of G scores and watch the choice distribution sharpen onto the best (decisive) or flatten toward uniform (hedging): same scores, different sharpness.",
