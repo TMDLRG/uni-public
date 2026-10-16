@@ -252,6 +252,30 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
     : ok("the manifest describes articles that exist, at the sections it names", `${(manifest.subsystems || []).length} subsystem(s) × 2 layers and ${(manifest.entry_points || []).filter((e) => !e.excluded).length} documented entry point(s), every anchor still present`);
 }
 
+// ─── 1b · OD-1 — M25 never-publish files and withheld ledger sections (runs IN the Vercel build) ──
+// verify_publish_safe carries the same assertion, but it is NOT in the Vercel buildCommand, so a
+// main-based deploy would not be gated by it. THIS gate is in the buildCommand, so the deny-list is
+// enforced on every deploy including from main. Keyed by slug and section number, never by the
+// withheld values, so this file carries no leak.
+{
+  const DENY_SLUGS = [
+    "encyclopedia/master-plan", "cookbook/master-plan",
+    "cookbook/uni-gpt-consult-2026-06-27", "cookbook/uni-gpt-consult-package",
+  ];
+  const leaked = DENY_SLUGS.filter((s) => pageSlugs.has(s));
+  const ledger = docs.pages.find((p) => p.slug === "encyclopedia/claim-ledger");
+  const withheld = ledger ? (String(ledger.body).match(/^##\s+[3-7]\b/gm) || []).length : 0;
+  (leaked.length === 0 && withheld === 0)
+    ? ok("no M25 never-publish file or withheld ledger section is in the bundle",
+        `${DENY_SLUGS.length} deny-listed slug(s) absent; the claim-ledger carries only its publishable ` +
+        `sections 0/1/2/8 (no ## 3–7 heading). This check runs in the Vercel buildCommand, so a deploy ` +
+        `from any branch — main included — fails closed if a deny-listed file or a withheld section returns.`)
+    : bad("no M25 never-publish file or withheld ledger section is in the bundle",
+        [leaked.length ? `published deny-listed slug(s): ${leaked.join(", ")}` : null,
+         withheld ? `claim-ledger carries ${withheld} withheld section heading(s) (## 3–7)` : null]
+          .filter(Boolean).join(" · "));
+}
+
 // ─── 1b · one document, one URL ──────────────────────────────────────────────────────────────────
 // A slug IS a URL. Two documents sharing one means the static build emits a single route and the
 // loser is unreachable — and every count still adds up, which is why this needs its own check rather
