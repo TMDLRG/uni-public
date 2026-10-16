@@ -57,7 +57,15 @@ const OD1_NAMES = [
   ["SOW count", /\b\d+ SOWs\b(?= including)/g],
   ["client count", /\b\d+ clients\b(?= including)/g],
   ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
-  ["SOW id", /\bSOW-\d+ V\d+\.\d+,? binding\b/gi],
+  ["deliverable ids", /\bD\d+\.\.D\d+\b/g],
+];
+
+// SOW ids are scoped to the MCP CATALOGUE (content/generated/mcp.json), NOT the whole tree: the bare
+// "SOW-\d+" shape also lives in the published commercial-proof wiki appendix (the owner's engagement
+// narrative, under separate review), which a tree-wide catch-all would convict. On the MCP projection
+// it is the owner's ruled class. \b-anchored so "SOWs", a lone "01" and "v1.3.0" never match.
+const OD1_MCP = [
+  ["SOW id", /\bSOW-\d+/g],
 ];
 
 // ─── --prove: copy the artifacts, break one thing at a time, require this script to notice ──────
@@ -172,7 +180,10 @@ if (process.argv.includes("--prove")) {
       // Owner's follow-on ruling class: SOW specifics + aggregate counts. Assembled from fragments and
       // the aggregate "including" phrasing so this gate file carries no literal; 1c must catch it.
       const j = JSON.parse(a["content/generated/mcp.json"]);
-      j.note = (Array.isArray(j.note) ? j.note : []).concat("7 SOWs including the " + "Sandbox" + " Phase-1 SOW-09 V2.0, binding.");
+      j.note = (Array.isArray(j.note) ? j.note : []).concat(
+        "7 SOWs including the " + "Sandbox" + " Phase-1 SOW-09 V2.0, binding.",
+        "4 SOW-02 deliverables D1..D4 all ACTIVE.",  // standalone SOW id + deliverable ids
+      );
       a["content/generated/mcp.json"] = JSON.stringify(j);
     }],
   ];
@@ -332,11 +343,20 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
       if (n) hits.push(`${path.relative(REPO, fp)} [${label} x${n}]`);
     }
   }
+  // SOW ids: MCP catalogue only (the wiki appendix carries the same shape under separate review).
+  const mcpFile = path.join(genDir, "mcp.json");
+  if (fs.existsSync(mcpFile)) {
+    const mcpText = fs.readFileSync(mcpFile, "utf8");
+    for (const [label, re] of OD1_MCP) {
+      const n = (mcpText.match(re) || []).length;
+      if (n) hits.push(`content/generated/mcp.json [${label} x${n}]`);
+    }
+  }
   hits.length === 0
-    ? ok("the client name and leak-record-id are absent from every generated surface",
-        `${files.length} generated JSON file(s) scanned for the two OD-1 owner-ruled names; none present. ` +
-        `A name in ANY built bundle — not only docs.json — fails this closed; the /wiki MCP projection is the surface it was added for.`)
-    : bad("the client name and leak-record-id are absent from every generated surface",
+    ? ok("the OD-1 owner-ruled names are absent from every generated surface",
+        `${files.length} generated JSON file(s) scanned for client-name / leak-id / SOW name+counts / deliverable ids; ` +
+        `SOW ids scanned on the MCP catalogue. None present. A name in ANY built bundle — not only docs.json — fails this closed.`)
+    : bad("the OD-1 owner-ruled names are absent from every generated surface",
         `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
 }
 
