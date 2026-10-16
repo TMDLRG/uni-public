@@ -40,6 +40,8 @@ type Vendored = {
   one_line: string;
   math: string;
   minutes: string;
+  track?: string;
+  order?: number;
   served_at: string;
   source: { repo: string; url: string; path: string; commit: string; commit_short: string };
   served_sha256: string;
@@ -136,6 +138,12 @@ function LabCard({ lab }: { lab: Vendored }) {
 
 export default function Labs() {
   const pinIsHead = d.workbench.measured.head_commit === d.workbench.pinned_commit;
+  // The computer-based course is a numbered track (part-1 = Modules 1–8, part-2 = Modules 9–15), in
+  // `order`; everything untracked is a standalone interactive sandbox. Labels match the nav manifest.
+  const byOrder = (a: Vendored, b: Vendored) => (a.order || 0) - (b.order || 0);
+  const part1 = d.vendored.filter((l) => l.track === "part-1").sort(byOrder);
+  const part2 = d.vendored.filter((l) => l.track === "part-2").sort(byOrder);
+  const sandboxes = d.vendored.filter((l) => !l.track);
 
   return (
     <>
@@ -195,28 +203,57 @@ export default function Labs() {
         </div>
       </section>
 
+      <p id="run-here">
+        <b>Run them here.</b> These {d.counts.vendored} labs are copies of files from the public{" "}
+        <a href={workbenchDirUrl} rel="noreferrer">Workbench repository</a>, pinned at commit{" "}
+        <code>{d.workbench.pinned_commit.slice(0, 12)}</code>. On every build each served copy is
+        hashed and compared byte-for-byte against that pinned commit; a mismatch fails the build
+        rather than shipping, and the cite line under each card carries the hash so you can rerun the
+        comparison yourself.{" "}
+        <span className="dim">
+          (At the last read, the public repository&rsquo;s head{" "}
+          {pinIsHead
+            ? "was the pinned commit itself"
+            : `had moved ${d.workbench.measured.commits_since_pin} commit(s) past the pin`}
+          .)
+        </span>
+      </p>
+
       <section>
-        <h2>Run them here</h2>
+        <h2 id="part-1">Part I — Active Inference by hand (Modules 1&ndash;8)</h2>
         <p>
-          These {d.counts.vendored} labs are copies of files from the public{" "}
-          <a href={workbenchDirUrl} rel="noreferrer">
-            Workbench repository
-          </a>
-          , pinned at commit <code>{d.workbench.pinned_commit.slice(0, 12)}</code>. On every build
-          of this site, each served copy is hashed and compared byte-for-byte against the same file
-          at that pinned commit; a mismatch fails the build rather than shipping. That check is
-          what ties the lab you run to the real code — the cite line under each card carries the
-          hash so you can rerun the comparison yourself.{" "}
-          <span className="dim">
-            (At the last read, the public repository&rsquo;s head{" "}
-            {pinIsHead
-              ? "was the pinned commit itself"
-              : `had moved ${d.workbench.measured.commits_since_pin} commit(s) past the pin`}
-            .)
-          </span>
+          The computer-based course, taken in order: you build free energy by hand, from a numberless
+          hunch to a landscape a mind rolls downhill. Eight modules, each a self-contained lab.
         </p>
         <div className="project-doors">
-          {d.vendored.map((lab) => (
+          {part1.map((lab) => (
+            <LabCard key={lab.slug} lab={lab} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 id="part-2">Part II — Action and choice by hand (Modules 9&ndash;15)</h2>
+        <p>
+          The second half, now live: how a mind <em>acts</em> and <em>chooses</em> — the second
+          engine, expected free energy as risk + ambiguity, explore-and-exploit, and precision. Seven
+          modules, built on Part I.
+        </p>
+        <div className="project-doors">
+          {part2.map((lab) => (
+            <LabCard key={lab.slug} lab={lab} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 id="interactive">Interactive labs</h2>
+        <p>
+          Standalone sandboxes beyond the course track — Bayes&rsquo; theorem, the POMDP machine, and
+          the predictive-coding and generative-model builders — each a self-contained instrument.
+        </p>
+        <div className="project-doors">
+          {sandboxes.map((lab) => (
             <LabCard key={lab.slug} lab={lab} />
           ))}
         </div>
