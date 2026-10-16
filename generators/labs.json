@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "fc5869233e2661c2e2a5337023007e31fc5788ed",
+    "pinned_commit": "93b3a49ed38a611b4edcffad140e845c6db14103",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -104,6 +104,14 @@
       "title": "CBT Module 9 — The second engine",
       "one_line": "Part II (Action) opens. Part I made beliefs fit the world; action makes the world fit beliefs — the same free energy, pointed the other way. A bedrock prior ('stay warm') you can't re-believe away forces you to act; a prediction you refuse to surrender becomes a goal.",
       "math": "Action lowers the same free energy by changing sensations, not the belief: minimise over the world's data rather than over q. An un-erasable (high-precision) prior barely moves under re-believing, so only action closes its gap — which is why bedrock priors are the engine of behaviour. Expected free energy (the forward cousin) is NOT yet built or sealed in the organism — standard theory, held open ('built to', never 'does').",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-scoring-a-future",
+      "source_file": "cbt_module_10_scoring_a_future.html",
+      "title": "CBT Module 10 — Scoring an unlived future",
+      "one_line": "The first half of how a mind chooses. To pick an action you haven't taken, you imagine the future it brings (run your model forward) and score that imagined future by risk — the distance between the future you'd predict and the future you prefer. Rank three futures (sweater, fire, do nothing) by risk without living any of them.",
+      "math": "Expected free energy (G) is Part I's free energy rolled forward over an unlived future, scored from the model before acting. Its first (pragmatic) term is risk = KL(predicted outcomes ‖ preferred outcomes), where preferences are a prior over the sensations you expect; the epistemic term arrives in Module 11. G is NOT yet built or sealed in the organism — standard active inference, held open ('built to', never 'does').",
       "minutes": "20–40"
     },
     {
