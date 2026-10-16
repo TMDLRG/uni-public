@@ -41,6 +41,17 @@ const path = require("path");
 const REPO = process.env.UNI_PUBLIC_ROOT || path.resolve(__dirname, "..");
 const read = (p) => JSON.parse(fs.readFileSync(path.join(REPO, p), "utf8"));
 
+// OD-1 owner-ruled names (ruling 2026-10-16): the client name and the leak-record-id are redacted
+// everywhere on the estate. Section 1c below re-scans the BUILT generated bundle for them and FAILS
+// CLOSED — the client name reached the live /wiki MCP page because 1b only reads docs.json, and
+// build_mcp.cjs projects a different source. Boundary-guarded so a lookalike (the public
+// SolutionWright handle, an "N-LEAKED" word) is not convicted, and built from FRAGMENTS at run time
+// so this tracked gate carries neither literal. Defined before --prove so its mutation can use it.
+const OD1_NAMES = [
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+];
+
 // ─── --prove: copy the artifacts, break one thing at a time, require this script to notice ──────
 if (process.argv.includes("--prove")) {
   const os = require("os"), cp = require("child_process");
@@ -49,6 +60,7 @@ if (process.argv.includes("--prove")) {
     "content/generated/articles.json", "content/generated/docs.json", "content/generated/coverage.json",
     "content/coverage-manifest.json", "content/coverage-baseline.json", "content/curation.json",
     "app/layout.tsx", "package.json", "content/generated/gates.json",
+    "content/generated/mcp.json",
   ];
   const MUT = [
     ["delete an article the manifest points at", (a) => {
@@ -139,6 +151,14 @@ if (process.argv.includes("--prove")) {
       const c = JSON.parse(a["content/generated/coverage.json"]);
       c.ok = false;
       a["content/generated/coverage.json"] = JSON.stringify(c);
+    }],
+    ["leak the client name into a built bundle other than docs.json (the MCP projection)", (a) => {
+      // The exact OD-1 gap this fix closes: 1b only reads docs.json, so a client name in mcp.json
+      // (projected from a different source by build_mcp.cjs) sailed past. Injected from fragments so
+      // this gate file carries no literal of its own; section 1c must catch it.
+      const j = JSON.parse(a["content/generated/mcp.json"]);
+      j.note = (Array.isArray(j.note) ? j.note : []).concat("SOW for " + "Marketing" + "Wright" + " Sandbox.");
+      a["content/generated/mcp.json"] = JSON.stringify(j);
     }],
   ];
 
@@ -275,6 +295,34 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
         [leaked.length ? `published deny-listed slug(s): ${leaked.join(", ")}` : null,
          withheld ? `claim-ledger carries ${withheld} withheld section heading(s) (## 3–7)` : null]
           .filter(Boolean).join(" · "));
+}
+
+// ─── 1c · OD-1 — client name / leak-id on ANY generated surface (runs IN the Vercel build) ────────
+// 1b above only reads docs.json. The client name reached the live /wiki MCP page via build_mcp.cjs,
+// which projects a DIFFERENT source the ingest never redacts. This walks EVERY generated JSON and
+// FAILS CLOSED on either owner-ruled name (OD1_NAMES, fragment-built so this file carries no literal).
+// Being in the buildCommand, it fails closed on every deploy including from main. This was the gap.
+{
+  const genDir = path.join(REPO, "content", "generated");
+  const walk = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }) : []).flatMap((e) => {
+    const fp = path.join(d, e.name);
+    return e.isDirectory() ? walk(fp) : (/\.json$/i.test(e.name) ? [fp] : []);
+  });
+  const files = walk(genDir);
+  const hits = [];
+  for (const fp of files) {
+    let text; try { text = fs.readFileSync(fp, "utf8"); } catch { continue; }
+    for (const [label, re] of OD1_NAMES) {
+      const n = (text.match(re) || []).length;
+      if (n) hits.push(`${path.relative(REPO, fp)} [${label} x${n}]`);
+    }
+  }
+  hits.length === 0
+    ? ok("the client name and leak-record-id are absent from every generated surface",
+        `${files.length} generated JSON file(s) scanned for the two OD-1 owner-ruled names; none present. ` +
+        `A name in ANY built bundle — not only docs.json — fails this closed; the /wiki MCP projection is the surface it was added for.`)
+    : bad("the client name and leak-record-id are absent from every generated surface",
+        `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
 }
 
 // ─── 1b · one document, one URL ──────────────────────────────────────────────────────────────────

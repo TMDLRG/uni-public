@@ -149,6 +149,17 @@ const COMMITTED_CATEGORY = [
   ["oas-ticket-prefix", "OAS-"],
 ];
 
+// OD-1 owner-ruled names (ruling 2026-10-16): the client name and the leak-record-id are redacted
+// everywhere on the estate — ingest_docs.cjs does it for docs.json, build_mcp.cjs for the MCP
+// projection. This gate re-scans the BUILT generated bundle (section 5c) for them and FAILS CLOSED,
+// because the client name reached the live /wiki MCP page past every docs.json check. Boundary-guarded
+// regex so a lookalike (the public SolutionWright repo-owner handle, an "N-LEAKED" word, …) is NOT
+// convicted, and built from FRAGMENTS joined at run time so this tracked gate carries neither literal.
+const OD1_NAMES = [
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+];
+
 // Paths that must never exist in this repo at all, by name.
 const FORBIDDEN_PATHS = [
   /(^|[\\/])session-history([\\/]|$)/i,
@@ -398,6 +409,36 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
     }
   }
 
+  // ─── 5c. OD-1 CLIENT-NAME / LEAK-ID ON ANY GENERATED SURFACE (owner ruling 2026-10-16) ────────
+  // ingest_docs redacts these two names in docs.json, but OTHER generators project OTHER sources.
+  // build_mcp.cjs projects the SWU-MCP catalogue, and the client name reached the live /wiki MCP page
+  // because nothing re-scanned THAT built bundle — the deny-list check above only reads docs.json.
+  // This walks EVERY generated JSON and FAILS CLOSED on either owner-ruled name (OD1_NAMES, built
+  // from fragments so this gate carries no literal). This is the gap that let the MCP leak slip.
+  {
+    const genDir = path.join(REPO, "content", "generated");
+    const walk = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }) : []).flatMap((e) => {
+      const fp = path.join(d, e.name);
+      return e.isDirectory() ? walk(fp) : (/\.json$/i.test(e.name) ? [fp] : []);
+    });
+    const files = walk(genDir);
+    const hits = [];
+    for (const fp of files) {
+      let text; try { text = fs.readFileSync(fp, "utf8"); } catch { continue; }
+      for (const [label, re] of OD1_NAMES) {
+        const n = (text.match(re) || []).length;
+        if (n) hits.push(`${path.relative(REPO, fp)} [${label} x${n}]`);
+      }
+    }
+    hits.length === 0
+      ? ok("the client name and leak-record-id are absent from every generated surface",
+          `${files.length} generated JSON file(s) scanned for the two OD-1 owner-ruled names; none present. ` +
+          `A name reaching ANY generated bundle — not only docs.json — is the OD-1 leak this fails closed on; ` +
+          `build_mcp.cjs's /wiki MCP projection is the surface this check was added for.`)
+      : bad("the client name and leak-record-id are absent from every generated surface",
+          `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
+  }
+
   // ─── 6. LICENCE ─────────────────────────────────────────────────────────────────────────────
   {
     const lic = fs.existsSync(path.join(REPO, "LICENSE")) || fs.existsSync(path.join(REPO, "LICENSE.md"));
@@ -478,6 +519,25 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
         detail: posHit === label && negHit !== label
           ? `caught the positive as [${posHit}] and left the negative clean`
           : `positive=${posHit || "MISSED"} negative=${negHit || "clean"} — a category rule with no positive proof is decoration, and one that fires on the negative sample would false-positive`,
+      });
+    }
+    // OD-1 NAME MATCHERS — prove the client-name/leak-id needles bite on a positive built from
+    // fragments, and do NOT convict the legitimate public attribution handle (SolutionWright) or an
+    // "N-LEAKED" word. A section-5c check that never bites would be a comment, not a gate.
+    {
+      const [[, reClient], [, reLeak]] = OD1_NAMES;
+      const posClient = "9 SOWs including " + "Marketing" + "Wright" + " Sandbox Phase-1.";
+      const negClient = "source github.com/" + "Solution" + "Wright" + "/Workbench";
+      const posLeak = "incident " + ["N", "LEAK"].join("-") + " was burned";
+      const negLeak = "the run was " + ["N", "LEAKED"].join("-") + " downstream";
+      const cOk = (posClient.match(reClient) || []).length === 1 && (negClient.match(reClient) || []).length === 0;
+      const lOk = (posLeak.match(reLeak) || []).length === 1 && (negLeak.match(reLeak) || []).length === 0;
+      muts.push({
+        label: "OD-1 name needles bite on the real names AND spare the SolutionWright handle / 'N-LEAKED'",
+        pass: cOk && lOk,
+        detail: cOk && lOk
+          ? "client-name + leak-record-id each caught in a positive sample and left their lookalikes clean"
+          : `client-name=${cOk ? "ok" : "FAIL"} leak-record-id=${lOk ? "ok" : "FAIL"} — a needle that misses the real name or convicts the lookalike is not a usable gate`,
       });
     }
     try { fs.rmSync(tmp, { recursive: true, force: true }); } catch { /* noop */ }
