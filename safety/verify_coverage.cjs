@@ -255,7 +255,10 @@ function navPaths() {
   const src = fs.readFileSync(layout, "utf8");
   const block = /const\s+NAV\s*=\s*\[([\s\S]*?)\];/.exec(src);
   if (!block) return new Set();
-  return new Set([...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1]));
+  // Slash-normalise. The grouped D-1 nav carries apex-form hrefs (no trailing slash) for a
+  // byte-identical menu, while document types declare reachable_from in uni-public's trailing-slash
+  // form. /articles and /articles/ are the same destination, so reachability compares both stripped.
+  return new Set([...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1].replace(/\/+$/, "") || "/"));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -623,7 +626,7 @@ function evaluate({ manifest, curation, articles, docs, discovered }) {
         ok = false;
       }
 
-      if (!t.reachable_from || !nav.has(t.reachable_from)) {
+      if (!t.reachable_from || !nav.has(t.reachable_from.replace(/\/+$/, "") || "/")) {
         problems.push(`document type '${t.id}' declares reachable_from='${t.reachable_from}' which is not a link in the site's navigation (app/layout.tsx) — unreachable`);
         ok = false;
       }

@@ -140,7 +140,9 @@ if (process.argv.includes("--prove")) {
       a["content/generated/articles.json"] = JSON.stringify(arts);
     }],
     ["unhook a document type from the navigation", (a) => {
-      a["app/layout.tsx"] = a["app/layout.tsx"].replace(/href: "\/articles\/",/, 'href: "/gone/",');
+      // The grouped D-1 nav carries apex-form hrefs (no trailing slash); the reachability check below
+      // slash-normalises, so this unhook targets the no-slash form the nav literal now uses.
+      a["app/layout.tsx"] = a["app/layout.tsx"].replace(/href: "\/articles",/, 'href: "/gone",');
     }],
     ["colour an unrun external gate as a pass", (a) => {
       // The original defect, in its purest form: a gate that is listed and never run, presented as
@@ -528,17 +530,23 @@ const pageSlugs = new Set(docs.pages.map((p) => p.slug));
 // ─── 5 · the navigation must lead to the pages the manifest promises ─────────────────────────────
 {
   const layout = fs.readFileSync(path.join(REPO, "app", "layout.tsx"), "utf8");
+  // The nav is now the grouped D-1 literal `const NAV = [ {id,label,items:[{href,label}…]} … ]`; the
+  // non-greedy block still captures it whole (inner item arrays close with "] }", not "];"), and the
+  // href scan still reads every item href. The hrefs are the APEX FORM (no trailing slash) for a
+  // byte-identical menu, while the manifest's reachable_from uses uni-public's trailing-slash form, so
+  // reachability is compared slash-NORMALISED — /articles and /articles/ are the same destination.
+  const norm = (h) => (h || "").replace(/\/+$/, "") || "/";
   const block = /const\s+NAV\s*=\s*\[([\s\S]*?)\];/.exec(layout);
-  const nav = new Set(block ? [...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1]) : []);
+  const nav = new Set(block ? [...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => norm(m[1])) : []);
   const problems = [];
   if (!nav.size) problems.push("no navigation could be read out of app/layout.tsx");
   for (const t of manifest.document_types || []) {
     if (t.excluded) continue;
-    if (!nav.has(t.reachable_from)) problems.push(`document type '${t.id}' declares '${t.reachable_from}', which the site's navigation does not contain`);
+    if (!nav.has(norm(t.reachable_from))) problems.push(`document type '${t.id}' declares '${t.reachable_from}', which the site's navigation does not contain`);
   }
   problems.length
     ? bad("the navigation leads to what the manifest promises", problems.join(" · "))
-    : ok("the navigation leads to what the manifest promises", `${nav.size} nav link(s); reachability is read out of the component that RENDERS the nav, never from a copy of it that could drift`);
+    : ok("the navigation leads to what the manifest promises", `${nav.size} nav link(s) (slash-normalised); reachability is read out of the component that RENDERS the nav, never from a copy of it that could drift`);
 }
 
 // ─── report ──────────────────────────────────────────────────────────────────────────────────────

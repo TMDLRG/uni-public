@@ -26,7 +26,7 @@ const REPO = path.resolve(__dirname, "..");
 // is demonstrated against this exact code rather than reasoned about.
 const CSS = process.env.A11Y_CSS_OVERRIDE || path.join(REPO, "app", "globals.css");
 const LAYOUT = path.join(REPO, "app", "layout.tsx");
-const NAVLINK = path.join(REPO, "app", "components", "NavLink.tsx");
+const NAV_COMPONENT = path.join(REPO, "app", "components", "SiteNav.tsx");
 const OUT = path.join(REPO, "out");
 
 const results = [];
@@ -157,12 +157,14 @@ const THEMES = {
 // ─── 4 · the shell carries the landmarks (read from source + built export) ───────────────────────
 {
   const layout = fs.existsSync(LAYOUT) ? fs.readFileSync(LAYOUT, "utf8") : "";
-  const nav = fs.existsSync(NAVLINK) ? fs.readFileSync(NAVLINK, "utf8") : "";
+  const nav = fs.existsSync(NAV_COMPONENT) ? fs.readFileSync(NAV_COMPONENT, "utf8") : "";
   const problems = [];
   if (!/className="skip"/.test(layout) || !/href="#main"/.test(layout)) problems.push("no skip link to #main in layout");
   if (!/id="main"/.test(layout)) problems.push("no <main id=\"main\"> landmark");
-  if (!/aria-label="Primary"/.test(layout)) problems.push("nav has no aria-label");
-  if (!/aria-current/.test(nav)) problems.push("NavLink does not set aria-current");
+  // The primary nav moved from layout.tsx into the SiteNav component (grouped D-1 nav), so the
+  // labelled-landmark + aria-current checks read the component too, not layout alone.
+  if (!/aria-label="Primary"/.test(layout + nav)) problems.push("nav has no aria-label");
+  if (!/aria-current/.test(nav)) problems.push("nav component does not set aria-current");
   problems.length
     ? bad("the shell carries landmarks, a skip link and aria-current", problems.join(" · "))
     : ok("the shell carries landmarks, a skip link and aria-current", "skip→#main, <main id>, labelled nav, aria-current on the active link");
