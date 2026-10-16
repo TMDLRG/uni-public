@@ -416,6 +416,27 @@ function publication(rootKey) {
   };
 }
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// OD-1: M25 NEVER-PUBLISH DENY-LIST + SOVEREIGN-LEDGER SECTION CUT
+// ─────────────────────────────────────────────────────────────────────────────────────────────────
+// The cookbook's own M25 "constitution" names files that must NEVER publish, and the sovereign
+// claim-ledger withholds sections 3–7 (client identity, private infrastructure, leak-record ids).
+// The apex cookbook generator enforces this; this ingest did not, so a full ledger and the
+// deny-listed files reached the live wiki (OD-1, 2026-10-16). Refused files are LISTED, never
+// dropped in silence; the ledger keeps only its publishable sections 0/1/2/8 with a visible notice.
+// Keyed by SLUG and SECTION NUMBER, never by the withheld values, so this file carries no leak.
+const DENY_SLUGS = new Set([
+  "encyclopedia/master-plan", "cookbook/master-plan",
+  "cookbook/uni-gpt-consult-2026-06-27", "cookbook/uni-gpt-consult-package",
+]);
+function ledgerCut(slug, body) {
+  if (slug !== "encyclopedia/claim-ledger") return body;
+  const m3 = /^##\s+3\b/m.exec(body), m8 = /^##\s+8\b/m.exec(body);
+  if (!m3 || !m8 || m8.index <= m3.index) return body; // shape changed → leave; the publish gate fails closed
+  const notice = "\n\n## Sections 3–7 — withheld\n\n> Sections 3 through 7 of this ledger are withheld from publication under the project's never-publish policy — the same subset the canonical cookbook ledger omits. This copy carries sections 0, 1, 2 and 8 only. The canonical ledger lives at /cookbook/claim-ledger.\n\n";
+  return body.slice(0, m3.index) + notice + body.slice(m8.index);
+}
+
 // ─── run ─────────────────────────────────────────────────────────────────────────────────────────
 const pages = [];
 const refused = [];
@@ -444,6 +465,12 @@ for (const c of CORPORA) {
     // A corpus rooted at the repo top (dir ".") must NOT prefix "./", or the dirty-path check and
     // the citation path both name a file git does not know by that name.
     const repoRel = (c.dir === "." ? "" : c.dir + "/") + rel;
+    // OD-1: a never-publish (M25) file is refused on sight and listed with its reason.
+    if (DENY_SLUGS.has(`${c.id}/${slugify(rel)}`)) {
+      dropped++;
+      refused.push({ corpus: c.id, path: repoRel, bytes: Buffer.byteLength(text), sha256: digest, reasons: ["m25-never-publish"] });
+      continue;
+    }
     if (dirty.has(repoRel)) {
       unprovenanced.push({ corpus: c.id, path: repoRel, commit: commit.slice(0, 12) });
       continue;
@@ -489,15 +516,25 @@ for (const c of CORPORA) {
 
     kept++;
     if (red.total) redactedCount++;
+    const outSlug = `${c.id}/${slugify(rel)}`;
+    const outBody = ledgerCut(outSlug, red.text);   // OD-1: claim-ledger keeps only §0/1/2/8
+    // When a section cut removes [redacted: …] markers, the recorded count must match the published
+    // body — the publish gate asserts every marker corresponds to a recorded redaction.
+    let outTotal = red.total, outCounts = red.counts;
+    if (outBody !== red.text) {
+      outCounts = {};
+      (outBody.match(/\[redacted: ([a-z-]+)\]/g) || []).forEach((mk) => { const cat = mk.slice("[redacted: ".length, -1); outCounts[cat] = (outCounts[cat] || 0) + 1; });
+      outTotal = Object.values(outCounts).reduce((a, b) => a + b, 0);
+    }
     pages.push({
       corpus: c.id,
-      slug: `${c.id}/${slugify(rel)}`,
+      slug: outSlug,
       title: title(text, path.basename(rel, path.extname(rel))),
-      body: red.text,
-      bytes: Buffer.byteLength(red.text),
+      body: outBody,
+      bytes: Buffer.byteLength(outBody),
       sha256: digest,                       // the digest of the ORIGINAL, so a reader can verify what was ingested
-      redactions: red.total,
-      redaction_counts: red.counts,
+      redactions: outTotal,
+      redaction_counts: outCounts,
       citation: { repo: c.root_key, title: c.title, branch, commit, commit_short: commit.slice(0, 12), path: repoRel, ...publication(c.root_key) },
     });
   }

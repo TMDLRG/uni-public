@@ -34,8 +34,8 @@
    "id": "pages",
    "label": "Published pages",
    "denominator": "discovered",
-   "total": 546,
-   "covered": 546,
+   "total": 542,
+   "covered": 542,
    "excluded": 0
   }
  ],
@@ -43,7 +43,7 @@
   "bounds": 84,
   "held": 84,
   "breached": 0,
-  "at_the_line": 50,
+  "at_the_line": 52,
   "amendments": [
    {
     "date": "2026-08-01",
@@ -54,11 +54,18 @@
     "date": "2026-08-02",
     "what": "Lowered floor article_chars.run-it (8678 -> 8667), a drop of 11 characters, as part of re-pinning the baseline for the 493-page expansion.",
     "why": "No prose was removed. The run-it page body is byte-identical to its previous version. The 11-character drop is an earlier fix catching up: a dead internal link to a flagellar-motor route that does not exist was corrected to the live route, removing the 11 characters of the word laboratory. The floor was pinned before that fix and is only now re-emitted. This is a reduction in count and an increase in correctness -- a working link is shorter than a broken one -- so the floor article_chars.run-it is lowered deliberately and recorded here rather than the page being padded to preserve a number."
+   },
+   {
+    "date": "2026-10-16",
+    "what": "Lowered floors corpora_pages.encyclopedia (45 -> 44), corpora_pages.cookbook (34 -> 32), curation_routes.encyclopedia-method (16 -> 15) and curation_routes.cookbook-kitchen (8 -> 6) — the drop of 1 encyclopedia and 3 cookbook pages, and the two curated routes those pages sat on.",
+    "why": "OD-1 containment. Four M25 never-publish files (encyclopedia/master-plan, cookbook/master-plan, cookbook/uni-gpt-consult-2026-06-27, cookbook/uni-gpt-consult-package) were reaching the live wiki past the honesty review, carrying client identity, a zero-auth daemon port and leak-record ids. They are now refused at ingest and re-checked by verify_publish_safe, so they stop being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS -- pages that leaked never-publish material stopped being published -- so the two corpus floors are lowered deliberately rather than the deny-list being weakened to preserve a number. The sovereign claim-ledger remains published but cut to its publishable sections 0/1/2/8 (the same subset the canonical cookbook ledger omits); that is a redaction, not a page removal, and does not move these floors."
    }
   ],
   "notes": [
+   "4 loosening(s), each named by one of 1 new amendment(s): floor corpora_pages.encyclopedia: 45 → 44; floor corpora_pages.cookbook: 34 → 32; floor curation_routes.encyclopedia-method: 16 → 15; floor curation_routes.cookbook-kitchen: 8 → 6",
    "AMENDMENT 2026-08-01 — Lowered floors pages_total (292 -> 291) and corpora_pages.workbench (2 -> 1).: A forensic pass held all 292 published pages against the commit each citation names and found ONE whose published bytes were an uncommitted working-tree edit published under a commit sha that does not contain them (workbench/living-science-walkthrough). The ingest now fences any document whose own bytes are uncommitted, per path, so it cannot assert a provenance it does not have. The page count falls by one because a page that was making a false claim stopped being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS, which is why the floor is lowered deliberately rather than the fence being weakened to preserve a number. The remaining four fenced documents return the moment the workbench worktree is committed.",
-   "AMENDMENT 2026-08-02 — Lowered floor article_chars.run-it (8678 -> 8667), a drop of 11 characters, as part of re-pinning the baseline for the 493-page expansion.: No prose was removed. The run-it page body is byte-identical to its previous version. The 11-character drop is an earlier fix catching up: a dead internal link to a flagellar-motor route that does not exist was corrected to the live route, removing the 11 characters of the word laboratory. The floor was pinned before that fix and is only now re-emitted. This is a reduction in count and an increase in correctness -- a working link is shorter than a broken one -- so the floor article_chars.run-it is lowered deliberately and recorded here rather than the page being padded to preserve a number."
+   "AMENDMENT 2026-08-02 — Lowered floor article_chars.run-it (8678 -> 8667), a drop of 11 characters, as part of re-pinning the baseline for the 493-page expansion.: No prose was removed. The run-it page body is byte-identical to its previous version. The 11-character drop is an earlier fix catching up: a dead internal link to a flagellar-motor route that does not exist was corrected to the live route, removing the 11 characters of the word laboratory. The floor was pinned before that fix and is only now re-emitted. This is a reduction in count and an increase in correctness -- a working link is shorter than a broken one -- so the floor article_chars.run-it is lowered deliberately and recorded here rather than the page being padded to preserve a number.",
+   "AMENDMENT 2026-10-16 — Lowered floors corpora_pages.encyclopedia (45 -> 44), corpora_pages.cookbook (34 -> 32), curation_routes.encyclopedia-method (16 -> 15) and curation_routes.cookbook-kitchen (8 -> 6) — the drop of 1 encyclopedia and 3 cookbook pages, and the two curated routes those pages sat on.: OD-1 containment. Four M25 never-publish files (encyclopedia/master-plan, cookbook/master-plan, cookbook/uni-gpt-consult-2026-06-27, cookbook/uni-gpt-consult-package) were reaching the live wiki past the honesty review, carrying client identity, a zero-auth daemon port and leak-record ids. They are now refused at ingest and re-checked by verify_publish_safe, so they stop being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS -- pages that leaked never-publish material stopped being published -- so the two corpus floors are lowered deliberately rather than the deny-list being weakened to preserve a number. The sovereign claim-ledger remains published but cut to its publishable sections 0/1/2/8 (the same subset the canonical cookbook ledger omits); that is a redaction, not a page removal, and does not move these floors."
   ],
   "rows": [
    {
@@ -105,15 +112,15 @@
    },
    {
     "label": "pages published · encyclopedia",
-    "now": 45,
-    "bound": 45,
+    "now": 44,
+    "bound": 44,
     "kind": "min",
     "ok": true
    },
    {
     "label": "pages published · cookbook",
-    "now": 35,
-    "bound": 34,
+    "now": 32,
+    "bound": 32,
     "kind": "min",
     "ok": true
    },
@@ -252,7 +259,7 @@
    },
    {
     "label": "pages published · total",
-    "now": 546,
+    "now": 542,
     "bound": 524,
     "kind": "min",
     "ok": true
@@ -343,8 +350,8 @@
    },
    {
     "label": "pages in route · encyclopedia-method",
-    "now": 16,
-    "bound": 16,
+    "now": 15,
+    "bound": 15,
     "kind": "min",
     "ok": true
    },
@@ -364,8 +371,8 @@
    },
    {
     "label": "pages in route · cookbook-kitchen",
-    "now": 9,
-    "bound": 8,
+    "now": 6,
+    "bound": 6,
     "kind": "min",
     "ok": true
    },

@@ -296,7 +296,6 @@
    "pages": [
     "encyclopedia/00-index",
     "encyclopedia/claim-ledger",
-    "encyclopedia/master-plan",
     "encyclopedia/nature-ledger",
     "encyclopedia/wing-e-e0-how-to-read-this-work",
     "encyclopedia/wing-e-e1-calibration-ledger",
@@ -359,10 +358,7 @@
     "cookbook/01-kitchen-rules",
     "cookbook/02-the-pantry",
     "cookbook/03-dev-spine-0",
-    "cookbook/99-closing",
-    "cookbook/master-plan",
-    "cookbook/uni-gpt-consult-2026-06-27",
-    "cookbook/uni-gpt-consult-package"
+    "cookbook/99-closing"
    ]
   },
   {

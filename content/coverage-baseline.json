@@ -37,8 +37,8 @@
   "entry_points_total": 104,
   "entry_points_covered": 80,
   "corpora_pages": {
-   "encyclopedia": 45,
-   "cookbook": 34,
+   "encyclopedia": 44,
+   "cookbook": 32,
    "control-plane": 33,
    "flagellum": 14,
    "workbench": 1,
@@ -79,10 +79,10 @@
    "workbench": 2,
    "reports": 23,
    "lab-team": 7,
-   "encyclopedia-method": 16,
+   "encyclopedia-method": 15,
    "encyclopedia-nature": 12,
    "encyclopedia-stack": 11,
-   "cookbook-kitchen": 8,
+   "cookbook-kitchen": 6,
    "cookbook-stack": 14,
    "cookbook-nature": 12,
    "plans": 15,
@@ -132,6 +132,11 @@
    "date": "2026-08-02",
    "what": "Lowered floor article_chars.run-it (8678 -> 8667), a drop of 11 characters, as part of re-pinning the baseline for the 493-page expansion.",
    "why": "No prose was removed. The run-it page body is byte-identical to its previous version. The 11-character drop is an earlier fix catching up: a dead internal link to a flagellar-motor route that does not exist was corrected to the live route, removing the 11 characters of the word laboratory. The floor was pinned before that fix and is only now re-emitted. This is a reduction in count and an increase in correctness -- a working link is shorter than a broken one -- so the floor article_chars.run-it is lowered deliberately and recorded here rather than the page being padded to preserve a number."
+  },
+  {
+   "date": "2026-10-16",
+   "what": "Lowered floors corpora_pages.encyclopedia (45 -> 44), corpora_pages.cookbook (34 -> 32), curation_routes.encyclopedia-method (16 -> 15) and curation_routes.cookbook-kitchen (8 -> 6) — the drop of 1 encyclopedia and 3 cookbook pages, and the two curated routes those pages sat on.",
+   "why": "OD-1 containment. Four M25 never-publish files (encyclopedia/master-plan, cookbook/master-plan, cookbook/uni-gpt-consult-2026-06-27, cookbook/uni-gpt-consult-package) were reaching the live wiki past the honesty review, carrying client identity, a zero-auth daemon port and leak-record ids. They are now refused at ingest and re-checked by verify_publish_safe, so they stop being published. This is a REDUCTION IN COUNT AND AN INCREASE IN CORRECTNESS -- pages that leaked never-publish material stopped being published -- so the two corpus floors are lowered deliberately rather than the deny-list being weakened to preserve a number. The sovereign claim-ledger remains published but cut to its publishable sections 0/1/2/8 (the same subset the canonical cookbook ledger omits); that is a redaction, not a page removal, and does not move these floors."
   }
  ]
 }

@@ -365,6 +365,38 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
     }
   }
 
+  // ─── 5b. M25 NEVER-PUBLISH DENY-LIST + SOVEREIGN-LEDGER SECTIONS (OD-1) ───────────────────────
+  // The cookbook's M25 "constitution" names files that must NEVER publish, and the sovereign
+  // claim-ledger withholds sections 3–7 (client identity, private infrastructure, leak-record ids).
+  // The ingest generator refuses them, but until 2026-10-16 this gate did not RE-CHECK the built
+  // bundle — which is how a full ledger and the deny-listed files reached the live wiki past the
+  // honesty review. This re-checks the shipped docs.json and FAILS CLOSED. Deny by SLUG and by
+  // SECTION NUMBER, never by the withheld values, so this gate itself carries no leak.
+  {
+    const docsFile = path.join(REPO, "content", "generated", "docs.json");
+    if (fs.existsSync(docsFile)) {
+      const bundle = JSON.parse(fs.readFileSync(docsFile, "utf8"));
+      const DENY_SLUGS = [
+        "encyclopedia/master-plan", "cookbook/master-plan",
+        "cookbook/uni-gpt-consult-2026-06-27", "cookbook/uni-gpt-consult-package",
+      ];
+      const published = new Set((bundle.pages || []).map((p) => p.slug));
+      const leaked = DENY_SLUGS.filter((s) => published.has(s));
+      // the sovereign ledger may carry only sections 0, 1, 2 and 8 — any ## 3..7 heading is withheld.
+      const ledger = (bundle.pages || []).find((p) => p.slug === "encyclopedia/claim-ledger");
+      const withheldPresent = ledger ? (String(ledger.body).match(/^##\s+[3-7]\b/gm) || []).length : 0;
+      (leaked.length === 0 && withheldPresent === 0)
+        ? ok("M25 never-publish files and withheld ledger sections are absent from the bundle",
+            `${DENY_SLUGS.length} deny-listed slug(s) checked, none published; the claim-ledger carries only ` +
+            `its publishable sections (0/1/2/8) with no ## 3–7 heading. A deny-listed file or a withheld ` +
+            `section reaching the bundle is the OD-1 leak this check fails closed on.`)
+        : bad("M25 never-publish files and withheld ledger sections are absent from the bundle",
+            [leaked.length ? `published deny-listed slug(s): ${leaked.join(", ")}` : null,
+             withheldPresent ? `claim-ledger carries ${withheldPresent} withheld section heading(s) (## 3–7)` : null]
+              .filter(Boolean).join(" · "));
+    }
+  }
+
   // ─── 6. LICENCE ─────────────────────────────────────────────────────────────────────────────
   {
     const lic = fs.existsSync(path.join(REPO, "LICENSE")) || fs.existsSync(path.join(REPO, "LICENSE.md"));

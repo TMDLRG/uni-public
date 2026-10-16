@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/claim-ledger
 corpus: encyclopedia
 source_sha256: 82eb60b7e5342620
-source_body_sha256: e891752c96e634ac
+source_body_sha256: 2a6c50f2181451e1
 source_title: CLAIM-LEDGER.md — Master Evidence-Classed Claim Ledger
 source_words: 15559
 authored_by: claude-opus-5

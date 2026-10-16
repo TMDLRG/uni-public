@@ -145,8 +145,8 @@
    "key": "encyclopedia/claim-ledger",
    "corpus": "encyclopedia",
    "source_sha256": "82eb60b7e5342620",
-   "source_body_sha256": "e891752c96e634ac",
-   "source_words": 15559,
+   "source_body_sha256": "2a6c50f2181451e1",
+   "source_words": 5191,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -160,39 +160,12 @@
    },
    "clear": {
     "html": "<p>The claim ledger, a list that rows are added to and never edited, is the single source of truth for this corpus. What it keeps track of is a simulation: a toy world someone built, not a person. No public page may state a claim above the evidence class recorded here, drop the recorded result that would show that claim wrong, or hide a recorded negative.</p><p>It opens with a constitution and a set of standing limits. Claims are graded on a lettered scale. It runs from a machine-exact anchor, through mechanism plus operator observation, then a test on data set aside and scored once, then a passing test suite, then an inherited document. Above all of those sits a class meaning claimed but unearned, and beside them a class for governance patterns that assert no capability at all. The class is a ceiling. Alongside it sit rules that give the grading teeth: calibration only moves down; the verdict is the confidence-interval bound rather than the point estimate; done means test-covered, not working; and negatives are first-class content. Those limits forbid claims of general or human-level intelligence, of consciousness or sentience, of a demonstrated inference loop, of created life or measurable awareness, and of beating large language models.</p><p>The body is organised in sections. A developmental ladder carries one subsection per rung, each with its rows, the results that would overturn them, and an explicit line saying what is not claimed there. Several rungs pair a positive result with the negative that delimits it, and the upper rungs are recorded as parked or not yet built. A second section covers the hardware and continuity substrate, recorded as engineering rather than science. A third carries method rows: the governance disciplines the program reuses. A fourth covers a marketing and publishing track, with its own negatives. A short section then lists open threads and contradictions that are carried forward rather than discharged, so that silence is never mistaken for completeness.</p><p>The closing note states the maintenance rules. A row is graded at the lower of its evidence components. Corrections are forward-only, and supersede with lineage rather than being edited in place. And where prose and this file disagree, this file wins. A newly added row records a sealed developmental-organism building step that passed its checks yet raises no rung and brings no organism to life.</p>",
-    "chars": 2407,
+    "chars": 2413,
     "words": 393,
-    "sha256": "802b5be3caf32042"
+    "sha256": "aa289da84badf6a1"
    },
    "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 row (DS0.1) and a frontier note were added — architecture sealed, A1–A10 PASS, raises no rung and births no organism. The high-level summary above stays accurate (the ~2-of-11+ position is unchanged) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review. — Prior (2026-08-24): a project-key redaction ruled on 2026-08-04 had shipped unscrubbed and is now replaced with a marker.",
    "source_file": "content/lenses/wiki/encyclopedia/claim-ledger.md"
-  },
-  {
-   "scope": "wiki",
-   "key": "encyclopedia/master-plan",
-   "corpus": "encyclopedia",
-   "source_sha256": "54833a6ef8dc6799",
-   "source_body_sha256": "f5d2b2eaaff930be",
-   "source_words": 10429,
-   "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
-   "review_state": "draft",
-   "reviewed_by": null,
-   "reviewed_at": null,
-   "plain": {
-    "html": "<p>The encyclopedia is not written here; the rules for writing it are. Every chapter inherits its front matter from this file: the evidence constitution, the lettered class rubric, and the standing limits and red lines. Each also inherits a template for the section where a chapter states what it does not claim. Then come the body structure, a one-page specification per chapter, and an ordered writing queue. Two rules run through all of it. A chapter authors against the claim ledger, a list rows are added to and never edited, and never ahead of it. Where the two disagree the ledger wins. A chapter that cites a positive result without the negative bounding it has overclaimed, and fails review. The program described throughout is a developmental simulation, with roughly two of eleven or more developmental steps earned.</p>",
-    "chars": 824,
-    "words": 137,
-    "sha256": "ab4e5076a4b61a97"
-   },
-   "clear": {
-    "html": "<p>Everything in this file is about how to write, not about what was found. It is a plan: it reports no scientific result of its own, and instead fixes the conditions under which a result may be written up at all. The program it plans for is a developmental simulation, and every chapter is told to say so in the same words.</p><p>Its first part is the constitution the chapters inherit. Six rules govern every entry. Every claim must name the result that would show it wrong. One ledger is the source of truth, and rows are added to it rather than edited. Calibration only moves wording down toward the measured value. A verdict is read off the interval bound rather than the point estimate. Test-covered and working are held strictly apart, and negatives are treated as content. A note beside the headline count of published negatives says where that figure came from, because it is a recorded snapshot and cannot be rebuilt from the rows the corpus prints. A no-exit discipline says the only honest place to stop is a working solution or a published, falsifiable bound, and that a parked question is not discharged until its sign-off lands.</p><p>Next comes the class rubric, from a machine-exact anchor down to a class meaning claimed but unearned, with the reminder that a passing test never satisfies a criterion demanding a runtime observation. An exactness rule forbids recording a lower-precision result at a higher-precision tier, and notes that a docstring once did exactly that and was corrected. Then the red lines, listed one by one, and a template every chapter must fill in to say what it is not claiming.</p><p>The second part is structure. A table of contents runs across an evidence wing, a science ladder, a meaning wing, a movement wing, a method wing and a marketing appendix. One short specification per chapter names its class, the result that would show it wrong, and the negative that travels with it.</p><p>The third part is an ordered writing queue with standing rules attached. No chapter ships without its block saying what is not claimed. No row may be recorded at a higher evidence class than its ledger row allows. And a positive result may not be written without the negative beside it in the same pass.</p>",
-    "chars": 2214,
-    "words": 386,
-    "sha256": "01a1aa74babcd9cc"
-   },
-   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
-   "source_file": "content/lenses/wiki/encyclopedia/master-plan.md"
   },
   {
    "scope": "wiki",
@@ -1180,15 +1153,15 @@
    "reviewed_at": null,
    "plain": {
     "html": "<p>This is the front door of a cookbook, and it is a map rather than a recipe. The cookbook describes a simulation: one engine, of a kind that learns by predicting and acting, wired up at many different scales. The scales run from a first cell division through metabolism, movement, perception and language, and on to open questions about creativity and awareness.</p><p>This index lists the chapters in order. Beside each one sits a single honest label saying how much of that step is actually built. The labels are proven, designed, hypothesized, and not-yet-built, and they are drawn from a separate ledger of claims kept elsewhere, a list added to and never edited. The page states the rule for disagreements plainly: that list wins and the recipe is wrong.</p><p>The one thing this page says is that the whole recipe is recommended, but the evidence is not. It prints the honest position in the same breath: about two of eleven-plus developmental rungs are earned. This is a bounded peek at a toy world, never a person. Read this page first to see the shape of the book.</p>",
-    "chars": 1062,
+    "chars": 1066,
     "words": 187,
-    "sha256": "ba9a7a257b11b7fa"
+    "sha256": "5604ed157b35c03b"
    },
    "clear": {
     "html": "<p>This page is the table of contents for a cookbook, and it is worth reading on its own because it carries the book's honesty rules alongside its list of chapters.</p><p>The subject is a simulation. The claim is not that a mind has been built. It is that one engine of a particular kind can be shown running at many scales, and that the same loop appears each time: take in evidence, choose what to do next, act, and learn by counting. The chapters walk a ladder from a molecular starting point and a first cell division, through cellular upkeep, metabolism, an organ model, affect, movement, perception, language and a self-model, and then on to reasoning, wisdom, dreaming and creativity.</p><p>The page does two things at once, and it says so. It recommends the complete recipe all the way to the top of the ladder, so a reader setting out to build should assume the full build. And it labels every rung with what is really there. Four labels are allowed and no others. Proven means a sealed, signed pass exists, with the result that would sink it still live. Designed means a specification or an agreed design exists but the build is partial or unverified. Hypothesized means a mechanism has been stated with no sealed gate behind it. Not-yet-built means there is no engine, no run and no gate at all.</p><p>Reading the table, the lower rungs carry the proven label, sometimes with recorded losses named beside the wins. The upper rungs — reasoning, wisdom, dreaming, and creativity leading to measurable awareness — carry designed or not-yet-built. Several designs that were signed off in a consultation are folded in as designed and not run, and the page is explicit that folding them in raises nothing.</p><p>Two further pointers appear. One is to a substrate chapter about the body the engine runs on, which the page marks as engineering evidence rather than evidence about the science, and it notes that a sensorium is never awareness. The other is a closing chapter on where the material came from.</p><p>The provenance note at the end names the sources the book was written from and the date a review signed off on its honesty posture. It ends with an invitation rather than a defence: no step is labelled above its evidence, no negative result is hidden, and any step may be falsified.</p>",
-    "chars": 2270,
+    "chars": 2280,
     "words": 399,
-    "sha256": "5452f3b93cae5f48"
+    "sha256": "4d3a8432ffb1f591"
    },
    "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): one index line was added linking the new DEV-SPINE-0 chapter (CB-03). The summary above stays accurate (the index still lists chapters in order with honest labels) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/00-index.md"
@@ -1234,15 +1207,15 @@
    "reviewed_at": null,
    "plain": {
     "html": "<p>This chapter is the kitchen rather than a dish. Before any recipe in the cookbook, it sets out the rules that bind all of them: how a claim gets recorded, what counts as evidence, and what may never be said. The book describes a simulation — a bounded peek at a toy world, never a person — and that wording is repeated here rather than softened.</p><p>The one thing this page says is that the rules are governance, not capability. None of them asserts that the system is intelligent or aware. They are the discipline that keeps every other claim honest.</p><p>In practice, every claim carries an evidence class and a way to falsify it. A separate ledger of claims, added to and never edited, is law, and where the book disagrees with it the book is wrong. Wording moves only downward toward what was measured, including under pressure. A set of evidence kept back is touched exactly once, behind a seal. Learning happens by counting rather than by gradients. A list of phrases the book never writes closes the argument. The honest position is printed once more: about two of eleven-plus rungs earned. It now also cites a signed repair inside a sealed developmental-organism step, which raises no rung and brings no organism to life.</p>",
-    "chars": 1222,
+    "chars": 1226,
     "words": 216,
-    "sha256": "36b6efbb24af4339"
+    "sha256": "dd075be503089d72"
    },
    "clear": {
     "html": "<p>This is the constitution of a cookbook, written to be read before anything is cooked. The book's subject is a developmental simulation, described as one engine shown at many scales. The chapter restates the honest position at the start rather than burying it: about two of eleven-plus developmental rungs are earned, and the whole thing is a bounded peek at a toy world, never a person. The language of active inference is described as a framing lens only, and the underlying preprint is cited as a mathematical foundation and always labelled as unrefereed, with an expert review still pending.</p><p>Most of the chapter is a list of method rules, and it is careful about what they are not. They are governance patterns, reusable and binding, and none of them is a capability claim. Together they say roughly this. Every claim carries an evidence class and a falsifier, the result that would show it wrong, and lives in a four-state ledger that is added to and never edited. Calibration moves wording only down toward the measured value. A bar and a named ablation are registered before a build, the held set is touched once behind a seal, and the verdict rests on the bound that excludes the threshold rather than on a single best estimate. A claim of reproduction is derived by a validator from several distinct seeds, never written in by hand. Work on synthetic constructions is diagnostic and must never be inflated into capability. A negative bound is owed only after several structurally different negatives, with mundane explanations ruled out first. Every capability claim needs a tuned strong baseline plus a check that collapses the gain when the signal is removed. A staged evidence contract governs progress, and a linter downgrades an overclaim. A passing test does not satisfy a criterion that asks for an observation at runtime. A result computed at one numeric precision may not be reported at a finer one. World, body and mind are kept as separate typed layers. Learning is counting, with a guard that forbids gradient methods inside the loop. Negatives are published up front as the credibility. A review panel must sign before a merge, and one change is made at a time so a win stays attributable. A level of the hierarchy must not treat what came from above as fresh evidence. And a long run is written down as it goes, because silence is not success.</p><p>The four status words are then defined — proven, designed, hypothesized, not-yet-built — with the rule that a signed design folds in as designed and not run, raising nothing. A signed repair inside a sealed developmental-organism step is folded in the same way: it raises no rung and brings no organism to life.</p><p>A shared pantry of engines is listed, each labelled at its real status, followed by a continuity note that is explicitly engineering rather than science. Its recorded bounds are carried first-class. Continuity across a kernel swap is owed rather than shown. The swap is a seconds-long freeze rather than no downtime at all. An over-compressed sensory bottleneck went negative. A trade of fluency for calibration is called honest rather than a win. A central coupling gap is left open, and isolation is missing in the bare substrate.</p><p>The closing line is the whole rule in one breath: cook the whole book, but never lie about where you are.</p>",
-    "chars": 3320,
+    "chars": 3328,
     "words": 567,
-    "sha256": "7d499f13e334d2db"
+    "sha256": "640388fe2f41f6e5"
    },
    "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): the M22 cavity rule gained a signed DEV-SPINE-0 instance (the echo/E1 repair, temporal ownership R1, standing check V41) and a DEV-SPINE-0 sealed note that raises no rung. The summary above (rules are governance, not capability) stays accurate and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/01-kitchen-rules.md"
@@ -1261,15 +1234,15 @@
    "reviewed_at": null,
    "plain": {
     "html": "<p>A shelf, not a dish. It lists once, in one place, the engines and building blocks that every later recipe in the cookbook reaches for. When a recipe names an ingredient, you can come here to see exactly what that ingredient is, what status it holds, and what it must never be read to mean. All of it belongs to a simulation, not to a person.</p><p>The recipes do not each ship their own model. They reuse one engine and swap only the world it is coupled to. The label attached to an ingredient here travels with it wherever it is used, and a recipe inherits its ingredients' limits.</p><p>Most of the page says what its ingredients must not be read to mean. A number computed at one level of precision may not be printed at a finer one. A reading result is a counting baseline and nothing more — not comprehension, not active inference, not a win over other systems. Hardware and substrate work is engineering evidence, never evidence that a science gate was met. Negative results are set out inline. And it closes with a list of what is not claimed: no demonstration of active inference, no created life, no awareness, no human-level ability. One newly listed engine is a sealed step that raises no rung.</p>",
-    "chars": 1195,
+    "chars": 1199,
     "words": 218,
-    "sha256": "63e69f7259f02c06"
+    "sha256": "63c3e8e56aebdbad"
    },
    "clear": {
     "html": "<p>This chapter is the stocked shelf the rest of the cookbook reaches into. It exists so that a later recipe can name an ingredient in one line and a reader can look up here what that ingredient actually is, what its status really is, and what it must not be read to prove. The load-bearing idea is stated at the top: one engine, many scales. Recipes do not each bring their own model; they reuse one discrete engine and swap only the observation model and the world it couples to.</p><p>Two governance rules travel with the food. World, body and mind are kept as separate typed layers, with signals from the hardware treated as the body's own senses. And learning is done by adding counts, with a guard that forbids gradient methods inside the loop. The chapter is explicit that these are method patterns rather than evidence, and that the language of active inference appears only as a framing lens at textbook level.</p><p>The centre of the page is a table of ingredients, each with what it supplies and its real status. There is a discrete planning engine, a higher-precision reading path, a counting reader, and a modulator that sets how strongly signals are weighted. Then a starting-point routine for a first cell division, an organ for metabolism, a motor hierarchy, a set of small browser demonstrations, and a substrate that runs the whole thing on real hardware.</p><p>Then come the fences — the sentences saying what each ingredient must not be read to mean — which take up more room than the table. The precision fence says that anchors computed at the coarser numeric setting must never be printed at the finer tier, and it records that a claim of that sort was caught and corrected. The counting fence says the reading result is a baseline win by counting and nothing more. It sits behind systems trained by gradient methods on one measure, by a chosen design trade, and it points to two published negatives attached to the same reader. The substrate fence says that engineering work on the body does not imply any science gate is met. Continuity across a real kernel swap is owed rather than shown. And coupling the body only to what has been earned is the programme's central open gap, which is parked. The affect fence says the modulator is functional and that feeling is modelled, never felt.</p><p>There is no single experiment that passes this page. Its condition is fidelity: every ingredient labelled at exactly its class and no higher, and every recipe inheriting its ingredients' fences. What would sink it is stated as the mirror image: the pantry fails if any ingredient is ever labelled above its class anywhere in the book.</p><p>Recorded negatives close the chapter, carried inline by design. The metabolism organ helps foraging and crafting but made building worse in the same live run, and a gate on that stays open. An over-compressed sensory bottleneck lost on data it had not seen, so the fuller set of channels is kept. A simplified factored posterior was built and rejected as lossy, so the exact joint version is used everywhere. The final fence repeats what is not claimed: no demonstration of active inference, no created life, no awareness, no human-level ability — a developmental simulation, a bounded peek, about two of eleven-plus rungs earned. A newly listed engine, a sealed developmental-organism step, raises no rung and brings no organism to life.</p>",
-    "chars": 3369,
+    "chars": 3379,
     "words": 580,
-    "sha256": "f552f859826aeaad"
+    "sha256": "c6dc9d37903d63c4"
    },
    "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 developmental-organism row was added to the engine table (sealed, A1–A10 PASS, no organism born, no rung moved). The summary above stays accurate (a shelf of engines each carrying its own status label) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review.",
    "source_file": "content/lenses/wiki/cookbook/02-the-pantry.md"
@@ -1300,87 +1273,6 @@
    },
    "note": "",
    "source_file": "content/lenses/wiki/cookbook/99-closing.md"
-  },
-  {
-   "scope": "wiki",
-   "key": "cookbook/master-plan",
-   "corpus": "cookbook",
-   "source_sha256": "fea791865145fdca",
-   "source_body_sha256": "b5dc62a7a5822276",
-   "source_words": 9937,
-   "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
-   "review_state": "draft",
-   "reviewed_by": null,
-   "reviewed_at": null,
-   "plain": {
-    "html": "<p>This is the whole cookbook compressed into one document. It is the outline of a single buildable recipe for a complete developmental arc, from conception through metabolism, movement, perception and language and on to open questions about creativity and awareness, all expressed as one engine shown at many scales. It describes a simulation — a bounded peek at a toy world, never a person.</p><p>The one thing it says is that the full recipe is recommended and every step is still labelled with what is really there. Each rung gets ingredients, method steps, a pass condition, the result that would sink it, and one honest status word. A separate ledger of claims, added to and never edited, sits beside the plan, and where the two disagree the plan is wrong.</p><p>Because it is a plan rather than a report, its most useful section is the one at the end: a list of open questions, ordered by how much each answer would unblock, each now carrying the answer it received. Those answers add designs, not results. Every one is recorded as a gate to build rather than something achieved, and the plan states that adding them raises no rung.</p>",
-    "chars": 1126,
-    "words": 198,
-    "sha256": "7ec53855a1af4c2d"
-   },
-   "clear": {
-    "html": "<p>This document is the cookbook in outline. It is the single buildable plan for a developmental arc, running from a first cell division through cellular upkeep, metabolism, an organ model, affect, movement, perception, language and a self-model. From there it goes on to reasoning, wisdom, offline replay and creativity. The unifying claim is modest and structural — one engine, reused at many scales, with only the world and the observation model swapped. The honest position is printed at the top and repeated at the bottom: about two of eleven-plus rungs earned, and the whole thing a developmental simulation.</p><p>It opens with the kitchen rules, set out as a table of governance patterns that bind every recipe below and are explicitly not capability claims. Every claim carries an evidence class and a falsifier, the result that would sink it, in a ledger added to and never edited. A bar is registered before the build, and a set kept back is touched once. A claim of reproduction is derived from several seeds rather than written in. Synthetic construction is diagnostic, never capability, and a bound is owed only after several structurally distinct negatives. A capability claim needs a tuned baseline and a check that collapses the gain. A passing test does not satisfy a criterion asking for an observation, and a linter downgrades an overclaim. World, body and mind stay separate, learning is counting with a guard against gradients, and numeric precision is stated honestly. What came from above is not counted as fresh evidence. Negatives are published as the pitch, a panel signs before a merge, and one change is made at a time. A long run is written down as it goes, because silence is not success. A list of standing limits follows, and then the four status words.</p><p>A shared pantry table names the engines every recipe draws on, each labelled at its real status. Then the ladder itself is walked rung by rung, and each rung is given the same shape: ingredients, numbered method, an exact gate, an operable falsifier, any recorded negatives inline, and one honest status word. The lower rungs carry passes with their limits and losses printed beside them. The upper rungs are parked or not built, and say so.</p><p>A separate section covers the substrate the whole thing runs on, marked as engineering evidence rather than science, with its own negatives carried first-class and its central coupling gap left open. It also records that an honesty audit calibrated several headline claims downward, and instructs the reader to carry the calibrated figures rather than the inflated ones.</p><p>The most distinctive section is the last. A set of open questions is listed, ordered by how much each answer would reduce uncertainty about whether a sealed gate could even be defined, and each now carries the answer it received. One refused a phrase and supplied scoped wording instead. One chose which missing primitive to port first. Three proposed first gates for rungs that had none. One proposed the next design on the motor frontier. One installed a framing guardrail for the top of the ladder. Every answer is folded in as designed and not run, and the plan states after each that the rung's status is unchanged.</p><p>The provenance note closes it: every figure, verdict, class and falsifier traces to a row in the ledger, no step is labelled above its evidence, no negative is hidden, and any step may be falsified.</p>",
-    "chars": 3415,
-    "words": 575,
-    "sha256": "f736756e5093f217"
-   },
-   "note": "2026-08-24 the PUBLISHED bytes moved, not the document. A project-key redaction that the operator ruled on 2026-08-04 was enforced only at the gate and never scrubbed, so the keys had been shipping; they are now replaced with a marker. The source digest is unchanged and the prose names no key, so only the published-body digest is re-stamped.",
-   "source_file": "content/lenses/wiki/cookbook/master-plan.md"
-  },
-  {
-   "scope": "wiki",
-   "key": "cookbook/uni-gpt-consult-2026-06-27",
-   "corpus": "cookbook",
-   "source_sha256": "ee37802a093cd24e",
-   "source_body_sha256": "ee37802a093cd24e",
-   "source_words": 4724,
-   "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
-   "review_state": "draft",
-   "reviewed_by": null,
-   "reviewed_at": null,
-   "plain": {
-    "html": "<p>This page is the captured record of one consultation on one day. A set of questions prepared beforehand were put to a science adviser, and the answers were written down as given, so that later chapters could point back at them.</p><p>The one thing this record says is that the whole session moved wording downward or left it alone, and raised nothing. The stated rule is written into the page's opening: an answer that would lift a claim is recorded but not applied, because a separate record of claims, never edited once written, remains the source of truth.</p><p>Most of the answers are designs rather than results. A first gate is proposed for a rung with none. A smallest measurable target is proposed for another that is not built, defined so that it never needs the word people would reach for. A next design is proposed for a motor frontier. A cure is proposed for a gate that is stuck. Every one is signed as a gate to build, and the page says explicitly that adding them raises no status.</p><p>The adviser also declined a phrase. It would not sign one form of words that could sound like a mathematical result, and supplied scoped wording instead, along with a list of banned phrasings and their permitted replacements.</p>",
-    "chars": 1215,
-    "words": 217,
-    "sha256": "7c71b8bc56f48827"
-   },
-   "clear": {
-    "html": "<p>This is a dated record rather than a chapter of the cookbook: the verbatim capture of a design consultation, taken so that later pages can cite what was actually said. Its framing rule is stated before the first answer. The answers fold back into the plans calibrated downward only, and an answer that would raise a claim is recorded but not applied. The ledger, an append-only record of claims that nobody edits, stays the single source of truth.</p><p>The first answer is a refusal as much as an agreement. Asked to sign a parked frontier as a published exhausted bound, the adviser signed the park but declined that phrase. The reason given was that it could sound like mathematical exhaustion of a design space when what exists is an empirical negative over a tested envelope. Replacement wording is supplied in full, scoping the result to the recorded corpus, splits, metrics, implementation, budget, ablations and baselines, and saying outright that it does not show that no future model could improve. Four banned phrasings are paired with permitted ones. Several conditions are attached that must hold for the park to stay honest: completeness of the record, fairness of the baselines, containment of the metric, and no drift from no tested variant to no possible variant. No rung is inflated, evidence labels stay attached, prose stays subordinate to the ledger, and no claim is made that the theory was demonstrated.</p><p>The second answer picks which missing piece of the substrate to port first, and ranks all four with reasons. The chosen one is the learning primitive, vendored exactly rather than reinterpreted, frozen at the version that passed its gate, and proved equivalent by tests. A falsifier is given — a result that would sink the port — including a subtle one: counts could update correctly while the planner still reads the wrong quantity, which would look like learning while failing the actual interface. A list of things that stay unclaimed until the other three land follows, and even after the port the honest status is only that one primitive is literally embodied.</p><p>Three further answers are gate designs for rungs that have none. One proposes the smallest target for a rung about reasoning. It tests only whether a slow piece of carried state improves prediction when the local context misleads, with a tuned baseline chosen precisely because it is the one that has so far won. One defines what an offline replay effect would have to measure, with ablations that must collapse the gain and a safety check to catch the case where the benefit was simply extra data. One proposes the next motor design, aimed at a positive rather than at farming another negative, and spells out the conditions under which a clean failure would not even count toward a future bound.</p><p>The last answer is the framing guardrail for the top of the ladder. It supplies a paragraph to be published word for word posing awareness as an open question, a list of forbidden phrasings, and a ten-point checklist that any future proposal must clear before it may even be proposed.</p><p>The overall sign-off is quoted directly, and it signs the honesty posture with its stated limits preserved rather than signing any capability. The closing exchange records that the park wording and the forbidden phrasings are to be treated as binding red lines for all public copy.</p>",
-    "chars": 3356,
-    "words": 566,
-    "sha256": "4dc4f09170caca7e"
-   },
-   "note": "",
-   "source_file": "content/lenses/wiki/cookbook/uni-gpt-consult-2026-06-27.md"
-  },
-  {
-   "scope": "wiki",
-   "key": "cookbook/uni-gpt-consult-package",
-   "corpus": "cookbook",
-   "source_sha256": "54b6294d49320a39",
-   "source_body_sha256": "54b6294d49320a39",
-   "source_words": 823,
-   "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
-   "review_state": "draft",
-   "reviewed_by": null,
-   "reviewed_at": null,
-   "plain": {
-    "html": "<p>This is a short working document rather than a chapter. It is a prepared package of questions, written to be pasted into a consultation with a science adviser, along with the block of context that has to go first. It records why it exists in this form: the connection needed to run the consultation was not available at the time, so the package was written out and queued instead.</p><p>The one thing it says is what the programme most wanted to ask, ordered by how much each answer would unblock. The questions cover how to word a parked frontier so it stays a bound rather than an overclaim. They also ask which missing piece to port first, to close the gap between a coupling rule signed in principle and one that is literally true. They ask what smallest change would move a gate that is stuck. And they ask what smallest measurable target would suit rungs that have no gate at all.</p><p>The answer slots are empty. The page also states its own limits plainly: no protected mathematics may be pasted, the framing stays at textbook level, and the output of such a consultation is a private design input rather than something to publish.</p>",
-    "chars": 1130,
-    "words": 204,
-    "sha256": "163cf389dc371270"
-   },
-   "clear": {
-    "html": "<p>This page is a small piece of working apparatus, and reading it as anything more would be a mistake. It is the ready-to-run package for a design consultation: a context block to paste first, then a set of questions ranked by how much each answer would unblock. It records that it was prepared and queued because the browser connection needed to run the consultation was not available at the time.</p><p>The context block is worth noticing on its own, because it is the programme describing itself to an outside adviser. It states the honest position: a developmental simulation with about two of eleven-plus rungs earned. It then lists the standing limits it expects to be kept. No claims of general intelligence, awareness, human-level ability or created life. A reading result treated as a counting baseline and nothing more. Synthetic work never inflated into capability. No claim raised above its evidence class. And negatives treated as first-class content. It then summarises which rungs are largely earned, which carry recorded negatives, which are parked, and which are not built and hard-fenced.</p><p>The questions themselves map the programme's open problems. How should a parked frontier be worded so that it stays a scoped bound rather than becoming a claim that a search is exhausted or a threshold achieved? Of several primitives missing from the substrate, which single one should be ported first, frozen at the version that passed its gate, to close the gap between a coupling rule signed in principle and one that is literally true? What is the smallest structurally distinct change that would move a metabolism gate which is open and diagnosed as a starvation of information-seeking, and what paired experiment would isolate it one cure at a time? What is the smallest falsifiable target for a rung that has no gate, complete with a tuned baseline, a discriminator that must collapse the gain, and a genuine computed ablation? What smallest downstream gate would make an offline replay effect real without ever needing the word for it? Which structurally distinct design should accrue next on the motor frontier? And what published wording keeps the awareness question falsifiable rather than answered?</p><p>The answer slots are left empty, which is what makes this a record of a moment rather than a result. A closing note says what to do afterwards: fold any sign-offs or corrections back into the plans, calibrating wording downward only, record any captured sign-off, and update the progress file.</p><p>The page also sets its own limits. Protected mathematics is never to be pasted, the framing stays at textbook level, and the consultation is a private design input whose output is not a publishing surface.</p>",
-    "chars": 2713,
-    "words": 445,
-    "sha256": "142d768cd344f0be"
-   },
-   "note": "",
-   "source_file": "content/lenses/wiki/cookbook/uni-gpt-consult-package.md"
   },
   {
    "scope": "wiki",
@@ -8323,12 +8215,12 @@
   }
  ],
  "totals": {
-  "content_routes": 558,
-  "lensed": 304,
+  "content_routes": 555,
+  "lensed": 300,
   "reviewed": 0,
-  "draft": 304,
+  "draft": 300,
   "absent_records": 0,
-  "unlensed": 254,
+  "unlensed": 255,
   "orientations": 8
  },
  "limits": [
