@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "93b3a49ed38a611b4edcffad140e845c6db14103",
+    "pinned_commit": "57c4a8f03f93861afb864667e900b8a7d852263d",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -112,6 +112,14 @@
       "title": "CBT Module 10 — Scoring an unlived future",
       "one_line": "The first half of how a mind chooses. To pick an action you haven't taken, you imagine the future it brings (run your model forward) and score that imagined future by risk — the distance between the future you'd predict and the future you prefer. Rank three futures (sweater, fire, do nothing) by risk without living any of them.",
       "math": "Expected free energy (G) is Part I's free energy rolled forward over an unlived future, scored from the model before acting. Its first (pragmatic) term is risk = KL(predicted outcomes ‖ preferred outcomes), where preferences are a prior over the sensations you expect; the epistemic term arrives in Module 11. G is NOT yet built or sealed in the organism — standard active inference, held open ('built to', never 'does').",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-finding-out",
+      "source_file": "cbt_module_11_finding_out.html",
+      "title": "CBT Module 11 — The worth of finding out",
+      "one_line": "The second half of how a mind chooses. A mind doesn't only chase what it wants (risk); it pays to resolve what it doesn't know, because information is an investment that lowers every future bill. The blanket and the strange stove tie on risk and effort — only the stove resolves an uncertainty, and over many cold nights that pays for itself.",
+      "math": "Expected free energy G = risk + ambiguity. The epistemic term (ambiguity) is expected information gain — how far an action is expected to shrink uncertainty about the hidden state; minimising G maximises information gain while minimising risk. Information is worth exactly the future free energy it saves. G and its epistemic term are NOT yet built or sealed in the organism — standard active inference (exact form in Module 14), held open ('built to', never 'does').",
       "minutes": "20–40"
     },
     {
