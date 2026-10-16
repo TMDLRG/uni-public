@@ -7,3 +7,12 @@ public/model.html -text
 public/organism.html -text
 public/assets/classroom/* -text
 public/assets/media/* -text
+
+# The vendored nav chrome is an EXACT byte copy of the apex Precision pin (build_nav.cjs verifies
+# byte-identity against `git show <pin>:<path>`). An EOL conversion would make the working-tree bytes
+# differ from the pinned LF bytes and break that verification on a fresh Windows checkout, so these
+# are never line-ending-converted — like the served labs/rooms above.
+content/vendored/site-nav.json -text
+content/vendored/nav-snippet.html -text
+public/nav.css -text
+public/nav.js -text
