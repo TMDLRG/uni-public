@@ -50,6 +50,14 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(REPO, p), "utf8"));
 const OD1_NAMES = [
   ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+  // SOW/contract specifics + aggregate counts (owner's follow-on ruling 2026-10-16). Counts are
+  // anchored to the "N SOWs/clients including …" phrasing so a bare "clients"/"SOWs" or an unrelated
+  // number is never convicted; "binding" is caught only as a SOW id's trailing status. SolutionWright
+  // and the ORCHESTRATE tenant are the owner's own names and are deliberately absent.
+  ["SOW count", /\b\d+ SOWs\b(?= including)/g],
+  ["client count", /\b\d+ clients\b(?= including)/g],
+  ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
+  ["SOW id", /\bSOW-\d+ V\d+\.\d+,? binding\b/gi],
 ];
 
 // ─── --prove: copy the artifacts, break one thing at a time, require this script to notice ──────
@@ -158,6 +166,13 @@ if (process.argv.includes("--prove")) {
       // this gate file carries no literal of its own; section 1c must catch it.
       const j = JSON.parse(a["content/generated/mcp.json"]);
       j.note = (Array.isArray(j.note) ? j.note : []).concat("SOW for " + "Marketing" + "Wright" + " Sandbox.");
+      a["content/generated/mcp.json"] = JSON.stringify(j);
+    }],
+    ["leak a SOW specific / aggregate count into the MCP projection", (a) => {
+      // Owner's follow-on ruling class: SOW specifics + aggregate counts. Assembled from fragments and
+      // the aggregate "including" phrasing so this gate file carries no literal; 1c must catch it.
+      const j = JSON.parse(a["content/generated/mcp.json"]);
+      j.note = (Array.isArray(j.note) ? j.note : []).concat("7 SOWs including the " + "Sandbox" + " Phase-1 SOW-09 V2.0, binding.");
       a["content/generated/mcp.json"] = JSON.stringify(j);
     }],
   ];

@@ -139,9 +139,21 @@ const SCRUBS = [
 // This is a REDACTION, distinct from the whole-item REFUSAL below: the owner ruled these two names are
 // redacted to a marker estate-wide, and a sentence that loses only the name still carries honest,
 // publishable structure around it.
+// The client name and leak-record-id (2026-10-16 ruling) and, by the owner's follow-on ruling the
+// same day, the SOW/contract specifics and the aggregate counts the catalogue summarises. The count
+// patterns are ANCHORED to the "N SOWs/clients including …" aggregate phrasing (lookahead on
+// " including"), so a bare "clients"/"SOWs"/"binding" or an unrelated number elsewhere is NEVER
+// matched — the owner asked for these specific phrases and counts, not every occurrence. The SOW
+// name and id are specific literals; "binding" is only redacted as the trailing status of a matched
+// SOW id, never on its own. SolutionWright and the ORCHESTRATE tenant are the owner's OWN names and
+// are deliberately NOT listed — the ruling struck the COUNT, not the own-system names.
 const OWNER_REDACTIONS = [
   ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+  ["SOW count", /\b\d+ SOWs\b(?= including)/g],
+  ["client count", /\b\d+ clients\b(?= including)/g],
+  ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
+  ["SOW id", /\bSOW-\d+ V\d+\.\d+,? binding\b/gi],
 ];
 let ownerRedactHits = 0;
 

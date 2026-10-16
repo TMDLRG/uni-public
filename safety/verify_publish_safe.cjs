@@ -158,6 +158,15 @@ const COMMITTED_CATEGORY = [
 const OD1_NAMES = [
   ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+  // SOW/contract specifics + aggregate counts (owner's follow-on ruling 2026-10-16). The counts are
+  // ANCHORED to the "N SOWs/clients including …" aggregate phrasing, so a bare "clients"/"SOWs" or an
+  // unrelated number anywhere on the estate is never convicted; "binding" is only caught as the
+  // trailing status of a SOW id. SolutionWright / the ORCHESTRATE tenant are the owner's own names and
+  // are deliberately absent — the ruling struck the COUNT, not the own-system names.
+  ["SOW count", /\b\d+ SOWs\b(?= including)/g],
+  ["client count", /\b\d+ clients\b(?= including)/g],
+  ["SOW name", new RegExp("Sandbox" + " Phase-1", "g")],
+  ["SOW id", /\bSOW-\d+ V\d+\.\d+,? binding\b/gi],
 ];
 
 // Paths that must never exist in this repo at all, by name.
@@ -521,23 +530,32 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
           : `positive=${posHit || "MISSED"} negative=${negHit || "clean"} — a category rule with no positive proof is decoration, and one that fires on the negative sample would false-positive`,
       });
     }
-    // OD-1 NAME MATCHERS — prove the client-name/leak-id needles bite on a positive built from
-    // fragments, and do NOT convict the legitimate public attribution handle (SolutionWright) or an
-    // "N-LEAKED" word. A section-5c check that never bites would be a comment, not a gate.
+    // OD-1 NEEDLES — prove every owner-ruled pattern bites its real target AND spares the lookalikes
+    // the owner did NOT rule out: the SolutionWright handle, an "N-LEAKED" word, a bare "binding", a
+    // "clients"/"SOWs" with no aggregate "including", an unrelated number. A check that never bites is
+    // a comment; one that convicts a lookalike is the 8442-class false positive this guards against.
     {
-      const [[, reClient], [, reLeak]] = OD1_NAMES;
-      const posClient = "9 SOWs including " + "Marketing" + "Wright" + " Sandbox Phase-1.";
-      const negClient = "source github.com/" + "Solution" + "Wright" + "/Workbench";
-      const posLeak = "incident " + ["N", "LEAK"].join("-") + " was burned";
-      const negLeak = "the run was " + ["N", "LEAKED"].join("-") + " downstream";
-      const cOk = (posClient.match(reClient) || []).length === 1 && (negClient.match(reClient) || []).length === 0;
-      const lOk = (posLeak.match(reLeak) || []).length === 1 && (negLeak.match(reLeak) || []).length === 0;
+      const byLabel = (l) => (OD1_NAMES.find((e) => e[0] === l) || [])[1];
+      const cases = [
+        ["client-name", byLabel("client-name"), "a SOW with " + "Marketing" + "Wright" + " today", "fork of github.com/" + "Solution" + "Wright"],
+        ["leak-record-id", byLabel("leak-record-id"), "incident " + ["N", "LEAK"].join("-") + " burned", "the job was " + ["N", "LEAKED"].join("-")],
+        ["SOW count", byLabel("SOW count"), "9 SOWs including the first", "9 SOWs were signed last year"],
+        ["client count", byLabel("client count"), "12 clients including two internal", "the server had 12 clients connected"],
+        ["SOW name", byLabel("SOW name"), "the " + "Sandbox" + " Phase-1 engagement", "a sandbox for local testing"],
+        ["SOW id", byLabel("SOW id"), "ref SOW-01 V1.3, binding here", "a binding commitment, no id"],
+      ];
+      const fails = [];
+      for (const [label, re, pos, neg] of cases) {
+        if (!re) { fails.push(`${label}: pattern missing`); continue; }
+        if (!(pos.match(new RegExp(re.source, re.flags)) || []).length) fails.push(`${label}: missed its target`);
+        if ((neg.match(new RegExp(re.source, re.flags)) || []).length) fails.push(`${label}: FALSE POSITIVE on a lookalike`);
+      }
       muts.push({
-        label: "OD-1 name needles bite on the real names AND spare the SolutionWright handle / 'N-LEAKED'",
-        pass: cOk && lOk,
-        detail: cOk && lOk
-          ? "client-name + leak-record-id each caught in a positive sample and left their lookalikes clean"
-          : `client-name=${cOk ? "ok" : "FAIL"} leak-record-id=${lOk ? "ok" : "FAIL"} — a needle that misses the real name or convicts the lookalike is not a usable gate`,
+        label: "every OD-1 needle bites its target AND spares the lookalikes (names, counts, SOW specifics)",
+        pass: fails.length === 0,
+        detail: fails.length === 0
+          ? `${cases.length} owner-ruled pattern(s): each caught its positive and left the lookalike clean — SolutionWright, N-LEAKED, bare binding, and a count/SOWs without the aggregate "including" all pass through`
+          : fails.join(" · "),
       });
     }
     try { fs.rmSync(tmp, { recursive: true, force: true }); } catch { /* noop */ }
