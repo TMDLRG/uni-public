@@ -128,6 +128,23 @@ const SCRUBS = [
   [/\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi, "[redacted: programme-run id]"],
 ];
 
+// ─── the OWNER REDACTIONS (OD-1, owner ruling 2026-10-16) ───────────────────────────────────────
+// The client name and the leak-record-id are redacted EVERYWHERE on the owner's ruling, to a visible
+// marker — the SAME discipline generators/ingest_docs.cjs already applies to docs.json. It is brought
+// here because build_mcp.cjs projects a DIFFERENT source (the SWU-MCP catalogue) that the ingest never
+// touches, so the client name reached the live /wiki MCP page past every docs.json check. Built from
+// FRAGMENTS joined at run time, never spelled out, because this file is TRACKED and the publish gate
+// forbids the literal in any tracked file — writing the rule the obvious way makes the gate convict the
+// very generator that fixes the leak (the same technique ingest_docs and the scrub prefix above use).
+// This is a REDACTION, distinct from the whole-item REFUSAL below: the owner ruled these two names are
+// redacted to a marker estate-wide, and a sentence that loses only the name still carries honest,
+// publishable structure around it.
+const OWNER_REDACTIONS = [
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+];
+let ownerRedactHits = 0;
+
 // ─── the REFUSAL, which is a different act from the scrub and must stay different ───────────────
 // The scrub REDACTS structural shapes — an address, a port — replacing them with a visible marker,
 // because the sentence still means something without them.
@@ -137,6 +154,13 @@ const SCRUBS = [
 // tells a reader that a name was there and invites them to work out whose, and a sentence built
 // around a removed name is often still identifying. So any ITEM whose text touches a denied value
 // is dropped whole.
+//
+// EXCEPTION — OD-1 owner ruling, 2026-10-16: the client name and the leak-record-id are an explicit,
+// estate-wide REDACTION to a marker (see OWNER_REDACTIONS above), because the owner chose the same
+// marker discipline the rest of the site already uses for those two names. The refuse-whole rule here
+// still governs every OTHER operator-registered denied value — and that refusal is now actually applied
+// to the tools array below. It was previously defined but never called, so the withheld block made a
+// "checked" claim the code could not keep; wiring it is part of this OD-1 fix.
 const DENIED = (() => {
   try {
     const p = JSON.parse(fs.readFileSync(path.join(REPO, "safety", "patterns.local.json"), "utf8"));
@@ -171,6 +195,9 @@ function scrub(s) {
   let out = s;
   for (const [re, rep] of SCRUBS) {
     out = out.replace(re, () => { scrubHits++; return rep; });
+  }
+  for (const [label, re] of OWNER_REDACTIONS) {
+    out = out.replace(re, () => { ownerRedactHits++; return `[redacted: ${label}]`; });
   }
   return out;
 }
@@ -288,7 +315,10 @@ const CATEGORY_BLURB = {
 
 // ─── tools ───────────────────────────────────────────────────────────────────────────────────────
 const toolsRaw = Array.isArray(inner.tools) ? inner.tools : [];
-const tools = toolsRaw.map((t) => ({
+// REFUSE whole any tool whose text touches an operator-registered denied VALUE (patterns.local.json).
+// The owner-ruled client-name/leak-id are NOT in that list — they are handled by redaction
+// (OWNER_REDACTIONS), so a tool that merely mentions the client is redacted in place, not dropped.
+const tools = refuseDenied(toolsRaw.map((t) => ({
   name: t.name,
   description: t.description || null,
   read_actions_observed_count: typeof t.read_actions_observed_count === "number" ? t.read_actions_observed_count : null,
@@ -296,7 +326,7 @@ const tools = toolsRaw.map((t) => ({
   evidence_class: t.evidence_class || null,
   notes: t.notes || null,
   category: CATEGORY_OF[t.name] || "other",
-}));
+})));
 
 // Category rollup, ordered by CATEGORY_ORDER; unknown categories fall to the bottom in the order
 // they first appear.
@@ -406,18 +436,21 @@ const out = deepScrub({
   withheld: null,
 });
 
+const ownerNote = ` Separately, on the owner's OD-1 ruling (2026-10-16), the client name and the leak-record-id are redacted to a marker wherever they appear in this projection: ${ownerRedactHits} such redaction(s) here.`;
 out.withheld = DENIED === null
   ? {
       checked: false,
-      note: "The operator's denied-value list could not be read when this page was generated, so no claim is made that it was applied. A missing check and a passing check are not the same thing, and this says which one happened.",
+      owner_redactions: ownerRedactHits,
+      note: "The operator's denied-value list could not be read when this page was generated, so no claim is made that the whole-item refusal was applied. A missing check and a passing check are not the same thing, and this says which one happened." + ownerNote,
     }
   : {
       checked: true,
       items: refusedCount,
       scrub_hits: scrubHits,
-      note: refusedCount === 0
+      owner_redactions: ownerRedactHits,
+      note: (refusedCount === 0
         ? `No item was withheld. Structural details (addresses, hostnames, ports) were redacted in place ${scrubHits} time(s) — each with a visible marker so the reader can see something was removed.`
-        : `${refusedCount} item(s) were REFUSED — dropped whole, not redacted — because their text names a third party who has not consented to appear here. They are counted rather than silently omitted. Structural details are handled differently: those are redacted in place with a visible marker (${scrubHits} redaction(s) in total), because the sentence still means something without them. A name does not work that way.`,
+        : `${refusedCount} item(s) were REFUSED — dropped whole, not redacted — because their text names a third party who has not consented to appear here. They are counted rather than silently omitted. Structural details are handled differently: those are redacted in place with a visible marker (${scrubHits} redaction(s) in total), because the sentence still means something without them. A name does not work that way.`) + ownerNote,
     };
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
