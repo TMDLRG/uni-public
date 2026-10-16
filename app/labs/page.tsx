@@ -40,6 +40,8 @@ type Vendored = {
   one_line: string;
   math: string;
   minutes: string;
+  track?: string;
+  order?: number;
   served_at: string;
   source: { repo: string; url: string; path: string; commit: string; commit_short: string };
   served_sha256: string;
@@ -136,6 +138,14 @@ function LabCard({ lab }: { lab: Vendored }) {
 
 export default function Labs() {
   const pinIsHead = d.workbench.measured.head_commit === d.workbench.pinned_commit;
+  // The numbered CBT track: the machine key `part-1` + `order` live in the registry (labs.json ->
+  // build_labs). The human-facing label is a nav concern — LABEL TBD VIA NAV MANIFEST; kept in one
+  // place so the wording reconciles in a single edit with the apex nav shell before landing.
+  const PART1_LABEL = "Part I — Active Inference by hand (Modules 1–8)"; // TBD via manifest
+  const part1 = d.vendored
+    .filter((l) => l.track === "part-1")
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const sandboxes = d.vendored.filter((l) => l.track !== "part-1");
 
   return (
     <>
@@ -164,8 +174,9 @@ export default function Labs() {
 
       <p>
         These labs are the practical half of a curriculum: <Link href="/course/">the course</Link>{" "}
-        is the syllabus they teach inside, and <Link href="/hall/">the hallway</Link> places them
-        among the rest of the estate.
+        is the syllabus they teach inside, <Link href="/hall/">the hallway</Link> places them
+        among the rest of the estate, and <Link href="/paths/">the paths</Link> place the{" "}
+        {part1.length} CBT modules in a guided order for the audience you are.
       </p>
 
       <section>
@@ -215,8 +226,31 @@ export default function Labs() {
             .)
           </span>
         </p>
+        <h3>{PART1_LABEL}</h3>
+        <p>
+          {part1.length} modules in sequence. Module 1 is where you start; each builds the number
+          the next needs, until by the last you have assembled variational free energy by hand.
+          Module {part1.length} closes Part I and points toward action — expected free energy over
+          futures.{" "}
+          <span className="dim">
+            That next part is the build underway, not asserted here, and not yet a track that runs
+            on this page.
+          </span>{" "}
+          Every module below is served from this site and byte-verified like the rest.
+        </p>
         <div className="project-doors">
-          {d.vendored.map((lab) => (
+          {part1.map((lab) => (
+            <LabCard key={lab.slug} lab={lab} />
+          ))}
+        </div>
+
+        <h3>Standalone sandboxes</h3>
+        <p>
+          {sandboxes.length} labs that stand on their own. They are not a sequence: each is a single
+          idea you can run by itself, in any order.
+        </p>
+        <div className="project-doors">
+          {sandboxes.map((lab) => (
             <LabCard key={lab.slug} lab={lab} />
           ))}
         </div>
@@ -281,8 +315,9 @@ export default function Labs() {
 
       <p className="dim">
         Wondering how this connects to the rest of the estate? <Link href="/hall/">The hallway</Link>{" "}
-        has one door per project, and <Link href="/course/">the course</Link> walks these labs in
-        teaching order.
+        has one door per project, and <Link href="/course/">the course</Link> walks the{" "}
+        {part1.length} CBT modules above in order as its Part I track; the other labs it points to
+        as companions to its chapters, not in a fixed sequence.
       </p>
     </>
   );

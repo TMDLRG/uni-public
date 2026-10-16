@@ -1,5 +1,6 @@
 import Link from "next/link";
 import course from "../../content/generated/course.json";
+import labs from "../../content/generated/labs.json";
 
 export const metadata = {
   title: "The course",
@@ -60,6 +61,16 @@ const blob = (path: string) => `${d.source.public_url}/blob/${d.source.commit}/$
 const repoAtCommit = `${d.source.public_url}/tree/${d.source.commit}`;
 const chapterMinutes = (c: Chapter) => c.sessions.reduce((n, s) => n + s.minutes, 0);
 const preface = d.chapters.find((c) => c.part === "preface");
+const labsData = labs as unknown as {
+  workbench: { pinned_commit: string };
+  counts: { vendored: number };
+  vendored: { slug: string; title: string; one_line: string; served_at: string }[];
+};
+// The 8 CBT modules are the "do it by hand" track; labs.json array order is module 1..8 (teaching
+// order). Never type the list or its length. Track label TBD via nav manifest (shared with /labs).
+const cbtModules = labsData.vendored.filter((l) => l.slug.startsWith("cbt-"));
+const labsCommitShort = labsData.workbench.pinned_commit.slice(0, 12);
+const PART_I = "Part I"; // TBD via manifest
 
 const PATHS: { key: "kid" | "real" | "equation" | "derivation"; label: string }[] = [
   { key: "kid", label: "kid" },
@@ -169,6 +180,32 @@ export default function Course() {
         </section>
       ))}
 
+      <h2>{PART_I} in your browser — the {cbtModules.length} interactive modules, by hand</h2>
+      <p>
+        Before any BEAM boots, the {cbtModules.length} CBT modules below are a single track built to be
+        walked <i>in order</i>. Each makes you derive the next piece yourself: a numberless hunch becomes
+        surprisal, surprisal hits the intractable-evidence wall, and free energy is the one number you{" "}
+        <i>can</i> compute that climbs back out. Each is a single HTML file that runs in your browser — no
+        account, no server — byte-verified on every build against the public source at{" "}
+        <code>{labsCommitShort}</code>, the same registry <Link href="/labs/">the labs</Link> are drawn
+        from.
+      </p>
+      <div className="note">
+        <b>What this track is, and is not.</b> These modules are a developmental simulation of inference —
+        the first rungs of a long ladder, not a mind, and nothing here is aware or alive. They assert only
+        what they prove on screen: the arithmetic you land is checked against a sealed reference. {PART_I}{" "}
+        covers inference; action — expected free energy over futures — is the build underway, not a claim
+        made here.
+      </div>
+      <ul>
+        {cbtModules.map((m) => (
+          <li key={m.slug}>
+            <a href={m.served_at}>{m.title}</a>{" "}
+            <span className="dim">— {m.one_line}</span>
+          </li>
+        ))}
+      </ul>
+
       <h2>Run the whole Workbench yourself</h2>
       <p>
         The deep surfaces of this course — the visual model builder at <code>/builder</code>, the
@@ -217,9 +254,12 @@ export default function Course() {
       </p>
       <p>
         And some of the course needs no BEAM at all: the learning labs are standalone simulations
-        that run in the browser, and those run <Link href="/labs/">right here</Link>. (Seven of
-        them, by RUN_LOCAL.md&rsquo;s own count at {d.source.commit_short} — that figure is quoted
-        from the source, not measured by this page.)
+        that run in the browser, and those run <Link href="/labs/">right here</Link>.{" "}
+        {labsData.counts.vendored} of them are served from this site and byte-verified on every build
+        against the public source at <code>{labsCommitShort}</code> — that figure is read from the
+        labs registry, not typed here. The {cbtModules.length} CBT modules are the {PART_I} track
+        above; the remaining {labsData.counts.vendored - cbtModules.length} are the standalone Bayes,
+        POMDP, free-energy, predictive-coding and atlas labs.
       </p>
 
       <p className="dim">

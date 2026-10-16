@@ -61,6 +61,25 @@ const cleanCard = (c) => ({
   choices: (c.choices || []).map(cleanChoice),
 });
 
+// ── the matched "do" door per persona (UNI.Public routing, not Precision pedagogy) ──
+// A reader-matched INTERACTIVE/primary surface that already exists on this site, shown FIRST at the
+// end of the loop alongside the three unchanged reading doors. raw:true => a /play/<slug> static file
+// served by a vercel.json rewrite (render as <a>, extensionless, NO trailing slash); app routes keep
+// the slash. Labels/blurbs are provisional pending the shared nav manifest — one edit reconciles them.
+const DO_DOORS = {
+  builder:    { href: "/labs/", label: "Open the labs and run one", blurb: "Every lab served from this site, byte-verified against pinned source — pick one and run it in your browser." },
+  beginner:   { href: "/play/cbt-surprise", raw: true, label: "Do Module 1 by hand", blurb: "The first idea — surprise — as a small thing you work one step at a time. No math first, just a guess and a look." },
+  student:    { href: "/course/", label: "Follow the course track", blurb: "The same modules walked in teaching order — the open syllabus the labs teach inside. The math is a reward, not a gate." },
+  educator:   { href: "/course/", label: "Walk the teaching track", blurb: "The modules in teaching order, with the predict-then-observe fork you can lift into a class period tomorrow." },
+  engineer:   { href: "/play/pomdp-machine", raw: true, label: "Trace the POMDP machine", blurb: "The control loop behind every agent — run it end to end in your browser and read the trace. One HTML file, CPU only." },
+  steam:      { href: "/play/free-energy-forge", raw: true, label: "Work the free-energy forge", blurb: "Variational free energy as a thing you can push on: commit a prediction, read the run, weigh the gap." },
+  skeptic:    { href: "/wrong/", label: "See where it is wrong", blurb: "The falsification wall: every contradicted claim, refuted prediction and withdrawn number, quoted from the estate's own ledgers." },
+  journalist: { href: "/evidence/", label: "Go to the receipts", blurb: "Evidence and verdicts: the dated record of the method actually running, including the runs that failed. No pitch waits there." },
+  caregiver:  { href: "/play/cbt-surprise", raw: true, label: "Try Module 1 at your own pace", blurb: "A gentle first module — surprise, as a small thing you try by hand. Nothing to decide, diagnose, or fix." },
+};
+// Any persona not named above (the Precision source carries more) gets the universal by-hand entry.
+const DEFAULT_DO = { href: "/play/cbt-surprise", raw: true, label: "Do Module 1 by hand", blurb: "The first idea — surprise — as a small thing you work one step at a time, by hand." };
+
 const out = [];
 let missing = 0;
 for (const p of personas) {
@@ -68,7 +87,7 @@ for (const p of personas) {
   if (!pw) { missing++; continue; }
   const cards = (pw.nodes || []).map((id) => cardsById.get(id)).filter(Boolean).map(cleanCard);
   if (!cards.length) { missing++; continue; }
-  out.push({ id: p.id, label: String(p.label), invite: String(p.invite), cards });
+  out.push({ id: p.id, label: String(p.label), invite: String(p.invite), do: DO_DOORS[p.id] || DEFAULT_DO, cards });
 }
 
 if (!out.length) { console.error("REFUSING: resolved zero personas — the data shape changed."); process.exit(1); }

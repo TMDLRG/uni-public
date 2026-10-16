@@ -14,7 +14,8 @@ import { useState } from "react";
 
 type Choice = { label: string; peek: string; found: string };
 type Card = { theme: string; kicker: string; question: string; choices: Choice[] };
-type Persona = { id: string; label: string; invite: string; cards: Card[] };
+type DoDoor = { href: string; label: string; blurb: string; raw?: boolean };
+type Persona = { id: string; label: string; invite: string; cards: Card[]; do?: DoDoor };
 
 const emit = () => {}; // no-op: this site sends nothing. The pedagogy is ported, the beacon is not.
 
@@ -71,7 +72,7 @@ export default function OnRamp({ personas, defaultPersona }: { personas: Persona
           That is the whole idea: you never arrive blank — you arrive already leaning, and the world
           corrects you. Where would you like to go next?
         </p>
-        <Doors />
+        <Doors door={persona.do} />
         <p style={{ textAlign: "center", marginTop: 18 }}>
           <button className="pill" style={{ cursor: "pointer", background: "transparent" }} onClick={() => { setPersonaId(null); setStep(0); setPicked(null); }}>
             ← start over
@@ -126,9 +127,25 @@ export default function OnRamp({ personas, defaultPersona }: { personas: Persona
   );
 }
 
-function Doors() {
+function Doors({ door }: { door?: DoDoor }) {
+  // The FIRST door is the per-persona "do" door — a matched interactive/primary surface — rendered
+  // only when the persona carries one; the three reading doors always follow, unchanged. A "do" door
+  // whose href is a /play/* static file (door.raw) renders as a plain <a> (vercel rewrite target,
+  // not a Next route); app-route doors use <Link>. No onClick and no beacon: this site sends nothing.
+  const doDoor = !door ? null : door.raw ? (
+    <a className="door" href={door.href} style={{ borderColor: "var(--acc)" }}>
+      <b>{door.label}</b>
+      <span className="dim">{door.blurb}</span>
+    </a>
+  ) : (
+    <Link className="door" href={door.href} style={{ borderColor: "var(--acc)" }}>
+      <b>{door.label}</b>
+      <span className="dim">{door.blurb}</span>
+    </Link>
+  );
   return (
     <div className="doors">
+      {doDoor}
       <Link className="door" href="/articles/start-here/">
         <b>Understand it</b>
         <span className="dim">The idea, in the order you have to meet it. Six ideas, each needed for the next.</span>

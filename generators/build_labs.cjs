@@ -80,6 +80,7 @@ function main() {
     const servedPath = path.join(ROOT, "public", "play", `${lab.slug}.html`);
     const entry = {
       slug: lab.slug, title: lab.title, one_line: lab.one_line, math: lab.math, minutes: lab.minutes,
+      ...(lab.track ? { track: lab.track, order: lab.order } : {}),
       served_at: `/play/${lab.slug}`,  // extensionless: a vercel.json REWRITE serves the .html bytes at this path (no redirect), because the apex proxy strips .html before its own rewrite fires
       source: {
         repo: wb.public_repo,

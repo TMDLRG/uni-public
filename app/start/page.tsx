@@ -8,7 +8,7 @@ export const metadata = {
     "A gentle way in to Universal Natural Intelligence — for anyone, at any age. Start from something you already do, guess before you look, and follow your own path in.",
 };
 
-type Persona = { id: string; label: string; invite: string; cards: { theme: string; kicker: string; question: string; choices: { label: string; peek: string; found: string }[] }[] };
+type Persona = { id: string; label: string; invite: string; do?: { href: string; label: string; blurb: string; raw?: boolean }; cards: { theme: string; kicker: string; question: string; choices: { label: string; peek: string; found: string }[] }[] };
 const data = onramp as unknown as { default_persona: string; personas: Persona[] };
 
 /**
@@ -47,6 +47,7 @@ export default function StartPage() {
           ))}
         </div>
         <div className="doors">
+          <Link className="door" href="/labs/" style={{ borderColor: "var(--acc)" }}><b>Run a lab</b><span className="dim">Real math you can run in your browser — no account, no server, nothing sent.</span></Link>
           <Link className="door" href="/articles/start-here/"><b>Understand it</b><span className="dim">The idea, in order.</span></Link>
           <Link className="door" href="/coverage/"><b>See it measured</b><span className="dim">Every claim is gated.</span></Link>
           <Link className="door" href="/wiki/"><b>Read the source</b><span className="dim">The documents themselves.</span></Link>
