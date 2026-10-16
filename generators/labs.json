@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "0f336c1d0e5d80b8d1287926ef003e8bec2547e4",
+    "pinned_commit": "35a0c64b3cf07fca01be56abfa5fc75f62eeb2c2",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -145,6 +145,14 @@
       "one_line": "G = risk + ambiguity, on the page and computed by hand. On a concrete cold-cabin choice, the reward-perfect sweater (G=0.60) LOSES to the uncertain-but-revealing stove (G=0.36) once ambiguity is added — the epistemic term flips the decision. A calculator, not a curve: you check the risk KL yourself.",
       "math": "risk = KL(predicted outcomes ‖ preferred outcomes) — EXACT and checkable (risk_A=0, risk_B=0.6 ln(0.6/0.9)+0.4 ln(0.4/0.1)=0.311). ambiguity = expected likelihood entropy E_state[H(o|s)] — illustrative values (0.60 state-blind sweater, 0.05 revealing stove). G_A=0.60, G_B=0.36 -> min G picks the stove. Canonical: G(pi)=KL[Q(o|pi)‖C(o)]+E_Q(s|pi)[H[P(o|s)]]. DDNA's G term is NOT yet built or sealed — held open ('built to', never 'does').",
       "minutes": "25–45"
+    },
+    {
+      "slug": "cbt-precision",
+      "source_file": "cbt_module_15_precision.html",
+      "title": "CBT Module 15 — Precision: how hard to commit",
+      "one_line": "The last rung of Part II. Scoring ranks your options; precision (gamma) sets how hard you bet on the winner — decisiveness to doubt. Turn one dial over a FIXED set of G scores and watch the choice distribution sharpen onto the best (decisive) or flatten toward uniform (hedging): same scores, different sharpness.",
+      "math": "A mind acts out policies with P(pi) proportional to exp(-gamma G(pi)) — a softmax with inverse temperature gamma = precision. gamma -> infinity: all weight on the lowest-G policy (decisive); gamma -> 0: uniform (hedging). gamma is inferred, tracking how much to trust one's own scoring (world reliable -> raise; volatile -> lower). A neuromodulator label is ONLY ever a functional analogue — never the specific chemical, never a feeling. Precision over policies rides on expected free energy, NOT yet built or sealed in DDNA — held open ('built to tune', never 'does').",
+      "minutes": "20–40"
     },
     {
       "slug": "bayes-chips",
