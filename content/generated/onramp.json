@@ -13,6 +13,11 @@
    "id": "builder",
    "label": "For people who build things",
    "invite": "You already run a loop when you build: sketch a guess, run the thing, read what it actually did. Five short passes, one guess each. No pitch until the end.",
+   "do": {
+    "href": "/labs/",
+    "label": "Open the labs and run one",
+    "blurb": "Every lab served from this site, byte-verified against pinned source — pick one and run it in your browser."
+   },
    "cards": [
     {
      "theme": "the guess first",
@@ -115,6 +120,12 @@
    "id": "beginner",
    "label": "For beginners",
    "invite": "You do not need any background to be here. This page is a small quiet thing that only asks you to guess before you look. If a short story helps a lesson stick, you already know how to use this.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time. No math first, just a guess and a look."
+   },
    "cards": [
     {
      "theme": "the ferryman's rope",
@@ -232,6 +243,11 @@
    "id": "student",
    "label": "For students",
    "invite": "If you have taken a lab class, a stats unit, or a psych chapter, you already have the reflex this page rewards. It is a study aid more than a course. Every step is opt in, and the math at the end is a reward for curiosity, not a gate to pass.",
+   "do": {
+    "href": "/course/",
+    "label": "Follow the course track",
+    "blurb": "The same modules walked in teaching order — the open syllabus the labs teach inside. The math is a reward, not a gate."
+   },
    "cards": [
     {
      "theme": "the lab reflex",
@@ -349,6 +365,11 @@
    "id": "educator",
    "label": "For educators",
    "invite": "You have run some version of predict, observe, revise a few hundred times already, under whichever textbook name your syllabus prefers. What this page adds is a small clean fork you can lift into a class period tomorrow without any adaptation. The workshop is a door for those who ask, not a pitch.",
+   "do": {
+    "href": "/course/",
+    "label": "Walk the teaching track",
+    "blurb": "The modules in teaching order, with the predict-then-observe fork you can lift into a class period tomorrow."
+   },
    "cards": [
     {
      "theme": "the two term tradeoff by hand",
@@ -466,6 +487,12 @@
    "id": "engineer",
    "label": "For engineers",
    "invite": "You already run tight loops. Predict, measure, compare, adjust. This page is the same loop turned on itself: five short cards where you commit to a guess before the reveal. The fork you will feel is the one you feel every sprint, when to keep probing and when to ship what you have.",
+   "do": {
+    "href": "/play/pomdp-machine",
+    "raw": true,
+    "label": "Trace the POMDP machine",
+    "blurb": "The control loop behind every agent — run it end to end in your browser and read the trace. One HTML file, CPU only."
+   },
    "cards": [
     {
      "theme": "spec before signal",
@@ -583,6 +610,12 @@
    "id": "steam",
    "label": "For STEAM professionals",
    "invite": "You already work with models next to measurements for a living. These five cards run the same posture at a small scale: commit a prediction, read the run, weigh the gap, decide what to do with it. The rungs stay concrete through card three and give the math a name only at the end, opt in.",
+   "do": {
+    "href": "/play/free-energy-forge",
+    "raw": true,
+    "label": "Work the free-energy forge",
+    "blurb": "Variational free energy as a thing you can push on: commit a prediction, read the run, weigh the gap."
+   },
    "cards": [
     {
      "theme": "prior before observation",
@@ -700,6 +733,11 @@
    "id": "skeptic",
    "label": "For the skeptical",
    "invite": "You came in wary, which is the right posture for a page that asks you to commit before it shows anything. Fair enough. These five cards do not try to talk you out of that wariness. They earn it card by card, with a caveat next to every claim and an exit door that goes to the receipts rather than a pitch.",
+   "do": {
+    "href": "/wrong/",
+    "label": "See where it is wrong",
+    "blurb": "The falsification wall: every contradicted claim, refuted prediction and withdrawn number, quoted from the estate's own ledgers."
+   },
    "cards": [
     {
      "theme": "the prior you brought",
@@ -817,6 +855,11 @@
    "id": "journalist",
    "label": "For journalists",
    "invite": "You already run this loop under a different name: form the working theory, ask the question that could break it, read what actually came back, adjust. This short walk is a small on-the-record demonstration of the same loop, with the receipts visible as you go. The exit door lands on the transparency page, not a pitch.",
+   "do": {
+    "href": "/evidence/",
+    "label": "Go to the receipts",
+    "blurb": "Evidence and verdicts: the dated record of the method actually running, including the runs that failed. No pitch waits there."
+   },
    "cards": [
     {
      "theme": "the working theory, before the call",
@@ -934,6 +977,12 @@
    "id": "caregiver",
    "label": "For caregivers",
    "invite": "You care for someone. You already read the small shifts before anyone names them. This is just a short walk through a way of noticing you very likely already do. Nothing here asks you to decide, diagnose, or fix anything, and every step ends with a door you can choose.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Try Module 1 at your own pace",
+    "blurb": "A gentle first module — surprise, as a small thing you try by hand. Nothing to decide, diagnose, or fix."
+   },
    "cards": [
     {
      "theme": "the small shift, before words",
@@ -1051,6 +1100,12 @@
    "id": "faith_leader",
    "label": "For faith leaders (opt-in)",
    "invite": "You already listen to people who came to be heard. This is an opt-in walk that borrows the structural shape you know from parable and text, question, then look, then look again, and applies it to a small habit of noticing. Nothing here reads or endorses any tradition; we set the question, you keep your own answers. Every step ends in a door you can walk through, or step past.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the question, before the answer",
@@ -1168,6 +1223,12 @@
    "id": "parent",
    "label": "For parents",
    "invite": "You already read the people close to you in ways nobody taught you. A crumb on the counter, a shoulder held a little higher, a sentence that trails off before dinner. This is a small page that walks alongside that reading, one gentle noticing at a time. Nothing here is instruction, it is a companion to the quiet work you already do.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the small tell",
@@ -1285,6 +1346,12 @@
    "id": "nurse",
    "label": "For nurses",
    "invite": "You spend your working hours in rooms other people never enter. This is not one of those rooms. It is a small page about the way a thermostat listens, and the way a kitchen holds a rhythm, and the way you already read a room when you walk through the door of your own home. Adjacent to your work, not about it.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the thermostat in the hallway",
@@ -1387,6 +1454,12 @@
    "id": "elder",
    "label": "For elders",
    "invite": "You have watched a lot of seasons come and go. This is a small page that walks slowly, at the pace of a good afternoon. Nothing to sign up for, nothing to solve. A few pictures from a life like yours, and a chance to notice what you already know.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the wind at the window",
@@ -1504,6 +1577,12 @@
    "id": "veteran",
    "label": "For veterans",
    "invite": "You worked in places where conditions changed and plans had to update on the ground. You learned to read a situation before you moved. This is a small page that asks you to guess before it shows you anything. That habit of reading first is the whole point.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the read before the move",
@@ -1621,6 +1700,12 @@
    "id": "recovery",
    "label": "For those who tend a daily practice",
    "invite": "Some days you tend a small practice, one you do quietly because it is yours. A garden bed, a walk, a check-in with a friend. This is a small page that asks you to guess before it shows you anything. The habit of a small daily practice is exactly what it runs on.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the guess before you look",
@@ -1738,6 +1823,12 @@
    "id": "organizer",
    "label": "For community organizers",
    "invite": "You already run a loop out there: you listen to a neighborhood, you test a small thing with a few people, you read what came back, you adjust. This is a small page that names that loop plainly. It asks you to guess before it shows you anything, because that is what a good door-knock does anyway.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the listen before the ask",
@@ -1855,6 +1946,12 @@
    "id": "farmer",
    "label": "For farmers",
    "invite": "You already read fields the way most people read a book. Weather, soil, animals, the price sheet, all held at once. Come in with a season in mind and see if the shape of it lands.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "you already read the field",
@@ -1972,6 +2069,12 @@
    "id": "tradesperson",
    "label": "For tradespeople",
    "invite": "You already work the way this page is built: measure, cut, check, adjust, no drama about it. Come in with a real job in mind and see if the shape of it lands the way your work does.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "measure twice",
@@ -2089,6 +2192,12 @@
    "id": "writer",
    "label": "For writers",
    "invite": "You already work with a reader you cannot see. You guess how a line will land, read it back, and adjust. Come in with a page you are stuck on and see if the shape of it lands.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the reader in your head",
@@ -2206,6 +2315,12 @@
    "id": "artist",
    "label": "For artists",
    "invite": "You already work by looking, then looking again. You put a mark down, step back, and the mark tells you something you did not know before you made it. This is five short cards about that circuit, the one under every drawing you have finished and every one you have left. Nothing to install, no images to generate, just your own noticing.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the mark before the mark",
@@ -2323,6 +2438,12 @@
    "id": "musician",
    "label": "For musicians",
    "invite": "You already work by playing a phrase, hearing it, and playing it again slightly different. This is five short cards about that circuit, the one under every rehearsal and every take. Nothing to install and no music to generate for you, just the loop you already run when your hands are on the instrument.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "hearing before playing",
@@ -2440,6 +2561,12 @@
    "id": "gamer",
    "label": "For gamers",
    "invite": "You have already done the thing this page is about. You loaded into a match, read what the other side was doing, and updated a guess about them every round. Five short cards on that read, from the moment you commit to a call to the moment you decide whether to keep running your strategy or go find a new one.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the read before the round",
@@ -2557,6 +2684,12 @@
    "id": "historian",
    "label": "For historians",
    "invite": "You work the same loop we do, just with older sources. You hold a picture of what happened, then you go check it against the record. Come the same way here: guess first, then read what actually ran.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the working picture",
@@ -2669,6 +2802,12 @@
    "id": "librarian",
    "label": "For librarians",
    "invite": "You already run the loop at the reference desk. Someone asks a question, you listen for the question behind it, you help them find the reading. Come the same way here: notice what you already do, before we name it.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the question and the question behind",
@@ -2781,6 +2920,12 @@
    "id": "philosopher",
    "label": "For philosophers",
    "invite": "You already run this loop as a thought experiment, then you check it against the world. Come the same way here: state the strongest version of the claim, run it in your head first, then let the actual page correct you.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the charity move first",
@@ -2898,6 +3043,12 @@
    "id": "coach",
    "label": "For coaches",
    "invite": "You already run a session by reading what just happened and adjusting the next rep. That is a feedback loop, worked in real time on a real person. If you want to see it named plainly, walk through five short cards. No self-help talk. Just what a good coach already does, in slower motion.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the athlete before the rep",
@@ -3015,6 +3166,12 @@
    "id": "entrepreneur",
    "label": "For entrepreneurs",
    "invite": "You already test hypotheses on real customers with real money, and you already carry a portfolio of bets in your head. Five short cards, in slower motion, of what you already do before a good founder pattern matches to a category. No hacks, no build in public sneer. Just the loop, named plainly.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the belief before the call",
@@ -3132,6 +3289,12 @@
    "id": "teenager",
    "label": "For teenagers",
    "invite": "This is not a quiz and it is not a talk. It is five short cards that walk through what your own mind already does when you are actually curious about something. You commit to a guess, you look, you notice the gap, you adjust. If it feels obvious, good. That is the point.",
+   "do": {
+    "href": "/play/cbt-surprise",
+    "raw": true,
+    "label": "Do Module 1 by hand",
+    "blurb": "The first idea — surprise — as a small thing you work one step at a time, by hand."
+   },
    "cards": [
     {
      "theme": "the guess before you look",
