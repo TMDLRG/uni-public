@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.rooms/1.0.0",
   "generated_by": "generators/build_rooms.cjs",
-  "read_at": "2026-08-31T07:18:55.310Z",
+  "read_at": "2026-10-16T22:16:25.177Z",
   "note": [
     "THE ROOMS REGISTRY — the walk-in surfaces of the University: the classroom, the specimen and",
     "model pages around it, and the whiteboard where the mathematics is drawn live.",
@@ -32,6 +32,11 @@
     "/organism are served here verbatim, /defects is redirected to the published defects register",
     "in the wiki, and / is this site's entry."
   ],
+  "nav_chrome": {
+    "source": "content/vendored/nav-snippet.html",
+    "sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+    "injected": "verbatim, once, immediately after <body> — HTML rooms only; binary assets carry no nav"
+  },
   "sources": {
     "flagellum": {
       "root_key": "uni-flagellum",
@@ -60,10 +65,13 @@
       "source_path": "docs/classroom.html",
       "one_line": "The room you stand in: a photo-real laboratory with pixel-measured, hash-bound hotspots — the whiteboard, the specimen bench, the frequency wall and the mind-body wall.",
       "what_is_static_here": "the two viewer-API fetches fail closed into the page's own fallbacks; everything else — the room, the anchors, the specimens, the microscopy — is served from this site",
-      "served_sha256": "a4f1515153d3b9206a2ca92be838ec3cc3d5f9473d53947f7141c7134bc84a93",
-      "bytes": 52027,
+      "content_sha256": "a4f1515153d3b9206a2ca92be838ec3cc3d5f9473d53947f7141c7134bc84a93",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "fcd96d23e4829793a22468bab14e8728c38854848bcba476b9ddd2d42f702a61",
+      "bytes": 62926,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-flagellum-motor-stack",
       "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/classroom.html",
@@ -78,10 +86,13 @@
       "source_path": "docs/models.html",
       "one_line": "Every model the laboratory carries, as the classroom's own model wall presents them.",
       "what_is_static_here": "the live model-registry fetch fails closed; the page's built-in content is served as committed",
-      "served_sha256": "227c7a0edff18559b0a5aa67e9a93aa7db72de43b55813c312e8f9d3b3a34a54",
-      "bytes": 24700,
+      "content_sha256": "227c7a0edff18559b0a5aa67e9a93aa7db72de43b55813c312e8f9d3b3a34a54",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "924825d941942b299d328872e2ba75b24a9c121909a0eaef68def6c5e299ed8b",
+      "bytes": 35599,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-flagellum-motor-stack",
       "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/models.html",
@@ -96,10 +107,13 @@
       "source_path": "docs/architecture.html",
       "one_line": "How the laboratory is built: the world process, the recorder, the reconstruction and the agent, kept deliberately separate.",
       "what_is_static_here": "fully static — no fetches",
-      "served_sha256": "e9436a6615414253355b0107a2d73daa9f36c8c50a1c38b399859aac39608f2a",
-      "bytes": 19329,
+      "content_sha256": "e9436a6615414253355b0107a2d73daa9f36c8c50a1c38b399859aac39608f2a",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "568aa8fa3856ec3fe040976d773a66a2ca18f9226a0a95caa2da5efd7cb58abe",
+      "bytes": 30228,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-flagellum-motor-stack",
       "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/architecture.html",
@@ -114,10 +128,13 @@
       "source_path": "docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
       "one_line": "The dated state of the parity programme: the ladder, the gates, and what stands where — as of the date in its own title.",
       "what_is_static_here": "a dated document by design; it says its own date",
-      "served_sha256": "436acd02041e42ad3bf22c7f95d20722d321516540bec41a9faca752b40287ad",
-      "bytes": 25920,
+      "content_sha256": "436acd02041e42ad3bf22c7f95d20722d321516540bec41a9faca752b40287ad",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "f369f9e4bf3d5e1ad58fe024a485a22ff1d97ded47185df1d31a7d1efacd5a2e",
+      "bytes": 36819,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-flagellum-motor-stack",
       "source_url": "https://github.com/TMDLRG/uni-flagellum-motor-stack/blob/7d9e0f3f4e5f6279d3eaab6f6339a0299c02c5e7/docs/MODEL-STATE-SNAPSHOT-2026-08-19.html",
@@ -132,10 +149,13 @@
       "source_path": "docs/whiteboard/model.html",
       "one_line": "Every matrix drawn, every step of the mathematics shown as it happens — the colony's generative model on one board.",
       "what_is_static_here": "fully static — no fetches; the defaults on the board are the committed defaults",
-      "served_sha256": "7d7658495e6e08a4755a006a96411da0f7a6024b83d8439c4c580dda04229f02",
-      "bytes": 31358,
+      "content_sha256": "7d7658495e6e08a4755a006a96411da0f7a6024b83d8439c4c580dda04229f02",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "76645aabaef223cd1ff83a5c15e180f2359bb28f41bf719ebd592768a4cc3fe7",
+      "bytes": 42257,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-minecraft",
       "source_url": "https://github.com/TMDLRG/uni-minecraft/blob/d73ba89cb419b3871ad9228c1874a01b6c296e5d/docs/whiteboard/model.html",
@@ -150,10 +170,13 @@
       "source_path": "docs/whiteboard/organism.html",
       "one_line": "The organism view of the same mathematics: the factors as organs of one living loop.",
       "what_is_static_here": "fully static — no fetches",
-      "served_sha256": "19c3064aba2ecc914551c3cf6bea4c85fa9fa728d4db581c249ca18f1cec80d4",
-      "bytes": 18568,
+      "content_sha256": "19c3064aba2ecc914551c3cf6bea4c85fa9fa728d4db581c249ca18f1cec80d4",
+      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "served_sha256": "eda489260b4b11ab7f9fc112313762bf3fd859562f133a2803812d8dc6f15777",
+      "bytes": 29467,
       "verified": {
-        "match": true
+        "match": true,
+        "method": "sha256(served) == sha256(wrap(git show <pin>:<src>, content/vendored/nav-snippet.html))"
       },
       "source_repo": "uni-minecraft",
       "source_url": "https://github.com/TMDLRG/uni-minecraft/blob/d73ba89cb419b3871ad9228c1874a01b6c296e5d/docs/whiteboard/organism.html",

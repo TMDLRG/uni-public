@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "generated_by": "generators/build_nav.cjs",
+  "read_at": "2026-10-16T22:22:24.365Z",
+  "note": [
+    "The site chrome is vendored byte-for-byte from the apex Precision repo and verified against the",
+    "pinned commit on every build; a mismatch fails the build. uni-public renders its nav from the",
+    "SAME canonical site-nav.json the apex uses — one source, both halves provably identical."
+  ],
+  "source": {
+    "repo": "Universal-Natural-Intelligence-Precision",
+    "pinned_commit": "71840d98f7f52654bbbf535ba41e56d58a37b370",
+    "root_key": "uni-precision"
+  },
+  "assets": [
+    {
+      "vendored": "content/vendored/site-nav.json",
+      "source": "nav/site-nav.json",
+      "what": "the 6-group nav data — single source of truth",
+      "sha256": "e5b8b1e07b0864b470040c87d4da5fa7c2b4efdc0d3b74d0dbfba2c9dd826e43",
+      "bytes": 3902,
+      "verified": {
+        "match": true,
+        "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
+      }
+    },
+    {
+      "vendored": "public/nav.css",
+      "source": "nav.css",
+      "what": "self-contained grouped-nav + breadcrumb CSS (served at /nav.css)",
+      "sha256": "1801b905815a80628c748ea1f97fceabc4a73243870ed391a8e3ab425b2219f6",
+      "bytes": 4363,
+      "verified": {
+        "match": true,
+        "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
+      }
+    },
+    {
+      "vendored": "public/nav.js",
+      "source": "nav.js",
+      "what": "dropdown/mobile/Esc behaviour (served at /nav.js)",
+      "sha256": "e39268df0e702660c36d35389bebe8704069809321d6ead29d0237937d7a5c3c",
+      "bytes": 1803,
+      "verified": {
+        "match": true,
+        "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
+      }
+    },
+    {
+      "vendored": "content/vendored/nav-snippet.html",
+      "source": "nav/nav-snippet.html",
+      "what": "the self-contained nav block (inline CSS+JS, palette scoped to .site-nav, zero external refs) injected into the vendored full-screen labs/rooms",
+      "sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+      "bytes": 10897,
+      "verified": {
+        "match": true,
+        "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": "start",
+      "label": "Start here",
+      "items": [
+        {
+          "label": "Gentle Entry",
+          "href": "/gentle-entry"
+        },
+        {
+          "label": "Begin here",
+          "href": "/start"
+        },
+        {
+          "label": "Not an LLM",
+          "href": "/not-an-llm"
+        },
+        {
+          "label": "The hallway",
+          "href": "/hall"
+        }
+      ]
+    },
+    {
+      "group": "labs",
+      "label": "Labs",
+      "items": [
+        {
+          "label": "All labs",
+          "href": "/labs"
+        },
+        {
+          "label": "Organism Explorer",
+          "href": "/explorer"
+        },
+        {
+          "label": "Precision Lab",
+          "href": "/"
+        },
+        {
+          "label": "Echo Lab",
+          "href": "/echo-lab"
+        },
+        {
+          "label": "Loop Lab",
+          "href": "/loop-lab"
+        },
+        {
+          "label": "Heart Lab",
+          "href": "/heart-lab"
+        },
+        {
+          "label": "Cell Lab",
+          "href": "/cell-lab"
+        },
+        {
+          "label": "Sensorium",
+          "href": "/sensorium"
+        },
+        {
+          "label": "The classroom",
+          "href": "/classroom"
+        }
+      ]
+    },
+    {
+      "group": "learn",
+      "label": "Learn",
+      "items": [
+        {
+          "label": "The Science",
+          "href": "/science"
+        },
+        {
+          "label": "History of Inference",
+          "href": "/history"
+        },
+        {
+          "label": "The course",
+          "href": "/course"
+        },
+        {
+          "label": "The UNI Workshop",
+          "href": "/workshop"
+        },
+        {
+          "label": "Videos",
+          "href": "/videos"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        }
+      ]
+    },
+    {
+      "group": "docs",
+      "label": "Docs",
+      "items": [
+        {
+          "label": "Docs home",
+          "href": "/docs"
+        },
+        {
+          "label": "The Cookbook",
+          "href": "/cookbook"
+        },
+        {
+          "label": "Articles",
+          "href": "/articles"
+        },
+        {
+          "label": "Wiki",
+          "href": "/wiki"
+        },
+        {
+          "label": "Build with UNI",
+          "href": "/build"
+        },
+        {
+          "label": "MCP",
+          "href": "/mcp"
+        }
+      ]
+    },
+    {
+      "group": "evidence",
+      "label": "Evidence",
+      "items": [
+        {
+          "label": "Overview",
+          "href": "/overview"
+        },
+        {
+          "label": "The Claim Ledger",
+          "href": "/cookbook/claim-ledger"
+        },
+        {
+          "label": "What is wrong",
+          "href": "/wrong"
+        },
+        {
+          "label": "Gates",
+          "href": "/gates"
+        },
+        {
+          "label": "Coverage",
+          "href": "/coverage"
+        },
+        {
+          "label": "Evidence & Verdicts",
+          "href": "/evidence"
+        },
+        {
+          "label": "Transparency",
+          "href": "/transparency"
+        }
+      ]
+    },
+    {
+      "group": "about",
+      "label": "About",
+      "items": [
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "The Record",
+          "href": "/michael"
+        },
+        {
+          "label": "Big Brains Need Big Worlds",
+          "href": "/book"
+        },
+        {
+          "label": "Run on Rhythm",
+          "href": "/run-on-rhythm"
+        },
+        {
+          "label": "Contribute",
+          "href": "/contribute"
+        }
+      ]
+    }
+  ]
+}

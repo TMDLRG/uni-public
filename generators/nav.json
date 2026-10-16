@@ -1,0 +1,22 @@
+{
+  "note": [
+    "THE SITE-CHROME VENDORING REGISTRY — the unified navigation is defined ONCE, in the apex",
+    "Precision repository (nav/site-nav.json + nav.css + nav.js), and vendored here byte-for-byte so",
+    "uni-public and the apex render the SAME menu from the SAME source. build_nav.cjs verifies each",
+    "vendored copy against the pinned commit on every build and FAILS the build on any drift; the copy",
+    "is never edited, fixes land in the Precision repo and the pin advances (announced, never silent).",
+    "This is the same contract as generators/labs.json, applied to the site chrome instead of a lab."
+  ],
+  "schema_version": 1,
+  "precision": {
+    "root_key": "uni-precision",
+    "public_repo": "Universal-Natural-Intelligence-Precision",
+    "pinned_commit": "71840d98f7f52654bbbf535ba41e56d58a37b370",
+    "assets": [
+      { "vendored": "content/vendored/site-nav.json", "source": "nav/site-nav.json", "what": "the 6-group nav data — single source of truth" },
+      { "vendored": "public/nav.css", "source": "nav.css", "what": "self-contained grouped-nav + breadcrumb CSS (served at /nav.css)" },
+      { "vendored": "public/nav.js", "source": "nav.js", "what": "dropdown/mobile/Esc behaviour (served at /nav.js)" },
+      { "vendored": "content/vendored/nav-snippet.html", "source": "nav/nav-snippet.html", "what": "the self-contained nav block (inline CSS+JS, palette scoped to .site-nav, zero external refs) injected into the vendored full-screen labs/rooms" }
+    ]
+  }
+}

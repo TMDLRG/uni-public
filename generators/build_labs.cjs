@@ -7,19 +7,25 @@
  *   not hosted, each carrying how that claim was established.
  *
  * THE VENDORING CONTRACT, WHICH IS THE POINT OF THIS FILE
- *   Seven labs are served by this site from public/play/. Serving a copy is how a static export can
- *   host a lab at all — but a copy is a claim ("this is the lab from that repository") and claims
- *   here are checked, not asserted. For every vendored lab this generator:
+ *   The labs are served by this site from public/play/. Serving a copy is how a static export can
+ *   host a lab at all — but a copy is a claim ("this is the lab from that repository, carrying the
+ *   site's one canonical nav") and claims here are checked, not asserted. For every vendored lab
+ *   this generator:
  *
- *     1. reads the served copy public/play/<slug>.html and hashes it;
- *     2. reads the SOURCE BYTES at the PINNED COMMIT out of the local clone of the public source
+ *     1. reads the SOURCE BYTES at the PINNED COMMIT out of the local clone of the public source
  *        repository (git show <commit>:<path> — the commit's bytes, not the working tree's, so a
  *        dirty or drifted clone cannot contaminate the check);
- *     3. FAILS THE BUILD on any mismatch, naming the file and both digests.
+ *     2. computes wrap(source, content/vendored/nav-snippet.html) — the pinned lab with the canonical
+ *        nav snippet (itself byte-verified against the Precision pin by build_nav.cjs) injected once
+ *        after <body> — WRITES that to public/play/<slug>.html, reads it back and hashes it;
+ *     3. FAILS THE BUILD if the on-disk bytes are not byte-identical to the recomputed wrap, or if
+ *        the clone/snippet is unavailable, naming the file and both digests.
  *
- *   The build failing is the feature. An edited copy would be bytes that exist in no repository,
- *   which nobody on earth could verify. The rule stated in generators/labs.json is: fixes land in
- *   the source repo and the pin advances; the copy is never edited.
+ *   The build failing is the feature. The served bytes are a pure function of two pinned inputs (the
+ *   lab commit, the nav-snippet commit) and this published transform — recomputable by anyone, edited
+ *   by no one. The rule stated in generators/labs.json still holds: a lab fix lands in the source repo
+ *   and the content pin advances; the copy is never hand-edited, and the content pin never moves to
+ *   change the nav — only the nav pin does.
  *
  * WHAT THIS DOES NOT CLAIM
  *   - It does not claim the external labs are UP. A build-time generator probing a live site would
@@ -37,6 +43,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { execFileSync } = require("child_process");
+const { loadSnippet, wrap } = require("./wrap_vendored.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const REGISTRY = path.join(__dirname, "labs.json");
@@ -57,6 +64,13 @@ function git(cwd, args, opts = {}) {
 function main() {
   const reg = JSON.parse(fs.readFileSync(REGISTRY, "utf8"));
   const wb = reg.workbench;
+
+  // The canonical nav chrome, vendored + byte-verified against the Precision pin by build_nav.cjs.
+  // Every served lab is regenerated as wrap(pinned source, this snippet) below; if it is missing or
+  // unrecognised the build fails rather than shipping unwrapped or mis-wrapped pages.
+  let snippet, snippetSha;
+  try { snippet = loadSnippet(); snippetSha = sha256(snippet); }
+  catch (e) { console.error(`FAIL — ${e.message}`); process.exit(1); }
 
   let roots = {};
   if (fs.existsSync(ROOTS_FILE)) roots = JSON.parse(fs.readFileSync(ROOTS_FILE, "utf8")).roots || {};
@@ -91,19 +105,12 @@ function main() {
       },
     };
 
-    if (!fs.existsSync(servedPath)) {
-      failures.push(`${lab.slug}: served copy public/play/${lab.slug}.html DOES NOT EXIST`);
-      continue;
-    }
-    const servedBytes = fs.readFileSync(servedPath);
-    entry.served_sha256 = sha256(servedBytes);
-    entry.bytes = servedBytes.length;
-
     if (!wbDir || !fs.existsSync(path.join(wbDir, ".git"))) {
       // Absence of the source clone is stated on the entry — but it also fails the build, because a
-      // machine that cannot verify the vendored bytes must not be the machine that publishes them.
+      // machine that cannot regenerate the wrapped bytes from the pin must not be the one that
+      // publishes them.
       entry.verified = absent("source repository not available on this machine");
-      failures.push(`${lab.slug}: source clone unavailable — byte-identity CANNOT be established here`);
+      failures.push(`${lab.slug}: source clone unavailable — the wrapped copy CANNOT be regenerated or verified here`);
       vendored.push(entry);
       continue;
     }
@@ -115,12 +122,32 @@ function main() {
       vendored.push(entry);
       continue;
     }
-    const srcSha = sha256(srcBytes);
-    if (srcSha !== entry.served_sha256) {
-      entry.verified = { match: false, source_sha256: srcSha };
-      failures.push(`${lab.slug}: SERVED BYTES DIFFER FROM PINNED SOURCE — served ${entry.served_sha256.slice(0, 16)}…, source ${srcSha.slice(0, 16)}…`);
+
+    // REFRAMED INTEGRITY: the served copy is wrap(pinned source, vendored nav snippet) — regenerated
+    // and written on every build so the nav is present on every lab and the bytes cannot silently
+    // drift. We write it, read it back, and prove the on-disk bytes equal the recomputed wrap.
+    let expected;
+    try {
+      expected = wrap(srcBytes, snippet);
+    } catch (e) {
+      entry.verified = absent(`wrap failed: ${e.message}`);
+      failures.push(`${lab.slug}: ${e.message}`);
+      vendored.push(entry);
+      continue;
+    }
+    fs.writeFileSync(servedPath, expected);
+    const servedBytes = fs.readFileSync(servedPath);
+    entry.content_sha256 = sha256(srcBytes); // the pinned lab bytes
+    entry.chrome_sha256 = snippetSha;        // the vendored canonical nav snippet
+    entry.served_sha256 = sha256(servedBytes);
+    entry.bytes = servedBytes.length;
+
+    const expectedSha = sha256(expected);
+    if (entry.served_sha256 !== expectedSha) {
+      entry.verified = { match: false, expected_sha256: expectedSha };
+      failures.push(`${lab.slug}: SERVED BYTES DIFFER FROM wrap(pin, snippet) — served ${entry.served_sha256.slice(0, 16)}…, expected ${expectedSha.slice(0, 16)}…`);
     } else {
-      entry.verified = { match: true, method: "sha256(public/play copy) == sha256(git show <pinned_commit>:<source path>)" };
+      entry.verified = { match: true, method: "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))" };
     }
     vendored.push(entry);
   }
@@ -137,11 +164,15 @@ function main() {
     generated_by: "generators/build_labs.cjs",
     read_at: new Date().toISOString(),
     note: [
-      "Vendored labs are served by this site and their bytes are verified against a pinned commit of",
-      "the public source repository on every build; a mismatch fails the build rather than shipping.",
-      "External labs carry declared URLs, never a liveness claim. Labs that exist but are hosted",
-      "nowhere are listed with what is missing — a shortened list is how an inventory starts lying.",
+      "Vendored labs are served by this site as wrap(pinned lab source, vendored nav snippet): the",
+      "pinned bytes of the lab at its workbench commit, with the canonical nav snippet (itself byte-",
+      "verified against the Precision pin) injected once after <body>. The served copy is regenerated",
+      "and byte-verified against that recomputed wrap on every build; a mismatch fails the build. The",
+      "lab content is never hand-edited and the content pin never moves to change the nav — only the",
+      "nav pin does. External labs carry declared URLs, never a liveness claim. Labs that exist but",
+      "are hosted nowhere are listed with what is missing — a shortened list is how an inventory lies.",
     ],
+    nav_chrome: { source: "content/vendored/nav-snippet.html", sha256: snippetSha, injected: "verbatim, once, immediately after <body>" },
     workbench: { ...wb, measured: wbMeasured },
     counts: { vendored: vendored.length, external: external.length, not_hosted: reg.not_hosted.length },
     vendored,

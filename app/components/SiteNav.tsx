@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 
 // THE SITE CHROME, converged on the apex's owner-approved 6-group nav (D-1) so the menu is identical
 // across the whole estate — the apex pages and these uni-public estate pages now render the same
-// grouped primary nav. The nav DATA stays a literal `const NAV = [...]` in app/layout.tsx: two gates
-// read that literal to prove the nav leads to the pages the manifest promises, and a component that
-// invented its own list is how a nav and its checker drift. This component only RENDERS the groups
+// grouped primary nav. The nav DATA is the vendored content/vendored/site-nav.json — byte-verified
+// against the apex Precision pin by build_nav.cjs and imported by app/layout.tsx, which passes it in
+// as props; the same one file is read by two gates to prove the nav leads to the pages the manifest
+// promises, and by the wrapped vendored labs/rooms, so a component that invented its own list is how
+// a nav and its checker drift. This component only RENDERS the groups
 // (dropdown panels mirroring the apex markup), marks the current page, and adds the progressive-
 // enhancement behaviour ported in behaviour from the apex nav.js: click/tap to open a group, the
 // mobile hamburger, close on Escape, close on outside click, aria-expanded kept in sync. Desktop

@@ -250,15 +250,20 @@ function discover() {
 // been bitten by that often enough to know better. The layout's own comment records the first draft
 // shipping three nav links to pages that had never been written.
 function navPaths() {
-  const layout = path.join(REPO, "app", "layout.tsx");
-  if (!fs.existsSync(layout)) return new Set();
-  const src = fs.readFileSync(layout, "utf8");
-  const block = /const\s+NAV\s*=\s*\[([\s\S]*?)\];/.exec(src);
-  if (!block) return new Set();
-  // Slash-normalise. The grouped D-1 nav carries apex-form hrefs (no trailing slash) for a
-  // byte-identical menu, while document types declare reachable_from in uni-public's trailing-slash
-  // form. /articles and /articles/ are the same destination, so reachability compares both stripped.
-  return new Set([...block[1].matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1].replace(/\/+$/, "") || "/"));
+  // The nav is the SINGLE canonical source — content/vendored/site-nav.json, vendored byte-for-byte
+  // from the apex at the Precision pin (verified by build_nav.cjs) and rendered unchanged by the Next
+  // layout, every wrapped vendored lab/room, and the apex shell. Reachability is read out of that one
+  // file, not a hand-authored copy that could drift.
+  const sn = path.join(REPO, "content", "vendored", "site-nav.json");
+  if (!fs.existsSync(sn)) return new Set();
+  let data;
+  try { data = JSON.parse(fs.readFileSync(sn, "utf8")); } catch { return new Set(); }
+  // Slash-normalise. The nav carries apex-form hrefs (no trailing slash) for a byte-identical menu,
+  // while document types declare reachable_from in uni-public's trailing-slash form. /articles and
+  // /articles/ are the same destination, so reachability compares both stripped.
+  const set = new Set();
+  for (const g of data.groups || []) for (const it of g.items || []) set.add((it.href || "").replace(/\/+$/, "") || "/");
+  return set;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -601,7 +606,7 @@ function evaluate({ manifest, curation, articles, docs, discovered }) {
   // resolved markers), so a type may be satisfied three ways and must declare which.
   {
     const types = manifest.document_types || [];
-    const nav = navPaths();          // DISCOVERED from app/layout.tsx, never declared here
+    const nav = navPaths();          // DISCOVERED from content/vendored/site-nav.json, never declared here
     const groups = new Map((curation.groups || []).map((g) => [g.id, g]));
     const citations = articles.articles.reduce((n, a) => n + (a.cites || []).length + (a.quotes || []).length, 0);
     let covered = 0, excluded = 0;
@@ -627,7 +632,7 @@ function evaluate({ manifest, curation, articles, docs, discovered }) {
       }
 
       if (!t.reachable_from || !nav.has(t.reachable_from.replace(/\/+$/, "") || "/")) {
-        problems.push(`document type '${t.id}' declares reachable_from='${t.reachable_from}' which is not a link in the site's navigation (app/layout.tsx) — unreachable`);
+        problems.push(`document type '${t.id}' declares reachable_from='${t.reachable_from}' which is not a link in the site's navigation (content/vendored/site-nav.json) — unreachable`);
         ok = false;
       }
       if (ok) covered++;

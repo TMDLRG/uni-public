@@ -1,0 +1,76 @@
+/* nav.css — self-contained apex site-nav chrome (primary nav + breadcrumb).
+   Loaded on EVERY page that carries <nav class="site-nav">, because some pages
+   (the full-viewport lab apps, including the home Precision Lab) do not load
+   site.css. Palette variables are provided here as a fallback so the nav is
+   styled even without site.css; on pages that also load site.css the values are
+   identical, so there is no conflict. */
+:root{
+  --panel:#ffffff;--panel2:#faf8f2;--edge:#e7e2d5;--edge2:#d3ccba;
+  --ink:#2b2824;--text:#423f38;--muted:#8b8678;--accent:#3a6ea8;--accent-soft:#e9f0f8;
+  --shadow-lg:0 16px 48px rgba(45,38,26,.20);--r:16px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.site-nav{
+  position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--edge);
+}
+.site-nav-inner{max-width:1140px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.site-brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-weight:700;letter-spacing:-.01em;font-size:15px;}
+.site-brand .mark{width:26px;height:26px;border-radius:7px;flex-shrink:0;background:linear-gradient(135deg,#3a6ea8,#388f7e 55%,#caa64a);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;}
+.site-brand .full{color:var(--muted);font-weight:500}
+
+.site-nav-groups{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap;align-items:center}
+.nav-group{position:relative}
+.nav-group-btn{
+  font:600 13.5px/1 var(--sans);color:var(--text);background:none;border:0;cursor:pointer;
+  padding:7px 12px;border-radius:8px;transition:background .14s,color .14s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.nav-group-btn::after{
+  content:"";width:5px;height:5px;margin-top:-2px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);opacity:.5;
+}
+.nav-group-btn:hover,.nav-group:focus-within .nav-group-btn{background:var(--accent-soft);color:var(--accent)}
+.nav-group[data-current]>.nav-group-btn{color:var(--accent)}
+.nav-panel{
+  position:absolute;top:100%;left:0;min-width:216px;z-index:120;
+  background:var(--panel);border:1px solid var(--edge);border-radius:12px;
+  box-shadow:var(--shadow-lg);padding:6px;margin-top:6px;
+  display:flex;flex-direction:column;gap:1px;
+  opacity:0;visibility:hidden;transform:translateY(-4px);
+  transition:opacity .14s,transform .14s,visibility .14s;
+}
+.nav-group:hover>.nav-panel,
+.nav-group:focus-within>.nav-panel,
+.nav-group.open>.nav-panel{opacity:1;visibility:visible;transform:none}
+.nav-panel a{
+  text-decoration:none;color:var(--text);font-size:13.5px;font-weight:500;
+  padding:8px 12px;border-radius:8px;white-space:nowrap;transition:background .12s,color .12s;
+}
+.nav-panel a:hover{background:var(--accent-soft);color:var(--accent)}
+.nav-panel a.current,.nav-panel a[aria-current]{color:var(--accent);background:var(--accent-soft);font-weight:600}
+.site-nav-toggle{
+  display:none;margin-left:auto;background:none;border:1px solid var(--edge2);
+  border-radius:8px;font-size:17px;line-height:1;padding:6px 11px;cursor:pointer;color:var(--ink);
+}
+.site-crumb{max-width:1140px;margin:0 auto;padding:11px 24px 0;font-size:13px;color:var(--muted)}
+.site-crumb a{color:var(--accent);text-decoration:none}
+.site-crumb a:hover{text-decoration:underline}
+.site-crumb [aria-current]{color:var(--muted)}
+@media(max-width:860px){
+  .site-nav-toggle{display:inline-block}
+  .site-nav-groups{display:none;flex-direction:column;align-items:stretch;width:100%;margin:8px 0 2px;gap:1px}
+  .site-nav.open .site-nav-groups{display:flex}
+  .nav-group-btn{width:100%;justify-content:space-between;padding:10px 12px}
+  .nav-panel{
+    position:static;min-width:0;box-shadow:none;border:0;background:none;
+    margin:0 0 4px 12px;padding:0;display:none;opacity:1;visibility:visible;transform:none;
+  }
+  .nav-group:hover>.nav-panel,.nav-group:focus-within>.nav-panel{display:none}
+  .nav-group.open>.nav-panel{display:flex}
+  .nav-panel a{padding:8px 10px}
+  .site-crumb{padding:10px 16px 0}
+}
+@media(max-width:560px){.site-nav-inner{padding:9px 16px;gap:10px}.site-brand .full{display:none}}

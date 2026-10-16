@@ -1,0 +1,73 @@
+{
+  "_comment": "Single source of truth for the apex site chrome. scripts/render-nav.mjs renders the grouped primary nav (6 dropdown groups), the breadcrumb, and the footer (one column per group) from this, and build-cookbook.mjs imports it. Owner-approved 6-group structure (D-1). Only live targets are listed; /paths is omitted until uni-public lands it. Each item: {href,label}. hubs drive the middle breadcrumb crumb for collection sub-pages.",
+  "brand": { "href": "/", "mark": "UNI", "label": "Universal Natural Intelligence" },
+  "groups": [
+    { "id": "start", "label": "Start here", "items": [
+      { "href": "/gentle-entry", "label": "Gentle Entry" },
+      { "href": "/start", "label": "Begin here" },
+      { "href": "/not-an-llm", "label": "Not an LLM" },
+      { "href": "/hall", "label": "The hallway" }
+    ] },
+    { "id": "labs", "label": "Labs", "items": [
+      { "href": "/labs", "label": "All labs" },
+      { "href": "/explorer", "label": "Organism Explorer" },
+      { "href": "/", "label": "Precision Lab" },
+      { "href": "/echo-lab", "label": "Echo Lab" },
+      { "href": "/loop-lab", "label": "Loop Lab" },
+      { "href": "/heart-lab", "label": "Heart Lab" },
+      { "href": "/cell-lab", "label": "Cell Lab" },
+      { "href": "/sensorium", "label": "Sensorium" },
+      { "href": "/classroom", "label": "The classroom" }
+    ] },
+    { "id": "learn", "label": "Learn", "items": [
+      { "href": "/science", "label": "The Science" },
+      { "href": "/history", "label": "History of Inference" },
+      { "href": "/course", "label": "The course" },
+      { "href": "/workshop", "label": "The UNI Workshop" },
+      { "href": "/videos", "label": "Videos" },
+      { "href": "/blog", "label": "Blog" }
+    ] },
+    { "id": "docs", "label": "Docs", "items": [
+      { "href": "/docs", "label": "Docs home" },
+      { "href": "/cookbook", "label": "The Cookbook" },
+      { "href": "/articles", "label": "Articles" },
+      { "href": "/wiki", "label": "Wiki" },
+      { "href": "/build", "label": "Build with UNI" },
+      { "href": "/mcp", "label": "MCP" }
+    ] },
+    { "id": "evidence", "label": "Evidence", "items": [
+      { "href": "/overview", "label": "Overview" },
+      { "href": "/cookbook/claim-ledger", "label": "The Claim Ledger" },
+      { "href": "/wrong", "label": "What is wrong" },
+      { "href": "/gates", "label": "Gates" },
+      { "href": "/coverage", "label": "Coverage" },
+      { "href": "/evidence", "label": "Evidence & Verdicts" },
+      { "href": "/transparency", "label": "Transparency" }
+    ] },
+    { "id": "about", "label": "About", "items": [
+      { "href": "/about", "label": "About" },
+      { "href": "/michael", "label": "The Record" },
+      { "href": "/book", "label": "Big Brains Need Big Worlds" },
+      { "href": "/run-on-rhythm", "label": "Run on Rhythm" },
+      { "href": "/contribute", "label": "Contribute" }
+    ] }
+  ],
+  "connect": [
+    { "href": "https://www.linkedin.com/in/mpolzin/", "label": "LinkedIn" },
+    { "href": "mailto:Michael.Polzin@SolutionWright.com", "label": "Email" },
+    { "href": "https://github.com/TMDLRG", "label": "GitHub" },
+    { "href": "https://educatewright.com/", "label": "EducateWright" },
+    { "href": "https://www.youtube.com/@ORCHESTRATEMaster", "label": "YouTube" },
+    { "href": "https://dev.to/tmdlrg", "label": "dev.to" }
+  ],
+  "hubs": [
+    { "prefix": "/blog", "label": "Blog" },
+    { "prefix": "/cookbook", "label": "The Cookbook" }
+  ],
+  "footerMeta": {
+    "intro": "A Solution Wright project, building worlds big enough to hold the people already in them.",
+    "colophon": "Built with The ORCHESTRATE Method and the Solution Wright Universal Delivery service.",
+    "honesty": "Universal Natural Intelligence is a modeling and design lens, not a clinical or diagnostic tool. Nothing here is medical advice.",
+    "copyright": "© 2026 Solution Wright."
+  }
+}

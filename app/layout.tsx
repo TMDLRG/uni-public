@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteNav from "./components/SiteNav";
+import siteNav from "../content/vendored/site-nav.json";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,86 +20,26 @@ export const metadata: Metadata = {
   },
 };
 
-const BRAND = { href: "/", mark: "UNI", label: "Universal Natural Intelligence" };
-
-// THE PRIMARY NAV, converged on the apex's owner-approved 6-group structure (D-1) so the menu is
-// IDENTICAL across the whole estate — the apex pages and these uni-public estate pages now carry the
-// same grouped nav. The groups, labels and hrefs mirror the apex single source of truth
-// (nav/site-nav.json on the Precision repo); SiteNav renders them and marks the current page.
-//
-// WHY A LITERAL, STILL. Two gates read `const NAV = [...]` straight out of this file — verify_a11y
-// for the landmark/skip-link, and verify_public_consistency to prove the nav reaches every document
-// type the manifest promises. A nav that built its list anywhere else is how a nav and its checker
-// drift, so the data stays here and SiteNav only renders it.
-//
-// HREFS ARE THE APEX FORM (no trailing slash), so the menu is byte-identical to the apex and every
-// target resolves on the apex — the canonical public host that actually serves these estate pages.
-// Most group items are apex routes this uni-public Next app does not own (/about, /videos, the demo
-// labs, /cookbook, /science …); SiteNav renders every item as a plain <a>, because there is nothing
-// for next/link to prefetch on a route Next does not own and a full navigation resolves it on the
-// apex. The uni-public-owned targets (/labs, /course, /wiki, /articles, /overview, /wrong, /gates,
-// /coverage, /mcp, /build, /start, /hall, /not-an-llm, /contribute, /evidence, /classroom) resolve
-// there too; on the bare uni-public.vercel.app host, trailingSlash sends them one hop to their
-// canonical slash form and the apex-only items are the declared-destination case this site already
-// documents elsewhere. The consistency gate normalises the trailing slash when it checks reachability.
-const NAV = [
-  { id: "start", label: "Start here", items: [
-    { href: "/gentle-entry", label: "Gentle Entry" },
-    { href: "/start", label: "Begin here" },
-    { href: "/not-an-llm", label: "Not an LLM" },
-    { href: "/hall", label: "The hallway" },
-  ] },
-  { id: "labs", label: "Labs", items: [
-    { href: "/labs", label: "All labs" },
-    { href: "/explorer", label: "Organism Explorer" },
-    { href: "/", label: "Precision Lab" },
-    { href: "/echo-lab", label: "Echo Lab" },
-    { href: "/loop-lab", label: "Loop Lab" },
-    { href: "/heart-lab", label: "Heart Lab" },
-    { href: "/cell-lab", label: "Cell Lab" },
-    { href: "/sensorium", label: "Sensorium" },
-    { href: "/classroom", label: "The classroom" },
-  ] },
-  { id: "learn", label: "Learn", items: [
-    { href: "/science", label: "The Science" },
-    { href: "/history", label: "History of Inference" },
-    { href: "/course", label: "The course" },
-    { href: "/workshop", label: "The UNI Workshop" },
-    { href: "/videos", label: "Videos" },
-    { href: "/blog", label: "Blog" },
-  ] },
-  { id: "docs", label: "Docs", items: [
-    { href: "/docs", label: "Docs home" },
-    { href: "/cookbook", label: "The Cookbook" },
-    { href: "/articles", label: "Articles" },
-    { href: "/wiki", label: "Wiki" },
-    { href: "/build", label: "Build with UNI" },
-    { href: "/mcp", label: "MCP" },
-  ] },
-  { id: "evidence", label: "Evidence", items: [
-    { href: "/overview", label: "Overview" },
-    { href: "/cookbook/claim-ledger", label: "The Claim Ledger" },
-    { href: "/wrong", label: "What is wrong" },
-    { href: "/gates", label: "Gates" },
-    { href: "/coverage", label: "Coverage" },
-    { href: "/evidence", label: "Evidence & Verdicts" },
-    { href: "/transparency", label: "Transparency" },
-  ] },
-  { id: "about", label: "About", items: [
-    { href: "/about", label: "About" },
-    { href: "/michael", label: "The Record" },
-    { href: "/book", label: "Big Brains Need Big Worlds" },
-    { href: "/run-on-rhythm", label: "Run on Rhythm" },
-    { href: "/contribute", label: "Contribute" },
-  ] },
-];
+// THE PRIMARY NAV — ONE SOURCE OF TRUTH, NOT AUTHORED HERE. The six groups are rendered from
+// content/vendored/site-nav.json, the apex's canonical nav DATA vendored and byte-verified against
+// the Precision pin by generators/build_nav.cjs. The apex pages, these Next routes, and the wrapped
+// vendored labs/rooms all render the SAME data from this ONE file, so the two halves cannot drift —
+// the cross-repo parity gate (verify_nav_parity.cjs) proves it against the nav session's normalized
+// dump. SiteNav renders the groups and marks the current page; /nav.css (also vendored, served at
+// /nav.css) styles it identically to the apex. The nav-reading gates (verify_a11y,
+// verify_public_consistency §5, verify_coverage) read the SAME vendored site-nav.json, slash-
+// normalising owned-route reachability. Apex-only items (/about, /videos, the demo labs, /cookbook …)
+// render as plain <a> and resolve on the apex, the canonical host — the declared-destination case.
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="/nav.css" />
+      </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
-        <SiteNav brand={BRAND} groups={NAV} />
+        <SiteNav brand={siteNav.brand} groups={siteNav.groups} />
 
         <main id="main" className="wrap">{children}</main>
 

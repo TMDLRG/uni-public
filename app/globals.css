@@ -116,74 +116,11 @@ body {
 
 .wrap { max-width: 1060px; margin: 0 auto; padding: 0 22px; }
 
-/* THE PRIMARY NAV — the apex's owner-approved 6-group grouped nav (D-1), rendered by
-   app/components/SiteNav.tsx so the menu is identical across the estate. Ported from the apex
-   nav.css, but every colour is a uni-public token (--pan / --tx / --acc / --dim / --acc-soft / --ln
-   / --ln2 / --shadow) rather than the apex's hardcoded light palette, so the nav themes with the
-   rest of the site in dark mode and clears the same declared contrast pairs verify_a11y checks
-   (--tx on --pan, --dim on --pan, --acc on --pan, --acc on --acc-soft). Desktop opens on hover/focus
-   (pure CSS here); SiteNav adds click/tap, the mobile hamburger and close-on-Escape as progressive
-   enhancement, so the nav works with no JS. It is sticky — unlike the retired two-row header, a
-   single grouped bar stays short, and its panels are opaque (var(--pan)), so nothing bleeds through. */
-.site-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--pan); border-bottom: 1px solid var(--ln);
-}
-.site-nav-inner {
-  max-width: 1060px; margin: 0 auto; padding: 11px 22px;
-  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-}
-.site-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--tx); font-weight: 700; letter-spacing: -.01em; font-size: 15px; }
-.site-brand .mark { width: 26px; height: 26px; border-radius: 7px; flex-shrink: 0; background: linear-gradient(135deg, #3a6ea8, #388f7e 55%, #caa64a); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .02em; display: flex; align-items: center; justify-content: center; }
-.site-brand .full { color: var(--dim); font-weight: 500; }
-
-.site-nav-groups { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; align-items: center; }
-.nav-group { position: relative; }
-.nav-group-btn {
-  font: 600 13.5px/1 var(--sans); color: var(--tx); background: none; border: 0; cursor: pointer;
-  padding: 7px 12px; border-radius: 8px; transition: background .14s, color .14s;
-  display: inline-flex; align-items: center; gap: 6px;
-}
-.nav-group-btn::after {
-  content: ""; width: 5px; height: 5px; margin-top: -2px;
-  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg); opacity: .5;
-}
-.nav-group-btn:hover, .nav-group:focus-within .nav-group-btn { background: var(--acc-soft); color: var(--acc); }
-.nav-group[data-current] > .nav-group-btn { color: var(--acc); }
-.nav-panel {
-  position: absolute; top: 100%; left: 0; min-width: 216px; z-index: 120;
-  background: var(--pan); border: 1px solid var(--ln); border-radius: 12px;
-  box-shadow: var(--shadow); padding: 6px; margin-top: 6px;
-  display: flex; flex-direction: column; gap: 1px;
-  opacity: 0; visibility: hidden; transform: translateY(-4px);
-  transition: opacity .14s, transform .14s, visibility .14s;
-}
-.nav-group:hover > .nav-panel, .nav-group:focus-within > .nav-panel, .nav-group.open > .nav-panel { opacity: 1; visibility: visible; transform: none; }
-.nav-panel a {
-  text-decoration: none; color: var(--tx); font-size: 13.5px; font-weight: 500;
-  padding: 8px 12px; border-radius: 8px; white-space: nowrap; transition: background .12s, color .12s;
-}
-.nav-panel a:hover { background: var(--acc-soft); color: var(--acc); }
-.nav-panel a.current, .nav-panel a[aria-current] { color: var(--acc); background: var(--acc-soft); font-weight: 600; }
-.site-nav-toggle {
-  display: none; margin-left: auto; background: none; border: 1px solid var(--ln2);
-  border-radius: 8px; font-size: 17px; line-height: 1; padding: 6px 11px; cursor: pointer; color: var(--tx);
-}
-@media (max-width: 860px) {
-  .site-nav-toggle { display: inline-block; }
-  .site-nav-groups { display: none; flex-direction: column; align-items: stretch; width: 100%; margin: 8px 0 2px; gap: 1px; }
-  .site-nav.open .site-nav-groups { display: flex; }
-  .nav-group-btn { width: 100%; justify-content: space-between; padding: 10px 12px; }
-  .nav-panel {
-    position: static; min-width: 0; box-shadow: none; border: 0; background: none;
-    margin: 0 0 4px 12px; padding: 0; display: none; opacity: 1; visibility: visible; transform: none;
-  }
-  .nav-group:hover > .nav-panel, .nav-group:focus-within > .nav-panel { display: none; }
-  .nav-group.open > .nav-panel { display: flex; }
-  .nav-panel a { padding: 8px 10px; }
-}
-@media (max-width: 560px) { .site-nav-inner { padding: 9px 16px; gap: 10px; } .site-brand .full { display: none; } }
+/* THE PRIMARY NAV is styled by the VENDORED /nav.css (public/nav.css), byte-verified against the apex
+   Precision pin by generators/build_nav.cjs and loaded in app/layout.tsx. The nav markup is identical
+   across every surface — SiteNav on these Next routes, renderNav() on the wrapped vendored labs/rooms,
+   and the apex pages — so one vendored stylesheet dresses them all the same. uni-public deliberately
+   keeps NO second copy of the nav CSS here, because a second copy is how the two halves drift. */
 
 /* The entry room. The classroom is embedded whole — the real vendored page, not a screenshot. */
 .enter-room { margin: 6px 0 26px; }
