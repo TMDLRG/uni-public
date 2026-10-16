@@ -330,8 +330,16 @@ const REDACTABLE = [
   // string FRAGMENTS (never the literal) so this tracked generator carries neither value, and
   // boundary-guarded so lookalikes (the 8442 math constant, a sha256 substring, WARN-LEAK, N-LEAKAGE)
   // are never touched — the same genuine-vs-coincidental discipline the 8442 false positives taught.
-  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  // Case-INSENSITIVE (owner ruling "redact client-name everywhere", 2026-10-16): the client name
+  // also appears lowercased in a curated-digest file path, which the case-sensitive form missed. The
+  // compound is distinctive, so a case-insensitive match convicts no unrelated word.
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "gi")],
   ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+  // SOW ids (owner's editorial ruling 2026-10-16): the commercial-proof + engagement-pricing wiki
+  // pages are KEPT public with their sanitized narrative, but the owner's real SOW ids (SOW-01,
+  // SOW-02, SOW-1, SOW-2, …) are redacted across them. Catch-all and \b-anchored, so "SOWs", a lone
+  // "01" and version strings "v1.3.0" are never touched.
+  ["sow-id", /\bSOW-\d+/g],
 
   // ── CREDENTIAL VALUES ─────────────────────────────────────────────────────────────────────────
   // ADDED 2026-08-01, AFTER THIS SITE HAD ALREADY PUBLISHED THEM. The live site was serving a

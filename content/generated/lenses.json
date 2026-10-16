@@ -118,8 +118,8 @@
    "key": "encyclopedia/00-index",
    "corpus": "encyclopedia",
    "source_sha256": "619288efbbe7f821",
-   "source_body_sha256": "41590c6e50d49ccf",
-   "source_words": 1171,
+   "source_body_sha256": "c92070591b799c9f",
+   "source_words": 1172,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -133,39 +133,12 @@
    },
    "clear": {
     "html": "<p>The UNI Encyclopedia is a public reference work about a developmental active-inference simulation, and this page is its table of contents. It makes no scientific claim of its own; it tells you where the claims live and what discipline they were written under.</p><p>The rule it repeats hardest is that every chapter is authored against two other files and never ahead of them. One is a claim ledger, a list that rows are added to and never edited. Each claim in it carries an evidence class, a condition that would show it false, and one of four states: pass, fail, negative or pending. The other is an authoring blueprint holding the front-matter rules, the class rubric, the standing limits and the per-chapter specification. If prose and ledger ever disagree, the ledger wins.</p><p>The index then lays out the wings. An evidence wing explains how to read the work and describes the calibration record. A science wing walks a developmental ladder from a modelled zygote up through cells, metabolism, an organ lab, affect, movement, perception, language and self-model, and then names the rungs above that as parked or not yet built. A meaning wing carries the free energy principle as a lens only. A movement wing describes the honest-science posture and the public invitation to falsify. A method wing carries the reusable disciplines. An appendix covers a marketing and publishing organism, recorded as engineering, never as a capability.</p><p>The standing red lines are printed rather than implied. There is no claim of general or human-level intelligence, and none of consciousness or sentience. There is no claim that active inference has been shown, none that life or measurable awareness has been created, and none of beating large language models. Every chapter is required to publish the negative that travels with each pass, and to end by naming the result that would show the chapter wrong.</p>",
-    "chars": 1890,
+    "chars": 1896,
     "words": 313,
-    "sha256": "bf1cc3486a1a6487"
+    "sha256": "7b9329a78d4c6a59"
    },
    "note": "",
    "source_file": "content/lenses/wiki/encyclopedia/00-index.md"
-  },
-  {
-   "scope": "wiki",
-   "key": "encyclopedia/claim-ledger",
-   "corpus": "encyclopedia",
-   "source_sha256": "82eb60b7e5342620",
-   "source_body_sha256": "2a6c50f2181451e1",
-   "source_words": 5191,
-   "authored_by": "claude-opus-5",
-   "authored_at": "2026-08-01",
-   "review_state": "draft",
-   "reviewed_by": null,
-   "reviewed_at": null,
-   "plain": {
-    "html": "<p>The whole encyclopedia is written against this ledger, a list that rows are added to and never edited, and it is a reference file rather than something to read straight through. Every claim the program makes has a row: what is claimed, how strong the evidence is, the exact condition that would show it false, its current status, and which archive it came from. The opening section is a short constitution, and the rules are blunt. Wording may only be calibrated down toward the measured value, never up. A verdict is the interval bound that clears the threshold, not the middle estimate. Passing tests does not mean a feature works. Negative results are content and are published beside the passes they bound. The program it describes is a developmental simulation, and only about two of eleven or more developmental steps are earned. A newly added row records a sealed developmental-organism building step that has passed its checks but still raises no rung and brings no organism to life.</p>",
-    "chars": 991,
-    "words": 168,
-    "sha256": "22e759f16ff96926"
-   },
-   "clear": {
-    "html": "<p>The claim ledger, a list that rows are added to and never edited, is the single source of truth for this corpus. What it keeps track of is a simulation: a toy world someone built, not a person. No public page may state a claim above the evidence class recorded here, drop the recorded result that would show that claim wrong, or hide a recorded negative.</p><p>It opens with a constitution and a set of standing limits. Claims are graded on a lettered scale. It runs from a machine-exact anchor, through mechanism plus operator observation, then a test on data set aside and scored once, then a passing test suite, then an inherited document. Above all of those sits a class meaning claimed but unearned, and beside them a class for governance patterns that assert no capability at all. The class is a ceiling. Alongside it sit rules that give the grading teeth: calibration only moves down; the verdict is the confidence-interval bound rather than the point estimate; done means test-covered, not working; and negatives are first-class content. Those limits forbid claims of general or human-level intelligence, of consciousness or sentience, of a demonstrated inference loop, of created life or measurable awareness, and of beating large language models.</p><p>The body is organised in sections. A developmental ladder carries one subsection per rung, each with its rows, the results that would overturn them, and an explicit line saying what is not claimed there. Several rungs pair a positive result with the negative that delimits it, and the upper rungs are recorded as parked or not yet built. A second section covers the hardware and continuity substrate, recorded as engineering rather than science. A third carries method rows: the governance disciplines the program reuses. A fourth covers a marketing and publishing track, with its own negatives. A short section then lists open threads and contradictions that are carried forward rather than discharged, so that silence is never mistaken for completeness.</p><p>The closing note states the maintenance rules. A row is graded at the lower of its evidence components. Corrections are forward-only, and supersede with lineage rather than being edited in place. And where prose and this file disagree, this file wins. A newly added row records a sealed developmental-organism building step that passed its checks yet raises no rung and brings no organism to life.</p>",
-    "chars": 2413,
-    "words": 393,
-    "sha256": "aa289da84badf6a1"
-   },
-   "note": "2026-10-15 re-pinned to cookbook 6835730e (was 575fc93): a DEV-SPINE-0 row (DS0.1) and a frontier note were added — architecture sealed, A1–A10 PASS, raises no rung and births no organism. The high-level summary above stays accurate (the ~2-of-11+ position is unchanged) and is left as-is; only the digests and word count are re-stamped. Draft, pending editorial review. — Prior (2026-08-24): a project-key redaction ruled on 2026-08-04 had shipped unscrubbed and is now replaced with a marker.",
-   "source_file": "content/lenses/wiki/encyclopedia/claim-ledger.md"
   },
   {
    "scope": "wiki",
@@ -1117,8 +1090,8 @@
    "key": "encyclopedia/wing-mu-mu5-lab-team-ship-gate",
    "corpus": "encyclopedia",
    "source_sha256": "49a56064b6254c39",
-   "source_body_sha256": "e65e616f32173a2a",
-   "source_words": 2095,
+   "source_body_sha256": "32b505596c373650",
+   "source_words": 2097,
    "authored_by": "claude-opus-5",
    "authored_at": "2026-08-01",
    "review_state": "draft",
@@ -1132,9 +1105,9 @@
    },
    "clear": {
     "html": "<p>Every proposed change is reviewed through a five-persona team, and what the team is reviewing is a simulation — a toy world, not a person. There is a breaker who rejects by default and runs a gauntlet of checks, and a theorist who owns the merge. An architect requires every change to be additive and byte-identical on the default path. An experimentalist pairs each claim to an adversarial run written down before it happens, and a designer refuses preference hacks dressed up as drives. The team is not decorative. An adversarial plan written down before the run, so that it could not be chosen afterwards, once forced a gameable bar up to a much stricter one when a decorative fake slipped past the original. The operative rule is exact: no merge without a merged signature, a typed specification and a paired adversarial run. The gate is credible only because it has visibly rejected things, including things the program wanted to be true.</p><p>A division of labour is recorded as owner-set protocol: one party writes code, a separate private consultant designs and signs the science and is never published, and the live system runs the program without writing its code.</p><p>The backbone that shows where a record came from is a tamper-evident audit chain. It returns valid when events are hashed in sequence and invalid when one is tampered with. This is also the place the program is most tempted to overclaim, so the paired negative is cited in the same breath. A chain returned valid over hundreds of events while the running system's own log contained none of the events that mattered. The route had been built and tested, and had never fired against the deployment. Citing the valid chain without that negative is an overclaim.</p><p>Further sections cover a receipt loop, in which each burst of work closes with a receipt — the file showing what was run and what came out — written so that it can be checked and found wrong. A documentation discipline follows, whose first implementation was wrong and was caught. Then comes a durable runner, built on the principle that silence is not success, and that a status chip reading as running over a dead process is a falsified inference. Last is a bound on multi-agent fan-out, derived from a burn in which most of the agents died.</p>",
-    "chars": 2275,
+    "chars": 2281,
     "words": 394,
-    "sha256": "16fda4841a9791f9"
+    "sha256": "30f8ee1ed7d30fb9"
    },
    "note": "",
    "source_file": "content/lenses/wiki/encyclopedia/wing-mu-mu5-lab-team-ship-gate.md"
@@ -8215,10 +8188,10 @@
   }
  ],
  "totals": {
-  "content_routes": 554,
-  "lensed": 300,
+  "content_routes": 553,
+  "lensed": 299,
   "reviewed": 0,
-  "draft": 300,
+  "draft": 299,
   "absent_records": 0,
   "unlensed": 254,
   "orientations": 8

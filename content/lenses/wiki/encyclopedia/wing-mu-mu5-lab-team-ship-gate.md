@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/wing-mu-mu5-lab-team-ship-gate
 corpus: encyclopedia
 source_sha256: 49a56064b6254c39
-source_body_sha256: e65e616f32173a2a
+source_body_sha256: 32b505596c373650
 source_title: mu5 - Lab-team, ship-gate and runner discipline
 source_words: 2094
 authored_by: claude-opus-5
