@@ -325,6 +325,14 @@ const REDACTABLE = [
   ["internal-hostname", /\b[a-z0-9-]+\.(?:uni-lab|lab)\.local\b/gi],
   ["operator-path", /[A-Za-z]:[\\/]Users[\\/][A-Za-z0-9._-]+/g],
 
+  // ── OD-1 OWNER-RULED REDACTIONS (2026-10-16) ────────────────────────────────────────────────────
+  // The client name and the leak-record-id are redacted EVERYWHERE on the owner's ruling. Built from
+  // string FRAGMENTS (never the literal) so this tracked generator carries neither value, and
+  // boundary-guarded so lookalikes (the 8442 math constant, a sha256 substring, WARN-LEAK, N-LEAKAGE)
+  // are never touched — the same genuine-vs-coincidental discipline the 8442 false positives taught.
+  ["client-name", new RegExp("Marketing" + "Wright" + "(?![A-Za-z0-9])", "g")],
+  ["leak-record-id", new RegExp("(?<![A-Za-z0-9_-])" + ["N", "LEAK"].join("-") + "(?![A-Za-z0-9_-])", "g")],
+
   // ── CREDENTIAL VALUES ─────────────────────────────────────────────────────────────────────────
   // ADDED 2026-08-01, AFTER THIS SITE HAD ALREADY PUBLISHED THEM. The live site was serving a
   // Minecraft RCON password and, on nine pages, an Erlang distribution cookie — both in clear, each

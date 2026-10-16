@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/00-index
 corpus: encyclopedia
 source_sha256: 619288efbbe7f821
-source_body_sha256: 619288efbbe7f821
+source_body_sha256: 41590c6e50d49ccf
 source_title: The UNI Encyclopedia
 source_words: 1170
 authored_by: claude-opus-5

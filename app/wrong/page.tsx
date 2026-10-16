@@ -723,11 +723,11 @@ const SECTIONS: Section[] = [
           and data, independently of what any document says.</>
         ),
         quote:
-          "line 237 (N-LEAK): \"a real client's confidential intake rendered on a public *.vercel.app preview\" — because \"a HANDOFF doc said to\"",
+          "line 237 ([redacted: leak-record-id]): \"a real client's confidential intake rendered on a public *.vercel.app preview\" — because \"a HANDOFF doc said to\"",
         cite: {
           path: "encyclopedia/CLAIM-LEDGER.md",
           repo: "UNI-Encyclopedia-Cookbook",
-          where: "line 237 (N-LEAK)",
+          where: "line 237 ([redacted: leak-record-id])",
           url: CLAIM_LEDGER,
           linkNote: CB_NOTE,
         },

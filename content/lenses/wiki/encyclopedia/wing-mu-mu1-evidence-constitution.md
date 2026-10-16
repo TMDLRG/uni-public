@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/wing-mu-mu1-evidence-constitution
 corpus: encyclopedia
 source_sha256: b5d7e75d235a5b7d
-source_body_sha256: b5d7e75d235a5b7d
+source_body_sha256: c7c64f4b780cfc7a
 source_title: mu1 - The Evidence Constitution and ledger discipline
 source_words: 1545
 authored_by: claude-opus-5

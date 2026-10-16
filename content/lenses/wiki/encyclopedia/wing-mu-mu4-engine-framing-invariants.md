@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/wing-mu-mu4-engine-framing-invariants
 corpus: encyclopedia
 source_sha256: 57f213c688899263
-source_body_sha256: 57f213c688899263
+source_body_sha256: 8c9bc23cb58d909c
 source_title: mu4 - Engine and framing invariants (one engine, no backprop)
 source_words: 2088
 authored_by: claude-opus-5

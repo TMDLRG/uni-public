@@ -4,7 +4,7 @@ scope: wiki
 key: encyclopedia/wing-s-s-c-continuity-substrate
 corpus: encyclopedia
 source_sha256: b884ed404697a421
-source_body_sha256: b884ed404697a421
+source_body_sha256: 59f00e0d0b3ee94d
 source_title: S-C - Continuity and the embodiment substrate (UNI.OS)
 source_words: 2759
 authored_by: claude-opus-5
