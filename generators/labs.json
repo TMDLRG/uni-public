@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "2e5f6c2797ff59501d7c6b4779be6c7eed25775a",
+    "pinned_commit": "0f336c1d0e5d80b8d1287926ef003e8bec2547e4",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -137,6 +137,14 @@
       "one_line": "A mind chooses whole paths through a branching, uncertain future — it can't see the tree, so it plans a little ahead, acts, learns, and re-plans. The oldest dilemma, explore vs exploit, falls out of expected free energy for free: raise one uncertainty knob and the min-G agent switches by itself, no explore/exploit dial anywhere.",
       "math": "Score policies pi by their expected free energy G(pi) summed over the future; act by softmax(-gamma G(pi)) (gamma = precision, Module 15). Because G = risk + ambiguity, the epistemic half dominates under uncertainty (explore) and vanishes under confidence (exploit) — the balance auto-tunes, no separate exploration schedule. The policy machinery is NOT yet built or sealed in DDNA — standard active inference (exact G form in Module 14), held open ('built to run', never 'runs today').",
       "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-g-formula",
+      "source_file": "cbt_module_14_g_formula.html",
+      "title": "CBT Module 14 — The formula, by hand",
+      "one_line": "G = risk + ambiguity, on the page and computed by hand. On a concrete cold-cabin choice, the reward-perfect sweater (G=0.60) LOSES to the uncertain-but-revealing stove (G=0.36) once ambiguity is added — the epistemic term flips the decision. A calculator, not a curve: you check the risk KL yourself.",
+      "math": "risk = KL(predicted outcomes ‖ preferred outcomes) — EXACT and checkable (risk_A=0, risk_B=0.6 ln(0.6/0.9)+0.4 ln(0.4/0.1)=0.311). ambiguity = expected likelihood entropy E_state[H(o|s)] — illustrative values (0.60 state-blind sweater, 0.05 revealing stove). G_A=0.60, G_B=0.36 -> min G picks the stove. Canonical: G(pi)=KL[Q(o|pi)‖C(o)]+E_Q(s|pi)[H[P(o|s)]]. DDNA's G term is NOT yet built or sealed — held open ('built to', never 'does').",
+      "minutes": "25–45"
     },
     {
       "slug": "bayes-chips",
