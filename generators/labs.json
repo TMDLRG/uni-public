@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "57c4a8f03f93861afb864667e900b8a7d852263d",
+    "pinned_commit": "24f6e08a50204d1de08cea13f57ea4ac059cb313",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
