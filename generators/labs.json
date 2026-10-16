@@ -29,7 +29,7 @@
   "workbench": {
     "root_key": "orc-workbench",
     "branch": "s/2026-10-15-cbt-part2",
-    "pinned_commit": "24f6e08a50204d1de08cea13f57ea4ac059cb313",
+    "pinned_commit": "e51cd1ab02095d2789c44293bfd94bed52125e16",
     "public_repo": "TheORCHESTRATEActiveInferenceWorkbench",
     "source_dir": "learninglabs"
   },
@@ -120,6 +120,14 @@
       "title": "CBT Module 11 — The worth of finding out",
       "one_line": "The second half of how a mind chooses. A mind doesn't only chase what it wants (risk); it pays to resolve what it doesn't know, because information is an investment that lowers every future bill. The blanket and the strange stove tie on risk and effort — only the stove resolves an uncertainty, and over many cold nights that pays for itself.",
       "math": "Expected free energy G = risk + ambiguity. The epistemic term (ambiguity) is expected information gain — how far an action is expected to shrink uncertainty about the hidden state; minimising G maximises information gain while minimising risk. Information is worth exactly the future free energy it saves. G and its epistemic term are NOT yet built or sealed in the organism — standard active inference (exact form in Module 14), held open ('built to', never 'does').",
+      "minutes": "20–40"
+    },
+    {
+      "slug": "cbt-one-engine",
+      "source_file": "cbt_module_12_one_engine.html",
+      "title": "CBT Module 12 — One engine, two directions",
+      "one_line": "The keystone. Perception (Part I, over beliefs about now) and action (Part II, over actions into the future) are not two machines — they are one engine minimising one free energy on opposite sides of the same gap: bend the map to the territory (perceive), or bend the territory to the map (act). Close one gap from either side and watch the unity fall out.",
+      "math": "One objective, two free arguments: minimise free energy over the belief q (perception, Part I) or over the actions that shape future sensations (action, Part II) — the same quantity, pushed on whichever side of the prediction gap gives. The perception half rests on the sealed Gate-F0 arithmetic; the action half (expected free energy) is NOT yet built or sealed in DDNA, so the unity is held open on its action half ('built to be', never 'is').",
       "minutes": "20–40"
     },
     {
