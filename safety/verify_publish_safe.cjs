@@ -119,7 +119,7 @@ const STRUCTURAL = [
 //                             what any specific ticket is or contains. It is a category, and a
 //                             category rule catches every sibling automatically — which is the
 //                             defect that this file's denied-value check on its own could not close.
-//   patterns.local.json     — actual sensitive VALUES ("Bill Ihrie", the QA hostname). Gitignored,
+//   patterns.local.json     — actual sensitive VALUES ("a person's name", the QA hostname). Gitignored,
 //                             because listing these publicly WOULD be a machine-readable index of
 //                             the secrets they name.
 //
@@ -456,6 +456,31 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
           `OD-1 name(s) present in built output: ${hits.slice(0, 8).join(" · ")}`);
   }
 
+  // ─── 5d. THIS GATE'S OWN SOURCE carries no operator-denied VALUE (W-623) ─────────────────
+  //
+  // Sections 4 and 5 both exclude this file (the SELF regex) from the structural and tracked-file
+  // scans — correctly, because its pattern tables and mutation fixtures legitimately contain
+  // disqualifying SHAPES, and scanning them here would make the gate convict itself. But that same
+  // exclusion meant a real DENIED VALUE embedded in this file — a name in a comment example, an id in
+  // a test fixture — was scanned by NOTHING. Two such values sat here unseen until W-623. This closes
+  // the hole: the gate's own source is checked against the operator's denied VALUES only (never the
+  // SHAPES, which this file is full of by design; never the OD-1 needle regexes, whose own positive
+  // fixtures live in this file). Reported by INDEX so the log stays paste-safe, as section 5 is. The
+  // denylist holds no date-shaped value, so this file's ISO change-history dates are never convicted.
+  if (denied && Array.isArray(denied.values)) {
+    let selfSrc = "";
+    try { selfSrc = fs.readFileSync(path.join(REPO, "safety", "verify_publish_safe.cjs"), "utf8").toLowerCase(); }
+    catch { /* noop */ }
+    const hits = [];
+    denied.values.forEach((v, i) => { const s = String(v).toLowerCase(); if (s && selfSrc.includes(s)) hits.push(`denied#${i}`); });
+    hits.length === 0
+      ? ok("this gate's own source carries no operator-denied value",
+          `safety/verify_publish_safe.cjs checked against ${denied.values.length} denied value(s). Sections 4 and 5 exclude this ` +
+          `file from the SHAPE scan, so without this check a real VALUE embedded here — a comment example, a test fixture — would ` +
+          `be scanned by nothing. That is the W-623 defect; this fails closed on it.`)
+      : bad("this gate's own source carries no operator-denied value", `${hits.length} denied value(s) embedded in this gate's own source: ${hits.join(" · ")}`);
+  }
+
   // ─── 6. LICENCE ─────────────────────────────────────────────────────────────────────────────
   {
     const lic = fs.existsSync(path.join(REPO, "LICENSE")) || fs.existsSync(path.join(REPO, "LICENSE.md"));
@@ -482,7 +507,7 @@ const isTextish = (p) => /\.(md|mdx|json|jsonc|ya?ml|js|cjs|mjs|ts|tsx|jsx|css|h
     };
     const cases = [
       ["a private LAN address", "host: 10.190.245.122", "private-ipv4-10/8"],
-      ["a tailnet hostname", "see box.tail18d815.ts.net", "tailnet-hostname"],
+      ["a tailnet hostname", "see box.example.ts.net", "tailnet-hostname"],
       ["an internal DNS name", "http://studio.uni-lab.local:8098", "internal-dns-.local"],
       ["a Windows operator path", "C:/Users/someone/Documents/x", "windows-user-path"],
       ["a PEM private key header", "-----BEGIN EC PRIVATE KEY-----", "pem-private-key"],
