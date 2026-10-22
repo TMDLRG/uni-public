@@ -8,7 +8,7 @@
  "tool": {
   "path": "tools/public_export",
   "version": "1.0.0",
-  "commit": "ce1c49acdf8768e953aa23ade4623470cc50a894"
+  "commit": "68bde24b770217114dd97be1178d27df4acc30d9"
  },
  "gate": {
   "ddna_side": "PASS",
@@ -22,8 +22,8 @@
  "files": [
   {
    "path": "verdicts.json",
-   "sha256": "e02ccbd9e4897db7c0c4f1e5db44c1b0dd7af2dfc6c611e58ebe777557124ae6",
-   "bytes": 23929
+   "sha256": "7ca0340e5b20f8d346ec9cfc56eac4a9b2f61c019869d7ecc195bc3b85dc758f",
+   "bytes": 25470
   },
   {
    "path": "preregs.json",
@@ -37,8 +37,8 @@
   },
   {
    "path": "parity.json",
-   "sha256": "0435645a73d647abcc6267f598982797574a87988fb26c8d9a4a07bbe00ab570",
-   "bytes": 7318
+   "sha256": "717f51007680c5813f89b159cce66c45a34c38a003dfc4c8e10841c73ab240c6",
+   "bytes": 7711
   }
  ]
 }

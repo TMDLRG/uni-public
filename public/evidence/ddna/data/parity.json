@@ -3,6 +3,7 @@
  "summary": [
   "Sealed gate verdicts: 18 (12 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
   "PASS verdicts with claimable evidence (Class A/B capability): 9; PASS verdicts shown as mechanism only (Class C/D): 2; integrity checks, never a capability PASS: 1.",
+  "Of the 9 Class A/B capability PASS verdicts, 2 (BOOK-TMAZE-v2, S1) were scored from the live organism's own behaviour; 5 (IND-02, LEARN-04-v2, H3, V4-SYN, P-ID-v2) were scored as a pure function of the seed beside a live organism and must be re-scored live before they count toward an integrated organism (RC-53); F0 is an identity check and BOOK-HMM a replication, by design.",
   "Every verdict concerns a named behaviour or an integrity check; capability-parity claims: 0.",
   "Human-test items sealed: 0 of 14.",
   "Ability domains with a sealed Class A/B PASS: 4 of 14; with a Class C/D PASS only: 1; with nothing operational: 5.",
@@ -231,7 +232,7 @@
    "id": "HT-08",
    "stage": "Toddler",
    "test": "CDC milestone tracker",
-   "paradigm": "Zubler et al. 2022 (US PD)",
+   "paradigm": "Zubler et al. 2022 (US public domain)",
    "criterion": "per-milestone achieved / not yet (session counts)",
    "status": "not built"
   },

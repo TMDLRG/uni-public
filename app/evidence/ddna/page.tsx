@@ -12,7 +12,7 @@ import type { Gate, Manifest, MathFile, Parity, Preregs, Verdicts } from "./type
 export const metadata = {
   title: "Follow the science: DDNA",
   description:
-    "Every sealed gate verdict of the DDNA active-inference organism, with its pre-registration, receipt hash and beacon round, and the checks your browser can run on them.",
+    "Every sealed gate verdict of the DDNA active-inference project, with its pre-registration, receipt hash and beacon round, and the checks your browser can run on them.",
 };
 
 /**
@@ -78,6 +78,12 @@ function GateCard({ g }: { g: Gate }) {
               {g.date}, round {g.round}
             </td>
           </tr>
+          {g.scoring !== "not assessed" && (
+            <tr>
+              <th>scored</th>
+              <td colSpan={3}>{g.scoring === "live organism" ? "from the live organism's own behaviour" : g.scoring}</td>
+            </tr>
+          )}
           <tr>
             <th>node mode</th>
             <td className="mono">{g.mode}</td>
@@ -120,7 +126,12 @@ export default function DdnaScience() {
         DDNA is a hierarchy of active-inference nodes: a research organism developed in a private repository, with its results
         published here. Each of its capability gates is written down and frozen before it runs, then run once on seeds drawn from a
         public randomness beacon, and then sealed with its verdict, whether that verdict is PASS or FAIL. This page shows every
-        sealed verdict, and your browser checks them.
+        sealed verdict, and your browser checks their integrity and arithmetic, not the experiments.
+      </p>
+      <p className="note">
+        <b>A note on words.</b> &quot;Organism&quot;, &quot;womb&quot;, &quot;birth&quot;, &quot;life&quot; and &quot;offspring&quot; are the project&apos;s names
+        for stages of a software schedule. They do not claim that DDNA is alive, aware or feels anything. A human-test stage names
+        the human age band the test comes from, not an age of DDNA.
       </p>
 
       <section className="card">
@@ -134,6 +145,10 @@ export default function DdnaScience() {
         <p className="dim">
           export manifest sha256 <code title={index.manifest_sha256}>{short(index.manifest_sha256, 16)}</code> · export tool {manifest.tool.version} at{" "}
           <code>{manifest.tool.commit.slice(0, 12)}</code> · DDNA-side gate {manifest.gate.ddna_side}: {manifest.gate.checks.join(", ")}
+        </p>
+        <p className="dim">
+          References in the quoted text, such as ADR numbers, &quot;08 §5.6&quot;, &quot;CATALOGUE §0&quot; or &quot;[r2: C-1]&quot;, point to the
+          project&apos;s private design records. They are kept as written so that quoted text still matches its hash.
         </p>
       </section>
 
@@ -151,7 +166,7 @@ export default function DdnaScience() {
         </div>
         <div className="stat">
           <div className="n">{v.counts.claimable_pass}</div>
-          <div className="l">PASS with claimable evidence (Class A/B)</div>
+          <div className="l">PASS with claimable evidence (Class A/B capability)</div>
         </div>
         <div className="stat">
           <div className="n">{v.counts.integrity_pass}</div>
@@ -181,6 +196,28 @@ export default function DdnaScience() {
       <section className="card">
         <ScienceChecks manifestSha256={index.manifest_sha256} base={DATA} />
       </section>
+      <p>
+        <b>What these checks cannot do.</b>
+      </p>
+      <ul>
+        <li>
+          They catch a damaged or partly altered file. They cannot catch a consistent forgery by whoever builds this site: the
+          expected hash comes from this same site. Someone who rewrote a verdict and also its counts, medians and hashes would
+          pass every check.
+        </li>
+        <li>
+          Freeze and push times are the project&apos;s own records from a private repository. Your browser checks the arithmetic on
+          them, not that they are true.
+        </li>
+        <li>
+          The full text of each pre-registration is not published, so its sha256 cannot be checked from this page. Like the
+          receipt hashes, it can be checked only if the text is released.
+        </li>
+        <li>
+          The beacon&apos;s BLS signature is not verified here, and the lab&apos;s seal code does not verify it either. The lab reads
+          the randomness from drand&apos;s public API over HTTPS.
+        </li>
+      </ul>
 
       <h2>How a seal works</h2>
       <p>
@@ -224,15 +261,16 @@ export default function DdnaScience() {
       </table>
       <p className="dim">
         The randomness links open drand&apos;s own public record of each round, so you can compare the value yourself; this site
-        makes no request to drand. The beacon&apos;s BLS signature is not verified here.
+        makes no request to drand. The beacon&apos;s BLS signature is checked neither here nor by the lab&apos;s seal code.
       </p>
 
       <h2>Sealed verdicts</h2>
       <p>
-        Each verdict demonstrates one named behaviour, in one organism, in the worlds its pre-registration declared. A PASS is not a
-        claim of human parity. Class C and D results are shown as mechanism and are never claims. An integrity check confirms that
-        machinery stays inside its registered fence; it is never a capability PASS and raises no ability domain. The line under each
-        verdict says what it does not show.
+        Each verdict concerns one named behaviour or property in the worlds its pre-registration declared. A PASS demonstrates it
+        there; a FAIL or WITHHELD does not. Some are arithmetic identity checks or censuses, not an organism&apos;s behaviour. A PASS is
+        not a claim of human parity. Class C and D results are shown as mechanism and are never claims. An integrity check confirms
+        that machinery stays inside its registered fence; it is never a capability PASS and raises no ability domain. The line under
+        each verdict says which, and what it does not show.
       </p>
       {current.map((g) => (
         <GateCard key={g.id} g={g} />
@@ -247,7 +285,8 @@ export default function DdnaScience() {
       <h2>What was registered before each run</h2>
       <p>
         The first paragraph of each frozen pre-registration&apos;s hypothesis and falsifier, verbatim, with its arms. The sha256 of the
-        whole frozen text is the hash in the verdict record above.
+        whole frozen text is the hash in the verdict record above. The whole text is not published; like the receipt hashes, this
+        hash can be checked only if the text is released.
       </p>
       {preregs.map((p) => (
         <details key={p.id}>
@@ -300,6 +339,7 @@ export default function DdnaScience() {
         </tbody>
       </table>
       <h3>Sections of the math specification these gates cite</h3>
+      <p className="dim">Section titles name outside sources as citations (for example AXIOM); no AXIOM code is used in DDNA.</p>
       <ul>
         {math.spec_sections.map((s) => (
           <li key={s.id}>
@@ -354,7 +394,7 @@ export default function DdnaScience() {
             <th>#</th>
             <th>domain</th>
             <th>status</th>
-            <th>sealed PASS / FAIL</th>
+            <th>current sealed PASS / FAIL (superseded not counted)</th>
             <th>gates</th>
           </tr>
         </thead>

@@ -11,6 +11,8 @@ export type Gate = {
   class: "A" | "B" | "C" | "D";
   /** "integrity": checks machinery inside a registered fence; never a capability PASS, whatever its class. */
   kind: "capability" | "integrity";
+  /** How a claimable PASS was scored; RC-53 marks a score computed beside the live organism, not from it. */
+  scoring: "live organism" | "beside the live organism (RC-53)" | "identity check" | "replication" | "not assessed";
   claim: Claim;
   superseded_by: string | null;
   domain: number | null;
@@ -45,6 +47,8 @@ export type Verdicts = {
     superseded: number;
     claimable_pass: number;
     integrity_pass: number;
+    scored_live: number;
+    rc53_debt: number;
   };
   drand: { chain: string; chain_hash: string; genesis: number; period_s: number; margin_s: number };
   rounds: Round[];

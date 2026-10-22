@@ -95,6 +95,9 @@ export async function runChecks(get: (file: string) => Promise<ArrayBuffer>, exp
     add("Records", `${g.id} is listed under its seal round`, !!r && r.gates.includes(g.id), `round ${g.round}`);
     const want = expectedClaim(g);
     add("Records", `${g.id} is shown as ${want}`, g.claim === want, `${g.verdict}, Class ${g.class}`);
+    const stated = g.scoring !== "not assessed";
+    const rc53Ok = g.scoring !== "beside the live organism (RC-53)" || g.lines.fence.includes("(RC-53)");
+    add("Records", `${g.id} states how it was scored only if it is a claimable PASS, and discloses RC-53`, stated === (want === "named-behaviour") && rc53Ok, g.scoring);
     const pr = p.preregs.find((x) => x.id === g.id);
     add("Records", `${g.id} pre-registration hash matches its verdict record`, !!pr && pr.prereg_sha256 === g.prereg_sha256, g.prereg_sha256.slice(0, 16) + "…");
     if (g.stats?.per_seed && g.stats.median !== null) {
@@ -102,13 +105,16 @@ export async function runChecks(get: (file: string) => Promise<ArrayBuffer>, exp
       add("Statistics", `${g.id} median recomputes from its ${g.stats.per_seed.length} per-seed scores`, g.stats.per_seed.length === g.stats.n && Math.abs(m - g.stats.median) <= MEDIAN_TOLERANCE, `recomputed ${m.toFixed(7)}, sealed ${g.stats.median}`);
     }
   }
-  const c = { sealed: 0, pass: 0, partial: 0, fail: 0, withheld: 0, superseded: 0, claimable_pass: 0, integrity_pass: 0 };
+  const c = { sealed: 0, pass: 0, partial: 0, fail: 0, withheld: 0, superseded: 0, claimable_pass: 0, integrity_pass: 0, scored_live: 0, rc53_debt: 0 };
   for (const g of v.gates) {
     c.sealed++;
     c[g.verdict.toLowerCase() as "pass" | "partial" | "fail" | "withheld"]++;
     if (g.superseded_by) c.superseded++;
-    if (expectedClaim(g) === "named-behaviour") c.claimable_pass++;
-    if (expectedClaim(g) === "integrity") c.integrity_pass++;
+    const claim = expectedClaim(g);
+    if (claim === "named-behaviour") c.claimable_pass++;
+    if (claim === "integrity") c.integrity_pass++;
+    if (claim === "named-behaviour" && g.scoring === "live organism") c.scored_live++;
+    if (claim === "named-behaviour" && g.scoring === "beside the live organism (RC-53)") c.rc53_debt++;
   }
   const same = (Object.keys(c) as (keyof typeof c)[]).every((k) => v.counts[k] === c[k]);
   add("Records", "the verdict counts recompute from the gate records", same, `${c.sealed} sealed: ${c.pass} PASS, ${c.fail} FAIL, ${c.withheld} WITHHELD`);

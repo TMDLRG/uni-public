@@ -8,7 +8,9 @@
   "withheld": 1,
   "superseded": 3,
   "claimable_pass": 9,
-  "integrity_pass": 1
+  "integrity_pass": 1,
+  "scored_live": 2,
+  "rc53_debt": 5
  },
  "drand": {
   "chain": "quicknet",
@@ -114,6 +116,7 @@
    "verdict": "FAIL",
    "class": "A",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "not-shown",
    "superseded_by": "P-ID-v2",
    "domain": 8,
@@ -142,6 +145,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "identity check",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": null,
@@ -189,6 +193,7 @@
    "verdict": "WITHHELD",
    "class": "A",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "withheld",
    "superseded_by": "BOOK-TMAZE-v2",
    "domain": 8,
@@ -236,6 +241,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "replication",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": null,
@@ -283,6 +289,7 @@
    "verdict": "PASS",
    "class": "C",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "mechanism",
    "superseded_by": null,
    "domain": null,
@@ -330,6 +337,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "beside the live organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -349,7 +357,7 @@
    },
    "lines": {
     "behaviour": "IND-02 PASS (A): at the registered setting of its reachability threshold, the inductive planner takes the guaranteed three-step route rather than the low-probability shortcut at every decision of the registered census.",
-    "fence": "IND-02 does not show learning: it is a deterministic regression property of the inductive planner."
+    "fence": "IND-02 does not show learning: it is a deterministic regression property of the inductive planner; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -358,6 +366,7 @@
    "verdict": "FAIL",
    "class": "A",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "not-shown",
    "superseded_by": null,
    "domain": 6,
@@ -405,6 +414,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "beside the live organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 5,
@@ -443,7 +453,7 @@
    },
    "lines": {
     "behaviour": "LEARN-04-v2 PASS (A): after a change-point, a native node with the volatility change-point organ shows a flatter slope of perseveration against the length of the pre-switch block than the same node with the organ off, on every sealed seed.",
-    "fence": "LEARN-04-v2 does not show the stationary-world properties (decay of the volatility estimate, false alarms); other tests cover those."
+    "fence": "LEARN-04-v2 does not show the stationary-world properties (decay of the volatility estimate, false alarms), which other tests cover; the score is a rollout of the model beside the live organism, not the live organism's own behaviour (RC-53)."
    }
   },
   {
@@ -452,6 +462,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "beside the live organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 9,
@@ -490,7 +501,7 @@
    },
    "lines": {
     "behaviour": "H3 PASS (A): the energy-organ forager stays viable for a larger share of a 300-tick life than a random-actuator control and its own yoked open-loop replay.",
-    "fence": "H3 does not show that viability comes from expected-free-energy planning: a simple energy-threshold reflex also passes H3 (registered fence)."
+    "fence": "H3 does not show that viability comes from expected-free-energy planning: a simple energy-threshold reflex also passes H3 (registered fence); the score is a rollout of the model beside the live organism, not the live organism's own behaviour (RC-53)."
    }
   },
   {
@@ -499,6 +510,7 @@
    "verdict": "FAIL",
    "class": "A",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "not-shown",
    "superseded_by": null,
    "domain": 9,
@@ -536,7 +548,7 @@
     ]
    },
    "lines": {
-    "behaviour": "H5 FAIL (A): the sleep organ at its signed defaults alternates almost every tick instead of holding bouts, so the registered hysteresis clause failed on every seed.",
+    "behaviour": "H5 FAIL (A): the sleep organ at its signed defaults thrashes: its margin is about −1.0 on every seed (dev pilots show bouts of about one tick), so the registered hysteresis clause failed on every seed.",
     "fence": "H5 does not show stable sleep bouts; a repair needs its own registration and seal."
    }
   },
@@ -546,6 +558,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "beside the live organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": null,
@@ -584,7 +597,7 @@
    },
    "lines": {
     "behaviour": "V4-SYN PASS (A), a registered synthetic stand-in: on a cyclic-path world, a model with the path factor predicts held-out steps better than the same model without it.",
-    "fence": "V4-SYN does not show image-level vision: it is a model-comparison property on a synthetic sequence family."
+    "fence": "V4-SYN does not show image-level vision: it is a model-comparison property on a synthetic sequence family; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -593,6 +606,7 @@
    "verdict": "FAIL",
    "class": "D",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "not-shown",
    "superseded_by": "CAP-Lang-L1-v2",
    "domain": 3,
@@ -640,6 +654,7 @@
    "verdict": "PASS",
    "class": "D",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "mechanism",
    "superseded_by": null,
    "domain": 3,
@@ -687,6 +702,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "beside the live organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -706,7 +722,7 @@
    },
    "lines": {
     "behaviour": "P-ID-v2 PASS (A): with shared prediction code and lowest-index tie-breaking, the sophisticated-inference planner and the one-step native agent decide identically at all 810 registered decision points.",
-    "fence": "P-ID-v2 does not show learning: it is a deterministic census that removes a confound from later depth comparisons."
+    "fence": "P-ID-v2 does not show learning: it is a deterministic census that removes a confound from later depth comparisons; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -715,6 +731,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "live organism",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -752,8 +769,8 @@
     ]
    },
    "lines": {
-    "behaviour": "BOOK-TMAZE-v2 PASS (A): the native exact T-maze organism reaches the baited arm under balanced policy priors on a decisive majority of episodes, on all 20 sealed seeds.",
-    "fence": "BOOK-TMAZE-v2 does not show a capability beyond reaching under balanced priors in the book's T-maze replication."
+    "behaviour": "BOOK-TMAZE-v2 PASS (A): the native exact T-maze organism reaches the baited arm in a fixed configuration by the planner's deterministic tie-break, under balanced policy priors, on all 20 sealed seeds.",
+    "fence": "BOOK-TMAZE-v2 does not show cue use, context inference or reaching the baited arm when the bait moves: the bait never moved, the organism opened the baited arm first in every episode by tie-break (erratum 01), and its registered falsifier could not fire against its own always-wrong-arm control."
    }
   },
   {
@@ -762,6 +779,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
+   "scoring": "live organism",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 6,
@@ -841,6 +859,7 @@
    "verdict": "FAIL",
    "class": "A",
    "kind": "capability",
+   "scoring": "not assessed",
    "claim": "not-shown",
    "superseded_by": null,
    "domain": 6,
@@ -879,7 +898,7 @@
    },
    "lines": {
     "behaviour": "S-HOLD FAIL (A): on the held-out family SF-C, the organism that passed S1 classified the noise and lagged channels correctly in every attachment but the new-cause stream in only 8 of 20, below the registered half, and its pooled linkage missed the registered bound.",
-    "fence": "S-HOLD does not show any capability on SF-C or for 'any signal' (tested families SF-A and SF-C); S1's PASS on SF-A stands, and SF-C is never re-run."
+    "fence": "S-HOLD does not show any capability on SF-C or for 'any signal' (tested families SF-A and SF-C); S1's PASS on SF-A stands, and SF-C is never re-run; attainability on SF-C was not established."
    }
   },
   {
@@ -888,6 +907,7 @@
    "verdict": "PASS",
    "class": "B",
    "kind": "integrity",
+   "scoring": "not assessed",
    "claim": "integrity",
    "superseded_by": null,
    "domain": null,
