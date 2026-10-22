@@ -1,0 +1,52 @@
+{
+ "note": [
+  "Provenance of the DDNA 'follow the science' export published at /evidence/ddna/.",
+  "The five files under public/evidence/ddna/data/ are byte-identical to the export written by UNI.DDNA tools/public_export at the trunk commit below; the page's browser checks re-hash them against manifest_sha256.",
+  "UNI.DDNA is a private repository: the commits below cannot be opened from here."
+ ],
+ "schema_version": 1,
+ "generated_by": "generators/build_science.cjs",
+ "source": {
+  "repo": "TMDLRG/UNI.DDNA (private)",
+  "ref": "s/2026-10-13-organisms",
+  "commit": "07fa7df71489d2df5a92bf4eb9dda46fba5855fe",
+  "commit_short": "07fa7df71489",
+  "commit_date": "2026-10-22T17:09:25Z",
+  "tool_commit": "69281eed15e9a1b218f4d45bbdcfcd6b6f27219e",
+  "tool_version": "1.0.0"
+ },
+ "manifest_sha256": "de417e8a822517bd33bac31ad9386bd0ff0d1e36f7e422666b60de65cbd738db",
+ "files": [
+  {
+   "path": "evidence/ddna/data/manifest.json",
+   "sha256": "de417e8a822517bd33bac31ad9386bd0ff0d1e36f7e422666b60de65cbd738db",
+   "bytes": 985
+  },
+  {
+   "path": "evidence/ddna/data/verdicts.json",
+   "sha256": "26731fa19c5006779c1384ba08087ed22bde313960275eae5ec31ddc25cc4f3c",
+   "bytes": 21765
+  },
+  {
+   "path": "evidence/ddna/data/preregs.json",
+   "sha256": "b2c6c08c8618844cb8a1bd9087554dd31ce4c8f322f69eea9b21db441184b61f",
+   "bytes": 19712
+  },
+  {
+   "path": "evidence/ddna/data/math.json",
+   "sha256": "aa3c48605aa243f51e5c0c400ebb7fe78a4b292edc173a3b044d860cc7b0d607",
+   "bytes": 8416
+  },
+  {
+   "path": "evidence/ddna/data/parity.json",
+   "sha256": "946cc8c29fdf10ebf2fd94d3df668d7b6807ff9d34bda3eb1333bd32a4aff56d",
+   "bytes": 6759
+  }
+ ],
+ "checked": {
+  "allowlisted_files": 5,
+  "manifest_hashes": 4,
+  "denied_values": 4,
+  "structural_shapes": 8
+ }
+}

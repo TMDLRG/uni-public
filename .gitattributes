@@ -16,3 +16,8 @@ content/vendored/site-nav.json -text
 content/vendored/nav-snippet.html -text
 public/nav.css -text
 public/nav.js -text
+
+# The DDNA science export is an EXACT byte copy of UNI.DDNA tools/public_export's output, and the
+# /evidence/ddna/ page asks the visitor's browser to re-hash these files against the export manifest.
+# An EOL conversion would change the bytes and fail that check, so they are never converted.
+public/evidence/ddna/data/*.json -text

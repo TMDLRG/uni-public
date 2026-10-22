@@ -1,0 +1,287 @@
+{
+ "schema": "ddna-science-export/1#parity",
+ "summary": [
+  "Sealed gate verdicts: 17 (11 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
+  "PASS verdicts with claimable evidence (Class A/B): 9; PASS verdicts shown as mechanism only (Class C/D): 2.",
+  "Each verdict demonstrates a named behaviour; capability-parity claims: 0.",
+  "Human-test items sealed: 0 of 14.",
+  "Ability domains with a sealed Class A/B PASS: 4 of 14; with a Class C/D PASS only: 1; with nothing operational: 5.",
+  "Life-cycle stages complete: 0 of 6 (2 partial; the rest not built or not started).",
+  "One hierarchical model (domain 12): 0 sealed verdicts; the sealed PASS verdicts are narrow demonstrations in separate organisms."
+ ],
+ "domains": [
+  {
+   "order": 1,
+   "domain": "Vision / perception",
+   "status": "code + dev",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 2,
+   "domain": "Reading",
+   "status": "code only",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 3,
+   "domain": "Language",
+   "status": "sealed PASS shown as mechanism only (Class C/D)",
+   "sealed_pass": 1,
+   "sealed_fail": 0,
+   "gates": [
+    "CAP-Lang-L1-v2"
+   ]
+  },
+  {
+   "order": 4,
+   "domain": "Motor + learning new motors",
+   "status": "code + dev FAIL",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 5,
+   "domain": "Continual learning",
+   "status": "narrow PASS",
+   "sealed_pass": 1,
+   "sealed_fail": 0,
+   "gates": [
+    "LEARN-04-v2"
+   ]
+  },
+  {
+   "order": 6,
+   "domain": "Structure growth + reorganization",
+   "status": "narrow PASS",
+   "sealed_pass": 1,
+   "sealed_fail": 2,
+   "gates": [
+    "S-NULL",
+    "S1",
+    "S-HOLD"
+   ]
+  },
+  {
+   "order": 7,
+   "domain": "Memory",
+   "status": "nothing",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 8,
+   "domain": "Reasoning / planning",
+   "status": "narrow PASS",
+   "sealed_pass": 3,
+   "sealed_fail": 0,
+   "gates": [
+    "IND-02",
+    "P-ID-v2",
+    "BOOK-TMAZE-v2"
+   ]
+  },
+  {
+   "order": 9,
+   "domain": "Interoception / homeostasis",
+   "status": "narrow PASS",
+   "sealed_pass": 1,
+   "sealed_fail": 1,
+   "gates": [
+    "H3",
+    "H5"
+   ]
+  },
+  {
+   "order": 10,
+   "domain": "Social / human interaction",
+   "status": "nothing",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 11,
+   "domain": "Long operating life",
+   "status": "nothing",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 12,
+   "domain": "One hierarchical model",
+   "status": "code only",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 13,
+   "domain": "Sound / audition",
+   "status": "nothing",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  },
+  {
+   "order": 14,
+   "domain": "Touch / contact sensing",
+   "status": "nothing",
+   "sealed_pass": 0,
+   "sealed_fail": 0,
+   "gates": []
+  }
+ ],
+ "lifecycle": [
+  {
+   "order": 1,
+   "stage": "Genome (DDNA)",
+   "status": "partial"
+  },
+  {
+   "order": 2,
+   "stage": "Digital womb",
+   "status": "partial"
+  },
+  {
+   "order": 3,
+   "stage": "Birth",
+   "status": "not built"
+  },
+  {
+   "order": 4,
+   "stage": "WORLD",
+   "status": "not built"
+  },
+  {
+   "order": 5,
+   "stage": "Long operating life",
+   "status": "not started"
+  },
+  {
+   "order": 6,
+   "stage": "Lineage (organism clone / genome twin / offspring)",
+   "status": "not built"
+  }
+ ],
+ "human_tests": [
+  {
+   "id": "HT-01",
+   "stage": "Womb",
+   "test": "Habituation to a repeated pulse",
+   "paradigm": "Leader et al. 1982",
+   "criterion": "decrement + recovery on >= 2/3 novel probes",
+   "status": "not built"
+  },
+  {
+   "id": "HT-02",
+   "stage": "Womb to birth",
+   "test": "Prenatal exposure, postnatal choice",
+   "paradigm": "DeCasper & Spence 1986",
+   "criterion": "familiar stream chosen on a registered majority, >= 2 sessions",
+   "status": "not built"
+  },
+  {
+   "id": "HT-03",
+   "stage": "Neonate",
+   "test": "Visual habituation-dishabituation",
+   "paradigm": "Slater et al. 1984",
+   "criterion": "habituate within 12 trials; novel > familiar on >= 3/4",
+   "status": "not built"
+  },
+  {
+   "id": "HT-04",
+   "stage": "Infant",
+   "test": "Conjugate mobile (contingency + retention)",
+   "paradigm": "Rovee-Collier",
+   "criterion": "retention ratio >= 0.7 at the registered delay",
+   "status": "not built"
+  },
+  {
+   "id": "HT-05",
+   "stage": "Infant",
+   "test": "Statistical word segmentation",
+   "paradigm": "Saffran, Aslin & Newport 1996",
+   "criterion": ">= 9/12 items word vs part-word",
+   "status": "not built"
+  },
+  {
+   "id": "HT-06",
+   "stage": "Infant",
+   "test": "A-not-B with delay",
+   "paradigm": "Diamond 1985",
+   "criterion": "B correct >= 2/3 at delay d",
+   "status": "dev pilot only (Class C, not sealed)"
+  },
+  {
+   "id": "HT-07",
+   "stage": "Infant",
+   "test": "Cross-situational word learning",
+   "paradigm": "Smith & Yu 2008",
+   "criterion": ">= 4/6 at 4-AFC",
+   "status": "dev only (Class D, not sealed)"
+  },
+  {
+   "id": "HT-08",
+   "stage": "Toddler",
+   "test": "CDC milestone tracker",
+   "paradigm": "Zubler et al. 2022 (US public domain)",
+   "criterion": "per milestone: achieved / not yet",
+   "status": "not built"
+  },
+  {
+   "id": "HT-09",
+   "stage": "Child",
+   "test": "Dimensional change card sort",
+   "paradigm": "Zelazo 2006",
+   "criterion": ">= 5/6 post-switch correct",
+   "status": "not built"
+  },
+  {
+   "id": "HT-10",
+   "stage": "Child",
+   "test": "False belief (Sally-Anne)",
+   "paradigm": "Wimmer & Perner 1983",
+   "criterion": "belief + controls correct on 2/2 stories",
+   "status": "not built"
+  },
+  {
+   "id": "HT-11",
+   "stage": "Child",
+   "test": "Change detection (working memory K)",
+   "paradigm": "Luck & Vogel 1997; Cowan 2005",
+   "criterion": "K at or above the lower bound of the named band (pre-registered); band placement descriptive only; above-band -> 12 §6 unexpected-results log",
+   "status": "not built"
+  },
+  {
+   "id": "HT-12",
+   "stage": "Child to adult",
+   "test": "Digit span + Corsi",
+   "paradigm": "Gathercole 2004; Kessels 2000",
+   "criterion": "span = longest length with >= 1/2 correct",
+   "status": "not built"
+  },
+  {
+   "id": "HT-13",
+   "stage": "Child to adult",
+   "test": "Matrix reasoning (open generator)",
+   "paradigm": "matRiks-style rule grammar (MIT)",
+   "criterion": ">= 6/8 per rule-count tier",
+   "status": "not built"
+  },
+  {
+   "id": "HT-14",
+   "stage": "Motor (declared families MF-A, MF-B; MF-C held out)",
+   "test": "Visuomotor rotation adaptation",
+   "paradigm": "Krakauer et al. 2000",
+   "criterion": "under 10 degrees error + negative aftereffect",
+   "status": "not built"
+  }
+ ]
+}

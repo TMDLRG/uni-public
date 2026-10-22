@@ -1,0 +1,318 @@
+{
+ "schema": "ddna-science-export/1#preregs",
+ "preregs": [
+  {
+   "id": "P-ID",
+   "version": 1,
+   "prereg_sha256": "8dde504f60efcebfdc3f60adf9e43ff160d1a115439dbc96d67efa3b85a1e83d",
+   "hypothesis": "At horizon 1, the sophisticated-inference planner makes the same decision as the one-step abductive native agent at every point of a registered exhaustive decision set. Horizon and sophistication are therefore not confounded in the CAP-P depth comparisons (RED P4).",
+   "arms": [
+    {
+     "name": "si_horizon1 (FULL)",
+     "note": "sophisticated inference, horizon 1 (Ddna.Core.Plan.Sophisticated)"
+    },
+    {
+     "name": "abductive_one_step (CONTROL)",
+     "note": "the one-step abductive agent (the live NativeEpisode decision rule)"
+    }
+   ],
+   "falsifier": "`any_difference`: mismatch count `> 0`. Any decision difference means horizon and sophistication are confounded in the depth comparisons, which must then not be claimed until the difference is explained.",
+   "cites_03": [
+    "§3"
+   ]
+  },
+  {
+   "id": "F0",
+   "version": 1,
+   "prereg_sha256": "449a6da5b45c0bdb2ad6f212e19ef1c7e6928ee5e97c034f6fd565988dcc2356",
+   "hypothesis": "A native-exact DDNA node computes a free energy that is a correct variational bound — the three equivalent forms agree and `F ≥ −ln p(o)` (the Friston-sign upper bound on surprisal) with the `:exact` tag — on every member of a seeded family of random categorical models.",
+   "arms": [
+    {
+     "name": "f0_native_exact (FULL)",
+     "note": "native exact carrier; score = exact variational F"
+    }
+   ],
+   "falsifier": "`bound_violated` — the **median** bound margin `< 0.0`: the computed F is systematically **below** the surprisal, i.e. not a valid upper bound on surprisal (the Friston-sign bound is violated). Also any `:exact`-tag mismatch or a three-forms disagreement beyond 1e-9 drives the per-seed score to the `-1.0` sentinel, failing the clause.",
+   "cites_03": [
+    "§1"
+   ]
+  },
+  {
+   "id": "BOOK-TMAZE",
+   "version": 1,
+   "prereg_sha256": "dc2446bc0d8cb980603f12147b156734d2a23afa48bcb66055cb508da456e1b5",
+   "hypothesis": "The native T-maze organism reaches the rewarded arm and so earns normalized return well above the always-wrong-arm baseline, under stochastic reward.",
+   "arms": [
+    {
+     "name": "native_tmaze (FULL)",
+     "note": "native exact T-maze organism, arm-first under balanced E"
+    }
+   ],
+   "falsifier": "`no_better_than_trivial` — the normalized-return BCa **upper** bound `< 0.1`: the agent does no better than the always-wrong-arm baseline (it does not reach the baited arm).",
+   "cites_03": []
+  },
+  {
+   "id": "BOOK-HMM",
+   "version": 1,
+   "prereg_sha256": "f1969cf382d31d68db766716593c291e315493fad8920e966c22fc6e54133d99",
+   "hypothesis": "The book listener's exact smoothing recovers the hidden note — its smoothed posterior puts substantially more mass on the true hidden note than chance — on a seeded family of listener-HMM trajectories.",
+   "arms": [
+    {
+     "name": "listener_hmm (FULL)",
+     "note": "the book listener HMM; exact smoothing recovers the hidden note"
+    }
+   ],
+   "falsifier": "`no_recovery` — the recovery-confidence BCa **upper** bound `< 0.05`: the recoverer is at chance (the inference carries no information about the hidden note).",
+   "cites_03": [
+    "§2"
+   ]
+  },
+  {
+   "id": "FALS-EPI-v2",
+   "version": 1,
+   "prereg_sha256": "f2657e757859c0f9c13b1403d691c1e14ccb35b289a5c2d2c2b1e111d6dba12e",
+   "hypothesis": "Under balanced E and exact native free energy, the informative-cue T-maze twin puts more first-action posterior mass on the cue than its uninformative-cue twin (ΔP(cue-first) > 0), across a seeded precision family.",
+   "arms": [
+    {
+     "name": "informative_cue (FULL)",
+     "note": "native T-maze with an informative cue"
+    },
+    {
+     "name": "uninformative_cue (CONTROL)",
+     "note": "the ONE variable: the cue is uninformative (emits cue-L/R 0.5 either ctx)"
+    }
+   ],
+   "falsifier": "`no_epistemic_difference` — the ΔP(cue-first) BCa **upper** bound `≤ 0.0`: the twins put equal (or less) first-action mass on the cue, i.e. the cue's epistemic value does not raise cue-first mass (the `epistemic_ablation`-0 null case).",
+   "cites_03": []
+  },
+  {
+   "id": "IND-02",
+   "version": 1,
+   "prereg_sha256": "3f7218dde6d636e15ccf9bf4155a1553b4ad28dad86722be7bcdeb05d060fed9",
+   "hypothesis": "With the reachability threshold κ_reach = 0.5 kept separate from the cost ε = 1e-3, the inductive planner takes the guaranteed 3-step route at every decision of the lottery-shortcut world, and with κ_reach = ε it does not.",
+   "arms": [
+    {
+     "name": "kappa_reach_0.5 (FULL)",
+     "note": "inductive planner, κ_reach = 0.5 (separate from the cost ε = 1e-3)"
+    },
+    {
+     "name": "kappa_reach_eps (CONTROL)",
+     "note": "the same planner with κ_reach = ε = 1e-3 (the MB C9 bug)"
+    }
+   ],
+   "falsifier": "`lottery_chosen`: the FULL route proportion `< 1.0`, i.e. with κ_reach = 0.5 the lottery is chosen at some decision.",
+   "cites_03": [
+    "§3"
+   ]
+  },
+  {
+   "id": "S-NULL",
+   "version": 1,
+   "prereg_sha256": "26ab06a3d9596ae343a4f7cb94ecbf04edc3e2c027fc4d8fe2656ba405074551",
+   "hypothesis": "On a long stream from a **single** heavy-tailed source (no mixture structure), the mixture front-end's corrected CRP-MAP growth rule keeps the number of components `K` strictly below `K_max` and **stabilizes**: no component is created (or would be, but for the cap) anywhere in the final half of the stream.",
+   "arms": [
+    {
+     "name": "mixture_heavy_tail_null (single arm)",
+     "note": "08 §5.6 registers S-NULL with no control arm (\"—\")"
+    }
+   ],
+   "falsifier": "`unbounded_growth` — the **median** margin `< 0.0`: on a typical seed the mixture is still creating components (or is pressed against the cap) in the second half of a long single-source stream.",
+   "cites_03": [
+    "§11"
+   ]
+  },
+  {
+   "id": "LEARN-04-v2",
+   "version": 1,
+   "prereg_sha256": "05d22705bf059036b9ec206d9380cd836292d1132723b71398805b8035c88c93",
+   "hypothesis": "After a change-point in a context's statistics, a native node carrying the volatility change-point organ re-adapts its learned context prior faster than the same node at coupling 0, so its perseveration no longer grows with the length of the pre-switch block: the slope of perseverative trials on pre-switch length is **flatter** (FULL − fixed-rate advantage > 0) across a seeded change-point family.",
+   "arms": [
+    {
+     "name": "volatility_adaptive (FULL)",
+     "note": "organs %{volatility: 1.0} — the ADR-020 change-point organ forgets d"
+    },
+    {
+     "name": "fixed_rate (CONTROL)",
+     "note": "organs %{volatility: 0.0} — the organ is SKIPPED at expression (RC-28)"
+    }
+   ],
+   "falsifier": "`no_adaptation` — the paired advantage's BCa **upper** bound `≤ 0.0`: the organ at coupling 1 produces no flatter perseveration slope than at coupling 0.",
+   "cites_03": [
+    "§4"
+   ]
+  },
+  {
+   "id": "H3",
+   "version": 1,
+   "prereg_sha256": "2ebbb50fdf812555659dc42245b5c8df8447a469d31bb816e515546c67838f73",
+   "hypothesis": "The native forage organism, which carries the signed Energy organ, stays in the viable set (energy above `depleted`) for a larger share of a 300-tick life than (1) the same body with a disconnected, random actuator and (2) a yoked open-loop twin that replays its own executed controls in a different world seed. Both comparisons are at the capability α (two-sided 0.01).",
+   "arms": [
+    {
+     "name": "acting (FULL)",
+     "note": "the forage organism's commands are executed (closed loop)"
+    },
+    {
+     "name": "random_action (CONTROL 1)",
+     "note": "the actuator discards the commands and executes uniform random controls"
+    },
+    {
+     "name": "yoked_open_loop (CONTROL 2)",
+     "note": "the actuator replays ACTING's executed controls in a different world seed"
+    }
+   ],
+   "falsifier": "`no_difference_vs_yoked`: the paired TOST (`Ddna.Lab.Comparisons.equivalence/4`, `Ddna.Lab.Stats.tost/3`) of ACTING − YOKED shows equivalence within **±δ = 0.02** on the viable fraction at α = 0.05 (`equiv_vs_yoked.equivalent ≥ 1`). This means the closed loop confers no viability advantage beyond an open-loop replay of the same controls.",
+   "cites_03": [
+    "§13"
+   ]
+  },
+  {
+   "id": "H5",
+   "version": 1,
+   "prereg_sha256": "347ec0ad64d38f41efe957f2948c7c2ae5e868b87d1316b34e50d8e9624b7b00",
+   "hypothesis": "With sleep as an EFE-chosen control, the native sleep-as-action organism keeps a hysteretic arousal pattern over a 400-tick life: asleep bouts longer, inter-onset intervals longer and arousal switch rate lower than the floors frozen from a random-command (thrash) reference.",
+   "arms": [
+    {
+     "name": "sleep_as_action (single arm)",
+     "note": "08 §5.7 registers no control for H5 (\"—\"); floors frozen from dev pilots"
+    }
+   ],
+   "falsifier": "`thrash`: `hysteresis.upper < 0`. The BCa upper bound of the median margin is below 0: the organism reliably fails at least one floor, i.e. it switches arousal at least as often, or sleeps in bouts no longer, than the random-command thrash reference's range.",
+   "cites_03": [
+    "§6"
+   ]
+  },
+  {
+   "id": "V4-SYN",
+   "version": 1,
+   "prereg_sha256": "f74fd4715aa8e0e1e9809586293cb9b2ce352c5fb7e7f8159ef96780d4ba40ed",
+   "hypothesis": "On a family of noisy cyclic note sequences whose dynamics are unknown to the agent, a model with a **path factor** (a latent over candidate dynamics, inferred from the sequence) predicts held-out observations better, in exact held-out ELBO, than the same model with the path factor collapsed to \"no dynamics\" (NO_PATHS).",
+   "arms": [
+    {
+     "name": "full_paths (FULL)",
+     "note": "native exact listener carrier; scored model = listener + path factor over all 4 cyclic paths"
+    },
+    {
+     "name": "no_paths (CONTROL)",
+     "note": "identical, path factor collapsed to the single \"hold\" path (no dynamics)"
+    }
+   ],
+   "falsifier": "`no_improvement` — the BCa **upper** bound of the median paired difference `≤ 0.0`: the path factor gives no held-out improvement over NO_PATHS.",
+   "cites_03": [
+    "§1"
+   ]
+  },
+  {
+   "id": "CAP-Lang-L1",
+   "version": 1,
+   "prereg_sha256": "10f77c371c3d3485df0996a48e182da9f51ba7636a8e4fc4d4a2997cffa06c40",
+   "hypothesis": "On 20 sealed synthetic Saffran-style languages, segmenting the syllable stream that crossed the blanket with the **chunking organ's** §7.4 proposal statistic recovers the words with token F ≥ 0.85 **and** beats the flat bigram transitional-probability (TP) threshold segmenter — the same stream with no word level — by an exact paired sign-flip.",
+   "arms": [
+    {
+     "name": "chunking_full (FULL)",
+     "note": "organs %{chunking: 1}: the chunking organ's §7.4 proposal statistic segments the stream"
+    },
+    {
+     "name": "no_temporal_hierarchy_tp (CONTROL)",
+     "note": "organs %{}: no word level; the flat bigram TP-threshold segmenter"
+    }
+   ],
+   "falsifier": "`full_not_above_tp` — the BCa **upper** bound of the median paired difference FULL − CONTROL ≤ 0: the chunking organ does not segment better than the flat TP threshold (08 §5.4: \"FULL ≤ the TP baseline\").",
+   "cites_03": [
+    "§7"
+   ]
+  },
+  {
+   "id": "CAP-Lang-L1-v2",
+   "version": 1,
+   "prereg_sha256": "e4ad05ceb9d1268ee7586d0c3fdb74afb9b8f86121a7887bcbe181078d96d13f",
+   "hypothesis": "On 20 sealed synthetic Saffran-style languages whose streams begin at a sealed random phase, **agent-path chunk organ v2 code run by the live carrier node on the stream it heard** (Δ > 0 stand-in for §7.2) **segments** the stream with token F ≥ 0.85 **and** better than the flat bigram transitional-probability (TP) threshold segmenter on the same stream, by an exact paired sign-flip.",
+   "arms": [
+    {
+     "name": "chunking_v2_live_full (FULL)",
+     "note": "organs %{chunking: 1}: the carrier node runs chunk organ v2 (probe-only report)"
+    },
+    {
+     "name": "no_temporal_hierarchy_tp (CONTROL)",
+     "note": "organs %{}: no word level; the flat bigram TP-threshold segmenter (as v1)"
+    }
+   ],
+   "falsifier": "- **F1 (primary, truth table)** `full_not_above_tp` — BCa upper of the median paired difference ≤ 0. - **F2 (gate validity; guard `f2_nonlearning_pass`)** — a non-learning baseline (the phase-locked 3-cutter or the all-positive-trigram lexicon) passes every PASS clause on the computed pipeline. In dev: freeze is blocked (the computed-baseline test). In the sealed run: computed on the sealed streams; a FULL PASS is downgraded to WITHHELD. - **F3 (offset robustness; guard `f3_offset_robustness`)** — FULL's BCa lower bound of the median token F on the offset ≠ 0 seeds < 0.85: the segmentation claim is refuted as a phase-locked artifact. The harness records the run WITHHELD; the verdict review records the claim refuted. - **F4 (attribution; secondary; three-valued)** — v2 (live) vs v1 greedy capped (the sealed v1 learner) on the same archived streams: per-seed counts v2 > v1, = v1, < v1 and the exact two-sided sign-flip on the sum (zeros kept). **SHOWN** iff v2 > v1 at p ≤ 0.01; **WITHDRAWN** iff v2 < v1 at p ≤ 0.01 or v2 > v1 on no seed; **NOT SHOWN** otherwise. \"v2 fixes v1's failure\" may appear only when F4 is SHOWN. **N and power:** F4 is registered at the gate's N = 20, because the harness has no larger N for a secondary. Its power on the RED dev-pool resampling (400 resamples) is 73/400 at N = 20 (N = 30: 270/400; N = 40: 357/400; N = 50: 395/400), so NOT SHOWN is the expected outcome even if v2 improves on v1. A separate attribution registration at N = 40 would be needed to test the claim with useful power; it is not part of this gate. (v2 vs v1 uncapped and v2 vs v2 capped at 4 are reported beside F4, descriptively.) - **F5 (consistency check; not a falsifier)** — the per-seed v2 lexicon size on a unigram-preserving shuffle of the same heard stream, reported against the real lexicon size. It was first registered as a falsifier (\"median ≤ 4 refutes the word-level claim\"), but that criterion cannot fire: a shuffled 300-syllable stream always keeps recurring trigrams, so its lexicon is never smaller than the real 4 words. It is kept only as a consistency check. - **F9 (phase choice; secondary)** — v2 (live) vs the TP-phase 3-cutter and vs the fewest-distinct-tokens phase selector on the same streams: per-seed counts and the exact sign-flip p. It measures how much v2 adds beyond the supplied length prior plus a phase choice; on dev it adds nothing (Metrics; live in pilot 3: v2 better on 0, equal on 13, worse on 7, p 0.015625, against each learner). - **F6 (additivity)** — the default `:greedy` fingerprint (`tools/experiments/chunk_v2/default_fingerprint.exs`, `0511006a…b5a12b`; CHUNK-V2-05) changes: additivity refuted. - **F7 (truth independence)** — the lexicon depends on anything beyond the stream, `l_max` and `min_count` (the lab options are exactly those three; the live node uses the organ defaults; tests): truth independence refuted. - **F8 (carrier parity; guard `f8_carrier_parity`)** — on any seed the live report is missing, did not hear the whole stream (`n_heard` ≠ 300), or its lexicon differs from lab-side `Chunk.reestimate/2` on the archived heard stream, or its segmentation differs from `Chunk.segment(heard, live lexicon)`: the carrier claim is refuted (WITHHELD).",
+   "cites_03": [
+    "§7"
+   ]
+  },
+  {
+   "id": "P-ID-v2",
+   "version": 1,
+   "prereg_sha256": "0526ead01d969436fd8e2737f0d0a1076e8761d2062912c780d12a87b6e4c26a",
+   "hypothesis": "At horizon 1, the sophisticated-inference planner makes the same decision as the one-step abductive native agent at every point of the registered exhaustive decision set (the P-ID v1 census), on code where both planners compute bit-identical expected free energy per first action and break exact ties by the same rule. Horizon and sophistication are therefore not confounded in the CAP-P depth comparisons (RED P4).",
+   "arms": [
+    {
+     "name": "si_horizon1 (FULL)",
+     "note": "sophisticated inference, horizon 1 (Ddna.Core.Plan.Sophisticated)"
+    },
+    {
+     "name": "abductive_one_step (CONTROL)",
+     "note": "the one-step abductive agent (the live NativeEpisode decision rule)"
+    }
+   ],
+   "falsifier": "`any_difference`: mismatch count `> 0`. Any decision difference means horizon and sophistication are confounded in the depth comparisons, which must then not be claimed until the difference is explained.",
+   "cites_03": [
+    "§3"
+   ]
+  },
+  {
+   "id": "BOOK-TMAZE-v2",
+   "version": 1,
+   "prereg_sha256": "e8b222971119988c0f36d10cb46dbe55984008dfcd5053eb1a8bc5556404387e",
+   "hypothesis": "The native T-maze organism reaches the rewarded arm and so earns normalized return well above the always-wrong-arm baseline, under stochastic reward. (v1's hypothesis, unchanged.)",
+   "arms": [
+    {
+     "name": "native_tmaze (FULL)",
+     "note": "v1's organism, unchanged: native exact T-maze, arm-first under balanced E"
+    }
+   ],
+   "falsifier": "`no_better_than_trivial` — the normalized-return BCa **upper** bound `< 0.1`: the agent does no better than the always-wrong-arm baseline (it does not reach the baited arm).",
+   "cites_03": []
+  },
+  {
+   "id": "S1",
+   "version": 1,
+   "prereg_sha256": "e022db84bf2a53618a442bac6085d350e7cc0e13d0fefa945fa0c420e158329e",
+   "hypothesis": "A native DDNA node to which a new sensor channel of a random SF-A data type is attached at a random trial classifies the channel's relation to its world — noise (h0), a reading of a cause it already models (h1), a new latent cause (h2), a redundant copy of one of its existing readings (h3) — correctly at a pooled exact-binomial lower bound ≥ 0.90; consuming an h1/h2 channel raises its return over its DETACHED twin (sign-flip, two-sided α 0.01); and a noise channel neither degrades its return (TOST ±0.02) nor leaves it more complex after pruning by more than a relative 0.05.",
+   "arms": [
+    {
+     "name": "attached (FULL)",
+     "note": "the CAP-S organism consuming an attached channel (opts[:attach] mode :attached)"
+    },
+    {
+     "name": "detached (CONTROL)",
+     "note": "the same organism discarding the channel entry; same seed, same world (the twin)"
+    }
+   ],
+   "falsifier": "`h0_retained` (noise channels are systematically kept: pooled lower bound of retention > 0.10) or `h1_no_improvement` (an h1 channel gives no improvement: its paired gain is TOST-equivalent to 0 within ±0.02).",
+   "cites_03": [
+    "§7",
+    "§11"
+   ]
+  },
+  {
+   "id": "S-HOLD",
+   "version": 1,
+   "prereg_sha256": "1d82d993834e5ba823305f929aa5c3661147c09012d3cf64551ad86c77f9c7b6",
+   "hypothesis": "The CAP-S organism that passed S1 on SF-A decides the relation type of channels from the **held-out** family SF-C (heavy-tailed noise channels, a lag-2–5 informative channel, periodic event streams) at a pooled exact-binomial lower bound ≥ 0.80, and attaching a noise channel does not degrade its return (TOST ±0.02).",
+   "arms": [
+    {
+     "name": "attached (FULL)",
+     "note": "the CAP-S organism (cue window 6) consuming an attached SF-C channel"
+    },
+    {
+     "name": "detached (CONTROL)",
+     "note": "the same organism discarding the channel entry; same seed, same world"
+    }
+   ],
+   "falsifier": "Systematic misclassification: any relation type in SF-C classified correctly in fewer than half its attachments (`h0_systematically_misclassified`, `h1_systematically_misclassified`, `h2_systematically_misclassified`).",
+   "cites_03": []
+  }
+ ]
+}

@@ -1,0 +1,302 @@
+{
+ "schema": "ddna-science-export/1#math",
+ "sign_convention": "MR-2 — Bound direction: F[q] ≥ −ln p(y|m), and ELBO = −F ≤ ln p(y|m) (E2a, Test 5)",
+ "bound_tags": [
+  {
+   "tag": ":exact",
+   "quantity": "exact −ln P(o | π) from joint forward–backward (03 §2.7, Discrete.Exact)",
+   "bound": "yes, with equality"
+  },
+  {
+   "tag": ":exact_mean_field",
+   "quantity": "VFE of the stated structured mean-field q (exact-in-time per factor, MF across factors; ADR-016), computed with no ln⁺ floor (any q; converged? reported separately)",
+   "bound": "yes — a *floored* F can fall below surprisal, so the floor is barred (MB P1.2, RC-38)"
+  },
+  {
+   "tag": ":mmp",
+   "quantity": "SPM marginal-message-passing free energy (PPF B.6, v7766 accumulation)",
+   "bound": "no: measured below the surprisal (MMP-BOUND-01: exactly ½·(−ln p(o)) at horizon 1)"
+  },
+  {
+   "tag": ":kikuchi",
+   "quantity": "region-based (Bethe/Kikuchi/CVM) free energy",
+   "bound": "no, unless the region graph is a hypertree"
+  },
+  {
+   "tag": ":laplace",
+   "quantity": "Laplace/variational-Laplace free energy",
+   "bound": "approximate (exact for linear-Gaussian)"
+  },
+  {
+   "tag": ":sampled",
+   "quantity": "Monte-Carlo estimate",
+   "bound": "in expectation only"
+  }
+ ],
+ "rules": [
+  {
+   "id": "MR-1",
+   "title": "Role discipline: q is the moving part, p(·|y,m) is the fixed target (E1, E7)"
+  },
+  {
+   "id": "MR-2",
+   "title": "Bound direction: F[q] ≥ −ln p(y|m), and ELBO = −F ≤ ln p(y|m) (E2a, Test 5)"
+  },
+  {
+   "id": "MR-3",
+   "title": "Three equivalent forms; telemetry uses the computable one (Test 11, PPF Eq 2.5)"
+  },
+  {
+   "id": "MR-4",
+   "title": "Surprisal is a model quantity; the world has no free energy in DDNA (E2b, E6, E13)"
+  },
+  {
+   "id": "MR-5",
+   "title": "Generative model ≠ generative process (E6; PPF Fig 2.2)"
+  },
+  {
+   "id": "MR-6",
+   "title": "\"Markov blanket\" always carries its sense (E14; v2 Ch. 6)"
+  },
+  {
+   "id": "MR-7",
+   "title": "Integrate over the declared variable; any change of variables carries its Jacobian (E3, Test 7)"
+  },
+  {
+   "id": "MR-8",
+   "title": "Sums over data carry distinct indices (E4, Test 6)"
+  },
+  {
+   "id": "MR-9",
+   "title": "Expected energy has a minus sign and a distinct symbol (E8, E11, E12, Test 9)"
+  },
+  {
+   "id": "MR-10",
+   "title": "Functional vs. function vs. scalar (E7)"
+  },
+  {
+   "id": "MR-11",
+   "title": "Assumptions A1–A3 are enforced, not assumed (Test 3)"
+  },
+  {
+   "id": "MR-12",
+   "title": "Every reported F carries its bound status (extends E2/E10 discipline)"
+  },
+  {
+   "id": "MR-13",
+   "title": "CVM is a gated Class-D experiment with the four-item bridge stated up front (E10; v2 Ch. 8)"
+  },
+  {
+   "id": "MR-14",
+   "title": "Book transcription corrections (found 2026-10-08)"
+  },
+  {
+   "id": "MR-15",
+   "title": "Expected free energy discipline (PPF B.21–B.34; LAB_PROTOCOL V.2–V.5)"
+  },
+  {
+   "id": "MR-16",
+   "title": "Research heuristics are rejected (M1–M12)"
+  },
+  {
+   "id": "MR-17",
+   "title": "Pedagogical points from the external math review, adopted in DDNA specs"
+  },
+  {
+   "id": "MR-18",
+   "title": "Evidence classes on every claim (v2 Method M.2)"
+  }
+ ],
+ "errata": [
+  {
+   "id": "BK-01",
+   "location": "B.43",
+   "correction": "Π̃_v",
+   "test": "CONT-01"
+  },
+  {
+   "id": "BK-02",
+   "location": "B.47 (v-equation)",
+   "correction": "−Π̃_v^(i) ε̃_v^(i) (consistent with 4.21 and B.46)",
+   "test": "CONT-01"
+  },
+  {
+   "id": "BK-03",
+   "location": "Box 4.3",
+   "correction": "the entropy term is −½ ln|2πeΣ|",
+   "test": "CONT-02"
+  },
+  {
+   "id": "BK-04",
+   "location": "Box 7.3, general form",
+   "correction": "ΔF = F[P̃] − F[P] = −ln E_Q[P̃/P] (B.39). The Dirichlet line matches B.41.",
+   "test": "BMR-01"
+  },
+  {
+   "id": "BK-05",
+   "location": "Box 8.2, line 1",
+   "correction": "μ̇_θ = −∂S (descent). Lines 2–3 are already correct.",
+   "test": "CONT-03"
+  },
+  {
+   "id": "BK-06",
+   "location": "Eq 9.3, line 1",
+   "correction": "−½ε·Π^(1)ε. Add the +½ln|Π^(1)| prior-precision term. |·| is the absolute determinant.",
+   "test": "LAPLACE-01"
+  },
+  {
+   "id": "BK-07",
+   "location": "Fig 3.1",
+   "correction": "f_u(μ,u,y) and f_y(x,u,y): active states depend on internal states, sensory states on external states",
+   "test": "— (doc)"
+  },
+  {
+   "id": "BK-08",
+   "location": "Eq 2.6 \"≤\" line",
+   "correction": "holds only when outcome preferences are induced from state preferences through the same likelihood; otherwise it can fail numerically (agent-verified)",
+   "test": "EFE-08"
+  },
+  {
+   "id": "BK-09",
+   "location": "p. 52–53 and Box 3.3",
+   "correction": "ln Q(π) ∝ −G; G is *minimized*",
+   "test": "— (doc)"
+  },
+  {
+   "id": "BK-10",
+   "location": "Gaussian notation",
+   "correction": "The DDNA API never takes a positional second argument. Gaussians are %{mean:, precision:} or %{mean:, cov:}, named fields only.",
+   "test": "LINT-02"
+  },
+  {
+   "id": "BK-11",
+   "location": "§9.3 θ_α",
+   "correction": "it is an *inverse* temperature (precision)",
+   "test": "— (doc)"
+  },
+  {
+   "id": "BK-12",
+   "location": "Fig 8.5, f^(1) row 2",
+   "correction": "verify against Friston & Frith 2015 before building the birdsong fixture",
+   "test": "OPEN"
+  },
+  {
+   "id": "BK-13",
+   "location": "A.60 (Gaussian autocorrelation derivatives)",
+   "correction": "ρ̇ = −λhρ; ρ̇(0)=0; ρ⃛ = −λ²h(λh²−3)ρ. Values at h=0 (used by A.59) are right. ρ^{(2m)}(0) = (−λ)^m(2m−1)!!",
+   "test": "CONT-04"
+  },
+  {
+   "id": "BK-14",
+   "location": "A.56",
+   "correction": "−Σρ̇(h) (no effect on A.59)",
+   "test": "—"
+  },
+  {
+   "id": "BK-15",
+   "location": "A.59 Kronecker order",
+   "correction": "DDNA stores generalized coordinates order-major, so Π̃ = R ⊗ Π (matches A.51 and SPM). Never mix the two layouts.",
+   "test": "CONT-04"
+  },
+  {
+   "id": "BK-16",
+   "location": "Appendix C left/right comments",
+   "correction": "the arrays are authoritative (they are consistent and the simulation is unaffected); do not \"fix\" an array to match a comment",
+   "test": "ORACLE-03"
+  },
+  {
+   "id": "BK-17",
+   "location": "Appendix A, Gaussian notation",
+   "correction": "as BK-10: named fields only",
+   "test": "LINT-02"
+  },
+  {
+   "id": "BK-18",
+   "location": "Figs 5.1/5.2 vs Eq 4.21",
+   "correction": "DDNA uses the 4.21 / Fig 4.6 indexing: ε̃_v^(i) = μ̃_v^(i) − g̃^(i+1)(…), with ε̃_v^(0) ≡ ε̃_y",
+   "test": "CONT-01"
+  },
+  {
+   "id": "BK-19",
+   "location": "Eq 7.10 vs B.12",
+   "correction": "B.12's order (o⊗s) matches A's orientation (rows = outcomes), so DDNA uses a[o,s] += o_o·s_s",
+   "test": "LEARN-01"
+  },
+  {
+   "id": "BK-20",
+   "location": "Table 5.1, serotonin ↔ χ",
+   "correction": "DDNA's optional organ :preference_precision uses ln C_χ = ln σ(χ·c). Class D, gated, off by default. Its precision update must be derived and signed by the lab team before use.",
+   "test": "(gated)"
+  },
+  {
+   "id": "BK-21",
+   "location": "App B priors called \"gamma\"",
+   "correction": "they are Gamma(1, β), i.e. exponentials. DDNA uses Gamma(shape = 1, rate = β) exactly as printed (B.14)",
+   "test": "PREC-01"
+  }
+ ],
+ "spec_sections": [
+  {
+   "id": "§1",
+   "title": "Discrete generative model (Ddna.Core.Discrete.Model)",
+   "cited_by": [
+    "F0",
+    "V4-SYN"
+   ]
+  },
+  {
+   "id": "§2",
+   "title": "Discrete state inference",
+   "cited_by": [
+    "BOOK-HMM"
+   ]
+  },
+  {
+   "id": "§3",
+   "title": "Planning: expected free energy and policy selection",
+   "cited_by": [
+    "IND-02",
+    "P-ID",
+    "P-ID-v2"
+   ]
+  },
+  {
+   "id": "§4",
+   "title": "Learning (Dirichlet conjugacy; PPF B.10–B.12, 7.10)",
+   "cited_by": [
+    "LEARN-04-v2"
+   ]
+  },
+  {
+   "id": "§6",
+   "title": "Bayesian model reduction (PPF B.35–B.41, Box 7.3)",
+   "cited_by": [
+    "H5"
+   ]
+  },
+  {
+   "id": "§7",
+   "title": "Structure expansion (\"fast structure learning\")",
+   "cited_by": [
+    "CAP-Lang-L1",
+    "CAP-Lang-L1-v2",
+    "S1"
+   ]
+  },
+  {
+   "id": "§11",
+   "title": "Mixture front-ends (signal → categories; PPF Box 8.3; [AXIOM]-style growth)",
+   "cited_by": [
+    "S-NULL",
+    "S1"
+   ]
+  },
+  {
+   "id": "§13",
+   "title": "Interoceptive organs (embodiment persona checks 1–6)",
+   "cited_by": [
+    "H3"
+   ]
+  }
+ ]
+}

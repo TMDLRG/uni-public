@@ -1,0 +1,857 @@
+{
+ "schema": "ddna-science-export/1#verdicts",
+ "counts": {
+  "sealed": 17,
+  "pass": 11,
+  "partial": 0,
+  "fail": 5,
+  "withheld": 1,
+  "superseded": 3,
+  "claimable_pass": 9
+ },
+ "drand": {
+  "chain": "quicknet",
+  "chain_hash": "52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971",
+  "genesis": 1692803367,
+  "period_s": 3,
+  "margin_s": 600
+ },
+ "rounds": [
+  {
+   "round": 33022249,
+   "published_at": "2026-10-13T05:41:51Z",
+   "frozen_at": "2026-10-13T05:31:50Z",
+   "frozen_basis": "push",
+   "commitment_pushed_at": "2026-10-13T05:32:43Z",
+   "randomness": "c8b999946532000c1b468d24a4cbe4ca4f19d17af5f98f8d7a9c7d82d3091ada",
+   "gates": [
+    "F0",
+    "BOOK-TMAZE",
+    "BOOK-HMM",
+    "FALS-EPI-v2"
+   ]
+  },
+  {
+   "round": 33024713,
+   "published_at": "2026-10-13T07:45:03Z",
+   "frozen_at": "2026-10-13T07:34:02Z",
+   "frozen_basis": "push",
+   "commitment_pushed_at": "2026-10-13T07:34:30Z",
+   "randomness": "c0f8ebfa2d825cbaa93d697556b4107f15af879e84b71d73bcbf1e375d410fe2",
+   "gates": [
+    "P-ID",
+    "IND-02",
+    "S-NULL",
+    "LEARN-04-v2",
+    "H3",
+    "H5",
+    "V4-SYN",
+    "CAP-Lang-L1"
+   ]
+  },
+  {
+   "round": 33049912,
+   "published_at": "2026-10-14T04:45:00Z",
+   "frozen_at": "2026-10-14T04:28:11Z",
+   "frozen_basis": "push",
+   "commitment_pushed_at": null,
+   "randomness": "8adf375ff22554ea80f0b27e8deb61a229590975d19d6fe097637ceeb951c181",
+   "gates": [
+    "P-ID-v2",
+    "BOOK-TMAZE-v2"
+   ]
+  },
+  {
+   "round": 33063118,
+   "published_at": "2026-10-14T15:45:18Z",
+   "frozen_at": "2026-10-14T14:44:29Z",
+   "frozen_basis": "commit",
+   "commitment_pushed_at": "2026-10-14T15:26:01Z",
+   "randomness": "beaa5b4519c5fa6c8150b74fba65ff0715faaa8585afd615369d8311e4c8505b",
+   "gates": [
+    "S1"
+   ]
+  },
+  {
+   "round": 33125512,
+   "published_at": "2026-10-16T19:45:00Z",
+   "frozen_at": "2026-10-16T18:53:32Z",
+   "frozen_basis": "commit",
+   "commitment_pushed_at": "2026-10-16T19:15:36Z",
+   "randomness": "c370f1ead45f91a7d3232b3122e36c7e7c9b1bb325b24149f2c0a5cc36c07c98",
+   "gates": [
+    "CAP-Lang-L1-v2"
+   ]
+  },
+  {
+   "round": 33228952,
+   "published_at": "2026-10-20T09:57:00Z",
+   "frozen_at": "2026-10-20T06:29Z",
+   "frozen_basis": "recorded to the minute",
+   "commitment_pushed_at": "2026-10-20T09:24:41Z",
+   "randomness": "dddbab5df59dd3be6f916bf79154fd07db5cb0caece534bee6636d1e647cbb6e",
+   "gates": [
+    "S-HOLD"
+   ]
+  }
+ ],
+ "gates": [
+  {
+   "id": "P-ID",
+   "version": 1,
+   "verdict": "FAIL",
+   "class": "A",
+   "claim": "not-shown",
+   "superseded_by": "P-ID-v2",
+   "domain": 8,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "8dde504f60efcebfdc3f60adf9e43ff160d1a115439dbc96d67efa3b85a1e83d",
+   "receipt_sha256": "5df282d7ffed1638ef0c1d224071732ca5edbdeaec1b7c041e7306949038f3f8",
+   "stats": {
+    "n": 1,
+    "effective_n": 1,
+    "median": 3,
+    "per_seed": [
+     3
+    ]
+   },
+   "lines": {
+    "behaviour": "P-ID FAIL (A), superseded by P-ID-v2: the sophisticated-inference planner and the one-step native agent decided differently at 3 of 810 registered decision points, from floating-point summation order at exact ties.",
+    "fence": "P-ID does not show a modelling difference between the two planners; the cause was summation order, which P-ID-v2 removed."
+   }
+  },
+  {
+   "id": "F0",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": null,
+   "round": 33022249,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "449a6da5b45c0bdb2ad6f212e19ef1c7e6928ee5e97c034f6fd565988dcc2356",
+   "receipt_sha256": "f4aa70c85bc795400b2924a04faecc23e48c6fccc418506fe26394d3cfed10f9",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.213087,
+    "per_seed": [
+     0.224102,
+     0.118623,
+     0.478962,
+     0.61017,
+     0.184216,
+     0.494086,
+     0.909031,
+     0.001588,
+     0.064312,
+     0.152778,
+     0.080532,
+     0.26064,
+     0.26287,
+     0.428612,
+     0.140823,
+     0.09689,
+     0.001099,
+     0.202072,
+     0.303614,
+     0.424036
+    ]
+   },
+   "lines": {
+    "behaviour": "F0 PASS (A): across 20 sealed random categorical models, the native exact node's free energy F is an upper bound on surprisal (Friston sign, tag :exact), and its three forms agree.",
+    "fence": "F0 does not show a behaviour: it is an identity property of the free-energy arithmetic, not a capability."
+   }
+  },
+  {
+   "id": "BOOK-TMAZE",
+   "version": 1,
+   "verdict": "WITHHELD",
+   "class": "A",
+   "claim": "withheld",
+   "superseded_by": "BOOK-TMAZE-v2",
+   "domain": 8,
+   "round": 33022249,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "dc2446bc0d8cb980603f12147b156734d2a23afa48bcb66055cb508da456e1b5",
+   "receipt_sha256": "de3942bf36373cd26ca4550f96a8a0ec27e26eff23cf15b642c733ddc1a5ec28",
+   "stats": {
+    "n": 20,
+    "effective_n": 10,
+    "median": 0.726563,
+    "per_seed": [
+     0.734375,
+     0.703125,
+     0.734375,
+     0.625,
+     0.6875,
+     0.71875,
+     0.78125,
+     0.734375,
+     0.6875,
+     0.734375,
+     0.734375,
+     0.71875,
+     0.84375,
+     0.6875,
+     0.671875,
+     0.703125,
+     0.734375,
+     0.71875,
+     0.75,
+     0.765625
+    ]
+   },
+   "lines": {
+    "behaviour": "BOOK-TMAZE WITHHELD (A), superseded by BOOK-TMAZE-v2: effective N was 10 of 20, below the registered N, so the registered guard withheld a verdict.",
+    "fence": "BOOK-TMAZE does not show anything for or against T-maze reaching; its sealed seeds are consumed and it is never re-run."
+   }
+  },
+  {
+   "id": "BOOK-HMM",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": null,
+   "round": 33022249,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "f1969cf382d31d68db766716593c291e315493fad8920e966c22fc6e54133d99",
+   "receipt_sha256": "afae6722b0b9b10486acb4b15351a78ef30873f17dc42198807525d1573bff77",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.907509,
+    "per_seed": [
+     0.90016,
+     0.91999,
+     0.909408,
+     0.857439,
+     0.901675,
+     0.959185,
+     0.919874,
+     0.9694,
+     0.903768,
+     0.885659,
+     0.888861,
+     0.865731,
+     0.961455,
+     0.942981,
+     0.90561,
+     0.92853,
+     0.887465,
+     0.959893,
+     0.893953,
+     0.923435
+    ]
+   },
+   "lines": {
+    "behaviour": "BOOK-HMM PASS (A): exact smoothing on the book's listener hidden Markov model recovers the sealed latent note sequence above the registered floor on 20 sealed trajectories.",
+    "fence": "BOOK-HMM does not show perception or learning by an organism: it is a replication property of exact inference on a given model."
+   }
+  },
+  {
+   "id": "FALS-EPI-v2",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "C",
+   "claim": "mechanism",
+   "superseded_by": null,
+   "domain": null,
+   "round": 33022249,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "f2657e757859c0f9c13b1403d691c1e14ccb35b289a5c2d2c2b1e111d6dba12e",
+   "receipt_sha256": "df230ce0b670d41779e9302c4c3b610089f323459e9d51d697a37565736685e3",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.142208,
+    "per_seed": [
+     0.126632,
+     0.131762,
+     0.137482,
+     0.143516,
+     0.179146,
+     0.145505,
+     0.134251,
+     0.14186,
+     0.146422,
+     0.14365,
+     0.136482,
+     0.141541,
+     0.121143,
+     0.117952,
+     0.174456,
+     0.115644,
+     0.173359,
+     0.142556,
+     0.146639,
+     0.15445
+    ]
+   },
+   "lines": {
+    "behaviour": "FALS-EPI-v2 PASS (C), shown as mechanism: the native planner puts more first-action mass on the cue when the cue is informative.",
+    "fence": "FALS-EPI-v2 does not show a behavioural contrast between arms (the score is a model-level property of the planner); Class C is mechanism, not a capability claim."
+   }
+  },
+  {
+   "id": "IND-02",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 8,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "3f7218dde6d636e15ccf9bf4155a1553b4ad28dad86722be7bcdeb05d060fed9",
+   "receipt_sha256": "9b4acdead9a4192040a580bd782e8ce6d3781dae02bc8fd1917a45b30832c494",
+   "stats": {
+    "n": 1,
+    "effective_n": 1,
+    "median": 1,
+    "per_seed": [
+     1
+    ]
+   },
+   "lines": {
+    "behaviour": "IND-02 PASS (A): at the registered setting of its reachability threshold, the inductive planner takes the guaranteed three-step route rather than the low-probability shortcut at every decision of the registered census.",
+    "fence": "IND-02 does not show learning: it is a deterministic regression property of the inductive planner."
+   }
+  },
+  {
+   "id": "S-NULL",
+   "version": 1,
+   "verdict": "FAIL",
+   "class": "A",
+   "claim": "not-shown",
+   "superseded_by": null,
+   "domain": 6,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "26ab06a3d9596ae343a4f7cb94ecbf04edc3e2c027fc4d8fe2656ba405074551",
+   "receipt_sha256": "8e69da780642621ae3a9669134565a12457814fd15c16ea3766b8154dd815eca",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 1.148502,
+    "per_seed": [
+     4.574423,
+     -11.985563,
+     4.189251,
+     -1.909764,
+     -1.207389,
+     6.604284,
+     1.266554,
+     -51.594912,
+     -1.106398,
+     0.466743,
+     5.88273,
+     1.578418,
+     2.90775,
+     3.015865,
+     1.03045,
+     5.975301,
+     -0.080236,
+     -16.499371,
+     -0.830194,
+     5.275993
+    ]
+   },
+   "lines": {
+    "behaviour": "S-NULL FAIL (A): stabilization of the structure-growth front-end under heavy-tailed noise was not shown; the registered clause failed on the sealed streams.",
+    "fence": "S-NULL does not show unbounded growth (no stream reached the component cap); it shows only that the registered stabilization clause failed."
+   }
+  },
+  {
+   "id": "LEARN-04-v2",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 5,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "05d22705bf059036b9ec206d9380cd836292d1132723b71398805b8035c88c93",
+   "receipt_sha256": "c1ca32bd9ec423f9fba479bcd486a18f743a61a2cf999016a9c89761829738b1",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.117806,
+    "per_seed": [
+     -0.048829,
+     0.191304,
+     0.012156,
+     0.192828,
+     -0.034195,
+     -0.165965,
+     0.076723,
+     -0.063391,
+     0.119407,
+     0.460826,
+     0.150305,
+     0.11041,
+     0.151282,
+     0.03216,
+     0.069508,
+     0.166432,
+     0.116205,
+     0.183903,
+     0.234813,
+     0.175559
+    ]
+   },
+   "lines": {
+    "behaviour": "LEARN-04-v2 PASS (A): after a change-point, a native node with the volatility change-point organ shows a flatter slope of perseveration against the length of the pre-switch block than the same node with the organ off, on every sealed seed.",
+    "fence": "LEARN-04-v2 does not show the stationary-world properties (decay of the volatility estimate, false alarms); other tests cover those."
+   }
+  },
+  {
+   "id": "H3",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 9,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "2ebbb50fdf812555659dc42245b5c8df8447a469d31bb816e515546c67838f73",
+   "receipt_sha256": "aa643957c9bdfc2e3a53dce4951e75edbda2a1a15f7480d454513d94de65bdf0",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.969862,
+    "per_seed": [
+     0.975635,
+     0.953896,
+     0.985015,
+     0.967218,
+     0.967631,
+     0.984774,
+     0.982179,
+     0.963867,
+     0.97288,
+     0.977923,
+     0.968923,
+     0.9602,
+     0.978831,
+     0.957738,
+     0.97149,
+     0.969724,
+     0.969999,
+     0.951205,
+     0.962037,
+     0.970046
+    ]
+   },
+   "lines": {
+    "behaviour": "H3 PASS (A): the energy-organ forager stays viable for a larger share of a 300-tick life than a random-actuator control and its own yoked open-loop replay.",
+    "fence": "H3 does not show that viability comes from expected-free-energy planning: a simple energy-threshold reflex also passes H3 (registered fence)."
+   }
+  },
+  {
+   "id": "H5",
+   "version": 1,
+   "verdict": "FAIL",
+   "class": "A",
+   "claim": "not-shown",
+   "superseded_by": null,
+   "domain": 9,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "347ec0ad64d38f41efe957f2948c7c2ae5e868b87d1316b34e50d8e9624b7b00",
+   "receipt_sha256": "51b8f4bf5ce4ace8b1c9fc7deaea6c9eba8b17260fbf2daffd8abffccc67efa3",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": -1.003761,
+    "per_seed": [
+     -0.939225,
+     -0.953408,
+     -1.036542,
+     -1.028584,
+     -1.004189,
+     -1.020263,
+     -0.970694,
+     -1.039247,
+     -1.024633,
+     -0.974478,
+     -1.013262,
+     -0.995704,
+     -1.003334,
+     -0.996486,
+     -1.009447,
+     -0.997184,
+     -1.003326,
+     -1.03358,
+     -0.996395,
+     -1.014795
+    ]
+   },
+   "lines": {
+    "behaviour": "H5 FAIL (A): the sleep organ at its signed defaults alternates almost every tick instead of holding bouts, so the registered hysteresis clause failed on every seed.",
+    "fence": "H5 does not show stable sleep bouts; a repair needs its own registration and seal."
+   }
+  },
+  {
+   "id": "V4-SYN",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": null,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "f74fd4715aa8e0e1e9809586293cb9b2ce352c5fb7e7f8159ef96780d4ba40ed",
+   "receipt_sha256": "14fce6c5fd7f98a52231a7b927f69fee096a401caaa07e3a97d0de12ee67998e",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": -1.026297,
+    "per_seed": [
+     -1.063575,
+     -0.771147,
+     -0.778096,
+     -0.587728,
+     -0.84342,
+     -1.078949,
+     -1.34442,
+     -0.98902,
+     -0.771141,
+     -0.985367,
+     -1.333019,
+     -0.780043,
+     -0.863415,
+     -1.129409,
+     -1.263819,
+     -0.980747,
+     -1.221635,
+     -1.464378,
+     -1.385025,
+     -1.15507
+    ]
+   },
+   "lines": {
+    "behaviour": "V4-SYN PASS (A), a registered synthetic stand-in: on a cyclic-path world, a model with the path factor predicts held-out steps better than the same model without it.",
+    "fence": "V4-SYN does not show image-level vision: it is a model-comparison property on a synthetic sequence family."
+   }
+  },
+  {
+   "id": "CAP-Lang-L1",
+   "version": 1,
+   "verdict": "FAIL",
+   "class": "D",
+   "claim": "not-shown",
+   "superseded_by": "CAP-Lang-L1-v2",
+   "domain": 3,
+   "round": 33024713,
+   "date": "2026-10-13",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "10f77c371c3d3485df0996a48e182da9f51ba7636a8e4fc4d4a2997cffa06c40",
+   "receipt_sha256": "2f4fcb094054b043a6bcab6280c18e8ecb6b557efe16d637e6364c7f46ea04fe",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 1,
+    "per_seed": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0.663866,
+     0.596774,
+     0.464567,
+     1,
+     0.57377,
+     1,
+     1,
+     0.248175,
+     0.515873
+    ]
+   },
+   "lines": {
+    "behaviour": "CAP-Lang-L1 FAIL (D), superseded by CAP-Lang-L1-v2: the chunking organ segmented 13 of 20 sealed synthetic languages perfectly and the other 7 only partly, so the registered floor clause failed.",
+    "fence": "CAP-Lang-L1 does not show word segmentation at the registered floor; Class D is never a capability claim."
+   }
+  },
+  {
+   "id": "CAP-Lang-L1-v2",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "D",
+   "claim": "mechanism",
+   "superseded_by": null,
+   "domain": 3,
+   "round": 33125512,
+   "date": "2026-10-16",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "e4ad05ceb9d1268ee7586d0c3fdb74afb9b8f86121a7887bcbe181078d96d13f",
+   "receipt_sha256": "c22c8ad9518a5ae29488749840141d5fe7005dbbcd1d79c4e3ab7df63c105555",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 1,
+    "per_seed": [
+     1,
+     1,
+     1,
+     0.985075,
+     1,
+     1,
+     1,
+     0.985075,
+     0.985075,
+     1,
+     0.985075,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "lines": {
+    "behaviour": "CAP-Lang-L1-v2 PASS (D), shown as mechanism: on 20 sealed synthetic three-syllable languages with the word length supplied, chunk organ v2 reaches the registered token-F floor and beats a length-blind segmenter on every language.",
+    "fence": "CAP-Lang-L1-v2 does not show that v2 fixes v1's failure, that the organism learns words, or segmentation beyond what the supplied length plus a phase choice achieves; Class D is mechanism, not a capability claim."
+   }
+  },
+  {
+   "id": "P-ID-v2",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 8,
+   "round": 33049912,
+   "date": "2026-10-14",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "0526ead01d969436fd8e2737f0d0a1076e8761d2062912c780d12a87b6e4c26a",
+   "receipt_sha256": "42dc4db97e0abcd573bb5b77acac39458c443695d3d1eea4444a0aae2e710693",
+   "stats": {
+    "n": 1,
+    "effective_n": 1,
+    "median": 0,
+    "per_seed": [
+     0
+    ]
+   },
+   "lines": {
+    "behaviour": "P-ID-v2 PASS (A): with shared prediction code and lowest-index tie-breaking, the sophisticated-inference planner and the one-step native agent decide identically at all 810 registered decision points.",
+    "fence": "P-ID-v2 does not show learning: it is a deterministic census that removes a confound from later depth comparisons."
+   }
+  },
+  {
+   "id": "BOOK-TMAZE-v2",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 8,
+   "round": 33049912,
+   "date": "2026-10-14",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "e8b222971119988c0f36d10cb46dbe55984008dfcd5053eb1a8bc5556404387e",
+   "receipt_sha256": "e6702ff214551ee44c8d6fda032de8f4e5c6f57bd3754e578a5801c2a4af9bf2",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.71875,
+    "per_seed": [
+     0.625,
+     0.796875,
+     0.6875,
+     0.71875,
+     0.6875,
+     0.75,
+     0.6875,
+     0.78125,
+     0.71875,
+     0.75,
+     0.625,
+     0.796875,
+     0.703125,
+     0.71875,
+     0.65625,
+     0.796875,
+     0.5625,
+     0.71875,
+     0.6875,
+     0.765625
+    ]
+   },
+   "lines": {
+    "behaviour": "BOOK-TMAZE-v2 PASS (A): the native exact T-maze organism reaches the baited arm under balanced policy priors on a decisive majority of episodes, on all 20 sealed seeds.",
+    "fence": "BOOK-TMAZE-v2 does not show a capability beyond reaching under balanced priors in the book's T-maze replication."
+   }
+  },
+  {
+   "id": "S1",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": 6,
+   "round": 33063118,
+   "date": "2026-10-14",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "e022db84bf2a53618a442bac6085d350e7cc0e13d0fefa945fa0c420e158329e",
+   "receipt_sha256": "adab535b4380c194a0006cb7dfda58bc03d2e3aab188e3a1f209a0622397727f",
+   "stats": {
+    "n": 52,
+    "effective_n": 52,
+    "median": 1,
+    "per_seed": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0.5,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0.75,
+     1,
+     1,
+     1,
+     1,
+     0.75,
+     0.75,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0.75,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "lines": {
+    "behaviour": "S1 PASS (A): on signal family SF-A, a native node handed a newly attached sensor channel decides how the channel relates to its world model by Bayesian model comparison, and using the informative channels raises its return over a twin that discards them.",
+    "fence": "S1 does not show 'any signal' (tested family SF-A only; SF-C was held out for S-HOLD), a misspecified world, or growth beyond the four registered relation types."
+   }
+  },
+  {
+   "id": "S-HOLD",
+   "version": 1,
+   "verdict": "FAIL",
+   "class": "A",
+   "claim": "not-shown",
+   "superseded_by": null,
+   "domain": 6,
+   "round": 33228952,
+   "date": "2026-10-20",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "1d82d993834e5ba823305f929aa5c3661147c09012d3cf64551ad86c77f9c7b6",
+   "receipt_sha256": "64a763258490f0fa42a1c9644ae4a3053ba5edfe407cf956950152df5db34838",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": 0.75,
+    "per_seed": [
+     0.75,
+     1,
+     0.75,
+     0.75,
+     0.75,
+     0.75,
+     0.75,
+     1,
+     0.75,
+     1,
+     0.75,
+     1,
+     0.75,
+     1,
+     0.75,
+     0.75,
+     1,
+     1,
+     0.75,
+     1
+    ]
+   },
+   "lines": {
+    "behaviour": "S-HOLD FAIL (A): on the held-out family SF-C, the organism that passed S1 classified the noise and lagged channels correctly in every attachment but the new-cause stream in only 8 of 20, below the registered half, and its pooled linkage missed the registered bound.",
+    "fence": "S-HOLD does not show any capability on SF-C or for 'any signal' (tested families SF-A and SF-C); S1's PASS on SF-A stands, and SF-C is never re-run."
+   }
+  }
+ ]
+}
