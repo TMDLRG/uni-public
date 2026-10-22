@@ -313,6 +313,28 @@
    ],
    "falsifier": "Systematic misclassification: any relation type in SF-C classified correctly in fewer than half its attachments (`h0_systematically_misclassified`, `h1_systematically_misclassified`, `h2_systematically_misclassified`).",
    "cites_03": []
+  },
+  {
+   "id": "NL-LA-FENCE",
+   "version": 1,
+   "prereg_sha256": "036d0546bfd3b74fce179819b640468cbee5323f3ef55156d7c000b37b80c0eb",
+   "hypothesis": "On Smith et al.'s (2020) eight-animal world with present sets drawn from FENCE26 (the 26 concept sets with no one-feature neighbours; n_true ~ U{2,3,4}), a native reserve-kind node with a learned likelihood ends its exposure period with exactly one retained slot per present animal, whose MAP pattern is that animal's, and removing the routing (`Reserve.route/3`, θ_route = 1 nat) removed it: the same learner with shared updates (every exposure credited to every slot) does not. The pair isolates shared updates against hard assignment, not the signed novelty criterion against other symmetry-breaking assignments. [r2: C-1, C-2]",
+   "arms": [
+    {
+     "name": "learned_a (FULL)",
+     "note": "structure.mode :reserve_learned — 8 reserve slots, A from the registered reserve prior, signed Reserve.route/3 engagement; BMR on D"
+    },
+    {
+     "name": "unrouted (CONTROL)",
+     "note": "structure.mode :reserve_learned_unrouted — the same learner, routing removed: the hard all-slot update (route: :shared); BMR on D [r2: C-7]"
+    },
+    {
+     "name": "precise_a (CONTROL)",
+     "note": "structure.mode :reserve_precise — Smith's precise likelihood (the precise-likelihood reference arm); BMR on D [r2: C-6]"
+    }
+   ],
+   "falsifier": "- **F1** `distinct_pair_merged` — LEARNED_A's pooled `no_merge` point < 1.0 (inside FENCE26 any merge folds a pair that is not observationally equivalent). - **F2** `engagement_not_one_per_animal` — LEARNED_A's pooled `engaged_exact` point < 1.0. - **F3** `routing_equivalent_to_unrouted` — TOST equivalence of LEARNED_A and UNROUTED on `retained_correct` at ±0.12. - **F4** `precise_a_misses_present` — PRECISE_A's pooled `present_retained` point < 1.0. - **F5** `unrouted_recovers` — UNROUTED's pooled `retained_correct` point > 0. [r2: C-5]",
+   "cites_03": []
   }
  ]
 }

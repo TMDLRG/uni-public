@@ -38,6 +38,7 @@ const CLAIM_LABEL: Record<Gate["claim"], string> = {
   "named-behaviour": "named behaviour (Class A/B)",
   partial: "partial",
   mechanism: "mechanism only, not a claim (Class C/D)",
+  integrity: "integrity check, never a capability PASS",
   "not-shown": "not shown",
   withheld: "no verdict",
 };
@@ -60,6 +61,7 @@ function GateCard({ g }: { g: Gate }) {
     <section className="card" id={`gate-${g.id}`}>
       <h3 style={{ marginTop: 0 }}>
         {g.id} <span className={`pill ${pill(g.verdict)}`}>{g.verdict}</span> <span className="pill warn">Class {g.class}</span>{" "}
+        {g.kind === "integrity" && <span className="pill warn">integrity check</span>}{" "}
         {g.superseded_by && <span className="dim">superseded by {g.superseded_by}</span>}
       </h3>
       <p>{g.lines.behaviour}</p>
@@ -152,6 +154,10 @@ export default function DdnaScience() {
           <div className="l">PASS with claimable evidence (Class A/B)</div>
         </div>
         <div className="stat">
+          <div className="n">{v.counts.integrity_pass}</div>
+          <div className="l">integrity checks, never a capability PASS</div>
+        </div>
+        <div className="stat">
           <div className="n">
             {htSealed} / {parity.human_tests.length}
           </div>
@@ -224,8 +230,9 @@ export default function DdnaScience() {
       <h2>Sealed verdicts</h2>
       <p>
         Each verdict demonstrates one named behaviour, in one organism, in the worlds its pre-registration declared. A PASS is not a
-        claim of human parity. Class C and D results are shown as mechanism and are never claims. The line under each verdict says
-        what it does not show.
+        claim of human parity. Class C and D results are shown as mechanism and are never claims. An integrity check confirms that
+        machinery stays inside its registered fence; it is never a capability PASS and raises no ability domain. The line under each
+        verdict says what it does not show.
       </p>
       {current.map((g) => (
         <GateCard key={g.id} g={g} />

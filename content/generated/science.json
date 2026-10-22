@@ -9,28 +9,28 @@
  "source": {
   "repo": "TMDLRG/UNI.DDNA (private)",
   "ref": "s/2026-10-13-organisms",
-  "commit": "07fa7df71489d2df5a92bf4eb9dda46fba5855fe",
-  "commit_short": "07fa7df71489",
-  "commit_date": "2026-10-22T17:09:25Z",
-  "tool_commit": "69281eed15e9a1b218f4d45bbdcfcd6b6f27219e",
+  "commit": "85c45af37b3c923c34db0a8bc8f0e84f8a373f8d",
+  "commit_short": "85c45af37b3c",
+  "commit_date": "2026-10-22T18:31:56Z",
+  "tool_commit": "ce1c49acdf8768e953aa23ade4623470cc50a894",
   "tool_version": "1.0.0"
  },
- "manifest_sha256": "de417e8a822517bd33bac31ad9386bd0ff0d1e36f7e422666b60de65cbd738db",
+ "manifest_sha256": "d58d464f1bb195a281b56ba65acc433ea6370d620224309c693d37a1ee5a2973",
  "files": [
   {
    "path": "evidence/ddna/data/manifest.json",
-   "sha256": "de417e8a822517bd33bac31ad9386bd0ff0d1e36f7e422666b60de65cbd738db",
+   "sha256": "d58d464f1bb195a281b56ba65acc433ea6370d620224309c693d37a1ee5a2973",
    "bytes": 985
   },
   {
    "path": "evidence/ddna/data/verdicts.json",
-   "sha256": "26731fa19c5006779c1384ba08087ed22bde313960275eae5ec31ddc25cc4f3c",
-   "bytes": 21765
+   "sha256": "e02ccbd9e4897db7c0c4f1e5db44c1b0dd7af2dfc6c611e58ebe777557124ae6",
+   "bytes": 23929
   },
   {
    "path": "evidence/ddna/data/preregs.json",
-   "sha256": "b2c6c08c8618844cb8a1bd9087554dd31ce4c8f322f69eea9b21db441184b61f",
-   "bytes": 19712
+   "sha256": "ca43bfaa27bf90fa1802a01784342fb693828e66bc01f1246605ea1df6b11727",
+   "bytes": 21698
   },
   {
    "path": "evidence/ddna/data/math.json",
@@ -39,8 +39,8 @@
   },
   {
    "path": "evidence/ddna/data/parity.json",
-   "sha256": "946cc8c29fdf10ebf2fd94d3df668d7b6807ff9d34bda3eb1333bd32a4aff56d",
-   "bytes": 6759
+   "sha256": "0435645a73d647abcc6267f598982797574a87988fb26c8d9a4a07bbe00ab570",
+   "bytes": 7318
   }
  ],
  "checked": {

@@ -42,9 +42,10 @@ export function median(xs: number[]): number {
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 }
 
-export function expectedClaim(g: Pick<Gate, "verdict" | "class">): Gate["claim"] {
+export function expectedClaim(g: Pick<Gate, "verdict" | "class" | "kind">): Gate["claim"] {
   if (g.verdict === "WITHHELD") return "withheld";
   if (g.verdict === "FAIL") return "not-shown";
+  if (g.kind === "integrity") return "integrity";
   if (g.class === "C" || g.class === "D") return "mechanism";
   return g.verdict === "PASS" ? "named-behaviour" : "partial";
 }
@@ -101,12 +102,13 @@ export async function runChecks(get: (file: string) => Promise<ArrayBuffer>, exp
       add("Statistics", `${g.id} median recomputes from its ${g.stats.per_seed.length} per-seed scores`, g.stats.per_seed.length === g.stats.n && Math.abs(m - g.stats.median) <= MEDIAN_TOLERANCE, `recomputed ${m.toFixed(7)}, sealed ${g.stats.median}`);
     }
   }
-  const c = { sealed: 0, pass: 0, partial: 0, fail: 0, withheld: 0, superseded: 0, claimable_pass: 0 };
+  const c = { sealed: 0, pass: 0, partial: 0, fail: 0, withheld: 0, superseded: 0, claimable_pass: 0, integrity_pass: 0 };
   for (const g of v.gates) {
     c.sealed++;
     c[g.verdict.toLowerCase() as "pass" | "partial" | "fail" | "withheld"]++;
     if (g.superseded_by) c.superseded++;
     if (expectedClaim(g) === "named-behaviour") c.claimable_pass++;
+    if (expectedClaim(g) === "integrity") c.integrity_pass++;
   }
   const same = (Object.keys(c) as (keyof typeof c)[]).every((k) => v.counts[k] === c[k]);
   add("Records", "the verdict counts recompute from the gate records", same, `${c.sealed} sealed: ${c.pass} PASS, ${c.fail} FAIL, ${c.withheld} WITHHELD`);

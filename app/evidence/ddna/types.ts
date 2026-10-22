@@ -2,13 +2,15 @@
 // ddna-science-export/1). The files are published byte for byte under public/evidence/ddna/data/.
 
 export type Verdict = "PASS" | "PARTIAL" | "FAIL" | "WITHHELD";
-export type Claim = "named-behaviour" | "partial" | "mechanism" | "not-shown" | "withheld";
+export type Claim = "named-behaviour" | "partial" | "mechanism" | "integrity" | "not-shown" | "withheld";
 
 export type Gate = {
   id: string;
   version: number;
   verdict: Verdict;
   class: "A" | "B" | "C" | "D";
+  /** "integrity": checks machinery inside a registered fence; never a capability PASS, whatever its class. */
+  kind: "capability" | "integrity";
   claim: Claim;
   superseded_by: string | null;
   domain: number | null;
@@ -34,7 +36,16 @@ export type Round = {
 
 export type Verdicts = {
   schema: string;
-  counts: { sealed: number; pass: number; partial: number; fail: number; withheld: number; superseded: number; claimable_pass: number };
+  counts: {
+    sealed: number;
+    pass: number;
+    partial: number;
+    fail: number;
+    withheld: number;
+    superseded: number;
+    claimable_pass: number;
+    integrity_pass: number;
+  };
   drand: { chain: string; chain_hash: string; genesis: number; period_s: number; margin_s: number };
   rounds: Round[];
   gates: Gate[];

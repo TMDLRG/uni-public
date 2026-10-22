@@ -1,9 +1,9 @@
 {
  "schema": "ddna-science-export/1#parity",
  "summary": [
-  "Sealed gate verdicts: 17 (11 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
-  "PASS verdicts with claimable evidence (Class A/B): 9; PASS verdicts shown as mechanism only (Class C/D): 2.",
-  "Each verdict demonstrates a named behaviour; capability-parity claims: 0.",
+  "Sealed gate verdicts: 18 (12 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
+  "PASS verdicts with claimable evidence (Class A/B capability): 9; PASS verdicts shown as mechanism only (Class C/D): 2; integrity checks, never a capability PASS: 1.",
+  "Every verdict concerns a named behaviour or an integrity check; capability-parity claims: 0.",
   "Human-test items sealed: 0 of 14.",
   "Ability domains with a sealed Class A/B PASS: 4 of 14; with a Class C/D PASS only: 1; with nothing operational: 5.",
   "Life-cycle stages complete: 0 of 6 (2 partial; the rest not built or not started).",
@@ -174,25 +174,25 @@
   {
    "id": "HT-01",
    "stage": "Womb",
-   "test": "Habituation to a repeated pulse",
-   "paradigm": "Leader et al. 1982",
-   "criterion": "decrement + recovery on >= 2/3 novel probes",
+   "test": "Habituation to a repeated pulse (modality fixed before the HT-01 freeze)",
+   "paradigm": "fetal vibroacoustic habituation (Leader 1982)",
+   "criterion": "response decrement criterion + recovery on ≥ 2/3 novel probes",
    "status": "not built"
   },
   {
    "id": "HT-02",
-   "stage": "Womb to birth",
-   "test": "Prenatal exposure, postnatal choice",
+   "stage": "Womb->birth",
+   "test": "Prenatal exposure -> postnatal choice",
    "paradigm": "DeCasper & Spence 1986",
-   "criterion": "familiar stream chosen on a registered majority, >= 2 sessions",
+   "criterion": "familiar stream chosen on a registered majority of choice Turns across ≥ 2 sessions",
    "status": "not built"
   },
   {
    "id": "HT-03",
    "stage": "Neonate",
-   "test": "Visual habituation-dishabituation",
+   "test": "Visual habituation–dishabituation",
    "paradigm": "Slater et al. 1984",
-   "criterion": "habituate within 12 trials; novel > familiar on >= 3/4",
+   "criterion": "habituation ≤ 12 trials and novelty > familiar on ≥ 3/4 pairs",
    "status": "not built"
   },
   {
@@ -200,7 +200,7 @@
    "stage": "Infant",
    "test": "Conjugate mobile (contingency + retention)",
    "paradigm": "Rovee-Collier",
-   "criterion": "retention ratio >= 0.7 at the registered delay",
+   "criterion": "retention ratio ≥ 0.7 at the registered delay; longest delay passed (age band descriptive only, ADR-023 Amd 1)",
    "status": "not built"
   },
   {
@@ -208,15 +208,15 @@
    "stage": "Infant",
    "test": "Statistical word segmentation",
    "paradigm": "Saffran, Aslin & Newport 1996",
-   "criterion": ">= 9/12 items word vs part-word",
+   "criterion": "word vs part-word surprisal difference > 0 on ≥ 9/12 items",
    "status": "not built"
   },
   {
    "id": "HT-06",
    "stage": "Infant",
-   "test": "A-not-B with delay",
+   "test": "A-not-B with delay scaling",
    "paradigm": "Diamond 1985",
-   "criterion": "B correct >= 2/3 at delay d",
+   "criterion": "B correct ≥ 2/3 at delay d; report the largest d passed (descriptive only; no month-curve placement, Turns are not seconds, CATALOGUE §0)",
    "status": "dev pilot only (Class C, not sealed)"
   },
   {
@@ -224,15 +224,15 @@
    "stage": "Infant",
    "test": "Cross-situational word learning",
    "paradigm": "Smith & Yu 2008",
-   "criterion": ">= 4/6 at 4-AFC",
+   "criterion": "≥ 4/6 correct at 4-AFC",
    "status": "dev only (Class D, not sealed)"
   },
   {
    "id": "HT-08",
    "stage": "Toddler",
    "test": "CDC milestone tracker",
-   "paradigm": "Zubler et al. 2022 (US public domain)",
-   "criterion": "per milestone: achieved / not yet",
+   "paradigm": "Zubler et al. 2022 (US PD)",
+   "criterion": "per-milestone achieved / not yet (session counts)",
    "status": "not built"
   },
   {
@@ -240,39 +240,39 @@
    "stage": "Child",
    "test": "Dimensional change card sort",
    "paradigm": "Zelazo 2006",
-   "criterion": ">= 5/6 post-switch correct",
+   "criterion": "≥ 5/6 post-switch correct",
    "status": "not built"
   },
   {
    "id": "HT-10",
    "stage": "Child",
-   "test": "False belief (Sally-Anne)",
-   "paradigm": "Wimmer & Perner 1983",
-   "criterion": "belief + controls correct on 2/2 stories",
+   "test": "False belief (Sally–Anne) with controls",
+   "paradigm": "Wimmer & Perner 1983; Wellman et al. 2001",
+   "criterion": "belief + both controls correct on 2/2 stories",
    "status": "not built"
   },
   {
    "id": "HT-11",
    "stage": "Child",
-   "test": "Change detection (working memory K)",
+   "test": "Change detection (visual working memory K)",
    "paradigm": "Luck & Vogel 1997; Cowan 2005",
-   "criterion": "K at or above the lower bound of the named band (pre-registered); band placement descriptive only; above-band -> 12 §6 unexpected-results log",
+   "criterion": "K at or above the lower bound of the named band (pre-registered); band placement descriptive only; above-band -> §6 unexpected-results log; hits/false alarms as counts",
    "status": "not built"
   },
   {
    "id": "HT-12",
-   "stage": "Child to adult",
-   "test": "Digit span + Corsi",
+   "stage": "Child->adult",
+   "test": "Digit span + Corsi (PEBL logic)",
    "paradigm": "Gathercole 2004; Kessels 2000",
-   "criterion": "span = longest length with >= 1/2 correct",
+   "criterion": "span = longest length with ≥ 1/2 correct (age band descriptive only, ADR-023 Amd 1)",
    "status": "not built"
   },
   {
    "id": "HT-13",
-   "stage": "Child to adult",
-   "test": "Matrix reasoning (open generator)",
-   "paradigm": "matRiks-style rule grammar (MIT)",
-   "criterion": ">= 6/8 per rule-count tier",
+   "stage": "Child->adult",
+   "test": "Matrix reasoning (rule-grammar generator)",
+   "paradigm": "matRiks-style (MIT)",
+   "criterion": "≥ 6/8 per rule-count tier",
    "status": "not built"
   },
   {
@@ -280,7 +280,7 @@
    "stage": "Motor (declared families MF-A, MF-B; MF-C held out)",
    "test": "Visuomotor rotation adaptation",
    "paradigm": "Krakauer et al. 2000",
-   "criterion": "under 10 degrees error + negative aftereffect",
+   "criterion": "adaptation to < 10° error + negative aftereffect",
    "status": "not built"
   }
  ]
