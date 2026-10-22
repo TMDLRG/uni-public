@@ -12,20 +12,20 @@
   "commit": "85c45af37b3c923c34db0a8bc8f0e84f8a373f8d",
   "commit_short": "85c45af37b3c",
   "commit_date": "2026-10-22T18:31:56Z",
-  "tool_commit": "68bde24b770217114dd97be1178d27df4acc30d9",
+  "tool_commit": "953a0a2e536d924e6ce8c95025b4102ccf40f836",
   "tool_version": "1.0.0"
  },
- "manifest_sha256": "95da6b407db2f5c2b4756106b4e93775909f4c0ce837036b410edbb07511db48",
+ "manifest_sha256": "4f9b11a5622dd5e96190fec3a29444124b4bdca085a2491dd5c16db61d6df456",
  "files": [
   {
    "path": "evidence/ddna/data/manifest.json",
-   "sha256": "95da6b407db2f5c2b4756106b4e93775909f4c0ce837036b410edbb07511db48",
+   "sha256": "4f9b11a5622dd5e96190fec3a29444124b4bdca085a2491dd5c16db61d6df456",
    "bytes": 985
   },
   {
    "path": "evidence/ddna/data/verdicts.json",
-   "sha256": "7ca0340e5b20f8d346ec9cfc56eac4a9b2f61c019869d7ecc195bc3b85dc758f",
-   "bytes": 25470
+   "sha256": "e532ce2592c90b65cc5d7ab07296c4b1db2d5a2c4320643c0bbc6e4d3e11b537",
+   "bytes": 25512
   },
   {
    "path": "evidence/ddna/data/preregs.json",
@@ -39,8 +39,8 @@
   },
   {
    "path": "evidence/ddna/data/parity.json",
-   "sha256": "717f51007680c5813f89b159cce66c45a34c38a003dfc4c8e10841c73ab240c6",
-   "bytes": 7711
+   "sha256": "7aa52dff2f8700d9952ddbb1a9870538d32b5a8b95e1d5152d3c608a0cccd48f",
+   "bytes": 7751
   }
  ],
  "checked": {

@@ -81,7 +81,7 @@ function GateCard({ g }: { g: Gate }) {
           {g.scoring !== "not assessed" && (
             <tr>
               <th>scored</th>
-              <td colSpan={3}>{g.scoring === "live organism" ? "from the live organism's own behaviour" : g.scoring}</td>
+              <td colSpan={3}>{g.scoring === "running organism" ? "from the running organism's own behaviour" : g.scoring}</td>
             </tr>
           )}
           <tr>
@@ -148,7 +148,7 @@ export default function DdnaScience() {
         </p>
         <p className="dim">
           References in the quoted text, such as ADR numbers, &quot;08 §5.6&quot;, &quot;CATALOGUE §0&quot; or &quot;[r2: C-1]&quot;, point to the
-          project&apos;s private design records. They are kept as written so that quoted text still matches its hash.
+          project&apos;s private design records. They are kept as written because quoted text is verbatim.
         </p>
       </section>
 

@@ -337,7 +337,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "beside the live organism (RC-53)",
+   "scoring": "beside the running organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -357,7 +357,7 @@
    },
    "lines": {
     "behaviour": "IND-02 PASS (A): at the registered setting of its reachability threshold, the inductive planner takes the guaranteed three-step route rather than the low-probability shortcut at every decision of the registered census.",
-    "fence": "IND-02 does not show learning: it is a deterministic regression property of the inductive planner; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
+    "fence": "IND-02 does not show learning: it is a deterministic regression property of the inductive planner; the score is computed as a pure function of the seed beside the running organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -414,7 +414,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "beside the live organism (RC-53)",
+   "scoring": "beside the running organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 5,
@@ -453,7 +453,7 @@
    },
    "lines": {
     "behaviour": "LEARN-04-v2 PASS (A): after a change-point, a native node with the volatility change-point organ shows a flatter slope of perseveration against the length of the pre-switch block than the same node with the organ off, on every sealed seed.",
-    "fence": "LEARN-04-v2 does not show the stationary-world properties (decay of the volatility estimate, false alarms), which other tests cover; the score is a rollout of the model beside the live organism, not the live organism's own behaviour (RC-53)."
+    "fence": "LEARN-04-v2 does not show the stationary-world properties (decay of the volatility estimate, false alarms), which other tests cover; the score is a rollout of the model beside the running organism, not the running organism's own behaviour (RC-53)."
    }
   },
   {
@@ -462,7 +462,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "beside the live organism (RC-53)",
+   "scoring": "beside the running organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 9,
@@ -501,7 +501,7 @@
    },
    "lines": {
     "behaviour": "H3 PASS (A): the energy-organ forager stays viable for a larger share of a 300-tick life than a random-actuator control and its own yoked open-loop replay.",
-    "fence": "H3 does not show that viability comes from expected-free-energy planning: a simple energy-threshold reflex also passes H3 (registered fence); the score is a rollout of the model beside the live organism, not the live organism's own behaviour (RC-53)."
+    "fence": "H3 does not show that viability comes from expected-free-energy planning: a simple energy-threshold reflex also passes H3 (registered fence); the score is a rollout of the model beside the running organism, not the running organism's own behaviour (RC-53)."
    }
   },
   {
@@ -558,7 +558,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "beside the live organism (RC-53)",
+   "scoring": "beside the running organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": null,
@@ -597,7 +597,7 @@
    },
    "lines": {
     "behaviour": "V4-SYN PASS (A), a registered synthetic stand-in: on a cyclic-path world, a model with the path factor predicts held-out steps better than the same model without it.",
-    "fence": "V4-SYN does not show image-level vision: it is a model-comparison property on a synthetic sequence family; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
+    "fence": "V4-SYN does not show image-level vision: it is a model-comparison property on a synthetic sequence family; the score is computed as a pure function of the seed beside the running organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -702,7 +702,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "beside the live organism (RC-53)",
+   "scoring": "beside the running organism (RC-53)",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -722,7 +722,7 @@
    },
    "lines": {
     "behaviour": "P-ID-v2 PASS (A): with shared prediction code and lowest-index tie-breaking, the sophisticated-inference planner and the one-step native agent decide identically at all 810 registered decision points.",
-    "fence": "P-ID-v2 does not show learning: it is a deterministic census that removes a confound from later depth comparisons; the score is computed as a pure function of the seed beside the live organism, not from its own behaviour (RC-53)."
+    "fence": "P-ID-v2 does not show learning: it is a deterministic census that removes a confound from later depth comparisons; the score is computed as a pure function of the seed beside the running organism, not from its own behaviour (RC-53)."
    }
   },
   {
@@ -731,7 +731,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "live organism",
+   "scoring": "running organism",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 8,
@@ -779,7 +779,7 @@
    "verdict": "PASS",
    "class": "A",
    "kind": "capability",
-   "scoring": "live organism",
+   "scoring": "running organism",
    "claim": "named-behaviour",
    "superseded_by": null,
    "domain": 6,

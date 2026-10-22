@@ -96,7 +96,7 @@ export async function runChecks(get: (file: string) => Promise<ArrayBuffer>, exp
     const want = expectedClaim(g);
     add("Records", `${g.id} is shown as ${want}`, g.claim === want, `${g.verdict}, Class ${g.class}`);
     const stated = g.scoring !== "not assessed";
-    const rc53Ok = g.scoring !== "beside the live organism (RC-53)" || g.lines.fence.includes("(RC-53)");
+    const rc53Ok = g.scoring !== "beside the running organism (RC-53)" || g.lines.fence.includes("(RC-53)");
     add("Records", `${g.id} states how it was scored only if it is a claimable PASS, and discloses RC-53`, stated === (want === "named-behaviour") && rc53Ok, g.scoring);
     const pr = p.preregs.find((x) => x.id === g.id);
     add("Records", `${g.id} pre-registration hash matches its verdict record`, !!pr && pr.prereg_sha256 === g.prereg_sha256, g.prereg_sha256.slice(0, 16) + "…");
@@ -113,8 +113,8 @@ export async function runChecks(get: (file: string) => Promise<ArrayBuffer>, exp
     const claim = expectedClaim(g);
     if (claim === "named-behaviour") c.claimable_pass++;
     if (claim === "integrity") c.integrity_pass++;
-    if (claim === "named-behaviour" && g.scoring === "live organism") c.scored_live++;
-    if (claim === "named-behaviour" && g.scoring === "beside the live organism (RC-53)") c.rc53_debt++;
+    if (claim === "named-behaviour" && g.scoring === "running organism") c.scored_live++;
+    if (claim === "named-behaviour" && g.scoring === "beside the running organism (RC-53)") c.rc53_debt++;
   }
   const same = (Object.keys(c) as (keyof typeof c)[]).every((k) => v.counts[k] === c[k]);
   add("Records", "the verdict counts recompute from the gate records", same, `${c.sealed} sealed: ${c.pass} PASS, ${c.fail} FAIL, ${c.withheld} WITHHELD`);

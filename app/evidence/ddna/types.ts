@@ -11,8 +11,8 @@ export type Gate = {
   class: "A" | "B" | "C" | "D";
   /** "integrity": checks machinery inside a registered fence; never a capability PASS, whatever its class. */
   kind: "capability" | "integrity";
-  /** How a claimable PASS was scored; RC-53 marks a score computed beside the live organism, not from it. */
-  scoring: "live organism" | "beside the live organism (RC-53)" | "identity check" | "replication" | "not assessed";
+  /** How a claimable PASS was scored; RC-53 marks a score computed beside the running organism, not from it. */
+  scoring: "running organism" | "beside the running organism (RC-53)" | "identity check" | "replication" | "not assessed";
   claim: Claim;
   superseded_by: string | null;
   domain: number | null;
