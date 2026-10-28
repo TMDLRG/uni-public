@@ -2,13 +2,13 @@
  "schema": "ddna-science-export/1",
  "trunk": {
   "ref": "s/2026-10-13-organisms",
-  "commit": "85c45af37b3c923c34db0a8bc8f0e84f8a373f8d",
-  "commit_date": "2026-10-22T18:31:56Z"
+  "commit": "67613ebe3d006533af731218a50455a81761e8e7",
+  "commit_date": "2026-10-28T13:11:57Z"
  },
  "tool": {
   "path": "tools/public_export",
   "version": "1.0.0",
-  "commit": "953a0a2e536d924e6ce8c95025b4102ccf40f836"
+  "commit": "8da90126681a14c731d289d11a34321776a05f8b"
  },
  "gate": {
   "ddna_side": "PASS",
@@ -22,13 +22,13 @@
  "files": [
   {
    "path": "verdicts.json",
-   "sha256": "e532ce2592c90b65cc5d7ab07296c4b1db2d5a2c4320643c0bbc6e4d3e11b537",
-   "bytes": 25512
+   "sha256": "036893728d657af5099471facc60be0562d365b4de70a8dea2e60f7a22b11191",
+   "bytes": 27066
   },
   {
    "path": "preregs.json",
-   "sha256": "ca43bfaa27bf90fa1802a01784342fb693828e66bc01f1246605ea1df6b11727",
-   "bytes": 21698
+   "sha256": "6cb7f9f6911421f25b5889bca9003c2c05d2f8051fe63717b89ad6148b8d1571",
+   "bytes": 26537
   },
   {
    "path": "math.json",
@@ -37,8 +37,8 @@
   },
   {
    "path": "parity.json",
-   "sha256": "7aa52dff2f8700d9952ddbb1a9870538d32b5a8b95e1d5152d3c608a0cccd48f",
-   "bytes": 7751
+   "sha256": "13c0fe7fc52fa4742c060386d0c06b5b94f39fc2c09a18cb70127f5547a92c66",
+   "bytes": 7805
   }
  ]
 }

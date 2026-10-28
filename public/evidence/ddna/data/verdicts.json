@@ -1,13 +1,13 @@
 {
  "schema": "ddna-science-export/1#verdicts",
  "counts": {
-  "sealed": 18,
-  "pass": 12,
+  "sealed": 19,
+  "pass": 13,
   "partial": 0,
   "fail": 5,
   "withheld": 1,
   "superseded": 3,
-  "claimable_pass": 9,
+  "claimable_pass": 10,
   "integrity_pass": 1,
   "scored_live": 2,
   "rc53_debt": 5
@@ -106,6 +106,17 @@
    "randomness": "afab797ce7dc842e8e19c0045e2181ca183bb6ec1c7ba4590e266b1ac6bba891",
    "gates": [
     "NL-LA-FENCE"
+   ]
+  },
+  {
+   "round": 33449001,
+   "published_at": "2026-10-28T01:19:27Z",
+   "frozen_at": "2026-10-23T16:06Z",
+   "frozen_basis": "recorded to the minute",
+   "commitment_pushed_at": "2026-10-28T00:59:42Z",
+   "randomness": "06662e12f0402fcd6e08112041bb4161b6dd39013ebe1e1293ac522d55aa2f32",
+   "gates": [
+    "HT-06"
    ]
   }
  ],
@@ -899,6 +910,33 @@
    "lines": {
     "behaviour": "S-HOLD FAIL (A): on the held-out family SF-C, the organism that passed S1 classified the noise and lagged channels correctly in every attachment but the new-cause stream in only 8 of 20, below the registered half, and its pooled linkage missed the registered bound.",
     "fence": "S-HOLD does not show any capability on SF-C or for 'any signal' (tested families SF-A and SF-C); S1's PASS on SF-A stands, and SF-C is never re-run; attainability on SF-C was not established."
+   }
+  },
+  {
+   "id": "HT-06",
+   "version": 1,
+   "verdict": "PASS",
+   "class": "A",
+   "kind": "capability",
+   "scoring": "declared lab agent",
+   "claim": "named-behaviour",
+   "superseded_by": null,
+   "domain": null,
+   "round": 33449001,
+   "date": "2026-10-28",
+   "mode": ":native",
+   "f_tag": ":exact",
+   "prereg_sha256": "6ab181074940982c2f58c215ffe2be4c38be16b8631da00514abc650583db7e5",
+   "receipt_sha256": "ec2988262bccfc62df3c7daafaa324e44f703b5a5eaca904739d3bc4957d62f1",
+   "stats": {
+    "n": 20,
+    "effective_n": 20,
+    "median": null,
+    "per_seed": null
+   },
+   "lines": {
+    "behaviour": "HT-06 PASS (A): on 20 sealed seeds, the declared lab agent (not a genome organism) met every pre-registered clause of its A-not-B human test, including the held-out conflict family and the strength contrast against its registered bound; no control, ablation or isolation arm passed every clause.",
+    "fence": "HT-06 does not show infant-likeness or any age norm, a unique mechanism, volatility tracking, information-seeking or self-timed waiting, or that it beats heuristics that read how lopsided the finds are; it is fenced to the declared lab agent and counts toward no registered individual's parity."
    }
   },
   {

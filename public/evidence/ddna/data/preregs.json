@@ -30,6 +30,10 @@
     {
      "name": "f0_native_exact (FULL)",
      "note": "native exact carrier; score = exact variational F"
+    },
+    {
+     "name": "control: broken-F baselines",
+     "note": "one variable: the F estimator (not the exact variational F)"
     }
    ],
    "falsifier": "`bound_violated` — the **median** bound margin `< 0.0`: the computed F is systematically **below** the surprisal, i.e. not a valid upper bound on surprisal (the Friston-sign bound is violated). Also any `:exact`-tag mismatch or a three-forms disagreement beyond 1e-9 drives the per-seed score to the `-1.0` sentinel, failing the clause.",
@@ -46,6 +50,10 @@
     {
      "name": "native_tmaze (FULL)",
      "note": "native exact T-maze organism, arm-first under balanced E"
+    },
+    {
+     "name": "control: always-wrong-arm",
+     "note": "one variable: the policy that reaches the baited arm vs one that does not"
     }
    ],
    "falsifier": "`no_better_than_trivial` — the normalized-return BCa **upper** bound `< 0.1`: the agent does no better than the always-wrong-arm baseline (it does not reach the baited arm).",
@@ -60,6 +68,10 @@
     {
      "name": "listener_hmm (FULL)",
      "note": "the book listener HMM; exact smoothing recovers the hidden note"
+    },
+    {
+     "name": "control: no-listener (chance)",
+     "note": "one variable: the inference model (exact smoother vs none)"
     }
    ],
    "falsifier": "`no_recovery` — the recovery-confidence BCa **upper** bound `< 0.05`: the recoverer is at chance (the inference carries no information about the hidden note).",
@@ -114,6 +126,10 @@
     {
      "name": "mixture_heavy_tail_null (single arm)",
      "note": "08 §5.6 registers S-NULL with no control arm (\"—\")"
+    },
+    {
+     "name": "control: GATE-FAILABLE-01 trivial baselines",
+     "note": "a front-end that keeps growing on tail data (margin <= 0)"
     }
    ],
    "falsifier": "`unbounded_growth` — the **median** margin `< 0.0`: on a typical seed the mixture is still creating components (or is pressed against the cap) in the second half of a long single-source stream.",
@@ -270,6 +286,10 @@
     {
      "name": "native_tmaze (FULL)",
      "note": "v1's organism, unchanged: native exact T-maze, arm-first under balanced E"
+    },
+    {
+     "name": "control: always-wrong-arm",
+     "note": "v1's control, unchanged: the trivial non-reaching baseline (not a run arm)"
     }
    ],
    "falsifier": "`no_better_than_trivial` — the normalized-return BCa **upper** bound `< 0.1`: the agent does no better than the always-wrong-arm baseline (it does not reach the baited arm).",
@@ -312,6 +332,80 @@
     }
    ],
    "falsifier": "Systematic misclassification: any relation type in SF-C classified correctly in fewer than half its attachments (`h0_systematically_misclassified`, `h1_systematically_misclassified`, `h2_systematically_misclassified`).",
+   "cites_03": []
+  },
+  {
+   "id": "HT-06",
+   "version": 1,
+   "prereg_sha256": "6ab181074940982c2f58c215ffe2be4c38be16b8631da00514abc650583db7e5",
+   "hypothesis": "After a delay, the declared lab agent `Ddna.Lab.HumanTests.ANotBX.NativeAgent` (a native discrete node) reaches the well where a hidden object is. It integrates hiding cues of stated clarity, how many there are and their order, with a hiding prior it learns from feedback. On a weak frame that names the side found less often, it reaches to the side found more often more often when this session's finds have been more lopsided, and follows the frame when they have not. It uses the strength of its learned hiding prior (its Dirichlet estimate of the hiding bias), not only its side. C8 gates this against the exact bound B* of class B: every policy that reads the session only through which side was found more often, the side of the last find and the trial index. It carries the same fixed model to an unseen family (`conflict`, C7) without re-fit. Secondary, not gated: it stays within counts of the analytic Bayes-optimal observer for the same generative process.",
+   "arms": [
+    {
+     "name": "native_x_proprio (FULL)",
+     "note": "the exact map in full_config below"
+    },
+    {
+     "name": "native_x_nolearn (ABLATION)",
+     "note": "FULL with learn_d false (no Dirichlet d learning)"
+    },
+    {
+     "name": "native_x_pilot (ISOLATION)",
+     "note": "leak 0.1, proprio false, on the same \"proprio\" => 1 streams (R1; BV-492 change 4)"
+    },
+    {
+     "name": "native_x_handscrambled (ISOLATION)",
+     "note": "FULL with an uninformative hand_felt A (each outcome ⅓; R1)"
+    },
+    {
+     "name": "control: random",
+     "note": "Ddna.Lab.HumanTests.RandomAgent"
+    },
+    {
+     "name": "control: last_found",
+     "note": "HeuristicAgent rule :last_found (scripted perseverator)"
+    },
+    {
+     "name": "control: base_rate",
+     "note": "HeuristicAgent rule :base_rate"
+    },
+    {
+     "name": "control: cue_follower",
+     "note": "HeuristicAgent rule :cue_follower"
+    },
+    {
+     "name": "control: last_seen",
+     "note": "HeuristicAgent rule :last_seen"
+    },
+    {
+     "name": "control: last_event",
+     "note": "HeuristicAgent rule :last_event (salience)"
+    },
+    {
+     "name": "control: majority_cue",
+     "note": "HeuristicAgent rule :majority_cue"
+    },
+    {
+     "name": "control: strong_cue",
+     "note": "HeuristicAgent rule :strong_cue"
+    },
+    {
+     "name": "control: hybrid",
+     "note": "HeuristicAgent rule :hybrid (strongest hand-built rule)"
+    },
+    {
+     "name": "control: composed_rule",
+     "note": "strong frame if one, else majority if K >= 2, else base rate (BV-492 change 6)"
+    },
+    {
+     "name": "control: perK_lookup",
+     "note": "per-K choice of strong / weak-majority / base rate (BV-492 change 6)"
+    },
+    {
+     "name": "control: class_b_witness",
+     "note": "BV-492-R3 ruling (g): on a trial whose only cue frame is one weak frame, with l and r the session's finds before the trial, t = l + r the 0-based trial index and last the side of the last find, reach to the frame's side, except when t is even, t >= 4, the frame names the side found less often and last is the side found more often, then reach to the side found more often; if l = r (or no find yet) follow the frame; on every other trial act as perK_lookup"
+    }
+   ],
+   "falsifier": "- **F1 `no_better_than_cue_rule`**: the CP upper bound of FULL on the mix-weak trials is < 0.70. FULL does no better than following the last cue. - **F2 `perseverates_on_classic`**: any B-trial reach to A on the classic battery (with only 3 A trials, the declared model predicts none). - **F3 `no_integration`**: the CP upper bound of FULL on the sum-k5 trials is < 0.85. FULL does not sum weak evidence. - **F4 `no_generalisation`**: the CP upper bound of FULL on the pooled `conflict` trials is < 0.70. The fixed model does not carry to the unseen family. - **F5 `strength_threshold_missed`**: the CP upper bound of FULL on the pooled `strength` trials is < 0.775. That is, FULL is credibly below the C8 threshold.",
    "cites_03": []
   },
   {

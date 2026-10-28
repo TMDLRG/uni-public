@@ -1,11 +1,11 @@
 {
  "schema": "ddna-science-export/1#parity",
  "summary": [
-  "Sealed gate verdicts: 18 (12 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
-  "PASS verdicts with claimable evidence (Class A/B capability): 9; PASS verdicts shown as mechanism only (Class C/D): 2; integrity checks, never a capability PASS: 1.",
-  "Of the 9 Class A/B capability PASS verdicts, 2 (BOOK-TMAZE-v2, S1) were scored from the running organism's own behaviour; 5 (IND-02, LEARN-04-v2, H3, V4-SYN, P-ID-v2) were scored as a pure function of the seed beside a running organism and must be re-scored from the running organism before they count toward an integrated organism (RC-53); F0 is an identity check and BOOK-HMM a replication, by design.",
+  "Sealed gate verdicts: 19 (13 PASS, 0 PARTIAL, 5 FAIL, 1 WITHHELD; 3 superseded by a later version).",
+  "PASS verdicts with claimable evidence (Class A/B capability): 10; PASS verdicts shown as mechanism only (Class C/D): 2; integrity checks, never a capability PASS: 1.",
+  "Of the 10 Class A/B capability PASS verdicts, 2 (BOOK-TMAZE-v2, S1) were scored from the running organism's own behaviour; 5 (IND-02, LEARN-04-v2, H3, V4-SYN, P-ID-v2) were scored as a pure function of the seed beside a running organism and must be re-scored from the running organism before they count toward an integrated organism (RC-53); F0 is an identity check and BOOK-HMM a replication, by design; HT-06 was scored from a declared lab agent, not a genome organism.",
   "Every verdict concerns a named behaviour or property, or an integrity check; capability-parity claims: 0.",
-  "Human-test items sealed: 0 of 14.",
+  "Human-test items sealed: 1 of 14.",
   "Ability domains with a sealed Class A/B PASS: 4 of 14; with a Class C/D PASS only: 1; with nothing operational: 5.",
   "Life-cycle stages complete: 0 of 6 (2 partial; the rest not built or not started).",
   "One hierarchical model (domain 12): 0 sealed verdicts; the sealed PASS verdicts are narrow demonstrations in separate organisms."
@@ -218,7 +218,7 @@
    "test": "A-not-B with delay scaling",
    "paradigm": "Diamond 1985",
    "criterion": "B correct ≥ 2/3 at delay d; report the largest d passed (descriptive only; no month-curve placement, Turns are not seconds, CATALOGUE §0)",
-   "status": "dev pilot only (Class C, not sealed)"
+   "status": "sealed PASS (Class A)"
   },
   {
    "id": "HT-07",

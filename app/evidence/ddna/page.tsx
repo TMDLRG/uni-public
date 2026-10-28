@@ -81,7 +81,11 @@ function GateCard({ g }: { g: Gate }) {
           {g.scoring !== "not assessed" && (
             <tr>
               <th>scored</th>
-              <td colSpan={3}>{g.scoring === "running organism" ? "from the running organism's own behaviour" : g.scoring}</td>
+              <td colSpan={3}>{g.scoring === "running organism"
+                  ? "from the running organism's own behaviour"
+                  : g.scoring === "declared lab agent"
+                    ? "from a declared lab agent, not a genome organism"
+                    : g.scoring}</td>
             </tr>
           )}
           <tr>
