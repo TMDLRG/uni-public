@@ -43,7 +43,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { execFileSync } = require("child_process");
-const { loadSnippet, wrap } = require("./wrap_vendored.cjs");
+const { loadSnippet, wrap, wrapCbtFooter } = require("./wrap_vendored.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const REGISTRY = path.join(__dirname, "labs.json");
@@ -90,6 +90,16 @@ function main() {
     };
   }
 
+  // ── CBT ORDER (for the prev/next footer injected into the 15 computer-based-training modules) ─
+  // The CBT path is track part-1 (Modules 1–8) followed by part-2 (Modules 9–15), each ordered by
+  // `order`. The footer on module M points back at M−1 and forward at M+1 across the part boundary,
+  // so Module 8 → Module 9 reads straight through, and the two "All CBT modules" index links split
+  // by part (/labs#part-1 vs /labs#part-2) to match the /labs sections already anchored there.
+  const cbtSequence = reg.vendored
+    .filter((l) => l.track === "part-1" || l.track === "part-2")
+    .sort((a, b) => (a.track === b.track ? a.order - b.order : a.track < b.track ? -1 : 1));
+  const cbtIndexBySlug = new Map(cbtSequence.map((l, i) => [l.slug, i]));
+
   for (const lab of reg.vendored) {
     const servedPath = path.join(ROOT, "public", "play", `${lab.slug}.html`);
     const entry = {
@@ -135,6 +145,30 @@ function main() {
       vendored.push(entry);
       continue;
     }
+
+    // CBT prev/next footer: for the 15 computer-based-training modules only, inject a reader-nav
+    // computed from cbtSequence (above) so Module N links back to N−1 and forward to N+1, and a
+    // middle link returns to /labs#part-1 or #part-2 — the CBT section index the apex /labs page
+    // already anchors. The transform is pure; the recompute-and-compare below naturally re-verifies.
+    const cbtIdx = cbtIndexBySlug.has(lab.slug) ? cbtIndexBySlug.get(lab.slug) : -1;
+    if (cbtIdx !== -1) {
+      const prevLab = cbtIdx > 0 ? cbtSequence[cbtIdx - 1] : null;
+      const nextLab = cbtIdx < cbtSequence.length - 1 ? cbtSequence[cbtIdx + 1] : null;
+      try {
+        expected = wrapCbtFooter(expected, {
+          prev: prevLab ? { href: `/play/${prevLab.slug}`, label: prevLab.title } : null,
+          next: nextLab ? { href: `/play/${nextLab.slug}`, label: nextLab.title } : null,
+          index: { href: `/labs#${lab.track}`, label: "All CBT modules" },
+          position: `Module ${cbtIdx + 1} of ${cbtSequence.length}`,
+        });
+      } catch (e) {
+        entry.verified = absent(`cbt footer wrap failed: ${e.message}`);
+        failures.push(`${lab.slug}: ${e.message}`);
+        vendored.push(entry);
+        continue;
+      }
+    }
+
     fs.writeFileSync(servedPath, expected);
     const servedBytes = fs.readFileSync(servedPath);
     entry.content_sha256 = sha256(srcBytes); // the pinned lab bytes
@@ -145,9 +179,15 @@ function main() {
     const expectedSha = sha256(expected);
     if (entry.served_sha256 !== expectedSha) {
       entry.verified = { match: false, expected_sha256: expectedSha };
-      failures.push(`${lab.slug}: SERVED BYTES DIFFER FROM wrap(pin, snippet) — served ${entry.served_sha256.slice(0, 16)}…, expected ${expectedSha.slice(0, 16)}…`);
+      failures.push(`${lab.slug}: SERVED BYTES DIFFER FROM wrap(pin, snippet[, cbt-footer]) — served ${entry.served_sha256.slice(0, 16)}…, expected ${expectedSha.slice(0, 16)}…`);
     } else {
-      entry.verified = { match: true, method: "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))" };
+      entry.verified = {
+        match: true,
+        method:
+          cbtIdx !== -1
+            ? "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
+            : "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))",
+      };
     }
     vendored.push(entry);
   }
