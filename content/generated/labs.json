@@ -2,7 +2,7 @@
   "schema_version": 1,
   "schema": "uni.public.labs/1.0.0",
   "generated_by": "generators/build_labs.cjs",
-  "read_at": "2026-11-06T17:24:11.933Z",
+  "read_at": "2026-11-08T18:22:44.547Z",
   "note": [
     "Vendored labs are served by this site as wrap(pinned lab source, vendored nav snippet): the",
     "pinned bytes of the lab at its workbench commit, with the canonical nav snippet (itself byte-",
@@ -14,7 +14,7 @@
   ],
   "nav_chrome": {
     "source": "content/vendored/nav-snippet.html",
-    "sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
+    "sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
     "injected": "verbatim, once, immediately after <body>"
   },
   "workbench": {
@@ -51,9 +51,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "8afed0cb279593737eeec4e50ab93dd52aff2221d626b10acd15998863956660",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "24d1621c3294e430a9c67e565694d61374a567cb2e94dbea74ad64e77c342672",
-      "bytes": 77682,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "65bc4b638a35acb5e26be529cc307238a99db31d7c18ce52127308b0822bfcf2",
+      "bytes": 77685,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -76,9 +76,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "4270d1a8e00ab12d1d20ec297fc143e3ed2fd8ebc1a1bad8f9da6f83278ecb8c",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "77f7c7127e5e730344b7c16ebdb83ae3f8912a8ef2f18ad0a2b3c2fcacc70555",
-      "bytes": 51659,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "6a54f9bbfad30b978530ffb28940f6368be86d0139744e0da26dc23dc2e98407",
+      "bytes": 51662,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -101,9 +101,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "64e0d8e7f36f73e69687a7ddee764e1f27199a50df5592ea137aedb7ff83d7c6",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "23f4edd370dfdbb068587d791059e25d88330c318d40db9bdec3e88b2742b148",
-      "bytes": 42793,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "3efb1bfa3ecb05f291ddf5b514db4674d32e9379a737f3782c7b795e2febdac9",
+      "bytes": 42796,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -126,9 +126,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "a5e7191ca5e3de76f1ab959507c3492d67559fde5176f8c484205805aa68265e",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "6beafb6597370aba580d10a2060f312f1cea2ef2e3a4aa6469d3eb6bd9fd0688",
-      "bytes": 40623,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "e288462fb04e16d0a020dfaf869dad37e5f4394fd177cd68549553b24a9578e7",
+      "bytes": 40626,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -151,9 +151,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "3364d60ff007833dea1f325bc46d447945b1c743dc725278c88fe959a9eb9220",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "d573d185ed1f7b32c8d90b0f495e694f419126b1e55211a643c5a5737671bf8d",
-      "bytes": 42754,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "bf256608e5a609c6990a0dda2ad1cf544bc4d5b7b424145eb2142fa05863d667",
+      "bytes": 42757,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -176,9 +176,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "9bc4dfaadc937d7cf7f237c84bafd5670c9df831b7984463cae036b52c10225a",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "d7f15e2c142381035fb64c64da326a935374c321ec4bdead1538b2089c608dab",
-      "bytes": 44389,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "856a9fad7e1e4889ffec3cae3db5147834425979483b3f5b0debfb8aa5288d12",
+      "bytes": 44392,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -201,9 +201,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "93d86e2c44c7e7b00c0e21b38e3cccfe0501055aa4ef2a1ec31ab07ebfb7c4f2",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "faac3083fe4c9d5b5ce44315362d919057b8c706e4abd083bb1569cb2f94fcee",
-      "bytes": 47513,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "a3ce1d1e081405fa90377e0bdeca452d51878555cf77fe7bf6acc71f4e57452b",
+      "bytes": 47516,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -226,9 +226,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "c9a4e57accd92805c43a09285be9cf758332626f6210c7045d1ccc397b76bfd1",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "7ccfc4113675ed4f9c8f8c4e913a6eb79fc2c9245adbfa1bc2398d8024dff04f",
-      "bytes": 46662,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "8b9ec6ca9cdcf364823d3ec66cf7c2e86685b57a1e67314eab0a3c1d5e65f9aa",
+      "bytes": 46665,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -251,9 +251,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "597b6b216b92de6748331dffd44fbdc36e462e322a6a059794833c9fd995f487",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "ad8222389044689f0643dc04a60864646b237a1827aa57ceb661f2d15702a21a",
-      "bytes": 45391,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "98fac641822d2a8f36b3ece7098b801c7a2c5e88e162d9bc1ca8f3b3bb4a4093",
+      "bytes": 45394,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -276,9 +276,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "f8206a36f22fa581ca12f6230a6e1693902d9d182232bacbc158b3473c08164f",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "66accc6461720f9997a702e9912da62abd0f830889df1d7f58351bd518b506ff",
-      "bytes": 48530,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "3fc2fcdd6ae85df57ac51f0b9fe6fab142e11d69fc5b6dd79b0c6c984d2aedc5",
+      "bytes": 48533,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -301,9 +301,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "5527219bccd72f173da11a85d11eed4a73f314164fd4dbd615818c62d423a1aa",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "51dc8a0c94344f87795fd26236abce6b3ef501ee29285373a70f182646fcc04f",
-      "bytes": 46244,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "1789ee85a6652045b728c23240ed91e1023fe49998d2742b53fb114e4855e853",
+      "bytes": 46247,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -326,9 +326,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "833dfb03bb3e7f0d454229d18fef93eda3db0768dd7fc9cdb19cfa484f5e2cd0",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "cb352dc9224a337ebba5e1571e7c4cfa07f1951dca280d88a95f5f915697cca3",
-      "bytes": 42189,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "6c6935dd02ca0ef3e4ac87d6aed1d1a2303e9f55f512c623b233458ebf30e468",
+      "bytes": 42192,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -351,9 +351,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "b1365af8378e08647c22bf8f190a942472a0cd387f5d1333848c73cb810b1a51",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "ee7c5f8c973b4b0849da503d845efd82bce39913c95ff2254a9a56b7f62859c2",
-      "bytes": 43176,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "8682e8072ccbd301c5a9796c15d7b1404440bc72b0173b5abbb5e09ea141f3a9",
+      "bytes": 43179,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -376,9 +376,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "7b8ef9c7c8c80aa7a18526cf87f8160d7367a4b6c4285f9f222eecdeb29fffb1",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "6f3aa11ed6d4721e1d26c8ed601e9f73c58483ffaed71717f2be3a1a61c9ab59",
-      "bytes": 44694,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "a95aa882508f0c2018e17d92747107294bcfdbae8b76413421cf4bdfd7261280",
+      "bytes": 44697,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -401,9 +401,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "61417159241a8a38a845c86d1b55f3a8a23e3510db87cf0fd9c86eb3516da05c",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "6e053c02d486f8c44a182e447ed172d6dcc74d5b334b6e676993db7df749ef65",
-      "bytes": 43707,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "35c0eacd6d8de109176f17a7b9955c15c44a2851cd665108d28e7085ac8578d5",
+      "bytes": 43710,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrapCbtFooter(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html), {prev,next,index,position from labs.json track+order}))"
@@ -424,9 +424,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "61e4db4f88baf03674ca6f26c1e1d4b249577e8e86e336d18a8d7dcf7574a219",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "517a24ca43131c7777279b05e1e07a14799895ffc706af3f20fd29d4b7edf0b8",
-      "bytes": 126116,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "96c7f5767965350f6427c96a85107c42111c12c9bdeb7e2ffd5ac1ec56dde848",
+      "bytes": 126119,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -447,9 +447,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "e0d80c4bd573aac877783a4270c6c25b7c38d09a720853e6bf106437fb3024c3",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "cfdb35a4f51851d80a7a940f9a790a5698fb7c5dcf34b9e8336312792cd76c22",
-      "bytes": 101936,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "5330350d8f6c56f0efb3a8d1360ebadb4015ca5176197a4d7d480561e6116a1c",
+      "bytes": 101939,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -470,9 +470,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "ef0899cd8d45262bc102e19b5ffbc1537cc4c86f44593cbeef8909960036f1eb",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "11ce5a59163b20117c93bfcbc221b8b60f34835afa478c9647c2e0bc113599be",
-      "bytes": 94669,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "639f0e5f74e2c410d868acdfdaa3f4f5ae60a36c7aae982937e21bc55af4586b",
+      "bytes": 94672,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -493,9 +493,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "1dda273ce562657e1ad09548f1d3f777ec390bc003c516f1321e4bc5068eaa68",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "e7c356a62b9d0c89c83a949e7f820cfd0fd4ea06a285484208f99f0543bcc252",
-      "bytes": 99523,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "12127892f17dbc3535e1c980e5c583a1545cb32b5309a9b99a35b1c22818646f",
+      "bytes": 99526,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -516,9 +516,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "5abad46eba4e167e9c84c777f6d5be8135f3428cd32d84378bca75616c72e29d",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "969f03d91b4400c729f3361da0a5e1fb50282ac8e478e1ab8bd9e9ff5c583972",
-      "bytes": 91866,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "33c1610f96d4d4494e4174c48d35be1faaeabf4b48649b461bc38e55f15cb99c",
+      "bytes": 91869,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -539,9 +539,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "8ebe6c2214253b66661060d9b0094f6cd2ec46b502addc20c6628867684a3b24",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "b6578c98bae13820c45ae1e4414d91a83ccba70d6accca6b801f92109af8eaa8",
-      "bytes": 107175,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "5fc0751fa2c0624b5fdcd2eb000ce2a8bd3abb0f657663fce96a0619ca9d9a03",
+      "bytes": 107178,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"
@@ -562,9 +562,9 @@
         "commit_short": "35a0c64b3cf0"
       },
       "content_sha256": "3dcb75e0341394449811a29ab477f0f2cc0054e9ea6430985d5331837a0723a2",
-      "chrome_sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "served_sha256": "ab185a070ad2e8267e8fd72ea5b1466848a85abaa5377619622bc30aac571586",
-      "bytes": 100049,
+      "chrome_sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "served_sha256": "1be8021af8d586438ac213ea7b0ddbeec4e3ae763a9c6c8dc5428c3867f17bb6",
+      "bytes": 100052,
       "verified": {
         "match": true,
         "method": "sha256(public/play copy) == sha256(wrap(git show <pinned_commit>:<source path>, content/vendored/nav-snippet.html))"

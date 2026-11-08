@@ -22,7 +22,7 @@
     { "id": "learn", "label": "Learn", "items": [
       { "href": "/science", "label": "The Science" },
       { "href": "/history", "label": "History of Inference" },
-      { "href": "/course", "label": "The course" },
+      { "href": "/course", "label": "The Workbench" },
       { "href": "/workshop", "label": "The UNI Workshop" },
       { "href": "/videos", "label": "Videos" },
       { "href": "/blog", "label": "Blog" }

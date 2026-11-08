@@ -2,13 +2,19 @@ import Link from "next/link";
 import course from "../../content/generated/course.json";
 
 export const metadata = {
-  title: "The course",
+  title: "The Workbench",
   description:
-    "The University's full open syllabus: every chapter and session of the active-inference curriculum, read at build time out of the two data modules the running Workbench serves it from.",
+    "The Workbench is the deepest of the three paths through this estate: the full active-inference curriculum on your own machine, parsed at build time from the two Elixir data modules the running Workbench serves its sessions from.",
 };
 
 /**
- * THE COURSE — the University's full open syllabus.
+ * THE WORKBENCH — the download-and-run deep course, the third path through this estate.
+ *
+ * WHY THIS PAGE EXISTS at /course: this is the Workbench's open syllabus, kept at /course so
+ * existing links keep working. The page introduces itself as The Workbench and frames the two
+ * other paths — the 15-module CBT (free, in-browser, no setup) and the 12-week live UNI Workshop
+ * (taught cohort) — explicitly at the top, so a reader who wanted one of those does not have to
+ * read the whole syllabus to find out.
  *
  * RULES THIS PAGE OBEYS:
  *
@@ -74,13 +80,57 @@ export default function Course() {
 
   return (
     <>
-      <h1>The course</h1>
+      <p className="eyebrow">101 · 201 · deep — the three paths</p>
+      <h1>The Workbench</h1>
       <p className="lede">
-        A complete, free, open-source active-inference curriculum: {d.counts.chapters} chapters,{" "}
-        {d.counts.sessions} sessions, {d.counts.total_minutes} minutes of guided work end to end.
-        Every session is written four times over, so a ten-year-old and a mathematician walk the
-        same corridor.
+        The full active-inference curriculum, on your own machine: {d.counts.chapters} chapters,{" "}
+        {d.counts.sessions} sessions, {d.counts.total_minutes} minutes of guided work end to end,
+        every session written four times over so a ten-year-old and a mathematician walk the same
+        corridor. This is the deepest of the three paths through the estate — you clone the
+        repository, you run the suite locally, and the Workbench serves the course to you with
+        every tool it ships with.
       </p>
+
+      <div className="grid" style={{ margin: "22px 0 10px" }}>
+        <div className="stat">
+          <div className="l">101 · free, self-paced</div>
+          <div style={{ marginTop: 8, fontSize: 15, lineHeight: 1.45 }}>
+            <b>The CBT.</b> Fifteen interactive modules you run in the browser, free, no account.
+            New to active inference, or want to try before you install anything? Start here.
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <Link href="/labs/">Browse all 15 modules &rsaquo;</Link>
+          </div>
+        </div>
+        <div className="stat">
+          <div className="l">201 · live, mentored</div>
+          <div style={{ marginTop: 8, fontSize: 15, lineHeight: 1.45 }}>
+            <b>The UNI Workshop.</b> The same active inference as a guided cohort, taught live by
+            Michael Polzin. Twelve weeks; you ship a running, non-LLM agent and sit a certification
+            exam.
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <a
+              href="https://educatewright.com/apply"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply for the next cohort &rsaquo;
+            </a>
+          </div>
+        </div>
+        <div className="stat" style={{ outline: "2px solid var(--acc)", outlineOffset: -2 }}>
+          <div className="l">deep · you are here</div>
+          <div style={{ marginTop: 8, fontSize: 15, lineHeight: 1.45 }}>
+            <b>The Workbench.</b> The full {d.counts.chapters}-chapter curriculum run locally,
+            with the visual model builder, the glass inspection views and the tutor. For readers
+            ready to run the whole thing themselves.
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <a href="#run">Jump to the run commands &rsaquo;</a>
+          </div>
+        </div>
+      </div>
 
       <div className="note">
         <b>Read this first.</b> This syllabus is not typed onto this page. It is parsed at build
@@ -92,7 +142,7 @@ export default function Course() {
         static export, not a probe), or that the minute figures measure anyone&rsquo;s reading —
         they are the course&rsquo;s own declared session lengths. The curriculum is built around
         the textbook <i>Active Inference</i> (Parr, Pezzulo &amp; Friston, 2022, MIT Press). The
-        book is not redistributed here; the course pairs its own sessions, labs, quizzes and
+        book is not redistributed here; the Workbench pairs its own sessions, labs, quizzes and
         narration with the reader&rsquo;s own copy.
       </div>
 
@@ -169,9 +219,9 @@ export default function Course() {
         </section>
       ))}
 
-      <h2>Run the whole Workbench yourself</h2>
+      <h2 id="run">Run the whole Workbench yourself</h2>
       <p>
-        The deep surfaces of this course — the visual model builder at <code>/builder</code>, the
+        The deep surfaces of the Workbench — the visual model builder at <code>/builder</code>, the
         glass inspection views, the tutor — are a Phoenix/LiveView application. A static site
         cannot embed a live BEAM process, and this one does not pretend to; those surfaces are run
         locally instead. One command, no account:
@@ -216,14 +266,14 @@ export default function Course() {
         .
       </p>
       <p>
-        And some of the course needs no BEAM at all: the learning labs are standalone simulations
-        that run in the browser, and those run <Link href="/labs/">right here</Link>. (Seven of
-        them, by RUN_LOCAL.md&rsquo;s own count at {d.source.commit_short} — that figure is quoted
-        from the source, not measured by this page.)
+        If you want the free, in-browser taste of active inference without installing anything, the
+        <Link href="/labs/"> 15-module CBT</Link> covers the same foundations in your browser
+        (seven of those modules are also shipped with the Workbench itself, by RUN_LOCAL.md&rsquo;s
+        own count at {d.source.commit_short}).
       </p>
 
       <p className="dim">
-        This course is one door of the estate. <Link href="/hall/">The hallway</Link> lists the
+        The Workbench is one door of the estate. <Link href="/hall/">The hallway</Link> lists the
         rest, each with the state it is honestly in and the commit its numbers were read from.
       </p>
     </>

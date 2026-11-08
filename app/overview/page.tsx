@@ -100,10 +100,11 @@ export default function Overview() {
             </a>. Real inference, no install, no account.
           </li>
           <li>
-            <a href="/course/"><b>The course</b></a> — {(course as any).counts.sessions} sessions
-            across {(course as any).counts.chapters} chapters, every session written four ways (for
-            a ten-year-old, in plain English, as the equation, as the derivation), read at build
-            time out of the curriculum&rsquo;s own source modules.
+            <a href="/course/"><b>The Workbench</b></a> — the full{" "}
+            {(course as any).counts.chapters}-chapter, {(course as any).counts.sessions}-session
+            curriculum on your own machine, every session written four ways (for a ten-year-old,
+            in plain English, as the equation, as the derivation), read at build time out of the
+            curriculum&rsquo;s own source modules.
           </li>
           <li>
             <a href="/build/"><b>Build with UNI</b></a> — how a model is declared, compiled and run

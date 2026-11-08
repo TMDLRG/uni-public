@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_by": "generators/build_nav.cjs",
-  "read_at": "2026-10-16T22:22:24.365Z",
+  "read_at": "2026-11-08T18:22:29.598Z",
   "note": [
     "The site chrome is vendored byte-for-byte from the apex Precision repo and verified against the",
     "pinned commit on every build; a mismatch fails the build. uni-public renders its nav from the",
@@ -9,7 +9,7 @@
   ],
   "source": {
     "repo": "Universal-Natural-Intelligence-Precision",
-    "pinned_commit": "71840d98f7f52654bbbf535ba41e56d58a37b370",
+    "pinned_commit": "f5fd920f115e00116b318a47d49fa2442d6ead9e",
     "root_key": "uni-precision"
   },
   "assets": [
@@ -17,8 +17,8 @@
       "vendored": "content/vendored/site-nav.json",
       "source": "nav/site-nav.json",
       "what": "the 6-group nav data — single source of truth",
-      "sha256": "e5b8b1e07b0864b470040c87d4da5fa7c2b4efdc0d3b74d0dbfba2c9dd826e43",
-      "bytes": 3902,
+      "sha256": "8562890030388075142762a30c8276315697d085f698b69d8d7bde9af5c50b92",
+      "bytes": 3905,
       "verified": {
         "match": true,
         "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
@@ -50,8 +50,8 @@
       "vendored": "content/vendored/nav-snippet.html",
       "source": "nav/nav-snippet.html",
       "what": "the self-contained nav block (inline CSS+JS, palette scoped to .site-nav, zero external refs) injected into the vendored full-screen labs/rooms",
-      "sha256": "5f301c0b2c6bbc6b9355a665c5205f57511a2e9426d89fe106d9b4a00d4d72d0",
-      "bytes": 10897,
+      "sha256": "ce8b5606909ce0ec9f93a5e1225e97f7e297ef0bbd8bfe9e7a734a6c0eab0634",
+      "bytes": 10900,
       "verified": {
         "match": true,
         "method": "sha256(vendored) == sha256(git show <pin>:<source>)"
@@ -136,7 +136,7 @@
           "href": "/history"
         },
         {
-          "label": "The course",
+          "label": "The Workbench",
           "href": "/course"
         },
         {
